@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "z3d2a0907c07004519dd183537b1ee0ee",
+        "filename": "src/com/android/contacts/SpecialCharSequenceMgr.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1000718
+      },
+      "writtenOn": "2009-01-20T19:06:48Z",
+      "side": 1,
+      "message": "Is this used anymore?  If not, it should be removed (along with any associated resources).",
+      "revId": "e0043e8c1b5274eb7c642fe2f4d24597a343645a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
