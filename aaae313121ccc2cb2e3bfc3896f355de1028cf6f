@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAA3////4\u003d",
+        "filename": "src/com/android/contacts/SpecialCharSequenceMgr.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000678
+      },
+      "writtenOn": "2009-01-27T22:48:39Z",
+      "side": 1,
+      "message": "Should be } else { all on one line",
+      "revId": "aaae313121ccc2cb2e3bfc3896f355de1028cf6f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
