@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAABn////E\u003d",
+        "filename": "src/com/android/contacts/SpecialCharSequenceMgr.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000718
+      },
+      "writtenOn": "2009-01-28T20:13:09Z",
+      "side": 1,
+      "message": "Is this change intentional (notSupportedPanel for CDMA)?  I thought in the discussion for the previous upload, it was decided to check for GSM instead, and simply return false for CDMA (no error message).  I.e., if on CDMA, the dial string simply gets passed on.",
+      "revId": "aaae313121ccc2cb2e3bfc3896f355de1028cf6f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAA3////4\u003d",
         "filename": "src/com/android/contacts/SpecialCharSequenceMgr.java",
         "patchSetId": 1
