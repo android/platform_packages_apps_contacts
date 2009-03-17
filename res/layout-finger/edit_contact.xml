@@ -18,7 +18,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:scrollbarStyle="insideInset"
     android:fillViewport="true">
 
     <LinearLayout
@@ -29,34 +28,29 @@
 
         <LinearLayout android:id="@+id/banner"
             android:layout_width="fill_parent"
-            android:layout_height="?android:attr/listPreferredItemHeight"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@android:drawable/bottom_bar"
             android:padding="0dip"
             android:gravity="center_vertical"
             android:baselineAligned="false"
         >
 
             <FrameLayout
-                android:layout_width="58dip"
-                android:layout_height="58dip"
+                android:layout_width="76dip"
+                android:layout_height="76dip"
+                android:layout_marginTop="4dip"
                 android:layout_marginLeft="6dip"
-                android:layout_marginRight="10dip"
+                android:layout_marginBottom="6dip"
+                android:layout_marginRight="2dip"
             >
-                <ImageButton android:id="@+id/photoButton"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:src="@drawable/ic_menu_add_picture"
-                    android:gravity="center"
-                />
-
                 <ImageView android:id="@+id/photoImage"
-                    style="?android:attr/imageWellStyle"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:clickable="true"
                     android:focusable="true"
-                    android:background="@drawable/border"
+                    android:src="@drawable/ic_menu_add_picture"
+                    android:scaleType="center"
+                    android:background="@drawable/btn_contact_picture"
                 />
             </FrameLayout>
 
@@ -64,7 +58,7 @@
                 android:layout_width="0dip"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="4dip"
+                android:layout_marginRight="?android:attr/scrollbarSize"
                 android:gravity="center_vertical"
                 android:inputType="textPersonName|textCapWords"
                 android:hint="@string/ghostData_name"
@@ -80,18 +74,12 @@
         <!-- "Phonetic name" entry widget, visible only in certain locales -->
         <include layout="@layout/edit_phonetic_name"/>
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:background="?android:attr/listDivider"
-        />
-
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="0dip"
             android:layout_weight="1"
             android:orientation="vertical"
-        >
+            >
 
             <!-- The edit items -->
             <LinearLayout android:id="@+id/list"
@@ -100,76 +88,30 @@
                 android:orientation="vertical"
             />
 
-            <!-- Send to voicemail checkbox -->
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="?android:attr/listPreferredItemHeight"
-            >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="4dip"
-                    android:text="@string/send_to_voicemail_checkbox"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                />
-
-                <CheckBox android:id="@+id/send_to_voicemail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:nextFocusDown="@+id/saveButton"
-                />
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dip"
-                android:background="?android:attr/listDivider"
-            />
-
-            <!-- The add more button -->
-            <Button android:id="@+id/addMore"
-                android:layout_width="fill_parent"
-                android:layout_height="?android:attr/listPreferredItemHeight"
-                android:layout_marginTop="3dip"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/menu_addItem"
-                android:gravity="left|center_vertical"
-                android:drawableLeft="@android:drawable/ic_input_add"
-            />
-
         </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="?android:attr/listPreferredItemHeight"
-            android:layout_marginTop="1dip"
-            android:background="@android:drawable/bottom_bar"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            style="@android:style/ButtonBar"
         >
+
             <Button android:id="@+id/saveButton"
-                android:layout_width="wrap_content"
+                android:layout_width="0dip"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:text="@string/button_save"
-                android:minWidth="120dip"
-                android:minHeight="48dip"
+                android:layout_weight="1"
+                android:text="@string/menu_done"
             />
 
             <Button android:id="@+id/discardButton"
-                android:layout_width="wrap_content"
+                android:layout_width="0dip"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:text="@string/button_discard"
-                android:minWidth="120dip"
-                android:minHeight="48dip"
+                android:layout_weight="1"
+                android:text="@string/menu_doNotSave"
             />
-        </RelativeLayout>
+
+        </LinearLayout>
+                
     </LinearLayout>
 </ScrollView>

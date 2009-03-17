@@ -57,11 +57,12 @@
 
         <!-- Tab container for TwelveKeyDialer and RecentCallsList -->
         <activity android:name="DialtactsActivity"
-            android:label="@string/dialerIconLabel"
+            android:label="@string/launcherDialer"
             android:theme="@android:style/Theme.NoTitleBar"
             android:launchMode="singleTask"
             android:clearTaskOnLaunch="true"
             android:icon="@drawable/ic_launcher_phone"
+            android:screenOrientation="nosensor"
         >
             <intent-filter>
                 <action android:name="android.intent.action.DIAL" />
@@ -109,7 +110,7 @@
         <!-- An empty activity that presents the DialtactActivity's Contacts tab -->
         <activity-alias android:name="DialtactsContactsEntryActivity"
             android:targetActivity="DialtactsActivity"
-            android:label="@string/contactsIconLabel"
+            android:label="@string/contactsList"
             android:icon="@drawable/ic_launcher_contacts"
         >
             <intent-filter>
@@ -130,6 +131,18 @@
             </intent-filter>
         </activity-alias>
 
+        <!-- An empty activity that presents the DialtactActivity's Favorites tab -->
+        <activity-alias android:name="DialtactsFavoritesEntryActivity"
+            android:targetActivity="DialtactsActivity"
+            android:label="@string/strequentList"
+            android:icon="@drawable/ic_launcher_contacts"
+        >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+        
         <!-- The actual list of contacts, usually embedded in ContactsActivity -->
         <activity android:name="ContactsListActivity"
             android:label="@string/contactsList"
@@ -211,6 +224,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
+            <intent-filter>
+                <action android:name="com.android.contacts.action.SHOW_OR_CREATE_CONTACT" />
+                <data android:scheme="mailto" />
+                <data android:scheme="tel" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
             <meta-data android:name="android.app.searchable"
                 android:resource="@xml/searchable"
             />
@@ -229,6 +249,7 @@
 
         <activity android:name="CallDetailActivity"
             android:label="@string/callDetailTitle"
+            android:theme="@android:style/Theme.NoTitleBar"
         >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

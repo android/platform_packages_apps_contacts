@@ -19,25 +19,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="3dip"
     android:orientation="vertical"
->
+    >
 
-    <TextView android:id="@+id/text"
+    <LinearLayout
+        android:id="@+id/separator"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:background="@drawable/dark_header_dithered"
-        android:textColor="?android:attr/textColorSecondary"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        android:paddingLeft="8dip"
-    />
+        android:layout_marginLeft="14dip"
+        android:layout_marginTop="3dip"
+        android:layout_marginBottom="1dip"
+        android:layout_marginRight="?android:attr/scrollbarSize"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:focusable="true"
+        android:clickable="true"
+        >
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dip"
-        android:background="?android:attr/listDivider"
-    />
+        <TextView android:id="@+id/text"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="8dip"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            />
+
+        <ImageView android:id="@+id/add"
+            style="@style/PlusButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:duplicateParentState="true"
+            />
+
+    </LinearLayout>
 
 </LinearLayout>
-

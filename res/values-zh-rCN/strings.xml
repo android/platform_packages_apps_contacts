@@ -16,6 +16,8 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="contactsList">"联系人"</string>
+    <!-- no translation found for launcherDialer (140610573639849799) -->
+    <skip />
     <string name="shortcutContact">"联系人"</string>
     <string name="starredList">"已加星标"</string>
     <string name="frequentList">"经常"</string>
@@ -40,20 +42,17 @@
     <string name="menu_makeDefaultNumber">"设置默认号码"</string>
     <string name="deleteConfirmation_title">"删除"</string>
     <string name="deleteConfirmation">"会删除此联系人。"</string>
-    <string name="menu_done">"保存"</string>
-    <string name="menu_doNotSave">"放弃更改"</string>
-    <string name="button_save">"保存"</string>
-    <string name="button_discard">"放弃更改"</string>
+    <string name="menu_done">"完成"</string>
+    <!-- no translation found for menu_doNotSave (2174577548513895144) -->
+    <skip />
     <string name="editContact_title_edit">"编辑联系人"</string>
     <string name="editContact_title_insert">"添加联系人"</string>
     <string name="menu_addItem">"详细信息"</string>
-    <!-- no translation found for label_phonetic_name (2288082649573927286) -->
-    <skip />
+    <string name="label_phonetic_name">"拼音"</string>
     <string name="label_notes">"备注"</string>
     <string name="label_ringtone">"铃声"</string>
     <string name="ghostData_name">"第一个和最后一个"</string>
-    <!-- no translation found for ghostData_phonetic_name (7852749081984070902) -->
-    <skip />
+    <string name="ghostData_phonetic_name">"拼音姓名"</string>
     <string name="ghostData_company">"公司"</string>
     <string name="ghostData_title">"位置"</string>
     <string name="ghostData_im">"即时消息名称"</string>
@@ -80,7 +79,7 @@
     <string name="menu_displayGroup">"显示组"</string>
     <string name="syncGroupPreference">"编辑同步组"</string>
     <string name="importFromSim">"导入联系人"</string>
-    <string name="send_to_voicemail_checkbox">"直接呼叫语音信箱。"</string>
+    <string name="send_to_voicemail_checkbox">"将通话直接发送到语音邮件"</string>
     <string name="send_to_voicemail_view">"呼叫被直接发送至语音邮件。"</string>
     <string name="default_ringtone">"默认"</string>
     <string name="addPicture">"“添加”图标"</string>
@@ -97,12 +96,18 @@
     <string name="contactCreatedToast">"已创建“联系人”。"</string>
     <string name="contactSavedToast">"已保存联系人。"</string>
     <string name="listSeparatorCallNumber">"拔号"</string>
+    <string name="listSeparatorCallNumber_edit">"电话号码"</string>
     <string name="listSeparatorSendSmsMms">"发送短信/彩信"</string>
     <string name="listSeparatorSendEmail">"发送电子邮件"</string>
+    <string name="listSeparatorSendEmail_edit">"电子邮件地址"</string>
     <string name="listSeparatorSendIm">"发送即时消息"</string>
+    <string name="listSeparatorSendIm_edit">"聊天地址"</string>
     <string name="listSeparatorMapAddress">"地图地址"</string>
+    <string name="listSeparatorMapAddress_edit">"邮政地址"</string>
     <string name="listSeparatorOrganizations">"组织"</string>
     <string name="listSeparatorOtherInformation">"其他信息"</string>
+    <string name="listSeparatorOtherInformation_edit">"其他选项"</string>
+    <string name="listSeparatorMore_edit">"更多"</string>
     <string name="contactsIconLabel">"联系人"</string>
     <string name="contactsFavoritesLabel">"收藏夹"</string>
     <string name="dialerIconLabel">"拔号程序"</string>
@@ -126,7 +131,10 @@
     <string name="simContacts_emptyLoading">"正在从 SIM 卡中载入..."</string>
     <string name="simContacts_title">"SIM 卡联系人"</string>
     <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"同步您的 Google 联系人！"</font>\n"将联系人同步到您的手机后，无论您走到哪里，都可以与他们联系。"</string>
-    <string name="noContactsHelpText">"您尚未有联系人。"\n\n"要添加联系人，可按"<font fgcolor="#ffffffff"><b>"菜单"</b></font>"并选择："\n\n"        "\n<li><font fgcolor="#ffffffff"><b>"编辑同步组"</b></font>"以从新的或现有 Google 帐户中添加"\n</li>\n"        "\n<li><font fgcolor="#ffffffff"><b>"添加联系人"</b></font>"创建新联系人"\n</li>\n"        "\n<li><font fgcolor="#ffffffff"><b>"导入联系人"</b></font>"以从您的 SIM 卡中添加联系人"\n</li></string>
+    <!-- no translation found for noContactsHelpText (2249195687463896364) -->
+    <skip />
+    <!-- no translation found for noContactsHelpTextWithSync (4927701496550314555) -->
+    <skip />
     <string name="seclectSyncGroups_title">"选择要同步的组"</string>
     <string name="liveFolder_all_label">"所有联系人"</string>
     <string name="liveFolder_favorites_label">"已加星标"</string>
@@ -134,24 +142,31 @@
     <string name="dialer_useDtmfDialpad">"使用按键式键盘"</string>
     <string name="dialer_returnToInCallScreen">"返回到正在进行中的通话"</string>
     <string name="dialer_addAnotherCall">"添加通话"</string>
-    <!-- no translation found for callDetailTitle (5340227785196217938) -->
+    <string name="callDetailTitle">"通话详情"</string>
+    <string name="toast_call_detail_error">"无法阅读所请求通话的详情。"</string>
+    <string name="call_type">"类型"</string>
+    <string name="type_incoming">"来电"</string>
+    <string name="type_outgoing">"去电"</string>
+    <string name="type_missed">"未接来电"</string>
+    <string name="call_time">"时间"</string>
+    <string name="datetime_relative">"<xliff:g id="DATETIME">%1$s</xliff:g>（<xliff:g id="RELATIVE">%2$s</xliff:g>）"</string>
+    <string name="call_duration">"持续时间"</string>
+    <string name="header_actions">"操作"</string>
+    <string name="ringtone_spinner">"铃声：<xliff:g id="RINGTONE">%1$s</xliff:g>"</string>
+    <string name="add_more_items">"添加更多项目"</string>
+    <string name="actionCall">"呼叫<xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionEmail">"向<xliff:g id="TYPE">%s</xliff:g>发送电子邮件"</string>
+    <string name="actionText">"向<xliff:g id="TYPE">%s</xliff:g>发送文本消息"</string>
+    <string name="actionChat">"使用 <xliff:g id="TYPE">%s</xliff:g> 进行聊天"</string>
+    <string name="actionMap">"查看<xliff:g id="TYPE">%s</xliff:g>地址"</string>
+    <string name="actionIncomingCall">"来电"</string>
+    <string name="detailIncomingCallsGoToVoicemail">"将直接发送至语音邮件"</string>
+    <string name="detailsRingtone">"设置为“<xliff:g id="RINGTONE_NAME">%s</xliff:g>”"</string>
+    <string name="callBack">"回拨"</string>
+    <!-- no translation found for callAgain (3197312117049874778) -->
     <skip />
-    <!-- no translation found for toast_call_detail_error (7200975244804730096) -->
+    <!-- no translation found for returnCall (8171961914203617813) -->
     <skip />
-    <!-- no translation found for call_type (3213526349444862087) -->
-    <skip />
-    <!-- no translation found for type_incoming (6502076603836088532) -->
-    <skip />
-    <!-- no translation found for type_outgoing (343108709599392641) -->
-    <skip />
-    <!-- no translation found for type_missed (2720502601640509542) -->
-    <skip />
-    <!-- no translation found for call_time (5805575214626630975) -->
-    <skip />
-    <!-- no translation found for datetime_relative (2906207446040994658) -->
-    <skip />
-    <!-- no translation found for call_duration (3941950339482985532) -->
-    <skip />
-    <!-- no translation found for header_actions (229583643365836321) -->
+    <!-- no translation found for callDetailsDurationFormat (8157706382818184268) -->
     <skip />
 </resources>

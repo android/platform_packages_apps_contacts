@@ -15,8 +15,10 @@
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="contactsList">"Contactpersonen"</string>
-    <string name="shortcutContact">"Contactpersonen"</string>
+    <string name="contactsList">"Contacten"</string>
+    <!-- no translation found for launcherDialer (140610573639849799) -->
+    <skip />
+    <string name="shortcutContact">"Contacten"</string>
     <string name="starredList">"Met ster"</string>
     <string name="frequentList">"Vaak"</string>
     <string name="strequentList">"Favorieten"</string>
@@ -24,7 +26,7 @@
     <string name="viewContactDesription">"Contactpersoon weergeven"</string>
     <string name="editContactDescription">"Contactpersoon bewerken"</string>
     <string name="insertContactDescription">"Contactpersoon maken"</string>
-    <string name="searchHint">"Contactpersonen zoeken"</string>
+    <string name="searchHint">"Contacten zoeken"</string>
     <string name="menu_newContact">"Nieuwe contactpersoon"</string>
     <string name="menu_viewContact">"Contactpersoon weergeven"</string>
     <string name="menu_callNumber">"<xliff:g id="NAME">%s</xliff:g> bellen"</string>
@@ -40,20 +42,17 @@
     <string name="menu_makeDefaultNumber">"Als standaardnummer instellen"</string>
     <string name="deleteConfirmation_title">"Verwijderen"</string>
     <string name="deleteConfirmation">"Deze contactpersoon wordt verwijderd."</string>
-    <string name="menu_done">"Opslaan"</string>
-    <string name="menu_doNotSave">"Wijzigingen ongedaan maken"</string>
-    <string name="button_save">"Opslaan"</string>
-    <string name="button_discard">"Wijzigingen ongedaan maken"</string>
+    <string name="menu_done">"Gereed"</string>
+    <!-- no translation found for menu_doNotSave (2174577548513895144) -->
+    <skip />
     <string name="editContact_title_edit">"Contactpersoon bewerken"</string>
     <string name="editContact_title_insert">"Nieuwe contactpersoon"</string>
     <string name="menu_addItem">"Meer informatie"</string>
-    <!-- no translation found for label_phonetic_name (2288082649573927286) -->
-    <skip />
+    <string name="label_phonetic_name">"Fonetisch"</string>
     <string name="label_notes">"Opmerkingen"</string>
     <string name="label_ringtone">"Beltoon"</string>
     <string name="ghostData_name">"Voor- en achternaam"</string>
-    <!-- no translation found for ghostData_phonetic_name (7852749081984070902) -->
-    <skip />
+    <string name="ghostData_phonetic_name">"Fonetisch gespelde naam"</string>
     <string name="ghostData_company">"Bedrijf"</string>
     <string name="ghostData_title">"Positie"</string>
     <string name="ghostData_im">"Chatnaam"</string>
@@ -78,45 +77,51 @@
     <string name="attachToContact">"Pictogram voor contactpersoon"</string>
     <string name="customLabelPickerTitle">"Aangepaste labelnaam"</string>
     <string name="menu_displayGroup">"Groep weergeven"</string>
-    <string name="syncGroupPreference">"Gesynchroniseerde groepen bewerken"</string>
-    <string name="importFromSim">"Contactpersonen importeren"</string>
-    <string name="send_to_voicemail_checkbox">"Oproepen rechtstreeks naar voicemail."</string>
+    <string name="syncGroupPreference">"Synchronisatiegroepen bewerken"</string>
+    <string name="importFromSim">"Contacten importeren"</string>
+    <string name="send_to_voicemail_checkbox">"Oproepen rechtstreeks naar voicemail verzenden"</string>
     <string name="send_to_voicemail_view">"Oproepen worden rechtstreeks naar voicemail verzonden."</string>
     <string name="default_ringtone">"Standaard"</string>
     <string name="addPicture">"Pictogram toevoegen"</string>
     <string name="removePicture">"Pictogram verwijderen"</string>
-    <string name="noContacts">"Geen contactpersonen."</string>
-    <string name="noContactsWithPhoneNumbers">"Geen contactpersonen met telefoonnummers."</string>
+    <string name="noContacts">"Geen contacten."</string>
+    <string name="noContactsWithPhoneNumbers">"Geen contacten met telefoonnummers."</string>
     <string name="noFavorites">"Geen favorieten."</string>
     <string name="select_group_title">"Groepen"</string>
     <string name="groupEmpty">"De groep \'<xliff:g id="GROUPNAME">%s</xliff:g>\' is leeg."</string>
-    <string name="showAllGroups">"Alle contactpersonen"</string>
-    <string name="syncAllGroups">"Alle contactpersonen synchroniseren"</string>
-    <string name="groupNameMyContacts">"Mijn contactpersonen"</string>
-    <string name="groupNameWithPhones">"Contactpersonen met telefoonnummers"</string>
+    <string name="showAllGroups">"Alle contacten"</string>
+    <string name="syncAllGroups">"Alle contacten synchroniseren"</string>
+    <string name="groupNameMyContacts">"Mijn contacten"</string>
+    <string name="groupNameWithPhones">"Contacten met telefoonnummers"</string>
     <string name="contactCreatedToast">"Contactpersoon is gemaakt."</string>
     <string name="contactSavedToast">"Contactpersoon opgeslagen."</string>
     <string name="listSeparatorCallNumber">"Nummer bellen"</string>
+    <string name="listSeparatorCallNumber_edit">"Telefoonnummers"</string>
     <string name="listSeparatorSendSmsMms">"SMS/MMS verzenden"</string>
     <string name="listSeparatorSendEmail">"E-mail verzenden"</string>
+    <string name="listSeparatorSendEmail_edit">"E-mailadressen"</string>
     <string name="listSeparatorSendIm">"Chatbericht verzenden"</string>
+    <string name="listSeparatorSendIm_edit">"Chatadressen"</string>
     <string name="listSeparatorMapAddress">"Adres op kaart weergeven"</string>
+    <string name="listSeparatorMapAddress_edit">"Postadressen"</string>
     <string name="listSeparatorOrganizations">"Organisaties"</string>
     <string name="listSeparatorOtherInformation">"Overige informatie"</string>
-    <string name="contactsIconLabel">"Contactpersonen"</string>
+    <string name="listSeparatorOtherInformation_edit">"Andere opties"</string>
+    <string name="listSeparatorMore_edit">"Meer"</string>
+    <string name="contactsIconLabel">"Contacten"</string>
     <string name="contactsFavoritesLabel">"Favorieten"</string>
-    <string name="dialerIconLabel">"Dialer"</string>
-    <string name="recentCallsIconLabel">"Gesprekslogboek"</string>
-    <string name="liveFolderAll">"Alle contactpersonen"</string>
-    <string name="liveFolderFavorites">"Contactpersonen met ster"</string>
-    <string name="liveFolderPhone">"Contactpersonen met telefoonnummers"</string>
+    <string name="dialerIconLabel">"Telefoon"</string>
+    <string name="recentCallsIconLabel">"Gesprekken"</string>
+    <string name="liveFolderAll">"Alle contacten"</string>
+    <string name="liveFolderFavorites">"Contacten met ster"</string>
+    <string name="liveFolderPhone">"Contacten met telefoonnummers"</string>
     <string name="menu_sendTextMessage">"SMS-bericht verzenden"</string>
     <string name="recentCalls_callNumber">"<xliff:g id="NAME">%s</xliff:g> bellen"</string>
     <string name="recentCalls_editNumberBeforeCall">"Nummer bewerken voor bellen"</string>
-    <string name="recentCalls_addToContact">"Toevoegen aan contactpersonen"</string>
-    <string name="recentCalls_removeFromRecentList">"Verwijderen uit gesprekslogboek"</string>
-    <string name="recentCalls_deleteAll">"Gesprekslogboek wissen"</string>
-    <string name="recentCalls_empty">"Gesprekslogboek is leeg."</string>
+    <string name="recentCalls_addToContact">"Toevoegen aan contacten"</string>
+    <string name="recentCalls_removeFromRecentList">"Verwijderen uit Gesprekken"</string>
+    <string name="recentCalls_deleteAll">"Gesprekken wissen"</string>
+    <string name="recentCalls_empty">"Gesprekken is leeg"</string>
     <string name="imei">"IMEI"</string>
     <string name="voicemail">"Voicemail"</string>
     <string name="unknown">"Onbekend"</string>
@@ -124,34 +129,44 @@
     <string name="dialerKeyboardHintText">"Toetsen gebruiken om te bellen"</string>
     <string name="dialerDialpadHintText">"Bellen om een oproep toe te voegen"</string>
     <string name="simContacts_emptyLoading">"Laden vanaf SIM-kaart..."</string>
-    <string name="simContacts_title">"Contactpersonen op SIM-kaart"</string>
-    <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Synchroniseer uw Google-contactpersonen!"</font>" "\n"Zodra uw telefoon is gesynchroniseerd, heeft u uw contactpersonen altijd ter beschikking."</string>
-    <string name="noContactsHelpText">"U heeft geen contactpersonen."\n\n"Als u contactpersonen wilt toevoegen, drukt u op "<font fgcolor="#ffffffff"><b>"Menu"</b></font>" en selecteert u:"\n\n"        "\n<li><font fgcolor="#ffffffff"><b>"Gesynchroniseerde groepen bewerken"</b></font>" als u contactpersonen vanuit een nieuwe of bestaande Google-account wilt toevoegen."\n</li>\n"        "\n<li><font fgcolor="#ffffffff"><b>"Nieuwe contactpersoon"</b></font>" als u een nieuwe contactpersoon wilt invoeren"\n</li>\n"        "\n<li><font fgcolor="#ffffffff"><b>"Contactpersonen importeren"</b></font>" als u contactpersonen wilt toevoegen vanaf uw SIM-kaart"\n</li></string>
+    <string name="simContacts_title">"Contacten op SIM-kaart"</string>
+    <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Synchroniseer uw Google-contacten!"</font>" "\n"Zodra uw telefoon is gesynchroniseerd, heeft u uw contacten altijd ter beschikking."</string>
+    <!-- no translation found for noContactsHelpText (2249195687463896364) -->
+    <skip />
+    <!-- no translation found for noContactsHelpTextWithSync (4927701496550314555) -->
+    <skip />
     <string name="seclectSyncGroups_title">"Groepen selecteren om te synchroniseren"</string>
-    <string name="liveFolder_all_label">"Alle contactpersonen"</string>
+    <string name="liveFolder_all_label">"Alle contacten"</string>
     <string name="liveFolder_favorites_label">"Met ster"</string>
     <string name="liveFolder_phones_label">"Telefoons"</string>
     <string name="dialer_useDtmfDialpad">"Toetsen voor toonkiezen gebruiken"</string>
     <string name="dialer_returnToInCallScreen">"Terug naar actief gesprek"</string>
     <string name="dialer_addAnotherCall">"Oproep toevoegen"</string>
-    <!-- no translation found for callDetailTitle (5340227785196217938) -->
+    <string name="callDetailTitle">"Gespreksgegevens"</string>
+    <string name="toast_call_detail_error">"Kan geen gegevens over het gevraagde gesprek vinden."</string>
+    <string name="call_type">"Type"</string>
+    <string name="type_incoming">"Binnenkomende oproep"</string>
+    <string name="type_outgoing">"Uitgaand gesprek"</string>
+    <string name="type_missed">"Oproep gemist"</string>
+    <string name="call_time">"Tijd"</string>
+    <string name="datetime_relative">"<xliff:g id="DATETIME">%1$s</xliff:g> (<xliff:g id="RELATIVE">%2$s</xliff:g>)"</string>
+    <string name="call_duration">"Duur"</string>
+    <string name="header_actions">"Acties"</string>
+    <string name="ringtone_spinner">"Beltoon: <xliff:g id="RINGTONE">%1$s</xliff:g>"</string>
+    <string name="add_more_items">"Meer items toevoegen"</string>
+    <string name="actionCall">"<xliff:g id="TYPE">%s</xliff:g> bellen"</string>
+    <string name="actionEmail">"E-mail <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionText">"Tekst <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionChat">"Chatten via <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionMap">"<xliff:g id="TYPE">%s</xliff:g>-adres bekijken"</string>
+    <string name="actionIncomingCall">"Binnenkomende oproepen"</string>
+    <string name="detailIncomingCallsGoToVoicemail">"Wordt direct naar voicemail verzonden"</string>
+    <string name="detailsRingtone">"Ingesteld op <xliff:g id="RINGTONE_NAME">%s</xliff:g>"</string>
+    <string name="callBack">"Terugbellen"</string>
+    <!-- no translation found for callAgain (3197312117049874778) -->
     <skip />
-    <!-- no translation found for toast_call_detail_error (7200975244804730096) -->
+    <!-- no translation found for returnCall (8171961914203617813) -->
     <skip />
-    <!-- no translation found for call_type (3213526349444862087) -->
-    <skip />
-    <!-- no translation found for type_incoming (6502076603836088532) -->
-    <skip />
-    <!-- no translation found for type_outgoing (343108709599392641) -->
-    <skip />
-    <!-- no translation found for type_missed (2720502601640509542) -->
-    <skip />
-    <!-- no translation found for call_time (5805575214626630975) -->
-    <skip />
-    <!-- no translation found for datetime_relative (2906207446040994658) -->
-    <skip />
-    <!-- no translation found for call_duration (3941950339482985532) -->
-    <skip />
-    <!-- no translation found for header_actions (229583643365836321) -->
+    <!-- no translation found for callDetailsDurationFormat (8157706382818184268) -->
     <skip />
 </resources>

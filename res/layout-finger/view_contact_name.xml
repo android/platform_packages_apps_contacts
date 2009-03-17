@@ -23,4 +23,6 @@
     android:textAppearance="?android:attr/textAppearanceLarge"
     android:shadowColor="#BB000000"
     android:shadowRadius="2.75"
+    android:maxLines="2"
+    android:ellipsize="end"
     />

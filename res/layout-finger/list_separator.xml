@@ -19,7 +19,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
-    android:background="@drawable/dark_header_dithered"
+    android:background="@android:drawable/dark_header"
     android:textColor="?android:attr/textColorSecondary"
     android:textStyle="bold"
     android:textSize="14sp"

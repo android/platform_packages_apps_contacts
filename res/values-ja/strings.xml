@@ -16,6 +16,8 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="contactsList">"連絡先"</string>
+    <!-- no translation found for launcherDialer (140610573639849799) -->
+    <skip />
     <string name="shortcutContact">"連絡先"</string>
     <string name="starredList">"スター付き"</string>
     <string name="frequentList">"よく連絡する連絡先"</string>
@@ -23,9 +25,9 @@
     <string name="viewContactTitle">"連絡先情報"</string>
     <string name="viewContactDesription">"連絡先を表示"</string>
     <string name="editContactDescription">"連絡先を編集"</string>
-    <string name="insertContactDescription">"連絡先を作成"</string>
+    <string name="insertContactDescription">"連絡先を新規登録"</string>
     <string name="searchHint">"連絡先を検索"</string>
-    <string name="menu_newContact">"新しい連絡先"</string>
+    <string name="menu_newContact">"連絡先を新規登録"</string>
     <string name="menu_viewContact">"連絡先を表示"</string>
     <string name="menu_callNumber">"<xliff:g id="NAME">%s</xliff:g>さんに発信"</string>
     <string name="menu_addStar">"お気に入りに追加"</string>
@@ -37,23 +39,20 @@
     <string name="menu_sendSMS">"SMS/MMSを送信"</string>
     <string name="menu_sendEmail">"メールを送信"</string>
     <string name="menu_viewAddress">"地図でみる"</string>
-    <string name="menu_makeDefaultNumber">"デフォルトの番号に設定"</string>
+    <string name="menu_makeDefaultNumber">"メインの番号に設定する"</string>
     <string name="deleteConfirmation_title">"削除"</string>
     <string name="deleteConfirmation">"この連絡先を削除します。"</string>
-    <string name="menu_done">"保存"</string>
-    <string name="menu_doNotSave">"変更を破棄"</string>
-    <string name="button_save">"保存"</string>
-    <string name="button_discard">"変更を破棄"</string>
-    <string name="editContact_title_edit">"連絡先を編集"</string>
-    <string name="editContact_title_insert">"新しい連絡先"</string>
-    <string name="menu_addItem">"情報を追加"</string>
-    <!-- no translation found for label_phonetic_name (2288082649573927286) -->
+    <string name="menu_done">"完了"</string>
+    <!-- no translation found for menu_doNotSave (2174577548513895144) -->
     <skip />
+    <string name="editContact_title_edit">"連絡先を編集"</string>
+    <string name="editContact_title_insert">"連絡先を新規登録"</string>
+    <string name="menu_addItem">"情報を追加"</string>
+    <string name="label_phonetic_name">"音声"</string>
     <string name="label_notes">"メモ"</string>
     <string name="label_ringtone">"着信音"</string>
     <string name="ghostData_name">"名前"</string>
-    <!-- no translation found for ghostData_phonetic_name (7852749081984070902) -->
-    <skip />
+    <string name="ghostData_phonetic_name">"音声名"</string>
     <string name="ghostData_company">"会社"</string>
     <string name="ghostData_title">"役職"</string>
     <string name="ghostData_im">"IM名"</string>
@@ -61,97 +60,113 @@
     <string name="ghostData_phone">"電話番号"</string>
     <string name="ghostData_email">"メールアドレス"</string>
     <string name="ghostData_postal">"住所"</string>
-    <string name="invalidContactMessage">"連絡先が存在しません。"</string>
-    <string name="pickerNewContactHeader">"新しい連絡先を登録"</string>
-    <string name="selectLabel">"ラベルを選択"</string>
+    <string name="invalidContactMessage">"この連絡先は消去されています。"</string>
+    <string name="pickerNewContactHeader">"連絡先を新規登録"</string>
+    <string name="selectLabel">"選択してください"</string>
     <string name="phoneLabelsGroup">"電話番号"</string>
     <string name="emailLabelsGroup">"メール"</string>
     <string name="imLabelsGroup">"IM"</string>
     <string name="postalLabelsGroup">"住所"</string>
     <string name="otherLabelsGroup">"その他"</string>
   <string-array name="otherLabels">
-    <item>"組織"</item>
+    <item>"勤務先情報"</item>
     <item>"メモ"</item>
   </string-array>
     <string name="errorDialogTitle">"写真なし"</string>
-    <string name="photoPickerNotFoundText">"使用できる写真が携帯電話にありません。"</string>
+    <string name="photoPickerNotFoundText">"写真がありません。"</string>
     <string name="attachToContact">"連絡先のアイコン"</string>
     <string name="customLabelPickerTitle">"新しいラベル名"</string>
     <string name="menu_displayGroup">"グループを表示"</string>
     <string name="syncGroupPreference">"同期グループを編集"</string>
     <string name="importFromSim">"連絡先をインポート"</string>
-    <string name="send_to_voicemail_checkbox">"電話はボイスメールに送信する"</string>
-    <string name="send_to_voicemail_view">"着信はボイスメールに直接転送されます。"</string>
-    <string name="default_ringtone">"デフォルト"</string>
+    <string name="send_to_voicemail_checkbox">"ボイスメールに直接電話します。"</string>
+    <string name="send_to_voicemail_view">"この番号にかけるとボイスメールに送信されます。"</string>
+    <string name="default_ringtone">"端末既定"</string>
     <string name="addPicture">"アイコンを追加"</string>
     <string name="removePicture">"アイコンを削除"</string>
     <string name="noContacts">"連絡先がありません。"</string>
-    <string name="noContactsWithPhoneNumbers">"電話番号のある連絡先がありません。"</string>
-    <string name="noFavorites">"お気に入りがありません。"</string>
+    <string name="noContactsWithPhoneNumbers">"電話番号付きの連絡先はありません。"</string>
+    <string name="noFavorites">"お気に入りなし"</string>
     <string name="select_group_title">"グループ"</string>
     <string name="groupEmpty">"「<xliff:g id="GROUPNAME">%s</xliff:g>」グループには何も登録されていません。"</string>
     <string name="showAllGroups">"すべての連絡先"</string>
-    <string name="syncAllGroups">"全連絡先の同期を取る"</string>
+    <string name="syncAllGroups">"全連絡先を同期"</string>
     <string name="groupNameMyContacts">"Myコンタクト"</string>
     <string name="groupNameWithPhones">"電話番号のある連絡先"</string>
     <string name="contactCreatedToast">"連絡先を作成しました。"</string>
     <string name="contactSavedToast">"連絡先を保存しました。"</string>
     <string name="listSeparatorCallNumber">"電話をかける"</string>
+    <string name="listSeparatorCallNumber_edit">"電話番号"</string>
     <string name="listSeparatorSendSmsMms">"SMS/MMSを送信"</string>
     <string name="listSeparatorSendEmail">"メールを送信"</string>
+    <string name="listSeparatorSendEmail_edit">"メールアドレス"</string>
     <string name="listSeparatorSendIm">"インスタントメッセージを送信"</string>
-    <string name="listSeparatorMapAddress">"住所を地図でみる"</string>
-    <string name="listSeparatorOrganizations">"組織"</string>
+    <string name="listSeparatorSendIm_edit">"チャットアドレス"</string>
+    <string name="listSeparatorMapAddress">"地図でみる"</string>
+    <string name="listSeparatorMapAddress_edit">"住所"</string>
+    <string name="listSeparatorOrganizations">"勤務先情報"</string>
     <string name="listSeparatorOtherInformation">"その他の情報"</string>
+    <string name="listSeparatorOtherInformation_edit">"その他のオプション"</string>
+    <string name="listSeparatorMore_edit">"開く"</string>
     <string name="contactsIconLabel">"連絡先"</string>
     <string name="contactsFavoritesLabel">"お気に入り"</string>
     <string name="dialerIconLabel">"通話"</string>
-    <string name="recentCallsIconLabel">"通話ログ"</string>
+    <string name="recentCallsIconLabel">"通話履歴"</string>
     <string name="liveFolderAll">"すべての連絡先"</string>
     <string name="liveFolderFavorites">"スター付きの連絡先"</string>
     <string name="liveFolderPhone">"電話番号のある連絡先"</string>
     <string name="menu_sendTextMessage">"SMSメッセージを送信"</string>
     <string name="recentCalls_callNumber">"<xliff:g id="NAME">%s</xliff:g>さんに発信"</string>
-    <string name="recentCalls_editNumberBeforeCall">"番号を編集して発信"</string>
+    <string name="recentCalls_editNumberBeforeCall">"発信前に番号を編集"</string>
     <string name="recentCalls_addToContact">"連絡先に追加"</string>
-    <string name="recentCalls_removeFromRecentList">"通話ログを削除"</string>
-    <string name="recentCalls_deleteAll">"すべてのログをクリア"</string>
-    <string name="recentCalls_empty">"通話ログはありません。"</string>
-    <string name="imei">"IMEI"</string>
+    <string name="recentCalls_removeFromRecentList">"通話履歴から消去"</string>
+    <string name="recentCalls_deleteAll">"通話履歴を全件消去"</string>
+    <string name="recentCalls_empty">"通話履歴なし"</string>
+    <string name="imei">"IMEI（端末識別番号）"</string>
     <string name="voicemail">"ボイスメール"</string>
     <string name="unknown">"不明"</string>
     <string name="private_num">"非通知番号"</string>
-    <string name="dialerKeyboardHintText">"番号をキーボードから入力してください"</string>
-    <string name="dialerDialpadHintText">"ダイヤルして通話を追加"</string>
-    <string name="simContacts_emptyLoading">"SIMカードからロードしています..."</string>
+    <string name="dialerKeyboardHintText">"キーボードで番号を入力してください"</string>
+    <string name="dialerDialpadHintText">"ダイヤルして追加"</string>
+    <string name="simContacts_emptyLoading">"SIMカードから読み取り中..."</string>
     <string name="simContacts_title">"SIMカードの連絡先"</string>
-    <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Googleコンタクトと同期を取ります。"</font>" "\n"同期が終わると、いつでもこの携帯電話で連絡先を使用できます。"</string>
-    <string name="noContactsHelpText">"登録されている連絡先がありません。"\n\n"連絡先を追加するには["<font fgcolor="#ffffffff"><b>"メニュー"</b></font>"]を押して、次のどれかを選択します。"\n\n"        "\n<li>"["<font fgcolor="#ffffffff"><b>"同期グループを編集"</b></font>"]-新規または既存のGoogleアカウントから追加する場合"\n</li>\n"        "\n<li>"["<font fgcolor="#ffffffff"><b>"新しい連絡先"</b></font>"]-最初から新しい連絡先を作成する場合"\n</li>\n"        "\n<li>"["<font fgcolor="#ffffffff"><b>"連絡先をインポート"</b></font>"]-SIMカードから連絡先を追加する場合"\n</li></string>
-    <string name="seclectSyncGroups_title">"同期を取るグループを選択"</string>
+    <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Googleアカウントの連絡先同期"</font>" "\n"Googleサービスで使っている連絡先をこの携帯電話でも使えるようになります。"</string>
+    <!-- no translation found for noContactsHelpText (2249195687463896364) -->
+    <skip />
+    <!-- no translation found for noContactsHelpTextWithSync (4927701496550314555) -->
+    <skip />
+    <string name="seclectSyncGroups_title">"同期するグループを選択"</string>
     <string name="liveFolder_all_label">"すべての連絡先"</string>
     <string name="liveFolder_favorites_label">"スター付き"</string>
     <string name="liveFolder_phones_label">"電話"</string>
     <string name="dialer_useDtmfDialpad">"プッシュホン式キーパッドを使う"</string>
     <string name="dialer_returnToInCallScreen">"保留中の通話に戻る"</string>
     <string name="dialer_addAnotherCall">"別の通話を追加"</string>
-    <!-- no translation found for callDetailTitle (5340227785196217938) -->
+    <string name="callDetailTitle">"通話詳細"</string>
+    <string name="toast_call_detail_error">"通話要求の詳細が読み込めませんでした。"</string>
+    <string name="call_type">"入力"</string>
+    <string name="type_incoming">"通話着信"</string>
+    <string name="type_outgoing">"通話送信"</string>
+    <string name="type_missed">"不在着信"</string>
+    <string name="call_time">"時間"</string>
+    <string name="datetime_relative">"<xliff:g id="DATETIME">%1$s</xliff:g> (<xliff:g id="RELATIVE">%2$s</xliff:g>)"</string>
+    <string name="call_duration">"経過時間"</string>
+    <string name="header_actions">"操作"</string>
+    <string name="ringtone_spinner">"着信音: <xliff:g id="RINGTONE">%1$s</xliff:g>"</string>
+    <string name="add_more_items">"その他の項目を追加"</string>
+    <string name="actionCall">"<xliff:g id="TYPE">%s</xliff:g>に発信"</string>
+    <string name="actionEmail">"<xliff:g id="TYPE">%s</xliff:g>にメールを送信"</string>
+    <string name="actionText">"<xliff:g id="TYPE">%s</xliff:g>にテキストを送信"</string>
+    <string name="actionChat">"<xliff:g id="TYPE">%s</xliff:g>を使用してチャット"</string>
+    <string name="actionMap">"<xliff:g id="TYPE">%s</xliff:g>の住所を表示"</string>
+    <string name="actionIncomingCall">"着信"</string>
+    <string name="detailIncomingCallsGoToVoicemail">"直接ボイスメールに送信します"</string>
+    <string name="detailsRingtone">"<xliff:g id="RINGTONE_NAME">%s</xliff:g>に設定"</string>
+    <string name="callBack">"コールバック"</string>
+    <!-- no translation found for callAgain (3197312117049874778) -->
     <skip />
-    <!-- no translation found for toast_call_detail_error (7200975244804730096) -->
+    <!-- no translation found for returnCall (8171961914203617813) -->
     <skip />
-    <!-- no translation found for call_type (3213526349444862087) -->
-    <skip />
-    <!-- no translation found for type_incoming (6502076603836088532) -->
-    <skip />
-    <!-- no translation found for type_outgoing (343108709599392641) -->
-    <skip />
-    <!-- no translation found for type_missed (2720502601640509542) -->
-    <skip />
-    <!-- no translation found for call_time (5805575214626630975) -->
-    <skip />
-    <!-- no translation found for datetime_relative (2906207446040994658) -->
-    <skip />
-    <!-- no translation found for call_duration (3941950339482985532) -->
-    <skip />
-    <!-- no translation found for header_actions (229583643365836321) -->
+    <!-- no translation found for callDetailsDurationFormat (8157706382818184268) -->
     <skip />
 </resources>

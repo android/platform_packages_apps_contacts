@@ -17,76 +17,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
->
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:baselineAligned="false"
-        android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:baselineAligned="false"
+    android:gravity="top"
+    android:paddingRight="?android:attr/scrollbarSize"
     >
 
-        <Button android:id="@+id/label"
-            android:layout_width="100dip"
-            android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
+    <Button android:id="@+id/label"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
         />
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        >
+
+        <EditText android:id="@+id/data"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-        >
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:baselineAligned="false"
-                android:gravity="center_vertical"
-            >
+            android:layout_marginLeft="4dip"
+            />
 
-                <EditText android:id="@+id/data"
-                    android:layout_width="0dip"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dip"
-                />
+        <EditText android:id="@+id/data2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dip"
+            />
 
-                <ImageButton android:id="@+id/delete"
-                    android:src="@android:drawable/ic_delete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:baselineAligned="false"
-                android:gravity="center_vertical"
-            >
-
-                <EditText android:id="@+id/data2"
-                    android:layout_width="0dip"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dip"
-                />
-
-                <ImageButton android:id="@+id/delete2"
-                    android:src="@android:drawable/ic_delete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                />
-            </LinearLayout>
-        </LinearLayout>
     </LinearLayout>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dip"
-        android:background="@android:drawable/divider_horizontal_dark"
-    />
+    <ImageButton android:id="@+id/delete"
+        style="@style/MinusButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
 </LinearLayout>

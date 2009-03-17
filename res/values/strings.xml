@@ -15,8 +15,13 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Title for the activity that shows contacts -->
+    <!-- Title for the activity that shows contacts.  This is the name
+         used in the Launcher icon. -->
     <string name="contactsList">Contacts</string>
+
+    <!-- Title for the activity that dials the phone.  This is the name
+         used in the Launcher icon. -->
+    <string name="launcherDialer">Dialer</string>
 
     <!-- Name of activity that allows users to create shortcuts on the home screen to a contact.
          This shows up in a list of things like bookmark, folder, music playlist, etc -->
@@ -49,6 +54,9 @@
 
     <!-- Hint text in the search box when the user hits the Search key while in the contacts app -->
     <string name="searchHint">Search contacts</string>
+
+    <!-- Menu item to search contacts -->
+    <string name="menu_search">Search</string>
 
     <!-- Menu item to create a new contact -->
     <string name="menu_newContact">New contact</string>
@@ -97,16 +105,10 @@
     <string name="deleteConfirmation">This contact will be deleted.</string>
 
     <!-- Menu item to indicate you are done editing a contact and want to save the changes you've made -->
-    <string name="menu_done">Save</string>
+    <string name="menu_done">Done</string>
 
     <!-- Menu item to indicate you want to stop editing a contact and NOT save the changes you've made -->
-    <string name="menu_doNotSave">Discard changes</string>
-
-    <!-- Button to indicate you are done editing a contact and want to save the changes you've made -->
-    <string name="button_save">Save</string>
-
-    <!-- Button to indicate you want to stop editing a contact and NOT save the changes you've made -->
-    <string name="button_discard">Discard changes</string>
+    <string name="menu_doNotSave">Revert</string>
 
     <!-- The title of the activity that edits and existing contact -->
     <string name="editContact_title_edit">Edit contact</string>
@@ -212,7 +214,7 @@
     <string name="importFromSim">Import contacts</string>
 
     <!-- Check box label that allows calls to the contact to be sent directly to voicemail -->
-    <string name="send_to_voicemail_checkbox">Send calls directly to voicemail.</string>
+    <string name="send_to_voicemail_checkbox">Send calls directly to voicemail</string>
 
     <!-- String letting the user know that calls from the contact they're viewing will be sent directly to voicemail -->
     <string name="send_to_voicemail_view">Calls are sent directly to voicemail.</string>
@@ -262,24 +264,42 @@
 
     <!-- Separator in the contact details list describing that the items below it will place a call when clicked -->
     <string name="listSeparatorCallNumber">Dial number</string>
-    
+
+    <!-- Section header in the Edit Contacts screen for phone numbers -->
+    <string name="listSeparatorCallNumber_edit">Phone numbers</string>
+
     <!-- Separator in the contact details list describing that the items below it will send an SMS/MMS to a phone number -->
     <string name="listSeparatorSendSmsMms">Send SMS/MMS</string>
 
     <!-- Separator in the contact details list describing that the items below it will send an email -->
     <string name="listSeparatorSendEmail">Send email</string>
 
+    <!-- Section header in the Edit Contacts screen for E-mail addresses -->
+    <string name="listSeparatorSendEmail_edit">Email addresses</string>
+
     <!-- Separator in the contact details list describing that the items below it will send an IM -->
     <string name="listSeparatorSendIm">Send instant message</string>
 
+    <!-- Section header in the Edit Contacts screen for Instant messanger accounts -->
+    <string name="listSeparatorSendIm_edit">Chat addresses</string>
+
     <!-- Separator in the contact details list describing that the items below it will open maps with the given address -->
     <string name="listSeparatorMapAddress">Map address</string>
+
+    <!-- Section header in the Edit Contacts screen for map addresses -->
+    <string name="listSeparatorMapAddress_edit">Postal addresses</string>
 
     <!-- Separator in the contact details list describing that the items below are non-actionable organization information -->
     <string name="listSeparatorOrganizations">Organizations</string>
 
     <!-- Separator in the contact details list describing that the items below are random other non-actionable information about a contact -->
     <string name="listSeparatorOtherInformation">Other information</string>
+
+    <!-- Section header in the Edit Contacts screen for other options, such as setting ringtone -->
+    <string name="listSeparatorOtherInformation_edit">Other options</string>
+
+    <!-- Section header in the Edit Contacts screen for the "Add more items" button -->
+    <string name="listSeparatorMore_edit">More</string>
 
     <!-- The description text for the contacts tab. Space is limited for this string, so the shorter the better -->
     <string name="contactsIconLabel">Contacts</string>
@@ -349,8 +369,14 @@
     <string name="contactsSyncPlug"><font fgcolor="#ffffffff">Sync your Google contacts!</font>
     \nAfter syncing to your phone, your contacts will be available to you wherever you go.</string>
 
-    <!-- Displayed full screen when the user has no contacts and they are displaying the My Contacts group -->
+    <!-- Displayed full screen when the user has no contacts and they are displaying the My Contacts group, and contact syncing is disabled -->
     <string name="noContactsHelpText">"You don't have any contacts.\n\nTo add contacts, press <font fgcolor="#ffffffff"><b>Menu</b></font> and select:\n
+        \n<li><font fgcolor="#ffffffff"><b>New contact</b></font> to create a new contact from scratch\n</li>
+        \n<li><font fgcolor="#ffffffff"><b>Import contacts</b></font> to add contacts from your SIM card\n</li>"
+    </string>
+    
+    <!-- Displayed full screen when the user has no contacts and they are displaying the My Contacts group, and contact syncing is enabled -->
+    <string name="noContactsHelpTextWithSync">"You don't have any contacts.\n\nTo add contacts, press <font fgcolor="#ffffffff"><b>Menu</b></font> and select:\n
         \n<li><font fgcolor="#ffffffff"><b>Edit sync groups</b></font> to add from a new or existing Google account\n</li>
         \n<li><font fgcolor="#ffffffff"><b>New contact</b></font> to create a new contact from scratch\n</li>
         \n<li><font fgcolor="#ffffffff"><b>Import contacts</b></font> to add contacts from your SIM card\n</li>"
@@ -392,9 +418,13 @@
     <!-- In call detail screen, label for call type -->
     <string name="call_type">Type</string>
 
-    <!-- In call detail screen, expanded titles for call types -->
+    <!-- Title for incoming call details screen -->
     <string name="type_incoming">Incoming call</string>
+    
+    <!-- Title for outgoing call details screen -->
     <string name="type_outgoing">Outgoing call</string>
+
+    <!-- Title for missed call details screen -->
     <string name="type_missed">Missed call</string>
 
     <!-- In call detail screen, label for call date/time -->
@@ -409,4 +439,54 @@
     <!-- In call detail screen, header title for actions section -->
     <string name="header_actions">Actions</string>
 
+    <!-- In edit contact screen, combine the actual ringtone name with prefix for placement in spinner -->
+    <string name="ringtone_spinner">"Ringtone: <xliff:g id="ringtone" example="Caribbean Ice">%1$s</xliff:g>"</string>
+
+    <!-- In edit contact screen, add more info spinner title -->
+    <string name="add_more_items">Add more items</string>
+
+    <!-- Action string for calling a phone number. -->
+    <string name="actionCall">Call <xliff:g id="type" example="mobile">%s</xliff:g></string>
+
+    <!-- Action string for sending an email to an email address. -->
+    <string name="actionEmail">Email <xliff:g id="type" example="home">%s</xliff:g></string>
+
+    <!-- Action string for sending a text message to a phone number. -->
+    <string name="actionText">Text <xliff:g id="type" example="mobile">%s</xliff:g></string>
+
+    <!-- Action string for sending an instant message to a chat buddy. -->
+    <string name="actionChat">Chat using <xliff:g id="type" example="Google Talk">%s</xliff:g></string>
+
+    <!-- Action string for viewing an address on a map. -->
+    <string name="actionMap">View <xliff:g id="type" example="home">%s</xliff:g> address</string>
+
+    <!-- Description for incoming calls going to voice mail vs. not -->
+    <string name="actionIncomingCall">Incoming calls</string>
+    
+    <!-- Detail text for incoming calls going to voice mail -->
+    <string name="detailIncomingCallsGoToVoicemail">Will be sent directly to voicemail</string>
+
+    <!-- Description of what the contact specific ringtone is set to -->
+    <string name="detailsRingtone">Set to <xliff:g id="ringtone_name" example="Flutey Phone">%s</xliff:g></string>
+    
+    <!-- Action string for calling back a number in the call log -->
+    <string name="callBack">Call back</string>
+
+    <!-- Action string for calling a number in the call log again -->
+    <string name="callAgain">Call again</string>
+
+    <!-- Action string for returning a missed call in the call log -->
+    <string name="returnCall">Return call</string>
+
+    <!-- A nicely formatted call duration displayed when viewing call details. For example "42 mins 28 secs" -->
+    <string name="callDetailsDurationFormat"><xliff:g id="minutes" example="42">%s</xliff:g> mins <xliff:g id="seconds" example="28">%s</xliff:g> secs</string>
+
+    <!-- A list separator for the Favorites tab indicating that items below it are frequently called contacts rather than starred contacts -->
+    <string name="favoritesFrquentSeparator">Frequently called</string>
+
+    <!-- Dialog title when prompting before creating a contact -->
+    <string name="add_contact_dlg_title">Add Contact</string>
+    <!-- Dialog message when prompting before creating a contact. Includes
+         the email address, e.g. "Add xyz@foo.com to contacts?" -->
+    <string name="add_contact_dlg_message_fmt">Add \"<xliff:g id="email">%s</xliff:g>\" to contacts?</string>
 </resources>

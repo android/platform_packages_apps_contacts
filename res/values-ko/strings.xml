@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="contactsList">"연락처"</string>
+    <!-- no translation found for launcherDialer (140610573639849799) -->
+    <skip />
+    <string name="shortcutContact">"연락처"</string>
+    <string name="starredList">"별표 표시된 연락처"</string>
+    <string name="frequentList">"자주 거는 전화"</string>
+    <string name="strequentList">"자주 거는 전화"</string>
+    <string name="viewContactTitle">"연락처 상세정보"</string>
+    <string name="viewContactDesription">"연락처 보기"</string>
+    <string name="editContactDescription">"연락처 편집"</string>
+    <string name="insertContactDescription">"연락처 만들기"</string>
+    <string name="searchHint">"연락처 검색"</string>
+    <string name="menu_newContact">"새 연락처"</string>
+    <string name="menu_viewContact">"연락처 보기"</string>
+    <string name="menu_callNumber">"<xliff:g id="NAME">%s</xliff:g>에게 전화걸기"</string>
+    <string name="menu_addStar">"즐겨찾기에 추가"</string>
+    <string name="menu_removeStar">"즐겨찾기에서 삭제"</string>
+    <string name="menu_showBarcode">"바코드 표시"</string>
+    <string name="menu_editContact">"연락처 편집"</string>
+    <string name="menu_deleteContact">"연락처 삭제"</string>
+    <string name="menu_call">"전화걸기"</string>
+    <string name="menu_sendSMS">"SMS/MMS 보내기"</string>
+    <string name="menu_sendEmail">"이메일 보내기"</string>
+    <string name="menu_viewAddress">"지도상의 주소"</string>
+    <string name="menu_makeDefaultNumber">"기본 번호로 설정"</string>
+    <string name="deleteConfirmation_title">"삭제"</string>
+    <string name="deleteConfirmation">"연락처가 삭제됩니다."</string>
+    <string name="menu_done">"완료"</string>
+    <!-- no translation found for menu_doNotSave (2174577548513895144) -->
+    <skip />
+    <string name="editContact_title_edit">"연락처 편집"</string>
+    <string name="editContact_title_insert">"새 연락처"</string>
+    <string name="menu_addItem">"추가정보"</string>
+    <string name="label_phonetic_name">"소리나는 대로"</string>
+    <string name="label_notes">"메모"</string>
+    <string name="label_ringtone">"벨소리"</string>
+    <string name="ghostData_name">"이름"</string>
+    <string name="ghostData_phonetic_name">"소리나는 대로의 이름"</string>
+    <string name="ghostData_company">"회사"</string>
+    <string name="ghostData_title">"직급"</string>
+    <string name="ghostData_im">"IM 이름"</string>
+    <string name="ghostData_notes">"내 메모"</string>
+    <string name="ghostData_phone">"전화번호"</string>
+    <string name="ghostData_email">"이메일 주소"</string>
+    <string name="ghostData_postal">"주소"</string>
+    <string name="invalidContactMessage">"연락처가 없습니다."</string>
+    <string name="pickerNewContactHeader">"새 연락처 만들기"</string>
+    <string name="selectLabel">"라벨 선택"</string>
+    <string name="phoneLabelsGroup">"전화"</string>
+    <string name="emailLabelsGroup">"이메일"</string>
+    <string name="imLabelsGroup">"IM"</string>
+    <string name="postalLabelsGroup">"주소"</string>
+    <string name="otherLabelsGroup">"기타"</string>
+  <string-array name="otherLabels">
+    <item>"조직"</item>
+    <item>"메모"</item>
+  </string-array>
+    <string name="errorDialogTitle">"사진 없음"</string>
+    <string name="photoPickerNotFoundText">"전화기에 사진이 없습니다."</string>
+    <string name="attachToContact">"연락처 아이콘"</string>
+    <string name="customLabelPickerTitle">"맞춤 라벨 이름"</string>
+    <string name="menu_displayGroup">"그룹 표시"</string>
+    <string name="syncGroupPreference">"동기화 그룹 편집"</string>
+    <string name="importFromSim">"연락처 가져오기"</string>
+    <string name="send_to_voicemail_checkbox">"음성메일에 직접 전화걸기"</string>
+    <string name="send_to_voicemail_view">"수신전화가 바로 음성메일로 연결됩니다."</string>
+    <string name="default_ringtone">"기본 벨소리"</string>
+    <string name="addPicture">"사진 추가"</string>
+    <string name="removePicture">"사진 제거"</string>
+    <string name="noContacts">"연락처가 없습니다."</string>
+    <string name="noContactsWithPhoneNumbers">"전화번호가 포함된 연락처가 없습니다."</string>
+    <string name="noFavorites">"자주 거는 전화가 없습니다."</string>
+    <string name="select_group_title">"그룹"</string>
+    <string name="groupEmpty">"\"<xliff:g id="GROUPNAME">%s</xliff:g>\" 그룹이 비었습니다."</string>
+    <string name="showAllGroups">"모든 연락처"</string>
+    <string name="syncAllGroups">"모든 연락처 동기화"</string>
+    <string name="groupNameMyContacts">"내 연락처"</string>
+    <string name="groupNameWithPhones">"전화번호가 포함된 연락처"</string>
+    <string name="contactCreatedToast">"연락처가 생성되었습니다."</string>
+    <string name="contactSavedToast">"연락처가 저장되었습니다."</string>
+    <string name="listSeparatorCallNumber">"전화번호"</string>
+    <string name="listSeparatorCallNumber_edit">"전화번호"</string>
+    <string name="listSeparatorSendSmsMms">"SMS/MMS 보내기"</string>
+    <string name="listSeparatorSendEmail">"이메일 보내기"</string>
+    <string name="listSeparatorSendEmail_edit">"이메일 주소"</string>
+    <string name="listSeparatorSendIm">"인스턴트 메시지 보내기"</string>
+    <string name="listSeparatorSendIm_edit">"채팅 주소"</string>
+    <string name="listSeparatorMapAddress">"지도상의 주소"</string>
+    <string name="listSeparatorMapAddress_edit">"우편 주소"</string>
+    <string name="listSeparatorOrganizations">"조직"</string>
+    <string name="listSeparatorOtherInformation">"기타 정보"</string>
+    <string name="listSeparatorOtherInformation_edit">"기타 옵션"</string>
+    <string name="listSeparatorMore_edit">"더보기"</string>
+    <string name="contactsIconLabel">"연락처"</string>
+    <string name="contactsFavoritesLabel">"자주 거는 전화"</string>
+    <string name="dialerIconLabel">"전화걸기"</string>
+    <string name="recentCallsIconLabel">"통화기록"</string>
+    <string name="liveFolderAll">"전체 주소록"</string>
+    <string name="liveFolderFavorites">"별표 표시된 주소"</string>
+    <string name="liveFolderPhone">"전화번호 주소록"</string>
+    <string name="menu_sendTextMessage">"SMS 메시지 보내기"</string>
+    <string name="recentCalls_callNumber">"<xliff:g id="NAME">%s</xliff:g>에게 전화걸기"</string>
+    <string name="recentCalls_editNumberBeforeCall">"전화 걸기 전에 번호 편집"</string>
+    <string name="recentCalls_addToContact">"연락처에 추가"</string>
+    <string name="recentCalls_removeFromRecentList">"통화기록에서 제거"</string>
+    <string name="recentCalls_deleteAll">"통화기록 지우기"</string>
+    <string name="recentCalls_empty">"통화기록이 없습니다."</string>
+    <string name="imei">"IMEI"</string>
+    <string name="voicemail">"음성메일"</string>
+    <string name="unknown">"알 수 없음"</string>
+    <string name="private_num">"비공개 번호"</string>
+    <string name="dialerKeyboardHintText">"키보드를 사용하여 전화걸기"</string>
+    <string name="dialerDialpadHintText">"통화를 추가할 전화번호 입력"</string>
+    <string name="simContacts_emptyLoading">"SIM 카드에서 로드 중…"</string>
+    <string name="simContacts_title">"SIM 카드 연락처"</string>
+    <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Google 연락처를 동기화하세요."</font>" "\n"연락처를 전화기로 동기화하면 어디에서나 연락처를 확인할 수 있습니다."</string>
+    <!-- no translation found for noContactsHelpText (2249195687463896364) -->
+    <skip />
+    <!-- no translation found for noContactsHelpTextWithSync (4927701496550314555) -->
+    <skip />
+    <string name="seclectSyncGroups_title">"동기화할 그룹 선택"</string>
+    <string name="liveFolder_all_label">"전체 주소록"</string>
+    <string name="liveFolder_favorites_label">"중요편지함"</string>
+    <string name="liveFolder_phones_label">"전화번호"</string>
+    <string name="dialer_useDtmfDialpad">"터치톤 키패드 사용"</string>
+    <string name="dialer_returnToInCallScreen">"진행 중인 통화로 돌아가기"</string>
+    <string name="dialer_addAnotherCall">"통화 추가"</string>
+    <string name="callDetailTitle">"통화 세부정보"</string>
+    <string name="toast_call_detail_error">"요청한 통화의 세부정보를 볼 수 없습니다."</string>
+    <string name="call_type">"유형"</string>
+    <string name="type_incoming">"수신통화"</string>
+    <string name="type_outgoing">"발신통화"</string>
+    <string name="type_missed">"부재중 전화"</string>
+    <string name="call_time">"시간"</string>
+    <string name="datetime_relative">"<xliff:g id="DATETIME">%1$s</xliff:g>(<xliff:g id="RELATIVE">%2$s</xliff:g>)"</string>
+    <string name="call_duration">"통화시간"</string>
+    <string name="header_actions">"작업"</string>
+    <string name="ringtone_spinner">"벨소리: <xliff:g id="RINGTONE">%1$s</xliff:g>"</string>
+    <string name="add_more_items">"항목 더 추가"</string>
+    <string name="actionCall">"<xliff:g id="TYPE">%s</xliff:g>(으)로 전화걸기"</string>
+    <string name="actionEmail">"<xliff:g id="TYPE">%s</xliff:g>(으)로 이메일 보내기"</string>
+    <string name="actionText">"<xliff:g id="TYPE">%s</xliff:g>(으)로 문자 보내기"</string>
+    <string name="actionChat">"<xliff:g id="TYPE">%s</xliff:g> 채팅"</string>
+    <string name="actionMap">"<xliff:g id="TYPE">%s</xliff:g> 주소 보기"</string>
+    <string name="actionIncomingCall">"수신 전화"</string>
+    <string name="detailIncomingCallsGoToVoicemail">"음성메일로 바로 보냄"</string>
+    <string name="detailsRingtone">"<xliff:g id="RINGTONE_NAME">%s</xliff:g>(으)로 설정"</string>
+    <string name="callBack">"콜백"</string>
+    <!-- no translation found for callAgain (3197312117049874778) -->
+    <skip />
+    <!-- no translation found for returnCall (8171961914203617813) -->
+    <skip />
+    <!-- no translation found for callDetailsDurationFormat (8157706382818184268) -->
+    <skip />
+</resources>

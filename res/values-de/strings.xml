@@ -16,6 +16,8 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="contactsList">"Kontakte"</string>
+    <!-- no translation found for launcherDialer (140610573639849799) -->
+    <skip />
     <string name="shortcutContact">"Kontakt"</string>
     <string name="starredList">"Markiert"</string>
     <string name="frequentList">"Häufig"</string>
@@ -28,10 +30,9 @@
     <string name="menu_newContact">"Neuer Kontakt"</string>
     <string name="menu_viewContact">"Kontakt anzeigen"</string>
     <string name="menu_callNumber">"<xliff:g id="NAME">%s</xliff:g> anrufen"</string>
-    <string name="menu_addStar">"Zu Favoriten hinzufügen"</string>
+    <string name="menu_addStar">"Favoriten hinzufügen"</string>
     <string name="menu_removeStar">"Aus Favoriten entfernen"</string>
-    <!-- no translation found for menu_showBarcode (309973637178814132) -->
-    <skip />
+    <string name="menu_showBarcode">"Barcode anzeigen"</string>
     <string name="menu_editContact">"Kontakt bearbeiten"</string>
     <string name="menu_deleteContact">"Kontakt löschen"</string>
     <string name="menu_call">"Anruf"</string>
@@ -41,23 +42,20 @@
     <string name="menu_makeDefaultNumber">"Als Standardnummer festlegen"</string>
     <string name="deleteConfirmation_title">"Löschen"</string>
     <string name="deleteConfirmation">"Dieser Kontakt wird gelöscht."</string>
-    <string name="menu_done">"Speichern"</string>
-    <string name="menu_doNotSave">"Änderungen löschen"</string>
-    <string name="button_save">"Speichern"</string>
-    <string name="button_discard">"Änderungen löschen"</string>
+    <string name="menu_done">"Fertig"</string>
+    <!-- no translation found for menu_doNotSave (2174577548513895144) -->
+    <skip />
     <string name="editContact_title_edit">"Kontakt bearbeiten"</string>
     <string name="editContact_title_insert">"Neuer Kontakt"</string>
     <string name="menu_addItem">"Weitere Informationen"</string>
-    <!-- no translation found for label_phonetic_name (2288082649573927286) -->
-    <skip />
+    <string name="label_phonetic_name">"Phonetisch"</string>
     <string name="label_notes">"Notizen"</string>
     <string name="label_ringtone">"Klingelton"</string>
     <string name="ghostData_name">"Vor- und Nachname"</string>
-    <!-- no translation found for ghostData_phonetic_name (7852749081984070902) -->
-    <skip />
+    <string name="ghostData_phonetic_name">"Phonetischer Name"</string>
     <string name="ghostData_company">"Unternehmen"</string>
     <string name="ghostData_title">"Position"</string>
-    <string name="ghostData_im">"IM-Name"</string>
+    <string name="ghostData_im">"Chat-Name"</string>
     <string name="ghostData_notes">"Meine Notiz"</string>
     <string name="ghostData_phone">"Telefonnummer"</string>
     <string name="ghostData_email">"E-Mail-Adresse"</string>
@@ -67,7 +65,7 @@
     <string name="selectLabel">"Wählen Sie ein Label aus."</string>
     <string name="phoneLabelsGroup">"Telefon"</string>
     <string name="emailLabelsGroup">"E-Mail"</string>
-    <string name="imLabelsGroup">"IM"</string>
+    <string name="imLabelsGroup">"Chat"</string>
     <string name="postalLabelsGroup">"Postanschrift"</string>
     <string name="otherLabelsGroup">"Sonstiges"</string>
   <string-array name="otherLabels">
@@ -77,12 +75,11 @@
     <string name="errorDialogTitle">"Keine Bilder"</string>
     <string name="photoPickerNotFoundText">"Auf dem Telefon sind keine Bilder verfügbar."</string>
     <string name="attachToContact">"Kontaktsymbol"</string>
-    <!-- no translation found for customLabelPickerTitle (1081475101983255212) -->
-    <skip />
+    <string name="customLabelPickerTitle">"Name des benutzerdefinierten Labels"</string>
     <string name="menu_displayGroup">"Gruppe anzeigen"</string>
-    <string name="syncGroupPreference">"Synchron. bearbeiten"</string>
+    <string name="syncGroupPreference">"Synchronisierte Gruppen bearbeiten"</string>
     <string name="importFromSim">"Kontakte importieren"</string>
-    <string name="send_to_voicemail_checkbox">"Anrufe direkt an Mailbox senden"</string>
+    <string name="send_to_voicemail_checkbox">"Anrufe direkt an Voicemail senden"</string>
     <string name="send_to_voicemail_view">"Anrufe werden direkt an Mailbox gesendet"</string>
     <string name="default_ringtone">"Standard"</string>
     <string name="addPicture">"Symbol hinzufügen"</string>
@@ -90,8 +87,7 @@
     <string name="noContacts">"Keine Kontakte"</string>
     <string name="noContactsWithPhoneNumbers">"Keine Kontakte mit Telefonnummern"</string>
     <string name="noFavorites">"Keine Favoriten"</string>
-    <!-- no translation found for select_group_title (7955698611959835612) -->
-    <skip />
+    <string name="select_group_title">"Gruppen"</string>
     <string name="groupEmpty">"Ihre Gruppe \"<xliff:g id="GROUPNAME">%s</xliff:g>\" ist leer."</string>
     <string name="showAllGroups">"Alle Kontakte"</string>
     <string name="syncAllGroups">"Alle Kontakte synchronisieren"</string>
@@ -100,26 +96,29 @@
     <string name="contactCreatedToast">"Kontakt erstellt"</string>
     <string name="contactSavedToast">"Kontakt gespeichert"</string>
     <string name="listSeparatorCallNumber">"Rufnummer"</string>
+    <string name="listSeparatorCallNumber_edit">"Telefonnummern"</string>
     <string name="listSeparatorSendSmsMms">"SMS/MMS senden"</string>
     <string name="listSeparatorSendEmail">"E-Mail senden"</string>
-    <string name="listSeparatorSendIm">"Per Chat (IM) kontaktieren"</string>
+    <string name="listSeparatorSendEmail_edit">"E-Mail-Adressen"</string>
+    <string name="listSeparatorSendIm">"Per Chat kontaktieren"</string>
+    <string name="listSeparatorSendIm_edit">"Chat-Adressen"</string>
     <string name="listSeparatorMapAddress">"Adresse in Maps"</string>
+    <string name="listSeparatorMapAddress_edit">"Postanschrift"</string>
     <string name="listSeparatorOrganizations">"Organisationen"</string>
     <string name="listSeparatorOtherInformation">"Mehr Informationen"</string>
+    <string name="listSeparatorOtherInformation_edit">"Sonstige Optionen"</string>
+    <string name="listSeparatorMore_edit">"Mehr"</string>
     <string name="contactsIconLabel">"Kontakte"</string>
     <string name="contactsFavoritesLabel">"Favoriten"</string>
     <string name="dialerIconLabel">"Telefon"</string>
     <string name="recentCallsIconLabel">"Anrufe"</string>
-    <!-- no translation found for liveFolderAll (4789010460767506206) -->
-    <skip />
-    <!-- no translation found for liveFolderFavorites (3100957542927222282) -->
-    <skip />
-    <!-- no translation found for liveFolderPhone (3739376066610926780) -->
-    <skip />
+    <string name="liveFolderAll">"Alle Kontakte"</string>
+    <string name="liveFolderFavorites">"Markierte Kontakte"</string>
+    <string name="liveFolderPhone">"Kontakte mit Telefonnummern"</string>
     <string name="menu_sendTextMessage">"SMS-Nachricht senden"</string>
     <string name="recentCalls_callNumber">"<xliff:g id="NAME">%s</xliff:g> anrufen"</string>
     <string name="recentCalls_editNumberBeforeCall">"Nummer vor Anruf bearbeiten"</string>
-    <string name="recentCalls_addToContact">"Kontakten hinzufügen"</string>
+    <string name="recentCalls_addToContact">"Zu Kontakten hinzufügen"</string>
     <string name="recentCalls_removeFromRecentList">"Aus Anrufliste entfernen"</string>
     <string name="recentCalls_deleteAll">"Anrufliste löschen"</string>
     <string name="recentCalls_empty">"Anrufliste ist leer"</string>
@@ -128,43 +127,46 @@
     <string name="unknown">"Unbekannt"</string>
     <string name="private_num">"Private Nummer"</string>
     <string name="dialerKeyboardHintText">"Mit Tastatur wählen"</string>
-    <!-- no translation found for dialerDialpadHintText (5824490365898349041) -->
-    <skip />
+    <string name="dialerDialpadHintText">"Zum Hinzufügen eines Anrufs wählen"</string>
     <string name="simContacts_emptyLoading">"Ladevorgang von SIM-Karte läuft..."</string>
     <string name="simContacts_title">"Kontakte auf SIM-Karte"</string>
     <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Synchronisieren Sie Ihre Google-Kontakte!"</font>" "\n"Nach der Synchronisierung stehen Ihnen Ihre Kontakte überall zur Verfügung."</string>
-    <string name="noContactsHelpText">"Sie haben keine Kontakte."\n\n"Um Kontakte hinzuzufügen, klicken Sie auf "<font fgcolor="#ffffffff"><b>"Menü"</b></font>" und wählen Sie "\n\n" "\n<li><font fgcolor="#ffffffff"><b>"Synchronisierte Gruppen bearbeiten"</b></font>", um Kontakte aus einem neuen oder bestehenden Google-Konto hinzuzufügen,"\n</li>\n" "\n<li><font fgcolor="#ffffffff"><b>"Neuer Kontakt"</b></font>", um einen ganz neuen Kontakt hinzuzufügen"\n</li>\n" "\n<li><font fgcolor="#ffffffff"><b>"Kontakte importieren"</b></font>", um Kontakte von Ihrer SIM-Karte hinzuzufügen"\n</li></string>
+    <!-- no translation found for noContactsHelpText (2249195687463896364) -->
+    <skip />
+    <!-- no translation found for noContactsHelpTextWithSync (4927701496550314555) -->
+    <skip />
     <string name="seclectSyncGroups_title">"Zu synchronisierende Gruppen auswählen"</string>
-    <!-- no translation found for liveFolder_all_label (1552523730090319259) -->
+    <string name="liveFolder_all_label">"Alle Kontakte"</string>
+    <string name="liveFolder_favorites_label">"Markiert"</string>
+    <string name="liveFolder_phones_label">"Telefone"</string>
+    <string name="dialer_useDtmfDialpad">"Telefontastatur verwenden"</string>
+    <string name="dialer_returnToInCallScreen">"Zurück zum Anruf läuft"</string>
+    <string name="dialer_addAnotherCall">"Anruf hinzufügen"</string>
+    <string name="callDetailTitle">"Anrufdetails"</string>
+    <string name="toast_call_detail_error">"Details für den angeforderten Anruf konnten nicht gelesen werden."</string>
+    <string name="call_type">"Typ"</string>
+    <string name="type_incoming">"Eingehender Anruf"</string>
+    <string name="type_outgoing">"Ausgehender Anruf"</string>
+    <string name="type_missed">"Verpasster Anruf"</string>
+    <string name="call_time">"Zeit"</string>
+    <string name="datetime_relative">"<xliff:g id="DATETIME">%1$s</xliff:g> (<xliff:g id="RELATIVE">%2$s</xliff:g>)"</string>
+    <string name="call_duration">"Dauer"</string>
+    <string name="header_actions">"Aktionen"</string>
+    <string name="ringtone_spinner">"Klingelton: <xliff:g id="RINGTONE">%1$s</xliff:g>"</string>
+    <string name="add_more_items">"Weitere Elemente hinzufügen"</string>
+    <string name="actionCall">"<xliff:g id="TYPE">%s</xliff:g> anrufen"</string>
+    <string name="actionEmail">"E-Mail an <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionText">"Text <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionChat">"Chat mit <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionMap">"<xliff:g id="TYPE">%s</xliff:g>-Adresse anzeigen"</string>
+    <string name="actionIncomingCall">"Eingehende Anrufe"</string>
+    <string name="detailIncomingCallsGoToVoicemail">"Wird direkt an Voicemail weitergeleitet"</string>
+    <string name="detailsRingtone">"Eingestellt auf <xliff:g id="RINGTONE_NAME">%s</xliff:g>"</string>
+    <string name="callBack">"Rückruf"</string>
+    <!-- no translation found for callAgain (3197312117049874778) -->
     <skip />
-    <!-- no translation found for liveFolder_favorites_label (2674341514070517105) -->
+    <!-- no translation found for returnCall (8171961914203617813) -->
     <skip />
-    <!-- no translation found for liveFolder_phones_label (1709786878793436245) -->
-    <skip />
-    <!-- no translation found for dialer_useDtmfDialpad (1707548397435075040) -->
-    <skip />
-    <!-- no translation found for dialer_returnToInCallScreen (3719386377550913067) -->
-    <skip />
-    <!-- no translation found for dialer_addAnotherCall (4205688819890074468) -->
-    <skip />
-    <!-- no translation found for callDetailTitle (5340227785196217938) -->
-    <skip />
-    <!-- no translation found for toast_call_detail_error (7200975244804730096) -->
-    <skip />
-    <!-- no translation found for call_type (3213526349444862087) -->
-    <skip />
-    <!-- no translation found for type_incoming (6502076603836088532) -->
-    <skip />
-    <!-- no translation found for type_outgoing (343108709599392641) -->
-    <skip />
-    <!-- no translation found for type_missed (2720502601640509542) -->
-    <skip />
-    <!-- no translation found for call_time (5805575214626630975) -->
-    <skip />
-    <!-- no translation found for datetime_relative (2906207446040994658) -->
-    <skip />
-    <!-- no translation found for call_duration (3941950339482985532) -->
-    <skip />
-    <!-- no translation found for header_actions (229583643365836321) -->
+    <!-- no translation found for callDetailsDurationFormat (8157706382818184268) -->
     <skip />
 </resources>

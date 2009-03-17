@@ -16,6 +16,8 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="contactsList">"Kontakty"</string>
+    <!-- no translation found for launcherDialer (140610573639849799) -->
+    <skip />
     <string name="shortcutContact">"Kontakt"</string>
     <string name="starredList">"Oznaczony gwiazdką"</string>
     <string name="frequentList">"Częste"</string>
@@ -40,20 +42,17 @@
     <string name="menu_makeDefaultNumber">"Ustaw ten numer jako domyślny"</string>
     <string name="deleteConfirmation_title">"Usuń"</string>
     <string name="deleteConfirmation">"Ten kontakt zostanie usunięty."</string>
-    <string name="menu_done">"Zapisz"</string>
-    <string name="menu_doNotSave">"Odrzuć zmiany"</string>
-    <string name="button_save">"Zapisz"</string>
-    <string name="button_discard">"Odrzuć zmiany"</string>
+    <string name="menu_done">"Gotowe"</string>
+    <!-- no translation found for menu_doNotSave (2174577548513895144) -->
+    <skip />
     <string name="editContact_title_edit">"Edytuj kontakt"</string>
     <string name="editContact_title_insert">"Nowy kontakt"</string>
     <string name="menu_addItem">"Więcej informacji"</string>
-    <!-- no translation found for label_phonetic_name (2288082649573927286) -->
-    <skip />
+    <string name="label_phonetic_name">"Fonetycznie"</string>
     <string name="label_notes">"Notatki"</string>
     <string name="label_ringtone">"Dzwonek"</string>
     <string name="ghostData_name">"Imię i nazwisko"</string>
-    <!-- no translation found for ghostData_phonetic_name (7852749081984070902) -->
-    <skip />
+    <string name="ghostData_phonetic_name">"Nazwisko (fonetycznie)"</string>
     <string name="ghostData_company">"Firma"</string>
     <string name="ghostData_title">"Pozycja"</string>
     <string name="ghostData_im">"Nazwa w komunikatorze"</string>
@@ -78,9 +77,9 @@
     <string name="attachToContact">"Ikona kontaktu"</string>
     <string name="customLabelPickerTitle">"Nazwa etykiety niestandardowej"</string>
     <string name="menu_displayGroup">"Wyświetl grupę"</string>
-    <string name="syncGroupPreference">"Edytuj grupy synchronizacji"</string>
+    <string name="syncGroupPreference">"Synchronizacja grup"</string>
     <string name="importFromSim">"Importuj kontakty"</string>
-    <string name="send_to_voicemail_checkbox">"Kieruj połączenia bezpośrednio do poczty głosowej."</string>
+    <string name="send_to_voicemail_checkbox">"Przekieruj połączenia bezpośrednio na pocztę głosową"</string>
     <string name="send_to_voicemail_view">"Połączenia są przekazywane bezpośrednio do poczty głosowej."</string>
     <string name="default_ringtone">"Domyślny"</string>
     <string name="addPicture">"Dodaj ikonę"</string>
@@ -97,18 +96,24 @@
     <string name="contactCreatedToast">"Utworzono kontakt."</string>
     <string name="contactSavedToast">"Kontakt został zapisany."</string>
     <string name="listSeparatorCallNumber">"Wybierz numer"</string>
+    <string name="listSeparatorCallNumber_edit">"Numery telefonów"</string>
     <string name="listSeparatorSendSmsMms">"Wyślij wiadomość SMS/MMS"</string>
     <string name="listSeparatorSendEmail">"Wyślij wiadomość e-mail"</string>
+    <string name="listSeparatorSendEmail_edit">"Adresy e-mail"</string>
     <string name="listSeparatorSendIm">"Wyślij wiadomość błyskawiczną"</string>
+    <string name="listSeparatorSendIm_edit">"Adresy czatu"</string>
     <string name="listSeparatorMapAddress">"Pokaż adres na mapie"</string>
+    <string name="listSeparatorMapAddress_edit">"Adresy pocztowe"</string>
     <string name="listSeparatorOrganizations">"Organizacje"</string>
     <string name="listSeparatorOtherInformation">"Inne informacje"</string>
+    <string name="listSeparatorOtherInformation_edit">"Inne opcje"</string>
+    <string name="listSeparatorMore_edit">"Więcej"</string>
     <string name="contactsIconLabel">"Kontakty"</string>
     <string name="contactsFavoritesLabel">"Ulubione"</string>
-    <string name="dialerIconLabel">"Klawisze"</string>
-    <string name="recentCallsIconLabel">"Rejestr połączeń"</string>
+    <string name="dialerIconLabel">"Telefon"</string>
+    <string name="recentCallsIconLabel">"Rejestr"</string>
     <string name="liveFolderAll">"Wszystkie kontakty"</string>
-    <string name="liveFolderFavorites">"Kontakty oznaczone gwiazdkami"</string>
+    <string name="liveFolderFavorites">"Kontakty oznaczone gwiazdką"</string>
     <string name="liveFolderPhone">"Kontakty z numerami telefonów"</string>
     <string name="menu_sendTextMessage">"Wyślij wiadomość SMS"</string>
     <string name="recentCalls_callNumber">"Zadzwoń do kontaktu <xliff:g id="NAME">%s</xliff:g>"</string>
@@ -126,32 +131,42 @@
     <string name="simContacts_emptyLoading">"Wczytywanie z karty SIM…"</string>
     <string name="simContacts_title">"Kontakty z karty SIM"</string>
     <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Zsynchronizuj kontakty Google!"</font>" "\n"Po zsynchronizowaniu telefonu zawsze będziesz mieć kontakty pod ręką."</string>
-    <string name="noContactsHelpText">"Nie masz kontaktów."\n\n"Aby dodać kontakty, naciśnij przycisk "<font fgcolor="#ffffffff"><b>"Menu"</b></font>" i wybierz jedną z opcji:"\n\n"        "\n<li><font fgcolor="#ffffffff"><b>"Edytuj grupy synchronizacji"</b></font>", aby dodać kontakty z nowego lub istniejącego konta Google;"\n</li>\n"        "\n<li><font fgcolor="#ffffffff"><b>"Nowy kontakt"</b></font>", aby utworzyć nowy kontakt od podstaw;"\n</li>\n"        "\n<li><font fgcolor="#ffffffff"><b>"Importuj kontakty"</b></font>", aby dodać kontakty z karty SIM."\n</li></string>
+    <!-- no translation found for noContactsHelpText (2249195687463896364) -->
+    <skip />
+    <!-- no translation found for noContactsHelpTextWithSync (4927701496550314555) -->
+    <skip />
     <string name="seclectSyncGroups_title">"Wybierz grupy do zsynchronizowania"</string>
     <string name="liveFolder_all_label">"Wszystkie kontakty"</string>
-    <string name="liveFolder_favorites_label">"Oznaczone gwiazdkami"</string>
+    <string name="liveFolder_favorites_label">"Oznaczone gwiazdką"</string>
     <string name="liveFolder_phones_label">"Telefony"</string>
     <string name="dialer_useDtmfDialpad">"Użyj klawiatury tonowej"</string>
     <string name="dialer_returnToInCallScreen">"Powrót do aktywnego połączenia"</string>
     <string name="dialer_addAnotherCall">"Dodaj połączenie"</string>
-    <!-- no translation found for callDetailTitle (5340227785196217938) -->
+    <string name="callDetailTitle">"Szczegóły połączenia"</string>
+    <string name="toast_call_detail_error">"Nie można odczytać szczegółów żądanego połączenia."</string>
+    <string name="call_type">"Typ"</string>
+    <string name="type_incoming">"Poł. przychodzące"</string>
+    <string name="type_outgoing">"Połączenie wychodzące"</string>
+    <string name="type_missed">"Nieodebrane połączenia"</string>
+    <string name="call_time">"Godzina"</string>
+    <string name="datetime_relative">"<xliff:g id="DATETIME">%1$s</xliff:g> (<xliff:g id="RELATIVE">%2$s</xliff:g>)"</string>
+    <string name="call_duration">"Czas trwania"</string>
+    <string name="header_actions">"Czynności"</string>
+    <string name="ringtone_spinner">"Dźwięk dzwonka: <xliff:g id="RINGTONE">%1$s</xliff:g>"</string>
+    <string name="add_more_items">"Dodaj więcej elementów"</string>
+    <string name="actionCall">"Zadzwoń na numer: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionEmail">"Wyślij wiadomość e-mail na adres: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionText">"Wyślij tekst do: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionChat">"Porozmawiaj na czacie <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionMap">"Wyświetl adres: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionIncomingCall">"Połączenia przychodzące"</string>
+    <string name="detailIncomingCallsGoToVoicemail">"Zostaną wysłane bezpośrednio na pocztę głosową"</string>
+    <string name="detailsRingtone">"Ustaw na <xliff:g id="RINGTONE_NAME">%s</xliff:g>"</string>
+    <string name="callBack">"Oddzwoń"</string>
+    <!-- no translation found for callAgain (3197312117049874778) -->
     <skip />
-    <!-- no translation found for toast_call_detail_error (7200975244804730096) -->
+    <!-- no translation found for returnCall (8171961914203617813) -->
     <skip />
-    <!-- no translation found for call_type (3213526349444862087) -->
-    <skip />
-    <!-- no translation found for type_incoming (6502076603836088532) -->
-    <skip />
-    <!-- no translation found for type_outgoing (343108709599392641) -->
-    <skip />
-    <!-- no translation found for type_missed (2720502601640509542) -->
-    <skip />
-    <!-- no translation found for call_time (5805575214626630975) -->
-    <skip />
-    <!-- no translation found for datetime_relative (2906207446040994658) -->
-    <skip />
-    <!-- no translation found for call_duration (3941950339482985532) -->
-    <skip />
-    <!-- no translation found for header_actions (229583643365836321) -->
+    <!-- no translation found for callDetailsDurationFormat (8157706382818184268) -->
     <skip />
 </resources>

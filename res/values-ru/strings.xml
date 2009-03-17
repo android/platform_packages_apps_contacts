@@ -16,6 +16,8 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="contactsList">"Контакты"</string>
+    <!-- no translation found for launcherDialer (140610573639849799) -->
+    <skip />
     <string name="shortcutContact">"Контакт"</string>
     <string name="starredList">"Помеченные"</string>
     <string name="frequentList">"Частые"</string>
@@ -28,7 +30,7 @@
     <string name="menu_newContact">"Создать контакт"</string>
     <string name="menu_viewContact">"Просмотреть контакт"</string>
     <string name="menu_callNumber">"Позвонить: <xliff:g id="NAME">%s</xliff:g>"</string>
-    <string name="menu_addStar">"Добавить к избранному"</string>
+    <string name="menu_addStar">"Добавить в избранное"</string>
     <string name="menu_removeStar">"Удалить из избранного"</string>
     <string name="menu_showBarcode">"Показать штрихкод"</string>
     <string name="menu_editContact">"Изменить контакт"</string>
@@ -40,20 +42,17 @@
     <string name="menu_makeDefaultNumber">"Сделать номером по умолчанию"</string>
     <string name="deleteConfirmation_title">"Удаление"</string>
     <string name="deleteConfirmation">"Этот контакт будет удален."</string>
-    <string name="menu_done">"Сохранить"</string>
-    <string name="menu_doNotSave">"Отменить изменения"</string>
-    <string name="button_save">"Сохранить"</string>
-    <string name="button_discard">"Отменить изменения"</string>
+    <string name="menu_done">"Готово"</string>
+    <!-- no translation found for menu_doNotSave (2174577548513895144) -->
+    <skip />
     <string name="editContact_title_edit">"Изменить контакт"</string>
     <string name="editContact_title_insert">"Создание контакта"</string>
     <string name="menu_addItem">"Подробнее"</string>
-    <!-- no translation found for label_phonetic_name (2288082649573927286) -->
-    <skip />
+    <string name="label_phonetic_name">"Фонетика"</string>
     <string name="label_notes">"Примечания"</string>
     <string name="label_ringtone">"Мелодия звонка"</string>
     <string name="ghostData_name">"Первый и последний"</string>
-    <!-- no translation found for ghostData_phonetic_name (7852749081984070902) -->
-    <skip />
+    <string name="ghostData_phonetic_name">"Имя (фонетическая запись)"</string>
     <string name="ghostData_company">"Компания"</string>
     <string name="ghostData_title">"Должность"</string>
     <string name="ghostData_im">"Имя в чате"</string>
@@ -80,7 +79,7 @@
     <string name="menu_displayGroup">"Показать группу"</string>
     <string name="syncGroupPreference">"Изменить группы синхронизации"</string>
     <string name="importFromSim">"Импортировать контакты"</string>
-    <string name="send_to_voicemail_checkbox">"Направлять вызовы прямо в голосовую почту."</string>
+    <string name="send_to_voicemail_checkbox">"Направлять звонки в голосовую почту"</string>
     <string name="send_to_voicemail_view">"Вызовы направляются прямо в голосовую почту."</string>
     <string name="default_ringtone">"По умолчанию"</string>
     <string name="addPicture">"Добавить значок"</string>
@@ -97,12 +96,18 @@
     <string name="contactCreatedToast">"Контакт создан."</string>
     <string name="contactSavedToast">"Контакт сохранен."</string>
     <string name="listSeparatorCallNumber">"Набрать номер"</string>
+    <string name="listSeparatorCallNumber_edit">"Номера телефонов"</string>
     <string name="listSeparatorSendSmsMms">"Отправить SMS/MMS"</string>
     <string name="listSeparatorSendEmail">"Отправить сообщение электронной почты"</string>
+    <string name="listSeparatorSendEmail_edit">"Адреса электронной почты"</string>
     <string name="listSeparatorSendIm">"Отправить мгновенное сообщение"</string>
+    <string name="listSeparatorSendIm_edit">"Адреса чата"</string>
     <string name="listSeparatorMapAddress">"Адрес на карте"</string>
+    <string name="listSeparatorMapAddress_edit">"Почтовые адреса"</string>
     <string name="listSeparatorOrganizations">"Организации"</string>
     <string name="listSeparatorOtherInformation">"Другие сведения"</string>
+    <string name="listSeparatorOtherInformation_edit">"Другие параметры"</string>
+    <string name="listSeparatorMore_edit">"Дополнительно"</string>
     <string name="contactsIconLabel">"Контакты"</string>
     <string name="contactsFavoritesLabel">"Избранные"</string>
     <string name="dialerIconLabel">"Набор номеров"</string>
@@ -122,36 +127,46 @@
     <string name="unknown">"Неизвестно"</string>
     <string name="private_num">"Частный номер"</string>
     <string name="dialerKeyboardHintText">"Для набора воспользуйтесь клавиатурой"</string>
-    <string name="dialerDialpadHintText">"Наберите номер для добавления вызова"</string>
+    <string name="dialerDialpadHintText">"Наберите номер, чтобы добавить вызов"</string>
     <string name="simContacts_emptyLoading">"Идет загрузка с SIM-карты…"</string>
     <string name="simContacts_title">"Контакты на SIM-карте"</string>
     <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Синхронизируйте свои контакты Google!"</font>" "\n"После синхронизации с телефоном вы сможете общаться со знакомыми, где бы вы ни были."</string>
-    <string name="noContactsHelpText">"У вас пока нет контактов."\n\n"Чтобы добавить контакты, нажмите кнопку "<font fgcolor="#ffffffff"><b>"Menu"</b></font>" и выберите:"\n\n"        "\n<li><font fgcolor="#ffffffff"><b>"Изменить группы синхронизации"</b></font>" для добавления из нового или существующего аккаунта Google"\n</li>\n"        "\n<li><font fgcolor="#ffffffff"><b>"Создать контакт"</b></font>" для создания контакта с нуля"\n</li>\n"        "\n<li><font fgcolor="#ffffffff"><b>"Импортировать контакты"</b></font>" для добавления контактов с SIM-карты"\n</li></string>
+    <!-- no translation found for noContactsHelpText (2249195687463896364) -->
+    <skip />
+    <!-- no translation found for noContactsHelpTextWithSync (4927701496550314555) -->
+    <skip />
     <string name="seclectSyncGroups_title">"Выбор групп для синхронизации"</string>
     <string name="liveFolder_all_label">"Все контакты"</string>
     <string name="liveFolder_favorites_label">"Помеченные"</string>
     <string name="liveFolder_phones_label">"Телефоны"</string>
     <string name="dialer_useDtmfDialpad">"Использовать клавиатуру тонального набора"</string>
-    <string name="dialer_returnToInCallScreen">"Отобразить текущий вызов"</string>
-    <string name="dialer_addAnotherCall">"Добавить вызов"</string>
-    <!-- no translation found for callDetailTitle (5340227785196217938) -->
+    <string name="dialer_returnToInCallScreen">"Вернуться к текущему звонку"</string>
+    <string name="dialer_addAnotherCall">"Добавить звонок"</string>
+    <string name="callDetailTitle">"Сведения о звонке"</string>
+    <string name="toast_call_detail_error">"Не удается считать сведения об указанном звонке."</string>
+    <string name="call_type">"Тип"</string>
+    <string name="type_incoming">"Входящий звонок"</string>
+    <string name="type_outgoing">"Исходящий звонок"</string>
+    <string name="type_missed">"Пропущенный звонок"</string>
+    <string name="call_time">"Время"</string>
+    <string name="datetime_relative">"<xliff:g id="DATETIME">%1$s</xliff:g> (<xliff:g id="RELATIVE">%2$s</xliff:g>)"</string>
+    <string name="call_duration">"Продолжительность"</string>
+    <string name="header_actions">"Действия"</string>
+    <string name="ringtone_spinner">"Мелодия: <xliff:g id="RINGTONE">%1$s</xliff:g>"</string>
+    <string name="add_more_items">"Добавление контактов"</string>
+    <string name="actionCall">"Позвонить по номеру: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionEmail">"Отправить электронное сообщение на адрес: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionText">"Отправить текстовое сообщение на номер: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionChat">"Общаться в чате с помощью: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionMap">"Просмотр адреса: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionIncomingCall">"Входящие вызовы"</string>
+    <string name="detailIncomingCallsGoToVoicemail">"Переадресация в голосовую почту"</string>
+    <string name="detailsRingtone">"Выбрано: <xliff:g id="RINGTONE_NAME">%s</xliff:g>"</string>
+    <string name="callBack">"Перезвонить"</string>
+    <!-- no translation found for callAgain (3197312117049874778) -->
     <skip />
-    <!-- no translation found for toast_call_detail_error (7200975244804730096) -->
+    <!-- no translation found for returnCall (8171961914203617813) -->
     <skip />
-    <!-- no translation found for call_type (3213526349444862087) -->
-    <skip />
-    <!-- no translation found for type_incoming (6502076603836088532) -->
-    <skip />
-    <!-- no translation found for type_outgoing (343108709599392641) -->
-    <skip />
-    <!-- no translation found for type_missed (2720502601640509542) -->
-    <skip />
-    <!-- no translation found for call_time (5805575214626630975) -->
-    <skip />
-    <!-- no translation found for datetime_relative (2906207446040994658) -->
-    <skip />
-    <!-- no translation found for call_duration (3941950339482985532) -->
-    <skip />
-    <!-- no translation found for header_actions (229583643365836321) -->
+    <!-- no translation found for callDetailsDurationFormat (8157706382818184268) -->
     <skip />
 </resources>

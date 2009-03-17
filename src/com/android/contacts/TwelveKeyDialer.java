@@ -206,7 +206,7 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
         synchronized (mToneGeneratorLock) {
             if (mToneGenerator == null) {
                 try {
-                    mToneGenerator = new ToneGenerator(AudioManager.STREAM_RING, 
+                    mToneGenerator = new ToneGenerator(AudioManager.STREAM_VOICE_CALL, 
                             TONE_RELATIVE_VOLUME);
                 } catch (RuntimeException e) {
                     Log.w(TAG, "Exception caught while creating local tone generator: " + e);
@@ -379,7 +379,7 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
         synchronized(mToneGeneratorLock) {
             if (mToneGenerator == null) {
                 try {
-                    mToneGenerator = new ToneGenerator(AudioManager.STREAM_RING, 
+                    mToneGenerator = new ToneGenerator(AudioManager.STREAM_VOICE_CALL, 
                             TONE_RELATIVE_VOLUME);
                 } catch (RuntimeException e) {
                     Log.w(TAG, "Exception caught while creating local tone generator: " + e);

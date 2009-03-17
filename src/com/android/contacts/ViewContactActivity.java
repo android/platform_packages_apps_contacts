@@ -105,6 +105,8 @@ public class ViewContactActivity extends ListActivity
     private static final String TAG = "ViewContact";
     private static final String SHOW_BARCODE_INTENT = "com.google.zxing.client.android.ENCODE";
 
+    private static final boolean SHOW_SEPARATORS = false;
+    
     private static final String[] PHONE_KEYS = {
         Contacts.Intents.Insert.PHONE,
         Contacts.Intents.Insert.SECONDARY_PHONE,
@@ -313,7 +315,7 @@ public class ViewContactActivity extends ListActivity
                 mAdapter = new ViewAdapter(this, mSections);
                 setListAdapter(mAdapter);
             } else {
-                mAdapter.setSections(mSections, true);
+                mAdapter.setSections(mSections, SHOW_SEPARATORS);
             }
         } else {
             Toast.makeText(this, R.string.invalidContactMessage, Toast.LENGTH_SHORT).show();
@@ -352,9 +354,9 @@ public class ViewContactActivity extends ListActivity
 
     private boolean isBarcodeScannerInstalled() {
         final Intent intent = new Intent(SHOW_BARCODE_INTENT);
-        List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent,
+        ResolveInfo ri = getPackageManager().resolveActivity(intent,
                 PackageManager.MATCH_DEFAULT_ONLY);
-        return list.size() > 0;
+        return ri != null;
     }
 
     @Override
@@ -373,7 +375,7 @@ public class ViewContactActivity extends ListActivity
             return;
         }
 
-        ViewEntry entry = ContactEntryAdapter.getEntry(mSections, info.position, true);
+        ViewEntry entry = ContactEntryAdapter.getEntry(mSections, info.position, SHOW_SEPARATORS);
         switch (entry.kind) {
             case Contacts.KIND_PHONE: {
                 menu.add(0, 0, 0, R.string.menu_call).setIntent(entry.intent);
@@ -458,7 +460,8 @@ public class ViewContactActivity extends ListActivity
                     break;
                 }
 
-                ViewEntry entry = ContactEntryAdapter.getEntry(mSections, info.position, true);
+                ViewEntry entry = ContactEntryAdapter.getEntry(mSections, info.position,
+                        SHOW_SEPARATORS);
                 ContentValues values = new ContentValues(1);
                 values.put(People.PRIMARY_PHONE_ID, entry.id);
                 getContentResolver().update(mUri, values, null, null);
@@ -486,7 +489,7 @@ public class ViewContactActivity extends ListActivity
 
                 int index = getListView().getSelectedItemPosition();
                 if (index != -1) {
-                    ViewEntry entry = ViewAdapter.getEntry(mSections, index, true);
+                    ViewEntry entry = ViewAdapter.getEntry(mSections, index, SHOW_SEPARATORS);
                     if (entry.kind == Contacts.KIND_PHONE) {
                         Intent intent = new Intent(Intent.ACTION_CALL_PRIVILEGED, entry.uri);
                         startActivity(intent);
@@ -510,7 +513,7 @@ public class ViewContactActivity extends ListActivity
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-        ViewEntry entry = ViewAdapter.getEntry(mSections, position, true);
+        ViewEntry entry = ViewAdapter.getEntry(mSections, position, SHOW_SEPARATORS);
         if (entry != null) {
             Intent intent = entry.intent;
             if (intent != null) {
@@ -576,7 +579,16 @@ public class ViewContactActivity extends ListActivity
         separator.data = getString(R.string.listSeparatorOtherInformation);
         mOtherEntries.add(separator);
     }
-    
+
+    private Uri constructImToUrl(String host, String data) {
+	    // don't encode the url, because the Activity Manager can't find using the encoded url
+        StringBuilder buf = new StringBuilder("imto://");
+        buf.append(host);
+        buf.append('/');
+        buf.append(data);
+        return Uri.parse(buf.toString());
+    }
+
     /**
      * Build up the entries to display on the screen.
      * 
@@ -588,7 +600,10 @@ public class ViewContactActivity extends ListActivity
         for (int i = 0; i < numSections; i++) {
             mSections.get(i).clear();
         }
-        buildSeparators();
+
+        if (SHOW_SEPARATORS) {
+            buildSeparators();
+        }
 
         // Build up the phone entries
         final Uri phonesUri = Uri.withAppendedPath(mUri, People.Phones.CONTENT_DIRECTORY);
@@ -614,7 +629,8 @@ public class ViewContactActivity extends ListActivity
                 
                 // Add a phone number entry
                 final ViewEntry entry = new ViewEntry();
-                entry.label = Phones.getDisplayLabel(this, type, label).toString();
+                final CharSequence displayLabel = Phones.getDisplayLabel(this, type, label);
+                entry.label = buildActionString(R.string.actionCall, displayLabel, true);
                 entry.data = number;
                 entry.id = id;
                 entry.uri = uri;
@@ -625,13 +641,13 @@ public class ViewContactActivity extends ListActivity
                 if (isPrimary) {
                     entry.primaryIcon = R.drawable.ic_default_number;
                 }
-                entry.actionIcon = R.drawable.sym_action_call;
+                entry.actionIcon = android.R.drawable.sym_action_call;
                 mPhoneEntries.add(entry);
 
                 if (type == Phones.TYPE_MOBILE || mShowSmsLinksForAllPhones) {
                     // Add an SMS entry
                     ViewEntry smsEntry = new ViewEntry();
-                    smsEntry.label = entry.label;
+                    smsEntry.label = buildActionString(R.string.actionText, displayLabel, true);
                     smsEntry.data = number;
                     smsEntry.id = id;
                     smsEntry.uri = uri;
@@ -675,22 +691,18 @@ public class ViewContactActivity extends ListActivity
 
                 switch (kind) {
                     case Contacts.KIND_EMAIL:
-                        entry.label = ContactMethods.getDisplayLabel(this, kind, type, label)
-                                .toString();
+                        entry.label = buildActionString(R.string.actionEmail,
+                                ContactMethods.getDisplayLabel(this, kind, type, label), true);
                         entry.data = data;
                         entry.intent = new Intent(Intent.ACTION_SENDTO,
                                 Uri.fromParts("mailto", data, null));
-                        if (!methodsCursor.isNull(METHODS_STATUS_COLUMN)) {
-                            entry.presenceIcon = Presence.getPresenceIconResourceId(
-                                    methodsCursor.getInt(METHODS_STATUS_COLUMN));
-                        }
-                        entry.actionIcon = R.drawable.sym_action_email;
+                        entry.actionIcon = android.R.drawable.sym_action_email;
                         mEmailEntries.add(entry);
                         break;
 
                     case Contacts.KIND_POSTAL:
-                        entry.label = ContactMethods.getDisplayLabel(this, kind, type, label)
-                                .toString();
+                        entry.label = buildActionString(R.string.actionMap,
+                                ContactMethods.getDisplayLabel(this, kind, type, label), true);
                         entry.data = data;
                         entry.maxLines = 4;
                         entry.intent = new Intent(Intent.ACTION_VIEW, uri);
@@ -701,34 +713,34 @@ public class ViewContactActivity extends ListActivity
                     case Contacts.KIND_IM: {
                         Object protocolObj = ContactMethods.decodeImProtocol(
                                 methodsCursor.getString(METHODS_AUX_DATA_COLUMN));
-                        String providerCategory;
+                        String host;
                         if (protocolObj instanceof Number) {
                             int protocol = ((Number) protocolObj).intValue();
-                            entry.label = protocolStrings[protocol];
-                            providerCategory = ContactMethods.lookupProviderCategoryFromId(
-                                    protocol);
+                            entry.label = buildActionString(R.string.actionChat,
+                                    protocolStrings[protocol], false);
+                            host = ContactMethods.lookupProviderNameFromId(protocol).toLowerCase();
                             if (protocol == ContactMethods.PROTOCOL_GOOGLE_TALK
                                     || protocol == ContactMethods.PROTOCOL_MSN) {
                                 entry.maxLabelLines = 2;
                             }
                         } else {
                             String providerName = (String) protocolObj;
-                            entry.label = providerName;
-                            providerCategory = Im.Provider.getProviderCategoryFromName(
-                                    providerName);
+                            entry.label = buildActionString(R.string.actionChat,
+                                    providerName, false);
+                            host = providerName.toLowerCase();
                         }
 
-                        // Only add the intent if there is a valid provider name
-                        if (!TextUtils.isEmpty(providerCategory)) {
+                        // Only add the intent if there is a valid host
+                        if (!TextUtils.isEmpty(host)) {
                             entry.intent = new Intent(Intent.ACTION_SENDTO,
-                                    Uri.fromParts("im", data, null)).addCategory(providerCategory);
+                                    constructImToUrl(host, data));
                         }
                         entry.data = data;
                         if (!methodsCursor.isNull(METHODS_STATUS_COLUMN)) {
                             entry.presenceIcon = Presence.getPresenceIconResourceId(
                                     methodsCursor.getInt(METHODS_STATUS_COLUMN));
                         }
-                        entry.actionIcon = R.drawable.sym_action_chat;
+                        entry.actionIcon = android.R.drawable.sym_action_chat;
                         mImEntries.add(entry);
                         break;
                     }
@@ -755,26 +767,25 @@ public class ViewContactActivity extends ListActivity
                     String label;
                     Object protocolObj = ContactMethods.decodeImProtocol(
                             presenceCursor.getString(1));
-                    String providerCategory;
+                    String host;
                     if (protocolObj instanceof Number) {
                         int protocol = ((Number) protocolObj).intValue();
                         label = getResources().getStringArray(
                                 android.R.array.imProtocols)[protocol];
-                        providerCategory = ContactMethods.lookupProviderCategoryFromId(
-                                protocol);
+                        host = ContactMethods.lookupProviderNameFromId(protocol).toLowerCase();
                     } else {
                         String providerName = (String) protocolObj;
                         label = providerName;
-                        providerCategory = Im.Provider.getProviderCategoryFromName(providerName);
+                        host = providerName.toLowerCase();
                     }
 
-                    if (TextUtils.isEmpty(providerCategory)) {
+                    if (TextUtils.isEmpty(host)) {
                         // A valid provider name is required
                         continue;
                     }
 
-                    Intent intent = new Intent(Intent.ACTION_SENDTO,
-                            Uri.fromParts("im", data, null)).addCategory(providerCategory);
+
+                    Intent intent = new Intent(Intent.ACTION_SENDTO, constructImToUrl(host, data));
 
                     // Check to see if there is already an entry for this IM account
                     boolean addEntry = true;
@@ -797,7 +808,7 @@ public class ViewContactActivity extends ListActivity
                         entry.data = data;
                         entry.label = label;
                         entry.intent = intent;
-                        entry.actionIcon = R.drawable.sym_action_chat;
+                        entry.actionIcon = android.R.drawable.sym_action_chat;
                         entry.presenceIcon = Presence.getPresenceIconResourceId(
                                 presenceCursor.getInt(2));
                         entry.maxLabelLines = 2;
@@ -820,11 +831,14 @@ public class ViewContactActivity extends ListActivity
                 entry.id = organizationsCursor.getLong(ORGANIZATIONS_ID_COLUMN);
                 entry.uri = ContentUris.withAppendedId(organizationsUri, entry.id);
                 entry.kind = Contacts.KIND_ORGANIZATION;
-                entry.data = organizationsCursor.getString(ORGANIZATIONS_COMPANY_COLUMN);
-                entry.data2 = organizationsCursor.getString(ORGANIZATIONS_TITLE_COLUMN);
+                entry.label = organizationsCursor.getString(ORGANIZATIONS_COMPANY_COLUMN);
+                entry.data = organizationsCursor.getString(ORGANIZATIONS_TITLE_COLUMN);
+                entry.actionIcon = R.drawable.sym_action_organization;
+/*
                 entry.label = Organizations.getDisplayLabel(this,
                         organizationsCursor.getInt(ORGANIZATIONS_TYPE_COLUMN),
                         organizationsCursor.getString(ORGANIZATIONS_LABEL_COLUMN)).toString();
+*/
                 mOrganizationEntries.add(entry);
             }
 
@@ -843,6 +857,7 @@ public class ViewContactActivity extends ListActivity
             entry.uri = null;
             entry.intent = null;
             entry.maxLines = 10;
+            entry.actionIcon = R.drawable.sym_note;
             mOtherEntries.add(entry);
         }
         
@@ -859,32 +874,41 @@ public class ViewContactActivity extends ListActivity
                     entry.data = ringtone.getTitle(this);
                     entry.kind = ViewEntry.KIND_CONTACT;
                     entry.uri = ringtoneUri;
+                    entry.actionIcon = R.drawable.sym_ringtone;
                     mOtherEntries.add(entry);
                 }
             }
         }
 
+        // Build the send directly to voice mail entry
         boolean sendToVoicemail = personCursor.getInt(CONTACT_SEND_TO_VOICEMAIL_COLUMN) == 1;
         if (sendToVoicemail) {
             ViewEntry entry = new ViewEntry();
-            entry.label = getString(R.string.send_to_voicemail_view);
-            entry.isLabelOnly = true;
+            entry.label = getString(R.string.actionIncomingCall);
+            entry.data = getString(R.string.detailIncomingCallsGoToVoicemail);
             entry.kind = ViewEntry.KIND_CONTACT;
+            entry.actionIcon = R.drawable.sym_send_to_voicemail;
             mOtherEntries.add(entry);
         }
     }
 
+    String buildActionString(int actionResId, CharSequence type, boolean lowerCase) {
+        if (lowerCase) {
+            return getString(actionResId, type.toString().toLowerCase());
+        } else {
+            return getString(actionResId, type.toString());
+        }
+    }
+    
     /**
      * A basic structure with the data for a contact entry in the list.
      */
-    private final static class ViewEntry extends ContactEntryAdapter.Entry {
+    final static class ViewEntry extends ContactEntryAdapter.Entry {
         public int primaryIcon = -1;
         public Intent intent;
         public Intent auxIntent = null;
         public int presenceIcon = -1;
         public int actionIcon = -1;
-        public String data2 = null;
-        public boolean isLabelOnly = false;
         public int maxLabelLines = 1;
     }
 
@@ -893,25 +917,26 @@ public class ViewContactActivity extends ListActivity
         static class ViewCache {
             public TextView label;
             public TextView data;
-            public TextView data2;
+            public ImageView actionIcon;
+            public ImageView presenceIcon;
             
             // Need to keep track of this too
             ViewEntry entry;
         }
         
         ViewAdapter(Context context, ArrayList<ArrayList<ViewEntry>> sections) {
-            super(context, sections, true);
+            super(context, sections, SHOW_SEPARATORS);
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            ViewEntry entry = getEntry(mSections, position, true); 
+            ViewEntry entry = getEntry(mSections, position, false); 
             View v;
 
             // Handle separators specially
             if (entry.kind == ViewEntry.KIND_SEPARATOR) {
                 TextView separator = (TextView) mInflater.inflate(
-                        R.layout.list_separator, parent, false);
+                        R.layout.list_separator, parent, SHOW_SEPARATORS);
                 separator.setText(entry.data);
                 return separator;
             }
@@ -920,58 +945,23 @@ public class ViewContactActivity extends ListActivity
 
             // Check to see if we can reuse convertView
             if (convertView != null) {
-                views = (ViewCache) convertView.getTag();
-                if (views != null) {
-                    ViewEntry origEntry = views.entry;
-                    if (origEntry != null) {
-                        // Check to see if the view and the entry are compatible
-                        if (entry.kind == Contacts.KIND_ORGANIZATION
-                                && origEntry.kind != Contacts.KIND_ORGANIZATION) {
-                            v = null;
-                        } else if (entry.kind != Contacts.KIND_ORGANIZATION
-                                && origEntry.kind == Contacts.KIND_ORGANIZATION) {
-                            v = null;
-                        } else if (entry.isLabelOnly != origEntry.isLabelOnly) {
-                            v = null;
-                        } else {
-                            v = convertView;
-                        }
-                    } else {
-                        v = null;
-                    }
-                } else {
-                    v = null;
-                }
+                v = convertView;
+                views = (ViewCache) v.getTag();
             } else {
-                v = null;
-            }
-
-            // Create a new view if needed
-            if (v == null) {
-                if (entry.kind == Contacts.KIND_ORGANIZATION) {
-                    v = mInflater.inflate(R.layout.view_contact_entry_organization, parent, false);
-                } else if (entry.isLabelOnly) {
-                    v = mInflater.inflate(R.layout.view_contact_entry_only_label, parent, false);
-                } else {
-                    v = mInflater.inflate(R.layout.view_contact_entry, parent, false);
-                }
+                // Create a new view if needed
+                v = mInflater.inflate(R.layout.list_item_text_icons, parent, false);
 
                 // Cache the children
                 views = new ViewCache();
-                views.label = (TextView) v.findViewById(R.id.label);
-                views.data = (TextView) v.findViewById(R.id.data);
-                // label-only contact entries don't have a data view
-                if (views.data != null) {
-                    views.data.setCompoundDrawablePadding(3);
-                }
-                views.data2 = (TextView) v.findViewById(R.id.data2);
-            } else {
-                views = (ViewCache) v.getTag();
+                views.label = (TextView) v.findViewById(android.R.id.text1);
+                views.data = (TextView) v.findViewById(android.R.id.text2);
+                views.actionIcon = (ImageView) v.findViewById(R.id.icon1);
+                views.presenceIcon = (ImageView) v.findViewById(R.id.icon2);
+                v.setTag(views);
             }
 
-            // Set the tag on the view so it knows what it's displaying
+            // Update the entry in the view cache
             views.entry = entry;
-            v.setTag(views);
 
             // Bind the data to the view
             bindView(v, entry);
@@ -1001,27 +991,30 @@ public class ViewContactActivity extends ListActivity
                 setMaxLines(data, entry.maxLines);
             }
 
-            // Set the left icon
-            Drawable left = null;
-            if (entry.primaryIcon != -1) {
-                left = resources.getDrawable(entry.primaryIcon);
-            } else if (entry.presenceIcon != -1) {
-                left = resources.getDrawable(entry.presenceIcon);
-            }
-
-            // Set the right icon
-            Drawable right = null;
+            // Set the action icon
+            ImageView action = views.actionIcon;
             if (entry.actionIcon != -1) {
-                right = resources.getDrawable(entry.actionIcon);
-            }
-            
-            if (data != null) {
-                data.setCompoundDrawablesWithIntrinsicBounds(left, null, right, null);
+                action.setImageDrawable(resources.getDrawable(entry.actionIcon));
+                action.setVisibility(View.VISIBLE);
+            } else {
+                // Things should still line up as if there was an icon, so make it invisible
+                action.setVisibility(View.INVISIBLE);
             }
 
-            // Set data2 if we have it
-            if (entry.kind == Contacts.KIND_ORGANIZATION) {
-                views.data2.setText(entry.data2);
+            // Set the presence icon
+            Drawable presenceIcon = null;
+            if (entry.primaryIcon != -1) {
+                presenceIcon = resources.getDrawable(entry.primaryIcon);
+            } else if (entry.presenceIcon != -1) {
+                presenceIcon = resources.getDrawable(entry.presenceIcon);
+            }
+
+            ImageView presence = views.presenceIcon;
+            if (presenceIcon != null) {
+                presence.setImageDrawable(presenceIcon);
+                presence.setVisibility(View.VISIBLE);
+            } else {
+                presence.setVisibility(View.GONE);
             }
         }
 

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="contactsList">"Kontakter"</string>
+    <string name="launcherDialer">"Telefon"</string>
+    <string name="shortcutContact">"Kontakt"</string>
+    <string name="starredList">"Med stjerne"</string>
+    <string name="frequentList">"Mest brukt"</string>
+    <string name="strequentList">"Favoritter"</string>
+    <string name="viewContactTitle">"Egenskaper for kontakt"</string>
+    <string name="viewContactDesription">"Se på kontakt"</string>
+    <string name="editContactDescription">"Rediger kontakt"</string>
+    <string name="insertContactDescription">"Opprett kontakt"</string>
+    <string name="searchHint">"Søk i kontakter"</string>
+    <string name="menu_newContact">"Ny kontakt"</string>
+    <string name="menu_viewContact">"Se på kontakt"</string>
+    <string name="menu_callNumber">"Ring <xliff:g id="NAME">%s</xliff:g>"</string>
+    <string name="menu_addStar">"Legg til som favoritt"</string>
+    <string name="menu_removeStar">"Fjern fra favoritter"</string>
+    <string name="menu_showBarcode">"Vis strekkode"</string>
+    <string name="menu_editContact">"Rediger kontakt"</string>
+    <string name="menu_deleteContact">"Slett kontakt"</string>
+    <string name="menu_call">"Ring"</string>
+    <string name="menu_sendSMS">"Send SMS/MMS"</string>
+    <string name="menu_sendEmail">"Send e-post"</string>
+    <string name="menu_viewAddress">"Se i kart"</string>
+    <string name="menu_makeDefaultNumber">"Gjør til foretrukket nummer"</string>
+    <string name="deleteConfirmation_title">"Slett"</string>
+    <string name="deleteConfirmation">"Denne kontakten vil bli slettet."</string>
+    <string name="menu_done">"Lagre"</string>
+    <!-- no translation found for menu_doNotSave (2174577548513895144) -->
+    <skip />
+    <string name="editContact_title_edit">"Rediger kontakt"</string>
+    <string name="editContact_title_insert">"Ny kontakt"</string>
+    <string name="menu_addItem">"Mer informasjon"</string>
+    <string name="label_phonetic_name">"Fonetisk"</string>
+    <string name="label_notes">"Notater"</string>
+    <string name="label_ringtone">"Ringetone"</string>
+    <string name="ghostData_name">"For- og etternavn"</string>
+    <string name="ghostData_phonetic_name">"Fonetisk navn"</string>
+    <string name="ghostData_company">"Firma"</string>
+    <string name="ghostData_title">"Stilling"</string>
+    <string name="ghostData_im">"Lynmeldingsnavn"</string>
+    <string name="ghostData_notes">"Mine notater"</string>
+    <string name="ghostData_phone">"Telefonnummer"</string>
+    <string name="ghostData_email">"E-postadresse"</string>
+    <string name="ghostData_postal">"Postadresse"</string>
+    <string name="invalidContactMessage">"Kontakten finnes ikke."</string>
+    <string name="pickerNewContactHeader">"Opprett ny kontakt"</string>
+    <string name="selectLabel">"Velg etikett"</string>
+    <string name="phoneLabelsGroup">"Telefon"</string>
+    <string name="emailLabelsGroup">"E-post"</string>
+    <string name="imLabelsGroup">"Lynmeldinger"</string>
+    <string name="postalLabelsGroup">"Postadresse"</string>
+    <string name="otherLabelsGroup">"Annet"</string>
+  <string-array name="otherLabels">
+    <item>"Organisasjon"</item>
+    <item>"Notat"</item>
+  </string-array>
+    <string name="errorDialogTitle">"Ingen bilder"</string>
+    <string name="photoPickerNotFoundText">"Det er ingen bilder på telefonen."</string>
+    <string name="attachToContact">"Kontaktikon"</string>
+    <string name="customLabelPickerTitle">"Egendefinert etikett"</string>
+    <string name="menu_displayGroup">"Vis gruppe"</string>
+    <string name="syncGroupPreference">"Rediger synkroniserte grupper"</string>
+    <string name="importFromSim">"Importer kontakter"</string>
+    <string name="send_to_voicemail_checkbox">"Send anrop direkte til telefonsvarer."</string>
+    <string name="send_to_voicemail_view">"Anrop blir sendt direkte til telefonsvarer."</string>
+    <string name="default_ringtone">"Standardvalg"</string>
+    <string name="addPicture">"Legg til ikon"</string>
+    <string name="removePicture">"Fjern ikon"</string>
+    <string name="noContacts">"Ingen kontakter."</string>
+    <string name="noContactsWithPhoneNumbers">"Ingen kontakter med telefonnummer."</string>
+    <string name="noFavorites">"Ingen favoritter."</string>
+    <string name="select_group_title">"Grupper"</string>
+    <string name="groupEmpty">"Gruppen \"<xliff:g id="GROUPNAME">%s</xliff:g>\" er tom."</string>
+    <string name="showAllGroups">"Alle kontakter"</string>
+    <string name="syncAllGroups">"Synkroniser alle kontakter"</string>
+    <string name="groupNameMyContacts">"Mine kontakter"</string>
+    <string name="groupNameWithPhones">"Kontakter med telefonnummer"</string>
+    <string name="contactCreatedToast">"Kontakt opprettet."</string>
+    <string name="contactSavedToast">"Kontakt lagret."</string>
+    <string name="listSeparatorCallNumber">"Ring nummer"</string>
+    <string name="listSeparatorCallNumber_edit">"Telefonnummer"</string>
+    <string name="listSeparatorSendSmsMms">"Send SMS/MMS"</string>
+    <string name="listSeparatorSendEmail">"Send e-post"</string>
+    <string name="listSeparatorSendEmail_edit">"E-postadresser"</string>
+    <string name="listSeparatorSendIm">"Send lynmelding"</string>
+    <string name="listSeparatorSendIm_edit">"Prateadresser"</string>
+    <string name="listSeparatorMapAddress">"Se i kart"</string>
+    <string name="listSeparatorMapAddress_edit">"Postadresser"</string>
+    <string name="listSeparatorOrganizations">"Organisasjoner"</string>
+    <string name="listSeparatorOtherInformation">"Annen informasjon"</string>
+    <string name="listSeparatorOtherInformation_edit">"Andre alternativer"</string>
+    <string name="listSeparatorMore_edit">"Mer"</string>
+    <string name="contactsIconLabel">"Alle"</string>
+    <string name="contactsFavoritesLabel">"Vanlige"</string>
+    <string name="dialerIconLabel">"Telefon"</string>
+    <string name="recentCallsIconLabel">"Logg"</string>
+    <string name="liveFolderAll">"Alle kontakter"</string>
+    <string name="liveFolderFavorites">"Kontakter med stjerne"</string>
+    <string name="liveFolderPhone">"Kontakter med telefonnummer"</string>
+    <string name="menu_sendTextMessage">"Send SMS-melding"</string>
+    <string name="recentCalls_callNumber">"Ring <xliff:g id="NAME">%s</xliff:g>"</string>
+    <string name="recentCalls_editNumberBeforeCall">"Rediger nummer før anrop"</string>
+    <string name="recentCalls_addToContact">"Legg til kontakter"</string>
+    <string name="recentCalls_removeFromRecentList">"Fjern fra anropslogg"</string>
+    <string name="recentCalls_deleteAll">"Nullstill anropslogg"</string>
+    <string name="recentCalls_empty">"Anropsloggen er tom."</string>
+    <string name="imei">"IMEI"</string>
+    <string name="voicemail">"Telefonsvarer"</string>
+    <string name="unknown">"Ukjent"</string>
+    <string name="private_num">"Skjult nummer"</string>
+    <string name="dialerKeyboardHintText">"Bruk tastaturet for å ringe"</string>
+    <string name="dialerDialpadHintText">"Ring for å legge til en samtale"</string>
+    <string name="simContacts_emptyLoading">"Henter fra SIM-kort…"</string>
+    <string name="simContacts_title">"Kontakter på SIM-kort"</string>
+    <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Synkroniser Google-kontaktene dine!"</font>" "\n"Etter å ha synkronisert telefonen vil kontaktene dine bli tilgjengelig overalt."</string>
+    <!-- no translation found for noContactsHelpText (2249195687463896364) -->
+    <skip />
+    <!-- no translation found for noContactsHelpTextWithSync (4927701496550314555) -->
+    <skip />
+    <string name="seclectSyncGroups_title">"Velg grupper som skal synkroniseres"</string>
+    <string name="liveFolder_all_label">"Alle kontakter"</string>
+    <string name="liveFolder_favorites_label">"Med stjerne"</string>
+    <string name="liveFolder_phones_label">"Telefoner"</string>
+    <string name="dialer_useDtmfDialpad">"Bruk tonetastatur"</string>
+    <string name="dialer_returnToInCallScreen">"Gå tilbake til pågående samtale"</string>
+    <string name="dialer_addAnotherCall">"Legg til en samtale"</string>
+    <string name="callDetailTitle">"Samtaleinformasjon"</string>
+    <string name="toast_call_detail_error">"Kunne ikke lese informasjon for forespurt samtale."</string>
+    <string name="call_type">"Type"</string>
+    <string name="type_incoming">"Innkommende samtale"</string>
+    <string name="type_outgoing">"Utgående samtale"</string>
+    <string name="type_missed">"Tapt anrop"</string>
+    <string name="call_time">"Tid"</string>
+    <string name="datetime_relative">"<xliff:g id="DATETIME">%1$s</xliff:g> (<xliff:g id="RELATIVE">%2$s</xliff:g>)"</string>
+    <string name="call_duration">"Varighet"</string>
+    <string name="header_actions">"Handlinger"</string>
+    <string name="ringtone_spinner">"Ringetone: <xliff:g id="RINGTONE">%1$s</xliff:g>"</string>
+    <string name="add_more_items">"Legg til flere elementer"</string>
+    <string name="actionCall">"Ring <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionEmail">"Send e-post til <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionText">"Send SMS til <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionChat">"Prat over <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionMap">"Vis <xliff:g id="TYPE">%s</xliff:g>adresse"</string>
+    <string name="actionIncomingCall">"Innkommende samtaler"</string>
+    <string name="detailIncomingCallsGoToVoicemail">"Vil bli sendt rett til telefonsvarer"</string>
+    <string name="detailsRingtone">"Sett til <xliff:g id="RINGTONE_NAME">%s</xliff:g>"</string>
+    <string name="callBack">"Ring tilbake"</string>
+    <!-- no translation found for callAgain (3197312117049874778) -->
+    <skip />
+    <!-- no translation found for returnCall (8171961914203617813) -->
+    <skip />
+    <!-- no translation found for callDetailsDurationFormat (8157706382818184268) -->
+    <skip />
+</resources>

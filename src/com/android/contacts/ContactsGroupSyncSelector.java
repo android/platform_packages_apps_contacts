@@ -112,6 +112,12 @@ public final class ContactsGroupSyncSelector extends ListActivity implements Vie
             }
             
             case R.id.ok: {
+                // The list isn't setup yet, so just return without doing anything.
+                if (mChecked == null) {
+                    finish();
+                    return;
+                }
+
                 final ContentResolver resolver = getContentResolver();
                 if (mSyncAllGroups) {
                     // For now we only support a single account and the UI doesn't know what
