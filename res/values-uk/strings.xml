@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2006 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Title for the activity that shows contacts.  This is the name
+         used in the Launcher icon. -->
+    <string name="contactsList">"Контакти"</string>
+
+    <!-- Title for the activity that dials the phone.  This is the name
+         used in the Launcher icon. -->
+    <string name="launcherDialer">"Набір номерів"</string>
+
+    <!-- Name of activity that allows users to create shortcuts on the home screen to a contact.
+         This shows up in a list of things like bookmark, folder, music playlist, etc -->
+    <string name="shortcutContact">"Контакт"</string>
+
+    <!-- Title for the activity that shows only starred contacts -->
+    <string name="starredList">"Обрані"</string>
+
+    <!-- Title for the activity that shows only frequently contacted contacts -->
+    <string name="frequentList">"Часті"</string>
+
+    <!-- Title for the activity that shows a mix of starred contacts and frequently contacted
+         contacts. -->	
+    <string name="strequentList">"Вибрані"</string>
+
+    <!-- The title bar when viewing the contact details activity -->
+    <string name="viewContactTitle">"Дані про контакт"</string>
+    
+    <!-- The description presented to the user in the Intent choose when there are multiple activities that allow
+         viewing a contact. This string represents the built in way to view the contact. -->
+    <string name="viewContactDesription">"Переглянути контакт"</string>
+    
+    <!-- The description presented to the user in the Intent choose when there are multiple activities that allow
+         editing a contact. This string represents the built in way to edit the contact. -->
+    <string name="editContactDescription">"Змінити контакт"</string>
+
+    <!-- The description presented to the user in the Intent choose when there are multiple activities that allow
+         creating a new contact. This string represents the built in way to create the contact. -->
+    <string name="insertContactDescription">"Створити контакт"</string>
+
+    <!-- Hint text in the search box when the user hits the Search key while in the contacts app -->
+    <string name="searchHint">"Пошук контакту"</string>
+
+    <!-- Menu item to search contacts -->
+    <string name="menu_search">Пошук</string>
+
+    <!-- Menu item to create a new contact -->
+    <string name="menu_newContact">"Створити контакт"</string>
+
+    <!-- Menu item used to view the details for a specific contact -->
+    <string name="menu_viewContact">"Переглянути контакт"</string>
+
+    <!-- Menu item used to call a contact, containing the name of the contact to call -->
+    <string name="menu_callNumber">"Подзвонити: <xliff:g id="name">%s</xliff:g>"</string>
+
+    <!-- Menu item used to add a star to a contact, which makes that contact show up at the top of favorites -->
+    <string name="menu_addStar">"Додати у вибране"</string>
+
+    <!-- Menu item used to remove a star from a contact, making the contact no longer show up at the top of favorites -->
+    <string name="menu_removeStar">"Видалити із вибраного"</string>
+
+    <!-- Optional menu item to encode the current contact as a QR Code using Barcode Scanner. -->
+    <string name="menu_showBarcode">"Показати штрихкод"</string>
+
+    <!-- Menu item used to edit a specific contact -->
+    <string name="menu_editContact">"Змінити контакт"</string>
+
+    <!-- Menu item used to delete a specific contact -->
+    <string name="menu_deleteContact">"Видалити контакт"</string>
+
+    <!-- Menu item used to call a specific contact when viewing the details of that contact. -->
+    <string name="menu_call">"Подзвонити"</string>
+
+    <!-- Menu item used to send an SMS or MMS message to a specific phone number or a contacts default phone number -->
+    <string name="menu_sendSMS">"Відправити SMS/MMS"</string>
+
+    <!-- Menu item used to send an email message to a specific email address -->
+    <string name="menu_sendEmail">"Відправити повідомлення електронної пошти"</string>
+
+    <!-- Menu item used to view a contact's address on a map -->
+    <string name="menu_viewAddress">"Адрес на карті"</string>
+
+    <!-- Menu item that makes a phone the default for a contact. The default number used when you
+         try to call a contact without specifying a specific number. -->
+    <string name="menu_makeDefaultNumber">"Зробити номер за замовчуванням"</string>
+
+    <!-- Confirmation dialog title after users selects to delete a contact. -->
+    <string name="deleteConfirmation_title">"Видалення"</string>
+
+    <!-- Confirmation dialog contents after users selects to delete a contact. -->
+    <string name="deleteConfirmation">"Цей контакт буде видалено."</string>
+
+    <!-- Menu item to indicate you are done editing a contact and want to save the changes you've made -->
+    <string name="menu_done">"Готово"</string>
+
+    <!-- Menu item to indicate you want to stop editing a contact and NOT save the changes you've made -->
+    <string name="menu_doNotSave">"Повернути"</string>
+
+    <!-- The title of the activity that edits and existing contact -->
+    <string name="editContact_title_edit">"Змінити контакт"</string>
+
+    <!-- The title of the activity that creates a new contact -->
+    <string name="editContact_title_insert">"Новий контакт"</string>
+
+    <!-- Button that adds more info to a contact, like a new phone number, email address, or postal address -->
+    <string name="menu_addItem">"Детальніше"</string>
+
+    <!-- The label describing the phonetic pronunciation/reading of a contact name -->
+    <string name="label_phonetic_name">"Фонетичний"</string>
+
+    <!-- The label describing the Notes field of a contact. This field allows free form text entry about a contact -->
+    <string name="label_notes">"Примітка"</string>
+
+    <!-- The label describing the custom ringtone for a contact -->
+    <string name="label_ringtone">"Мелодія дзвінка"</string>
+
+    <!-- Hint text for the contact name when editing -->
+    <string name="ghostData_name">"Перший і останній"</string>
+
+    <!-- Hint text for the phonetic reading of the contact name when editing -->
+    <string name="ghostData_phonetic_name">"Ім'я (фонетичений запис)"</string>
+
+    <!-- Hint text for the organization name when editing -->
+    <string name="ghostData_company">"Компанія"</string>
+
+    <!-- Hint text for the organization position when editing -->
+    <string name="ghostData_title">"Посада"</string>
+
+    <!-- Hint text for an IM account when editing -->
+    <string name="ghostData_im">"Ім'я в чаті"</string>
+
+    <!-- Hint text for the notes field when editing -->
+    <string name="ghostData_notes">"Мої примітки"</string>
+
+    <!-- Hint text for the phone number field when editing -->
+    <string name="ghostData_phone">"Телефонний номер"</string>
+
+    <!-- Hint text for the email address field when editing -->
+    <string name="ghostData_email">"Адрес електронної пошти"</string>
+
+    <!-- Hint text for the postal address field when editing -->
+    <string name="ghostData_postal">"Поштовий адрес"</string>
+
+    <!-- Message displayed in a toast when you try to view the details of a contact that
+         for some reason doesn't exist anymore. -->	
+    <string name="invalidContactMessage">"Контакт не існує."</string>
+
+    <!-- When picking a contact from a list of all contacts there is an entry at the top of the
+         list that allows the user to create a new contact, which this string is used for -->
+    <string name="pickerNewContactHeader">"Створити новий контакт"</string>
+
+    <!-- Dialog title when you select a label when creating or edit a contact -->
+    <string name="selectLabel">"Вібір ярлика"</string>
+
+    <!-- Header that expands to list all of the types of phone numbers when editing or creating a phone number for a contact -->
+    <string name="phoneLabelsGroup">"Телефон"</string>
+
+    <!-- Header that expands to list all of the types of email addresses when editing or creating an email address for a contact -->
+    <string name="emailLabelsGroup">"Електронна пошта"</string>
+
+    <!-- Header that expands to list all of the types of IM account when editing or creating an IM account for a contact -->
+    <string name="imLabelsGroup">"Чат"</string>
+
+    <!-- Header that expands to list all of the types of postal addresses when editing or creating an postal address for a contact -->
+    <string name="postalLabelsGroup">"Поштова адреса"</string>
+
+    <!-- Header that expands to list other types of data you can add to a contact, like notes and organizations -->
+    <string name="otherLabelsGroup">"Інше"</string>
+
+    <!-- The order of the items below is important, don't reorder without changing EditContactActivity.java -->
+    <skip/>
+    <!-- The labels that are under the otherLabelsGroup when editing a contact. -->
+    <string-array name="otherLabels">
+        <!-- An organization associated with a contact -->
+        <item>"Організація"</item>
+        <!-- A note associated with a contact -->
+        <item>"Примітка"</item>
+    </string-array>
+
+    <!-- Title of the dialog that appears if there are no pictures from which to create an icon for a contact -->
+    <string name="errorDialogTitle">"Немає малюнків"</string>
+
+    <!-- Description in the dialog that appears if there are no pictures from which to create an icon for a contact -->
+    <string name="photoPickerNotFoundText">"На телефоні немає малюнків."</string>
+
+    <!-- Description of the activity used to set a photo in the pictures application as the icon for a contact -->
+    <string name="attachToContact">"Значок контакту"</string>
+
+    <!-- Title of the dialog used to set a custom label for a contact detail, like a phone number or email address.
+         For example, this may be used to set a phone number's label to "Vaction house" -->
+    <string name="customLabelPickerTitle">"Ім'я персоналізованого ярлика"</string>
+
+    <!-- The menu item to open the list of groups to display -->
+    <string name="menu_displayGroup">"Показати групу"</string>
+
+    <!-- The menu item that leads to the settings for contact syncing -->
+    <string name="syncGroupPreference">"Змінити групи синхронізації"</string>
+    
+    <!-- The menu item that launches the SIM card import activity -->
+    <string name="importFromSim">"Імпортувати контакти"</string>
+
+    <!-- Check box label that allows calls to the contact to be sent directly to voicemail -->
+    <string name="send_to_voicemail_checkbox">"Направляти виклики на голосову пошту."</string>
+
+    <!-- String letting the user know that calls from the contact they're viewing will be sent directly to voicemail -->
+    <string name="send_to_voicemail_view">"Виклики направлено на голосову пошту."</string>
+
+    <!-- String used to indicate that a contact doesn't have a custom ringtone -->
+    <string name="default_ringtone">"За замовчуванням"</string>
+
+    <!-- The button/menu item that allows you to add a picture to a contact -->
+    <string name="addPicture">"Добавити значок"</string>
+
+    <!-- The menu item that allows you to remove a picture from a contact -->
+    <string name="removePicture">"Забрати значок"</string>
+
+    <!-- The text displayed when the contacts list is empty while displaying all contacts -->
+    <string name="noContacts">"Немає контактів."</string>
+
+    <!-- The text displayed when the contacts list is empty while displaying only contacts that have phone numbers -->
+    <string name="noContactsWithPhoneNumbers">"Немає контактів з телефонними номерами."</string>
+
+    <!-- The text displayed when the contacts list is empty while displaying favorite contacts -->
+    <string name="noFavorites">"Немає вибраних."</string>
+
+    <!-- Title for group selection dialog. The dialog contains a list of contact groups that the
+         user can pick from, indicating they only want to see the contacts in that group. -->
+    <string name="select_group_title">"Групи"</string>
+    
+    <!-- The text displayed when the contacts list is empty while displaying a single group of contacts -->
+    <string name="groupEmpty">"Група \"<xliff:g id="groupName">%s</xliff:g>\" пуста."</string>
+
+    <!-- The description of all groups when asking the user what they want to display -->
+    <string name="showAllGroups">"Всі контакти"</string>
+
+    <!-- The setting to sync all contacts from the server -->
+    <string name="syncAllGroups">"Синхронізувати всі контакти"</string>
+
+    <!-- The name of the system "My Contacts" group. This should be kept in sync with the web UI -->
+    <string name="groupNameMyContacts">"Мої контакти"</string>
+    
+    <!-- The group type that displays only contacts with phone numbers -->
+    <string name="groupNameWithPhones">"Контакти з телефоними номерами"</string>
+    
+    <!-- Toast displayed when a contact is created -->
+    <string name="contactCreatedToast">"Контакт створено."</string>
+    
+    <!-- Toast displayed when a contact is saved -->
+    <string name="contactSavedToast">"Контакт збережено."</string>
+
+    <!-- Separator in the contact details list describing that the items below it will place a call when clicked -->
+    <string name="listSeparatorCallNumber">"Набрати номер"</string>
+
+    <!-- Section header in the Edit Contacts screen for phone numbers -->
+    <string name="listSeparatorCallNumber_edit">"Номери телефонів"</string>
+
+    <!-- Separator in the contact details list describing that the items below it will send an SMS/MMS to a phone number -->
+    <string name="listSeparatorSendSmsMms">"Відправити SMS/MMS"</string>
+
+    <!-- Separator in the contact details list describing that the items below it will send an email -->
+    <string name="listSeparatorSendEmail">"Відправити повідомлення з електронної пошти"</string>
+
+    <!-- Section header in the Edit Contacts screen for E-mail addresses -->
+    <string name="listSeparatorSendEmail_edit">"Адреси електронної пошти"</string>
+
+    <!-- Separator in the contact details list describing that the items below it will send an IM -->
+    <string name="listSeparatorSendIm">"Відправити моментальне повідомлення"</string>
+
+    <!-- Section header in the Edit Contacts screen for Instant messanger accounts -->
+    <string name="listSeparatorSendIm_edit">"Адреса чату"</string>
+
+    <!-- Separator in the contact details list describing that the items below it will open maps with the given address -->
+    <string name="listSeparatorMapAddress">"Адрес на карті"</string>
+
+    <!-- Section header in the Edit Contacts screen for map addresses -->
+    <string name="listSeparatorMapAddress_edit">"Поштові адреси"</string>
+
+    <!-- Separator in the contact details list describing that the items below are non-actionable organization information -->
+    <string name="listSeparatorOrganizations">"Організації"</string>
+
+    <!-- Separator in the contact details list describing that the items below are random other non-actionable information about a contact -->
+    <string name="listSeparatorOtherInformation">"Інші дані"</string>
+
+    <!-- Section header in the Edit Contacts screen for other options, such as setting ringtone -->
+    <string name="listSeparatorOtherInformation_edit">"Інші параметри"</string>
+
+    <!-- Section header in the Edit Contacts screen for the "Add more items" button -->
+    <string name="listSeparatorMore_edit">"Додатково"</string>
+
+    <!-- The description text for the contacts tab. Space is limited for this string, so the shorter the better -->
+    <string name="contactsIconLabel">"Контакти"</string>
+
+    <!-- The description text for the favorites tab. Space is limited for this string, so the shorter the better -->
+    <string name="contactsFavoritesLabel">"Вибране"</string>
+
+    <!-- The description text for the dialer tab. Space is limited for this string, so the shorter the better -->
+    <string name="dialerIconLabel">"Набір номерів"</string>
+
+    <!-- The description text for the call log tab. Space is limited for this string, so the shorter the better -->
+    <string name="recentCallsIconLabel">"Журнал викликів"</string>
+    <string name="liveFolderAll">"Всі контакти"</string>
+    <string name="liveFolderFavorites">"Виділені контакти"</string>
+    <string name="liveFolderPhone">"Контакти з номерами телефонів"</string>
+
+    <!-- Menu item used to send an SMS or MMS message to a phone number  -->
+    <string name="menu_sendTextMessage">"Відправити SMS повідомлення"</string>
+
+    <!-- Menu item used to call a contact from the call log -->
+    <string name="recentCalls_callNumber">"Подзвонити: <xliff:g id="name">%s</xliff:g>"</string>
+
+    <!-- Menu item used to copy a number from the call log to the dialer so it can be edited before calling it -->
+    <string name="recentCalls_editNumberBeforeCall">"Змінити номер перед викликом"</string>
+
+    <!-- Menu item used to add a number from the call log to contacts -->
+    <string name="recentCalls_addToContact">"Добавити в контакти"</string>
+
+    <!-- Menu item used to remove a single call from the call log -->
+    <string name="recentCalls_removeFromRecentList">"Видалити із журналу викликів"</string>
+
+    <!-- Menu item used to remove all calls from the call log -->
+    <string name="recentCalls_deleteAll">"Очистити журнал викликів"</string>
+
+    <!-- Text displayed when the call log is empty -->
+    <string name="recentCalls_empty">"Журнал викликів порожній."</string>
+
+    <!-- The title of a dialog that displays the IMEI of the phone -->
+    <string name="imei">"IMEI"</string>
+
+    <!-- String used for displaying calls to the voicemail number in the call log -->
+    <string name="voicemail">"Голосова пошта"</string>
+
+    <!-- String used to display calls from unknown numbers in the call log -->
+    <string name="unknown">"Невідомо"</string>
+
+    <!-- String used to display calls from private numbers in the call log -->
+    <string name="private_num">"Приватний номер"</string>
+
+    <!-- Displayed in the text entry box in the dialer when in landscape mode to guide the user
+         to dial using the physical keyboard -->
+    <string name="dialerKeyboardHintText">"Для набору використайте клавіатуру"</string>
+
+    <!-- Hint text displayed in the "digits" field above the dialer's
+         dialpad, if there's already a call in progress.  (This hint
+         reminds the user that the dialer will add a new call, as opposed
+         to sending DTMF tones over the current call.) -->
+    <string name="dialerDialpadHintText">"Наберіть номер для додавання викликів"</string>
+
+    <!-- Dialog text displayed when loading a phone number from the SIM card for speed dial -->
+    <string name="simContacts_emptyLoading">"Відбувається завантаження з SIM-карти\u2026"</string>
+
+    <!-- Dialog title displayed when loading a phone number from the SIM card for speed dial -->
+    <string name="simContacts_title">"Контакти на SIM-карті"</string>
+
+    <!-- Displayed when a user is prompted to setup a Google account for syncing -->
+    <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Синхронізуйте свої контакти Google!"</font> "\n"Після синхронізації з телефоном
+    ви зможете спілкуватися із знайомимим, де б ви не були."</string>
+
+    <!-- Displayed full screen when the user has no contacts and they are displaying the My Contacts group, and contact syncing is disabled -->
+    <string name="noContactsHelpText">"У вас немає контактів."\n\n"Щоб додати контакти, натисніть <font fgcolor="#ffffffff"><b>Меню</b></font> і оберіть:\n"
+        \n<li><font fgcolor="#ffffffff"><b>"Новий контакт"</b></font> "створити новий контакт з купи\n"</li>
+        \n<li><font fgcolor="#ffffffff"><b>"Імпортувати контакт"</b></font> "додати контакт з SIM карти\n"</li>"
+    </string>
+    
+    <!-- Displayed full screen when the user has no contacts and they are displaying the My Contacts group, and contact syncing is enabled -->
+    <string name="noContactsHelpTextWithSync">"У вас немає контактів."\n\n"Щоб додати контакти, натисніть <font fgcolor="#ffffffff"><b>Меню</b></font> і оберіть:\n"
+        \n<li><font fgcolor="#ffffffff"><b>"Змініть синхронізацію групи"</b></font> "додати з нового або існуючого облікового запису Google\n"</li>
+        \n<li><font fgcolor="#ffffffff"><b>"Новий контакт"</b></font> "to create a new contact from scratch\n"</li>
+        \n<li><font fgcolor="#ffffffff"><b>"Імпортувати контакт"</b></font> "додати контакт з SIM карти\n"</li>"
+    </string>
+
+    <!-- Activity title for the activity that lets the user choose which groups of contacts to sync from the server -->
+    <string name="seclectSyncGroups_title">"Вибір груп для синхронізації"</string>
+
+    <!-- Live folder label for all contacts -->
+    <string name="liveFolder_all_label">"Всі контакти"</string>
+
+    <!-- Live folder label for only starred contacts -->
+    <string name="liveFolder_favorites_label">"Обрані"</string>
+
+    <!-- Live folder label for all contacts with phone numbers -->
+    <string name="liveFolder_phones_label">"Телефони"</string>
+
+    <!-- Item label: jump to the in-call DTMF dialpad.
+         (Part of a list of options shown in the dialer when another call
+         is already in progress.) -->
+    <string name="dialer_useDtmfDialpad">"Використовувати клавіатуру тонального набору"</string>
+
+    <!-- Item label: jump to the in-call UI.
+         (Part of a list of options shown in the dialer when another call
+         is already in progress.) -->
+    <string name="dialer_returnToInCallScreen">"Відображати поточний виклик"</string>
+
+    <!-- Item label: use the Dialer's dialpad to add another call.
+         (Part of a list of options shown in the dialer when another call
+         is already in progress.) -->
+    <string name="dialer_addAnotherCall">"Додати виклик"</string>
+
+    <!-- Title bar for call detail screen -->
+    <string name="callDetailTitle">"Інформація про дзвінок"</string>
+
+    <!-- Toast for call detail screen when couldn't read the requested details -->
+    <string name="toast_call_detail_error">"Не вдається зчитати дані про вказаний дзвінок."</string>
+
+    <!-- In call detail screen, label for call type -->
+    <string name="call_type">"Тип"</string>
+
+    <!-- Title for incoming call details screen -->
+    <string name="type_incoming">"Вхідний дзвінок"</string>
+    
+    <!-- Title for outgoing call details screen -->
+    <string name="type_outgoing">"Вихідний дзвінок"</string>
+
+    <!-- Title for missed call details screen -->
+    <string name="type_missed">"Пропущений дзвінок"</string>
+
+    <!-- In call detail screen, label for call date/time -->
+    <string name="call_time">"Час"</string>
+
+    <!-- In call detail screen, combine date/time string and relative time to give verbose call date/time -->
+    <string name="datetime_relative">"<xliff:g id="datetime" example="Dec 31, 2007, 11:00 am">%1$s</xliff:g> (<xliff:g id="relative" example="4 hours ago">%2$s</xliff:g>)"</string>
+
+    <!-- In call detail screen, label for call duration -->
+    <string name="call_duration">"Тривалість"</string>
+
+    <!-- In call detail screen, header title for actions section -->
+    <string name="header_actions">"Дії"</string>
+
+    <!-- In edit contact screen, combine the actual ringtone name with prefix for placement in spinner -->
+    <string name="ringtone_spinner">"Мелодія: <xliff:g id="ringtone">%1$s</xliff:g>"</string>
+
+    <!-- In edit contact screen, add more info spinner title -->
+    <string name="add_more_items">"Додавання контактів"</string>
+
+    <!-- Action string for calling a phone number. -->
+    <string name="actionCall">"Подзвонити по номеру <xliff:g id="type" example="mobile">%s</xliff:g>"</string>
+
+    <!-- Action string for sending an email to an email address. -->
+    <string name="actionEmail">"Відправити повідомлення на електронну пошту <xliff:g id="type" example="home">%s</xliff:g>"</string>
+
+    <!-- Action string for sending a text message to a phone number. -->
+    <string name="actionText">"Відправити текстове повідомлення на номер: <xliff:g id="type" example="mobile">%s</xliff:g>"</string>
+
+    <!-- Action string for sending an instant message to a chat buddy. -->
+    <string name="actionChat">"Звертатися в чаті за допомогою: <xliff:g id="type" example="Google Talk">%s</xliff:g>"</string>
+
+    <!-- Action string for viewing an address on a map. -->
+    <string name="actionMap">"Перегляд адреси: <xliff:g id="type" example="home">%s</xliff:g>"</string>
+
+    <!-- Description for incoming calls going to voice mail vs. not -->
+    <string name="actionIncomingCall">"Вхідні виклики"</string>
+    
+    <!-- Detail text for incoming calls going to voice mail -->
+    <string name="detailIncomingCallsGoToVoicemail">"Переадресація на голосову пошту"</string>
+
+    <!-- Description of what the contact specific ringtone is set to -->
+    <string name="detailsRingtone">"Вибрано: <xliff:g id="ringtone_name">%s</xliff:g>"</string>
+    
+    <!-- Action string for calling back a number in the call log -->
+    <string name="callBack">"Передзвоніть"</string>
+
+    <!-- Action string for calling a number in the call log again -->
+    <string name="callAgain">"Повторити дзвінок"</string>
+
+    <!-- Action string for returning a missed call in the call log -->
+    <string name="returnCall">"Передзвонити"</string>
+
+    <!-- A nicely formatted call duration displayed when viewing call details. For example "42 mins 28 secs" -->
+    <string name="callDetailsDurationFormat">"<xliff:g id="minutes" example="42">%s</xliff:g> хв <xliff:g id="seconds" example="28">%s</xliff:g> сек"</string>
+
+    <!-- A list separator for the Favorites tab indicating that items below it are frequently called contacts rather than starred contacts -->
+    <string name="favoritesFrquentSeparator">"Часто набрані"</string>
+
+    <!-- Dialog title when prompting before creating a contact -->
+    <string name="add_contact_dlg_title">"Додати контакт"</string>
+    <!-- Dialog message when prompting before creating a contact. Includes
+         the email address, e.g. "Add xyz@foo.com to contacts?" -->
+    <string name="add_contact_dlg_message_fmt">"Додати \"<xliff:g id="email">%s</xliff:g>\" до контакту?"</string>
+</resources>
