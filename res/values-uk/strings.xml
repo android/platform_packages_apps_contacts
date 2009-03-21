@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="contactsList">"Контакти"</string>
+	<!-- no translation found for launcherDialer (140610573639849799) -->
+    <skip />
+    <string name="shortcutContact">"Контакт"</string>
+    <string name="starredList">"Виділені"</string>
+    <string name="frequentList">"Часті"</string>
+    <string name="strequentList">"Вибрані"</string>
+    <string name="viewContactTitle">"Дані про контакт"</string>
+    <string name="viewContactDesription">"Переглянути контакт"</string>
+    <string name="editContactDescription">"Змінити контакт"</string>
+    <string name="insertContactDescription">"Створити контакт"</string>
+    <string name="searchHint">"Пошук контакту"</string>
+    <string name="menu_newContact">"Створити контакт"</string>
+    <string name="menu_viewContact">"Переглянути контакт"</string>
+    <string name="menu_callNumber">"Подзвонити: <xliff:g id="NAME">%s</xliff:g>"</string>
+    <string name="menu_addStar">"Додати у вибране"</string>
+    <string name="menu_removeStar">"Видалити із вибраного"</string>
+    <string name="menu_showBarcode">"Показати штрихкод"</string>
+    <string name="menu_editContact">"Змінити контакт"</string>
+    <string name="menu_deleteContact">"Видалити контакт"</string>
+    <string name="menu_call">"Подзвонити"</string>
+    <string name="menu_sendSMS">"Відправити SMS/MMS"</string>
+    <string name="menu_sendEmail">"Відправити повідомлення електронної пошти"</string>
+    <string name="menu_viewAddress">"Адрес на карті"</string>
+    <string name="menu_makeDefaultNumber">"Зробити номер за замовчуванням"</string>
+    <string name="deleteConfirmation_title">"Видалення"</string>
+    <string name="deleteConfirmation">"Цей контакт буде видалено."</string>
+    <string name="menu_done">"Готово"</string>
+	<!-- no translation found for menu_doNotSave (2174577548513895144) -->
+    <skip />
+    <string name="editContact_title_edit">"Змінити контакт"</string>
+    <string name="editContact_title_insert">"Створення контакту"</string>
+    <string name="menu_addItem">"Детальніше"</string>
+    <string name="label_phonetic_name">"Фонетика"</string>
+    <string name="label_notes">"Примітка"</string>
+    <string name="label_ringtone">"Мелодія дзвінка"</string>
+    <string name="ghostData_name">"Перший і останній"</string>
+    <string name="ghostData_phonetic_name">"Ім'я (фонетичений запис)"</string>
+    <string name="ghostData_company">"Компанія"</string>
+    <string name="ghostData_title">"Посада"</string>
+    <string name="ghostData_im">"Ім'я в чаті"</string>
+    <string name="ghostData_notes">"Мої примітки"</string>
+    <string name="ghostData_phone">"Телефонний номер"</string>
+    <string name="ghostData_email">"Адрес електронної пошти"</string>
+    <string name="ghostData_postal">"Поштовий адрес"</string>
+    <string name="invalidContactMessage">"Контакт не існує."</string>
+    <string name="pickerNewContactHeader">"Створити новий контакт"</string>
+    <string name="selectLabel">"Вібір ярлика"</string>
+    <string name="phoneLabelsGroup">"Телефон"</string>
+    <string name="emailLabelsGroup">"Електронна пошта"</string>
+    <string name="imLabelsGroup">"Чат"</string>
+    <string name="postalLabelsGroup">"Поштова адреса"</string>
+    <string name="otherLabelsGroup">"Інше"</string>
+  <string-array name="otherLabels">
+    <item>"Організація"</item>
+    <item>"Примітка"</item>
+  </string-array>
+    <string name="errorDialogTitle">"Немає малюнків"</string>
+    <string name="photoPickerNotFoundText">"На телефоні немає малюнків."</string>
+    <string name="attachToContact">"Значок контакту"</string>
+    <string name="customLabelPickerTitle">"Ім'я персоналізованого ярлика"</string>
+    <string name="menu_displayGroup">"Показати групу"</string>
+    <string name="syncGroupPreference">"Змінити групи синхронізації"</string>
+    <string name="importFromSim">"Імпортувати контакти"</string>
+    <string name="send_to_voicemail_checkbox">"Направляти виклики прямо на голосову пошту."</string>
+    <string name="send_to_voicemail_view">"Виклики направляються прямо на голосову пошту."</string>
+    <string name="default_ringtone">"За замовчуванням"</string>
+    <string name="addPicture">"Добавити значок"</string>
+    <string name="removePicture">"Забрати значок"</string>
+    <string name="noContacts">"Немає контактів."</string>
+    <string name="noContactsWithPhoneNumbers">"Немає контактів з телефонними номерами."</string>
+    <string name="noFavorites">"Немає вибраних."</string>
+    <string name="select_group_title">"Групи"</string>
+    <string name="groupEmpty">"Група \"<xliff:g id="GROUPNAME">%s</xliff:g>\" пуста."</string>
+    <string name="showAllGroups">"Всі контакти"</string>
+    <string name="syncAllGroups">"Синхронізувати всі контакти"</string>
+    <string name="groupNameMyContacts">"Мої контакти"</string>
+    <string name="groupNameWithPhones">"Контакти з телефоними номерами"</string>
+    <string name="contactCreatedToast">"Контакт створено."</string>
+    <string name="contactSavedToast">"Контакт збережено."</string>
+    <string name="listSeparatorCallNumber">"Набрати номер"</string>
+	<string name="listSeparatorCallNumber_edit">"Номери телефонів"</string>
+    <string name="listSeparatorSendSmsMms">"Відправити SMS/MMS"</string>
+    <string name="listSeparatorSendEmail">"Відправити повідомлення з електронної пошти"</string>
+	<string name="listSeparatorSendEmail_edit">"Адреси електронної пошти"</string>
+    <string name="listSeparatorSendIm">"Відправити моментальне повідомлення"</string> 
+	<string name="listSeparatorSendIm_edit">"Адреса чату"</string>
+    <string name="listSeparatorMapAddress">"Адрес на карті"</string>
+	<string name="listSeparatorMapAddress_edit">"Поштові адреси"</string>
+    <string name="listSeparatorOrganizations">"Організації"</string>
+    <string name="listSeparatorOtherInformation">"Інші дані"</string>
+    <string name="listSeparatorOtherInformation_edit">"Інші параметри"</string>
+    <string name="listSeparatorMore_edit">"Додатково"</string>
+    <string name="contactsIconLabel">"Контакти"</string>
+    <string name="contactsFavoritesLabel">"Вибране"</string>
+    <string name="dialerIconLabel">"Набір номерів"</string>
+    <string name="recentCallsIconLabel">"Журнал викликів"</string>
+    <string name="liveFolderAll">"Всі контакти"</string>
+    <string name="liveFolderFavorites">"Виділені контакти"</string>
+    <string name="liveFolderPhone">"Контакти з номерами телефонів"</string>
+    <string name="menu_sendTextMessage">"Відправити повідомлення SMS"</string>
+    <string name="recentCalls_callNumber">"Подзвонити: <xliff:g id="NAME">%s</xliff:g>"</string>
+    <string name="recentCalls_editNumberBeforeCall">"Змінити номер перед викликом"</string>
+    <string name="recentCalls_addToContact">"Добавити в контакти"</string>
+    <string name="recentCalls_removeFromRecentList">"Видалити із журналу викликів"</string>
+    <string name="recentCalls_deleteAll">"Очистити журнал викликів"</string>
+    <string name="recentCalls_empty">"Журнал викликів порожній."</string>
+    <string name="imei">"IMEI"</string>
+    <string name="voicemail">"Голосова пошта"</string>
+    <string name="unknown">"Невідомо"</string>
+    <string name="private_num">"Приватний номер"</string>
+    <string name="dialerKeyboardHintText">"Для набору використайте клавіатуру"</string>
+    <string name="dialerDialpadHintText">"Наберіть номер для додавання викликів"</string>
+    <string name="simContacts_emptyLoading">"Відбувається завантаження з SIM-карти…"</string>
+    <string name="simContacts_title">"Контакти на SIM-карті"</string>
+    <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Синхронізуйте свої контакти Google!"</font>" "\n"Після синхронізації з телефоном ви зможете спілкуватися із знайомимим, де б ви не були."</string>
+    <!-- no translation found for noContactsHelpText (2249195687463896364) -->
+    <skip />
+    <!-- no translation found for noContactsHelpTextWithSync (4927701496550314555) -->
+    <skip />
+    <string name="seclectSyncGroups_title">"Вибір груп для синхронізації"</string>
+    <string name="liveFolder_all_label">"Всі контакти"</string>
+    <string name="liveFolder_favorites_label">"Відмічені"</string>
+    <string name="liveFolder_phones_label">"Телефони"</string>
+    <string name="dialer_useDtmfDialpad">"Використовувати клавіатуру тонального набору"</string>
+    <string name="dialer_returnToInCallScreen">"Відображати поточний виклик"</string>
+    <string name="dialer_addAnotherCall">"Добавити виклик"</string>
+    <string name="callDetailTitle">"Інформація про дзвінок"</string>
+    <string name="toast_call_detail_error">"Не вдається зчитати дані про вказаний дзвінок."</string>
+    <string name="call_type">"Тип"</string>
+    <string name="type_incoming">"Вхідний дзвінок"</string>
+    <string name="type_outgoing">"Вихідний дзвінок"</string>
+    <string name="type_missed">"Пропущений дзвінок"</string>
+    <string name="call_time">"Час"</string>
+    <string name="datetime_relative">"<xliff:g id="DATETIME">%1$s</xliff:g> (<xliff:g id="RELATIVE">%2$s</xliff:g>)"</string>
+    <string name="call_duration">"Тривалість"</string>
+    <string name="header_actions">"Дії"</string>
+    <string name="ringtone_spinner">"Мелодія: <xliff:g id="RINGTONE">%1$s</xliff:g>"</string>
+    <string name="add_more_items">"Додавання контактів"</string>
+    <string name="actionCall">"Подзвонити по номеру: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionEmail">"Відправити електронне повідомлення на адресу: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionText">"Відправити текстове повідомлення на номер: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionChat">"Звертатися в чаті за допомогою: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionMap">"Перегляд адреси: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionIncomingCall">"Вхідні виклики"</string>
+    <string name="detailIncomingCallsGoToVoicemail">"Переадресація на голосову пошту"</string>
+    <string name="detailsRingtone">"Вибрано: <xliff:g id="RINGTONE_NAME">%s</xliff:g>"</string>
+    <string name="callBack">"Передзвоніть"</string>
+    <!-- no translation found for callAgain (3197312117049874778) -->
+    <skip />
+    <!-- no translation found for returnCall (8171961914203617813) -->
+    <skip />
+    <!-- no translation found for callDetailsDurationFormat (8157706382818184268) -->
+    <skip />
+</resources>
