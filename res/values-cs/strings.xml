@@ -92,6 +92,8 @@
     <string name="syncAllGroups">"Synchronizovat všechny kontakty"</string>
     <string name="groupNameMyContacts">"Moje kontakty"</string>
     <string name="groupNameWithPhones">"Kontakty s telefonním číslem"</string>
+    <!-- no translation found for starredInAndroid (6495527538140213440) -->
+    <skip />
     <string name="contactCreatedToast">"Kontakt byl vytvořen."</string>
     <string name="contactSavedToast">"Kontakt byl uložen."</string>
     <string name="listSeparatorCallNumber">"Vytočit číslo"</string>

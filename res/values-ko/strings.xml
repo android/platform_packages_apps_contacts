@@ -92,6 +92,8 @@
     <string name="syncAllGroups">"모든 연락처 동기화"</string>
     <string name="groupNameMyContacts">"내 연락처"</string>
     <string name="groupNameWithPhones">"전화번호가 포함된 연락처"</string>
+    <!-- no translation found for starredInAndroid (6495527538140213440) -->
+    <skip />
     <string name="contactCreatedToast">"연락처가 생성되었습니다."</string>
     <string name="contactSavedToast">"연락처가 저장되었습니다."</string>
     <string name="listSeparatorCallNumber">"전화번호"</string>

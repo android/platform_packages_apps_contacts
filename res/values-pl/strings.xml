@@ -92,6 +92,8 @@
     <string name="syncAllGroups">"Synchronizuj wszystkie kontakty"</string>
     <string name="groupNameMyContacts">"Moje kontakty"</string>
     <string name="groupNameWithPhones">"Kontakty z numerami telefonu"</string>
+    <!-- no translation found for starredInAndroid (6495527538140213440) -->
+    <skip />
     <string name="contactCreatedToast">"Utworzono kontakt."</string>
     <string name="contactSavedToast">"Kontakt został zapisany."</string>
     <string name="listSeparatorCallNumber">"Wybierz numer"</string>

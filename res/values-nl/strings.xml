@@ -92,6 +92,8 @@
     <string name="syncAllGroups">"Alle contacten synchroniseren"</string>
     <string name="groupNameMyContacts">"Mijn contacten"</string>
     <string name="groupNameWithPhones">"Contacten met telefoonnummers"</string>
+    <!-- no translation found for starredInAndroid (6495527538140213440) -->
+    <skip />
     <string name="contactCreatedToast">"Contactpersoon is gemaakt."</string>
     <string name="contactSavedToast">"Contactpersoon opgeslagen."</string>
     <string name="listSeparatorCallNumber">"Nummer bellen"</string>

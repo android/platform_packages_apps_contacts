@@ -92,6 +92,8 @@
     <string name="syncAllGroups">"同步處理所有連絡人"</string>
     <string name="groupNameMyContacts">"我的聯絡人"</string>
     <string name="groupNameWithPhones">"有電話號碼的連絡人"</string>
+    <!-- no translation found for starredInAndroid (6495527538140213440) -->
+    <skip />
     <string name="contactCreatedToast">"已建立連絡人"</string>
     <string name="contactSavedToast">"連絡人已儲存。"</string>
     <string name="listSeparatorCallNumber">"撥打號碼"</string>
