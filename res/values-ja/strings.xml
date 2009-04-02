@@ -51,7 +51,7 @@
     <string name="label_notes">"メモ"</string>
     <string name="label_ringtone">"着信音"</string>
     <string name="ghostData_name">"名前"</string>
-    <string name="ghostData_phonetic_name">"読み仮名"</string>
+    <string name="ghostData_phonetic_name">"よみがな"</string>
     <string name="ghostData_company">"会社"</string>
     <string name="ghostData_title">"役職"</string>
     <string name="ghostData_im">"IM名"</string>
@@ -147,7 +147,7 @@
     <string name="toast_call_detail_error">"通話要求の詳細が読み込めませんでした。"</string>
     <string name="call_type">"入力"</string>
     <string name="type_incoming">"通話着信"</string>
-    <string name="type_outgoing">"通話送信"</string>
+    <string name="type_outgoing">"発信履歴"</string>
     <string name="type_missed">"不在着信"</string>
     <string name="call_time">"時間"</string>
     <string name="datetime_relative">"<xliff:g id="DATETIME">%1$s</xliff:g> (<xliff:g id="RELATIVE">%2$s</xliff:g>)"</string>
