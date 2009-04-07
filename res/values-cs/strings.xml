@@ -92,8 +92,7 @@
     <string name="syncAllGroups">"Synchronizovat všechny kontakty"</string>
     <string name="groupNameMyContacts">"Moje kontakty"</string>
     <string name="groupNameWithPhones">"Kontakty s telefonním číslem"</string>
-    <!-- no translation found for starredInAndroid (6495527538140213440) -->
-    <skip />
+    <string name="starredInAndroid">"Označené hvězdičkou v systému Android"</string>
     <string name="contactCreatedToast">"Kontakt byl vytvořen."</string>
     <string name="contactSavedToast">"Kontakt byl uložen."</string>
     <string name="listSeparatorCallNumber">"Vytočit číslo"</string>
@@ -127,8 +126,7 @@
     <string name="voicemail">"Hlasová schránka"</string>
     <string name="unknown">"Neznámé číslo"</string>
     <string name="private_num">"Soukromé číslo"</string>
-    <!-- no translation found for payphone (4864313342828942922) -->
-    <skip />
+    <string name="payphone">"Veřejný telefon"</string>
     <string name="dialerKeyboardHintText">"Číslo vytočíte pomocí klávesnice"</string>
     <string name="dialerDialpadHintText">"Vytočením přidat hovor"</string>
     <string name="simContacts_emptyLoading">"Načítání z karty SIM..."</string>

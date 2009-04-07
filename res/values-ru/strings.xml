@@ -92,8 +92,7 @@
     <string name="syncAllGroups">"Синхронизировать все контакты"</string>
     <string name="groupNameMyContacts">"Мои контакты"</string>
     <string name="groupNameWithPhones">"Контакты с телефонными номерами"</string>
-    <!-- no translation found for starredInAndroid (6495527538140213440) -->
-    <skip />
+    <string name="starredInAndroid">"Помеченные в Android"</string>
     <string name="contactCreatedToast">"Контакт создан."</string>
     <string name="contactSavedToast">"Контакт сохранен."</string>
     <string name="listSeparatorCallNumber">"Набрать номер"</string>
@@ -127,8 +126,7 @@
     <string name="voicemail">"Голосовая почта"</string>
     <string name="unknown">"Неизвестно"</string>
     <string name="private_num">"Частный номер"</string>
-    <!-- no translation found for payphone (4864313342828942922) -->
-    <skip />
+    <string name="payphone">"Телефон-автомат"</string>
     <string name="dialerKeyboardHintText">"Для набора воспользуйтесь клавиатурой"</string>
     <string name="dialerDialpadHintText">"Наберите номер, чтобы добавить вызов"</string>
     <string name="simContacts_emptyLoading">"Идет загрузка с SIM-карты…"</string>

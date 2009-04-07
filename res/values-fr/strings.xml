@@ -92,8 +92,7 @@
     <string name="syncAllGroups">"Synchroniser tous les contacts"</string>
     <string name="groupNameMyContacts">"Mes contacts"</string>
     <string name="groupNameWithPhones">"Contacts avec des n° de téléphone"</string>
-    <!-- no translation found for starredInAndroid (6495527538140213440) -->
-    <skip />
+    <string name="starredInAndroid">"Suivis dans Android"</string>
     <string name="contactCreatedToast">"Contact créé."</string>
     <string name="contactSavedToast">"Contact enregistré."</string>
     <string name="listSeparatorCallNumber">"Composer le numéro"</string>
@@ -127,8 +126,7 @@
     <string name="voicemail">"Boîte vocale"</string>
     <string name="unknown">"Inconnu"</string>
     <string name="private_num">"Numéro privée"</string>
-    <!-- no translation found for payphone (4864313342828942922) -->
-    <skip />
+    <string name="payphone">"Cabine téléphonique"</string>
     <string name="dialerKeyboardHintText">"Utilisez le clavier pour composer le numéro"</string>
     <string name="dialerDialpadHintText">"Composer le numéro pour ajouter un appel"</string>
     <string name="simContacts_emptyLoading">"Chargement depuis la carte SIM..."</string>
@@ -166,7 +164,7 @@
     <string name="callBack">"Rappeler"</string>
     <string name="callAgain">"Renouveler l\'appel"</string>
     <string name="returnCall">"Rappeler"</string>
-    <string name="callDetailsDurationFormat">"<xliff:g id="MINUTES">%s</xliff:g> mn <xliff:g id="SECONDS">%s</xliff:g> s"</string>
+    <string name="callDetailsDurationFormat">"<xliff:g id="MINUTES">%s</xliff:g> min <xliff:g id="SECONDS">%s</xliff:g> s"</string>
     <string name="favoritesFrquentSeparator">"Fréquemment appelés"</string>
     <string name="add_contact_dlg_title">"Ajouter un contact"</string>
     <string name="add_contact_dlg_message_fmt">"Ajouter \"<xliff:g id="EMAIL">%s</xliff:g>\" aux contacts ?"</string>

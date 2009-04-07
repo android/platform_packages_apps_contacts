@@ -92,8 +92,7 @@
     <string name="syncAllGroups">"全連絡先を同期"</string>
     <string name="groupNameMyContacts">"Myコンタクト"</string>
     <string name="groupNameWithPhones">"電話番号のある連絡先"</string>
-    <!-- no translation found for starredInAndroid (6495527538140213440) -->
-    <skip />
+    <string name="starredInAndroid">"Androidでスター付きの連絡先"</string>
     <string name="contactCreatedToast">"連絡先を作成しました。"</string>
     <string name="contactSavedToast">"連絡先を保存しました。"</string>
     <string name="listSeparatorCallNumber">"発信"</string>
@@ -127,8 +126,7 @@
     <string name="voicemail">"ボイスメール"</string>
     <string name="unknown">"通知不可能"</string>
     <string name="private_num">"非通知"</string>
-    <!-- no translation found for payphone (4864313342828942922) -->
-    <skip />
+    <string name="payphone">"公衆電話発信"</string>
     <string name="dialerKeyboardHintText">"キーボードで番号を入力してください"</string>
     <string name="dialerDialpadHintText">"ダイヤルして通話追加"</string>
     <string name="simContacts_emptyLoading">"SIMカードから読み取り中..."</string>

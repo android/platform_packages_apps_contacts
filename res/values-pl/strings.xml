@@ -16,7 +16,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="contactsList">"Kontakty"</string>
-    <string name="launcherDialer">"Wybieranie numeru"</string>
+    <string name="launcherDialer">"Telefon"</string>
     <string name="shortcutContact">"Kontakt"</string>
     <string name="starredList">"Oznaczony gwiazdką"</string>
     <string name="frequentList">"Częste"</string>
@@ -92,8 +92,7 @@
     <string name="syncAllGroups">"Synchronizuj wszystkie kontakty"</string>
     <string name="groupNameMyContacts">"Moje kontakty"</string>
     <string name="groupNameWithPhones">"Kontakty z numerami telefonu"</string>
-    <!-- no translation found for starredInAndroid (6495527538140213440) -->
-    <skip />
+    <string name="starredInAndroid">"Oznaczone gwiazdką w systemie Android"</string>
     <string name="contactCreatedToast">"Utworzono kontakt."</string>
     <string name="contactSavedToast">"Kontakt został zapisany."</string>
     <string name="listSeparatorCallNumber">"Wybierz numer"</string>
@@ -127,8 +126,7 @@
     <string name="voicemail">"Poczta głosowa"</string>
     <string name="unknown">"Nieznane"</string>
     <string name="private_num">"Numer prywatny"</string>
-    <!-- no translation found for payphone (4864313342828942922) -->
-    <skip />
+    <string name="payphone">"Telefon płatny"</string>
     <string name="dialerKeyboardHintText">"Wybierz numer za pomocą klawiatury"</string>
     <string name="dialerDialpadHintText">"Wybierz numer, aby dodać połączenie"</string>
     <string name="simContacts_emptyLoading">"Wczytywanie z karty SIM…"</string>

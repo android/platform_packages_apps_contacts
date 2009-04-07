@@ -21,31 +21,31 @@
     <string name="starredList">"Met ster"</string>
     <string name="frequentList">"Vaak"</string>
     <string name="strequentList">"Favorieten"</string>
-    <string name="viewContactTitle">"Details van contactpersoon"</string>
-    <string name="viewContactDesription">"Contactpersoon weergeven"</string>
-    <string name="editContactDescription">"Contactpersoon bewerken"</string>
-    <string name="insertContactDescription">"Contactpersoon maken"</string>
+    <string name="viewContactTitle">"Details van contact"</string>
+    <string name="viewContactDesription">"Contact weergeven"</string>
+    <string name="editContactDescription">"Contact bewerken"</string>
+    <string name="insertContactDescription">"Contact maken"</string>
     <string name="searchHint">"Contacten zoeken"</string>
     <string name="menu_search">"Zoeken"</string>
-    <string name="menu_newContact">"Nieuwe contactpersoon"</string>
-    <string name="menu_viewContact">"Contactpersoon weergeven"</string>
+    <string name="menu_newContact">"Nieuw contact"</string>
+    <string name="menu_viewContact">"Contact weergeven"</string>
     <string name="menu_callNumber">"<xliff:g id="NAME">%s</xliff:g> bellen"</string>
     <string name="menu_addStar">"Toevoegen aan favorieten"</string>
     <string name="menu_removeStar">"Uit favorieten verwijderen"</string>
     <string name="menu_showBarcode">"Barcode weergeven"</string>
-    <string name="menu_editContact">"Contactpersoon bewerken"</string>
-    <string name="menu_deleteContact">"Contactpersoon verwijderen"</string>
+    <string name="menu_editContact">"Contact bewerken"</string>
+    <string name="menu_deleteContact">"Contact verwijderen"</string>
     <string name="menu_call">"Bellen"</string>
     <string name="menu_sendSMS">"SMS/MMS verzenden"</string>
     <string name="menu_sendEmail">"E-mail verzenden"</string>
     <string name="menu_viewAddress">"Adres op kaart weergeven"</string>
     <string name="menu_makeDefaultNumber">"Als standaardnummer instellen"</string>
     <string name="deleteConfirmation_title">"Verwijderen"</string>
-    <string name="deleteConfirmation">"Deze contactpersoon wordt verwijderd."</string>
+    <string name="deleteConfirmation">"Dit contact wordt verwijderd."</string>
     <string name="menu_done">"Gereed"</string>
     <string name="menu_doNotSave">"Terugkeren"</string>
-    <string name="editContact_title_edit">"Contactpersoon bewerken"</string>
-    <string name="editContact_title_insert">"Nieuwe contactpersoon"</string>
+    <string name="editContact_title_edit">"Contact bewerken"</string>
+    <string name="editContact_title_insert">"Nieuw contact"</string>
     <string name="menu_addItem">"Meer informatie"</string>
     <string name="label_phonetic_name">"Fonetisch"</string>
     <string name="label_notes">"Opmerkingen"</string>
@@ -59,8 +59,8 @@
     <string name="ghostData_phone">"Telefoonnummer"</string>
     <string name="ghostData_email">"E-mailadres"</string>
     <string name="ghostData_postal">"Postadres"</string>
-    <string name="invalidContactMessage">"De contactpersoon bestaat niet."</string>
-    <string name="pickerNewContactHeader">"Nieuwe contactpersoon maken"</string>
+    <string name="invalidContactMessage">"Het contact bestaat niet."</string>
+    <string name="pickerNewContactHeader">"Nieuw contact maken"</string>
     <string name="selectLabel">"Label selecteren"</string>
     <string name="phoneLabelsGroup">"Telefoon"</string>
     <string name="emailLabelsGroup">"E-mailadres"</string>
@@ -73,10 +73,10 @@
   </string-array>
     <string name="errorDialogTitle">"Geen foto\'s"</string>
     <string name="photoPickerNotFoundText">"Er zijn geen foto\'s beschikbaar op de telefoon."</string>
-    <string name="attachToContact">"Pictogram voor contactpersoon"</string>
+    <string name="attachToContact">"Pictogram voor contact"</string>
     <string name="customLabelPickerTitle">"Aangepaste labelnaam"</string>
     <string name="menu_displayGroup">"Groep weergeven"</string>
-    <string name="syncGroupPreference">"Synchronisatiegroepen bewerken"</string>
+    <string name="syncGroupPreference">"Sync.groepen bewerken"</string>
     <string name="importFromSim">"Contacten importeren"</string>
     <string name="send_to_voicemail_checkbox">"Oproepen rechtstreeks naar voicemail verzenden"</string>
     <string name="send_to_voicemail_view">"Oproepen worden rechtstreeks naar voicemail verzonden."</string>
@@ -92,10 +92,9 @@
     <string name="syncAllGroups">"Alle contacten synchroniseren"</string>
     <string name="groupNameMyContacts">"Mijn contacten"</string>
     <string name="groupNameWithPhones">"Contacten met telefoonnummers"</string>
-    <!-- no translation found for starredInAndroid (6495527538140213440) -->
-    <skip />
-    <string name="contactCreatedToast">"Contactpersoon is gemaakt."</string>
-    <string name="contactSavedToast">"Contactpersoon opgeslagen."</string>
+    <string name="starredInAndroid">"Met ster in Android"</string>
+    <string name="contactCreatedToast">"Contact is gemaakt."</string>
+    <string name="contactSavedToast">"Contact opgeslagen."</string>
     <string name="listSeparatorCallNumber">"Nummer bellen"</string>
     <string name="listSeparatorCallNumber_edit">"Telefoonnummers"</string>
     <string name="listSeparatorSendSmsMms">"SMS/MMS verzenden"</string>
@@ -127,15 +126,14 @@
     <string name="voicemail">"Voicemail"</string>
     <string name="unknown">"Onbekend"</string>
     <string name="private_num">"Privénummer"</string>
-    <!-- no translation found for payphone (4864313342828942922) -->
-    <skip />
+    <string name="payphone">"Betaaltelefoon"</string>
     <string name="dialerKeyboardHintText">"Toetsen gebruiken om te bellen"</string>
     <string name="dialerDialpadHintText">"Bellen om een oproep toe te voegen"</string>
     <string name="simContacts_emptyLoading">"Laden vanaf SIM-kaart..."</string>
     <string name="simContacts_title">"Contacten op SIM-kaart"</string>
     <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Synchroniseer uw Google-contacten!"</font>" "\n"Zodra uw telefoon is gesynchroniseerd, heeft u uw contacten altijd ter beschikking."</string>
-    <string name="noContactsHelpText">"Je hebt geen contacten."\n\n"Als je contacten wilt toevoegen, druk je op "<font fgcolor="#ffffffff"><b>"Menu"</b></font>" en selecteer je:"\n" "\n<li><font fgcolor="#ffffffff"><b>"Nieuw contact"</b></font>" om een nieuw contact te maken"\n</li>" "\n<li><font fgcolor="#ffffffff"><b>"Contacten importeren"</b></font>" om contacten vanaf je SIM-kaart toe te voegen"\n</li></string>
-    <string name="noContactsHelpTextWithSync">"Je hebt geen contacten."\n\n"Als je contacten wilt toevoegen, klik je op "<font fgcolor="#ffffffff"><b>"Menu"</b></font>" en selecteer je:"\n\n<li><font fgcolor="#ffffffff"><b>"\'Synchronisatiegroepen bewerken\'"</b></font>" om contacten toe te voegen uit een nieuw of bestaand Google-account"\n</li>\n"        "<li><font fgcolor="#ffffffff"><b>"\'Nieuw contact\'"</b></font>" om een geheel nieuwe contact te maken"\n</li>\n"        "<li><font fgcolor="#ffffffff"><b>"\'Contacten importeren\'"</b></font>" om contact te importeren vanaf je SIM-kaart"\n</li></string>
+    <string name="noContactsHelpText">"U heeft geen contacten."\n\n"Als u contacten wilt toevoegen, drukt u op "<font fgcolor="#ffffffff"><b>"Menu"</b></font>" en selecteert u:"\n" "\n<li><font fgcolor="#ffffffff"><b>"Nieuw contact"</b></font>" om een nieuw contact te maken"\n</li>" "\n<li><font fgcolor="#ffffffff"><b>"Contacten importeren"</b></font>" om contacten vanaf uw SIM-kaart toe te voegen"\n</li></string>
+    <string name="noContactsHelpTextWithSync">"U heeft geen contacten."\n\n"Als u contacten wilt toevoegen, klikt u op "<font fgcolor="#ffffffff"><b>"Menu"</b></font>" en selecteert u:"\n\n<li><font fgcolor="#ffffffff"><b>"\'Synchronisatiegroepen bewerken\'"</b></font>" om contacten toe te voegen uit een nieuw of bestaand Google-account"\n</li>\n" "<li><font fgcolor="#ffffffff"><b>"\'Nieuw contact\'"</b></font>" om een geheel nieuw contact te maken"\n</li>\n" "<li><font fgcolor="#ffffffff"><b>"\'Contacten importeren\'"</b></font>" om contact te importeren vanaf uw SIM-kaart"\n</li></string>
     <string name="seclectSyncGroups_title">"Groepen selecteren om te synchroniseren"</string>
     <string name="liveFolder_all_label">"Alle contacten"</string>
     <string name="liveFolder_favorites_label">"Met ster"</string>
@@ -146,7 +144,7 @@
     <string name="callDetailTitle">"Gespreksgegevens"</string>
     <string name="toast_call_detail_error">"Kan geen gegevens over het gevraagde gesprek vinden."</string>
     <string name="call_type">"Type"</string>
-    <string name="type_incoming">"Binnenkomende oproep"</string>
+    <string name="type_incoming">"Inkomende oproep"</string>
     <string name="type_outgoing">"Uitgaand gesprek"</string>
     <string name="type_missed">"Oproep gemist"</string>
     <string name="call_time">"Tijd"</string>
@@ -160,7 +158,7 @@
     <string name="actionText">"Tekst <xliff:g id="TYPE">%s</xliff:g>"</string>
     <string name="actionChat">"Chatten via <xliff:g id="TYPE">%s</xliff:g>"</string>
     <string name="actionMap">"<xliff:g id="TYPE">%s</xliff:g>-adres bekijken"</string>
-    <string name="actionIncomingCall">"Binnenkomende oproepen"</string>
+    <string name="actionIncomingCall">"Inkomende oproepen"</string>
     <string name="detailIncomingCallsGoToVoicemail">"Wordt direct naar voicemail verzonden"</string>
     <string name="detailsRingtone">"Ingesteld op <xliff:g id="RINGTONE_NAME">%s</xliff:g>"</string>
     <string name="callBack">"Terugbellen"</string>

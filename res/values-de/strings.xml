@@ -74,9 +74,9 @@
     <string name="errorDialogTitle">"Keine Bilder"</string>
     <string name="photoPickerNotFoundText">"Auf dem Telefon sind keine Bilder verfügbar."</string>
     <string name="attachToContact">"Kontaktsymbol"</string>
-    <string name="customLabelPickerTitle">"Name des benutzerdefinierten Labels"</string>
+    <string name="customLabelPickerTitle">"Name des benutzerdef. Labels"</string>
     <string name="menu_displayGroup">"Gruppe anzeigen"</string>
-    <string name="syncGroupPreference">"Synchronisierte Gruppen bearbeiten"</string>
+    <string name="syncGroupPreference">"Sync-Gruppen bearb."</string>
     <string name="importFromSim">"Kontakte importieren"</string>
     <string name="send_to_voicemail_checkbox">"Anrufe direkt an Voicemail senden"</string>
     <string name="send_to_voicemail_view">"Anrufe werden direkt an Mailbox gesendet"</string>
@@ -92,8 +92,7 @@
     <string name="syncAllGroups">"Alle Kontakte synchronisieren"</string>
     <string name="groupNameMyContacts">"Meine Kontakte"</string>
     <string name="groupNameWithPhones">"Kontakte mit Telefonnummern"</string>
-    <!-- no translation found for starredInAndroid (6495527538140213440) -->
-    <skip />
+    <string name="starredInAndroid">"In Android markiert"</string>
     <string name="contactCreatedToast">"Kontakt erstellt"</string>
     <string name="contactSavedToast">"Kontakt gespeichert"</string>
     <string name="listSeparatorCallNumber">"Rufnummer"</string>
@@ -127,10 +126,9 @@
     <string name="voicemail">"Mailbox"</string>
     <string name="unknown">"Unbekannt"</string>
     <string name="private_num">"Private Nummer"</string>
-    <!-- no translation found for payphone (4864313342828942922) -->
-    <skip />
+    <string name="payphone">"Münztelefon"</string>
     <string name="dialerKeyboardHintText">"Mit Tastatur wählen"</string>
-    <string name="dialerDialpadHintText">"Zum Hinzufügen eines Anrufs wählen"</string>
+    <string name="dialerDialpadHintText">"Zus. Nummer wählen"</string>
     <string name="simContacts_emptyLoading">"Ladevorgang von SIM-Karte läuft..."</string>
     <string name="simContacts_title">"Kontakte auf SIM-Karte"</string>
     <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Synchronisieren Sie Ihre Google-Kontakte!"</font>" "\n"Nach der Synchronisierung stehen Ihnen Ihre Kontakte überall zur Verfügung."</string>
@@ -157,7 +155,7 @@
     <string name="add_more_items">"Weitere Elemente hinzufügen"</string>
     <string name="actionCall">"<xliff:g id="TYPE">%s</xliff:g> anrufen"</string>
     <string name="actionEmail">"E-Mail an <xliff:g id="TYPE">%s</xliff:g>"</string>
-    <string name="actionText">"Text <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionText">"Text an <xliff:g id="TYPE">%s</xliff:g>"</string>
     <string name="actionChat">"Chat mit <xliff:g id="TYPE">%s</xliff:g>"</string>
     <string name="actionMap">"<xliff:g id="TYPE">%s</xliff:g>-Adresse anzeigen"</string>
     <string name="actionIncomingCall">"Eingehende Anrufe"</string>

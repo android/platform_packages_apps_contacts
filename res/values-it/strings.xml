@@ -92,8 +92,7 @@
     <string name="syncAllGroups">"Sincronizza tutti i contatti"</string>
     <string name="groupNameMyContacts">"I miei contatti"</string>
     <string name="groupNameWithPhones">"Contatti con numeri di telefono"</string>
-    <!-- no translation found for starredInAndroid (6495527538140213440) -->
-    <skip />
+    <string name="starredInAndroid">"Speciali in Android"</string>
     <string name="contactCreatedToast">"Contatto creato."</string>
     <string name="contactSavedToast">"Contatto salvato."</string>
     <string name="listSeparatorCallNumber">"Componi numero"</string>
@@ -127,8 +126,7 @@
     <string name="voicemail">"Segreteria"</string>
     <string name="unknown">"Sconosciuto"</string>
     <string name="private_num">"Numero privato"</string>
-    <!-- no translation found for payphone (4864313342828942922) -->
-    <skip />
+    <string name="payphone">"Telefono a monete"</string>
     <string name="dialerKeyboardHintText">"Usa la tastiera"</string>
     <string name="dialerDialpadHintText">"Componi per aggiungere una chiamata"</string>
     <string name="simContacts_emptyLoading">"Caricamento da SIM..."</string>
