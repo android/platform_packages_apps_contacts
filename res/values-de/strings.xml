@@ -132,12 +132,12 @@
     <string name="simContacts_emptyLoading">"Ladevorgang von SIM-Karte läuft..."</string>
     <string name="simContacts_title">"Kontakte auf SIM-Karte"</string>
     <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Synchronisieren Sie Ihre Google-Kontakte!"</font>" "\n"Nach der Synchronisierung stehen Ihnen Ihre Kontakte überall zur Verfügung."</string>
-    <string name="noContactsHelpText">"Es sind keine Kontakte vorhanden."\n\n"Drücken Sie zum Hinzufügen von Kontakten auf "<font fgcolor="#ffffffff"><b>"Menü"</b></font>" und wählen Sie Folgendes aus:"\n\n"        "<li><font fgcolor="#ffffffff"><b></b>"Neuer Kontakt"</font>\n", um einen neuen Kontakt zu erstellen"</li>\n<li>"        "<font fgcolor="#ffffffff"><b></b></font>"Kontakte importieren"\n</li>", um Kontakte von Ihrer SIM-Karte hinzuzufügen"</string>
+    <string name="noContactsHelpText">"Es sind keine Kontakte vorhanden."\n\n"Drücken Sie zum Hinzufügen von Kontakten die "<font fgcolor="#ffffffff"><b>"Menütaste"</b></font>" und wählen Sie Folgendes aus:"\n\n" "<li><font fgcolor="#ffffffff"><b></b>"Neuer Kontakt"</font>\n", um einen neuen Kontakt zu erstellen"</li>\n<li>" "<font fgcolor="#ffffffff"><b></b></font>"Kontakte importieren"\n</li>", um Kontakte von Ihrer SIM-Karte hinzuzufügen"</string>
     <string name="noContactsHelpTextWithSync">"Sie haben keine Kontakte."\n\n"Drücken Sie zum Hinzufügen die "<font fgcolor="#ffffffff"><b>"Menütaste"</b></font>" und wählen Sie"\n\n"        "<li><font fgcolor="#ffffffff"><b>"Synchronisierungsgruppen bearbeiten"</b></font>", um Kontakte mit einem neuen oder bestehenden Google-Konto zu synchronisieren,"\n</li>\n<li><font fgcolor="#ffffffff"><b>"Neuer Kontakt"</b></font>", um einen Kontakt neu zu erstellen, "\n</li>\n"        "<li><font fgcolor="#ffffffff"><b>"Kontakte importieren"</b></font>", um Kontakte von Ihrer SIM-Karte hinzuzufügen."\n</li></string>
     <string name="seclectSyncGroups_title">"Zu synchronisierende Gruppen auswählen"</string>
     <string name="liveFolder_all_label">"Alle Kontakte"</string>
     <string name="liveFolder_favorites_label">"Markiert"</string>
-    <string name="liveFolder_phones_label">"Telefone"</string>
+    <string name="liveFolder_phones_label">"Nummern"</string>
     <string name="dialer_useDtmfDialpad">"Telefontastatur verwenden"</string>
     <string name="dialer_returnToInCallScreen">"Zurück zum Anruf läuft"</string>
     <string name="dialer_addAnotherCall">"Anruf hinzufügen"</string>
@@ -155,7 +155,7 @@
     <string name="add_more_items">"Weitere Elemente hinzufügen"</string>
     <string name="actionCall">"<xliff:g id="TYPE">%s</xliff:g> anrufen"</string>
     <string name="actionEmail">"E-Mail an <xliff:g id="TYPE">%s</xliff:g>"</string>
-    <string name="actionText">"Text an <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionText">"Textnachricht an <xliff:g id="TYPE">%s</xliff:g>"</string>
     <string name="actionChat">"Chat mit <xliff:g id="TYPE">%s</xliff:g>"</string>
     <string name="actionMap">"<xliff:g id="TYPE">%s</xliff:g>-Adresse anzeigen"</string>
     <string name="actionIncomingCall">"Eingehende Anrufe"</string>

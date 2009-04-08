@@ -53,7 +53,7 @@
     <string name="ghostData_name">"Nom et prénom"</string>
     <string name="ghostData_phonetic_name">"Nom phonétique"</string>
     <string name="ghostData_company">"Société"</string>
-    <string name="ghostData_title">"Position"</string>
+    <string name="ghostData_title">"Poste"</string>
     <string name="ghostData_im">"Nom du compte"</string>
     <string name="ghostData_notes">"Mon commentaire"</string>
     <string name="ghostData_phone">"Numéro téléphone"</string>
@@ -128,12 +128,12 @@
     <string name="private_num">"Numéro privée"</string>
     <string name="payphone">"Cabine téléphonique"</string>
     <string name="dialerKeyboardHintText">"Utilisez le clavier pour composer le numéro"</string>
-    <string name="dialerDialpadHintText">"Composer le numéro pour ajouter un appel"</string>
+    <string name="dialerDialpadHintText">"Composer"</string>
     <string name="simContacts_emptyLoading">"Chargement depuis la carte SIM..."</string>
     <string name="simContacts_title">"Contacts de carte SIM"</string>
     <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Synchronisez vos contacts Google !"</font>" "\n"Vos contacts seront disponibles, où que vous soyez, dès que vous aurez synchronisé votre téléphone."</string>
-    <string name="noContactsHelpText">"Vous n\'avez aucun contact."\n\n"Pour ajouter des contacts, appuyez sur "<font fgcolor="#ffffffff"><b>"Menu"</b></font>" et sélectionnez :"\n\n<li><font fgcolor="#ffffffff"><b>"Nouveau contact"</b></font>" pour créer un contact de toutes pièces ;"\n</li>" "\n<li><font fgcolor="#ffffffff"><b>"Importer des contacts"</b></font>" pour ajouter des contacts à partir de votre carte SIM."\n</li></string>
-    <string name="noContactsHelpTextWithSync">"Vous n\'avez aucun contact."\n\n"Pour ajouter des contacts, appuyez sur "<font fgcolor="#ffffffff"><b>"Menu"</b></font>" et sélectionnez :"\n" "\n<li><font fgcolor="#ffffffff"><b>"Param. sync. groupes"</b></font>" pour ajouter un contact à partir d\'un nouveau compte Google ou d\'un compte existant ;"\n</li>" "\n<li><font fgcolor="#ffffffff"><b>"Nouveau contact"</b></font>" pour créer un contact de toutes pièces ;"\n</li>" "\n<li><font fgcolor="#ffffffff"><b>"Importer des contacts"</b></font>" pour ajouter des contacts à partir de votre carte SIM."\n</li></string>
+    <string name="noContactsHelpText">"Vous n\'avez aucun contact."\n\n"Pour ajouter des contacts, appuyez sur "<font fgcolor="#ffffffff"><b>"Menu"</b></font>" et sélectionnez :"\n\n<li><font fgcolor="#ffffffff"><b>"Nouveau contact"</b></font>" pour créer un nouveau contact ;"\n</li>" "\n<li><font fgcolor="#ffffffff"><b>"Importer des contacts"</b></font>" pour ajouter des contacts à partir de votre carte SIM."\n</li></string>
+    <string name="noContactsHelpTextWithSync">"Vous n\'avez aucun contact."\n\n"Pour ajouter des contacts, appuyez sur "<font fgcolor="#ffffffff"><b>"Menu"</b></font>" et sélectionnez :"\n" "\n<li><font fgcolor="#ffffffff"><b>"Param. sync. groupes"</b></font>" pour ajouter un contact à partir d\'un nouveau compte Google ou d\'un compte existant ;"\n</li>" "\n<li><font fgcolor="#ffffffff"><b>"Nouveau contact"</b></font>" pour créer un nouveau contact ;"\n</li>" "\n<li><font fgcolor="#ffffffff"><b>"Importer des contacts"</b></font>" pour ajouter des contacts à partir de votre carte SIM."\n</li></string>
     <string name="seclectSyncGroups_title">"Sélectionner les groupes à synchroniser"</string>
     <string name="liveFolder_all_label">"Tous les contacts"</string>
     <string name="liveFolder_favorites_label">"Suivis"</string>

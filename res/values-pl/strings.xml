@@ -83,8 +83,8 @@
     <string name="default_ringtone">"Domyślny"</string>
     <string name="addPicture">"Dodaj ikonę"</string>
     <string name="removePicture">"Usuń ikonę"</string>
-    <string name="noContacts">"Brak kontaktów."</string>
-    <string name="noContactsWithPhoneNumbers">"Brak kontaktów z numerami telefonów."</string>
+    <string name="noContacts">"Brak kontaktów"</string>
+    <string name="noContactsWithPhoneNumbers">"Brak kontaktów z numerami telefonów"</string>
     <string name="noFavorites">"Brak ulubionych"</string>
     <string name="select_group_title">"Grupy"</string>
     <string name="groupEmpty">"Grupa „<xliff:g id="GROUPNAME">%s</xliff:g>” jest pusta."</string>
