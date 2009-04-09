@@ -78,7 +78,7 @@
     <string name="menu_displayGroup">"Gruppe anzeigen"</string>
     <string name="syncGroupPreference">"Sync-Gruppen bearb."</string>
     <string name="importFromSim">"Kontakte importieren"</string>
-    <string name="send_to_voicemail_checkbox">"Anrufe direkt an Voicemail senden"</string>
+    <string name="send_to_voicemail_checkbox">"Anrufe direkt an Mailbox senden"</string>
     <string name="send_to_voicemail_view">"Anrufe werden direkt an Mailbox gesendet"</string>
     <string name="default_ringtone">"Standard"</string>
     <string name="addPicture">"Symbol hinzufügen"</string>
@@ -128,7 +128,7 @@
     <string name="private_num">"Private Nummer"</string>
     <string name="payphone">"Münztelefon"</string>
     <string name="dialerKeyboardHintText">"Mit Tastatur wählen"</string>
-    <string name="dialerDialpadHintText">"Zus. Nummer wählen"</string>
+    <string name="dialerDialpadHintText">"Nummer wählen"</string>
     <string name="simContacts_emptyLoading">"Ladevorgang von SIM-Karte läuft..."</string>
     <string name="simContacts_title">"Kontakte auf SIM-Karte"</string>
     <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Synchronisieren Sie Ihre Google-Kontakte!"</font>" "\n"Nach der Synchronisierung stehen Ihnen Ihre Kontakte überall zur Verfügung."</string>
@@ -139,7 +139,7 @@
     <string name="liveFolder_favorites_label">"Markiert"</string>
     <string name="liveFolder_phones_label">"Nummern"</string>
     <string name="dialer_useDtmfDialpad">"Telefontastatur verwenden"</string>
-    <string name="dialer_returnToInCallScreen">"Zurück zum Anruf läuft"</string>
+    <string name="dialer_returnToInCallScreen">"Zurück zum aktuellen Anruf"</string>
     <string name="dialer_addAnotherCall">"Anruf hinzufügen"</string>
     <string name="callDetailTitle">"Anrufdetails"</string>
     <string name="toast_call_detail_error">"Details für den angeforderten Anruf konnten nicht gelesen werden."</string>
@@ -159,7 +159,7 @@
     <string name="actionChat">"Chat mit <xliff:g id="TYPE">%s</xliff:g>"</string>
     <string name="actionMap">"<xliff:g id="TYPE">%s</xliff:g>-Adresse anzeigen"</string>
     <string name="actionIncomingCall">"Eingehende Anrufe"</string>
-    <string name="detailIncomingCallsGoToVoicemail">"Wird direkt an Voicemail weitergeleitet"</string>
+    <string name="detailIncomingCallsGoToVoicemail">"Wird direkt an Mailbox weitergeleitet"</string>
     <string name="detailsRingtone">"Eingestellt auf <xliff:g id="RINGTONE_NAME">%s</xliff:g>"</string>
     <string name="callBack">"Rückruf"</string>
     <string name="callAgain">"Erneut anrufen"</string>
