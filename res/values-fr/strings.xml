@@ -78,8 +78,8 @@
     <string name="menu_displayGroup">"Afficher les groupes"</string>
     <string name="syncGroupPreference">"Param. sync. groupes"</string>
     <string name="importFromSim">"Importer des contacts"</string>
-    <string name="send_to_voicemail_checkbox">"Renvoyer les appels directement vers la boîte vocale."</string>
-    <string name="send_to_voicemail_view">"Les appels sont renvoyés directement vers la boîte vocale."</string>
+    <string name="send_to_voicemail_checkbox">"Renvoyer les appels directement vers la messagerie vocale."</string>
+    <string name="send_to_voicemail_view">"Les appels sont renvoyés directement vers la messagerie vocale."</string>
     <string name="default_ringtone">"Par défaut"</string>
     <string name="addPicture">"Ajouter une icône"</string>
     <string name="removePicture">"Supprimer l\'icône"</string>
@@ -110,7 +110,7 @@
     <string name="listSeparatorMore_edit">"Plus"</string>
     <string name="contactsIconLabel">"Contacts"</string>
     <string name="contactsFavoritesLabel">"Favoris"</string>
-    <string name="dialerIconLabel">"Appeler"</string>
+    <string name="dialerIconLabel">"Composer"</string>
     <string name="recentCallsIconLabel">"Appels"</string>
     <string name="liveFolderAll">"Tous les contacts"</string>
     <string name="liveFolderFavorites">"Contacts suivis"</string>
@@ -119,11 +119,11 @@
     <string name="recentCalls_callNumber">"Appeler <xliff:g id="NAME">%s</xliff:g>"</string>
     <string name="recentCalls_editNumberBeforeCall">"Modifier le numéro avant d\'effectuer l\'appel"</string>
     <string name="recentCalls_addToContact">"Ajouter aux contacts"</string>
-    <string name="recentCalls_removeFromRecentList">"Supprimer de la liste des appels"</string>
+    <string name="recentCalls_removeFromRecentList">"Supprimer du journal d\'appels"</string>
     <string name="recentCalls_deleteAll">"Effacer tous les appels"</string>
     <string name="recentCalls_empty">"Aucun appel."</string>
-    <string name="imei">"IMEI"</string>
-    <string name="voicemail">"Boîte vocale"</string>
+    <string name="imei">"Code IMEI"</string>
+    <string name="voicemail">"Messagerie vocale"</string>
     <string name="unknown">"Inconnu"</string>
     <string name="private_num">"Numéro privée"</string>
     <string name="payphone">"Cabine téléphonique"</string>
@@ -155,8 +155,8 @@
     <string name="add_more_items">"Ajouter d\'autres éléments"</string>
     <string name="actionCall">"Appeler <xliff:g id="TYPE">%s</xliff:g>"</string>
     <string name="actionEmail">"Envoyer un e-mail à <xliff:g id="TYPE">%s</xliff:g>"</string>
-    <string name="actionText">"Envoyer un SMS à <xliff:g id="TYPE">%s</xliff:g>"</string>
-    <string name="actionChat">"Chatter à l\'aide de <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionText">"Envoyer un SMS (<xliff:g id="TYPE">%s</xliff:g>)"</string>
+    <string name="actionChat">"Chatter via <xliff:g id="TYPE">%s</xliff:g>"</string>
     <string name="actionMap">"Afficher l\'adresse <xliff:g id="TYPE">%s</xliff:g>"</string>
     <string name="actionIncomingCall">"Appels entrants"</string>
     <string name="detailIncomingCallsGoToVoicemail">"Seront envoyés directement en tant que message vocal"</string>

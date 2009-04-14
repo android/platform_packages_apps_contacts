@@ -128,7 +128,7 @@
     <string name="private_num">"Numero privato"</string>
     <string name="payphone">"Telefono a monete"</string>
     <string name="dialerKeyboardHintText">"Usa la tastiera"</string>
-    <string name="dialerDialpadHintText">"Componi per aggiungere una chiamata"</string>
+    <string name="dialerDialpadHintText">"Componi per aggiungere chiamata"</string>
     <string name="simContacts_emptyLoading">"Caricamento da SIM..."</string>
     <string name="simContacts_title">"Contatti SIM"</string>
     <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Sincronizza i tuoi contatti Google."</font>" "\n"Dopo la sincronizzazione con il telefono, i tuoi contatti saranno sempre a tua disposizione."</string>

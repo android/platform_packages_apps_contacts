@@ -108,10 +108,10 @@
     <string name="listSeparatorOtherInformation">"Overige informatie"</string>
     <string name="listSeparatorOtherInformation_edit">"Andere opties"</string>
     <string name="listSeparatorMore_edit">"Meer"</string>
-    <string name="contactsIconLabel">"Contacten"</string>
-    <string name="contactsFavoritesLabel">"Favorieten"</string>
+    <string name="contactsIconLabel">"Contact"</string>
+    <string name="contactsFavoritesLabel">"Favoriet"</string>
     <string name="dialerIconLabel">"Telefoon"</string>
-    <string name="recentCallsIconLabel">"Gesprekken"</string>
+    <string name="recentCallsIconLabel">"Gesprek"</string>
     <string name="liveFolderAll">"Alle contacten"</string>
     <string name="liveFolderFavorites">"Contacten met ster"</string>
     <string name="liveFolderPhone">"Contacten met telefoonnummers"</string>
