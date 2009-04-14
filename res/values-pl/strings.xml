@@ -36,8 +36,8 @@
     <string name="menu_editContact">"Edytuj kontakt"</string>
     <string name="menu_deleteContact">"Usuń kontakt"</string>
     <string name="menu_call">"Zadzwoń"</string>
-    <string name="menu_sendSMS">"Wyślij wiadomość SMS/MMS"</string>
-    <string name="menu_sendEmail">"Wyślij wiadomość e-mail"</string>
+    <string name="menu_sendSMS">"Wyślij SMS/MMS"</string>
+    <string name="menu_sendEmail">"Wyślij e-mail"</string>
     <string name="menu_viewAddress">"Pokaż adres na mapie"</string>
     <string name="menu_makeDefaultNumber">"Ustaw ten numer jako domyślny"</string>
     <string name="deleteConfirmation_title">"Usuń"</string>
@@ -54,7 +54,7 @@
     <string name="ghostData_phonetic_name">"Nazwisko (fonetycznie)"</string>
     <string name="ghostData_company">"Firma"</string>
     <string name="ghostData_title">"Pozycja"</string>
-    <string name="ghostData_im">"Nazwa w komunikatorze"</string>
+    <string name="ghostData_im">"Nazwa na czacie"</string>
     <string name="ghostData_notes">"Moja notatka"</string>
     <string name="ghostData_phone">"Numer telefonu"</string>
     <string name="ghostData_email">"Adres e-mail"</string>
@@ -97,10 +97,10 @@
     <string name="contactSavedToast">"Kontakt został zapisany."</string>
     <string name="listSeparatorCallNumber">"Wybierz numer"</string>
     <string name="listSeparatorCallNumber_edit">"Numery telefonów"</string>
-    <string name="listSeparatorSendSmsMms">"Wyślij wiadomość SMS/MMS"</string>
-    <string name="listSeparatorSendEmail">"Wyślij wiadomość e-mail"</string>
+    <string name="listSeparatorSendSmsMms">"Wyślij SMS/MMS"</string>
+    <string name="listSeparatorSendEmail">"Wyślij e-mail"</string>
     <string name="listSeparatorSendEmail_edit">"Adresy e-mail"</string>
-    <string name="listSeparatorSendIm">"Wyślij wiadomość błyskawiczną"</string>
+    <string name="listSeparatorSendIm">"Wyślij wiadomość czatu"</string>
     <string name="listSeparatorSendIm_edit">"Adresy czatu"</string>
     <string name="listSeparatorMapAddress">"Pokaż adres na mapie"</string>
     <string name="listSeparatorMapAddress_edit">"Adresy pocztowe"</string>
@@ -115,7 +115,7 @@
     <string name="liveFolderAll">"Wszystkie kontakty"</string>
     <string name="liveFolderFavorites">"Kontakty oznaczone gwiazdką"</string>
     <string name="liveFolderPhone">"Kontakty z numerami telefonów"</string>
-    <string name="menu_sendTextMessage">"Wyślij wiadomość SMS"</string>
+    <string name="menu_sendTextMessage">"Wyślij SMS"</string>
     <string name="recentCalls_callNumber">"Zadzwoń do kontaktu <xliff:g id="NAME">%s</xliff:g>"</string>
     <string name="recentCalls_editNumberBeforeCall">"Edytuj numer przed nawiązaniem połączenia"</string>
     <string name="recentCalls_addToContact">"Dodaj do kontaktów"</string>
@@ -128,7 +128,7 @@
     <string name="private_num">"Numer prywatny"</string>
     <string name="payphone">"Telefon płatny"</string>
     <string name="dialerKeyboardHintText">"Wybierz numer za pomocą klawiatury"</string>
-    <string name="dialerDialpadHintText">"Wybierz numer, aby dodać połączenie"</string>
+    <string name="dialerDialpadHintText">"Wybierz, aby dodać połączenie"</string>
     <string name="simContacts_emptyLoading">"Wczytywanie z karty SIM…"</string>
     <string name="simContacts_title">"Kontakty z karty SIM"</string>
     <string name="contactsSyncPlug"><font fgcolor="#ffffffff">"Zsynchronizuj kontakty Google!"</font>" "\n"Po zsynchronizowaniu telefonu zawsze będziesz mieć kontakty pod ręką."</string>
@@ -154,8 +154,8 @@
     <string name="ringtone_spinner">"Dźwięk dzwonka: <xliff:g id="RINGTONE">%1$s</xliff:g>"</string>
     <string name="add_more_items">"Dodaj więcej elementów"</string>
     <string name="actionCall">"Zadzwoń na numer: <xliff:g id="TYPE">%s</xliff:g>"</string>
-    <string name="actionEmail">"Wyślij wiadomość e-mail na adres: <xliff:g id="TYPE">%s</xliff:g>"</string>
-    <string name="actionText">"Wyślij tekst do: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionEmail">"Wyślij e-mail: <xliff:g id="TYPE">%s</xliff:g>"</string>
+    <string name="actionText">"Wyślij SMS: <xliff:g id="TYPE">%s</xliff:g>"</string>
     <string name="actionChat">"Porozmawiaj na czacie <xliff:g id="TYPE">%s</xliff:g>"</string>
     <string name="actionMap">"Wyświetl adres: <xliff:g id="TYPE">%s</xliff:g>"</string>
     <string name="actionIncomingCall">"Połączenia przychodzące"</string>
