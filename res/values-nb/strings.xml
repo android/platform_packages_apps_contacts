@@ -26,8 +26,7 @@
     <string name="editContactDescription">"Rediger kontakt"</string>
     <string name="insertContactDescription">"Opprett kontakt"</string>
     <string name="searchHint">"Søk i kontakter"</string>
-    <!-- no translation found for menu_search (9147752853603483719) -->
-    <skip />
+    <string name="menu_search">"Søk"</string>
     <string name="menu_newContact">"Ny kontakt"</string>
     <string name="menu_viewContact">"Se på kontakt"</string>
     <string name="menu_callNumber">"Ring <xliff:g id="NAME">%s</xliff:g>"</string>
@@ -93,8 +92,7 @@
     <string name="syncAllGroups">"Synkroniser alle kontakter"</string>
     <string name="groupNameMyContacts">"Mine kontakter"</string>
     <string name="groupNameWithPhones">"Kontakter med telefonnummer"</string>
-    <!-- no translation found for starredInAndroid (6495527538140213440) -->
-    <skip />
+    <string name="starredInAndroid">"Stjernemerket i Android"</string>
     <string name="contactCreatedToast">"Kontakt opprettet."</string>
     <string name="contactSavedToast">"Kontakt lagret."</string>
     <string name="listSeparatorCallNumber">"Ring nummer"</string>
@@ -128,8 +126,7 @@
     <string name="voicemail">"Telefonsvarer"</string>
     <string name="unknown">"Ukjent"</string>
     <string name="private_num">"Skjult nummer"</string>
-    <!-- no translation found for payphone (4864313342828942922) -->
-    <skip />
+    <string name="payphone">"Telefonkiosk"</string>
     <string name="dialerKeyboardHintText">"Bruk tastaturet for å ringe"</string>
     <string name="dialerDialpadHintText">"Ring for å legge til en samtale"</string>
     <string name="simContacts_emptyLoading">"Henter fra SIM-kort…"</string>
@@ -168,10 +165,7 @@
     <string name="callAgain">"Ring på nytt"</string>
     <string name="returnCall">"Ring tilbake"</string>
     <string name="callDetailsDurationFormat">"<xliff:g id="MINUTES">%s</xliff:g> min <xliff:g id="SECONDS">%s</xliff:g> sek"</string>
-    <!-- no translation found for favoritesFrquentSeparator (5007070838253932139) -->
-    <skip />
-    <!-- no translation found for add_contact_dlg_title (2789046541229846116) -->
-    <skip />
-    <!-- no translation found for add_contact_dlg_message_fmt (7986472669444326576) -->
-    <skip />
+    <string name="favoritesFrquentSeparator">"Ofte ringt"</string>
+    <string name="add_contact_dlg_title">"Legg til kontakt"</string>
+    <string name="add_contact_dlg_message_fmt">"Legg til \"<xliff:g id="EMAIL">%s</xliff:g>\" som kontakt?"</string>
 </resources>

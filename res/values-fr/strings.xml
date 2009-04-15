@@ -43,7 +43,7 @@
     <string name="deleteConfirmation_title">"Supprimer"</string>
     <string name="deleteConfirmation">"Ce contact sera supprimé."</string>
     <string name="menu_done">"OK"</string>
-    <string name="menu_doNotSave">"Rétablir"</string>
+    <string name="menu_doNotSave">"Annuler"</string>
     <string name="editContact_title_edit">"Modifier le contact"</string>
     <string name="editContact_title_insert">"Nouveau contact"</string>
     <string name="menu_addItem">"Plus d\'infos"</string>
@@ -110,7 +110,7 @@
     <string name="listSeparatorMore_edit">"Plus"</string>
     <string name="contactsIconLabel">"Contacts"</string>
     <string name="contactsFavoritesLabel">"Favoris"</string>
-    <string name="dialerIconLabel">"Composer"</string>
+    <string name="dialerIconLabel">"Appeler"</string>
     <string name="recentCallsIconLabel">"Appels"</string>
     <string name="liveFolderAll">"Tous les contacts"</string>
     <string name="liveFolderFavorites">"Contacts suivis"</string>
@@ -164,7 +164,7 @@
     <string name="callBack">"Rappeler"</string>
     <string name="callAgain">"Renouveler l\'appel"</string>
     <string name="returnCall">"Rappeler"</string>
-    <string name="callDetailsDurationFormat">"<xliff:g id="MINUTES">%s</xliff:g> min <xliff:g id="SECONDS">%s</xliff:g> s"</string>
+    <string name="callDetailsDurationFormat">"<xliff:g id="MINUTES">%s</xliff:g> mn <xliff:g id="SECONDS">%s</xliff:g> s"</string>
     <string name="favoritesFrquentSeparator">"Fréquemment appelés"</string>
     <string name="add_contact_dlg_title">"Ajouter un contact"</string>
     <string name="add_contact_dlg_message_fmt">"Ajouter \"<xliff:g id="EMAIL">%s</xliff:g>\" aux contacts ?"</string>
