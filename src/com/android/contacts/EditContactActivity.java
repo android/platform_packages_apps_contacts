@@ -721,7 +721,8 @@ public final class EditContactActivity extends Activity implements View.OnClickL
         // Allow user to pick 'Default'
         intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_DEFAULT, true);
         // Show only ringtones
-        intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_RINGTONE);
+        intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE,
+                        RingtoneManager.TYPE_RINGTONE | RingtoneManager.TYPE_VIDEO);
         // Don't show 'Silent'
         intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, false);
         
