@@ -131,6 +131,8 @@ public final class ContactsListActivity extends ListActivity
     static final int MODE_STREQUENT = 35 | MODE_MASK_SHOW_PHOTOS;
     /** Show all contacts and pick them when clicking */
     static final int MODE_PICK_CONTACT = 40 | MODE_MASK_PICKER;
+    /** Show all contacts with phone numbers and pick them when clicking */
+    static final int MODE_PICK_WITH_PHONES = 41 | MODE_MASK_PICKER;
     /** Show all contacts as well as the option to create a new one */
     static final int MODE_PICK_OR_CREATE_CONTACT = 42 | MODE_MASK_PICKER | MODE_MASK_CREATE_NEW;
     /** Show all contacts and pick them when clicking, and allow creating a new contact */
@@ -367,7 +369,11 @@ public final class ContactsListActivity extends ListActivity
             // the Intent.
             final String type = intent.resolveType(this);
             if (People.CONTENT_TYPE.equals(type)) {
-                mMode = MODE_PICK_CONTACT;
+                if (intent.getBooleanExtra(People.EXTRA_WITH_PHONES_ONLY, false)) {
+                    mMode = MODE_PICK_WITH_PHONES;
+                } else {
+                    mMode = MODE_PICK_CONTACT;
+                }
             } else if (Phones.CONTENT_TYPE.equals(type)) {
                 mMode = MODE_PICK_PHONE;
             } else if (ContactMethods.CONTENT_POSTAL_TYPE.equals(type)) {
@@ -519,9 +525,10 @@ public final class ContactsListActivity extends ListActivity
                 break;
 
             case MODE_WITH_PHONES:
+            case MODE_PICK_WITH_PHONES:
                 empty.setText(getText(R.string.noContactsWithPhoneNumbers));
                 break;
-
+                
             default:
                 empty.setText(getText(R.string.noContacts));
                 break;
@@ -1010,6 +1017,7 @@ public final class ContactsListActivity extends ListActivity
                 startActivity(intent);
                 finish();
             } else if (mMode == MODE_PICK_CONTACT 
+                    || mMode == MODE_PICK_WITH_PHONES
                     || mMode == MODE_PICK_OR_CREATE_CONTACT) {
                 Uri uri = ContentUris.withAppendedId(People.CONTENT_URI, id);
                 if (mCreateShortcut) {
@@ -1067,6 +1075,7 @@ public final class ContactsListActivity extends ListActivity
             case MODE_ALL_CONTACTS:
             case MODE_WITH_PHONES:
             case MODE_PICK_CONTACT:
+            case MODE_PICK_WITH_PHONES:
             case MODE_PICK_OR_CREATE_CONTACT:
             case MODE_QUERY:
             case MODE_STARRED:
@@ -1126,6 +1135,7 @@ public final class ContactsListActivity extends ListActivity
                 break;
 
             case MODE_WITH_PHONES:
+            case MODE_PICK_WITH_PHONES:
                 mQueryHandler.startQuery(QUERY_TOKEN, null, People.CONTENT_URI, CONTACTS_PROJECTION,
                         People.PRIMARY_PHONE_ID + " IS NOT NULL", null,
                         getSortOrder(CONTACTS_PROJECTION));
@@ -1222,7 +1232,8 @@ public final class ContactsListActivity extends ListActivity
                         getSortOrder(CONTACTS_PROJECTION));
             }
 
-            case MODE_WITH_PHONES: {
+            case MODE_WITH_PHONES: 
+            case MODE_PICK_WITH_PHONES: {
                 return resolver.query(getPeopleFilterUri(filter), CONTACTS_PROJECTION,
                         People.PRIMARY_PHONE_ID + " IS NOT NULL", null,
                         getSortOrder(CONTACTS_PROJECTION));
