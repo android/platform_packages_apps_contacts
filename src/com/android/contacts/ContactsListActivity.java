@@ -528,7 +528,7 @@ public final class ContactsListActivity extends ListActivity
             case MODE_PICK_WITH_PHONES:
                 empty.setText(getText(R.string.noContactsWithPhoneNumbers));
                 break;
-                
+
             default:
                 empty.setText(getText(R.string.noContacts));
                 break;
@@ -1232,7 +1232,7 @@ public final class ContactsListActivity extends ListActivity
                         getSortOrder(CONTACTS_PROJECTION));
             }
 
-            case MODE_WITH_PHONES: 
+            case MODE_WITH_PHONES:
             case MODE_PICK_WITH_PHONES: {
                 return resolver.query(getPeopleFilterUri(filter), CONTACTS_PROJECTION,
                         People.PRIMARY_PHONE_ID + " IS NOT NULL", null,
