@@ -726,11 +726,13 @@ public class ViewContactActivity extends ListActivity
                                     || protocol == ContactMethods.PROTOCOL_MSN) {
                                 entry.maxLabelLines = 2;
                             }
-                        } else {
+                        } else if (protocolObj instanceof String) {
                             String providerName = (String) protocolObj;
                             entry.label = buildActionString(R.string.actionChat,
                                     providerName, false);
                             host = providerName.toLowerCase();
+                        } else {
+                        	host = "";
                         }
 
                         // Only add the intent if there is a valid host
