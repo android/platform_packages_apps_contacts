@@ -43,6 +43,8 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -66,7 +68,7 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
     protected TextView mLabel;
     protected ViewGroup mFields;
     protected View mDelete;
-    protected View mMore;
+    protected ImageButton mMore;
 
     protected DataKind mKind;
     protected ValuesDelta mEntry;
@@ -101,7 +103,7 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
         mDelete = findViewById(R.id.edit_delete);
         mDelete.setOnClickListener(this);
 
-        mMore = findViewById(R.id.edit_more);
+        mMore = (ImageButton)findViewById(R.id.edit_more);
         mMore.setOnClickListener(this);
     }
 
@@ -238,7 +240,21 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
         }
 
         // When hiding fields, place expandable
-        mMore.setVisibility(hidePossible ? View.VISIBLE : View.GONE);
+        /**According to code we are setting visibity to false only when all the eight data fields carries 
+         * some value, that time if we press mMore button visibility will go, but there is no way to regain 
+         * the visibility*/
+
+       mMore.setVisibility(hidePossible ? View.VISIBLE : View.GONE);
+
+       if(!mHideOptional)
+        {
+                mMore.setImageResource(R.drawable.ic_btn_round_less);
+        }
+        else
+        {
+                mMore.setImageResource(R.drawable.ic_btn_round_more);
+        }
+
         mMore.setEnabled(enabled);
     }
 
