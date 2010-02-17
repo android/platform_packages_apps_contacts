@@ -417,6 +417,15 @@ public class ContactsListActivity extends ListActivity implements
         }
     }
 
+    private class ClearFrequentClickListener implements DialogInterface.OnClickListener {
+        public void onClick(DialogInterface dialog, int which) {
+            ContentValues values = new ContentValues();
+            values.put(Contacts.LAST_TIME_CONTACTED, 0);
+            values.put(Contacts.TIMES_CONTACTED, 0);
+            getContentResolver().update(Contacts.CONTENT_URI, values, null, null);
+        }
+    }
+    
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -859,6 +868,9 @@ public class ContactsListActivity extends ListActivity implements
     public boolean onPrepareOptionsMenu(Menu menu) {
         final boolean defaultMode = (mMode == MODE_DEFAULT);
         menu.findItem(R.id.menu_display_groups).setVisible(defaultMode);
+
+        final boolean isStrequent = (mMode == MODE_STREQUENT);
+        menu.findItem(R.id.menu_clear_frequently).setVisible(isStrequent);
         return true;
     }
 
@@ -889,6 +901,10 @@ public class ContactsListActivity extends ListActivity implements
                     ContactsContract.AUTHORITY
                 });
                 startActivity(intent);
+                return true;
+            }
+            case R.id.menu_clear_frequently: {
+                showDialog(R.id.dialog_delete_frequent_confirmation);
                 return true;
             }
         }
@@ -944,6 +960,16 @@ public class ContactsListActivity extends ListActivity implements
                         .setNegativeButton(android.R.string.cancel, null)
                         .setPositiveButton(android.R.string.ok,
                                 new DeleteClickListener()).create();
+            }
+            case R.id.dialog_delete_frequent_confirmation: {
+                return new AlertDialog.Builder(this)
+                        .setTitle(R.string.clearFrequentlyCalled)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setMessage(R.string.clearFrequentlyCalledMessage)
+                        .setNegativeButton(android.R.string.cancel, null)
+                        .setPositiveButton(android.R.string.ok, new ClearFrequentClickListener())
+                        .setCancelable(false)
+                        .create();
             }
         }
         return super.onCreateDialog(id);
@@ -1313,7 +1339,7 @@ public class ContactsListActivity extends ListActivity implements
                 shortcutIntent = new Intent(ContactsContract.QuickContact.ACTION_QUICK_CONTACT);
                 shortcutIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
                         Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
-    
+
                 shortcutIntent.setData(uri);
                 shortcutIntent.putExtra(ContactsContract.QuickContact.EXTRA_MODE,
                         ContactsContract.QuickContact.MODE_LARGE);

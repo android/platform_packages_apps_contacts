@@ -1217,4 +1217,10 @@
 
     <!-- Text describing that a contact has no information available other than name and photo -->
     <string name="no_contact_details">No additional information for this contact</string>
+
+    <!-- Menu item text for clearing frequently called numbers on the favoutites tab -->
+    <string name="clearFrequentlyCalled">Clear frequently called</string>
+    
+    <!-- Confirmation dialog contents after users selects to clear frequently called. -->
+    <string name="clearFrequentlyCalledMessage">All frequently called entries will be cleared.</string>
 </resources>
