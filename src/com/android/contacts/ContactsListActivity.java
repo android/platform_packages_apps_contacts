@@ -16,12 +16,15 @@
 
 package com.android.contacts;
 
-import com.android.contacts.model.ContactsSource;
-import com.android.contacts.model.Sources;
-import com.android.contacts.ui.DisplayGroupsActivity;
-import com.android.contacts.ui.DisplayGroupsActivity.Prefs;
-import com.android.contacts.util.AccountSelectionUtil;
-import com.android.contacts.util.Constants;
+import java.lang.ref.SoftReference;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import android.accounts.Account;
 import android.app.Activity;
@@ -77,7 +80,6 @@ import android.provider.ContactsContract.Intents.Insert;
 import android.provider.ContactsContract.Intents.UI;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextThemeWrapper;
@@ -104,15 +106,12 @@ import android.widget.SectionIndexer;
 import android.widget.TextView;
 import android.widget.AbsListView.OnScrollListener;
 
-import java.lang.ref.SoftReference;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Locale;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import com.android.contacts.model.ContactsSource;
+import com.android.contacts.model.Sources;
+import com.android.contacts.ui.DisplayGroupsActivity;
+import com.android.contacts.ui.DisplayGroupsActivity.Prefs;
+import com.android.contacts.util.AccountSelectionUtil;
+import com.android.contacts.util.Constants;
 
 /*TODO(emillar) I commented most of the code that deals with modes and filtering. It should be
  * brought back in as we add back that functionality.
@@ -857,6 +856,9 @@ public class ContactsListActivity extends ListActivity implements
     public boolean onPrepareOptionsMenu(Menu menu) {
         final boolean defaultMode = (mMode == MODE_DEFAULT);
         menu.findItem(R.id.menu_display_groups).setVisible(defaultMode);
+
+        final boolean isStrequent = (mMode == MODE_STREQUENT);
+        menu.findItem(R.id.menu_clear_frequently).setVisible(isStrequent);
         return true;
     }
 
@@ -887,6 +889,10 @@ public class ContactsListActivity extends ListActivity implements
                     ContactsContract.AUTHORITY
                 });
                 startActivity(intent);
+                return true;
+            }
+            case R.id.menu_clear_frequently: {
+                getContentResolver().delete(Contacts.CONTENT_STREQUENT_URI, null, null);
                 return true;
             }
         }
