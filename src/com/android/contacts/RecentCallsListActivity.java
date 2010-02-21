@@ -16,13 +16,17 @@
 
 package com.android.contacts;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ListActivity;
 import android.content.ActivityNotFoundException;
 import android.content.AsyncQueryHandler;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.DialogInterface.OnClickListener;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabaseCorruptException;
 import android.database.sqlite.SQLiteDiskIOException;
@@ -704,6 +708,31 @@ public class RecentCallsListActivity extends ListActivity
     }
 
     @Override
+    protected Dialog onCreateDialog(int id) {
+        Dialog dialog = null;
+        switch (id) {
+            case R.id.dialog_clear_log:
+                DialogInterface.OnClickListener clearLogDialogListener = new OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        getContentResolver().delete(Calls.CONTENT_URI, null, null);
+                        startQuery();
+                    }
+                };
+
+                dialog = new AlertDialog.Builder(this)
+                    .setTitle(R.string.clearConfirmation_title)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setMessage(R.string.clearLogConfirmation)
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .setPositiveButton(android.R.string.ok, clearLogDialogListener)
+                    .setCancelable(false)
+                    .create();
+                break;
+        }
+        return dialog;
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add(0, MENU_ITEM_DELETE_ALL, 0, R.string.recentCalls_deleteAll)
                 .setIcon(android.R.drawable.ic_menu_close_clear_cancel);
@@ -780,10 +809,7 @@ public class RecentCallsListActivity extends ListActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case MENU_ITEM_DELETE_ALL: {
-                getContentResolver().delete(Calls.CONTENT_URI, null, null);
-                //TODO The change notification should do this automatically, but it isn't working
-                // right now. Remove this when the change notification is working properly.
-                startQuery();
+                showDialog(R.id.dialog_clear_log);
                 return true;
             }
 
