@@ -173,6 +173,9 @@
     <!-- Confirmation dialog title after users selects to delete a contact. -->
     <string name="deleteConfirmation_title">Delete</string>
 
+    <!-- Confirmation dialog title after users selects clear log. -->
+    <string name="clearConfirmation_title">Clear</string>
+
     <!-- Warning dialog contents after users selects to delete a ReadOnly contact. -->
     <string name="readOnlyContactWarning">You cannot delete contacts from read-only accounts, but you can hide them in your contacts lists.</string>
 
@@ -184,6 +187,9 @@
 
     <!-- Confirmation dialog contents after users selects to delete a Writable contact. -->
     <string name="deleteConfirmation">This contact will be deleted.</string>
+
+    <!-- Confirmation dialog contents after users selects to clear call log. -->
+    <string name="clearlogConfirmation">Call log will be cleared.</string>
 
     <!-- Menu item to indicate you are done editing a contact and want to save the changes you've made -->
     <string name="menu_done">Done</string>
