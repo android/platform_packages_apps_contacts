@@ -52,4 +52,7 @@
     <item type="id" name="dialog_exporting_vcard" />
     <item type="id" name="dialog_fail_to_export_with_reason" />
 
+    <!-- For RecentCallsListActivity -->
+    <item type="id" name="dialog_clear_log" />
+
 </resources>
