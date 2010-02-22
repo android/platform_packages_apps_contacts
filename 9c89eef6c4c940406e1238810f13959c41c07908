@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAr3//+Ak\u003d",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1006166
+      },
+      "writtenOn": "2010-02-22T19:13:08Z",
+      "side": 1,
+      "message": "\"Clear call log\" would be a more descriptive dialog title, and would also match the menu item.",
+      "revId": "9c89eef6c4c940406e1238810f13959c41c07908",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAr3//+Ag\u003d",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1006166
+      },
+      "writtenOn": "2010-02-22T19:13:08Z",
+      "side": 1,
+      "message": "make it a bit stronger, something like \"All call log entries will be removed.\"  also, camel case in name so \"clearLogConfirmation\"",
+      "revId": "9c89eef6c4c940406e1238810f13959c41c07908",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAr3//+Ac\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1006166
+      },
+      "writtenOn": "2010-02-22T19:13:08Z",
+      "side": 1,
+      "message": "dialog ids should be defined in res/values/ids.xml",
+      "revId": "9c89eef6c4c940406e1238810f13959c41c07908",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAr3//+AY\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 1006166
+      },
+      "writtenOn": "2010-02-22T19:13:08Z",
+      "side": 1,
+      "message": "could you encapsulate this logic into an inner class?  new ClearRecentClickListener() for example.  this means we dont need to keep around mClearLogConfirmationDialog.",
+      "revId": "9c89eef6c4c940406e1238810f13959c41c07908",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAr3//+AU\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 1006166
+      },
+      "writtenOn": "2010-02-22T19:13:08Z",
+      "side": 1,
+      "message": "this onclick would go into the static inner class mentioned above, and wouldnt need the \"dialog \u003d\u003d\" check anymore.",
+      "revId": "9c89eef6c4c940406e1238810f13959c41c07908",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
