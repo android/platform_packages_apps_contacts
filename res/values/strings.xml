@@ -715,4 +715,42 @@
     
     <!-- The string used to describe Contacts as a searchable item within system search settings. -->
     <string name="search_settings_description">Names of your contacts</string>
+    
+     <!-- Menu item used to show filter by option from the call log -->
+    <string name="recentCalls_filter">Filter By</string>
+
+	<!-- Menu item used to show missed calls from the call log -->
+    <string name="recentCalls_missed_calls">Missed Calls</string>
+    
+    <!-- Menu item used to show dialled calls from the call log -->
+    <string name="recentCalls_dialled_calls">Dialled Calls</string>
+    
+      <!-- Menu item used to show received calls from the call log -->
+    <string name="recentCalls_received_calls">Received Calls</string>
+    
+    <!-- Menu item used to show sort by option from the call log -->
+    <string name="recentCalls_sort">Sort By</string>
+    
+    <!-- Menu item used to show sort by name from the call log -->
+    <string name="recentCalls_sort_name">Name</string>
+    
+    <!-- Menu item used to show sort by date from the call log -->
+    <string name="recentCalls_sort_date">Date</string>
+    
+    <!-- Menu item used to show sort by duration from the call log -->
+    <string name="recentCalls_sort_duration">Duration</string>
+    	
+    	 <!-- Menu item used to sdelete missed calls from the call log -->
+    <string name="recentCalls_delete_missed">Delete Missed</string>
+    
+    <!-- Menu item used to delete received calls from the call log -->
+    <string name="recentCalls_delete_received">Delete Received</string>
+    
+    <!-- Menu item used to delete dialled calls from the call log -->
+    <string name="recentCalls_delete_dialled">Delete Dialled</string>
+    
+    <!-- Menu item used to delete all calls from the call log -->
+    <string name="recentCalls_delete_all">Delete All</string>
+    
+    
 </resources>

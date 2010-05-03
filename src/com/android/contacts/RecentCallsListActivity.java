@@ -16,16 +16,23 @@
 
 package com.android.contacts;
 
+import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Locale;
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.ActivityNotFoundException;
 import android.content.AsyncQueryHandler;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabaseCorruptException;
 import android.database.sqlite.SQLiteDiskIOException;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteFullException;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -51,6 +58,7 @@ import android.view.ContextMenu;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
@@ -88,7 +96,7 @@ public class RecentCallsListActivity extends ListActivity
             Calls.CACHED_NUMBER_TYPE,
             Calls.CACHED_NUMBER_LABEL
     };
-
+    	
     static final int ID_COLUMN_INDEX = 0;
     static final int NUMBER_COLUMN_INDEX = 1;
     static final int DATE_COLUMN_INDEX = 2;
@@ -113,9 +121,21 @@ public class RecentCallsListActivity extends ListActivity
     static final int LABEL_COLUMN_INDEX = 3;
     static final int MATCHED_NUMBER_COLUMN_INDEX = 4;
 
-    private static final int MENU_ITEM_DELETE = 1;
+    private static final int MENU_FILTER_BY_RECEIVED = 8;	 	   	
+    private static final int MENU_FILTER_BY_DIALED = 9;	   	  	    
+    private static final int MENU_FILTER_BY_MISSED = 10;	   	 	
+    private static final int MENU_SORT_BY_NAME = 11;	   	       
+    private static final int MENU_SORT_BY_DATE = 12;	   	        
+    private static final int MENU_SORT_BY_DURATION = 13;	   	    
+    private static final int MENU_ITEM_DELETE = 1;					
     private static final int MENU_ITEM_DELETE_ALL = 2;
-    private static final int MENU_ITEM_VIEW_CONTACTS = 3;
+    
+    private static final int MENU_ITEM_VIEW_CONTACTS = 3;			 
+    private static final int MENU_ITEM_DELETE_MISSED = 4;			 
+    private static final int MENU_ITEM_DELETE_RECEIVED = 5;			 
+    private static final int MENU_ITEM_DELETE_DIALLED = 6;			 
+    private static final int MENU_ITEM_DELETE_ALLCALL = 7;			 
+    public int back_key=0;	   
 
     private static final int QUERY_TOKEN = 53;
     private static final int UPDATE_TOKEN = 54;
@@ -591,6 +611,45 @@ public class RecentCallsListActivity extends ListActivity
         sFormattingType = FORMATTING_TYPE_INVALID;
     }
 
+    
+    private void HandleQueryMode()						
+    {
+    	switch(back_key)
+    	{
+	   		case 1:	
+	   		{
+		   		startQuery_FILTER_BY_MISSED();
+		   		break;  
+	   		}
+	   	case 2:
+	    	{
+		   		startQuery_FILTER_BY_DIALLED();
+		   		break; 
+	    	}
+	   	case 3:
+		   	{
+		   		startQuery_FILTER_BY_RECEIVED();
+		   		break; 	   		
+		   	}
+	   	case 4:
+		   	{
+		   		startQuery_SORT_BY_NAME();
+		   		break;  		   		
+		   	}
+	   	case 5:
+		   	{
+		   		startQuery_SORT_BY_Date();
+		   		break;  		   		
+		   	}
+	   	case 6:
+		   	{
+		   		startQuery_SORT_BY_DURATION();;   		
+		   		break;	
+		   	}                        		            	
+    	}
+    }
+    
+    
     @Override
     protected void onResume() {
         // The adapter caches looked up numbers, clear it so they will get
@@ -599,9 +658,13 @@ public class RecentCallsListActivity extends ListActivity
             mAdapter.clearCache();
         }
 
-        startQuery();
-        resetNewCallsFlag();
-
+        if(back_key==0)									
+        {
+        	startQuery();
+        	resetNewCallsFlag();
+        }
+        else
+        HandleQueryMode();
         super.onResume();
 
         mAdapter.mPreDrawListener = null; // Let it restart the thread after next draw
@@ -690,10 +753,94 @@ public class RecentCallsListActivity extends ListActivity
                 CALL_LOG_PROJECTION, null, null, Calls.DEFAULT_SORT_ORDER);
     }
 
+    public void startQuery_SORT_BY_NAME() {							
+        mAdapter.setLoading(true);
+        // Cancel any pending queries
+        mQueryHandler.cancelOperation(QUERY_TOKEN);
+        mQueryHandler.startQuery(QUERY_TOKEN, null, Calls.CONTENT_URI,
+                CALL_LOG_PROJECTION,Calls.CACHED_NAME+" IS NOT NULL", null, Calls.CACHED_NAME + " ASC, " + Calls.DEFAULT_SORT_ORDER );//!!!MY COMMENT
+    }
+
+    public void startQuery_SORT_BY_Date() {
+        mAdapter.setLoading(true);
+        // Cancel any pending queries
+        mQueryHandler.cancelOperation(QUERY_TOKEN);
+        mQueryHandler.startQuery(QUERY_TOKEN, null, Calls.CONTENT_URI,
+                CALL_LOG_PROJECTION, null, null,Calls.DEFAULT_SORT_ORDER);		     
+    }
+
+    public void startQuery_SORT_BY_DURATION() {
+        mAdapter.setLoading(true);
+        // Cancel any pending queries
+        mQueryHandler.cancelOperation(QUERY_TOKEN);
+        mQueryHandler.startQuery(QUERY_TOKEN, null, Calls.CONTENT_URI,
+                CALL_LOG_PROJECTION,Calls.DURATION+ " > 0", null, Calls.DURATION + " DESC" );	
+    }
+
+    public void startQuery_FILTER_BY_MISSED() {
+        mAdapter.setLoading(true);
+        // Cancel any pending queries
+        mQueryHandler.cancelOperation(QUERY_TOKEN);							
+        mQueryHandler.startQuery
+        (
+        		QUERY_TOKEN, 
+        		null, 
+        		Calls.CONTENT_URI, 
+        		CALL_LOG_PROJECTION,
+                Calls.TYPE+"='"+3+"'",
+                null,
+                Calls.DEFAULT_SORT_ORDER);
+        }
+
+    public void startQuery_FILTER_BY_DIALLED() {
+        mAdapter.setLoading(true);
+        // Cancel any pending queries
+        mQueryHandler.cancelOperation(QUERY_TOKEN); 						
+        mQueryHandler.startQuery
+        (
+        		QUERY_TOKEN, 
+        		null, 
+        		Calls.CONTENT_URI, 
+        		CALL_LOG_PROJECTION,
+                Calls.TYPE+"='"+2+"'",
+                null,
+                Calls.DEFAULT_SORT_ORDER);
+        }
+
+    public void startQuery_FILTER_BY_RECEIVED() {
+        mAdapter.setLoading(true);
+        // Cancel any pending queries
+        mQueryHandler.cancelOperation(QUERY_TOKEN);              
+        mQueryHandler.startQuery
+        (
+        		QUERY_TOKEN, 
+        		null, 
+        		Calls.CONTENT_URI, 
+        		CALL_LOG_PROJECTION,
+                Calls.TYPE+"='"+1+"'",
+                null,
+                Calls.DEFAULT_SORT_ORDER);
+        } 
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(0, MENU_ITEM_DELETE_ALL, 0, R.string.recentCalls_deleteAll)
+    public boolean onCreateOptionsMenu(Menu menu) {				
+    	SubMenu deleteMenu=menu.addSubMenu(0, MENU_ITEM_DELETE_ALL, 0, R.string.recentCalls_deleteAll)
                 .setIcon(android.R.drawable.ic_menu_close_clear_cancel);
+    	deleteMenu.add(0,MENU_ITEM_DELETE_MISSED, 0, R.string.recentCalls_delete_missed);		
+        deleteMenu.add(0, MENU_ITEM_DELETE_DIALLED, 0, R.string.recentCalls_delete_dialled);		
+        deleteMenu.add(0, MENU_ITEM_DELETE_RECEIVED, 0, R.string.recentCalls_delete_received);
+        deleteMenu.add(0, MENU_ITEM_DELETE_ALLCALL, 0, R.string.recentCalls_delete_all);
+        
+        SubMenu filterMenu = menu.addSubMenu(R.string.recentCalls_filter).setIcon(android.R.drawable.ic_menu_zoom);
+        filterMenu.add(0, MENU_FILTER_BY_MISSED, 0, R.string.recentCalls_missed_calls);		
+        filterMenu.add(0, MENU_FILTER_BY_DIALED, 0, R.string.recentCalls_dialled_calls);		
+        filterMenu.add(0, MENU_FILTER_BY_RECEIVED, 0, R.string.recentCalls_received_calls);	      
+        
+        SubMenu sortMenu = menu.addSubMenu(R.string.recentCalls_sort).setIcon(android.R.drawable.ic_menu_recent_history);
+        sortMenu.add(0, MENU_SORT_BY_NAME, 0, R.string.recentCalls_sort_name);
+        sortMenu.add(0, MENU_SORT_BY_DATE, 0,R.string.recentCalls_sort_date);
+        sortMenu.add(0, MENU_SORT_BY_DURATION, 0, R.string.recentCalls_sort_duration);
+        
         return true;
     }
 
@@ -766,21 +913,160 @@ public class RecentCallsListActivity extends ListActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case MENU_ITEM_DELETE_ALL: {
-                getContentResolver().delete(Calls.CONTENT_URI, null, null);
-                //TODO The change notification should do this automatically, but it isn't working
-                // right now. Remove this when the change notification is working properly.
-                startQuery();
-                return true;
-            }
+        case MENU_ITEM_DELETE_ALLCALL: {						       
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Are you sure you want to clear the Complete Call Log?")      
+                     .setCancelable(false)      
+                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {          
+                           public void onClick(DialogInterface dialog, int id) {               
+
+                                 //RecentCallsListActivity.this.finish();
+                                 getContentResolver().delete(Calls.CONTENT_URI,null, null);
+                                 startQuery();                            
+                           }      
+
+                     })      
+                     .setNegativeButton("No", new DialogInterface.OnClickListener() {          
+                           public void onClick(DialogInterface dialog, int id) {               
+                                 dialog.cancel();          
+                           }      
+                     });
+
+            AlertDialog alert = builder.create();
+
+            alert.show();											
+
+                   return true;
+
+      }
+        
+        case MENU_ITEM_DELETE_MISSED: {						      
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Are you sure you want to clear the Missed Call Log?")      
+                     .setCancelable(false)      
+                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {          
+                           public void onClick(DialogInterface dialog, int id) {               
+                        	   
+                                 getContentResolver().delete(Calls.CONTENT_URI,Calls.TYPE+"='"+3+"'", null);
+                                 startQuery();                            
+                           }      
+
+                     })      
+                     .setNegativeButton("No", new DialogInterface.OnClickListener() {          
+                           public void onClick(DialogInterface dialog, int id) {               
+                                 dialog.cancel();          
+                           }      
+                     });
+
+            AlertDialog alert = builder.create();
+
+            alert.show();											
+
+                   return true;
+
+      }
+        
+        case MENU_ITEM_DELETE_RECEIVED: {						
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Are you sure you want to clear the Received Call Log?")      
+                     .setCancelable(false)      
+                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {          
+                           public void onClick(DialogInterface dialog, int id) {               
+
+                                 getContentResolver().delete(Calls.CONTENT_URI, Calls.TYPE+"='"+1+"'", null);
+                                 startQuery();                            
+                           }      
+
+                     })      
+                     .setNegativeButton("No", new DialogInterface.OnClickListener() {          
+                           public void onClick(DialogInterface dialog, int id) {               
+                                 dialog.cancel();          
+                           }      
+                     });
+
+            AlertDialog alert = builder.create();
+
+            alert.show();											
+
+                   return true;
+
+      }
+        case MENU_ITEM_DELETE_DIALLED: {						        
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Are you sure you want to clear the Dialled Call Log?")      
+                     .setCancelable(false)      
+                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {          
+                           public void onClick(DialogInterface dialog, int id) {               
+
+                                 getContentResolver().delete(Calls.CONTENT_URI, Calls.TYPE+"='"+2+"'", null);
+                                 startQuery();                            
+                           }      
+
+                     })      
+                     .setNegativeButton("No", new DialogInterface.OnClickListener() {          
+                           public void onClick(DialogInterface dialog, int id) {               
+                                 dialog.cancel();          
+                           }      
+                     });
+
+            AlertDialog alert = builder.create();
+
+            alert.show();											
+
+                   return true;
+
+      }
+
 
             case MENU_ITEM_VIEW_CONTACTS: {
                 Intent intent = new Intent(Intent.ACTION_VIEW, People.CONTENT_URI);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 return true;
+                
             }
+           
+            case MENU_FILTER_BY_MISSED: {			
+                startQuery_FILTER_BY_MISSED();
+                back_key=1;
+                return true;
+            }
+            
+            case MENU_FILTER_BY_DIALED: {    		
+                startQuery_FILTER_BY_DIALLED();
+                back_key=2;
+                return true;
+            }
+            
+            case MENU_FILTER_BY_RECEIVED: {   	  
+                startQuery_FILTER_BY_RECEIVED();
+                back_key=3;
+                return true;
+            }
+ 
+            case MENU_SORT_BY_NAME: {        	   
+                startQuery_SORT_BY_NAME();		
+                back_key=4;
+                return true;
+            }
+            case MENU_SORT_BY_DATE: {       	    
+                startQuery_SORT_BY_Date();	
+                back_key=5;
+                return true;
+            }
+            
+            case MENU_SORT_BY_DURATION: {           
+                startQuery_SORT_BY_DURATION();
+                 back_key=6;
+                return true;
+            }
+           
         }
+        
         return super.onOptionsItemSelected(item);
     }
 
