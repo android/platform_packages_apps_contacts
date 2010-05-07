@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAyX///uE\u003d",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-07T17:10:36Z",
+      "side": 1,
+      "message": "Typo",
+      "revId": "b0205a12aeea1dda3242a1cba1f32114580607b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyX///ug\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-07T17:10:36Z",
+      "side": 1,
+      "message": "Please remove trailing whitespace (also on many subsequent lines)",
+      "revId": "b0205a12aeea1dda3242a1cba1f32114580607b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyX///uY\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 632,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-07T17:10:36Z",
+      "side": 1,
+      "message": "Please use the opening brace on the same line",
+      "revId": "b0205a12aeea1dda3242a1cba1f32114580607b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyX///uc\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-07T17:10:36Z",
+      "side": 1,
+      "message": "Please use spaces instead of tabs",
+      "revId": "b0205a12aeea1dda3242a1cba1f32114580607b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyX///uU\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-07T17:10:36Z",
+      "side": 1,
+      "message": "Please remove the extra semicolon",
+      "revId": "b0205a12aeea1dda3242a1cba1f32114580607b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyX///uQ\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-07T17:10:36Z",
+      "side": 1,
+      "message": "Please use spaces around the operators",
+      "revId": "b0205a12aeea1dda3242a1cba1f32114580607b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyX///uM\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-07T17:10:36Z",
+      "side": 1,
+      "message": "Please wrap code to 100 columns.\n\nYou probably wanted a more meaningful comment.",
+      "revId": "b0205a12aeea1dda3242a1cba1f32114580607b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyX///uI\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 941,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-07T17:10:36Z",
+      "side": 1,
+      "message": "Please use resources instead of hard-coded strings.",
+      "revId": "b0205a12aeea1dda3242a1cba1f32114580607b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
