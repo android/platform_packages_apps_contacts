@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAyX///lU\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 1003245
+      },
+      "writtenOn": "2010-05-09T23:39:03Z",
+      "side": 1,
+      "message": "Please find some other name for the back_key variable, it is not very legible. And please consider creating and using constants for the filter and sort modes instead of the numeric values :)",
+      "revId": "b0205a12aeea1dda3242a1cba1f32114580607b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAyX///uY\u003d",
         "filename": "src/com/android/contacts/RecentCallsListActivity.java",
         "patchSetId": 1
@@ -104,6 +121,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAyX///lQ\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 1003245
+      },
+      "writtenOn": "2010-05-09T23:39:03Z",
+      "side": 1,
+      "message": "Lots of duplicated code among the startQuery_* methods. Please consider putting it into one single method and passing the query variables as parameters to the method.",
+      "revId": "b0205a12aeea1dda3242a1cba1f32114580607b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAyX///uM\u003d",
         "filename": "src/com/android/contacts/RecentCallsListActivity.java",
         "patchSetId": 1
@@ -121,6 +155,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAyX///lI\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 1003245
+      },
+      "writtenOn": "2010-05-09T23:39:03Z",
+      "side": 1,
+      "message": "Again, with a little effort you can avoid this Dialog creation code duplication!",
+      "revId": "b0205a12aeea1dda3242a1cba1f32114580607b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAyX///uI\u003d",
         "filename": "src/com/android/contacts/RecentCallsListActivity.java",
         "patchSetId": 1
@@ -132,6 +183,23 @@
       "writtenOn": "2010-05-07T17:10:36Z",
       "side": 1,
       "message": "Please use resources instead of hard-coded strings.",
+      "revId": "b0205a12aeea1dda3242a1cba1f32114580607b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyX///lM\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1055,
+      "author": {
+        "id": 1003245
+      },
+      "writtenOn": "2010-05-09T23:39:03Z",
+      "side": 1,
+      "message": "If you intend to persist the filter and sort modes between activity uses consider saving modes into preference.",
       "revId": "b0205a12aeea1dda3242a1cba1f32114580607b9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
