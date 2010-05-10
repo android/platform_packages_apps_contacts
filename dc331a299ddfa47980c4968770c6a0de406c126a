@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAyX///hg\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 719,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-10T18:15:32Z",
+      "side": 1,
+      "message": "The variable should me called mClearLogDialogListener. I would be in favor of not making this an instance member, so we don\u0027t create it when not needed. Instead, just create an anonymous inner class when the dialog is created.\n\nAlso, fields must be declared at the top of the enclosing class.",
+      "revId": "dc331a299ddfa47980c4968770c6a0de406c126a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyX///hY\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-10T18:15:32Z",
+      "side": 1,
+      "message": "Missing @Override",
+      "revId": "dc331a299ddfa47980c4968770c6a0de406c126a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyX///hc\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 737,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-10T18:15:32Z",
+      "side": 1,
+      "message": "Create the listener here.",
+      "revId": "dc331a299ddfa47980c4968770c6a0de406c126a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
