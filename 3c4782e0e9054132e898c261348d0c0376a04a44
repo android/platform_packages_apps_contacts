@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAyn///y8\u003d",
+        "filename": "src/com/android/contacts/ContactsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1150,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-11T20:09:39Z",
+      "side": 1,
+      "message": "Please don\u0027t leave dead code behind without explaining why you feel it\u0027s necessary to leave this code commented out in the source tree.",
+      "revId": "3c4782e0e9054132e898c261348d0c0376a04a44",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyn///y4\u003d",
+        "filename": "src/com/android/contacts/ContactsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1152,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-11T20:09:39Z",
+      "side": 1,
+      "message": "Please reformat to 100 columns",
+      "revId": "3c4782e0e9054132e898c261348d0c0376a04a44",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
