@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAyn///38\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-11T17:45:34Z",
+      "side": 1,
+      "message": "Why is this field public? It should be called mBackKey, or something more descriptive and be private. You should also add spaces around the \u003d sign.",
+      "revId": "6599cadf7da8b79bc5d88e70db288d04e8fa5d9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyn///34\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-11T17:45:34Z",
+      "side": 1,
+      "message": "The curly brace should be on the previous line.",
+      "revId": "6599cadf7da8b79bc5d88e70db288d04e8fa5d9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyn///30\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-11T17:45:34Z",
+      "side": 1,
+      "message": "Use constants for each case.\n\nAlso the indents are wrong in this method.",
+      "revId": "6599cadf7da8b79bc5d88e70db288d04e8fa5d9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyn///3w\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-11T17:45:34Z",
+      "side": 1,
+      "message": "Use // for single-line comments.",
+      "revId": "6599cadf7da8b79bc5d88e70db288d04e8fa5d9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyn///3s\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-11T17:45:34Z",
+      "side": 1,
+      "message": "Space after \"if\"",
+      "revId": "6599cadf7da8b79bc5d88e70db288d04e8fa5d9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyn///3o\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-11T17:45:34Z",
+      "side": 1,
+      "message": "Wrong indent",
+      "revId": "6599cadf7da8b79bc5d88e70db288d04e8fa5d9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyn///3g\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 664,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-11T17:45:34Z",
+      "side": 1,
+      "message": "it should be:\n\n} else {\n  handleQueryMode();\n}",
+      "revId": "6599cadf7da8b79bc5d88e70db288d04e8fa5d9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyn///3Y\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 763,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-11T17:45:34Z",
+      "side": 1,
+      "message": "Why are all these new methods public? Make them private.",
+      "revId": "6599cadf7da8b79bc5d88e70db288d04e8fa5d9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyn///3c\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-11T17:45:34Z",
+      "side": 1,
+      "message": "Lines should be 100 chars max, be consistent with spaces around operators (you forgot spaces around the first + sign.) This applies to all the methods below.",
+      "revId": "6599cadf7da8b79bc5d88e70db288d04e8fa5d9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyn///3M\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 931,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-11T17:45:34Z",
+      "side": 1,
+      "message": "Strings must NOT be hard coded. They have to be in resources. Your indents are wrong all over the place in this method.",
+      "revId": "6599cadf7da8b79bc5d88e70db288d04e8fa5d9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyn///3I\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1046,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-11T17:45:34Z",
+      "side": 1,
+      "message": "Why is this field called back_key? It has nothing to do with the back key. Also, use constants and put spaces around \u003d.",
+      "revId": "6599cadf7da8b79bc5d88e70db288d04e8fa5d9c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
