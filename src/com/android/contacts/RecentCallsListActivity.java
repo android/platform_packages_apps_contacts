@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 The Android Open Source Project
+ * 	Copyright (C) 2007 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,14 @@
 
 package com.android.contacts;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.ActivityNotFoundException;
 import android.content.AsyncQueryHandler;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabaseCorruptException;
@@ -52,6 +54,7 @@ import android.view.ContextMenu;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
@@ -114,9 +117,21 @@ public class RecentCallsListActivity extends ListActivity
     static final int LABEL_COLUMN_INDEX = 3;
     static final int MATCHED_NUMBER_COLUMN_INDEX = 4;
 
+    private static final int MENU_FILTER_BY_RECEIVED = 8;
+    private static final int MENU_FILTER_BY_DIALED = 9;
+    private static final int MENU_FILTER_BY_MISSED = 10;
+    private static final int MENU_SORT_BY_NAME = 11;
+    private static final int MENU_SORT_BY_DATE = 12;
+    private static final int MENU_SORT_BY_DURATION = 13;
+
     private static final int MENU_ITEM_DELETE = 1;
     private static final int MENU_ITEM_DELETE_ALL = 2;
     private static final int MENU_ITEM_VIEW_CONTACTS = 3;
+    private static final int MENU_ITEM_DELETE_MISSED = 4;
+    private static final int MENU_ITEM_DELETE_RECEIVED = 5;
+    private static final int MENU_ITEM_DELETE_DIALLED = 6;
+    private static final int MENU_ITEM_DELETE_ALLCALL = 7;
+    public int back_key=0;
 
     private static final int QUERY_TOKEN = 53;
     private static final int UPDATE_TOKEN = 54;
@@ -607,6 +622,31 @@ public class RecentCallsListActivity extends ListActivity
         sFormattingType = FORMATTING_TYPE_INVALID;
     }
 
+
+    private void handleQueryMode()
+    {
+      switch (back_key) {
+                case 1:
+                                startQueryFilterByMissed();
+                                break;
+                case 2:
+                                startQueryFilterByDialled();
+                                break;
+                case 3:
+                                startQueryFilterByReceived();
+                                break;
+                case 4:
+                                startQuerySortByName();
+                                break;
+                case 5:
+                                startQuerySortByDate();
+                                break;
+                case 6:
+                                startQuerySortByDuration();
+                                break;
+      }
+    }
+
     @Override
     protected void onResume() {
         // The adapter caches looked up numbers, clear it so they will get
@@ -614,10 +654,15 @@ public class RecentCallsListActivity extends ListActivity
         if (mAdapter != null) {
             mAdapter.clearCache();
         }
-
-        startQuery();
-        resetNewCallsFlag();
-
+        /**
+         * Displays previous screen on back key press.
+         */
+        if(back_key==0) {
+                startQuery();
+                resetNewCallsFlag();
+        }
+        else
+        handleQueryMode();
         super.onResume();
 
         mAdapter.mPreDrawListener = null; // Let it restart the thread after next draw
@@ -712,10 +757,99 @@ public class RecentCallsListActivity extends ListActivity
                 CALL_LOG_PROJECTION, null, null, Calls.DEFAULT_SORT_ORDER);
     }
 
+    /**
+     * Displays a list call log entries sorted by name(Alphabetical order).
+     */
+    public void startQuerySortByName() {
+        mAdapter.setLoading(true);
+
+        // Cancel any pending queries
+        mQueryHandler.cancelOperation(QUERY_TOKEN);
+        mQueryHandler.startQuery(QUERY_TOKEN, null, Calls.CONTENT_URI,CALL_LOG_PROJECTION,
+             Calls.CACHED_NAME+" IS NOT NULL", null, Calls.CACHED_NAME + " ASC, " + Calls.DEFAULT_SORT_ORDER );
+    }
+
+    /**
+     * Displays a list of call log entries sorted by date.
+     */
+    public void startQuerySortByDate() {
+        mAdapter.setLoading(true);
+
+        // Cancel any pending queries
+        mQueryHandler.cancelOperation(QUERY_TOKEN);
+        mQueryHandler.startQuery(QUERY_TOKEN, null, Calls.CONTENT_URI,
+                CALL_LOG_PROJECTION, null, null,Calls.DEFAULT_SORT_ORDER);
+    }
+
+    /**
+     * Displays a list of call log entries sorted by duration of call.
+     */
+    public void startQuerySortByDuration() {
+        mAdapter.setLoading(true);
+
+        // Cancel any pending queries
+        mQueryHandler.cancelOperation(QUERY_TOKEN);
+        mQueryHandler.startQuery(QUERY_TOKEN, null, Calls.CONTENT_URI,
+               CALL_LOG_PROJECTION,null, null, Calls.DURATION + " DESC" );
+    }
+
+    /**
+     * Displays a list of Missed call log entries.
+     */
+    public void startQueryFilterByMissed() {
+        mAdapter.setLoading(true);
+
+        // Cancel any pending queries
+        mQueryHandler.cancelOperation(QUERY_TOKEN);
+        mQueryHandler.startQuery(QUERY_TOKEN,null, Calls.CONTENT_URI, CALL_LOG_PROJECTION,
+                Calls.TYPE+"='"+3+"'",null,Calls.DEFAULT_SORT_ORDER);
+        }
+
+    /**
+     * Displays a list of Dialled call log entries.
+     */
+    public void startQueryFilterByDialled() {
+        mAdapter.setLoading(true);
+
+        // Cancel any pending queries
+        mQueryHandler.cancelOperation(QUERY_TOKEN);
+        mQueryHandler.startQuery(QUERY_TOKEN, null, Calls.CONTENT_URI, CALL_LOG_PROJECTION,
+             Calls.TYPE+"='"+2+"'",null,Calls.DEFAULT_SORT_ORDER);
+        }
+
+    /**
+     * Displays a list of Received call log entries.
+     */
+    public void startQueryFilterByReceived() {
+        mAdapter.setLoading(true);
+
+        // Cancel any pending queries
+        mQueryHandler.cancelOperation(QUERY_TOKEN);
+        mQueryHandler.startQuery(QUERY_TOKEN, null, Calls.CONTENT_URI,
+                   CALL_LOG_PROJECTION,Calls.TYPE+"='"+1+"'",null,Calls.DEFAULT_SORT_ORDER);
+        }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(0, MENU_ITEM_DELETE_ALL, 0, R.string.recentCalls_deleteAll)
-                .setIcon(android.R.drawable.ic_menu_close_clear_cancel);
+        SubMenu deleteMenu=menu.addSubMenu(0, MENU_ITEM_DELETE_ALL, 0, R.string.recentCalls_deleteAll)
+                  .setIcon(android.R.drawable.ic_menu_close_clear_cancel);
+        deleteMenu.add(0,MENU_ITEM_DELETE_MISSED, 0, R.string.recentCalls_delete_missed);
+        deleteMenu.add(0, MENU_ITEM_DELETE_DIALLED, 0, R.string.recentCalls_delete_dialled);
+        deleteMenu.add(0, MENU_ITEM_DELETE_RECEIVED, 0, R.string.recentCalls_delete_received);
+        deleteMenu.add(0, MENU_ITEM_DELETE_ALLCALL, 0, R.string.recentCalls_delete_all);
+
+        SubMenu filterMenu = menu.addSubMenu(R.string.recentCalls_filter)
+                  .setIcon(android.R.drawable.ic_menu_zoom);
+        filterMenu.add(0, MENU_FILTER_BY_MISSED, 0, R.string.recentCalls_missed_calls);
+        filterMenu.add(0, MENU_FILTER_BY_DIALED, 0, R.string.recentCalls_dialled_calls);
+        filterMenu.add(0, MENU_FILTER_BY_RECEIVED, 0, R.string.recentCalls_received_calls);
+
+        SubMenu sortMenu = menu.addSubMenu(R.string.recentCalls_sort)
+                .setIcon(android.R.drawable.ic_menu_recent_history);
+        sortMenu.add(0, MENU_SORT_BY_NAME, 0, R.string.recentCalls_sort_name);
+        sortMenu.add(0, MENU_SORT_BY_DATE, 0,R.string.recentCalls_sort_date);
+        sortMenu.add(0, MENU_SORT_BY_DURATION, 0, R.string.recentCalls_sort_duration);
+
         return true;
     }
 
@@ -788,20 +922,160 @@ public class RecentCallsListActivity extends ListActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case MENU_ITEM_DELETE_ALL: {
-                getContentResolver().delete(Calls.CONTENT_URI, null, null);
-                //TODO The change notification should do this automatically, but it isn't working
-                // right now. Remove this when the change notification is working properly.
-                startQuery();
-                return true;
-            }
+        case MENU_ITEM_DELETE_ALLCALL: {
+        /**
+         * Displays a Alert Dialog for clearing All call logs
+         */
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Are you sure you want to clear the Complete Call Log?")
+                     .setCancelable(false)
+                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                           public void onClick(DialogInterface dialog, int id) {
+                                 getContentResolver().delete(Calls.CONTENT_URI,null, null);
+                                 startQuery();
+                           }
+                     })
+                     .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                           public void onClick(DialogInterface dialog, int id) {
+                                 dialog.cancel();
+                           }
+                     });
+
+            AlertDialog alert = builder.create();
+
+            alert.show();
+
+                   return true;
+
+      }
+
+        case MENU_ITEM_DELETE_MISSED: {
+        /**
+         * Displays a Alert Dialog for clearing Missed call logs
+         */
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Are you sure you want to clear the Missed Call Log?")
+                     .setCancelable(false)
+                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                           public void onClick(DialogInterface dialog, int id) {
+
+                                 getContentResolver().delete(Calls.CONTENT_URI,Calls.TYPE+"='"+3+"'", null);                                 startQuery();
+                           }
+                     })
+                     .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                           public void onClick(DialogInterface dialog, int id) {
+                                 dialog.cancel();
+                           }
+                     });
+
+            AlertDialog alert = builder.create();
+
+            alert.show();
+
+                   return true;
+
+      }
+
+        case MENU_ITEM_DELETE_RECEIVED: {
+        /**
+         * Displays a Alert Dialog for clearing received call logs
+         */
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Are you sure you want to clear the Received Call Log?")
+                     .setCancelable(false)
+                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                           public void onClick(DialogInterface dialog, int id) {
+                            getContentResolver().delete(Calls.CONTENT_URI, Calls.TYPE+"='"+1+"'", null);
+                                 startQuery();
+                           }
+
+                     })
+                     .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                           public void onClick(DialogInterface dialog, int id) {
+                                 dialog.cancel();
+                           }
+                     });
+
+            AlertDialog alert = builder.create();
+
+            alert.show();
+                   return true;
+
+      }
+        case MENU_ITEM_DELETE_DIALLED: {
+        /**
+         * Displays a Alert Dialog for clearing dialled call logs
+         */
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Are you sure you want to clear the Dialled Call Log?")
+                     .setCancelable(false)
+                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                           public void onClick(DialogInterface dialog, int id) {
+
+                                 getContentResolver().delete(Calls.CONTENT_URI, Calls.TYPE+"='"+2+"'", null);
+                                 startQuery();
+                           }
+                     })
+                     .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                           public void onClick(DialogInterface dialog, int id) {
+                                 dialog.cancel();
+                           }
+                     });
+
+            AlertDialog alert = builder.create();
+
+            alert.show();
+                   return true;
+      }
+
 
             case MENU_ITEM_VIEW_CONTACTS: {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Contacts.CONTENT_URI);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 return true;
+
             }
+
+            case MENU_FILTER_BY_MISSED: {
+                startQueryFilterByMissed();
+                back_key=1;
+                return true;
+            }
+
+            case MENU_FILTER_BY_DIALED: {
+                startQueryFilterByDialled();
+                back_key=2;
+                return true;
+            }
+
+            case MENU_FILTER_BY_RECEIVED: {
+                startQueryFilterByReceived();
+                back_key=3;
+                return true;
+            }
+
+            case MENU_SORT_BY_NAME: {
+                startQuerySortByName();
+                back_key=4;
+                return true;
+            }
+            case MENU_SORT_BY_DATE: {
+                startQuerySortByDate();
+                back_key=5;
+                return true;
+            }
+
+            case MENU_SORT_BY_DURATION: {
+                startQuerySortByDuration();
+                back_key=6;
+                return true;
+            }
+
         }
         return super.onOptionsItemSelected(item);
     }
