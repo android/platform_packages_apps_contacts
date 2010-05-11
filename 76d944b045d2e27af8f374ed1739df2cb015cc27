@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAyn///z4\u003d",
+        "filename": "src/com/android/contacts/ViewContactActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1240,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-11T18:51:57Z",
+      "side": 1,
+      "message": "Please don\u0027t leave code commented out without explaining why you feel that it should be commented out instead of deleted",
+      "revId": "76d944b045d2e27af8f374ed1739df2cb015cc27",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
