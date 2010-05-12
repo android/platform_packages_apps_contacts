@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAyn///mc\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 760,
+      "author": {
+        "id": 1003245
+      },
+      "writtenOn": "2010-05-12T11:59:32Z",
+      "side": 1,
+      "message": "Consider adding the following lines into a private method in order to avoid duplication in all query methods:\n\nmAdapter.setLoading(true);\nmQueryHandler.cancelOperation(QUERY_TOKEN);",
+      "revId": "f701b80cbf610dfd2d16d778a3c0364710836821",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAyn///mY\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 915,
+      "author": {
+        "id": 1003245
+      },
+      "writtenOn": "2010-05-12T11:59:32Z",
+      "side": 1,
+      "message": "Consider creating the dialog on all switch cases within a method passing the message and the listeners into it so we can avoid code duplication and maintenance issues.",
+      "revId": "f701b80cbf610dfd2d16d778a3c0364710836821",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
