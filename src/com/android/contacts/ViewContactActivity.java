@@ -1237,7 +1237,6 @@ public class ViewContactActivity extends Activity
                 textView.setEllipsize(TextUtils.TruncateAt.END);
             } else {
                 textView.setSingleLine(false);
-                textView.setMaxLines(maxLines);
                 textView.setEllipsize(null);
             }
         }
