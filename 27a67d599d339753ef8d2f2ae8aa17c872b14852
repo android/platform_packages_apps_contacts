@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzH///7g\u003d",
+        "filename": "src/com/android/contacts/ContactsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1148,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-13T20:52:38Z",
+      "side": 1,
+      "message": "Tabs + spurious spaces",
+      "revId": "27a67d599d339753ef8d2f2ae8aa17c872b14852",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
