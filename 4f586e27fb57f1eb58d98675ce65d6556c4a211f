@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzH///9Q\u003d",
+        "filename": "src/com/android/contacts/ContactsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1150,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-13T19:06:57Z",
+      "side": 1,
+      "message": "tabs",
+      "revId": "4f586e27fb57f1eb58d98675ce65d6556c4a211f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzH///9M\u003d",
+        "filename": "src/com/android/contacts/ContactsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1151,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-05-13T19:06:57Z",
+      "side": 1,
+      "message": "trailing space",
+      "revId": "4f586e27fb57f1eb58d98675ce65d6556c4a211f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
