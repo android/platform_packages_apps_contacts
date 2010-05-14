@@ -1147,7 +1147,9 @@ public class ContactsListActivity extends ListActivity implements
             }
 
             case MENU_ITEM_DELETE: {
-                mSelectedContactUri = getContactUri(info.position);
+                final long contactId = cursor.getLong(SUMMARY_ID_COLUMN_INDEX);
+                mSelectedContactUri = Uri.withAppendedPath(Contacts.CONTENT_URI,
+                        String.valueOf(contactId));
                 doContactDelete();
                 return true;
             }
