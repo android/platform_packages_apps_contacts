@@ -1155,17 +1155,15 @@ public class ContactsListActivity extends ListActivity implements
                 Cursor c = getContentResolver().query(dataUri,
                         new String[] {Phone._ID, Phone.NUMBER, Phone.IS_SUPER_PRIMARY},
                         Data.MIMETYPE + "=?", new String[] {Phone.CONTENT_ITEM_TYPE}, null);
-            	
-            	if (c != null && c.moveToFirst()) {
+                if (c != null && c.moveToFirst()) {
                     number = c.getString(1);
-                 }
-                 c.close();
-                 
+                }
+                c.close();
                 if(null != number) {
-                	numberUri = Uri.fromParts("tel", number, null);
-                	Intent intent = new Intent(Intent.ACTION_DIAL, numberUri);
-                	startActivity(intent);
-            	}
+                    numberUri = Uri.fromParts("tel", number, null);
+                    Intent intent = new Intent(Intent.ACTION_DIAL, numberUri);
+                    startActivity(intent);
+                }
                 return true;
             }
 
