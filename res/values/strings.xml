@@ -1217,4 +1217,8 @@
 
     <!-- Text describing that a contact has no information available other than name and photo -->
     <string name="no_contact_details">No additional information for this contact</string>
+
+    <!-- Clear Call log confirmation Text -->
+    <string name="str_clear_calllog_warning">Do you want you clear Call Log ?</string>
+
 </resources>
