@@ -884,7 +884,7 @@ public class ViewContactActivity extends Activity
                         }
                         mImEntries.add(entry);
                     } else if ((Organization.CONTENT_ITEM_TYPE.equals(mimeType)
-                            || Nickname.CONTENT_ITEM_TYPE.equals(mimeType)) && hasData) {
+                            || Nickname.CONTENT_ITEM_TYPE.equals(mimeType))) {
                         // Build organization and note entries
                         entry.uri = null;
                         mOrganizationEntries.add(entry);
