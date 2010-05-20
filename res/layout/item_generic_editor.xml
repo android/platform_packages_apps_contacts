@@ -56,4 +56,16 @@
         android:visibility="gone"
         style="@style/MoreButton" />
 
+	<ImageButton
+        android:id="@+id/edit_more_shrink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/btn_circle"
+        android:src="@drawable/ic_btn_round_less"
+        android:paddingBottom="7dip"
+        android:layout_alignBottom="@id/edit_fields"
+        android:visibility="gone"
+        style="@null"/>
+
 </com.android.contacts.ui.widget.GenericEditorView>
