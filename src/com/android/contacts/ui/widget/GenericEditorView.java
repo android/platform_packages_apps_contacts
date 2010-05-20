@@ -43,6 +43,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -67,6 +68,7 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
     protected ViewGroup mFields;
     protected View mDelete;
     protected View mMore;
+    protected View mShrink;
 
     protected DataKind mKind;
     protected ValuesDelta mEntry;
@@ -103,6 +105,9 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
 
         mMore = findViewById(R.id.edit_more);
         mMore.setOnClickListener(this);
+
+        mShrink = findViewById(R.id.edit_more_shrink);
+        mShrink.setOnClickListener(this);
     }
 
     protected EditorListener mListener;
@@ -239,9 +244,10 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
 
         // When hiding fields, place expandable
         mMore.setVisibility(hidePossible ? View.VISIBLE : View.GONE);
+        mShrink.setVisibility(!mHideOptional ? View.VISIBLE : View.GONE);
+        mShrink.setEnabled(enabled);
         mMore.setEnabled(enabled);
-    }
-
+     }
     /**
      * Prepare dialog for entering a custom label. The input value is trimmed: white spaces before
      * and after the input text is removed.
@@ -356,6 +362,11 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
                 break;
             }
             case R.id.edit_more: {
+                mHideOptional = !mHideOptional;
+                rebuildValues();
+                break;
+            }
+            case R.id.edit_more_shrink: {
                 mHideOptional = !mHideOptional;
                 rebuildValues();
                 break;
