@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzH///IU\u003d",
+        "filename": "res/layout/item_generic_editor.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-21T05:18:21Z",
+      "side": 1,
+      "message": "Tab",
+      "revId": "cc1c72ff273017367c40ef24a7cff3974ea012c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzH///IQ\u003d",
+        "filename": "res/layout/item_generic_editor.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1001146
+      },
+      "writtenOn": "2010-05-21T05:18:21Z",
+      "side": 1,
+      "message": "Why is the style set to null?",
+      "revId": "cc1c72ff273017367c40ef24a7cff3974ea012c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
