@@ -1,8 +1,0 @@
-<icon-set
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <icon-default android:icon="@drawable/default_icon" />
-    <icon android:mimeType="vnd.android.cursor.item/phone" 
-        android:icon="@drawable/phone_icon" />
-
-</icon-set>
