@@ -69,7 +69,7 @@ public final class QuickContactActivity extends Activity implements
         final int mode = extras.getInt(QuickContact.EXTRA_MODE, QuickContact.MODE_MEDIUM);
         final String[] excludeMimes = extras.getStringArray(QuickContact.EXTRA_EXCLUDE_MIMES);
 
-        mQuickContact.show(lookupUri, target, mode, excludeMimes);
+        mQuickContact.show(lookupUri, target, mode, excludeMimes, this);
     }
 
     private Rect getTargetRect(Intent intent) {
