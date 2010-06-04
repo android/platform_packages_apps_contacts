@@ -28,6 +28,7 @@ import com.android.contacts.util.NotifyingAsyncQueryHandler;
 import com.android.internal.policy.PolicyManager;
 import com.google.android.collect.Sets;
 
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -156,6 +157,8 @@ public class QuickContactWindow implements Window.Callback,
 
     private int mWindowRecycled = 0;
     private int mActionRecycled = 0;
+
+    private Activity mActivity;
 
     /**
      * Set of {@link Action} that are associated with the aggregate currently
@@ -293,7 +296,7 @@ public class QuickContactWindow implements Window.Callback,
      * Start showing a dialog for the given {@link Contacts#_ID} pointing
      * towards the given location.
      */
-    public synchronized void show(Uri lookupUri, Rect anchor, int mode, String[] excludeMimes) {
+    public synchronized void show(Uri lookupUri, Rect anchor, int mode, String[] excludeMimes, Activity callingActivity) {
         if (mQuerying || mShowing) {
             Log.w(TAG, "dismissing before showing");
             dismissInternal();
@@ -302,6 +305,9 @@ public class QuickContactWindow implements Window.Callback,
         if (TRACE_LAUNCH && !android.os.Debug.isMethodTracingActive()) {
             android.os.Debug.startMethodTracing(TRACE_TAG);
         }
+
+        //store Activity, so we can finish it when there is nothing to display
+        mActivity = callingActivity;
 
         // Prepare header view for requested mode
         mLookupUri = lookupUri;
@@ -485,6 +491,7 @@ public class QuickContactWindow implements Window.Callback,
         }
         mShowing = false;
         mDismissed = true;
+        mHasData = false;
 
         // Cancel any pending queries
         mHandler.cancelOperation(TOKEN_DATA);
@@ -527,7 +534,14 @@ public class QuickContactWindow implements Window.Callback,
      * {@link #showInternal()} when all data items are present.
      */
     private void considerShowing() {
-        if (mHasData && !mShowing && !mDismissed) {
+        //When there's no data to display, finish the calling Activity
+        if (!mHasData)
+        {
+            mActivity.finish();
+            return;
+        }
+
+        if (!mShowing && !mDismissed) {
             if (mMode == QuickContact.MODE_MEDIUM && !mHasValidSocial) {
                 // Missing valid social, swap medium for small header
                 mHeader.setVisibility(View.GONE);
@@ -552,7 +566,6 @@ public class QuickContactWindow implements Window.Callback,
         }
 
         handleData(cursor);
-        mHasData = true;
 
         if (!cursor.isClosed()) {
             cursor.close();
@@ -1158,6 +1171,7 @@ public class QuickContactWindow implements Window.Callback,
         final Set<String> containedTypes = mActions.keySet();
         for (String mimeType : ORDERED_MIMETYPES) {
             if (containedTypes.contains(mimeType)) {
+                mHasData = true;
                 final int index = mTrack.getChildCount() - 1;
                 mTrack.addView(inflateAction(mimeType), index);
                 containedTypes.remove(mimeType);
@@ -1167,6 +1181,7 @@ public class QuickContactWindow implements Window.Callback,
         // Then continue with remaining MIME-types in alphabetical order
         final String[] remainingTypes = containedTypes.toArray(new String[containedTypes.size()]);
         Arrays.sort(remainingTypes);
+        if (remainingTypes.length > 0) mHasData = true;
         for (String mimeType : remainingTypes) {
             final int index = mTrack.getChildCount() - 1;
             mTrack.addView(inflateAction(mimeType), index);
