@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzX//+dg\u003d",
+        "filename": "src/com/android/contacts/ui/QuickContactWindow.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-06-14T22:04:40Z",
+      "side": 1,
+      "message": "Instead of passing the activity, I would return a boolean and let the activity close itself.",
+      "revId": "931fe364f296712fddc980cf9aeed4878029360b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
