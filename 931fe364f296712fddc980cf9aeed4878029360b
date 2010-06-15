@@ -16,6 +16,24 @@
       "revId": "931fe364f296712fddc980cf9aeed4878029360b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+Xo\u003d",
+        "filename": "src/com/android/contacts/ui/QuickContactWindow.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1003856
+      },
+      "writtenOn": "2010-06-15T04:42:25Z",
+      "side": 1,
+      "message": "Ugh this will be hard, since the show method starts an asynchronous query.\nI will have a look at this evening when I\u0027m back from work.\n\nAny suggestions in the meantime on how to implement the return statement?",
+      "parentUuid": "AAAAzX//+dg\u003d",
+      "revId": "931fe364f296712fddc980cf9aeed4878029360b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
