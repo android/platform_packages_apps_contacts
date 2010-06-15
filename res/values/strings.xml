@@ -173,9 +173,6 @@
     <!-- Confirmation dialog title after users selects to delete a contact. -->
     <string name="deleteConfirmation_title">Delete</string>
 
-    <!-- Confirmation dialog title after users selects clear log. -->
-    <string name="clearConfirmation_title">Clear call log</string>
-
     <!-- Warning dialog contents after users selects to delete a ReadOnly contact. -->
     <string name="readOnlyContactWarning">You cannot delete contacts from read-only accounts, but you can hide them in your contacts lists.</string>
 
@@ -187,9 +184,6 @@
 
     <!-- Confirmation dialog contents after users selects to delete a Writable contact. -->
     <string name="deleteConfirmation">This contact will be deleted.</string>
-
-    <!-- Confirmation dialog contents after users selects to clear call log. -->
-    <string name="clearLogConfirmation">All call log entries will be removed.</string>
 
     <!-- Menu item to indicate you are done editing a contact and want to save the changes you've made -->
     <string name="menu_done">Done</string>
@@ -937,6 +931,60 @@
 
     <!-- The string used to describe Contacts as a searchable item within system search settings. -->
     <string name="search_settings_description">Names of your contacts</string>
+
+    <!-- Menu item used to show filter by option from the call log -->
+    <string name="recentCalls_filter">Filter By</string>
+
+    <!-- Menu item used to show missed calls from the call log -->
+    <string name="recentCalls_missed_calls">Missed Calls</string>
+
+    <!-- Menu item used to show dialled calls from the call log -->
+    <string name="recentCalls_dialled_calls">Dialled Calls</string>
+
+    <!-- Menu item used to show received calls from the call log -->
+    <string name="recentCalls_received_calls">Received Calls</string>
+
+    <!-- Menu item used to show sort by option from the call log -->
+    <string name="recentCalls_sort">Sort By</string>
+
+    <!-- Menu item used to show sort by name from the call log -->
+    <string name="recentCalls_sort_name">Name</string>
+
+    <!-- Menu item used to show sort by date from the call log -->
+    <string name="recentCalls_sort_date">Date</string>
+
+    <!-- Menu item used to show sort by duration from the call log -->
+    <string name="recentCalls_sort_duration">Duration</string>
+
+    <!-- Menu item used to delete missed calls from the call log -->
+    <string name="recentCalls_delete_missed">Delete Missed</string>
+
+    <!-- Menu item used to delete received calls from the call log -->
+    <string name="recentCalls_delete_received">Delete Received</string>
+
+    <!-- Menu item used to delete dialled calls from the call log -->
+    <string name="recentCalls_delete_dialled">Delete Dialled</string>
+
+    <!-- Menu item used to delete all calls from the call log -->
+    <string name="recentCalls_delete_all">Delete All</string>
+
+    <!-- Confirmation dialog title after users selects Delete All call logs. -->
+    <string name="confirm_recentCalls_delete_all">Are you sure you want to clear the Complete Call Log?</string>
+
+    <!-- Confirmation dialog title after users selects Delete Missed call logs. -->
+    <string name="confirm_recentCalls_delete_missed">Are you sure you want to clear the Missed Call Log?</string>
+
+    <!-- Confirmation dialog title after users selects Delete Dialled call logs. -->
+    <string name="confirm_recentCalls_delete_dialled">Are you sure you want to clear the Dialled Call Log?</string>
+
+    <!-- Confirmation dialog title after users selects Delete Received call logs. -->
+    <string name="confirm_recentCalls_delete_received">Are you sure you want to clear the Received Call Log?</string>
+
+    <!-- Text to be used for affirmative response button in dialog boxes -->
+    <string name="yes">OK</string>
+
+    <!-- Text to be used for negative response button in dialog boxes -->
+    <string name="no">Cancel</string>
 
     <!-- Menu items for dialpad options as part of Pause and Wait ftr -->
     <string name="add_2sec_pause">Add 2-sec pause</string>
