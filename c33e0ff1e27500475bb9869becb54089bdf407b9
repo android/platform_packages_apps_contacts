@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAzX//+Tw\u003d",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 983,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-06-15T16:54:03Z",
+      "side": 1,
+      "message": "Assuming that those should have local copies (I\u0027m not sure), the resource name and (more importantly) the resource description should have more context to help translators understand the context that this is used in.",
+      "revId": "c33e0ff1e27500475bb9869becb54089bdf407b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAzX//+To\u003d",
+        "filename": "src/com/android/contacts/RecentCallsListActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 935,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-06-15T16:54:03Z",
+      "side": 1,
+      "message": "Style inconsistency - you have an empty line between other cases, but not here.",
+      "revId": "c33e0ff1e27500475bb9869becb54089bdf407b9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
