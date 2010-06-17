@@ -28,6 +28,7 @@ import android.content.Intent;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.pim.vcard.EntryCommitter;
@@ -237,7 +238,7 @@ public class ImportVCardActivity extends Activity {
                             getString(R.string.reading_vcard_files));
                     mProgressDialogForReadVCard.setMax(mSelectedVCardFileList.size());
                     mProgressDialogForReadVCard.setProgress(0);
-                    
+
                     for (VCardFile vcardFile : mSelectedVCardFileList) {
                         if (mCanceled) {
                             return;
@@ -277,7 +278,7 @@ public class ImportVCardActivity extends Activity {
                             }
                             builder.append(fileName);
                         }
-                        
+
                         mHandler.post(new DialogDisplayer(
                                 getString(R.string.fail_reason_failed_to_read_files,
                                         builder.toString())));
@@ -406,7 +407,7 @@ public class ImportVCardActivity extends Activity {
         public static final int IMPORT_MULTIPLE = 1;
         public static final int IMPORT_ALL = 2;
         public static final int IMPORT_TYPE_SIZE = 3;
-        
+
         private int mCurrentIndex;
 
         public void onClick(DialogInterface dialog, int which) {
@@ -429,7 +430,7 @@ public class ImportVCardActivity extends Activity {
             }
         }
     }
-    
+
     private class VCardSelectedListener implements
             DialogInterface.OnClickListener, DialogInterface.OnMultiChoiceClickListener {
         private int mCurrentIndex;
@@ -447,7 +448,7 @@ public class ImportVCardActivity extends Activity {
                 if (mSelectedIndexSet != null) {
                     List<VCardFile> selectedVCardFileList = new ArrayList<VCardFile>();
                     int size = mAllVCardFileList.size();
-                    // We'd like to sort the files by its index, so we do not use Set iterator. 
+                    // We'd like to sort the files by its index, so we do not use Set iterator.
                     for (int i = 0; i < size; i++) {
                         if (mSelectedIndexSet.contains(i)) {
                             selectedVCardFileList.add(mAllVCardFileList.get(i));
@@ -598,7 +599,7 @@ public class ImportVCardActivity extends Activity {
             mHandler.post(new DialogDisplayer(R.id.dialog_select_one_vcard));
         }
     }
-    
+
     private void importMultipleVCardFromSDCard(final List<VCardFile> selectedVCardFileList) {
         mHandler.post(new Runnable() {
             public void run() {
@@ -816,12 +817,11 @@ public class ImportVCardActivity extends Activity {
      * This method should be called from a thread with a looper (like Activity).
      */
     public void startImportVCardFromSdCard() {
-        File file = new File("/sdcard");
+        File file = Environment.getExternalStorageDirectory();
         if (!file.exists() || !file.isDirectory() || !file.canRead()) {
             showDialog(R.id.dialog_sdcard_not_found);
         } else {
-            File sdcardDirectory = new File("/sdcard");
-            mVCardScanThread = new VCardScanThread(sdcardDirectory);
+            mVCardScanThread = new VCardScanThread(file);
             showDialog(R.id.dialog_searching_vcard);
         }
     }
