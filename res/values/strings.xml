@@ -458,7 +458,7 @@
     </string>
 
     <!-- Activity title for the activity that lets the user choose which groups of contacts to sync from the server -->
-    
+
 
     <!-- Live folder label for all contacts -->
     <string name="liveFolder_all_label">All contacts</string>
@@ -836,6 +836,9 @@
     <!-- Shown as the header name for a person when the name is missing or unknown. -->
     <string name="quickcontact_missing_name">Unknown</string>
 
+    <!-- Text that is shown in the Badge, when there is no data to display -->
+    <string name="quickcontact_no_data">No data</string>
+
     <!-- The menu item to open the list of accounts -->
     <string name="menu_accounts">Accounts</string>
 
@@ -1081,28 +1084,28 @@
 
     <!-- Text describing that a contact has no information available other than name and photo -->
     <string name="no_contact_details">No additional information for this contact</string>
-    
+
     <!-- Label of the "sort list by" display option -->
     <string name="display_options_sort_list_by">Sort list by</string>
-    
+
     <!-- An allowable value for the "sort list by" contact display option  -->
     <string name="display_options_sort_by_given_name">Given name</string>
-    
+
     <!-- An allowable value for the "sort list by" contact display option  -->
     <string name="display_options_sort_by_family_name">Family name</string>
-           
+
     <!-- Label of the "view names as" display option -->
     <string name="display_options_view_names_as">View contact names as</string>
-    
+
     <!-- An allowable value for the "view names as" contact display option  -->
     <string name="display_options_view_given_name_first">Given name first</string>
-    
+
     <!-- An allowable value for the "view names as" contact display option  -->
     <string name="display_options_view_family_name_first">Family name first</string>
-    
+
     <!-- Gray hint displayed in the search field in Contacts when empty -->
     <string name="search_bar_hint">Search contacts</string>
-    
+
     <!-- Button displayed underneath the list of filtered visible contacts -->
     <string name="search_for_all_contacts">Search for all contacts</string>
 
@@ -1120,12 +1123,12 @@
 
     <!-- Text shown in the contacts app if the background process updating contacts fails because of memory shortage -->
     <string name="upgrade_out_of_memory">Contacts are in the process of being upgraded.
-    \n\nThe upgrade process requires approximately <xliff:g id="size_in_megabytes">%d</xliff:g>Mb of 
-    internal phone storage.\n\nChoose one of the following options:</string>
-    
+    \n\nThe upgrade process requires approximately <xliff:g id="size_in_megabytes">%d</xliff:g>
+    Mb of internal phone storage.\n\nChoose one of the following options:</string>
+
     <!-- Button shown in the contacts app if the background process updating contacts fails because of memory shortage -->
     <string name="upgrade_out_of_memory_uninstall">Uninstall some applications</string>
-    
+
     <!-- Button shown in the contacts app if the background process updating contacts fails because of memory shortage -->
     <string name="upgrade_out_of_memory_retry">Retry upgrade</string>
 
