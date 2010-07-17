@@ -32,6 +32,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Entity;
+import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.telephony.PhoneNumberFormattingTextWatcher;
@@ -61,6 +62,7 @@ import java.util.List;
 public class GenericEditorView extends RelativeLayout implements Editor, View.OnClickListener {
     protected static final int RES_FIELD = R.layout.item_editor_field;
     protected static final int RES_LABEL_ITEM = android.R.layout.simple_list_item_1;
+    private static final int CUSTOM_LABEL_DIALOG_ID = 1;
 
     protected LayoutInflater mInflater;
 
@@ -77,6 +79,8 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
     protected ValuesDelta mEntry;
     protected EntityDelta mState;
     protected boolean mReadOnly;
+
+    private Dialog mCustomLabelDialog;
 
     protected boolean mHideOptional = true;
 
@@ -285,6 +289,7 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
      */
     private Dialog createCustomDialog() {
         final EditText customType = new EditText(mContext);
+        customType.setId(CUSTOM_LABEL_DIALOG_ID);
         customType.setInputType(INPUT_TYPE_CUSTOM);
         customType.requestFocus();
 
@@ -354,7 +359,9 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
                     // Only when the custum value input in the next step is correct one.
                     // this method also set the type value to what the user requested here.
                     mPendingType = selected;
-                    createCustomDialog().show();
+                    mCustomLabelDialog = createCustomDialog();
+                    mCustomLabelDialog.setOnDismissListener(mCustomLabelDialogDismissListener);
+                    mCustomLabelDialog.show();
                 } else {
                     // User picked type, and we're sure it's ok to actually write the entry.
                     mType = selected;
@@ -371,6 +378,13 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
         builder.setSingleChoiceItems(typeAdapter, 0, clickListener);
         return builder.create();
     }
+
+    private final DialogInterface.OnDismissListener mCustomLabelDialogDismissListener =
+        new DialogInterface.OnDismissListener() {
+        public void onDismiss(DialogInterface dialog) {
+            mCustomLabelDialog = null;
+        }
+    };
 
     /** {@inheritDoc} */
     public void onClick(View v) {
@@ -405,6 +419,9 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
     private static class SavedState extends BaseSavedState {
         public boolean mHideOptional;
         public int[] mVisibilities;
+        public Bundle customLabelDialogState;
+        public Parcelable customLabelDialogEditTextState;
+        public EditType customLabelDialogEditType;
 
         SavedState(Parcelable superState) {
             super(superState);
@@ -414,6 +431,9 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
             super(in);
             mVisibilities = new int[in.readInt()];
             in.readIntArray(mVisibilities);
+            customLabelDialogState = in.readBundle();
+            customLabelDialogEditTextState = in.readParcelable(Editable.class.getClassLoader());
+            customLabelDialogEditType = (EditType) in.readValue(EditType.class.getClassLoader());
         }
 
         @Override
@@ -421,6 +441,9 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
             super.writeToParcel(out, flags);
             out.writeInt(mVisibilities.length);
             out.writeIntArray(mVisibilities);
+            out.writeBundle(customLabelDialogState);
+            out.writeParcelable(customLabelDialogEditTextState, flags);
+            out.writeValue(customLabelDialogEditType);
         }
 
         public static final Parcelable.Creator<SavedState> CREATOR
@@ -445,6 +468,17 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
 
         ss.mHideOptional = mHideOptional;
 
+        // Custom Label Dialog
+        if (mCustomLabelDialog != null) {
+            // Save the current Dialog-State
+            ss.customLabelDialogState = mCustomLabelDialog.onSaveInstanceState();
+            // Save the current state from the EditText so the Text and Cursor Position are saved
+            ss.customLabelDialogEditTextState = ((EditText)mCustomLabelDialog
+                    .findViewById(CUSTOM_LABEL_DIALOG_ID)).onSaveInstanceState();
+            // Type for which this Dialog was created
+            ss.customLabelDialogEditType = mPendingType;
+        }
+
         final int numChildren = mFields.getChildCount();
         ss.mVisibilities = new int[numChildren];
         for (int i = 0; i < numChildren; i++) {
@@ -467,6 +501,16 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
         int numChildren = Math.min(mFields.getChildCount(), ss.mVisibilities.length);
         for (int i = 0; i < numChildren; i++) {
             mFields.getChildAt(i).setVisibility(ss.mVisibilities[i]);
+        }
+
+        // Custom Label Dialog
+        if (ss.customLabelDialogState != null) {
+            mPendingType = ss.customLabelDialogEditType;
+            mCustomLabelDialog = createCustomDialog();
+            mCustomLabelDialog.setOnDismissListener(mCustomLabelDialogDismissListener);
+            mCustomLabelDialog.onRestoreInstanceState(ss.customLabelDialogState);
+            ((EditText)mCustomLabelDialog.findViewById(CUSTOM_LABEL_DIALOG_ID))
+                    .onRestoreInstanceState(ss.customLabelDialogEditTextState);
         }
     }
 }
