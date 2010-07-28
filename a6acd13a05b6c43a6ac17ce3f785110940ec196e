@@ -16,6 +16,24 @@
       "revId": "a6acd13a05b6c43a6ac17ce3f785110940ec196e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA3n////4\u003d",
+        "filename": "src/com/android/contacts/ui/widget/GenericEditorView.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 1003856
+      },
+      "writtenOn": "2010-07-28T21:36:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAA3X///2k\u003d",
+      "revId": "a6acd13a05b6c43a6ac17ce3f785110940ec196e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
