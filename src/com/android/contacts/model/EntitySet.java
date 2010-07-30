@@ -123,14 +123,16 @@ public class EntitySet extends ArrayList<EntityDelta> implements Parcelable {
         }
 
         final int assertMark = diff.size();
-        int backRefs[] = new int[size()];
-
-        int rawContactIndex = 0;
+        ArrayList<Integer> backRefs = new ArrayList<Integer>();
 
         // Second pass builds actual operations
         for (EntityDelta delta : this) {
             final int firstBatch = diff.size();
-            backRefs[rawContactIndex++] = firstBatch;
+
+            if (firstBatch > 0) {
+                backRefs.add(firstBatch);
+            }
+
             delta.buildDiff(diff);
 
             // Only create rules for inserts
@@ -187,7 +189,7 @@ public class EntitySet extends ArrayList<EntityDelta> implements Parcelable {
      * separate contacts.
      */
     private void buildSplitContactDiff(final ArrayList<ContentProviderOperation> diff,
-            int[] backRefs) {
+            ArrayList<Integer> backRefs) {
         int count = size();
         for (int i = 0; i < count; i++) {
             for (int j = 0; j < count; j++) {
@@ -202,7 +204,7 @@ public class EntitySet extends ArrayList<EntityDelta> implements Parcelable {
      * Construct a {@link AggregationExceptions#TYPE_KEEP_SEPARATE}.
      */
     private void buildSplitContactDiff(ArrayList<ContentProviderOperation> diff, int index1,
-            int index2, int[] backRefs) {
+            int index2, ArrayList<Integer> backRefs) {
         Builder builder =
                 ContentProviderOperation.newUpdate(AggregationExceptions.CONTENT_URI);
         builder.withValue(AggregationExceptions.TYPE, AggregationExceptions.TYPE_KEEP_SEPARATE);
@@ -210,16 +212,23 @@ public class EntitySet extends ArrayList<EntityDelta> implements Parcelable {
         Long rawContactId1 = get(index1).getValues().getAsLong(RawContacts._ID);
         if (rawContactId1 != null && rawContactId1 >= 0) {
             builder.withValue(AggregationExceptions.RAW_CONTACT_ID1, rawContactId1);
+        } else if (index1 < backRefs.size()) {
+            builder.withValueBackReference(AggregationExceptions.RAW_CONTACT_ID1,
+                    backRefs.get(index1));
         } else {
-            builder.withValueBackReference(AggregationExceptions.RAW_CONTACT_ID1, backRefs[index1]);
+            return;
         }
 
         Long rawContactId2 = get(index2).getValues().getAsLong(RawContacts._ID);
         if (rawContactId2 != null && rawContactId2 >= 0) {
             builder.withValue(AggregationExceptions.RAW_CONTACT_ID2, rawContactId2);
+        } else if (index2 < backRefs.size()) {
+            builder.withValueBackReference(AggregationExceptions.RAW_CONTACT_ID2,
+                    backRefs.get(index2));
         } else {
-            builder.withValueBackReference(AggregationExceptions.RAW_CONTACT_ID2, backRefs[index2]);
+            return;
         }
+
         diff.add(builder.build());
     }
 
