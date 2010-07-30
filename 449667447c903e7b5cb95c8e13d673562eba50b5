@@ -16,6 +16,24 @@
       "revId": "449667447c903e7b5cb95c8e13d673562eba50b5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA33///3I\u003d",
+        "filename": "src/com/android/contacts/ui/ContactsPreferencesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 1004340
+      },
+      "writtenOn": "2010-07-30T20:23:57Z",
+      "side": 1,
+      "message": "The section a few lines below does add the group ID to the builder, but the value needs to be part of the URI path per the ContactProvider. The ContactProvider looks at the path (last path segment),not the selection for the group ID.",
+      "parentUuid": "AAAA33///3w\u003d",
+      "revId": "449667447c903e7b5cb95c8e13d673562eba50b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
