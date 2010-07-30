@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA33///3w\u003d",
+        "filename": "src/com/android/contacts/ui/ContactsPreferencesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-07-30T19:27:58Z",
+      "side": 1,
+      "message": "Hmm... but there is a selection a few lines further down.  Does the selection not work?",
+      "revId": "449667447c903e7b5cb95c8e13d673562eba50b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
