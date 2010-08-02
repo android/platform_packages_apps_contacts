@@ -34,6 +34,24 @@
       "revId": "449667447c903e7b5cb95c8e13d673562eba50b5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA33///kA\u003d",
+        "filename": "src/com/android/contacts/ui/ContactsPreferencesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-08-02T22:24:28Z",
+      "side": 1,
+      "message": "Actually, I am looking at the code of ContactsProvider2.updateGroups and I cannot see what the problem is - it appears to be going through all the right motions.\n\nPerhaps we should start with a new test (or an update of an existing test) in ContactsProvider2Tests and reproduce the problem as a unit test.  Then it will be easier to see how to fix it.",
+      "parentUuid": "AAAA33///3I\u003d",
+      "revId": "449667447c903e7b5cb95c8e13d673562eba50b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
