@@ -52,6 +52,24 @@
       "revId": "449667447c903e7b5cb95c8e13d673562eba50b5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA33///fk\u003d",
+        "filename": "src/com/android/contacts/ui/ContactsPreferencesActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 1004340
+      },
+      "writtenOn": "2010-08-03T14:03:17Z",
+      "side": 1,
+      "message": "In ContactsProvider2.updateGroups does appear to be doing what is expected. The following line points to the error:\n\n    final long groupId \u003d ContentUris.parseId(uri);\n\nWhen adding a group to be synced, the updatedValues does contain the key Groups.SHOULD_SYNC and it is not equal to zero so the line above is called. The ContentUris.parseId method is where the string \u0027groups\u0027 fails to be converted to a long value. From what I can tell either the updateGroups method needs to check the URI for the ID before attempting to parse it, the Contacts application needs to send the ID in the URI as it is currently being expected, or both.",
+      "parentUuid": "AAAA33///kA\u003d",
+      "revId": "449667447c903e7b5cb95c8e13d673562eba50b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
