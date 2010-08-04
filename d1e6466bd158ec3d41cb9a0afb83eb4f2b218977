@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA33///YM\u003d",
+        "filename": "src/com/android/contacts/model/EntitySet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-08-04T18:04:48Z",
+      "side": 1,
+      "message": "Long line",
+      "revId": "d1e6466bd158ec3d41cb9a0afb83eb4f2b218977",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA33///YI\u003d",
+        "filename": "src/com/android/contacts/model/EntitySet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-08-04T18:04:48Z",
+      "side": 1,
+      "message": "Long line.",
+      "revId": "d1e6466bd158ec3d41cb9a0afb83eb4f2b218977",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
