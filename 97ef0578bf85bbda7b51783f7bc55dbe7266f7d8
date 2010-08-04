@@ -16,6 +16,24 @@
       "revId": "97ef0578bf85bbda7b51783f7bc55dbe7266f7d8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA33///Vo\u003d",
+        "filename": "src/com/android/contacts/model/EntitySet.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1004360
+      },
+      "writtenOn": "2010-08-04T21:25:23Z",
+      "side": 1,
+      "message": "The reason I didn\u0027t use size() is because we aren\u0027t guaranteed that every EntityDelta is going to be inserted.",
+      "parentUuid": "AAAA33///Vw\u003d",
+      "revId": "97ef0578bf85bbda7b51783f7bc55dbe7266f7d8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
