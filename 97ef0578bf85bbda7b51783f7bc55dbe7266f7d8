@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA33///Vw\u003d",
+        "filename": "src/com/android/contacts/model/EntitySet.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1004019
+      },
+      "writtenOn": "2010-08-04T21:23:16Z",
+      "side": 1,
+      "message": "would prefer to use the capacity constructor instead\nnew ArrayList\u003cInteger\u003e(size());",
+      "revId": "97ef0578bf85bbda7b51783f7bc55dbe7266f7d8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
