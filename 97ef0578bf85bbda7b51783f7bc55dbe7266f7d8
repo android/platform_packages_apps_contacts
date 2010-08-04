@@ -34,6 +34,24 @@
       "revId": "97ef0578bf85bbda7b51783f7bc55dbe7266f7d8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAA33///VM\u003d",
+        "filename": "src/com/android/contacts/model/EntitySet.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1004019
+      },
+      "writtenOn": "2010-08-04T21:59:17Z",
+      "side": 1,
+      "message": "Capacity is different from size. The capacity passed into the constructor just tells the list how many items you expect to prevent re-allocations and array copying. As in this case the worst-case is almost the same as the typical case, size() is a very good estimate.",
+      "parentUuid": "AAAA33///Vo\u003d",
+      "revId": "97ef0578bf85bbda7b51783f7bc55dbe7266f7d8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
