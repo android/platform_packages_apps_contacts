@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA4H///8I\u003d",
+        "filename": "src/com/android/contacts/model/EntitySet.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1004360
+      },
+      "writtenOn": "2010-08-05T14:22:01Z",
+      "side": 1,
+      "message": "I think this may need to be firstBatch - 1.  Thoughts?  My reasoning is, diff.size() would be this child\u0027s position, so it\u0027d be trying to back reference itself.",
+      "revId": "29a51b418be3cce24747ae63494fc8f75e95b53a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
