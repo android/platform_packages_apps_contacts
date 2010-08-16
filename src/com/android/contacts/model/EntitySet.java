@@ -130,7 +130,9 @@ public class EntitySet extends ArrayList<EntityDelta> implements Parcelable {
         // Second pass builds actual operations
         for (EntityDelta delta : this) {
             final int firstBatch = diff.size();
-            backRefs[rawContactIndex++] = firstBatch;
+            backRefs[rawContactIndex++] =
+                (firstBatch > 0) ? (delta.isContactInsert() ? firstBatch : -1) : -1;
+
             delta.buildDiff(diff);
 
             // Only create rules for inserts
@@ -208,18 +210,25 @@ public class EntitySet extends ArrayList<EntityDelta> implements Parcelable {
         builder.withValue(AggregationExceptions.TYPE, AggregationExceptions.TYPE_KEEP_SEPARATE);
 
         Long rawContactId1 = get(index1).getValues().getAsLong(RawContacts._ID);
+        int backRef1 = backRefs[index1];
         if (rawContactId1 != null && rawContactId1 >= 0) {
             builder.withValue(AggregationExceptions.RAW_CONTACT_ID1, rawContactId1);
+        } else if (backRef1 >= 0) {
+            builder.withValueBackReference(AggregationExceptions.RAW_CONTACT_ID1, backRef1);
         } else {
-            builder.withValueBackReference(AggregationExceptions.RAW_CONTACT_ID1, backRefs[index1]);
+            return;
         }
 
         Long rawContactId2 = get(index2).getValues().getAsLong(RawContacts._ID);
+        int backRef2 = backRefs[index2];
         if (rawContactId2 != null && rawContactId2 >= 0) {
             builder.withValue(AggregationExceptions.RAW_CONTACT_ID2, rawContactId2);
+        } else if (backRef2 >= 0) {
+            builder.withValueBackReference(AggregationExceptions.RAW_CONTACT_ID2, backRef2);
         } else {
-            builder.withValueBackReference(AggregationExceptions.RAW_CONTACT_ID2, backRefs[index2]);
+            return;
         }
+
         diff.add(builder.build());
     }
 
