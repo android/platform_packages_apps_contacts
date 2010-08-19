@@ -158,7 +158,7 @@ public class SpecialCharSequenceMgr {
                 sc.progressDialog.show();
 
                 // run the query.
-                handler.startQuery(ADN_QUERY_TOKEN, sc, Uri.parse("content://icc/adn"),
+                handler.startQuery(ADN_QUERY_TOKEN, sc, Uri.parse("content://icc/adn/" + index),
                         new String[]{ADN_PHONE_NUMBER_COLUMN_NAME}, null, null, null);
                 return true;
             } catch (NumberFormatException ex) {
@@ -314,21 +314,24 @@ public class SpecialCharSequenceMgr {
             // get the EditText to update or see if the request was cancelled.
             EditText text = sc.getTextField();
 
-            // if the textview is valid, and the cursor is valid and postionable
+            // if the textview is valid, and the cursor is valid and positionable
             // on the Nth number, then we update the text field and display a
             // toast indicating the caller name.
-            if ((c != null) && (text != null) && (c.moveToPosition(sc.contactNum))) {
+            if ((c != null) && (text != null) && (c.moveToPosition(0))) {
                 String name = c.getString(c.getColumnIndexOrThrow(ADN_NAME_COLUMN_NAME));
                 String number = c.getString(c.getColumnIndexOrThrow(ADN_PHONE_NUMBER_COLUMN_NAME));
 
-                // fill the text in.
-                text.getText().replace(0, 0, number);
+                // There might be empty positions on the SIM or contacts without number
+                if (number.length() > 0) {
+                    // fill the text in.
+                    text.getText().replace(0, 0, number);
 
-                // display the name as a toast
-                Context context = sc.progressDialog.getContext();
-                name = context.getString(R.string.menu_callNumber, name);
-                Toast.makeText(context, name, Toast.LENGTH_SHORT)
-                    .show();
+                    // display the name as a toast
+                    Context context = sc.progressDialog.getContext();
+                    name = context.getString(R.string.menu_callNumber, name);
+                    Toast.makeText(context, name, Toast.LENGTH_SHORT)
+                        .show();
+                }
             }
         }
     }
