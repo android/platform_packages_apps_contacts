@@ -476,5 +476,47 @@
 
         <activity android:name=".ExportVCardActivity"
             android:theme="@style/BackgroundOnly" />
+
+        <!-- activity added for speed dial support -->
+          <activity android:name=".SpeedDialGrid"
+                  android:label="@string/speed_dial_grid_title">
+            <intent-filter>
+                <action android:name="com.android.contacts.action.SPEED_DIAL_GRID" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- activity added for speed dial support -->
+         <activity android:name=".SpeedDialListActivity"
+            android:label="@string/speed_dial_list_title">
+            <intent-filter>
+                <action android:name="com.android.contacts.action.SPEED_DIAL_LIST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- activity added for speed dial support -->
+        <activity android:name=".SpeedDialViewContactActivity"
+            android:label="@string/viewContactTitle"
+            android:theme="@style/TallTitleBarTheme">
+            <intent-filter>
+                <action android:name="com.android.contacts.action.SPEED_DIAL_VIEW_CONTACT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.contacts.action.EDIT_SPEED_DIAL_VIEW_CONTACT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+       <!-- activity added for speed dial support -->
+          <activity android:name=".SpeedDialContactList"
+                  android:label="@string/speed_dial_contacts_list_title">
+            <intent-filter>
+                <action android:name="com.android.contacts.action.SPEED_DIAL_CONTACT_LIST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>

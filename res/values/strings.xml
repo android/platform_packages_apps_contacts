@@ -1137,4 +1137,88 @@
 
     <!-- Title shown in the search result activity of contacts app while searching -->
     <string name="search_results_searching">Searching...</string>
+
+    <!-- strings added for speed dial support starts -->
+    <!-- The title bar when viewing the speed dial grid activity -->
+    <string name="speed_dial_grid_title">Speed dial</string>
+
+    <!-- The title bar when viewing the speed dial list activity -->
+    <string name="speed_dial_list_title">Speed dial list</string>
+
+    <!-- The title bar when viewing the speed dial contacts list activity -->
+    <string name="speed_dial_contacts_list_title">Contacts</string>
+
+    <!-- Text describing the option of speed dial -->
+    <string name="assign_speed_dial">Assign speed dial</string>
+
+    <!-- Text describing the option of reassign speed dial -->
+    <string name="reassign_speed_dial">Reassign speed dial</string>
+
+    <!-- Text describing the option of delete speed dial -->
+    <string name="delete_speed_dial">Delete speed dial</string>
+
+    <!-- Text describing the option of delete speed dial -->
+    <string name="remove_speed_dial">Remove speed dial</string>
+
+    <!-- Text describing the option of delete speed dial -->
+    <string name="remove_speed_dial_list">Remove all speed dial</string>
+
+    <!-- Text describing the option of disable speed dial -->
+    <string name="disable_speed_dial">Disable speed dial</string>
+
+    <!-- Text describing the option of enable speed dial -->
+    <string name="enable_speed_dial">Enable speed dial</string>
+
+    <!-- Text describing to view specific contact when viewing the details of that contact. -->
+    <string name="menu_view_contact">View contact</string>
+
+    <!-- Text describing edit a speed dial. -->
+    <string name="menu_edit_speeddial">Edit speed dial</string>
+
+    <!-- Text describing remove a speed dial -->
+    <string name="menu_remove_speeddial">Remove from speed dial</string>
+
+    <!-- Text describing the speed dial menu item -->
+    <string name="menu_speeddial_list">Speed dial list</string>
+
+    <!-- Text describing speed dial grid phone Types -->
+    <string name="Home">Home</string>
+    <string name="Mobile">Mobile</string>
+    <string name="Work">Work</string>
+    <string name="Other">Other</string>
+
+    <!-- Text describing speed dial -->
+    <string name="speed_dial">speed_dial</string>
+
+    <!-- Text describing speed dial disable -->
+    <string name="is_speed_dial_disabled">is_speed_dial_disabled</string>
+
+    <!-- Text describing a message to enable speed dial -->
+    <string name="_to_enable_speed_dial">Do you want to enable speed dial</string>
+
+    <!-- Text describing a message to disable speed dial -->
+    <string name="_to_disable_speed_dial">Do you want to disable speed dial</string>
+
+    <!-- Confirmation dialog title after users selects to remove all speed dial -->
+    <string name="removeAllSpeedDial_title">Remove all speed dial</string>
+
+    <!-- Confirmation dialog message after users selects to remove all speed dial -->
+    <string name="removeAllSpeedDial_message">All speed dials will be removed</string>
+
+    <!-- Confirmation dialog title when reassign speed dial for already assigned key-->
+    <string name="reassign_speed_dial_title">Assign speed dial</string>
+
+    <!-- Confirmation dialog message when reassign speed dial for already assigned key -->
+    <string name="reassign_speed_dial_message">Previous number will be removed</string>
+
+    <!-- Information dialog title after users selects contact to edit speed dial -->
+    <string name="contact_to_assign_speed_dial_title">Select contact</string>
+
+    <!-- Information dialog message after users selects contact to edit speed dial -->
+    <string name="contact_to_assign_speed_dial_message">Please select desired contact to which speed dial will be assigned</string>
+
+    <!-- Speed dial activity disable title -->
+    <string name="speed_dial_list_activity_disabled_title">Speed dial list disabled</string>
+    <!-- strings added for speed dial support ends -->
+
 </resources>

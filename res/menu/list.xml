@@ -26,6 +26,13 @@
         android:title="@string/menu_newContact"
         android:alphabeticShortcut="n" />
 
+    <!-- code added for speed dial support starts -->
+    <item
+        android:id="@+id/menu_speeddial_list"
+        android:icon="@drawable/ic_menu_speed_dial_list"
+        android:title="@string/menu_speeddial_list"/>
+    <!-- code added for speed dial support ends -->
+
     <item
         android:id="@+id/menu_display_groups"
         android:icon="@*android:drawable/ic_menu_allfriends"

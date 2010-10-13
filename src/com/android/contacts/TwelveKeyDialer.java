@@ -24,6 +24,7 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.Cursor;
@@ -37,11 +38,13 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemClock;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.provider.Contacts.People;
 import android.provider.Contacts.Phones;
 import android.provider.Contacts.PhonesColumns;
 import android.provider.Contacts.Intents.Insert;
+import android.provider.ContactsContract.Intents.UI;
 import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.PhoneStateListener;
@@ -54,6 +57,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewConfiguration;
@@ -66,6 +70,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.provider.ContactsContract;
 
 /**
  * Dialer activity that displays the typical twelve key interface.
@@ -85,6 +90,11 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
 
     /** Stream type used to play the DTMF tones off call, and mapped to the volume control keys */
     private static final int DIAL_TONE_STREAM_TYPE = AudioManager.STREAM_MUSIC;
+
+        //Code added for Speed Dial support starts
+        //Boolean variable which indicates that the any speed dial happened
+        private boolean mIsSpeedDialDisabled = false;
+        //Code added for Speed Dial support ends
 
     private EditText mDigits;
     private View mDelete;
@@ -194,7 +204,7 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
         // Do not show title in the case the device is in carmode.
         if ((r.getConfiguration().uiMode & Configuration.UI_MODE_TYPE_MASK) ==
                 Configuration.UI_MODE_TYPE_CAR) {
-            requestWindowFeature(Window.FEATURE_NO_TITLE);
+                requestWindowFeature(Window.FEATURE_NO_TITLE);
         }
         // Set the content view
         setContentView(getContentViewResource());
@@ -383,15 +393,41 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
         View view = findViewById(R.id.one);
         view.setOnClickListener(this);
         view.setOnLongClickListener(this);
+        //Code added for Speed Dial support starts
+        //Set the the OnLongClickListener to button 2 - 9
+        view = findViewById(R.id.two);
+        view.setOnClickListener(this);
+        view.setOnLongClickListener(this);
 
-        findViewById(R.id.two).setOnClickListener(this);
-        findViewById(R.id.three).setOnClickListener(this);
-        findViewById(R.id.four).setOnClickListener(this);
-        findViewById(R.id.five).setOnClickListener(this);
-        findViewById(R.id.six).setOnClickListener(this);
-        findViewById(R.id.seven).setOnClickListener(this);
-        findViewById(R.id.eight).setOnClickListener(this);
-        findViewById(R.id.nine).setOnClickListener(this);
+        view = findViewById(R.id.three);
+        view.setOnClickListener(this);
+        view.setOnLongClickListener(this);
+
+        view = findViewById(R.id.four);
+        view.setOnClickListener(this);
+        view.setOnLongClickListener(this);
+
+        view = findViewById(R.id.five);
+        view.setOnClickListener(this);
+        view.setOnLongClickListener(this);
+
+        view = findViewById(R.id.six);
+        view.setOnClickListener(this);
+        view.setOnLongClickListener(this);
+
+        view = findViewById(R.id.seven);
+        view.setOnClickListener(this);
+        view.setOnLongClickListener(this);
+
+        view = findViewById(R.id.eight);
+        view.setOnClickListener(this);
+        view.setOnLongClickListener(this);
+
+        view = findViewById(R.id.nine);
+        view.setOnClickListener(this);
+        view.setOnLongClickListener(this);
+        //Code added for Speed Dial support ends
+
         findViewById(R.id.star).setOnClickListener(this);
 
         view = findViewById(R.id.zero);
@@ -470,6 +506,12 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
         }
 
         updateDialAndDeleteButtonEnabledState();
+
+        //Code added for Speed Dial support starts
+        //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences prefs = getSharedPreferences(getString(R.string.speed_dial), MODE_WORLD_READABLE);
+              mIsSpeedDialDisabled = prefs.getBoolean(getString(R.string.is_speed_dial_disabled), false);
+        //Code added for Speed Dial support ends
     }
 
     @Override
@@ -512,6 +554,10 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
                 .setIcon(R.drawable.ic_menu_2sec_pause);
         mWaitMenuItem = menu.add(0, MENU_WAIT, 0, R.string.add_wait)
                 .setIcon(R.drawable.ic_menu_wait);
+        //Code added for Speed Dial support starts
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.speed_dial_list, menu);
+        //Code added for Speed Dial support ends
         return true;
     }
 
@@ -601,6 +647,29 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
         }
         return super.onKeyDown(keyCode, event);
     }
+
+    //Code added for Speed Dial support starts
+    /**
+     * Gets the speed dial number.
+     * @param aKeyId Key pressed.
+     * @return Returns the Phone Number for the speed dial key.
+     */
+    private String getSpeedDialPhoneNumber(String keyId) {
+           String number = null;
+           String whereClause = ContactsContract.SpeedDial.KEY_ID +" = '"+keyId+"'";
+           Cursor speeDialCursor = getContentResolver().query(ContactsContract.SpeedDial.CONTENT_URI,
+                      new String[]{ContactsContract.SpeedDial.KEY_ID,
+                   ContactsContract.SpeedDial.PHONE_NUMBER}, whereClause, null, null);
+
+           if (speeDialCursor != null) {
+               if (speeDialCursor.moveToFirst()) {
+                   number = speeDialCursor.getString(speeDialCursor.getColumnIndex(ContactsContract.SpeedDial.PHONE_NUMBER));
+            }
+               speeDialCursor.close();
+        }
+        return number;
+    }
+    //Code added for Speed Dial support ends
 
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
@@ -738,7 +807,11 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
     public boolean onLongClick(View view) {
         final Editable digits = mDigits.getText();
         int id = view.getId();
-        switch (id) {
+        //Code added for Speed Dial support starts
+        //Get the keyPressed
+        int keyPressed = -1;
+        //Code added for Speed Dial support ends
+       switch (id) {
             case R.id.deleteButton: {
                 digits.clear();
                 // TODO: The framework forgets to clear the pressed
@@ -758,7 +831,55 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
                 keyPressed(KeyEvent.KEYCODE_PLUS);
                 return true;
             }
+
+            //Code added for Speed Dial support starts
+            //Get the key pressed
+            case R.id.two: {
+                   keyPressed = 2;
+                   break;
+            }
+            case R.id.three: {
+                   keyPressed = 3;
+                   break;
+            }
+            case R.id.four: {
+                   keyPressed = 4;
+                   break;
+            }
+            case R.id.five: {
+                   keyPressed = 5;
+                   break;
+            }
+            case R.id.six: {
+                   keyPressed = 6;
+                   break;
+            }
+            case R.id.seven: {
+                   keyPressed = 7;
+                   break;
+            }
+            case R.id.eight: {
+                   keyPressed = 8;
+                   break;
+            }
+            case R.id.nine: {
+                   keyPressed = 9;
+                   break;
+            }
+            default: {
+                   break;
+            }
+           //Code added for Speed Dial support ends
         }
+        //Code added for Speed Dial support starts
+        if (!mIsSpeedDialDisabled && keyPressed != -1 && isDigitsEmpty()) {
+            String phoneNumber = getSpeedDialPhoneNumber(Integer.toString(keyPressed));
+            if (phoneNumber != null) {
+                dialNumber(phoneNumber);
+                return true;
+            }
+        }
+        //Code added for Speed Dial support ends
         return false;
     }
 
@@ -770,6 +891,26 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
         mDigits.getText().clear();
         finish();
     }
+
+    //Code added for Speed Dial support starts
+    /**
+     * DialNumber calls the number
+     * @param atelNumber phone number to dial
+     * @return Returns the boolean.
+     */
+    private boolean dialNumber(String atelNumber) {
+        if (atelNumber!=null){
+                  Intent dialIntent = new Intent(Intent.ACTION_CALL_PRIVILEGED,Uri.parse("tel:" +atelNumber));
+               /** Use NEW_TASK_LAUNCH to launch the Dialer Activity */
+               dialIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
+               /** Finally start the Activity */
+               startActivity(dialIntent);
+               finish();
+               return true;
+           }
+        return false;
+        }
+    //Code added for Speed Dial support ends
 
     void dialButtonPressed() {
         final String number = mDigits.getText().toString();
@@ -796,7 +937,17 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
                 return;
             }
         } else {  // There is a number.
-            intent.setData(Uri.fromParts("tel", number, null));
+
+            String speedDailNumber = null;
+            if (number.length() == 1) {
+                speedDailNumber = getSpeedDialPhoneNumber(number);
+            }
+            if (speedDailNumber == null) {
+                intent.setData(Uri.fromParts("tel", number, null));
+            }
+            else {
+                intent.setData(Uri.fromParts("tel", speedDailNumber, null));
+            }
         }
 
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -1110,6 +1261,10 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
                 return true;
             case MENU_WAIT:
                 updateDialString(";");
+                return true;
+            case R.id.menu_speeddial_list:
+                Intent intent = new Intent(UI.SPEED_DIAL_LIST_ACTION);
+                startActivity(intent);
                 return true;
         }
         return false;

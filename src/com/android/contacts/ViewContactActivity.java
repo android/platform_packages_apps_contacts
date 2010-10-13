@@ -70,6 +70,8 @@ import android.provider.ContactsContract.CommonDataKinds.Organization;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.CommonDataKinds.StructuredPostal;
 import android.provider.ContactsContract.CommonDataKinds.Website;
+import android.provider.ContactsContract.Intents.UI;
+import android.provider.ContactsContract.SpeedDial;
 import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
 import android.util.Log;
@@ -112,6 +114,8 @@ public class ViewContactActivity extends Activity
     private static final int REQUEST_EDIT_CONTACT = 2;
 
     public static final int MENU_ITEM_MAKE_DEFAULT = 3;
+
+    public static final int REMOVE_SPEED_DIAL = 4; //Code added for Speed Dial support
 
     protected Uri mLookupUri;
     private ContentResolver mResolver;
@@ -569,7 +573,17 @@ public class ViewContactActivity extends Activity
         if (entry.mimetype.equals(CommonDataKinds.Phone.CONTENT_ITEM_TYPE)) {
             menu.add(0, 0, 0, R.string.menu_call).setIntent(entry.intent);
             menu.add(0, 0, 0, R.string.menu_sendSMS).setIntent(entry.secondaryIntent);
-            if (!entry.isPrimary) {
+
+            //Code added for Speed Dial support starts
+            //added the menu item either to assign speed dial or remove speed dial
+            if (entry.isSpeedDial == false) {
+                menu.add(0, 0, 0, R.string.assign_speed_dial).setIntent(entry.tertiaryIntent);
+            } else {
+                menu.add(0, REMOVE_SPEED_DIAL, 0, R.string.remove_speed_dial);
+            }
+            //Code added for Speed Dial support ends
+
+        if (!entry.isPrimary) {
                 menu.add(0, MENU_ITEM_MAKE_DEFAULT, 0, R.string.menu_makeDefaultNumber);
             }
         } else if (entry.mimetype.equals(CommonDataKinds.Email.CONTENT_ITEM_TYPE)) {
@@ -655,10 +669,33 @@ public class ViewContactActivity extends Activity
                 }
                 break;
             }
+            //Code added for Speed Dial support starts
+            // removes the assigned speed dial of the phone number
+            case REMOVE_SPEED_DIAL: {
+                if (removeSpeedDial(item)) {
+                    return true;
+                }
+                break;
+            }
+            //Code added for Speed Dial support ends
         }
 
         return super.onContextItemSelected(item);
     }
+
+    //Code added for Speed Dial support starts
+    // removes the assigned speed dial of the phone number
+    private boolean removeSpeedDial(MenuItem item) {
+        ViewEntry entry = getViewEntryForMenuItem(item);
+        if (entry == null) {
+            return false;
+        }
+
+        getContentResolver().delete(ContactsContract.SpeedDial.CONTENT_URI, ContactsContract.SpeedDial.PHONE_ID +"= ?", new String[] {Long.toString(entry.id)});
+        return true;
+
+    }
+    //Code added for Speed Dial support ends
 
     private boolean makeItemDefault(MenuItem item) {
         ViewEntry entry = getViewEntryForMenuItem(item);
@@ -916,6 +953,12 @@ public class ViewContactActivity extends Activity
                         entry.secondaryIntent = new Intent(Intent.ACTION_SENDTO,
                                 Uri.fromParts(Constants.SCHEME_SMSTO, entry.data, null));
 
+                        //Code added for Speed Dial support starts
+                        entry.tertiaryIntent = new Intent(UI.SPEED_DIAL_GRID_ACTION)
+                                .putExtra(UI.SPEED_DIAL_PHONE_ID, Long.toString(entry.id));
+                        //Code added for Speed Dial support ends
+
+
                         // Remember super-primary phone
                         if (isSuperPrimary) mPrimaryPhoneUri = entry.uri;
 
@@ -1066,6 +1109,11 @@ public class ViewContactActivity extends Activity
         public int secondaryActionIcon = -1;
         public Intent intent;
         public Intent secondaryIntent = null;
+        //Code added for Speed Dial support starts
+        public Intent tertiaryIntent = null;
+        public boolean isSpeedDial = false;
+        //Code added for Speed Dial support ends
+
         public int maxLabelLines = 1;
         public ArrayList<Long> ids = new ArrayList<Long>();
         public int collapseCount = 0;
@@ -1146,7 +1194,6 @@ public class ViewContactActivity extends Activity
             isPrimary = entry.isPrimary ? true : isPrimary;
 
             // uri, and contactdId, shouldn't make a difference. Just keep the original.
-
             // Keep track of all the ids that have been collapsed with this one.
             ids.add(entry.id);
             collapseCount++;
@@ -1182,6 +1229,7 @@ public class ViewContactActivity extends Activity
         public ImageView actionIcon;
         public ImageView presenceIcon;
         public ImageView primaryIcon;
+        public ImageView speedDialIcon; //Code added for Speed Dial support
         public ImageView secondaryActionButton;
         public View secondaryActionDivider;
 
@@ -1224,6 +1272,10 @@ public class ViewContactActivity extends Activity
                 views.footer = (TextView) v.findViewById(R.id.footer);
                 views.actionIcon = (ImageView) v.findViewById(R.id.action_icon);
                 views.primaryIcon = (ImageView) v.findViewById(R.id.primary_icon);
+
+                //Code added for Speed Dial support starts
+                views.speedDialIcon = (ImageView) v.findViewById(R.id.speed_dail_icon);
+                //Code added for Speed Dial support ends
                 views.presenceIcon = (ImageView) v.findViewById(R.id.presence_icon);
                 views.secondaryActionButton = (ImageView) v.findViewById(
                         R.id.secondary_action_button);
@@ -1278,6 +1330,24 @@ public class ViewContactActivity extends Activity
 
             // Set the primary icon
             views.primaryIcon.setVisibility(entry.isPrimary ? View.VISIBLE : View.GONE);
+
+            //Code added for Speed Dial support starts
+            //Set the visibility of speed dial icon
+            String whereClause = ContactsContract.SpeedDial.PHONE_ID + "='"+entry.id+"'";
+            Cursor speeDialCursor = getContentResolver().query(SpeedDial.CONTENT_URI,
+                    new String[]{ContactsContract.SpeedDial.PHONE_ID}, whereClause, null, null);
+            if (speeDialCursor != null) {
+                if(speeDialCursor.moveToFirst()) {
+                    views.speedDialIcon.setVisibility(View.VISIBLE);
+                    entry.isSpeedDial = true;
+                } else {
+                    views.speedDialIcon.setVisibility(View.GONE);
+                }
+                speeDialCursor.close();
+             } else {
+                views.speedDialIcon.setVisibility(View.GONE);
+            }
+            //Code added for Speed Dial support ends
 
             // Set the action icon
             ImageView action = views.actionIcon;

@@ -36,6 +36,9 @@
     <item type="id" name="dialog_readonly_contact_hide_confirmation"/>
     <item type="id" name="dialog_multiple_contact_delete_confirmation"/>
     <item type="id" name="dialog_readonly_contact_delete_confirmation"/>
+    <!-- Code added for speed dial support starts -->
+    <item type="id" name="dialog_assign_speed_dial"/>
+    <!-- Code added for speed dial support ends -->
 
     <!-- For ExportVCard -->
     <item type="id" name="dialog_export_confirmation"/>

@@ -158,6 +158,7 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
     static final int MENU_ITEM_EDIT = 6;
     static final int MENU_ITEM_DELETE = 7;
     static final int MENU_ITEM_TOGGLE_STAR = 8;
+    static final int MENU_ITEM_ASSIGN_DIAL = 9;
 
     private static final int SUBACTIVITY_NEW_CONTACT = 1;
     private static final int SUBACTIVITY_VIEW_CONTACT = 2;
@@ -492,6 +493,18 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
             }
         }
     }
+    //Code added for speed dial support starts
+    /**
+     * Listener to assign assign speed dial dialog
+     */
+    private class AssignSpeedDialClickListener implements DialogInterface.OnClickListener {
+        public void onClick(DialogInterface dialog, int which) {
+            if (mSpeedDialContactIntent != null) {
+                startActivity(mSpeedDialContactIntent);
+            }
+        }
+    }
+    //Code added for speed dial support ends
 
     /**
      * A {@link TextHighlightingAnimation} that redraws just the contact display name in a
@@ -539,6 +552,10 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
     private boolean mHighlightWhenScrolling;
     private TextHighlightingAnimation mHighlightingAnimation;
     private SearchEditText mSearchEditText;
+
+    //Code added for speed dial support starts
+    private Intent mSpeedDialContactIntent = null;
+    //Code added for speed dial support ends
 
     /**
      * An approximation of the background color of the pinned header. This color
@@ -1266,6 +1283,14 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
                 startActivity(intent);
                 return true;
             }
+
+            //Code added for speed dial support starts
+            case R.id.menu_speeddial_list: {
+                final Intent intent = new Intent(UI.SPEED_DIAL_LIST_ACTION);
+                startActivity(intent);
+                return true;
+            }
+            //Code added for speed dial support ends
         }
         return false;
     }
@@ -1395,6 +1420,18 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
                         .setPositiveButton(android.R.string.ok,
                                 new DeleteClickListener()).create();
             }
+            //Code added for speed dial support starts
+            case R.id.dialog_assign_speed_dial: {
+                return new AlertDialog.Builder(this)
+                .setTitle(R.string.contact_to_assign_speed_dial_title)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setMessage(R.string.contact_to_assign_speed_dial_message)
+                .setNegativeButton(android.R.string.cancel, null)
+                .setPositiveButton(android.R.string.ok,
+                        new AssignSpeedDialClickListener()).create();
+
+            }
+            //Code added for speed dial support ends
         }
         return super.onCreateDialog(id, bundle);
     }
@@ -1607,6 +1644,9 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
         menu.add(0, MENU_ITEM_EDIT, 0, R.string.menu_editContact)
                 .setIntent(new Intent(Intent.ACTION_EDIT, rawContactUri));
         menu.add(0, MENU_ITEM_DELETE, 0, R.string.menu_deleteContact);
+        //Code added for speed dial support starts
+        menu.add(0, MENU_ITEM_ASSIGN_DIAL, 0, R.string.assign_speed_dial);
+        //Code added for speed dial support ends
     }
 
     @Override
@@ -1645,8 +1685,21 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
                 doContactDelete(getContactUri(info.position));
                 return true;
             }
-        }
+           //Code added for speed dial support starts
+           case MENU_ITEM_ASSIGN_DIAL: {
+               int contacId = 0;
 
+               if(cursor != null) {
+                   contacId = cursor.getInt(cursor.getColumnIndex(ContactsContract.Contacts._ID));
+                }
+                mSpeedDialContactIntent = new Intent();
+                mSpeedDialContactIntent.putExtra(UI.SPEED_DIAL_CONTACT_ID, Integer.toString(contacId));
+                mSpeedDialContactIntent.setAction(UI.SPEED_DIAL_VIEW_CONTACT_ACTION);
+
+                doAssignSpeedDial();
+            }
+            //Code added for speed dial support ends
+        }
         return super.onContextItemSelected(item);
     }
 
@@ -1773,6 +1826,14 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
         }
     }
 
+    //Code added for speed dial support starts
+    /*
+     * Shows the dialog when user selects the option Assign speed dial from context menu
+     */
+    private void doAssignSpeedDial() {
+        showDialog(R.id.dialog_assign_speed_dial);
+    }
+    //Code added for speed dial support ends
     /**
      * Dismisses the soft keyboard when the list takes focus.
      */
