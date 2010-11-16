@@ -385,11 +385,12 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
 
                 // Remove editor from parent view
                 final ViewGroup parent = (ViewGroup)getParent();
-                parent.removeView(this);
-
-                if (mListener != null) {
-                    // Notify listener when present
-                    mListener.onDeleted(this);
+                if (parent != null) {
+                    parent.removeView(this);
+                    if (mListener != null) {
+                        // Notify listener when present
+                        mListener.onDeleted(this);
+                    }
                 }
                 break;
             }
