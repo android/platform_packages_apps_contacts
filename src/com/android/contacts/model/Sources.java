@@ -42,7 +42,6 @@ import java.lang.ref.SoftReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Locale;
 
 /**
  * Singleton holder for all parsed {@link ContactsSource} available on the

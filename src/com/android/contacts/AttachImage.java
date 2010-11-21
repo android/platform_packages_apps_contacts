@@ -16,8 +16,6 @@
 
 package com.android.contacts;
 
-import com.google.android.collect.Maps;
-
 import android.app.Activity;
 import android.content.ContentProviderOperation;
 import android.content.ContentResolver;
@@ -25,7 +23,6 @@ import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.OperationApplicationException;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -41,7 +38,6 @@ import com.android.contacts.model.GoogleSource;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Provides an external interface for other applications to attach images
@@ -156,9 +152,6 @@ public class AttachImage extends Activity {
 
                     // attach the photo to every raw contact
                     for (Long rawContactId : mRawContactIds) {
-
-                        // exchange and google only allow one image, so do an update rather than insert
-                        boolean shouldUpdate = false;
 
                         final Uri rawContactUri = ContentUris.withAppendedId(RawContacts.CONTENT_URI,
                                 rawContactId);

@@ -151,7 +151,6 @@ public class PinnedHeaderListView extends ListView {
             case PinnedHeaderAdapter.PINNED_HEADER_PUSHED_UP: {
                 View firstView = getChildAt(0);
                 int bottom = firstView.getBottom();
-                int itemHeight = firstView.getHeight();
                 int headerHeight = mHeaderView.getHeight();
                 int y;
                 int alpha;

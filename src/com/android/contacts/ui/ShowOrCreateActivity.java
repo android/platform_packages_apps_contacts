@@ -28,7 +28,6 @@ import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.ContentUris;
 import android.content.DialogInterface;
-import android.content.EntityIterator;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;

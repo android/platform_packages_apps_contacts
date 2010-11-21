@@ -139,10 +139,6 @@ public class DataStatus {
         return cursor.getString(cursor.getColumnIndex(columnName));
     }
 
-    private static int getInt(Cursor cursor, String columnName) {
-        return cursor.getInt(cursor.getColumnIndex(columnName));
-    }
-
     private static int getInt(Cursor cursor, String columnName, int missingValue) {
         final int columnIndex = cursor.getColumnIndex(columnName);
         return cursor.isNull(columnIndex) ? missingValue : cursor.getInt(columnIndex);

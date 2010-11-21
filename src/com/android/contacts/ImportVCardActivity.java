@@ -66,7 +66,6 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
 import java.util.Set;
 import java.util.Vector;
 
@@ -331,7 +330,6 @@ public class ImportVCardActivity extends Activity {
                 VCardSourceDetector detector, List<String> errorFileNameList) {
             final Context context = ImportVCardActivity.this;
             VCardEntryConstructor builder;
-            final String currentLanguage = Locale.getDefault().getLanguage();
             int vcardType = VCardConfig.getVCardTypeFromString(
                     context.getString(R.string.config_import_vcard_type));
             if (charset != null) {
@@ -585,7 +583,6 @@ public class ImportVCardActivity extends Activity {
                 finish();
             } else {
                 int size = mAllVCardFileList.size();
-                final Context context = ImportVCardActivity.this;
                 if (size == 0) {
                     runOnUIThread(new DialogDisplayer(R.id.dialog_vcard_not_found));
                 } else {
@@ -920,7 +917,7 @@ public class ImportVCardActivity extends Activity {
             int attempts = 0;
             while (mVCardReadThread.isAlive() && attempts < 10) {
                 try {
-                    Thread.currentThread().sleep(20);
+                    Thread.sleep(20);
                 } catch (InterruptedException ie) {
                     // Keep on going until max attempts is reached.
                 }

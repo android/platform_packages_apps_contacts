@@ -21,15 +21,11 @@ import com.android.contacts.model.ContactsSource;
 import com.android.contacts.model.EntityDelta;
 import com.android.contacts.model.EntityModifier;
 import com.android.contacts.model.ContactsSource.DataKind;
-import com.android.contacts.model.ContactsSource.EditType;
 import com.android.contacts.model.Editor.EditorListener;
 import com.android.contacts.model.EntityDelta.ValuesDelta;
 import com.android.contacts.ui.ViewIdGenerator;
 
 import android.content.Context;
-import android.content.Entity;
-import android.provider.ContactsContract.Contacts;
-import android.provider.ContactsContract.Data;
 import android.provider.ContactsContract.RawContacts;
 import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
@@ -56,8 +52,6 @@ class ReadOnlyContactEditorView extends BaseContactEditorView {
     private TextView mReadOnlyWarning;
     private ViewGroup mGeneral;
 
-    private View mHeaderColorBar;
-    private View mSideBar;
     private ImageView mHeaderIcon;
     private TextView mHeaderAccountType;
     private TextView mHeaderAccountName;
@@ -87,8 +81,6 @@ class ReadOnlyContactEditorView extends BaseContactEditorView {
         mReadOnlyWarning = (TextView) findViewById(R.id.read_only_warning);
         mGeneral = (ViewGroup)findViewById(R.id.sect_general);
 
-        mHeaderColorBar = findViewById(R.id.header_color_bar);
-        mSideBar = findViewById(R.id.color_bar);
         mHeaderIcon = (ImageView) findViewById(R.id.header_icon);
         mHeaderAccountType = (TextView) findViewById(R.id.header_account_type);
         mHeaderAccountName = (TextView) findViewById(R.id.header_account_name);

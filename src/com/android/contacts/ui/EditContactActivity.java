@@ -787,7 +787,6 @@ public final class EditContactActivity extends Activity
     private class DeleteClickListener implements DialogInterface.OnClickListener {
 
         public void onClick(DialogInterface dialog, int which) {
-            Sources sources = Sources.getInstance(EditContactActivity.this);
             // Mark all raw contacts for deletion
             for (EntityDelta delta : mState) {
                 delta.markDeleted();

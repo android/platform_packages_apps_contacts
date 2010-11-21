@@ -40,7 +40,9 @@ import java.util.ArrayList;
  * and applying another {@link EntitySet} over it.
  */
 public class EntitySet extends ArrayList<EntityDelta> implements Parcelable {
-    private boolean mSplitRawContacts;
+	private static final long serialVersionUID = 1L;
+
+	private boolean mSplitRawContacts;
 
     private EntitySet() {
     }

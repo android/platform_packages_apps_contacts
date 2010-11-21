@@ -422,17 +422,6 @@ public class GenericEditorView extends RelativeLayout implements Editor, View.On
             out.writeInt(mVisibilities.length);
             out.writeIntArray(mVisibilities);
         }
-
-        public static final Parcelable.Creator<SavedState> CREATOR
-                = new Parcelable.Creator<SavedState>() {
-            public SavedState createFromParcel(Parcel in) {
-                return new SavedState(in);
-            }
-
-            public SavedState[] newArray(int size) {
-                return new SavedState[size];
-            }
-        };
     }
 
     /**

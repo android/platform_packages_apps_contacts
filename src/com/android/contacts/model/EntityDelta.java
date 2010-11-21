@@ -29,12 +29,10 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.provider.BaseColumns;
-import android.provider.ContactsContract;
 import android.provider.ContactsContract.Data;
 import android.provider.ContactsContract.RawContacts;
 import android.provider.ContactsContract.CommonDataKinds.GroupMembership;
 import android.util.Log;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.HashMap;

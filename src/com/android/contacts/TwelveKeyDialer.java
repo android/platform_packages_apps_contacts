@@ -996,7 +996,7 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
     /**
      * Handle clicks from the dialpad chooser.
      */
-    public void onItemClick(AdapterView parent, View v, int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
         DialpadChooserAdapter.ChoiceItem item =
                 (DialpadChooserAdapter.ChoiceItem) parent.getItemAtPosition(position);
         int itemId = item.id;

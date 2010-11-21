@@ -74,8 +74,6 @@ public class ContactEditorView extends BaseContactEditorView implements OnClickL
     private Drawable mSecondaryOpen;
     private Drawable mSecondaryClosed;
 
-    private View mHeaderColorBar;
-    private View mSideBar;
     private ImageView mHeaderIcon;
     private TextView mHeaderAccountType;
     private TextView mHeaderAccountName;
@@ -114,8 +112,6 @@ public class ContactEditorView extends BaseContactEditorView implements OnClickL
         mGeneral = (ViewGroup)findViewById(R.id.sect_general);
         mSecondary = (ViewGroup)findViewById(R.id.sect_secondary);
 
-        mHeaderColorBar = findViewById(R.id.header_color_bar);
-        mSideBar = findViewById(R.id.color_bar);
         mHeaderIcon = (ImageView) findViewById(R.id.header_icon);
         mHeaderAccountType = (TextView) findViewById(R.id.header_account_type);
         mHeaderAccountName = (TextView) findViewById(R.id.header_account_name);
@@ -287,17 +283,6 @@ public class ContactEditorView extends BaseContactEditorView implements OnClickL
             super.writeToParcel(out, flags);
             out.writeInt(mSecondaryVisible ? 1 : 0);
         }
-
-        public static final Parcelable.Creator<SavedState> CREATOR
-                = new Parcelable.Creator<SavedState>() {
-            public SavedState createFromParcel(Parcel in) {
-                return new SavedState(in);
-            }
-
-            public SavedState[] newArray(int size) {
-                return new SavedState[size];
-            }
-        };
     }
 
     /**

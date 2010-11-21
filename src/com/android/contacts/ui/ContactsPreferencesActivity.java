@@ -656,8 +656,6 @@ public final class ContactsPreferencesActivity extends ExpandableListActivity im
         private Sources mSources;
         private AccountSet mAccounts;
 
-        private boolean mChildWithPhones = false;
-
         public DisplayAdapter(Context context) {
             mContext = context;
             mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -674,7 +672,6 @@ public final class ContactsPreferencesActivity extends ExpandableListActivity im
          * numbers, in addition to the total contacts.
          */
         public void setChildDescripWithPhones(boolean withPhones) {
-            mChildWithPhones = withPhones;
         }
 
         /** {@inheritDoc} */
@@ -688,7 +685,6 @@ public final class ContactsPreferencesActivity extends ExpandableListActivity im
             final TextView text2 = (TextView)convertView.findViewById(android.R.id.text2);
             final CheckBox checkbox = (CheckBox)convertView.findViewById(android.R.id.checkbox);
 
-            final AccountDisplay account = mAccounts.get(groupPosition);
             final GroupDelta child = (GroupDelta)this.getChild(groupPosition, childPosition);
             if (child != null) {
                 // Handle normal group, with title and checkbox
@@ -860,7 +856,6 @@ public final class ContactsPreferencesActivity extends ExpandableListActivity im
             int childPosition, long id) {
         final CheckBox checkbox = (CheckBox)view.findViewById(android.R.id.checkbox);
 
-        final AccountDisplay account = (AccountDisplay)mAdapter.getGroup(groupPosition);
         final GroupDelta child = (GroupDelta)mAdapter.getChild(groupPosition, childPosition);
         if (child != null) {
             checkbox.toggle();
@@ -1027,7 +1022,6 @@ public final class ContactsPreferencesActivity extends ExpandableListActivity im
         @Override
         protected Void doInBackground(Activity target, AccountSet... params) {
             final Context context = target;
-            final ContentValues values = new ContentValues();
             final ContentResolver resolver = context.getContentResolver();
 
             try {

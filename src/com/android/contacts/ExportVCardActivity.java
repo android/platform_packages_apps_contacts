@@ -85,9 +85,6 @@ public class ExportVCardActivity extends Activity {
 
     private class ErrorReasonDisplayer implements Runnable {
         private final int mResId;
-        public ErrorReasonDisplayer(int resId) {
-            mResId = resId;
-        }
         public ErrorReasonDisplayer(String errorReason) {
             mResId = R.id.dialog_fail_to_export_with_reason;
             mErrorReason = errorReason;

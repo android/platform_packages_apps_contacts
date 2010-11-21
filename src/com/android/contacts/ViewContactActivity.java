@@ -814,7 +814,7 @@ public class ViewContactActivity extends Activity
         return super.onKeyDown(keyCode, event);
     }
 
-    public void onItemClick(AdapterView parent, View v, int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
         ViewEntry entry = ViewAdapter.getEntry(mSections, position, SHOW_SEPARATORS);
         if (entry != null) {
             Intent intent = entry.intent;

@@ -357,7 +357,7 @@ public class CallDetailActivity extends ListActivity implements
         }
     }
 
-    public void onItemClick(AdapterView parent, View view, int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         // Handle passing action off to correct handler.
         if (view.getTag() instanceof ViewEntry) {
             ViewEntry entry = (ViewEntry) view.getTag();

@@ -50,7 +50,6 @@ import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.Data;
 import android.provider.ContactsContract.QuickContact;
 import android.provider.ContactsContract.RawContacts;
-import android.provider.ContactsContract.StatusUpdates;
 import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.provider.ContactsContract.CommonDataKinds.Im;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
@@ -652,32 +651,6 @@ public class QuickContactWindow implements Window.Callback,
             ((ImageView)view).setImageDrawable(drawable);
             view.setVisibility(drawable == null ? View.GONE : View.VISIBLE);
         }
-    }
-
-    /**
-     * Find the QuickContact-specific presence icon for showing in chiclets.
-     */
-    private Drawable getTrackPresenceIcon(int status) {
-        int resId;
-        switch (status) {
-            case StatusUpdates.AVAILABLE:
-                resId = R.drawable.quickcontact_slider_presence_active;
-                break;
-            case StatusUpdates.IDLE:
-            case StatusUpdates.AWAY:
-                resId = R.drawable.quickcontact_slider_presence_away;
-                break;
-            case StatusUpdates.DO_NOT_DISTURB:
-                resId = R.drawable.quickcontact_slider_presence_busy;
-                break;
-            case StatusUpdates.INVISIBLE:
-                resId = R.drawable.quickcontact_slider_presence_inactive;
-                break;
-            case StatusUpdates.OFFLINE:
-            default:
-                resId = R.drawable.quickcontact_slider_presence_inactive;
-        }
-        return mContext.getResources().getDrawable(resId);
     }
 
     /** Read {@link String} from the given {@link Cursor}. */
