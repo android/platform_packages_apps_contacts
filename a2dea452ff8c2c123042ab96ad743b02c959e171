@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA9n///Uc\u003d",
+        "filename": "src/com/android/contacts/model/EntitySet.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2010-11-22T18:45:22Z",
+      "side": 1,
+      "message": "please use spaces instead of tabs",
+      "revId": "a2dea452ff8c2c123042ab96ad743b02c959e171",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
