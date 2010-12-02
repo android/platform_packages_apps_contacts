@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAA9n//97M\u003d",
+        "filename": "src/com/android/contacts/model/Sources.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1003473
+      },
+      "writtenOn": "2010-12-02T01:47:49Z",
+      "side": 1,
+      "message": "Can we log here to help the developer debug such a mismatch?",
+      "revId": "6f7195ab3b6fdc455bcec6533ded6a334199f8a3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
