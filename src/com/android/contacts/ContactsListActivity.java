@@ -899,9 +899,12 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
     }
 
     private String getContactDisplayName(long contactId) {
+        return getContactDisplayName(ContentUris.withAppendedId(Contacts.CONTENT_URI, contactId));
+    }
+
+    private String getContactDisplayName(Uri uri) {
         String contactName = null;
-        Cursor c = getContentResolver().query(
-                ContentUris.withAppendedId(Contacts.CONTENT_URI, contactId),
+        Cursor c = getContentResolver().query(uri,
                 new String[] {Contacts.DISPLAY_NAME}, null, null, null);
         try {
             if (c != null && c.moveToFirst()) {
@@ -1535,7 +1538,7 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
         switch (requestCode) {
             case SUBACTIVITY_NEW_CONTACT:
                 if (resultCode == RESULT_OK) {
-                    returnPickerResult(null, data.getStringExtra(Intent.EXTRA_SHORTCUT_NAME),
+                    returnPickerResult(null, getContactDisplayName(data.getData()),
                             data.getData(), (mMode & MODE_MASK_PICKER) != 0
                             ? Intent.FLAG_GRANT_READ_URI_PERMISSION : 0);
                 }
