@@ -1385,6 +1385,8 @@ public final class EditContactActivity extends Activity
             return 1;
         } else if (oneIsGoogle && twoIsGoogle){
             skipAccountTypeCheck = true;
+        } else if (oneSource.accountType == null || twoSource.accountType == null) {
+            skipAccountTypeCheck = true;
         }
 
         int value;
