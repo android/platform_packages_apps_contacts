@@ -171,8 +171,10 @@ public class SpecialCharSequenceMgr {
     static boolean handlePinEntry(Context context, String input) {
         if ((input.startsWith("**04") || input.startsWith("**05")) && input.endsWith("#")) {
             try {
+                // Use Voice Subscription for both change PIN & unblock PIN using PUK.
+                int subscription = TelephonyManager.getPreferredVoiceSubscription();
                 return ITelephony.Stub.asInterface(ServiceManager.getService("phone"))
-                        .handlePinMmi(input);
+                        .handlePinMmiOnSubscription(input, subscription);
             } catch (RemoteException e) {
                 Log.e(TAG, "Failed to handlePinMmi due to remote exception");
                 return false;
