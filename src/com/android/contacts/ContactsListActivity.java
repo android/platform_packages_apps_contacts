@@ -1434,7 +1434,14 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
             }
         };
 
-        if (TelephonyManager.getDefault().hasIccCard()) {
+        boolean hasIccCard = false;
+        for (int i = 0; i < TelephonyManager.getPhoneCount(); i++) {
+            hasIccCard = TelephonyManager.getDefault().hasIccCard(i);
+            if (hasIccCard) {
+               break;
+            }
+        }
+        if (hasIccCard) {
             adapter.add(R.string.import_from_sim);
         }
         if (res.getBoolean(R.bool.config_allow_import_from_sdcard)) {
