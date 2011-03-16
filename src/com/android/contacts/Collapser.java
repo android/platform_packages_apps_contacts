@@ -16,7 +16,6 @@
 
 package com.android.contacts;
 
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ArrayList;
 

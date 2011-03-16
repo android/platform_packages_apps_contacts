@@ -50,7 +50,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ContactsUtils {
-    private static final String TAG = "ContactsUtils";
+    // private static final String TAG = "ContactsUtils";
     private static final String WAIT_SYMBOL_AS_STRING = String.valueOf(PhoneNumberUtils.WAIT);
     /**
      * Build the display title for the {@link Data#CONTENT_URI} entry in the

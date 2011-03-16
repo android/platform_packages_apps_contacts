@@ -56,7 +56,6 @@ public class ExportVCardActivity extends Activity {
     private int mFileIndexMinimum;
     private int mFileIndexMaximum;
     private String mFileNameExtension;
-    private String mVCardTypeStr;
     private Set<String> mExtensionsToConsider;
 
     private ProgressDialog mProgressDialog;
@@ -86,9 +85,6 @@ public class ExportVCardActivity extends Activity {
 
     private class ErrorReasonDisplayer implements Runnable {
         private final int mResId;
-        public ErrorReasonDisplayer(int resId) {
-            mResId = resId;
-        }
         public ErrorReasonDisplayer(String errorReason) {
             mResId = R.id.dialog_fail_to_export_with_reason;
             mErrorReason = errorReason;
@@ -245,7 +241,6 @@ public class ExportVCardActivity extends Activity {
         mFileNamePrefix = getString(R.string.config_export_file_prefix);
         mFileNameSuffix = getString(R.string.config_export_file_suffix);
         mFileNameExtension = getString(R.string.config_export_file_extension);
-        mVCardTypeStr = getString(R.string.config_export_vcard_type);
 
         mExtensionsToConsider = new HashSet<String>();
         mExtensionsToConsider.add(mFileNameExtension);
@@ -269,7 +264,7 @@ public class ExportVCardActivity extends Activity {
     }
 
     @Override
-    protected Dialog onCreateDialog(int id) {
+    protected Dialog onCreateDialog(int id, Bundle args) {
         switch (id) {
             case R.id.dialog_export_confirmation: {
                 return getExportConfirmationDialog();
@@ -308,18 +303,18 @@ public class ExportVCardActivity extends Activity {
                 return mProgressDialog;
             }
         }
-        return super.onCreateDialog(id);
+        return super.onCreateDialog(id, args);
     }
 
     @Override
-    protected void onPrepareDialog(int id, Dialog dialog) {
+    protected void onPrepareDialog(int id, Dialog dialog, Bundle args) {
         if (id == R.id.dialog_fail_to_export_with_reason) {
             ((AlertDialog)dialog).setMessage(getErrorReason());
         } else if (id == R.id.dialog_export_confirmation) {
             ((AlertDialog)dialog).setMessage(
                     getString(R.string.confirm_export_message, mTargetFileName));
         } else {
-            super.onPrepareDialog(id, dialog);
+            super.onPrepareDialog(id, dialog, args);
         }
     }
 

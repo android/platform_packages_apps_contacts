@@ -19,8 +19,6 @@ package com.android.contacts;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Parcel;
-import android.provider.ContactsContract.Contacts;
-import android.provider.ContactsContract.Data;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

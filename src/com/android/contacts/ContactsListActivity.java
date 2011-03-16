@@ -415,7 +415,6 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
 
     private QueryHandler mQueryHandler;
     private boolean mJustCreated;
-    private boolean mSyncEnabled;
     Uri mSelectedContactUri;
 
 //    private boolean mDisplayAll;
@@ -835,8 +834,6 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
 
         mQueryHandler = new QueryHandler(this);
         mJustCreated = true;
-
-        mSyncEnabled = true;
     }
 
     /**
@@ -2979,13 +2976,10 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
                 throw new IllegalStateException("couldn't move cursor to position " + position);
             }
 
-            boolean newView;
             View v;
             if (convertView == null || convertView.getTag() == null) {
-                newView = true;
                 v = newView(mContext, cursor, parent);
             } else {
-                newView = false;
                 v = convertView;
             }
             bindView(v, mContext, cursor);
@@ -3058,7 +3052,6 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
             int typeColumnIndex;
             int dataColumnIndex;
             int labelColumnIndex;
-            int defaultType;
             int nameColumnIndex;
             int phoneticNameColumnIndex;
             boolean displayAdditionalData = mDisplayAdditionalData;
@@ -3072,7 +3065,6 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
                     dataColumnIndex = PHONE_NUMBER_COLUMN_INDEX;
                     typeColumnIndex = PHONE_TYPE_COLUMN_INDEX;
                     labelColumnIndex = PHONE_LABEL_COLUMN_INDEX;
-                    defaultType = Phone.TYPE_HOME;
                     break;
                 }
                 case MODE_PICK_POSTAL:
@@ -3082,7 +3074,6 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
                     dataColumnIndex = POSTAL_ADDRESS_COLUMN_INDEX;
                     typeColumnIndex = POSTAL_TYPE_COLUMN_INDEX;
                     labelColumnIndex = POSTAL_LABEL_COLUMN_INDEX;
-                    defaultType = StructuredPostal.TYPE_HOME;
                     break;
                 }
                 default: {
@@ -3096,7 +3087,6 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
                     dataColumnIndex = -1;
                     typeColumnIndex = -1;
                     labelColumnIndex = -1;
-                    defaultType = Phone.TYPE_HOME;
                     displayAdditionalData = false;
                     highlightingEnabled = mHighlightWhenScrolling && mMode != MODE_STREQUENT;
                 }
@@ -3154,7 +3144,6 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
                     viewToUse = view.getPhotoView();
                 }
 
-                final int position = cursor.getPosition();
                 mPhotoLoader.loadPhoto(viewToUse, photoId);
             }
 
@@ -3305,8 +3294,7 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
 
             // Get the split between starred and frequent items, if the mode is strequent
             mFrequentSeparatorPos = ListView.INVALID_POSITION;
-            int cursorCount = 0;
-            if (cursor != null && (cursorCount = cursor.getCount()) > 0
+            if (cursor != null && cursor.getCount() > 0
                     && mMode == MODE_STREQUENT) {
                 cursor.move(-1);
                 for (int i = 0; cursor.moveToNext(); i++) {
