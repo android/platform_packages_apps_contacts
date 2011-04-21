@@ -873,7 +873,7 @@ public class RecentCallsListActivity extends ListActivity
 
         super.onResume();
 
-        mAdapter.mPreDrawListener = null; // Let it restart the thread after next draw
+        mAdapter.startRequestProcessing();
     }
 
     @Override
