@@ -863,9 +863,6 @@ public class ContactsListActivity extends ListActivity implements View.OnCreateC
         mHighlightingAnimation =
                 new NameHighlightingAnimation(list, TEXT_HIGHLIGHTING_ANIMATION_DURATION);
 
-        // Tell list view to not show dividers. We'll do it ourself so that we can *not* show
-        // them when an A-Z headers is visible.
-        list.setDividerHeight(0);
         list.setOnCreateContextMenuListener(this);
 
         mAdapter = new ContactItemListAdapter(this);

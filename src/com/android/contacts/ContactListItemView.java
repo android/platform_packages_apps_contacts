@@ -257,7 +257,7 @@ public class ContactListItemView extends ViewGroup {
             ensureHorizontalDivider();
             mHorizontalDividerDrawable.setBounds(
                     0,
-                    height - mHorizontalDividerHeight,
+                    height,
                     width,
                     height);
         }
