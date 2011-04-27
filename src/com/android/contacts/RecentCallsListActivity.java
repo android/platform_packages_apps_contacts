@@ -64,6 +64,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
@@ -184,9 +185,14 @@ public class RecentCallsListActivity extends ListActivity
      */
     private static int sFormattingType = FORMATTING_TYPE_INVALID;
 
+    /**
+     * Saved a phone number when the call button is touched as action down
+     */
+    private String mSaveNumber;
+
     /** Adapter class to fill in data for the Call Log */
     final class RecentCallsAdapter extends GroupingListAdapter
-            implements Runnable, ViewTreeObserver.OnPreDrawListener, View.OnClickListener {
+        implements Runnable, ViewTreeObserver.OnPreDrawListener, View.OnClickListener, View.OnTouchListener {
         HashMap<String,ContactInfo> mContactInfo;
         private final LinkedList<CallerInfoQuery> mRequests;
         private volatile boolean mDone;
@@ -210,7 +216,11 @@ public class RecentCallsListActivity extends ListActivity
         private CharArrayBuffer mBuffer2 = new CharArrayBuffer(128);
 
         public void onClick(View view) {
-            String number = (String) view.getTag();
+            // Sometimes wrong number is called by a cached view with unorder
+            // So on clicking, a call number is used not a number in current cached view
+            // but a number in a view at a touched moment
+            // this is workaround.
+            String number = mSaveNumber;
             if (!TextUtils.isEmpty(number)) {
                 // Here, "number" can either be a PSTN phone number or a
                 // SIP address.  So turn it into either a tel: URI or a
@@ -224,6 +234,13 @@ public class RecentCallsListActivity extends ListActivity
                 StickyTabs.saveTab(RecentCallsListActivity.this, getIntent());
                 startActivity(new Intent(Intent.ACTION_CALL_PRIVILEGED, callUri));
             }
+        }
+
+        public boolean onTouch(View view, MotionEvent event) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                mSaveNumber = (String) view.getTag();
+            }
+            return false;
         }
 
         public boolean onPreDraw() {
@@ -610,6 +627,7 @@ public class RecentCallsListActivity extends ListActivity
             views.iconView = (ImageView) view.findViewById(R.id.call_type_icon);
             views.callView = view.findViewById(R.id.call_icon);
             views.callView.setOnClickListener(this);
+            views.callView.setOnTouchListener(this);
             views.groupIndicator = (ImageView) view.findViewById(R.id.groupIndicator);
             views.groupSize = (TextView) view.findViewById(R.id.groupSize);
             view.setTag(views);
