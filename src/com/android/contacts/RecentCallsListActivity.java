@@ -185,7 +185,7 @@ public class RecentCallsListActivity extends ListActivity
      */
     private static int sFormattingType = FORMATTING_TYPE_INVALID;
 
-	/*
+	/**
 	 * Saved a phone number when the call button is touched as action down 
      */
     private String mSaveNumber;
@@ -238,6 +238,7 @@ public class RecentCallsListActivity extends ListActivity
                 startActivity(new Intent(Intent.ACTION_CALL_PRIVILEGED, callUri));
             }
         }
+
 		public boolean onTouch(View v, MotionEvent event) {
 			if (event.getAction() == MotionEvent.ACTION_DOWN) {
 				mSaveNumber = (String) v.getTag();
