@@ -81,8 +81,8 @@ public class GoogleSource extends FallbackSource {
         if (inflateLevel >= ContactsSource.LEVEL_CONSTRAINTS) {
             kind.typeColumn = Phone.TYPE;
             kind.typeList = Lists.newArrayList();
-            kind.typeList.add(buildPhoneType(Phone.TYPE_HOME));
             kind.typeList.add(buildPhoneType(Phone.TYPE_MOBILE));
+            kind.typeList.add(buildPhoneType(Phone.TYPE_HOME));
             kind.typeList.add(buildPhoneType(Phone.TYPE_WORK));
             kind.typeList.add(buildPhoneType(Phone.TYPE_FAX_WORK).setSecondary(true));
             kind.typeList.add(buildPhoneType(Phone.TYPE_FAX_HOME).setSecondary(true));
