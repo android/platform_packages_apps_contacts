@@ -1,0 +1,6 @@
+Change-Id: Ie0043e8c1b5274eb7c642fe2f4d24597a343645a
+Code-Review+2: John Huang <jsh@android.com>
+Verified+1: John Huang <jsh@android.com>
+Reviewed-on: https://review.source.android.com/8227
+Project: platform/packages/apps/Contacts
+Branch: refs/heads/cdma-import

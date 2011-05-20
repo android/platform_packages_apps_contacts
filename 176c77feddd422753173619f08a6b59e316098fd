@@ -1,0 +1,8 @@
+Change-Id: I176c77feddd422753173619f08a6b59e316098fd
+Code-Review+2: Jean-Baptiste Queru <jbq@google.com>
+Verified+1: Jean-Baptiste Queru <jbq@google.com>
+Submitted-by: Jean-Baptiste Queru <jbq@google.com>
+Submitted-at: Wed, 18 Mar 2009 13:56:25 -0700
+Reviewed-on: https://review.source.android.com/9184
+Project: platform/packages/apps/Contacts
+Branch: refs/heads/master
