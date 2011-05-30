@@ -59,6 +59,7 @@ import android.provider.ContactsContract.CommonDataKinds.Photo;
 import android.provider.ContactsContract.CommonDataKinds.SipAddress;
 import android.provider.ContactsContract.CommonDataKinds.StructuredPostal;
 import android.provider.ContactsContract.CommonDataKinds.Website;
+import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -777,6 +778,7 @@ public class QuickContactWindow implements Window.Callback,
             if (Phone.CONTENT_ITEM_TYPE.equals(mimeType)) {
                 final String number = getAsString(cursor, Phone.NUMBER);
                 if (!TextUtils.isEmpty(number)) {
+                    mBody = PhoneNumberUtils.formatNumber(number);
                     final Uri callUri = Uri.fromParts(Constants.SCHEME_TEL, number, null);
                     mIntent = new Intent(Intent.ACTION_CALL_PRIVILEGED, callUri);
                 }
@@ -795,6 +797,7 @@ public class QuickContactWindow implements Window.Callback,
             } else if (Constants.MIME_SMS_ADDRESS.equals(mimeType)) {
                 final String number = getAsString(cursor, Phone.NUMBER);
                 if (!TextUtils.isEmpty(number)) {
+                    mBody = PhoneNumberUtils.formatNumber(number);
                     final Uri smsUri = Uri.fromParts(Constants.SCHEME_SMSTO, number, null);
                     mIntent = new Intent(Intent.ACTION_SENDTO, smsUri);
                 }
