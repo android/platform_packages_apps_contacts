@@ -799,7 +799,7 @@ public class TwelveKeyDialer extends Activity implements View.OnClickListener,
             } else if (!TextUtils.isEmpty(mLastNumberDialed)) {
                 // Otherwise, pressing the Dial button without entering
                 // any digits means "recall the last number dialed".
-                mDigits.setText(mLastNumberDialed);
+                mDigits.append(mLastNumberDialed);
                 return;
             } else {
                 // Rare case: there's no "last number dialed".  There's
