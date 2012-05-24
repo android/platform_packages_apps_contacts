@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAFxH///74\u003d",
+        "filename": "src/com/android/contacts/calllog/ContactInfoHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2012-05-24T18:08:24Z",
+      "side": 1,
+      "message": "Please use spaces instead of tabs",
+      "revId": "0868d5f8341382639b5ebf9d5e616f118fc423c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFw3///7o\u003d",
+        "filename": "src/com/android/contacts/calllog/ContactInfoHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2012-05-24T18:08:24Z",
+      "side": 1,
+      "message": "missing a space",
+      "revId": "0868d5f8341382639b5ebf9d5e616f118fc423c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFw3///7w\u003d",
+        "filename": "src/com/android/contacts/calllog/ContactInfoHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2012-05-24T18:08:24Z",
+      "side": 1,
+      "message": "tabs",
+      "revId": "0868d5f8341382639b5ebf9d5e616f118fc423c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFxX///7U\u003d",
+        "filename": "src/com/android/contacts/calllog/ContactInfoHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2012-05-24T18:08:24Z",
+      "side": 1,
+      "message": "Please wrap to 100 columns",
+      "revId": "0868d5f8341382639b5ebf9d5e616f118fc423c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFw3///7s\u003d",
+        "filename": "src/com/android/contacts/calllog/ContactInfoHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2012-05-24T18:08:24Z",
+      "side": 1,
+      "message": "100 columns",
+      "revId": "0868d5f8341382639b5ebf9d5e616f118fc423c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFxH///70\u003d",
+        "filename": "src/com/android/contacts/calllog/ContactInfoHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2012-05-24T18:08:24Z",
+      "side": 1,
+      "message": "tabs",
+      "revId": "0868d5f8341382639b5ebf9d5e616f118fc423c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFxX///7Q\u003d",
+        "filename": "src/com/android/contacts/calllog/ContactInfoHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2012-05-24T18:08:24Z",
+      "side": 1,
+      "message": "missing a space",
+      "revId": "0868d5f8341382639b5ebf9d5e616f118fc423c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAFxX///7M\u003d",
+        "filename": "src/com/android/contacts/calllog/ContactInfoHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2012-05-24T18:08:24Z",
+      "side": 1,
+      "message": "tabs",
+      "revId": "0868d5f8341382639b5ebf9d5e616f118fc423c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
