@@ -181,6 +181,11 @@ public class ContactInfoHelper {
         // The "contactNumber" is a regular phone number, so use the PhoneLookup table.
         Uri uri = Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, Uri.encode(contactNumber));
         ContactInfo info = lookupContactFromUri(uri);
+        // If no contact is found, check the profile contact
+        if (info == ContactInfo.EMPTY) {
+            uri = Uri.withAppendedPath(PhoneLookup.PROFILE_CONTENT_FILTER_URI, Uri.encode(contactNumber));
+            info = lookupContactFromUri(uri);
+        }
         if (info != null && info != ContactInfo.EMPTY) {
             info.formattedNumber = formatPhoneNumber(number, null, countryIso);
         }
