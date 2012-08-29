@@ -55,9 +55,6 @@
     specific to some vendor (like DoCoMo), specify this type (e.g. "docomo") -->
     <string name="config_export_vcard_type" translatable="false">default</string>
 
-    <!-- Directory in which exported VCard file is stored -->
-    <string name="config_export_dir" translatable="false">/mnt/sdcard</string>
-
     <!-- Prefix of exported VCard file -->
     <string name="config_export_file_prefix" translatable="false"></string>
 
