@@ -22,6 +22,7 @@ import android.media.MediaScannerConnection;
 import android.media.MediaScannerConnection.MediaScannerConnectionClient;
 import android.net.Uri;
 import android.os.Binder;
+import android.os.Environment;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
@@ -147,7 +148,7 @@ public class VCardService extends Service {
     }
 
     private void initExporterParams() {
-        mTargetDirectory = getString(R.string.config_export_dir);
+        mTargetDirectory = Environment.getExternalStorageDirectory().getPath();
         mFileNamePrefix = getString(R.string.config_export_file_prefix);
         mFileNameSuffix = getString(R.string.config_export_file_suffix);
         mFileNameExtension = getString(R.string.config_export_file_extension);

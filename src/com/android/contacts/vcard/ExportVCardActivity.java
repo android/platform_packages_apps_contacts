@@ -28,6 +28,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
@@ -150,7 +151,7 @@ public class ExportVCardActivity extends Activity implements ServiceConnection,
         super.onCreate(bundle);
 
         // Check directory is available.
-        final File targetDirectory = new File(getString(R.string.config_export_dir));
+        final File targetDirectory = Environment.getExternalStorageDirectory();
         if (!(targetDirectory.exists() &&
                 targetDirectory.isDirectory() &&
                 targetDirectory.canRead()) &&
