@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAI6X//+CI\u003d",
+        "filename": "src/com/android/contacts/vcard/VCardService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2012-08-29T15:00:19Z",
+      "side": 1,
+      "message": "We don\u0027t use getPath() in our internal version. I\u0027m not sure what the impact is.",
+      "revId": "e869553c29161507ddb943177ac452c8e89dfe86",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
