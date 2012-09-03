@@ -16,6 +16,24 @@
       "revId": "e869553c29161507ddb943177ac452c8e89dfe86",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAI7H///4s\u003d",
+        "filename": "src/com/android/contacts/vcard/VCardService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1005602
+      },
+      "writtenOn": "2012-09-03T11:40:26Z",
+      "side": 1,
+      "message": "You probably did some other changes, then (in or around getAppropriateDestination()?)\nmTargetDirectory is a String, getExternalStorageDirectory() returns a  File (getPath() \"stringifies\" it)",
+      "parentUuid": "AAAI6X//+CI\u003d",
+      "revId": "e869553c29161507ddb943177ac452c8e89dfe86",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
