@@ -53,6 +53,7 @@ import android.provider.ContactsContract.Intents.UI;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.telephony.MSimTelephonyManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -88,6 +89,8 @@ public class DialtactsActivity extends TransactionSafeActivity
     private static final String PHONE_PACKAGE = "com.android.phone";
     private static final String CALL_SETTINGS_CLASS_NAME =
             "com.android.phone.CallFeaturesSetting";
+   private static final String MSIM_CALL_SETTINGS_CLASS_NAME =
+            "com.android.phone.MSimCallFeaturesSetting";
 
     /**
      * Copied from PhoneApp. See comments in Phone app for more detail.
@@ -1245,7 +1248,11 @@ public class DialtactsActivity extends TransactionSafeActivity
     /** Returns an Intent to launch Call Settings screen */
     public static Intent getCallSettingsIntent() {
         final Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.setClassName(PHONE_PACKAGE, CALL_SETTINGS_CLASS_NAME);
+        if (MSimTelephonyManager.getDefault().isMultiSimEnabled()) {
+            intent.setClassName(PHONE_PACKAGE, MSIM_CALL_SETTINGS_CLASS_NAME);
+        } else {
+            intent.setClassName(PHONE_PACKAGE, CALL_SETTINGS_CLASS_NAME);
+        }
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         return intent;
     }
