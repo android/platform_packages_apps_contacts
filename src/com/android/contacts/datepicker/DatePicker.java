@@ -133,13 +133,12 @@ public class DatePicker extends FrameLayout {
             for (int i = 0; i < months.length; i++) {
                 months[i] = String.valueOf(i + 1);
             }
-            mMonthPicker.setMinValue(1);
-            mMonthPicker.setMaxValue(12);
         } else {
-            mMonthPicker.setMinValue(1);
-            mMonthPicker.setMaxValue(12);
             mMonthPicker.setDisplayedValues(months);
         }
+
+        mMonthPicker.setMinValue(1);
+        mMonthPicker.setMaxValue(12);
 
         mMonthPicker.setOnLongPressUpdateInterval(200);
         mMonthPicker.setOnValueChangedListener(new OnValueChangeListener() {
