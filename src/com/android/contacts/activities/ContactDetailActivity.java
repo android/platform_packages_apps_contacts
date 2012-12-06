@@ -52,6 +52,9 @@ import com.android.contacts.util.PhoneCapabilityTester;
 
 import java.util.ArrayList;
 
+import com.android.contacts.common.BrcmIccUtils;
+import com.android.internal.telephony.RILConstants.SimCardID;
+import android.content.ContentUris;
 public class ContactDetailActivity extends ContactsActivity {
     private static final String TAG = "ContactDetailActivity";
 
@@ -228,6 +231,46 @@ public class ContactDetailActivity extends ContactsActivity {
         @Override
         public void onDeleteRequested(Uri contactUri) {
             ContactDeletionInteraction.start(ContactDetailActivity.this, contactUri, true);
+        }
+
+        @Override
+        public void onSaveToSimRequested(Uri contactLookupUri, SimCardID simId) {
+            Intent  savePbContactToSimIntent  = new Intent(Intent.ACTION_EDIT);
+            boolean saveToSIM = true;
+            long contactId = ContentUris.parseId(contactLookupUri);
+            long rawContactId;
+
+            rawContactId = BrcmIccUtils.getRawContactId(getContentResolver(), contactId);
+            savePbContactToSimIntent.setClassName(BrcmIccUtils.EDIT_ADN_ACTIVITY_PACKAGE_NAME, BrcmIccUtils.EDIT_ADN_ACTIVITY_CLASS_NAME);
+            savePbContactToSimIntent.putExtra(BrcmIccUtils.INTENT_EXTRA_RAWCONTACT_ID, rawContactId);
+            savePbContactToSimIntent.putExtra(BrcmIccUtils.INTENT_EXTRA_SAVE_TO_SIM, saveToSIM);
+            savePbContactToSimIntent.putExtra(BrcmIccUtils.INTENT_EXTRA_SIM_ID, simId);
+
+            startActivity(savePbContactToSimIntent);
+            finish();
+        }
+
+        @Override
+        public void onSaveToPbRequested(Uri contactLookupUri) {
+            Intent  saveSimContactToPbIntent  = new Intent(Intent.ACTION_EDIT);
+            boolean saveToPhonebook = true;
+            long contactId = ContentUris.parseId(contactLookupUri);
+            long rawContactId;
+
+            rawContactId = BrcmIccUtils.getRawContactId(getContentResolver(), contactId);
+            saveSimContactToPbIntent.setClassName(BrcmIccUtils.EDIT_ADN_ACTIVITY_PACKAGE_NAME, BrcmIccUtils.EDIT_ADN_ACTIVITY_CLASS_NAME);
+            saveSimContactToPbIntent.putExtra(BrcmIccUtils.INTENT_EXTRA_RAWCONTACT_ID, rawContactId);
+            saveSimContactToPbIntent.putExtra(BrcmIccUtils.INTENT_EXTRA_SAVE_TO_PB, saveToPhonebook);
+
+            String accountName = BrcmIccUtils.getRawContactAccountName(getContentResolver(), contactId);
+            if (accountName.equals(BrcmIccUtils.ACCOUNT_NAME_SIM2)) {
+                saveSimContactToPbIntent.putExtra(BrcmIccUtils.INTENT_EXTRA_SIM_ID,SimCardID.ID_ONE);
+            } else {
+                saveSimContactToPbIntent.putExtra(BrcmIccUtils.INTENT_EXTRA_SIM_ID,SimCardID.ID_ZERO);
+            }
+
+            startActivity(saveSimContactToPbIntent);
+            finish();
         }
     };
 

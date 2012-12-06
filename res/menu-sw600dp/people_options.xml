@@ -63,8 +63,13 @@
         android:title="@string/menu_settings" />
 
     <item
-        android:id="@+id/menu_help"
+        android:id="@+id/menu_delete_all_contacts"
         android:orderInCategory="6"
+        android:title="@string/menu_delete_all_contacts" />
+
+    <item
+        android:id="@+id/menu_help"
+        android:orderInCategory="7"
         android:title="@string/menu_help" />
 
     <item

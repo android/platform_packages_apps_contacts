@@ -97,6 +97,16 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import android.os.SystemProperties;
+import android.provider.ContactsContract.Intents.Insert;
+import android.text.TextUtils;
+import java.util.Set;
+import com.android.contacts.common.BrcmIccUtils;
+import com.android.internal.util.Objects;
+import com.android.internal.telephony.RILConstants.SimCardID;
+import com.android.contacts.common.SimContactsReadyHelper;
+import com.android.contacts.common.model.account.LocalAccountType;
+
 public class ContactEditorFragment extends Fragment implements
         SplitContactConfirmationDialogFragment.Listener,
         AggregationSuggestionEngine.Listener, AggregationSuggestionView.Listener,
@@ -265,6 +275,11 @@ public class ContactEditorFragment extends Fragment implements
 
     private ListPopupWindow mAggregationSuggestionPopup;
 
+    // The following flags are used to note if exist contact are with existed email and anr data.
+    private boolean mEmailExisting;
+    private boolean mSecondaryPhoneExisting;
+    private int mPhoneTypeInContact;
+    private SimContactsReadyHelper mSimReadyHelper;
     private static final class AggregationSuggestionAdapter extends BaseAdapter {
         private final Activity mActivity;
         private final boolean mSetNewContact;
@@ -559,12 +574,100 @@ public class ContactEditorFragment extends Fragment implements
         mListener.onCustomEditContactActivityRequested(account, uri, null, false);
     }
 
+    private boolean IsAddPhoneToContact(Bundle extras) {
+        if (extras == null) {
+            return false;
+        }
+        Set<String> intentExtraKeys = extras.keySet();
+        int numIntentExtraKeys = intentExtraKeys.size();
+        if (numIntentExtraKeys == 2) {
+            boolean hasPhone = intentExtraKeys.contains(Insert.PHONE) &&
+                    intentExtraKeys.contains(Insert.PHONE_TYPE);
+            return hasPhone;
+        } else if (numIntentExtraKeys == 1) {
+            return intentExtraKeys.contains(Insert.PHONE);
+        }
+        return false;
+    }
     private void bindEditorsForExistingContact(String displayName, boolean isUserProfile,
             ImmutableList<RawContact> rawContacts) {
         setEnabled(true);
         mDefaultDisplayName = displayName;
 
         mState.addAll(rawContacts.iterator());
+        // check if contact has existing secondary phone or email data
+        if (null==mSimReadyHelper) {
+            mSimReadyHelper = new SimContactsReadyHelper(mContext, false);
+        }
+
+        for (RawContactDelta state : mState) {
+            if (BrcmIccUtils.ACCOUNT_TYPE_SIM.equals(state.getValues().getAsString(RawContacts.ACCOUNT_TYPE))) {
+                final long rawContactId = state.getValues().getAsLong(RawContacts._ID);
+
+                mEmailExisting = BrcmIccUtils.haveEmail(mContext.getContentResolver() ,rawContactId);
+                if (mEmailExisting) {
+                    Log.d(TAG, "bindEditorsForExistingContact(): rawContactId = " + rawContactId + " with Exist Email Data !");
+                }
+                //how many numbers the contact have
+                int phonesNumWithExistContact=0;
+                Cursor c= BrcmIccUtils.getPhoneTypesFromRawContactId(mContext.getContentResolver(),rawContactId);
+
+                if(c !=null){
+                    phonesNumWithExistContact=c.getCount();
+                    Log.d(TAG, "bindEditorsForExistingContact(): rawContactId = " + rawContactId + " with " + phonesNumWithExistContact + "Phone Data !");
+
+                    if (phonesNumWithExistContact >= 2) {
+                        mSecondaryPhoneExisting = true;
+                    } else if(phonesNumWithExistContact==1){
+                        mSecondaryPhoneExisting = false;
+                        c.moveToFirst();
+                        mPhoneTypeInContact=c.getInt(0);
+                    }
+                    c.close();
+                }
+
+                // use for check ANR space before add contact from dailer UI
+                int simId;
+                if (BrcmIccUtils.ACCOUNT_NAME_SIM2.equals(state.getValues().getAsString(RawContacts.ACCOUNT_NAME))) {
+                    simId = SimCardID.ID_ONE.toInt();
+                } else {
+                    simId = SimCardID.ID_ZERO.toInt();
+                }
+
+                boolean hasPhoneToInsert = IsAddPhoneToContact(mIntentExtras);
+                Log.d(TAG, "bindEditorsForExistingContact(): hasPhoneToInsert = " + hasPhoneToInsert );
+
+                if (hasPhoneToInsert) {
+                    if (phonesNumWithExistContact==1 && mPhoneTypeInContact == Phone.TYPE_MOBILE) {
+                        if ((mSimReadyHelper.supportAnr(simId) && mSimReadyHelper.getFreeANRCount(simId)<=0)) {
+                            Toast.makeText(getActivity(), R.string.phoneLabels_NoSIMSpace,
+                                           Toast.LENGTH_LONG).show();
+                            Log.d(TAG, "bindEditorsForExistingContact(): ((simReadyHelper.supportAnr(simId)&& simReadyHelper.getFreeANRCount(simId)<=0))");
+                            revert();
+                            return;
+                        } else if(!mSimReadyHelper.supportAnr(simId)){
+                            Toast.makeText(getActivity(), R.string.phone_NoExtraField,
+                                           Toast.LENGTH_LONG).show();
+                            Log.d(TAG, "bindEditorsForExistingContact():!simReadyHelper.supportAnr(simId)");
+                            revert();
+                            return;
+                        }
+                    } else if (phonesNumWithExistContact == 2) {
+                        if (!mSimReadyHelper.supportAnr(simId)) {
+                            Log.e(TAG, "bindEditorsForExistingContact(): 2 exiting phone number but anr not supported!" );
+                            revert();
+                            return;
+                        } else {
+                            Toast.makeText(getActivity(), R.string.phone_NoExtraField,
+                                           Toast.LENGTH_LONG).show();
+                            Log.d(TAG, "bindEditorsForExistingContact(): phone no extra field");
+                            revert();
+                            return;
+                        }
+                    }
+                }
+            }
+        }
         setIntentExtras(mIntentExtras);
         mIntentExtras = null;
 
@@ -692,10 +795,10 @@ public class ContactEditorFragment extends Fragment implements
             RawContactDelta oldState, AccountWithDataSet oldAccount,
             AccountWithDataSet newAccount) {
         AccountTypeManager accountTypes = AccountTypeManager.getInstance(mContext);
-        AccountType oldAccountType = accountTypes.getAccountType(
-                oldAccount.type, oldAccount.dataSet);
-        AccountType newAccountType = accountTypes.getAccountType(
-                newAccount.type, newAccount.dataSet);
+        AccountType oldAccountType = accountTypes.getAccountType(oldAccount != null ? oldAccount.type : null,
+                    oldAccount != null ? oldAccount.dataSet : null);
+        AccountType newAccountType = accountTypes.getAccountType(newAccount != null ? newAccount.type : null,
+                    newAccount != null ? newAccount.dataSet : null);
 
         if (newAccountType.getCreateContactActivityClassName() != null) {
             Log.w(TAG, "external activity called in rebind situation");
@@ -723,7 +826,27 @@ public class ContactEditorFragment extends Fragment implements
             AccountType oldAccountType) {
         mStatus = Status.EDITING;
 
+        if (newAccount!=null && BrcmIccUtils.ACCOUNT_TYPE_SIM.equals(newAccount.type)) {
+            int simId;
+
+            if (BrcmIccUtils.ACCOUNT_NAME_SIM2.equals(newAccount.name)) {
+                simId = SimCardID.ID_ONE.toInt();
+            } else {
+                simId = SimCardID.ID_ZERO.toInt();
+            }
+
+            if (!BrcmIccUtils.HaveFreeADNSpace(mContext,simId)) {
+                Toast.makeText(getActivity(), R.string.adnNoSimSpace,
+                                Toast.LENGTH_LONG).show();
+                Log.d(TAG, "bindEditorsForNewContact():no SIM space for ADN");
+
+                mEditorUtils.resetPreferenceValues();
+                revert();
+                return;
+            }
+        }
         final RawContact rawContact = new RawContact();
+
         if (newAccount != null) {
             rawContact.setAccount(newAccount);
         } else {
@@ -759,6 +882,11 @@ public class ContactEditorFragment extends Fragment implements
         mRequestFocus = true;
 
         mNewContactDataReady = true;
+        // new contact doesn't have exist email or secondary phone
+        mEmailExisting = false;
+        mSecondaryPhoneExisting = false;
+
+        mPhoneTypeInContact=0;
         bindEditors();
     }
 
@@ -807,7 +935,28 @@ public class ContactEditorFragment extends Fragment implements
             if (mHasNewContact && !mNewLocalProfile) {
                 final List<AccountWithDataSet> accounts =
                         AccountTypeManager.getInstance(mContext).getAccounts(true);
-                if (accounts.size() > 1) {
+                boolean localContactAccountInstalled = false;
+                int numSimAccounts = 0;
+                if (accounts.contains(new AccountWithDataSet(
+                        LocalAccountType.LOCAL_CONTACTS_ACCOUNT_NAME, LocalAccountType.ACCOUNT_TYPE, null))) {
+                    localContactAccountInstalled = true;
+                }
+                if (accounts.contains(new AccountWithDataSet(
+                        BrcmIccUtils.ACCOUNT_NAME_SIM1, BrcmIccUtils.ACCOUNT_TYPE_SIM, BrcmIccUtils.ACCOUNT_NAME_SIM1))) {
+                    numSimAccounts++;
+                }
+                if(SystemProperties.getInt("ro.dual.sim.phone", 0) == 1) {
+                    if (accounts.contains(new AccountWithDataSet(
+                            BrcmIccUtils.ACCOUNT_NAME_SIM2, BrcmIccUtils.ACCOUNT_TYPE_SIM, BrcmIccUtils.ACCOUNT_NAME_SIM2))) {
+                        numSimAccounts++;
+                    }
+                }
+                Log.d(TAG, "bindEditors(): localContactAccountInstalled = " + localContactAccountInstalled + ", numSimAccounts = " + numSimAccounts);
+
+                if ((!localContactAccountInstalled) && (0 < numSimAccounts) && (accounts.size() == numSimAccounts)) {
+                    addAccountSwitcher(mState.get(0), editor);
+                }
+                else if (accounts.size() > 1 && !mNewLocalProfile) {
                     addAccountSwitcher(mState.get(0), editor);
                 } else {
                     disableAccountSwitcher(editor);
@@ -820,6 +969,7 @@ public class ContactEditorFragment extends Fragment implements
 
             mContent.addView(editor);
 
+            editor.setExistDataState(mEmailExisting, mSecondaryPhoneExisting,mPhoneTypeInContact);
             editor.setState(rawContactDelta, type, mViewIdGenerator, isEditingUserProfile());
 
             // Set up the photo handler.
@@ -959,23 +1109,79 @@ public class ContactEditorFragment extends Fragment implements
         AccountWithDataSet account = (name == null || type == null) ? null :
                 new AccountWithDataSet(name, type, dataSet);
         mEditorUtils.saveDefaultAndAllAccounts(account);
+
+        if (account!=null && BrcmIccUtils.ACCOUNT_TYPE_SIM.equals(type)) {
+            int simId;
+
+            if (BrcmIccUtils.ACCOUNT_NAME_SIM2.equals(name)) {
+                simId = SimCardID.ID_ONE.toInt();
+            } else {
+                simId = SimCardID.ID_ZERO.toInt();
+            }
+
+            if(!BrcmIccUtils.HaveFreeADNSpace(mContext,simId)) {
+                Log.d(TAG, "saveDefaultAccountIfNecessary(): reset default account since no SIM space for ADN");
+                mEditorUtils.resetPreferenceValues();
+            }
+        }
     }
 
     private void addAccountSwitcher(
             final RawContactDelta currentState, BaseRawContactEditorView editor) {
-        final AccountWithDataSet currentAccount = new AccountWithDataSet(
-                currentState.getAccountName(),
-                currentState.getAccountType(),
-                currentState.getDataSet());
+
+
+        ValuesDelta values = currentState.getValues();
+        final AccountWithDataSet currentAccount;
+        if (null == values.getAsString(RawContacts.ACCOUNT_TYPE)) {
+            Log.d(TAG, "addAccountSwitcher(): currentAccount = null");
+            currentAccount = null;
+        }
+        else {
+             currentAccount = new AccountWithDataSet(
+                    currentState.getAccountName(),
+                    currentState.getAccountType(),
+                    currentState.getDataSet());
+        }
+
+
         final View accountView = editor.findViewById(R.id.account);
         final View anchorView = editor.findViewById(R.id.account_container);
+
+        final List<AccountWithDataSet> accounts = AccountTypeManager.getInstance(getActivity()).
+        getAccounts(true);
+        final AccountListFilter AccountFilter;
+        boolean localContactAccountInstalled = false;
+        int numSimAccounts = 0;
+        final int numAccounts = accounts.size();
+        if (accounts.contains(new AccountWithDataSet(
+                LocalAccountType.LOCAL_CONTACTS_ACCOUNT_NAME, LocalAccountType.ACCOUNT_TYPE, null))) {
+            localContactAccountInstalled = true;
+        }
+        if (accounts.contains(new AccountWithDataSet(
+                BrcmIccUtils.ACCOUNT_NAME_SIM1, BrcmIccUtils.ACCOUNT_TYPE_SIM, BrcmIccUtils.ACCOUNT_NAME_SIM1))) {
+            numSimAccounts++;
+        }
+        if(SystemProperties.getInt("ro.dual.sim.phone", 0) == 1) {
+            if (accounts.contains(new AccountWithDataSet(
+                    BrcmIccUtils.ACCOUNT_NAME_SIM2, BrcmIccUtils.ACCOUNT_TYPE_SIM, BrcmIccUtils.ACCOUNT_NAME_SIM2))) {
+                numSimAccounts++;
+            }
+        }
+        Log.d(TAG, "addAccountSwitcher(): localContactAccountInstalled = " + localContactAccountInstalled + ", numSimAccounts = " + numSimAccounts);
+
+        if ((!localContactAccountInstalled) && (0 < numSimAccounts) && (numAccounts == numSimAccounts)) {
+            AccountFilter = AccountListFilter.ACCOUNTS_CONTACT_WRITABLE_AND_LOCAL;
+        } else {
+            AccountFilter = AccountListFilter.ACCOUNTS_CONTACT_WRITABLE;
+        }
+
         accountView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final ListPopupWindow popup = new ListPopupWindow(mContext, null);
                 final AccountsListAdapter adapter =
                         new AccountsListAdapter(mContext,
-                        AccountListFilter.ACCOUNTS_CONTACT_WRITABLE, currentAccount);
+                        AccountFilter, currentAccount);
                 popup.setWidth(anchorView.getWidth());
                 popup.setAnchorView(anchorView);
                 popup.setAdapter(adapter);
@@ -987,7 +1193,7 @@ public class ContactEditorFragment extends Fragment implements
                             long id) {
                         UiClosables.closeQuietly(popup);
                         AccountWithDataSet newAccount = adapter.getItem(position);
-                        if (!newAccount.equals(currentAccount)) {
+                        if (!Objects.equal(newAccount, currentAccount)) {
                             rebindEditorsForNewContact(currentState, currentAccount, newAccount);
                         }
                     }
@@ -1010,6 +1216,22 @@ public class ContactEditorFragment extends Fragment implements
         inflater.inflate(R.menu.edit_contact, menu);
     }
 
+    private boolean isSimContact() {
+        if (null != mState) {
+            int numRawContacts = mState.size();
+            for (int i = 0; i < numRawContacts; i++) {
+                final RawContactDelta entity = mState.get(i);
+                final ValuesDelta values = entity.getValues();
+                final String accountType = values.getAsString(RawContacts.ACCOUNT_TYPE);
+                if (BrcmIccUtils.ACCOUNT_TYPE_SIM.equals(accountType)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
         // This supports the keyboard shortcut to save changes to a contact but shouldn't be visible
@@ -1023,12 +1245,13 @@ public class ContactEditorFragment extends Fragment implements
 
         // Set visibility of menus
         doneMenu.setVisible(false);
+        final boolean isSim = isSimContact();
 
         // Split only if more than one raw profile and not a user profile
-        splitMenu.setVisible(mState.size() > 1 && !isEditingUserProfile());
+        splitMenu.setVisible(mState.size() > 1 && !isEditingUserProfile()&& !isSim);
 
         // Cannot join a user profile
-        joinMenu.setVisible(!isEditingUserProfile());
+        joinMenu.setVisible(!isEditingUserProfile()&& !isSim);
 
         // Discard menu is only available if at least one raw contact is editable
         discardMenu.setVisible(mState != null &&
@@ -1706,10 +1929,8 @@ public class ContactEditorFragment extends Fragment implements
                 // If there's an account specified, use it.
                 if (data != null) {
                     AccountWithDataSet account = data.getParcelableExtra(Intents.Insert.ACCOUNT);
-                    if (account != null) {
                         createContact(account);
                         return;
-                    }
                 }
                 // If there isn't an account specified, then this is likely a phone-local
                 // contact, so we should continue setting up the editor by automatically selecting

@@ -44,6 +44,7 @@ import com.android.contacts.common.model.dataitem.StructuredPostalDataItem;
 import com.android.contacts.common.model.dataitem.WebsiteDataItem;
 import com.android.contacts.util.PhoneCapabilityTester;
 import com.android.contacts.util.StructuredPostalUtils;
+import android.os.SystemProperties;
 
 /**
  * Description of a specific {@link Data#_ID} item, with style information
@@ -113,8 +114,17 @@ public class DataAction implements Action {
                 final String number = phone.getNumber();
                 if (!TextUtils.isEmpty(number)) {
 
-                    final Intent phoneIntent = hasPhone ? CallUtil.getCallIntent(number)
+
+                    Intent phoneIntent;
+                     if(SystemProperties.getInt("ro.dual.sim.phone", 0) == 1) {
+                        phoneIntent = hasPhone ? new Intent(Intent.ACTION_DIAL, //change ACTION_CALL_PRIVILEGED to ACTION_DIAL for dualsim
+                                Uri.fromParts(CallUtil.SCHEME_TEL, number, null)) : null;
+                        phoneIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    }else {
+                        phoneIntent =  hasPhone ? CallUtil.getCallIntent(number)
                             : null;
+                    }
+
                     Intent smsIntent = null;
                     if (hasSms) {
                         smsIntent = new Intent(Intent.ACTION_SENDTO,
@@ -141,7 +151,15 @@ public class DataAction implements Action {
                 final String address = sip.getSipAddress();
                 if (!TextUtils.isEmpty(address)) {
                     final Uri callUri = Uri.fromParts(CallUtil.SCHEME_SIP, address, null);
-                    mIntent = CallUtil.getCallIntent(callUri);
+
+
+                    if(SystemProperties.getInt("ro.dual.sim.phone", 0) == 1) {
+                        mIntent = new Intent(Intent.ACTION_DIAL, callUri); //change ACTION_CALL_PRIVILEGED to ACTION_DIAL for dualsim
+                        mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    }else {
+                        mIntent = CallUtil.getCallIntent(callUri);
+                    }
+
                     // Note that this item will get a SIP-specific variant
                     // of the "call phone" icon, rather than the standard
                     // app icon for the Phone app (which we show for

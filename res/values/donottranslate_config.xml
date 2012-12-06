@@ -66,4 +66,11 @@
     <!-- Help URL pointing to editing contacts in People. This is intentionally empty because
          the overlay will fill this in during build time. -->
     <string name="help_url_people_edit"></string>
+
+        <!-- If true, enable the "delete all contacts on SIM" feature if the device
+         has an appropriate SIM or ICC card.
+         Setting this flag to false in a resource overlay allows you to
+         entirely disable SIM delete all on a per-product basis. -->
+    <bool name="config_allow_sim_deleteAll">true</bool>
+
 </resources>

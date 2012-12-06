@@ -77,6 +77,9 @@ public class ContactsRequest implements Parcelable {
     /** Show all contacts and activate the specified one */
     public static final int ACTION_VIEW_CONTACT = 140;
 
+    /** Show local phonebook contacts and pick them when clicking */
+    public static final int ACTION_PICK_CONTACT_PHONEBOOK = 150;
+
     private boolean mValid = true;
     private int mActionCode = ACTION_DEFAULT;
     private Intent mRedirectIntent;
@@ -87,6 +90,8 @@ public class ContactsRequest implements Parcelable {
     private boolean mLegacyCompatibilityMode;
     private boolean mDirectorySearchEnabled = true;
     private Uri mContactUri;
+    private int mSimId = 0;
+    private boolean mExportToSim = false;
 
     @Override
     public String toString() {
@@ -100,6 +105,8 @@ public class ContactsRequest implements Parcelable {
                 + " mLegacyCompatibilityMode=" + mLegacyCompatibilityMode
                 + " mDirectorySearchEnabled=" + mDirectorySearchEnabled
                 + " mContactUri=" + mContactUri
+                + " mSimId=" + mSimId
+                + " mExportToSim=" + mExportToSim
                 + "}";
     }
 
@@ -117,6 +124,8 @@ public class ContactsRequest implements Parcelable {
         mLegacyCompatibilityMode = request.mLegacyCompatibilityMode;
         mDirectorySearchEnabled = request.mDirectorySearchEnabled;
         mContactUri = request.mContactUri;
+        mSimId = request.mSimId;
+        mExportToSim=request.mExportToSim;
     }
 
     public static Parcelable.Creator<ContactsRequest> CREATOR = new Creator<ContactsRequest>() {
@@ -138,6 +147,8 @@ public class ContactsRequest implements Parcelable {
             request.mLegacyCompatibilityMode  = source.readInt() != 0;
             request.mDirectorySearchEnabled = source.readInt() != 0;
             request.mContactUri = source.readParcelable(classLoader);
+            request.mSimId = source.readInt();
+            request.mExportToSim = source.readInt()!=0;
             return request;
         }
     };
@@ -153,6 +164,8 @@ public class ContactsRequest implements Parcelable {
         dest.writeInt(mLegacyCompatibilityMode ? 1 : 0);
         dest.writeInt(mDirectorySearchEnabled ? 1 : 0);
         dest.writeParcelable(mContactUri, 0);
+        dest.writeInt(mSimId);
+        dest.writeInt(mExportToSim ? 1 : 0);
     }
 
     public int describeContents() {
@@ -241,5 +254,21 @@ public class ContactsRequest implements Parcelable {
 
     public void setContactUri(Uri contactUri) {
         this.mContactUri = contactUri;
+    }
+
+    public int getSimId() {
+        return mSimId;
+    }
+
+    public void setSimId(int simId) {
+        this.mSimId = simId;
+    }
+
+    public boolean isExportToSIMEnabled() {
+        return mExportToSim;
+    }
+
+    public void setExportToSIMEnabled(boolean exportToSim) {
+        this.mExportToSim = exportToSim;
     }
 }

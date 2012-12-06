@@ -48,6 +48,12 @@ import com.android.contacts.common.model.Contact;
 import com.android.contacts.common.model.ContactLoader;
 import com.android.contacts.util.PhoneCapabilityTester;
 import com.google.common.base.Objects;
+import com.android.contacts.common.BrcmIccUtils;
+import com.android.contacts.common.SimContactsReadyHelper;
+import com.android.internal.telephony.RILConstants.SimCardID;
+import android.os.SystemProperties;
+import android.content.ContentUris;
+import android.text.TextUtils;
 
 /**
  * This is an invisible worker {@link Fragment} that loads the contact details for the contact card.
@@ -97,6 +103,15 @@ public class ContactLoaderFragment extends Fragment implements FragmentKeyListen
          */
         public void onDeleteRequested(Uri lookupUri);
 
+        /**
+         * User decided to save the contact from phonebook to SIM card
+         */
+        public void onSaveToSimRequested(Uri lookupUri, SimCardID simId);
+
+        /**
+         * User decided to save the contact from SIM card to phonebook
+         */
+        public void onSaveToPbRequested(Uri lookupUri);
     }
 
     private static final int LOADER_DETAILS = 1;
@@ -277,6 +292,40 @@ public class ContactLoaderFragment extends Fragment implements FragmentKeyListen
         if (createContactShortcutMenu != null) {
             createContactShortcutMenu.setVisible(mOptionsMenuCanCreateShortcut);
         }
+        final MenuItem saveToSimMenu = menu.findItem(R.id.menu_save_to_sim);
+        final MenuItem saveToSim1Menu = menu.findItem(R.id.menu_save_to_sim1);
+        final MenuItem saveToSim2Menu = menu.findItem(R.id.menu_save_to_sim2);
+        final MenuItem saveToPbMenu = menu.findItem(R.id.menu_save_to_pb);
+
+        boolean saveToSim = true;
+        if (mLookupUri != null) {
+        long contactId = ContentUris.parseId(mLookupUri);
+        String accountType;
+        accountType = BrcmIccUtils.getRawContactAccountTypeFromContactId(mContext.getContentResolver(), contactId);
+
+        if ((!TextUtils.isEmpty(accountType))&&(accountType.equals(BrcmIccUtils.ACCOUNT_TYPE_SIM))) {
+            saveToSim1Menu.setVisible(false);
+            saveToSim2Menu.setVisible(false);
+            saveToSimMenu.setVisible(false);
+            saveToPbMenu.setVisible(mOptionsMenuEditable);
+                saveToSim = false;
+            }
+        }
+        if (saveToSim) {
+            SimContactsReadyHelper simReadyHelper;
+            simReadyHelper = new SimContactsReadyHelper(null, false);
+
+             if(SystemProperties.getInt("ro.dual.sim.phone", 0) == 1) {
+                saveToSim1Menu.setVisible(mOptionsMenuEditable && simReadyHelper.getSimContactsLoaded(SimCardID.ID_ZERO.toInt()));
+                saveToSim2Menu.setVisible(mOptionsMenuEditable && simReadyHelper.getSimContactsLoaded(SimCardID.ID_ONE.toInt()));
+                saveToSimMenu.setVisible(false);
+            }else {
+                saveToSimMenu.setVisible(mOptionsMenuEditable && simReadyHelper.getSimContactsLoaded(SimCardID.ID_ZERO.toInt()));
+                saveToSim1Menu.setVisible(false);
+                saveToSim2Menu.setVisible(false);
+            }
+            saveToPbMenu.setVisible(false);
+        }
     }
 
     public boolean isContactOptionsChangeEnabled() {
@@ -353,6 +402,31 @@ public class ContactLoaderFragment extends Fragment implements FragmentKeyListen
                 // Create a launcher shortcut with this contact
                 createLauncherShortcutWithContact();
                 return true;
+            }
+            case R.id.menu_save_to_sim:
+            case R.id.menu_save_to_sim1: {
+                if(!BrcmIccUtils.HaveFreeADNSpace(mContext,SimCardID.ID_ZERO.toInt())) {
+                    Toast.makeText(getActivity(), R.string.adnNoSimSpace,
+                                    Toast.LENGTH_LONG).show();
+                    break;
+                }
+
+                if (mListener != null) mListener.onSaveToSimRequested(mLookupUri, SimCardID.ID_ZERO);
+                break;
+            }
+            case R.id.menu_save_to_sim2: {
+                if(!BrcmIccUtils.HaveFreeADNSpace(mContext,SimCardID.ID_ONE.toInt())) {
+                    Toast.makeText(getActivity(), R.string.adnNoSimSpace,
+                                    Toast.LENGTH_LONG).show();
+                    break;
+                }
+
+                if (mListener != null) mListener.onSaveToSimRequested(mLookupUri, SimCardID.ID_ONE);
+                break;
+            }
+            case R.id.menu_save_to_pb: {
+                if (mListener != null) mListener.onSaveToPbRequested(mLookupUri);
+                break;
             }
         }
         return false;

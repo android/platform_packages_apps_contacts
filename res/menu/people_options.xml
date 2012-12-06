@@ -53,6 +53,10 @@
         android:title="@string/menu_settings" />
 
     <item
+        android:id="@+id/menu_delete_all_contacts"
+        android:title="@string/menu_delete_all_contacts" />
+
+    <item
         android:id="@+id/menu_help"
         android:title="@string/menu_help" />
 

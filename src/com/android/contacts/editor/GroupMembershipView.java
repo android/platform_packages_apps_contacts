@@ -48,6 +48,9 @@ import com.google.common.base.Objects;
 
 import java.util.ArrayList;
 
+import com.android.contacts.common.model.account.LocalAccountType;
+import com.android.contacts.common.model.account.SimAccountType;
+
 /**
  * An editor for group membership.  Displays the current group membership list and
  * brings up a dialog to change it.
@@ -253,8 +256,12 @@ public class GroupMembershipView extends LinearLayout
         }
 
         if (!accountHasGroups) {
-            setVisibility(GONE);
-            return;
+            if (LocalAccountType.ACCOUNT_TYPE.equals(mAccountType) || SimAccountType.ACCOUNT_TYPE.equals(mAccountType)) {
+                // Not hide this view for Local or Icc account type
+            } else {
+                setVisibility(GONE);
+                return;
+            }
         }
 
         if (mGroupList == null) {

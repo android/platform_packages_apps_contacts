@@ -46,6 +46,8 @@ import com.android.contacts.util.ContactPhotoUtils;
 import java.io.File;
 import java.io.FileNotFoundException;
 
+import com.android.contacts.common.BrcmIccUtils;
+
 /**
  * Provides an external interface for other applications to attach images
  * to contacts. It will first present a contact picker and then run the
@@ -86,6 +88,10 @@ public class AttachPhotoActivity extends ContactsActivity {
             mCroppedPhotoUri = ContactPhotoUtils.generateTempCroppedImageUri(this);
             Intent intent = new Intent(Intent.ACTION_PICK);
             intent.setType(Contacts.CONTENT_TYPE);
+
+            intent.putExtra(BrcmIccUtils.PHONEBOOK_CONTACTS_ONLY, true);
+            intent.putExtra(BrcmIccUtils.EXPORT_To_SIM, false);
+
             startActivityForResult(intent, REQUEST_PICK_CONTACT);
         }
 

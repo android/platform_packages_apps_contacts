@@ -482,6 +482,32 @@
             </intent-filter>
         </activity>
 
+        <receiver android:name=".SimContactsReadyReceiver"
+                android:enabled="true">
+            <intent-filter>
+                <action android:name="com.android.phone.SIM_CAPABILITY_INFO" />
+            </intent-filter>
+        </receiver>
+
+    <activity android:name=".EditAdnContactActivity"
+        android:label="@string/edit_adn_contact"
+        android:configChanges="orientation">
+
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".AdnContactActionScreen"
+                android:label="@string/sim_adn_contact"
+                android:configChanges="orientation">
+        <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <!-- Service that is exclusively for the Phone application that sends out a view
              notification. This service might be removed in future versions of the app.
 

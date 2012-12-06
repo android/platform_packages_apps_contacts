@@ -59,6 +59,14 @@ import com.google.common.collect.Sets;
 
 import java.util.Set;
 
+import android.widget.Button;
+import com.android.contacts.common.BrcmIccUtils;
+import com.android.internal.telephony.RILConstants.SimCardID;
+import android.content.ContentResolver;
+import android.content.ContentUris;
+import android.os.SystemProperties;
+import android.app.AlertDialog;
+
 /**
  * Displays a list of contacts (or phone numbers or postal addresses) for the
  * purposes of selecting one.
@@ -83,6 +91,8 @@ public class ContactSelectionActivity extends ContactsActivity
 
     private ContactsRequest mRequest;
     private SearchView mSearchView;
+    private AlertDialog mDialog;
+
     /**
      * Can be null. If null, the "Create New Contact" button should be on the menu.
      */
@@ -144,6 +154,28 @@ public class ContactSelectionActivity extends ContactsActivity
                 mCreateNewContactButton.setVisibility(View.GONE);
             }
         }
+
+        Button exportAll = (Button) findViewById(R.id.export_all);
+        Button exportDone = (Button) findViewById(R.id.export_done);
+        if( (exportAll != null) && (exportDone != null) ) {
+            if (mRequest.getActionCode() == ContactsRequest.ACTION_PICK_CONTACT_PHONEBOOK && mRequest.isExportToSIMEnabled()) {
+                exportAll.setOnClickListener(this);
+                exportDone.setOnClickListener(this);
+
+                    mDialog=new AlertDialog.Builder(this)
+                        .setTitle(R.string.export_to_sim)
+                        .setIconAttribute(android.R.attr.alertDialogIcon)
+                        .setMessage(R.string.exportToSimWarnMsg)
+                        .setNeutralButton(R.string.ok, null)
+                        .create();
+
+                    mDialog.show();
+
+            } else {
+                exportAll.setVisibility(View.GONE);
+                exportDone.setVisibility(View.GONE);
+            }
+          }
     }
 
     private boolean shouldShowCreateNewContactButton() {
@@ -267,6 +299,13 @@ public class ContactSelectionActivity extends ContactsActivity
                 break;
             }
 
+            case ContactsRequest.ACTION_PICK_CONTACT_PHONEBOOK: {
+                if(mRequest.isExportToSIMEnabled()) {
+                    setTitle(R.string.export_to_sim_title);
+                }
+                break;
+            }
+
             case ContactsRequest.ACTION_PICK_OR_CREATE_CONTACT: {
                 setTitle(R.string.contactPickerActivityTitle);
                 break;
@@ -324,6 +363,24 @@ public class ContactSelectionActivity extends ContactsActivity
                 break;
             }
 
+            case ContactsRequest.ACTION_PICK_CONTACT_PHONEBOOK: {
+                ContactPickerFragment fragment = new ContactPickerFragment();
+                Integer simId = mRequest.getSimId();
+                fragment.setExportToSimFlag(mRequest.isExportToSIMEnabled());
+
+                if (SimCardID.ID_ONE.toInt() == simId) {
+                    fragment.setSimIdToExport(SimCardID.ID_ONE.toInt());
+                } else if (SimCardID.ID_ZERO.toInt() == simId) {
+                    fragment.setSimIdToExport(SimCardID.ID_ZERO.toInt());
+                } else {
+                    Log.e(TAG, "Error SIM ID: " + simId);
+                    fragment.setSimIdToExport(-1);
+                }
+                fragment.setIncludeProfile(mRequest.shouldIncludeProfile());
+                mListFragment = fragment;
+                break;
+            }
+
             case ContactsRequest.ACTION_PICK_OR_CREATE_CONTACT: {
                 ContactPickerFragment fragment = new ContactPickerFragment();
                 mListFragment = fragment;
@@ -349,8 +406,14 @@ public class ContactSelectionActivity extends ContactsActivity
             }
 
             case ContactsRequest.ACTION_CREATE_SHORTCUT_CALL: {
-                PhoneNumberPickerFragment fragment = getPhoneNumberPickerFragment(mRequest);
-                fragment.setShortcutAction(Intent.ACTION_CALL);
+                // PhoneNumberPickerFragment fragment = getPhoneNumberPickerFragment(mRequest); need to check?
+                PhoneNumberPickerFragment fragment = new PhoneNumberPickerFragment();
+                // fragment.setShortcutAction(Intent.ACTION_CALL);
+                 if(SystemProperties.getInt("ro.dual.sim.phone", 0) == 1) {
+                    fragment.setShortcutAction(Intent.ACTION_DIAL); // change ACTION_CALL to ACTION_DIAL for dual sim
+                }else {
+                    fragment.setShortcutAction(Intent.ACTION_CALL);
+                }
 
                 mListFragment = fragment;
                 break;
@@ -419,8 +482,14 @@ public class ContactSelectionActivity extends ContactsActivity
 
         @Override
         public void onEditContactAction(Uri contactLookupUri) {
+            long contactId = ContentUris.parseId(contactLookupUri);
+            Log.d(TAG, "onEditContactAction(): contactLookupUri = " + contactLookupUri + ", id = " + contactId);
+            String accountType;
+            accountType = BrcmIccUtils.getRawContactAccountTypeFromContactId(getContentResolver(), contactId);
+            Log.d(TAG, "onEditContactAction(): accountType = " + accountType);
+
             Bundle extras = getIntent().getExtras();
-            if (launchAddToContactDialog(extras)) {
+            if (launchAddToContactDialog(extras) && !BrcmIccUtils.ACCOUNT_TYPE_SIM.equals(accountType)) {
                 // Show a confirmation dialog to add the value(s) to the existing contact.
                 Intent intent = new Intent(ContactSelectionActivity.this,
                         ConfirmAddDetailActivity.class);
@@ -589,6 +658,17 @@ public class ContactSelectionActivity extends ContactsActivity
         switch (view.getId()) {
             case R.id.new_contact: {
                 startCreateNewContactActivity();
+                break;
+            }
+            case R.id.export_all: {
+                if (mListFragment instanceof ContactPickerFragment) {
+                    ((ContactPickerFragment) mListFragment).exportAllContacts();
+                }
+                break;
+            }
+            case R.id.export_done: {
+                setResult(RESULT_OK);
+                finish();
                 break;
             }
         }

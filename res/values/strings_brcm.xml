@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2006 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="menu_call_1">SIM1 Call contact</string>
+    <string name="menu_call_2">SIM2 Call contact</string>
+
+    <!-- dual sim -->
+    <!-- Menu item used to add a number from the call log to contacts -->
+    <string name="recentCalls_SIM1">SIM1 Call</string>
+
+    <!-- Menu item used to add a number from the call log to contacts -->
+    <string name="recentCalls_SIM2">SIM2 Call</string>
+
+    <!-- Menu item used to add a number from the call log to contacts -->
+    <string name="import_from_sim1">Import from SIM1 card</string>
+    <string name="import_from_sim2">Import from SIM2 card</string>
+
+    <!-- When handle special sim related code(like pin, adn), let user chooser sim -->
+    <string name="select_sim">Select SIM</string>
+
+    <!-- Dialog text displayed when No SIM record in the SIM card for speed dial -->
+    <string name="noSimRecord">No SIM record</string>
+    <string name="SIM">SIM</string>
+
+    <string name="menu_pick_select_all">"Select All"</string>
+    <string name="menu_pick_unselect_all">"Unselect All"</string>
+    <string name="menu_pick_done">"Done"</string>
+    <string name="export_to_sim">Export to SIM</string>
+    <string name="export_to_sim1">Export to SIM1</string>
+    <string name="export_to_sim2">Export to SIM2</string>
+    <string name="export_to_sim_title">Select Contacts To Export</string>
+    <string name="exportToSimReadingContacts">Reading Contacts\u2026</string>
+    <string name="exportToSimWarnMsg">Some contact information might not be exported to SIM completely, and please check the data when finish.\u2026 </string>
+    <string name="exportingProcessIsRunning">Another exporting process is running ,please wait. </string>
+    <string name="ok">OK</string>
+    <string name="menu_pick_export_all">Export All</string>
+
+    <string name="menu_newSim1Contact">New SIM1 Contact</string>
+    <string name="menu_newSim2Contact">New SIM2 Contact</string>
+    <string name="menu_save_to_pb">Save To Phonebook</string>
+    <string name="menu_save_to_sim">Save To SIM</string>
+    <string name="menu_save_to_sim1">Save To SIM1</string>
+    <string name="menu_save_to_sim2">Save To SIM2</string>
+<!--
+    <string name="list_filter_sim_contacts">SIM contacts</string>
+    <string name="list_filter_sim1_contacts">SIM1 contacts</string>
+    <string name="list_filter_sim2_contacts">SIM2 contacts</string>
+    <string name="list_filter_local_contacts">LOCAL contacts</string>
+ -->
+    <string name="list_filter_not_sim_contacts">Not SIM Contacts</string>
+
+    <!-- Title of the confirmation dialog for filter call log by SIM. [CHAR LIMIT=37]  -->
+    <string name="filterCallLogbySIMConfirmation_title">List CallLog by SIM</string>
+    <!-- Title of the confirmation dialog for filter call log by Call Type. [CHAR LIMIT=37]  -->
+    <string name="filterCallLogbyCallTypeConfirmation_title">List CallLog by Call Type</string>
+
+    <!-- Menu item used to show all type of calls in the call log. [CHAR LIMIT=30] -->
+    <string name="show_all_types">Show All Types</string>
+    <!-- Menu item used to show received calls in the call log. [CHAR LIMIT=30] -->
+    <string name="show_incoming_calls">Show Incoming Calls</string>
+    <!-- Menu item used to show outgoing calls in the call log. [CHAR LIMIT=30] -->
+    <string name="show_outgoing_calls">Show Outgoing Calls</string>
+    <!-- Menu item used to show missed calls in the call log. [CHAR LIMIT=30] -->
+    <string name="show_missed_calls">Show Missed Calls</string>
+    <!-- Menu item used to show all sim calls in the call log. [CHAR LIMIT=30] -->
+    <string name="show_all_sim_calls">Show All SIM calls </string>
+    <!-- Menu item used to filter calls in the call log by SIM. [CHAR LIMIT=30] -->
+    <string name="menu_filter_by_sim">List by SIM </string>
+    <!-- Menu item used to filter calls in the call log by Call Type. [CHAR LIMIT=30] -->
+    <string name="menu_filter_by_calltype">List by Call Type </string>
+
+    <!-- "Edit ADN Contact" screen: status message displayed in a popup (toast) -->
+    <string name="adding_adn_contact">Adding SIM contact\u2026</string>
+    <!-- "Edit ADN Contact" screen: status message displayed in a popup (toast) -->
+    <string name="adn_contact_added">Add SIM contact success.</string>
+    <string name="adn_contact_added_sim1">Add SIM1 contact success.</string>
+    <string name="adn_contact_added_sim2">Add SIM2 contact success.</string>
+
+    <string name="updating_adn_contact_msg">updating %1$d of %2$d\u2026</string>
+    <string name="adn_contact_add_failed">Failed to add SIM contact</string>
+    <string name="adn_contact_updated">Update SIM contact success.</string>
+    <string name="adn_contact_add_failed_sim1">Failed to add SIM1 contact</string>
+    <string name="adn_contact_add_failed_sim2">Failed to add SIM2 contact</string>
+    <string name="adn_contact_update_failed">Failed to update SIM contact</string>
+    <string name="adn_contact_updated_sim1">Update SIM1 contact success.</string>
+    <string name="adn_contact_updated_sim2">Update SIM2 contact success.</string>
+    <string name="adn_contact_update_failed_sim1">Failed to update SIM1 contact</string>
+    <string name="adn_contact_update_failed_sim2">Failed to update SIM2 contact</string>
+
+    <!-- Add/Delete/Edit ADN realated strings -->
+    <string name="add_adn_contact">Add new SIM contact</string>
+    <string name="add_adn_contact_sim1">Add new SIM1 contact</string>
+    <string name="add_adn_contact_sim2">Add new SIM2 contact</string>
+    <string name="edit_adn_contact">Edit SIM contact</string>
+    <string name="edit_adn_contact_sim1">Edit SIM1 contact</string>
+    <string name="edit_adn_contact_sim2">Edit SIM2 contact</string>
+    <string name="title_anr">Number 2</string>
+    <string name="title_email">Email</string>
+    <!-- "Edit ADN Contact" screen: Label for the "name" text field -->
+    <string name="title_name">Name</string>
+    <!-- "Edit ADN Contact" screen: Label for the "number" text field -->
+    <string name="title_number_1">Number 1</string>
+    <!-- "Edit ADN Contact" screen: Button label for "save" action -->
+    <string name="save_button_text">Save</string>
+    <!--ADN settings: error message displayed in a popup (toast) -->
+    <string name="adn_invalid_number">Number cannot exceed 20 digits or invalid.</string>
+    <string name="adn_invalid_name">The name length is too long or invalid.</string>
+    <string name="usim_invalid_email">email invalid</string>
+
+    <string name="simContacts_exptitle">SIM card usage</string>
+    <string name="sim_adn_contact">SIM card</string>
+
+    <string name="copy_adn_info">Total %1$d in SIM card, used %2$d, prepare to copy %3$d items</string>
+    <string name="copy_adn_same">All are already in SIM card </string>
+    <string name="copy_adn_ignore">Continue</string>
+    <string name="copy_adn_cancel">Cancel</string>
+    <string name="local_phonebook_account_type_label">Local phonebook</string>
+
+
+
+    <string name="menu_delete_all_contacts">Delete All Contacts</string>
+    <string name="delete_sim_all_contacts">Delete All SIM Contacts</string>
+    <string name="delete_sim1_all_contacts">Delete All SIM1 Contacts</string>
+    <string name="delete_sim2_all_contacts">Delete All SIM2 Contacts</string>
+    <string name="delete_local_all_contacts">Delete All Local Contacts</string>
+
+
+    <string name="deleteAllContactsConfirmation_title">Delete All Contacts</string>
+    <string name="deleteAllContactsConfirmation">All your contacts will be deleted </string>
+    <string name="deleteAllContactsProgress_title">Deleting All Contacts\u2026</string>
+    <string name="deletingProcessIsRunning">Another deleting process is running ,please wait. </string>
+    <string name="adnNoSimSpace">No Space Available. Cannot add new contact to SIM</string>
+    <string name="adnNoSimSpaceForExportAll">No enough space to export all.</string>
+    <string name="emailNoSimSpace">No Extra Email Space on SIM</string>
+    <string name="phoneLabels_NoSIMSpace">Phone: No Space for 2nd number on SIM</string>
+    <string name="phone_NoExtraField">Cannot insert extra number to contact</string>
+    <string name="email_NoExtraField">Cannot insert extra Email to contact</string>
+    <string name="email_NoSupportOnSIM">EMAIL is not support on selected SIM</string>
+    <string name="gasNoSimSpace">SIM is full. Cannot add new group to SIM. Please save to Local Phonebook instead.</string>
+
+    <string name="vt_not_available">Video Telephony Not Available</string>
+</resources>

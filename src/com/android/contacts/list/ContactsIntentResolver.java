@@ -37,6 +37,10 @@ import android.provider.ContactsContract.Intents.UI;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.android.contacts.common.BrcmIccUtils;
+import com.android.internal.telephony.RILConstants.SimCardID;
+import android.os.SystemProperties;
+
 /**
  * Parses a Contacts intent, extracting all relevant parts and packaging them
  * as a {@link ContactsRequest} object.
@@ -77,7 +81,16 @@ public class ContactsIntentResolver {
         } else if (Intent.ACTION_PICK.equals(action)) {
             final String resolvedType = intent.resolveType(mContext);
             if (Contacts.CONTENT_TYPE.equals(resolvedType)) {
-                request.setActionCode(ContactsRequest.ACTION_PICK_CONTACT);
+                boolean phonebookOnly = intent.getBooleanExtra(BrcmIccUtils.PHONEBOOK_CONTACTS_ONLY, false);
+                boolean isExportToSIM = intent.getBooleanExtra(BrcmIccUtils.EXPORT_To_SIM, false);
+                if (phonebookOnly) {
+                    request.setActionCode(ContactsRequest.ACTION_PICK_CONTACT_PHONEBOOK);
+                    SimCardID simId = (SimCardID) (intent.getExtra(BrcmIccUtils.INTENT_EXTRA_SIM_ID, SimCardID.ID_ZERO));
+                    request.setSimId(simId.toInt());
+                    request.setExportToSIMEnabled(isExportToSIM);
+                } else {
+                    request.setActionCode(ContactsRequest.ACTION_PICK_CONTACT);
+                }
             } else if (People.CONTENT_TYPE.equals(resolvedType)) {
                 request.setActionCode(ContactsRequest.ACTION_PICK_CONTACT);
                 request.setLegacyCompatibilityMode(true);

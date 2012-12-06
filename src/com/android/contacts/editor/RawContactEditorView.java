@@ -50,6 +50,16 @@ import com.google.common.base.Objects;
 
 import java.util.ArrayList;
 
+import android.util.Log;
+import android.provider.ContactsContract.CommonDataKinds.Email;
+import android.provider.ContactsContract.CommonDataKinds.Phone;
+import android.view.inputmethod.EditorInfo;
+import com.android.contacts.common.BrcmIccUtils;
+import com.android.contacts.common.SimContactsReadyHelper;
+import com.android.contacts.common.model.account.AccountType.EditField;
+import com.android.internal.telephony.RILConstants.SimCardID;
+import com.android.contacts.common.model.account.LocalAccountType;
+
 /**
  * Custom view that provides all the editor interaction for a specific
  * {@link Contacts} represented through an {@link RawContactDelta}. Callers can
@@ -91,6 +101,14 @@ public class RawContactEditorView extends BaseRawContactEditorView {
     private RawContactDelta mState;
 
     private boolean mPhoneticNameAdded;
+
+    private static final String TAG = RawContactEditorView.class.getSimpleName();
+    private SimContactsReadyHelper mSimReadyHelper;
+    // the following flags are used to note if exist contact are with existed email and anr data.
+    private boolean mEmailExisting;
+    private boolean mSecondaryPhoneExisting;
+    private int mPhoneTypeInContact;
+    //Brcm support end
 
     public RawContactEditorView(Context context) {
         super(context);
@@ -194,6 +212,13 @@ public class RawContactEditorView extends BaseRawContactEditorView {
         return;
     }
 
+    @Override
+    public void setExistDataState(boolean IsEmailExisting, boolean IsSecondaryPhoneExisting,int existedPhoneType) {
+        mEmailExisting = IsEmailExisting;
+        mSecondaryPhoneExisting = IsSecondaryPhoneExisting;
+        mPhoneTypeInContact=existedPhoneType;
+    }
+
     /**
      * Set the internal state for this view, given a current
      * {@link RawContactDelta} state and the {@link AccountType} that
@@ -220,8 +245,9 @@ public class RawContactEditorView extends BaseRawContactEditorView {
         mRawContactId = state.getRawContactId();
 
         // Fill in the account info
+        String accountName = state.getAccountName();
+
         if (isProfile) {
-            String accountName = state.getAccountName();
             if (TextUtils.isEmpty(accountName)) {
                 mAccountNameTextView.setVisibility(View.GONE);
                 mAccountTypeTextView.setText(R.string.local_profile_title);
@@ -232,8 +258,10 @@ public class RawContactEditorView extends BaseRawContactEditorView {
                 mAccountNameTextView.setText(accountName);
             }
         } else {
-            String accountName = state.getAccountName();
             CharSequence accountType = type.getDisplayLabel(mContext);
+            if (type instanceof LocalAccountType) {
+                accountName = null;
+            }
             if (TextUtils.isEmpty(accountType)) {
                 accountType = mContext.getString(R.string.account_phone);
             }
@@ -248,6 +276,27 @@ public class RawContactEditorView extends BaseRawContactEditorView {
             mAccountTypeTextView.setText(
                     mContext.getString(R.string.account_type_format, accountType));
         }
+
+        int simId = SimCardID.ID_ZERO.toInt();
+
+        if (BrcmIccUtils.ACCOUNT_NAME_SIM1.equals(accountName) || BrcmIccUtils.ACCOUNT_NAME_SIM2.equals(accountName)) {
+            Log.d(TAG, "setState query Icc capability info ==>");
+
+            if (null==mSimReadyHelper) {
+                mSimReadyHelper = new SimContactsReadyHelper(mContext, false);
+            }
+
+            if (BrcmIccUtils.ACCOUNT_NAME_SIM2.equals(accountName)) {
+                simId = SimCardID.ID_ONE.toInt();
+                mSimReadyHelper.setSim2CapabilityInfo(mSimReadyHelper.getIccCardCapabilityInfo(mContext.getContentResolver(), SimCardID.ID_ONE));
+            } else {
+                simId = SimCardID.ID_ZERO.toInt();
+                mSimReadyHelper.setSim1CapabilityInfo(mSimReadyHelper.getIccCardCapabilityInfo(mContext.getContentResolver(), SimCardID.ID_ZERO));
+            }
+
+            Log.d(TAG, "setState query Icc capability info <==");
+         }
+
         mAccountIcon.setImageDrawable(type.getDisplayIcon(mContext));
 
         // Show photo editor when supported
@@ -283,9 +332,11 @@ public class RawContactEditorView extends BaseRawContactEditorView {
                 mName.setValues(
                         type.getKindForMimetype(DataKind.PSEUDO_MIME_TYPE_DISPLAY_NAME),
                         primary, state, false, vig);
-                mPhoneticName.setValues(
-                        type.getKindForMimetype(DataKind.PSEUDO_MIME_TYPE_PHONETIC_NAME),
-                        primary, state, false, vig);
+                if (null != type.getKindForMimetype(DataKind.PSEUDO_MIME_TYPE_PHONETIC_NAME)) {
+                    mPhoneticName.setValues(
+                            type.getKindForMimetype(DataKind.PSEUDO_MIME_TYPE_PHONETIC_NAME),
+                            primary, state, false, vig);
+                }
             } else if (Photo.CONTENT_ITEM_TYPE.equals(mimeType)) {
                 // Handle special case editor for photos
                 final ValuesDelta primary = state.getPrimaryEntry(mimeType);
@@ -294,6 +345,54 @@ public class RawContactEditorView extends BaseRawContactEditorView {
                 if (mGroupMembershipView != null) {
                     mGroupMembershipView.setState(state);
                 }
+            } else if (Phone.CONTENT_ITEM_TYPE.equals(mimeType)) {
+                if (kind.fieldList == null) continue;
+                final KindSectionView section = (KindSectionView)mInflater.inflate(
+                        R.layout.item_kind_section, mFields, false);
+                section.setEnabled(isEnabled());
+
+                //change edit view if no space for ANR
+                if( (BrcmIccUtils.ACCOUNT_NAME_SIM1.equals(accountName)||BrcmIccUtils.ACCOUNT_NAME_SIM2.equals(accountName)) && mSimReadyHelper.supportAnr(simId)) {
+                    if ((mSimReadyHelper.getFreeANRCount(simId) <= 0)&& (!mSecondaryPhoneExisting) && (mPhoneTypeInContact!=Phone.TYPE_HOME)){
+                        Log.d(TAG, "setState Phone.CONTENT_ITEM_TYPE show no ANR space "  + accountName);
+                        kind.typeOverallMax = 1;
+                        kind.titleRes= R.string.phoneLabels_NoSIMSpace;
+                        kind.typeList.clear();
+                        kind.typeList.add((new EditType(Phone.TYPE_MOBILE, Phone.getTypeLabelResource(Phone.TYPE_MOBILE))).setSpecificMax(1));
+                    } else {
+                        Log.d(TAG, "setState Phone.CONTENT_ITEM_TYPE show ANR normal "  + accountName);
+                        kind.typeOverallMax = 2;
+                        kind.typeList.clear();
+                        kind.titleRes= R.string.phoneLabelsGroup;
+                        kind.typeList.add((new EditType(Phone.TYPE_MOBILE, Phone.getTypeLabelResource(Phone.TYPE_MOBILE))).setSpecificMax(1));
+                        kind.typeList.add((new EditType(Phone.TYPE_HOME, Phone.getTypeLabelResource(Phone.TYPE_HOME))).setSpecificMax(1));
+                    }
+                }
+
+                section.setState(kind, state, false, vig);
+                mFields.addView(section);
+                kind.titleRes= R.string.phoneLabelsGroup;
+            } else if (Email.CONTENT_ITEM_TYPE.equals(mimeType)) {
+                if (kind.fieldList == null) continue;
+                final KindSectionView section = (KindSectionView)mInflater.inflate(
+                        R.layout.item_kind_section, mFields, false);
+                section.setEnabled(isEnabled());
+
+                if ((BrcmIccUtils.ACCOUNT_NAME_SIM1.equals(accountName) || BrcmIccUtils.ACCOUNT_NAME_SIM2.equals(accountName)) && mSimReadyHelper.supportEmail(simId)) {
+                     if (mSimReadyHelper.getFreeEmailCount(simId) <= 0 && !mEmailExisting) {
+                        Log.d(TAG, "setState Email.CONTENT_ITEM_TYPE show no email space= "  + accountName);
+                        // chech if have empty space for email on SIM
+                        section.setEnabled(false);
+                        kind.fieldList.clear();
+                        kind.fieldList.add(new EditField(Email.DATA, R.string.emailNoSimSpace,  EditorInfo.TYPE_CLASS_TEXT));
+                    } else {
+                        Log.d(TAG, "setState Phone.CONTENT_ITEM_TYPE show Email normal " + accountName);
+                        kind.fieldList.clear();
+                        kind.fieldList.add(new EditField(Email.DATA, R.string.emailLabelsGroup,  EditorInfo.TYPE_CLASS_TEXT));
+                    }
+                }
+                section.setState(kind, state, false, vig);
+                mFields.addView(section);
             } else if (Organization.CONTENT_ITEM_TYPE.equals(mimeType)) {
                 // Create the organization section
                 final KindSectionView section = (KindSectionView) mInflater.inflate(
@@ -340,7 +439,11 @@ public class RawContactEditorView extends BaseRawContactEditorView {
             mFields.addView(mGroupMembershipView);
         }
 
-        updatePhoneticNameVisibility();
+        if (null == type.getKindForMimetype(DataKind.PSEUDO_MIME_TYPE_PHONETIC_NAME)) {
+            mPhoneticName.setVisibility(View.GONE);
+        } else {
+            updatePhoneticNameVisibility();
+        }
 
         addToDefaultGroupIfNeeded();
 

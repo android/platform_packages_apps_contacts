@@ -341,7 +341,8 @@ public class TextFieldsEditorView extends LabeledEditorView {
 
         mHideOptional = ss.mHideOptional;
 
-        int numChildren = Math.min(mFieldEditTexts.length, ss.mVisibilities.length);
+        //int numChildren = Math.min(mFieldEditTexts.length, ss.mVisibilities.length);
+        int numChildren = Math.min((mFieldEditTexts==null?0:mFieldEditTexts.length), ss.mVisibilities.length);
         for (int i = 0; i < numChildren; i++) {
             mFieldEditTexts[i].setVisibility(ss.mVisibilities[i]);
         }

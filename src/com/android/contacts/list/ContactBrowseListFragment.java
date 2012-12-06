@@ -44,6 +44,8 @@ import com.android.contacts.common.util.ContactLoaderUtils;
 
 import java.util.List;
 
+import com.android.internal.telephony.RILConstants.SimCardID;
+
 /**
  * Fragment containing a contact list used for browsing (as compared to
  * picking a contact with one of the PICK intents).
@@ -612,6 +614,14 @@ public abstract class ContactBrowseListFragment extends
 
     public void deleteContact(Uri contactUri) {
         if (mListener != null) mListener.onDeleteContactAction(contactUri);
+    }
+
+    public void saveToSimContact(Uri contactUri, SimCardID simId) {
+        if (mListener != null) mListener.onSaveToSimContactAction(contactUri, simId);
+    }
+
+    public void saveToPbContact(Uri contactUri) {
+        if (mListener != null) mListener.onSaveToPbContactAction(contactUri);
     }
 
     public void addToFavorites(Uri contactUri) {

@@ -21,6 +21,21 @@
         android:alphabeticShortcut="e" />
 
     <item
+        android:id="@+id/menu_save_to_sim"
+        android:title="@string/menu_save_to_sim" />
+
+    <item
+        android:id="@+id/menu_save_to_sim1"
+        android:title="@string/menu_save_to_sim1" />
+
+    <item
+        android:id="@+id/menu_save_to_sim2"
+        android:title="@string/menu_save_to_sim2" />
+
+    <item
+        android:id="@+id/menu_save_to_pb"
+        android:title="@string/menu_save_to_pb" />
+    <item
         android:id="@+id/menu_share"
         android:title="@string/menu_share"
         android:alphabeticShortcut="s" />

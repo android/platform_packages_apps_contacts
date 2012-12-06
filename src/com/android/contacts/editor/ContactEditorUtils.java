@@ -90,7 +90,7 @@ public class ContactEditorUtils {
      * Sets the {@link #KEY_KNOWN_ACCOUNTS} and {@link #KEY_DEFAULT_ACCOUNT} preference values to
      * empty strings to reset the state of the preferences file.
      */
-    private void resetPreferenceValues() {
+    public void resetPreferenceValues() {
         mPrefs.edit().putString(KEY_KNOWN_ACCOUNTS, "").putString(KEY_DEFAULT_ACCOUNT, "").apply();
     }
 

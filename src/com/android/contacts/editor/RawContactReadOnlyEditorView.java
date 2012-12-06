@@ -106,6 +106,9 @@ public class RawContactReadOnlyEditorView extends BaseRawContactEditorView
         mAccountNameTextView = (TextView) findViewById(R.id.account_name);
     }
 
+    @Override
+    public void setExistDataState(boolean IsEmailExisted,boolean IsSecondaryPhoneExisted,int existedPhoneType) {
+    }
     /**
      * Set the internal state for this view, given a current
      * {@link RawContactDelta} state and the {@link AccountType} that

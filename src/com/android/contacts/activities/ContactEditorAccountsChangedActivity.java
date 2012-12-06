@@ -37,6 +37,10 @@ import com.android.contacts.common.util.AccountsListAdapter.AccountListFilter;
 
 import java.util.List;
 
+import com.android.contacts.common.BrcmIccUtils;
+import com.android.contacts.common.model.account.LocalAccountType;
+import android.util.Log;
+
 /**
  * This activity can be shown to the user when creating a new contact to inform the user about
  * which account the contact will be saved in. There is also an option to add an account at
@@ -84,7 +88,41 @@ public class ContactEditorAccountsChangedActivity extends Activity {
             throw new IllegalStateException("Cannot have a negative number of accounts");
         }
 
-        if (numAccounts >= 2) {
+        boolean localContactAccountInstalled = false;
+        int numSimAccounts = 0;
+        if (accounts.contains(new AccountWithDataSet(
+                LocalAccountType.LOCAL_CONTACTS_ACCOUNT_NAME, LocalAccountType.ACCOUNT_TYPE, null))) {
+            localContactAccountInstalled = true;
+        }
+        if (accounts.contains(new AccountWithDataSet(
+                BrcmIccUtils.ACCOUNT_NAME_SIM1, BrcmIccUtils.ACCOUNT_TYPE_SIM, BrcmIccUtils.ACCOUNT_NAME_SIM1))) {
+            numSimAccounts++;
+        }
+        if (accounts.contains(new AccountWithDataSet(
+                BrcmIccUtils.ACCOUNT_NAME_SIM2, BrcmIccUtils.ACCOUNT_TYPE_SIM, BrcmIccUtils.ACCOUNT_NAME_SIM2))) {
+            numSimAccounts++;
+        }
+        Log.d(TAG, "onCreate(): localContactAccountInstalled = " + localContactAccountInstalled + ", numSimAccounts = " + numSimAccounts);
+
+        if ((!localContactAccountInstalled) && (0 < numSimAccounts) && (numAccounts == numSimAccounts)) {
+            // When the user has 2+ writable accounts, show a list of accounts so the user can pick
+            // which account to create a contact in.
+            setContentView(R.layout.contact_editor_accounts_changed_activity_with_picker);
+
+            final TextView textView = (TextView) findViewById(R.id.text);
+            textView.setText(getString(R.string.contact_editor_prompt_multiple_accounts));
+
+            final Button button = (Button) findViewById(R.id.add_account_button);
+            button.setText(getString(R.string.add_new_account));
+            button.setOnClickListener(mAddAccountClickListener);
+
+            final ListView accountListView = (ListView) findViewById(R.id.account_list);
+            mAccountListAdapter = new AccountsListAdapter(this,
+                    AccountListFilter.ACCOUNTS_CONTACT_WRITABLE_AND_LOCAL);
+            accountListView.setAdapter(mAccountListAdapter);
+            accountListView.setOnItemClickListener(mAccountListItemClickListener);
+        }
+        else if (numAccounts >= 2) {
             // When the user has 2+ writable accounts, show a list of accounts so the user can pick
             // which account to create a contact in.
             setContentView(R.layout.contact_editor_accounts_changed_activity_with_picker);

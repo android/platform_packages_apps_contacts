@@ -31,6 +31,8 @@ import com.android.contacts.common.model.Contact;
 import com.android.contacts.common.model.RawContactDeltaList;
 import com.android.contacts.util.ImageViewDrawableSetter;
 
+import android.text.TextUtils;
+import com.android.contacts.common.BrcmIccUtils;
 /**
  * Extends superclass with methods specifically for setting the contact-detail
  * photo.
@@ -83,9 +85,15 @@ public class ContactDetailPhotoSetter extends ImageViewDrawableSetter {
             if (mContactData.getPhotoUri() != null) {
                 photoUri = Uri.parse(mContactData.getPhotoUri());
             }
+            String accountType=BrcmIccUtils.getRawContactAccountTypeFromContactId(mContext.getContentResolver(), mContactData.getNameRawContactId());
+            boolean isSimContact=false;
+            if ((!TextUtils.isEmpty(accountType))&&(accountType.equals(BrcmIccUtils.ACCOUNT_TYPE_SIM))) {
+                isSimContact = true;
+            }
+
             Intent photoSelectionIntent = PhotoSelectionActivity.buildIntent(mContext,
                     photoUri, mPhotoBitmap, mPhotoBytes, rect, delta, mContactData.isUserProfile(),
-                    mContactData.isDirectoryEntry(), mExpandPhotoOnClick);
+                    mContactData.isDirectoryEntry(), mExpandPhotoOnClick,isSimContact);
             // Cache the bitmap directly, so the activity can pull it from the
             // photo manager.
             if (mPhotoBitmap != null) {

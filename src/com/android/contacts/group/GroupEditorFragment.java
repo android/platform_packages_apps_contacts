@@ -76,6 +76,10 @@ import com.google.common.base.Objects;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.android.internal.telephony.RILConstants.SimCardID;
+import com.android.contacts.common.SimContactsReadyHelper;
+import com.android.contacts.common.BrcmIccUtils;
+
 public class GroupEditorFragment extends Fragment implements SelectAccountDialogFragment.Listener {
     private static final String TAG = "GroupEditorFragment";
 
@@ -200,6 +204,8 @@ public class GroupEditorFragment extends Fragment implements SelectAccountDialog
     private ArrayList<Member> mListMembersToRemove = new ArrayList<Member>();
     private ArrayList<Member> mListToDisplay = new ArrayList<Member>();
 
+    private SimContactsReadyHelper mSimReadyHelper;
+
     public GroupEditorFragment() {
     }
 
@@ -241,11 +247,21 @@ public class GroupEditorFragment extends Fragment implements SelectAccountDialog
             final String dataSet = mIntentExtras == null ? null :
                     mIntentExtras.getString(Intents.Insert.DATA_SET);
 
+            if (null==mSimReadyHelper) {
+                mSimReadyHelper = new SimContactsReadyHelper(mContext, false);
+            }
+
             if (account != null) {
                 // Account specified in Intent - no data set can be specified in this manner.
                 mAccountName = account.name;
                 mAccountType = account.type;
                 mDataSet = dataSet;
+
+                if (!haveGasSpace(mAccountType, mAccountName)) {
+                    Log.d(TAG, "onActivityCreated:No GAS space");
+                    revert();
+                }
+
                 setupEditorForAccount();
             } else {
                 // No Account specified. Let the user choose from a disambiguation dialog.
@@ -326,6 +342,12 @@ public class GroupEditorFragment extends Fragment implements SelectAccountDialog
             mAccountName = accounts.get(0).name;
             mAccountType = accounts.get(0).type;
             mDataSet = accounts.get(0).dataSet;
+
+            if (!haveGasSpace(mAccountType, mAccountName)) {
+                Log.d(TAG, "selectAccountAndCreateGroup:No GAS space");
+                revert();
+            }
+
             setupEditorForAccount();
             return;  // Don't show a dialog.
         }
@@ -336,11 +358,38 @@ public class GroupEditorFragment extends Fragment implements SelectAccountDialog
                 null);
     }
 
+    private boolean haveGasSpace(String accountType, String accountName) {
+        if ((accountType!=null) && (accountName!=null) && BrcmIccUtils.ACCOUNT_TYPE_SIM.equals(accountType)) {
+            int simId;
+
+            if (BrcmIccUtils.ACCOUNT_NAME_SIM2.equals(accountName)) {
+                simId = SimCardID.ID_ONE.toInt();
+                mSimReadyHelper.setSim2CapabilityInfo(mSimReadyHelper.getIccCardCapabilityInfo(mContext.getContentResolver(), SimCardID.ID_ONE));
+
+            } else {
+                simId = SimCardID.ID_ZERO.toInt();
+                mSimReadyHelper.setSim1CapabilityInfo(mSimReadyHelper.getIccCardCapabilityInfo(mContext.getContentResolver(), SimCardID.ID_ZERO));
+            }
+
+            if (mSimReadyHelper!=null && mSimReadyHelper.getFreeGASCount(simId)<=0) {
+                Toast.makeText(getActivity(), R.string.gasNoSimSpace,
+                                Toast.LENGTH_LONG).show();
+                return false;
+            }
+        }
+        return true;
+    }
+
     @Override
     public void onAccountChosen(AccountWithDataSet account, Bundle extraArgs) {
         mAccountName = account.name;
         mAccountType = account.type;
         mDataSet = account.dataSet;
+
+        if(!haveGasSpace(mAccountType,mAccountName)) {
+            Log.d(TAG, "onAccountChosen:No GAS space");
+            revert();
+        }
         setupEditorForAccount();
     }
 

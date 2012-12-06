@@ -127,6 +127,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.android.contacts.common.BrcmIccUtils;
+import android.os.SystemProperties;
+
 public class ContactDetailFragment extends Fragment implements FragmentKeyListener,
         SelectAccountDialogFragment.Listener, OnItemClickListener {
 
@@ -574,6 +577,12 @@ public class ContactDetailFragment extends Fragment implements FragmentKeyListen
                         smsIntent = new Intent(Intent.ACTION_SENDTO,
                                 Uri.fromParts(CallUtil.SCHEME_SMSTO, entry.data, null));
                         smsIntent.setComponent(smsComponent);
+                    }
+                    if(SystemProperties.getInt("ro.dual.sim.phone", 0) == 1) {
+                        if (null != phoneIntent) {
+                            phoneIntent.setClassName("com.android.dialer", "com.android.dialer.PhoneSelect");
+                            phoneIntent.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                        }
                     }
 
                     // Configure Icons and Intents.
@@ -1964,13 +1973,27 @@ public class ContactDetailFragment extends Fragment implements FragmentKeyListen
     public boolean handleKeyDown(int keyCode) {
         switch (keyCode) {
             case KeyEvent.KEYCODE_CALL: {
-                TelephonyManager telephonyManager =
-                    (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
-                if (telephonyManager != null &&
-                        telephonyManager.getCallState() != TelephonyManager.CALL_STATE_IDLE) {
-                    // Skip out and let the key be handled at a higher level
-                    break;
-                }
+                     if(SystemProperties.getInt("ro.dual.sim.phone", 0) == 1) {
+                        TelephonyManager telephonyManager =
+                            (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE1);
+                        TelephonyManager telephonyManager2 =
+                            (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE2);
+                        if ( (telephonyManager != null &&
+                                telephonyManager.getCallState() != TelephonyManager.CALL_STATE_IDLE) ||
+                                (telephonyManager2 != null &&
+                                telephonyManager2.getCallState() != TelephonyManager.CALL_STATE_IDLE) ) {
+                            // Skip out and let the key be handled at a higher level
+                            break;
+                        }
+                    }else {
+                        TelephonyManager telephonyManager =
+                            (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE1);
+                        if (telephonyManager != null &&
+                                telephonyManager.getCallState() != TelephonyManager.CALL_STATE_IDLE) {
+                            // Skip out and let the key be handled at a higher level
+                            break;
+                        }
+                    }
 
                 int index = mListView.getSelectedItemPosition();
                 if (index != -1) {
@@ -1982,7 +2005,15 @@ public class ContactDetailFragment extends Fragment implements FragmentKeyListen
                     }
                 } else if (mPrimaryPhoneUri != null) {
                     // There isn't anything selected, call the default number
-                    mContext.startActivity(CallUtil.getCallIntent(mPrimaryPhoneUri));
+                    if(SystemProperties.getInt("ro.dual.sim.phone", 0) == 1) {
+                        Intent intent = new Intent();
+                        intent.setClassName("com.android.dialer", "com.android.dialer.PhoneSelect");
+                        intent.setData(mPrimaryPhoneUri);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                        mContext.startActivity(intent);
+                    }else {
+                        mContext.startActivity(CallUtil.getCallIntent(mPrimaryPhoneUri));
+                    }
                     return true;
                 }
                 return false;
@@ -2110,8 +2141,16 @@ public class ContactDetailFragment extends Fragment implements FragmentKeyListen
                     break;
                 }
                 case Directory.EXPORT_SUPPORT_ANY_ACCOUNT: {
-                    final List<AccountWithDataSet> accounts =
-                            AccountTypeManager.getInstance(mContext).getAccounts(true);
+                    final List<AccountWithDataSet> accounts = new ArrayList<AccountWithDataSet>(AccountTypeManager.getInstance(mContext).getAccounts(true));
+                    Log.d(TAG, "MakeLocalCopyQuickFix.execute(): size before remove SIM accounts = " + accounts.size());
+                    accounts.remove(new AccountWithDataSet(
+                            BrcmIccUtils.ACCOUNT_NAME_SIM1, BrcmIccUtils.ACCOUNT_TYPE_SIM, BrcmIccUtils.ACCOUNT_NAME_SIM1));
+                    if(SystemProperties.getInt("ro.dual.sim.phone", 0) == 1) {
+                        accounts.remove(new AccountWithDataSet(
+                                BrcmIccUtils.ACCOUNT_NAME_SIM2, BrcmIccUtils.ACCOUNT_TYPE_SIM, BrcmIccUtils.ACCOUNT_NAME_SIM2));
+                    }
+                    Log.d(TAG, "MakeLocalCopyQuickFix.execute(): size after remove SIM accounts = " + accounts.size());
+
                     if (accounts.isEmpty()) {
                         createCopy(null);
                         return;  // Don't show a dialog.
@@ -2126,7 +2165,8 @@ public class ContactDetailFragment extends Fragment implements FragmentKeyListen
 
                     SelectAccountDialogFragment.show(getFragmentManager(),
                             ContactDetailFragment.this, R.string.dialog_new_contact_account,
-                            AccountListFilter.ACCOUNTS_CONTACT_WRITABLE, null);
+                            AccountListFilter.ACCOUNTS_CONTACT_WRITABLE_WITHOUT_SIM,
+                            null);
                     break;
                 }
             }

@@ -119,6 +119,7 @@ public abstract class BaseRawContactEditorView extends LinearLayout {
      */
     public abstract void setState(RawContactDelta state, AccountType source, ViewIdGenerator vig,
             boolean isProfile);
+    public abstract void setExistDataState(boolean IsEmailExisted,boolean IsSecondaryPhoneExisted, int existedPhoneType );
 
     /* package */ void setExpanded(boolean value) {
         // only allow collapsing if we are one of several children

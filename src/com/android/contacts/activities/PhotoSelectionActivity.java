@@ -88,6 +88,9 @@ public class PhotoSelectionActivity extends Activity {
      */
     public static final String EXPAND_PHOTO = "expand_photo";
 
+    /**Intent extra to indicate it is SIM contact or not */
+    public static final String IS_SIM_CONTACT = "is_sim_contact";
+
     /** Source bounds of the image that was clicked on. */
     private Rect mSourceBounds;
 
@@ -107,6 +110,9 @@ public class PhotoSelectionActivity extends Activity {
 
     /** Whether to animate the photo to an expanded view covering more of the screen. */
     private boolean mExpandPhoto;
+
+    /** Is SIM contact or not. */
+    private boolean mIsSIMContact;
 
     /**
      * Side length (in pixels) of the expanded photo if to be expanded. Photos are expected to
@@ -175,6 +181,8 @@ public class PhotoSelectionActivity extends Activity {
         mIsProfile = intent.getBooleanExtra(IS_PROFILE, false);
         mIsDirectoryContact = intent.getBooleanExtra(IS_DIRECTORY_CONTACT, false);
         mExpandPhoto = intent.getBooleanExtra(EXPAND_PHOTO, false);
+
+        mIsSIMContact = intent.getBooleanExtra(IS_SIM_CONTACT, false);
 
         // Pull out photo expansion properties from resources
         mExpandedPhotoSize = getResources().getDimensionPixelSize(
@@ -273,7 +281,7 @@ public class PhotoSelectionActivity extends Activity {
      */
     public static Intent buildIntent(Context context, Uri photoUri, Bitmap photoBitmap,
             byte[] photoBytes, Rect photoBounds, RawContactDeltaList delta, boolean isProfile,
-            boolean isDirectoryContact, boolean expandPhotoOnClick) {
+            boolean isDirectoryContact, boolean expandPhotoOnClick,boolean isSimContact) {
         Intent intent = new Intent(context, PhotoSelectionActivity.class);
         if (photoUri != null && photoBitmap != null && photoBytes != null) {
             intent.putExtra(PHOTO_URI, photoUri);
@@ -283,9 +291,9 @@ public class PhotoSelectionActivity extends Activity {
         intent.putExtra(IS_PROFILE, isProfile);
         intent.putExtra(IS_DIRECTORY_CONTACT, isDirectoryContact);
         intent.putExtra(EXPAND_PHOTO, expandPhotoOnClick);
+        intent.putExtra(IS_SIM_CONTACT, isSimContact);
         return intent;
     }
-
     private void finishImmediatelyWithNoAnimation() {
         super.finish();
     }
@@ -490,8 +498,13 @@ public class PhotoSelectionActivity extends Activity {
         // Always provide the same two choices (take a photo with the camera, select a photo
         // from the gallery), but with slightly different wording.
         // Note: don't worry about this being a read-only contact; this code will not be invoked.
+
+       // int mode = (mPhotoUri == null) ? PhotoActionPopup.Modes.NO_PHOTO
+       //         : PhotoActionPopup.Modes.PHOTO_DISALLOW_PRIMARY;
+
         int mode = (mPhotoUri == null) ? PhotoActionPopup.Modes.NO_PHOTO
-                : PhotoActionPopup.Modes.PHOTO_DISALLOW_PRIMARY;
+                : (mIsSIMContact?PhotoActionPopup.Modes.READ_ONLY_ALLOW_PRIMARY:PhotoActionPopup.Modes.PHOTO_DISALLOW_PRIMARY);
+
         // We don't want to provide a choice to remove the photo for two reasons:
         //   1) the UX designs don't call for it
         //   2) even if we wanted to, the implementation would be moderately hairy

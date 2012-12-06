@@ -17,6 +17,8 @@ package com.android.contacts.list;
 
 import android.net.Uri;
 
+import com.android.internal.telephony.RILConstants.SimCardID;
+
 /**
  * Action callbacks that can be sent by a contact list.
  */
@@ -69,4 +71,14 @@ public interface OnContactBrowserActionListener  {
      * Invoked if the requested selected contact is not found in the list.
      */
     void onInvalidSelection();
+
+    /**
+     * Saves the specified phonebook contact to sim.
+     */
+    void onSaveToSimContactAction(Uri contactLookupUri, SimCardID simId);
+
+    /**
+     * Saves the specified sim contact to phonebook.
+     */
+    void onSaveToPbContactAction(Uri contactLookupUri);
 }

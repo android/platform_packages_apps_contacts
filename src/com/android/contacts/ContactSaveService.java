@@ -69,6 +69,19 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+import com.android.internal.telephony.RILConstants.SimCardID;
+import com.android.contacts.common.model.ValuesDelta;
+import com.android.contacts.common.BrcmIccUtils;
+import com.android.internal.telephony.IccProvider;
+import android.provider.ContactsContract.CommonDataKinds.Photo;
+import android.provider.ContactsContract.CommonDataKinds.StructuredName;
+import android.provider.ContactsContract.CommonDataKinds.Email;
+import android.provider.ContactsContract.CommonDataKinds.Phone;
+import java.io.ByteArrayOutputStream;
+import android.text.TextUtils;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 /**
  * A service responsible for saving changes to the content provider.
  */
@@ -336,10 +349,462 @@ public class ContactSaveService extends IntentService {
         return serviceIntent;
     }
 
+
+    private long insertSimContactToContactsProvider(ContentResolver resolver, SimCardID simId, String newName, String newNumber, String newEmail, String newNumberAnr) {
+        if (DEBUG) Log.d(TAG, "=>insertSimContactToContactsProvider()");
+
+        ArrayList<ContentProviderOperation> ops = new ArrayList<ContentProviderOperation>();
+
+        int rawContactInsertIndex = ops.size();
+
+        int aggregationMode = RawContacts.AGGREGATION_MODE_DISABLED;
+        String accountType = BrcmIccUtils.ACCOUNT_TYPE_SIM;
+        String accountName = BrcmIccUtils.ACCOUNT_NAME_SIM1;
+        if (SimCardID.ID_ONE == simId) {
+            accountName = BrcmIccUtils.ACCOUNT_NAME_SIM2;
+        }
+
+        // insert record
+        ops.add(ContentProviderOperation.newInsert(RawContacts.CONTENT_URI)
+                .withValue(RawContacts.AGGREGATION_MODE, aggregationMode)
+                .withValue(RawContacts.DELETED, 0)
+                .withValue(RawContacts.ACCOUNT_TYPE, accountType)
+                .withValue(RawContacts.ACCOUNT_NAME, accountName)
+                .withValue(RawContacts.DATA_SET, accountName)
+                .withValue(RawContacts.VERSION, 1)
+                .withValue(RawContacts.DIRTY, 0)
+                .withValue(RawContacts.SYNC1, null)
+                .withValue(RawContacts.SYNC2, null)
+                .withValue(RawContacts.SYNC3, null)
+                .withValue(RawContacts.SYNC4, null)
+                .withValues(new ContentValues())
+                .build());
+
+        // insert photo
+        byte[] photoIcon = null;
+        Bitmap photo;
+
+        if (SimCardID.ID_ONE == simId) {
+            photo = BitmapFactory.decodeResource(getResources(),R.drawable.ic_sim2_picture);
+        } else {
+            photo = BitmapFactory.decodeResource(getResources(),R.drawable.ic_sim1_picture);
+        }
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        photo.compress(Bitmap.CompressFormat.JPEG, 75, stream);
+        photoIcon = stream.toByteArray();
+
+        if (null != photoIcon) {
+            if (DEBUG) Log.d(TAG, "insertSimContactToContactsProvider(): [" + rawContactInsertIndex + "].photo");
+
+            ops.add(ContentProviderOperation.newInsert(Data.CONTENT_URI)
+                    .withValueBackReference(Photo.RAW_CONTACT_ID, rawContactInsertIndex)
+                    .withValue(Data.MIMETYPE, Photo.CONTENT_ITEM_TYPE)
+                    .withValue(Photo.PHOTO, photoIcon)
+                    .withValue(Data.IS_SUPER_PRIMARY, 1)
+                    .build());
+        }
+
+        // insert name
+        if (!TextUtils.isEmpty(newName)) {
+            if (DEBUG) Log.d(TAG, "insertSimContactToContactsProvider(): [" + rawContactInsertIndex + "].name=" + newName);
+
+            ops.add(ContentProviderOperation.newInsert(Data.CONTENT_URI)
+                    .withValueBackReference(StructuredName.RAW_CONTACT_ID, rawContactInsertIndex)
+                    .withValue(Data.MIMETYPE, StructuredName.CONTENT_ITEM_TYPE)
+                    .withValue(StructuredName.DISPLAY_NAME, newName)
+                    .build());
+        }
+
+        // insert number
+        if (!TextUtils.isEmpty(newNumber)) {
+            if (DEBUG) Log.d(TAG, "insertSimContactToContactsProvider(): [" + rawContactInsertIndex + "].number=" + newNumber);
+
+            ops.add(ContentProviderOperation.newInsert(Data.CONTENT_URI)
+                    .withValueBackReference(Phone.RAW_CONTACT_ID, rawContactInsertIndex)
+                    .withValue(Data.MIMETYPE, Phone.CONTENT_ITEM_TYPE)
+                    .withValue(Phone.TYPE, Phone.TYPE_MOBILE)
+                    .withValue(Phone.NUMBER, newNumber)
+                    .withValue(Data.IS_PRIMARY, 1)
+                    .build());
+        }
+
+        // insert allEmails
+        if (!TextUtils.isEmpty(newEmail)) {
+            if (DEBUG) Log.d(TAG, "insertSimContactToContactsProvider(): [" + rawContactInsertIndex + "].email=" + newEmail);
+
+            ops.add(ContentProviderOperation.newInsert(Data.CONTENT_URI)
+                    .withValueBackReference(Email.RAW_CONTACT_ID, rawContactInsertIndex)
+                    .withValue(Data.MIMETYPE, Email.CONTENT_ITEM_TYPE)
+                    .withValue(Email.TYPE, Email.TYPE_MOBILE)
+                    .withValue(Email.DATA, newEmail)
+                    .build());
+        }
+
+
+        // insert ANR
+        if (!TextUtils.isEmpty(newNumberAnr)) {
+            if (DEBUG) Log.d(TAG, "insertSimContactToContactsProvider(): [" + rawContactInsertIndex + "].anr=" + newNumberAnr);
+
+            ops.add(ContentProviderOperation.newInsert(Data.CONTENT_URI)
+                    .withValueBackReference(Phone.RAW_CONTACT_ID, rawContactInsertIndex)
+                    .withValue(Data.MIMETYPE, Phone.CONTENT_ITEM_TYPE)
+                    .withValue(Phone.TYPE, Phone.TYPE_HOME)
+                    .withValue(Phone.NUMBER, newNumberAnr)
+                    .withValue(Data.IS_PRIMARY, 0)
+                    .build());
+        }
+
+        ContentProviderResult[] results;
+        int operationSize = ops.size();
+        if (0 < operationSize) {
+            try {
+                results = resolver.applyBatch(ContactsContract.AUTHORITY, ops);
+                for (int i = 0; i < operationSize; i++) {
+                    ContentProviderOperation operation = ops.get(i);
+                    if (operation.getType() == ContentProviderOperation.TYPE_INSERT
+                            && operation.getUri().getEncodedPath().contains(
+                                    RawContacts.CONTENT_URI.getEncodedPath())) {
+                        return ContentUris.parseId(results[i].uri);
+                    }
+                }
+            } catch (OperationApplicationException e) {
+                if (DEBUG) Log.d(TAG, "insertSimContactToContactsProvider():applyBatch(): OperationApplicationException: " + e.toString() + ". message = " + e.getMessage());
+            } catch (RemoteException e) {
+                if (DEBUG) Log.d(TAG, "insertSimContactToContactsProvider():applyBatch(): RemoteException: " + e.toString() + ". message = " + e.getMessage());
+            }
+        }
+
+        return -1;
+    }
+
+    private boolean updateSimContactToContactsProvider(ContentResolver resolver,
+                                                       long rawContactId,
+                                                       String[] oldIccConatctInfo,
+                                                       int[] dataId,
+                                                       String newName,
+                                                       String newNumber,
+                                                       String newEmail,
+                                                       String newNumberAnr) {
+        if (DEBUG) Log.d(TAG, "=>updateSimContactToContactsProvider()");
+
+        ArrayList<ContentProviderOperation> ops = new ArrayList<ContentProviderOperation>();
+
+        ops.add(ContentProviderOperation.newUpdate(RawContacts.CONTENT_URI)
+                .withSelection(RawContacts._ID + "=" + rawContactId, null)
+                .withValue(RawContacts.AGGREGATION_MODE, RawContacts.AGGREGATION_MODE_SUSPENDED)
+                .build());
+
+        // update name
+        if (!oldIccConatctInfo[1].equals(newName)) {
+            if (-1==dataId[0]) {
+                // insert
+                if (DEBUG) Log.d(TAG, "updateSimContactToContactsProvider(): insert [" + rawContactId + "].name=" + newName);
+                ops.add(ContentProviderOperation.newInsert(Data.CONTENT_URI)
+                        .withValue(Data.RAW_CONTACT_ID, rawContactId)
+                        .withValue(Data.MIMETYPE, StructuredName.CONTENT_ITEM_TYPE)
+                        .withValue(StructuredName.DISPLAY_NAME, newName)
+                        .build());
+            }else if (-1!=dataId[0] && TextUtils.isEmpty(newName)) {
+                if (DEBUG) Log.d(TAG, "updateSimContactToContactsProvider(): delete [" + rawContactId + "].name=" + newName);
+                ops.add(ContentProviderOperation.newDelete(Data.CONTENT_URI)
+                        .withSelection(Data._ID + "=" + dataId[0], null)
+                        .build());
+            }else {
+                if (DEBUG) Log.d(TAG, "updateSimContactToContactsProvider(): [" + rawContactId + "].name=" + newName + ", nameDataId = " + dataId[0]);
+
+                ops.add(ContentProviderOperation.newUpdate(Data.CONTENT_URI)
+                        .withSelection(Data._ID + "=" + dataId[0], null)
+                        .withValue(StructuredName.GIVEN_NAME, "")
+                        .withValue(StructuredName.FAMILY_NAME, "")
+                        .withValue(StructuredName.PREFIX, "")
+                        .withValue(StructuredName.MIDDLE_NAME, "")
+                        .withValue(StructuredName.SUFFIX, "")
+                        .withValue(StructuredName.DISPLAY_NAME, newName)
+                        .build());
+            }
+        }
+
+        // update number
+        if (!oldIccConatctInfo[2].equals(newNumber)) {
+            if (-1==dataId[1]) {
+                // insert number
+                if (DEBUG) Log.d(TAG, "updateSimContactToContactsProvider(): insert [" + rawContactId + "].number=" + newNumber);
+
+                ops.add(ContentProviderOperation.newInsert(Data.CONTENT_URI)
+                        .withValue(Data.RAW_CONTACT_ID, rawContactId)
+                        .withValue(Data.MIMETYPE, Phone.CONTENT_ITEM_TYPE)
+                        .withValue(Phone.TYPE, Phone.TYPE_MOBILE)
+                        .withValue(Phone.NUMBER, newNumber)
+                        .withValue(Data.IS_PRIMARY, 1)
+                        .build());
+            }else if (-1!=dataId[1] && TextUtils.isEmpty(newNumber)) {
+                if (DEBUG) Log.d(TAG, "updateSimContactToContactsProvider(): delete [" + rawContactId + "].number=" + newNumber);
+                ops.add(ContentProviderOperation.newDelete(Data.CONTENT_URI)
+                        .withSelection(Data._ID + "=" + dataId[1], null)
+                        .build());
+            }else {
+                if (DEBUG) Log.d(TAG, "updateSimContactToContactsProvider(): [" + rawContactId + "].number=" + newNumber);
+
+                ops.add(ContentProviderOperation.newUpdate(Data.CONTENT_URI)
+                        .withSelection(Data._ID + "=" + dataId[1], null)
+                        .withValue(Phone.NUMBER, newNumber)
+                        .build());
+            }
+        }
+
+        // update email
+        if (!oldIccConatctInfo[3].equals(newEmail)) {
+            // insert email
+            if (-1==dataId[2]) {
+                if (DEBUG) Log.d(TAG, "updateSimContactToContactsProvider(): insert [" + rawContactId + "].email=" + newEmail);
+
+                ops.add(ContentProviderOperation.newInsert(Data.CONTENT_URI)
+                        .withValue(Data.RAW_CONTACT_ID, rawContactId)
+                        .withValue(Data.MIMETYPE, Email.CONTENT_ITEM_TYPE)
+                        .withValue(Email.TYPE, Email.TYPE_MOBILE)
+                        .withValue(Email.DATA, newEmail)
+                        .build());
+            }else if (-1!=dataId[2] && TextUtils.isEmpty(newEmail)) {
+                if (DEBUG) Log.d(TAG, "updateSimContactToContactsProvider():delete  [" + rawContactId + "].email=" + newEmail);
+                ops.add(ContentProviderOperation.newDelete(Data.CONTENT_URI)
+                        .withSelection(Data._ID + "=" + dataId[2], null)
+                        .build());
+            }else {
+                if (DEBUG) Log.d(TAG, "updateSimContactToContactsProvider(): [" + rawContactId + "].email=" + newEmail);
+
+                ops.add(ContentProviderOperation.newUpdate(Data.CONTENT_URI)
+                        .withSelection(Data._ID + "=" + dataId[2], null)
+                        .withValue(Email.DATA, newEmail)
+                        .build());
+            }
+        }
+
+        // update ANR
+        if (!oldIccConatctInfo[4].equals(newNumberAnr)) {
+            // insert ANR
+            if (-1 == dataId[3]) {
+                if (DEBUG) Log.d(TAG, "updateSimContactToContactsProvider(): insert [" + rawContactId + "].anr=" + newNumberAnr);
+
+                ops.add(ContentProviderOperation.newInsert(Data.CONTENT_URI)
+                        .withValue(Data.RAW_CONTACT_ID, rawContactId)
+                        .withValue(Data.MIMETYPE, Phone.CONTENT_ITEM_TYPE)
+                        .withValue(Phone.TYPE, Phone.TYPE_HOME)
+                        .withValue(Data.IS_PRIMARY, 0)
+                        .withValue(Phone.NUMBER, newNumberAnr)
+                        .build());
+            }else if (-1!=dataId[3] && TextUtils.isEmpty(newNumberAnr)) {
+                if (DEBUG) Log.d(TAG, "updateSimContactToContactsProvider(): delete [" + rawContactId + "].anr=" + newNumberAnr);
+                ops.add(ContentProviderOperation.newDelete(Data.CONTENT_URI)
+                        .withSelection(Data._ID + "=" + dataId[3], null)
+                        .build());
+            }else {
+                if (DEBUG) Log.d(TAG, "updateSimContactToContactsProvider(): [" + rawContactId + "].anr=" + newNumberAnr);
+
+                ops.add(ContentProviderOperation.newUpdate(Data.CONTENT_URI)
+                        .withSelection(Data._ID + "=" + dataId[3], null)
+                        .withValue(Phone.NUMBER, newNumberAnr)
+                        .build());
+            }
+        }
+
+        ops.add(ContentProviderOperation.newUpdate(RawContacts.CONTENT_URI)
+                .withSelection(RawContacts._ID + "=" + rawContactId, null)
+                .withValue(RawContacts.AGGREGATION_MODE, RawContacts.AGGREGATION_MODE_DISABLED)
+                .build());
+
+        boolean exceptionOccurs = false;
+        if (2 < ops.size()) {
+            try {
+                getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
+            } catch (OperationApplicationException e) {
+                exceptionOccurs = true;
+                if (DEBUG) Log.d(TAG, "updateSimContactToContactsProvider():applyBatch(): OperationApplicationException: " + e.toString() + ". message = " + e.getMessage());
+            } catch (RemoteException e) {
+                exceptionOccurs = true;
+                if (DEBUG) Log.d(TAG, "updateSimContactToContactsProvider():applyBatch(): RemoteException: " + e.toString() + ". message = " + e.getMessage());
+            }
+        }
+
+        return !exceptionOccurs;
+    }
+
+    private long saveSimContact(ContentResolver resolver, RawContactDelta state) {
+        if (DEBUG) Log.d(TAG, "=>saveSimContact(): state = " + state);
+
+        final ValuesDelta values = state.getValues();
+
+        boolean isInsert = state.isContactInsert();
+        long rawContactId = values.getAsLong(RawContacts._ID);
+
+        if (DEBUG) Log.d(TAG, "saveSimContact(): rawContactId = " + rawContactId + ", isInsert = " + isInsert);
+
+        final String accountName = values.getAsString(RawContacts.ACCOUNT_NAME);
+        if (DEBUG) Log.d(TAG, "saveSimContact(): accountName = " + accountName);
+
+        final SimCardID simId;
+        if (BrcmIccUtils.ACCOUNT_NAME_SIM2.equals(accountName)) {
+            simId = SimCardID.ID_ONE;
+        } else {
+            simId = SimCardID.ID_ZERO;
+        }
+
+        String displayName = "";
+        ValuesDelta primary = state.getPrimaryEntry(StructuredName.CONTENT_ITEM_TYPE);
+        if (null != primary) {
+            String name;
+            name = primary.getAsString(StructuredName.DISPLAY_NAME);
+            if (null != name) {
+                displayName = name;
+            }
+        }
+        if (DEBUG) Log.d(TAG, "saveSimContact(): displayName = " + displayName);
+
+        String newNumber = "";
+        String newNumberAnr = "";
+        ArrayList<ValuesDelta> phones = state.getMimeEntries(Phone.CONTENT_ITEM_TYPE);
+        if (phones != null) {
+            for (int i = 0; i < phones.size(); i++) {
+                ValuesDelta phone = phones.get(i);
+                if (phone.containsKey(Phone.TYPE) && phone.containsKey(Phone.NUMBER)) {
+                    int phoneType = phone.getAsInteger(Phone.TYPE);
+                    String phoneNumber = phone.getAsString(Phone.NUMBER);
+                    if (DEBUG) Log.d(TAG, "saveSimContact(): phones["+i+"]: phoneNumber: " + phoneNumber
+                            + ", phoneType = " + phoneType);
+                    if (!TextUtils.isEmpty(phoneNumber)) {
+                        boolean isDelete = phone.isDelete();
+                        if (isDelete) {
+                            if (DEBUG) Log.d(TAG, "saveSimContact(): phones["+i+"] is delete");
+                            phoneNumber = "";
+                        } else {
+                            phoneNumber = phoneNumber.replaceAll("[\\(\\)\\-\\./; ]", "");
+                        }
+                        if (phoneType == Phone.TYPE_MOBILE) {
+                            if (!TextUtils.isEmpty(newNumber)) {
+                                newNumberAnr = phoneNumber;
+                            } else {
+                                newNumber = phoneNumber;
+                            }
+                        } else if (phoneType == Phone.TYPE_HOME) {
+                            if (!TextUtils.isEmpty(newNumberAnr)) {
+                                if (TextUtils.isEmpty(newNumber)) {
+                                    newNumber = phoneNumber;
+                                } else {
+                                    newNumberAnr = phoneNumber;
+                                }
+                            } else {
+                                newNumberAnr = phoneNumber;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        String newEmail = "";
+        ArrayList<ValuesDelta> emails = state.getMimeEntries(Email.CONTENT_ITEM_TYPE);
+        if (emails != null && 0 < emails.size()) {
+            ValuesDelta email = emails.get(0);
+            String emailAddress;
+            if (email.containsKey(Email.DATA)) {
+                emailAddress = email.getAsString(Email.DATA);
+                if (email.isDelete()) {
+                    newEmail = "";
+                } else if (!TextUtils.isEmpty(emailAddress)) {
+                    newEmail = emailAddress;
+                }
+            }
+        }
+        if (DEBUG) Log.d(TAG, "saveSimContact(): newEmail = " + newEmail);
+
+        StringBuilder groupString = new StringBuilder();
+        ArrayList<Long> origGroupIds = BrcmIccUtils.getGroupIdsFromRawContactId(resolver, rawContactId);
+        ArrayList<Long> groupIdToAdd = new ArrayList<Long>();
+        ArrayList<Long> groupIdToRemove = new ArrayList<Long>();
+        ArrayList<ValuesDelta> groups = state.getMimeEntries(GroupMembership.CONTENT_ITEM_TYPE);
+        if (groups != null) {
+            if (DEBUG) Log.d(TAG, "saveSimContact(): groups size = " + groups.size());
+            for (ValuesDelta group : groups) {
+                if (DEBUG) Log.d(TAG, "saveSimContact(): group = " + group);
+                if (group.containsKey(GroupMembership.GROUP_ROW_ID)) {
+                    long groupId = group.getAsLong(GroupMembership.GROUP_ROW_ID);
+
+                    if (!group.isDelete()) {
+                        if (DEBUG) Log.d(TAG, "saveSimContact(): not deleted groupId = " + groupId);
+                        if (!origGroupIds.contains(groupId)) {
+                            groupIdToAdd.add(groupId);
+                        }
+
+                        String iccGroupId = BrcmIccUtils.getIccGroupIdFromGroupId(resolver, groupId);
+                        if (!TextUtils.isEmpty(iccGroupId)) {
+                            groupString.append(iccGroupId);
+                            groupString.append(",");
+                        }
+                    } else {
+                        if (DEBUG) Log.d(TAG, "saveSimContact(): deleted groupId = "+ groupId);
+                        if (!origGroupIds.contains(groupId)) {
+                            Log.e(TAG, "saveSimContact(): delete a group not exist. groupId = " + groupId);
+                        }
+                        groupIdToRemove.add(groupId);
+                    }
+                }
+            }
+        } else {
+            if (DEBUG) Log.d(TAG, "saveSimContact(): groups == null");
+        }
+
+        String newIccGroupId = groupString.toString();
+        if (DEBUG) Log.d(TAG, "saveSimContact(): newIccGroupId = " + newIccGroupId);
+
+        if (isInsert) {
+            if (!BrcmIccUtils.insertIccCardContact(resolver, simId, displayName, newNumber, newEmail, newNumberAnr, newIccGroupId)) {
+                return -1;
+            }
+
+            rawContactId = insertSimContactToContactsProvider(resolver, simId, displayName, newNumber, newEmail, newNumberAnr);
+            if (DEBUG) Log.d(TAG, "saveSimContact(): rawContactId = " + rawContactId);
+        } else {
+            int[] dataId = new int[4];
+            String[] contactInfo = BrcmIccUtils.getIccContactInfo(resolver, rawContactId, dataId);
+
+            if (!BrcmIccUtils.updateIccCardContact(resolver,
+                                                   simId,
+                                                   contactInfo[1],
+                                                   displayName,
+                                                   contactInfo[2],
+                                                   newNumber,
+                                                   contactInfo[3],
+                                                   newEmail,
+                                                   contactInfo[4],
+                                                   newNumberAnr,
+                                                   contactInfo[5],
+                                                   newIccGroupId,
+                                                   Integer.valueOf(contactInfo[6]))) {
+                Log.e(TAG, "saveSimContact(): updateIccCardContact() == false");
+                return -1;
+            }
+
+            if (!updateSimContactToContactsProvider(resolver, rawContactId, contactInfo, dataId, displayName, newNumber, newEmail, newNumberAnr)) {
+                Log.e(TAG, "saveSimContact(): updateSimContactToContactsProvider() == false");
+                return -1;
+            }
+        }
+
+        long[] rawContactIdAry = new long[] {rawContactId};
+        for (Long groupId : groupIdToAdd) {
+            addMembersToGroup(resolver, rawContactIdAry, groupId);
+        }
+
+        for (Long groupId : groupIdToRemove) {
+            removeMembersFromGroup(resolver, rawContactIdAry, groupId);
+        }
+
+        return rawContactId;
+    }
     private void saveContact(Intent intent) {
         RawContactDeltaList state = intent.getParcelableExtra(EXTRA_CONTACT_STATE);
         boolean isProfile = intent.getBooleanExtra(EXTRA_SAVE_IS_PROFILE, false);
         Bundle updatedPhotos = intent.getParcelableExtra(EXTRA_UPDATED_PHOTOS);
+        Intent callbackIntent = intent.getParcelableExtra(EXTRA_CALLBACK_INTENT);
 
         // Trim any empty fields, and RawContacts, before persisting
         final AccountTypeManager accountTypes = AccountTypeManager.getInstance(this);
@@ -357,6 +822,26 @@ public class ContactSaveService extends IntentService {
         int tries = 0;
         while (tries++ < PERSIST_TRIES) {
             try {
+                if (0 < state.size()) {
+                    final ValuesDelta values = state.get(0).getValues();
+                    final String accountType = values.getAsString(RawContacts.ACCOUNT_TYPE);
+                    if (BrcmIccUtils.ACCOUNT_TYPE_SIM.equals(accountType)) {
+                        final long rawContactId = saveSimContact(resolver, state.get(0));
+                        if (-1 != rawContactId) {
+                            final Uri rawContactUri = ContentUris.withAppendedId(RawContacts.CONTENT_URI,
+                                    rawContactId);
+
+                            lookupUri = RawContacts.getContactLookupUri(resolver, rawContactUri);
+                            Log.v(TAG, "Saved contact. New URI: " + lookupUri);
+                            // Mark the intent to indicate that the save was successful (even if the lookup URI
+                            // is now null).  For local contacts or the local profile, it's possible that the
+                            // save triggered removal of the contact, so no lookup URI would exist..
+                            callbackIntent.putExtra(EXTRA_SAVE_SUCCEEDED, true);
+                        }
+                        break;
+                    }
+                }
+
                 // Build operations and try applying
                 final ArrayList<ContentProviderOperation> diff = state.buildDiff();
                 if (DEBUG) {
@@ -469,7 +954,7 @@ public class ContactSaveService extends IntentService {
             }
         }
 
-        Intent callbackIntent = intent.getParcelableExtra(EXTRA_CALLBACK_INTENT);
+
         if (callbackIntent != null) {
             if (succeeded) {
                 // Mark the intent to indicate that the save was successful (even if the lookup URI
@@ -573,6 +1058,18 @@ public class ContactSaveService extends IntentService {
 
         final ContentResolver resolver = getContentResolver();
 
+        Uri iccGroupUri = null;
+        if (BrcmIccUtils.ACCOUNT_TYPE_SIM.equals(accountType)) {
+            iccGroupUri = BrcmIccUtils.insertIccCardGroup(resolver, accountName, label);
+            if(null == iccGroupUri) {
+                Log.e(TAG, "Couldn't insert group with label " + label);
+                return;
+            }
+            if (DEBUG) Log.d(TAG, "createGroup(): iccGroupUri = " + iccGroupUri);
+
+            values.put(Groups.SOURCE_ID, String.valueOf(ContentUris.parseId(iccGroupUri)));
+        }
+
         // Create the new group
         final Uri groupUri = resolver.insert(Groups.CONTENT_URI, values);
 
@@ -581,6 +1078,11 @@ public class ContactSaveService extends IntentService {
         if (groupUri == null) {
             Log.e(TAG, "Couldn't create group with label " + label);
             return;
+        }
+        if (DEBUG) Log.d(TAG, "createGroup(): groupUri = " + groupUri);
+
+        if (BrcmIccUtils.ACCOUNT_TYPE_SIM.equals(accountType)) {
+             BrcmIccUtils.addIccMembersToIccGroup(resolver, accountName, rawContactsToAdd, ContentUris.parseId(iccGroupUri));
         }
 
         // Add new group members
@@ -626,6 +1128,18 @@ public class ContactSaveService extends IntentService {
             return;
         }
 
+        final ContentResolver resolver = getContentResolver();
+        String[] groupInfo = BrcmIccUtils.getIccGroupInfoFromGroupId(resolver, groupId);
+        if(BrcmIccUtils.ACCOUNT_TYPE_SIM.equals(groupInfo[0])) {
+            final SimCardID simId;
+            if (BrcmIccUtils.ACCOUNT_NAME_SIM2.equals(groupInfo[1])) {
+                simId = SimCardID.ID_ONE;
+            } else {
+                simId = SimCardID.ID_ZERO;
+            }
+            BrcmIccUtils.updateIccCardGroup(resolver, simId, groupInfo[2], label, Long.valueOf(groupInfo[3]));
+        }
+
         ContentValues values = new ContentValues();
         values.put(Groups.TITLE, label);
         final Uri groupUri = ContentUris.withAppendedId(Groups.CONTENT_URI, groupId);
@@ -651,6 +1165,26 @@ public class ContactSaveService extends IntentService {
         if (groupId == -1) {
             Log.e(TAG, "Invalid arguments for deleteGroup request");
             return;
+        }
+
+        if (DEBUG) Log.d(TAG, "deleteGroup(): groupId = " + groupId);
+        final ContentResolver resolver = getContentResolver();
+        long[] rawContactIds = BrcmIccUtils.getRawContactIdsFromGroupId(resolver, groupId);
+        String[] groupInfo = BrcmIccUtils.getIccGroupInfoFromGroupId(resolver, groupId);
+        if (BrcmIccUtils.ACCOUNT_TYPE_SIM.equals(groupInfo[0])) {
+            final SimCardID simId;
+            if (BrcmIccUtils.ACCOUNT_NAME_SIM2.equals(groupInfo[1])) {
+                simId = SimCardID.ID_ONE;
+            } else {
+                simId = SimCardID.ID_ZERO;
+            }
+
+            BrcmIccUtils.removeIccMembersFromIccGroup(resolver, groupInfo[1], rawContactIds, Long.valueOf(groupInfo[3]));
+            removeMembersFromGroup(resolver, rawContactIds, groupId);
+
+            BrcmIccUtils.removeIccCardGroup(resolver, simId, Long.valueOf(groupInfo[3]));
+        } else if (BrcmIccUtils.ACCOUNT_TYPE_LOCAL.equals(groupInfo[0])) {
+            removeMembersFromGroup(resolver, rawContactIds, groupId);
         }
 
         getContentResolver().delete(
@@ -703,6 +1237,25 @@ public class ContactSaveService extends IntentService {
         }
 
         final ContentResolver resolver = getContentResolver();
+        String[] groupInfo = BrcmIccUtils.getIccGroupInfoFromGroupId(resolver, groupId);
+        if (BrcmIccUtils.ACCOUNT_TYPE_SIM.equals(groupInfo[0])) {
+            //check if group name been changed
+            if(null!=label && !label.equals(groupInfo[2])) {
+                if (DEBUG) Log.d(TAG, "updateGroup(): group name change from " + groupInfo[2] + " to " + label);
+
+                final SimCardID simId;
+                if (BrcmIccUtils.ACCOUNT_NAME_SIM2.equals(groupInfo[1])) {
+                    simId = SimCardID.ID_ONE;
+                } else {
+                    simId = SimCardID.ID_ZERO;
+                }
+
+                BrcmIccUtils.updateIccCardGroup(resolver, simId, groupInfo[2], label, Long.valueOf(groupInfo[3]));
+            }
+            BrcmIccUtils.removeIccMembersFromIccGroup(resolver, groupInfo[1], rawContactsToRemove, Long.valueOf(groupInfo[3]));
+            BrcmIccUtils.addIccMembersToIccGroup(resolver, groupInfo[1], rawContactsToAdd, Long.valueOf(groupInfo[3]));
+        }
+
         final Uri groupUri = ContentUris.withAppendedId(Groups.CONTENT_URI, groupId);
 
         // Update group name if necessary
@@ -946,6 +1499,24 @@ public class ContactSaveService extends IntentService {
         if (contactUri == null) {
             Log.e(TAG, "Invalid arguments for deleteContact request");
             return;
+        }
+
+        final ContentResolver resolver = getContentResolver();
+        final long contactId = ContentUris.parseId(contactUri);
+        final long rawContactId = BrcmIccUtils.getRawContactId(resolver, contactId);
+        String accountType = BrcmIccUtils.getRawContactAccountTypeFromContactId(resolver, contactId);
+
+        ArrayList<Long> groupIds = BrcmIccUtils.getGroupIdsFromRawContactId(resolver, rawContactId);
+        final long[] rawContactIdAry = new long[]{rawContactId};
+        if (BrcmIccUtils.ACCOUNT_TYPE_SIM.equals(accountType)) {
+            BrcmIccUtils.deleteIccContact(resolver, contactId);
+            for (Long groupId : groupIds) {
+                removeMembersFromGroup(resolver, rawContactIdAry, groupId);
+            }
+        } else if (BrcmIccUtils.ACCOUNT_TYPE_LOCAL.equals(accountType)) {
+            for (Long groupId : groupIds) {
+                removeMembersFromGroup(resolver, rawContactIdAry, groupId);
+            }
         }
 
         getContentResolver().delete(contactUri, null, null);
