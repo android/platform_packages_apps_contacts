@@ -70,7 +70,7 @@
     <string name="readOnlyContactDeleteConfirmation" msgid="2137170726670196909">"Este contacto contiene información de varias cuentas. La información de las cuentas de solo lectura se ocultará en las listas de contactos, pero no se eliminará."</string>
     <string name="multipleContactDeleteConfirmation" msgid="938900978442960800">"Si se elimina este contacto, se eliminará la información de varias cuentas."</string>
     <string name="deleteConfirmation" msgid="811706994761610640">"El contacto se eliminará."</string>
-    <string name="menu_done" msgid="796017761764190697">"OK"</string>
+    <string name="menu_done" msgid="796017761764190697">"Aceptar"</string>
     <string name="menu_doNotSave" msgid="58593876893538465">"Cancelar"</string>
     <string name="menu_discard" msgid="6456087569315685632">"Descartar"</string>
     <string name="label_notes" msgid="8337354953278341042">"Notas"</string>
@@ -102,8 +102,8 @@
     <string name="noContactsWithPhoneNumbers" msgid="1605457050218824269">"No hay ningún contacto con número de teléfono."</string>
     <string name="emptyGroup" msgid="7502116218697177370">"Este grupo está vacío."</string>
     <string name="addPeopleToGroup" msgid="7879585947222263516">"Para añadir contactos al grupo, edítalo."</string>
-    <string name="savingContact" msgid="4075751076741924939">"Guardando contacto…"</string>
-    <string name="savingDisplayGroups" msgid="2133152192716475939">"Guardando opciones de visualización…"</string>
+    <string name="savingContact" msgid="4075751076741924939">"Guardando contacto\u2026"</string>
+    <string name="savingDisplayGroups" msgid="2133152192716475939">"Guardando opciones de visualización\u2026"</string>
     <string name="contactSavedToast" msgid="7152589189385441091">"El contacto se ha guardado."</string>
     <string name="contactSavedErrorToast" msgid="3207250533172944892">"No se han guardado los cambios del contacto."</string>
     <string name="groupSavedToast" msgid="1168756874239833756">"Grupo guardado"</string>
@@ -151,10 +151,10 @@
     <string name="recentCalls_empty" msgid="247053222448663107">"El registro de llamadas está vacío."</string>
     <string name="clearCallLogConfirmation_title" msgid="6427524640461816332">"¿Borrar registro?"</string>
     <string name="clearCallLogConfirmation" msgid="5043563133171583152">"Se eliminarán todos los registros de llamadas."</string>
-    <string name="clearCallLogProgress_title" msgid="8365943000154295771">"Borrando registro de llamadas..."</string>
+    <string name="clearCallLogProgress_title" msgid="8365943000154295771">"Borrando registro de llamadas\u2026"</string>
     <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"¿Borrar contactos frecuentes?"</string>
     <string name="clearFrequentsConfirmation" msgid="3254215748990281318">"Vas a borrar la lista de contactos frecuentes de las aplicaciones Contactos y Teléfono y obligarás a las aplicaciones de correo electrónico a que memoricen tus preferencias de nuevo."</string>
-    <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"Borrando contactos frecuentes…"</string>
+    <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"Borrando contactos frecuentes\u2026"</string>
     <string name="imei" msgid="3045126336951684285">"IMEI"</string>
     <string name="meid" msgid="6210568493746275750">"MEID"</string>
     <string name="voicemail" msgid="3851469869202611441">"Buzón de voz"</string>
@@ -163,7 +163,7 @@
     <string name="payphone" msgid="4864313342828942922">"Teléfono público"</string>
     <string name="dialerKeyboardHintText" msgid="5401660096579787344">"Utilizar teclado para marcar"</string>
     <string name="dialerDialpadHintText" msgid="5824490365898349041">"Añadir llamada"</string>
-    <string name="simContacts_emptyLoading" msgid="6700035985448642408">"Cargando desde tarjeta SIM…"</string>
+    <string name="simContacts_emptyLoading" msgid="6700035985448642408">"Cargando desde tarjeta SIM\u2026"</string>
     <string name="simContacts_title" msgid="27341688347689769">"Contactos de tarjeta SIM"</string>
     <string name="noContactsHelpTextWithSyncForCreateShortcut" msgid="801504710275614594">"No tienes ningún contacto que mostrar. (Si acabas de añadir una cuenta, es posible que la sincronización de contactos tarde algunos minutos)."</string>
     <string name="noContactsHelpTextForCreateShortcut" msgid="3081286388667108335">"No tienes ningún contacto que mostrar."</string>
@@ -223,8 +223,8 @@
     <string name="import_one_vcard_string" msgid="9059163467020328433">"Importar un archivo de vCard"</string>
     <string name="import_multiple_vcard_string" msgid="3810226492811062392">"Importar varios archivos de vCard"</string>
     <string name="import_all_vcard_string" msgid="5518136113853448474">"Importar todos los archivos de vCard"</string>
-    <string name="searching_vcard_message" product="nosdcard" msgid="557077639409584945">"Buscando datos de vCard en el almacenamiento..."</string>
-    <string name="searching_vcard_message" product="default" msgid="3962269894118092049">"Buscando datos de vCard en la tarjeta SD..."</string>
+    <string name="searching_vcard_message" product="nosdcard" msgid="557077639409584945">"Buscando datos de vCard en el almacenamiento\u2026"</string>
+    <string name="searching_vcard_message" product="default" msgid="3962269894118092049">"Buscando datos de vCard en la tarjeta SD\u2026"</string>
     <string name="scanning_sdcard_failed_message" product="nosdcard" msgid="7221682312959229201">"No se ha podido analizar el almacenamiento (motivo: \"<xliff:g id="FAIL_REASON">%s</xliff:g>\")."</string>
     <string name="scanning_sdcard_failed_message" product="default" msgid="189023067829510792">"No se ha podido analizar la tarjeta SD (motivo: \"<xliff:g id="FAIL_REASON">%s</xliff:g>\")."</string>
     <string name="fail_reason_io_error" msgid="6748358842976073255">"Error de E/S"</string>
@@ -305,7 +305,7 @@
     <string name="dialog_new_group_account" msgid="2318032089273496830">"Crear grupo en cuenta"</string>
     <string name="menu_sync_remove" msgid="3266725887008450161">"Eliminar grupo de sincronización"</string>
     <string name="dialog_sync_add" msgid="8267045393119375803">"Añadir grupo de sincronización"</string>
-    <string name="display_more_groups" msgid="2682547080423434170">"Más grupos…"</string>
+    <string name="display_more_groups" msgid="2682547080423434170">"Más grupos\u2026"</string>
     <string name="display_ungrouped" msgid="6885954210243119591">"Todos los demás contactos"</string>
     <string name="display_all_contacts" msgid="2031647544742889505">"Todos los contactos"</string>
     <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"Si eliminas \"<xliff:g id="GROUP">%s</xliff:g>\" de las sincronización, también se eliminarán todos los contactos no agrupados."</string>
@@ -419,7 +419,7 @@
     <string name="upgrade_out_of_memory" msgid="1209994418877625940">"Los contactos se están actualizando. "\n\n"Se necesitan aproximadamente <xliff:g id="SIZE_IN_MEGABYTES">%s</xliff:g> MB de almacenamiento interno para el proceso de actualización."\n\n"Selecciona una de las siguientes opciones:"</string>
     <string name="upgrade_out_of_memory_uninstall" msgid="1721798828992091432">"Desinstalar algunas aplicaciones"</string>
     <string name="upgrade_out_of_memory_retry" msgid="8431289830472724609">"Reintentar actualización"</string>
-    <string name="search_results_searching" msgid="3984833028938569930">"Buscando..."</string>
+    <string name="search_results_searching" msgid="3984833028938569930">"Buscando\u2026"</string>
     <string name="menu_display_selected" msgid="6470001164297969034">"Mostrar seleccionados"</string>
     <string name="menu_display_all" msgid="8887488642609786198">"Mostrar todos"</string>
     <string name="menu_select_all" msgid="621719255150713545">"Seleccionar todo"</string>
@@ -446,7 +446,7 @@
     <string name="contact_directory_description" msgid="683398073603909119">"Directorio <xliff:g id="TYPE">%1$s</xliff:g>"</string>
     <string name="directory_search_label" msgid="1887759056597975053">"Directorio"</string>
     <string name="local_search_label" msgid="2551177578246113614">"Todos los contactos"</string>
-    <string name="toast_making_personal_copy" msgid="288549957278065542">"Creando una copia personal..."</string>
+    <string name="toast_making_personal_copy" msgid="288549957278065542">"Creando una copia personal\u2026"</string>
     <string name="list_filter_all_accounts" msgid="8908683398914322369">"Todos los contactos"</string>
     <string name="list_filter_all_starred" msgid="5031734941601931356">"Destacados"</string>
     <string name="list_filter_custom" msgid="8910173055702057002">"Personalizar"</string>
@@ -454,7 +454,7 @@
     <string name="list_filter_phones" msgid="735313795643493365">"Todos los contactos con número"</string>
     <string name="list_filter_single" msgid="5871400283515893087">"Contacto"</string>
     <string name="custom_list_filter" msgid="7836035257402013957">"Definir vista personalizada"</string>
-    <string name="contact_list_loading" msgid="5488620820563977329">"Cargando..."</string>
+    <string name="contact_list_loading" msgid="5488620820563977329">"Cargando\u2026"</string>
     <string name="activity_title_settings" msgid="5464130076132770781">"Ajustes"</string>
     <string name="activity_title_contacts_filter" msgid="8275542497615516969">"Contactos que mostrar"</string>
     <string name="menu_settings" msgid="377929915873428211">"Ajustes"</string>
@@ -469,7 +469,7 @@
     <string name="widget_name_and_phonetic" msgid="8739586586600099979">"<xliff:g id="DISPLAY_NAME">%1$s</xliff:g> (<xliff:g id="PHONETIC_NAME">%2$s</xliff:g>)"</string>
     <string name="date_year_toggle" msgid="7356532842767854606">"Introducir año"</string>
     <string name="social_widget_label" msgid="6378905543028924592">"Contacto"</string>
-    <string name="social_widget_loading" msgid="5327336597364074608">"Cargando..."</string>
+    <string name="social_widget_loading" msgid="5327336597364074608">"Cargando\u2026"</string>
     <string name="contacts_unavailable_create_contact" msgid="7014525713871959208">"Crear contacto nuevo"</string>
     <string name="contacts_unavailable_add_account" msgid="7911101713860139754">"Iniciar sesión en una cuenta"</string>
     <string name="contacts_unavailable_import_contacts" msgid="4957393255392437529">"Importar contactos"</string>
@@ -506,8 +506,8 @@
     <string name="notification_voicemail_callers_list" msgid="1153954809339404149">"<xliff:g id="NEWER_CALLERS">%1$s</xliff:g>, <xliff:g id="OLDER_CALLER">%2$s</xliff:g>"</string>
     <string name="notification_new_voicemail_ticker" msgid="895342132049452081">"Nuevo mensaje de voz de <xliff:g id="CALLER">%1$s</xliff:g>"</string>
     <string name="voicemail_playback_error" msgid="1811242131549854624">"No se ha podido reproducir el mensaje."</string>
-    <string name="voicemail_buffering" msgid="738287747618697097">"Almacenando en búfer..."</string>
-    <string name="voicemail_fetching_content" msgid="877911315738258780">"Recuperando mensaje de voz..."</string>
+    <string name="voicemail_buffering" msgid="738287747618697097">"Almacenando en búfer\u2026"</string>
+    <string name="voicemail_fetching_content" msgid="877911315738258780">"Recuperando mensaje de voz\u2026"</string>
     <string name="voicemail_fetching_timout" msgid="6691792377574905201">"No se ha podido recuperar el mensaje."</string>
     <string name="call_log_new_header" msgid="846546437517724715">"Nuevo"</string>
     <string name="call_log_old_header" msgid="6262205894314263629">"Anteriores"</string>
