@@ -570,4 +570,14 @@
     <string name="menu_export_database" msgid="2659719297530170820">"导出数据库文件"</string>
     <string name="action_menu_overflow_description" msgid="2303272250613084574">"更多选项"</string>
     <string name="expand_collapse_name_fields_description" msgid="8682630859539604311">"展开或折叠姓名字段"</string>
+    <string name="view_vcard">查看 VCard</string>
+    <string name="item_organization">组织</string>
+    <string name="import_vcard_save">导入 VCard</string>
+    <string name="eventTypeBirthday">生日</string>
+    <string name="item_phone">电话号码</string>
+    <string name="otherLabelsGroup">其他</string>
+    <string name="website_other">其他</string>
+    <string name="vcard_view_loaded_number">加载的数量：</string>
+    <string name="view_contact_vcard_failed">无法打开联系人 vCard</string>
+    <string name="import_vcard_successful">导入 VCard 成功</string>
 </resources>
