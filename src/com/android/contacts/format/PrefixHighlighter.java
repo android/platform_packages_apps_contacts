@@ -51,6 +51,13 @@ public class PrefixHighlighter {
      */
     public CharSequence apply(CharSequence text, char[] prefix) {
         int index = FormatUtils.indexOfWordPrefix(text, prefix);
+        if (index == -1 && prefix != null && prefix.length > 1) {
+            // prefix can contain preedit character, so trying look again.
+            char[] prefix2 = new char[prefix.length - 1];
+            System.arraycopy(prefix, 0, prefix2, 0, prefix2.length);
+            prefix = prefix2;
+            index = FormatUtils.indexOfWordPrefix(text, prefix);
+        }
         if (index != -1) {
             if (mPrefixColorSpan == null) {
                 mPrefixColorSpan = new ForegroundColorSpan(mPrefixHighlightColor);
