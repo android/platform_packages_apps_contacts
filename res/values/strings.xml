@@ -1861,4 +1861,14 @@ connection to the voicemail server is lost. [CHAR LIMIT=64] -->
          Middle Name, Last Name, Name Suffix).
          [CHAR LIMIT=NONE] -->
     <string name="expand_collapse_name_fields_description">Expand or collapse name fields</string>
+    <string name="view_vcard">View VCard</string>
+    <string name="item_organization">Organization</string>
+    <string name="import_vcard_save">Import VCard</string>
+    <string name="eventTypeBirthday">Birthday</string>
+    <string name="item_phone">Phone number</string>
+    <string name="otherLabelsGroup">Other</string>
+    <string name="website_other">Other</string>
+    <string name="vcard_view_loaded_number">Loaded number:</string>
+    <string name="view_contact_vcard_failed">Failed to open contact vCard</string>
+    <string name="import_vcard_successful">Import VCard successfully</string>
 </resources>

@@ -666,6 +666,22 @@
                 <data android:mimeType="vnd.android.cursor.item/contact" />
             </intent-filter>
         </service>
+        <activity android:name="ViewVCardActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/view_vcard">
+            <intent-filter>
+                <action android:name="com.android.contacts.action.VIEW_VCARD" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/vcard" />
+                <data android:mimeType="text/x-vCard" />
+                <data android:mimeType="text/x-vcard" />
+                <data android:mimeType="text/directory" />
+            </intent-filter>
+        </activity>
         <meta-data android:name="android.nfc.disable_beam_default" android:value="true" />
     </application>
 </manifest>
