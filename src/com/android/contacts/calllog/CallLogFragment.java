@@ -71,6 +71,11 @@ public class CallLogFragment extends ListFragment
      */
     private static final int EMPTY_LOADER_ID = 0;
 
+    /**
+     * Bundle key used for filtering the call log screen.
+     */
+    private static final String KEY_FILTER_SCREEN_BY = "filter_screen_by";
+
     private CallLogAdapter mAdapter;
     private CallLogQueryHandler mCallLogQueryHandler;
     private boolean mScrollToTop;
@@ -127,6 +132,12 @@ public class CallLogFragment extends ListFragment
         getActivity().getContentResolver().registerContentObserver(
                 ContactsContract.Contacts.CONTENT_URI, true, mContactsObserver);
         setHasOptionsMenu(true);
+
+        if (state == null) {
+            Intent intent = getActivity().getIntent();
+            mCallTypeFilter = intent.getIntExtra(KEY_FILTER_SCREEN_BY, -1);
+        }
+
     }
 
     /** Called by the CallLogQueryHandler when the list of calls has been fetched or updated. */
@@ -237,6 +248,25 @@ public class CallLogFragment extends ListFragment
         // For example, immediately after a call is finished, we want to
         // display information about that call.
         mScrollToTop = Calls.CONTENT_TYPE.equals(newIntent.getType());
+
+        if (mScrollToTop) {
+            filterScreenWithCallType(newIntent.getIntExtra(KEY_FILTER_SCREEN_BY, -1));
+        }
+
+    }
+
+    private void filterScreenWithCallType(int callType) {
+        if (callType == CallLogQueryHandler.CALL_TYPE_ALL) {
+            // Filter is being turned off, receiver no longer needed.
+            unregisterPhoneCallReceiver();
+        } else {
+            // We only need the phone call receiver when there is an active call type filter.
+            // Not many people may use the filters so don't register the receiver until now .
+            registerPhoneCallReceiver();
+        }
+
+        mCallLogQueryHandler.fetchCalls(callType);
+        updateFilterTypeAndHeader(callType);
     }
 
     @Override
@@ -300,6 +330,7 @@ public class CallLogFragment extends ListFragment
     @Override
     public void onDestroy() {
         super.onDestroy();
+
         mAdapter.stopRequestProcessing();
         mAdapter.changeCursor(null);
         getActivity().getContentResolver().unregisterContentObserver(mCallLogObserver);
@@ -385,41 +416,28 @@ public class CallLogFragment extends ListFragment
                 return true;
 
             case R.id.show_outgoing_only:
-                // We only need the phone call receiver when there is an active call type filter.
-                // Not many people may use the filters so don't register the receiver until now .
-                registerPhoneCallReceiver();
-                mCallLogQueryHandler.fetchCalls(Calls.OUTGOING_TYPE);
-                updateFilterTypeAndHeader(Calls.OUTGOING_TYPE);
+                filterScreenWithCallType(Calls.OUTGOING_TYPE);
                 return true;
 
             case R.id.show_incoming_only:
-                registerPhoneCallReceiver();
-                mCallLogQueryHandler.fetchCalls(Calls.INCOMING_TYPE);
-                updateFilterTypeAndHeader(Calls.INCOMING_TYPE);
+                filterScreenWithCallType(Calls.INCOMING_TYPE);
                 return true;
 
             case R.id.show_missed_only:
-                registerPhoneCallReceiver();
-                mCallLogQueryHandler.fetchCalls(Calls.MISSED_TYPE);
-                updateFilterTypeAndHeader(Calls.MISSED_TYPE);
+                filterScreenWithCallType(Calls.MISSED_TYPE);
                 return true;
 
             case R.id.show_voicemails_only:
-                registerPhoneCallReceiver();
-                mCallLogQueryHandler.fetchCalls(Calls.VOICEMAIL_TYPE);
-                updateFilterTypeAndHeader(Calls.VOICEMAIL_TYPE);
+                filterScreenWithCallType(Calls.VOICEMAIL_TYPE);
                 return true;
 
             case R.id.show_all_calls:
-                // Filter is being turned off, receiver no longer needed.
-                unregisterPhoneCallReceiver();
-                mCallLogQueryHandler.fetchCalls(CallLogQueryHandler.CALL_TYPE_ALL);
-                updateFilterTypeAndHeader(CallLogQueryHandler.CALL_TYPE_ALL);
+                filterScreenWithCallType(CallLogQueryHandler.CALL_TYPE_ALL);
                 return true;
 
             default:
                 return false;
-        }
+            }
     }
 
     private void updateFilterTypeAndHeader(int filterType) {
