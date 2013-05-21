@@ -361,7 +361,7 @@ public class CallLogFragment extends ListFragment
                 item = menu.findItem(R.id.show_missed_only);
                 break;
             case Calls.VOICEMAIL_TYPE:
-                menu.findItem(R.id.show_voicemails_only);
+                item = menu.findItem(R.id.show_voicemails_only);
                 break;
         }
         if (item != null) {
