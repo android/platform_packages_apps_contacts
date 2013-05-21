@@ -31,6 +31,7 @@ import android.os.ServiceManager;
 import android.provider.CallLog;
 import android.provider.CallLog.Calls;
 import android.provider.ContactsContract;
+import android.provider.VoicemailContract.Status;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
@@ -107,6 +108,7 @@ public class CallLogFragment extends ListFragment
     // See issue 6363009
     private final ContentObserver mCallLogObserver = new CustomContentObserver();
     private final ContentObserver mContactsObserver = new CustomContentObserver();
+    private final ContentObserver mVoicemailStatusObserver = new CustomContentObserver();
     private boolean mRefreshDataRequired = true;
 
     // Exactly same variable is in Fragment as a package private.
@@ -126,6 +128,8 @@ public class CallLogFragment extends ListFragment
                 CallLog.CONTENT_URI, true, mCallLogObserver);
         getActivity().getContentResolver().registerContentObserver(
                 ContactsContract.Contacts.CONTENT_URI, true, mContactsObserver);
+        getActivity().getContentResolver().registerContentObserver(
+                Status.CONTENT_URI, true, mVoicemailStatusObserver);
         setHasOptionsMenu(true);
     }
 
@@ -304,6 +308,7 @@ public class CallLogFragment extends ListFragment
         mAdapter.changeCursor(null);
         getActivity().getContentResolver().unregisterContentObserver(mCallLogObserver);
         getActivity().getContentResolver().unregisterContentObserver(mContactsObserver);
+        getActivity().getContentResolver().unregisterContentObserver(mVoicemailStatusObserver);
         unregisterPhoneCallReceiver();
     }
 
