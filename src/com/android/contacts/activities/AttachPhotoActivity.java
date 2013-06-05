@@ -206,6 +206,11 @@ public class AttachPhotoActivity extends ContactsActivity {
      */
     private void saveContact(Contact contact) {
 
+        if (contact.getRawContacts() == null) {
+            finish();
+            return;
+        }
+
         // Obtain the raw-contact that we will save to.
         RawContactDeltaList deltaList = contact.createRawContactDeltaList();
         RawContactDelta raw = deltaList.getFirstWritableRawContact(this);
