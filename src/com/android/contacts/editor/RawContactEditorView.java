@@ -497,6 +497,7 @@ public class RawContactEditorView extends BaseRawContactEditorView {
                 if (DataKind.PSEUDO_MIME_TYPE_PHONETIC_NAME.equals(view.getKind().mimeType)) {
                     mPhoneticNameAdded = true;
                     updatePhoneticNameVisibility();
+                    mPhoneticName.requestFocus();
                 } else {
                     view.addItem();
                 }
