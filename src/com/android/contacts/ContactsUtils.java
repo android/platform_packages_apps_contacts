@@ -264,7 +264,8 @@ public class ContactsUtils {
      */
     public static Intent getCallIntent(Uri uri, String callOrigin) {
         final Intent intent = new Intent(Intent.ACTION_CALL_PRIVILEGED, uri);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         if (callOrigin != null) {
             intent.putExtra(DialtactsActivity.EXTRA_CALL_ORIGIN, callOrigin);
         }
