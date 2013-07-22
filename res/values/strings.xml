@@ -1861,4 +1861,11 @@ connection to the voicemail server is lost. [CHAR LIMIT=64] -->
          Middle Name, Last Name, Name Suffix).
          [CHAR LIMIT=NONE] -->
     <string name="expand_collapse_name_fields_description">Expand or collapse name fields</string>
+    <string name="play_button_description">Play voicemail</string>
+    <string name="stop_button_description">Stop play voicemail</string>
+    <string name="speaker_phone_on_description">Speakerphone On</string>
+    <string name="speaker_phone_off_description">Speakerphone Off</string>
+    <string name="rate_decrease_description">decrease speed</string>
+    <string name="rate_increase_description">increase speed</string>
+    <string name="playback_seek_description">playback seek</string>
 </resources>

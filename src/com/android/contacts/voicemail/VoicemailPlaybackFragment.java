@@ -205,6 +205,15 @@ public class VoicemailPlaybackFragment extends Fragment {
             mTextController = new TextViewWithMessagesController(
                     (TextView) playbackLayout.findViewById(R.id.playback_position_text),
                     (TextView) playbackLayout.findViewById(R.id.playback_speed_text));
+            setContentDescriptions();
+        }
+
+        private void setContentDescriptions() {
+            mStartStopButton.setContentDescription(getString(R.string.play_button_description));
+            mPlaybackSpeakerphone.setContentDescription(getString(R.string.speaker_phone_on_description));
+            mRateDecreaseButton.setContentDescription(getString(R.string.rate_decrease_description));
+            mRateIncreaseButton.setContentDescription(getString(R.string.rate_increase_description));
+            mPlaybackSeek.setContentDescription(getString(R.string.playback_seek_description));
         }
 
         @Override
@@ -262,11 +271,13 @@ public class VoicemailPlaybackFragment extends Fragment {
         @Override
         public void playbackStarted() {
             mStartStopButton.setImageResource(R.drawable.ic_hold_pause_holo_dark);
+            mStartStopButton.setContentDescription(getString(R.string.stop_button_description));
         }
 
         @Override
         public void playbackStopped() {
             mStartStopButton.setImageResource(R.drawable.ic_play);
+            mStartStopButton.setContentDescription(getString(R.string.play_button_description));
         }
 
         @Override
@@ -398,8 +409,10 @@ public class VoicemailPlaybackFragment extends Fragment {
             getAudioManager().setSpeakerphoneOn(on);
             if (on) {
                 mPlaybackSpeakerphone.setImageResource(R.drawable.ic_speakerphone_on);
+                mPlaybackSpeakerphone.setContentDescription(getString(R.string.speaker_phone_on_description));
             } else {
                 mPlaybackSpeakerphone.setImageResource(R.drawable.ic_speakerphone_off);
+                mPlaybackSpeakerphone.setContentDescription(getString(R.string.speaker_phone_off_description));
             }
         }
 
