@@ -1948,7 +1948,10 @@ public class ContactEditorFragment extends Fragment implements
             public void onPhotoSelected(Bitmap bitmap) {
                 setPhoto(mRawContactId, bitmap, mCurrentPhotoFile);
                 mCurrentPhotoHandler = null;
-                bindEditors();
+                if(mState == null) {
+                    getLoaderManager().restartLoader(LOADER_DATA, null, mDataLoaderListener);
+                } else
+                    bindEditors();
             }
 
             @Override
