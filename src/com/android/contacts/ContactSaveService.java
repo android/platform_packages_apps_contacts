@@ -316,6 +316,7 @@ public class ContactSaveService extends IntentService {
         serviceIntent.setAction(ContactSaveService.ACTION_SAVE_CONTACT);
         serviceIntent.putExtra(EXTRA_CONTACT_STATE, (Parcelable) state);
         serviceIntent.putExtra(EXTRA_SAVE_IS_PROFILE, isProfile);
+        serviceIntent.putExtra(EXTRA_SAVE_MODE, saveMode);
         if (updatedPhotos != null) {
             serviceIntent.putExtra(EXTRA_UPDATED_PHOTOS, (Parcelable) updatedPhotos);
         }
@@ -336,6 +337,7 @@ public class ContactSaveService extends IntentService {
         RawContactDeltaList state = intent.getParcelableExtra(EXTRA_CONTACT_STATE);
         boolean isProfile = intent.getBooleanExtra(EXTRA_SAVE_IS_PROFILE, false);
         Bundle updatedPhotos = intent.getParcelableExtra(EXTRA_UPDATED_PHOTOS);
+        int saveMode = intent.getIntExtra(EXTRA_SAVE_MODE, -1);
 
         // Trim any empty fields, and RawContacts, before persisting
         final AccountTypeManager accountTypes = AccountTypeManager.getInstance(this);
@@ -462,7 +464,8 @@ public class ContactSaveService extends IntentService {
                 }
 
                 File photoFile = new File(photoFilePath);
-                if (!saveUpdatedPhoto(rawContactId, photoFile)) succeeded = false;
+                //if (!saveUpdatedPhoto(rawContactId, photoFile)) succeeded = false;
+                if (!saveUpdatedPhoto(rawContactId, photoFile, saveMode)) succeeded = false;
             }
         }
 
@@ -483,7 +486,8 @@ public class ContactSaveService extends IntentService {
      * Save updated photo for the specified raw-contact.
      * @return true for success, false for failure
      */
-    private boolean saveUpdatedPhoto(long rawContactId, File photoFile) {
+    //private boolean saveUpdatedPhoto(long rawContactId, File photoFile) 
+    private boolean saveUpdatedPhoto(long rawContactId, File photoFile, int saveMode) {
         final Uri outputUri = Uri.withAppendedPath(
                 ContentUris.withAppendedId(RawContacts.CONTENT_URI, rawContactId),
                 RawContacts.DisplayPhoto.CONTENT_DIRECTORY);
@@ -507,7 +511,8 @@ public class ContactSaveService extends IntentService {
                 }
             } finally {
                 outputStream.close();
-                photoFile.delete();
+                if(saveMode == 0)
+                    photoFile.delete();
             }
         } catch (IOException e) {
             Log.e(TAG, "Failed to write photo: " + photoFile.toString() + " because: " + e);
