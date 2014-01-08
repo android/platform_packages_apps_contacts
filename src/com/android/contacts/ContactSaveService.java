@@ -320,6 +320,8 @@ public class ContactSaveService extends IntentService {
         serviceIntent.setAction(ContactSaveService.ACTION_SAVE_CONTACT);
         serviceIntent.putExtra(EXTRA_CONTACT_STATE, (Parcelable) state);
         serviceIntent.putExtra(EXTRA_SAVE_IS_PROFILE, isProfile);
+        serviceIntent.putExtra(EXTRA_SAVE_MODE, saveMode);//Benny, add savemode is close, then we delete temp photo. 
+
         if (updatedPhotos != null) {
             serviceIntent.putExtra(EXTRA_UPDATED_PHOTOS, (Parcelable) updatedPhotos);
         }
@@ -340,7 +342,7 @@ public class ContactSaveService extends IntentService {
         RawContactDeltaList state = intent.getParcelableExtra(EXTRA_CONTACT_STATE);
         boolean isProfile = intent.getBooleanExtra(EXTRA_SAVE_IS_PROFILE, false);
         Bundle updatedPhotos = intent.getParcelableExtra(EXTRA_UPDATED_PHOTOS);
-
+        int saveMode = intent.getIntExtra(EXTRA_SAVE_MODE, -1);//Benny, add savemode is close, then we delete temp photo. 
         // Trim any empty fields, and RawContacts, before persisting
         final AccountTypeManager accountTypes = AccountTypeManager.getInstance(this);
         RawContactModifier.trimEmpty(state, accountTypes);
@@ -465,7 +467,7 @@ public class ContactSaveService extends IntentService {
                     }
                 }
 
-                if (!saveUpdatedPhoto(rawContactId, photoUri)) succeeded = false;
+                if (!saveUpdatedPhoto(rawContactId, photoUri, saveMode)) succeeded = false;
             }
         }
 
@@ -486,12 +488,12 @@ public class ContactSaveService extends IntentService {
      * Save updated photo for the specified raw-contact.
      * @return true for success, false for failure
      */
-    private boolean saveUpdatedPhoto(long rawContactId, Uri photoUri) {
+    private boolean saveUpdatedPhoto(long rawContactId, Uri photoUri, int saveMode) {
         final Uri outputUri = Uri.withAppendedPath(
                 ContentUris.withAppendedId(RawContacts.CONTENT_URI, rawContactId),
                 RawContacts.DisplayPhoto.CONTENT_DIRECTORY);
 
-        return ContactPhotoUtils.savePhotoFromUriToUri(this, photoUri, outputUri, true);
+        return ContactPhotoUtils.savePhotoFromUriToUri(this, photoUri, outputUri, (saveMode == 0));
     }
 
     /**
