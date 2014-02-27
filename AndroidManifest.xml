@@ -50,6 +50,8 @@
     <!-- allow broadcasting secret code intents that reboot the phone -->
     <uses-permission android:name="android.permission.REBOOT" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!--TODO:: Temp solution to access SubscriptionController-->
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"/>
 
     <application
         android:name="com.android.contacts.ContactsApplication"
