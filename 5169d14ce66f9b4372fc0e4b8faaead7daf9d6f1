@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e5aa4352_f415a657",
+        "filename": "src/com/android/contacts/activities/AttachPhotoActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1016069
+      },
+      "writtenOn": "2014-04-22T17:12:15Z",
+      "side": 1,
+      "message": "Can you log a warning message here?\n\nLog.w(TAG, \"No raw contacts found for contact\");",
+      "range": {
+        "startLine": 209,
+        "startChar": 46,
+        "endLine": 209,
+        "endChar": 47
+      },
+      "revId": "5169d14ce66f9b4372fc0e4b8faaead7daf9d6f1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
