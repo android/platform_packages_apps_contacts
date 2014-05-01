@@ -17,6 +17,9 @@
 package com.android.contacts.quickcontact;
 
 import android.app.Fragment;
+import android.content.ClipboardManager;
+import android.content.ClipData;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
@@ -25,12 +28,14 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.contacts.common.ContactPresenceIconUtil;
 import com.android.contacts.R;
@@ -44,6 +49,8 @@ public class QuickContactListFragment extends Fragment {
     private RelativeLayout mFragmentContainer;
     private Listener mListener;
     private String mMimeType;
+    private ClipboardManager mClipBoard;
+    private Toast longPressToast;
 
     public QuickContactListFragment(String mimeType) {
         setRetainInstance(true);
@@ -58,6 +65,9 @@ public class QuickContactListFragment extends Fragment {
         mListView.setItemsCanFocus(true);
 
         mFragmentContainer.setOnClickListener(mOutsideClickListener);
+        mClipBoard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+        longPressToast = Toast.makeText(getActivity(), R.string.quick_contact_copied_toast, Toast.LENGTH_SHORT);
+
         configureAdapter();
         return mFragmentContainer;
     }
@@ -121,6 +131,7 @@ public class QuickContactListFragment extends Fragment {
                         (ImageView) resultView.findViewById(R.id.presence_icon);
 
                 actionsContainer.setOnClickListener(mPrimaryActionClickListener);
+                actionsContainer.setOnLongClickListener(mPrimaryActionLongClickListener);
                 actionsContainer.setTag(action);
                 alternateActionButton.setOnClickListener(mSecondaryActionClickListener);
                 alternateActionButton.setTag(action);
@@ -173,6 +184,18 @@ public class QuickContactListFragment extends Fragment {
         public void onClick(View v) {
             final Action action = (Action) v.getTag();
             if (mListener != null) mListener.onItemClicked(action, false);
+        }
+    };
+
+    /** A data item was long clicked */
+    protected final OnLongClickListener mPrimaryActionLongClickListener = new OnLongClickListener() {
+        @Override
+        public boolean onLongClick(View v) {
+            final Action action = (Action) v.getTag();
+            ClipData clip = android.content.ClipData.newPlainText(action.getSubtitle(), action.getBody());
+            mClipBoard.setPrimaryClip(clip);
+            longPressToast.show();
+            return true;
         }
     };
 
