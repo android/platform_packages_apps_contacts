@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a3f9cb5_ff17eb5f",
+        "filename": "src/com/android/contacts/quickcontact/QuickContactListFragment.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1016069
+      },
+      "writtenOn": "2014-05-01T16:57:14Z",
+      "side": 1,
+      "message": "mLongPressToast",
+      "range": {
+        "startLine": 53,
+        "startChar": 18,
+        "endLine": 53,
+        "endChar": 32
+      },
+      "revId": "10cabd380f7fcce7f5fed4e7c3fcec3abfcd4edc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ea205093_2f81b53b",
+        "filename": "src/com/android/contacts/quickcontact/QuickContactListFragment.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1016069
+      },
+      "writtenOn": "2014-05-01T16:57:14Z",
+      "side": 1,
+      "message": "100 chars\n\nAlso, can you reuse the string R.string.toast_text_copied, instead of creating a new one? That way you don\u0027t need strings_custom.xml either.",
+      "revId": "10cabd380f7fcce7f5fed4e7c3fcec3abfcd4edc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ea205093_0f86f953",
+        "filename": "src/com/android/contacts/quickcontact/QuickContactListFragment.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1016069
+      },
+      "writtenOn": "2014-05-01T16:57:14Z",
+      "side": 1,
+      "message": "100 chars",
+      "revId": "10cabd380f7fcce7f5fed4e7c3fcec3abfcd4edc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
