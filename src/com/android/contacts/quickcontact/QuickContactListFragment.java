@@ -121,6 +121,7 @@ public class QuickContactListFragment extends Fragment {
                         (ImageView) resultView.findViewById(R.id.presence_icon);
 
                 actionsContainer.setOnClickListener(mPrimaryActionClickListener);
+                actionsContainer.setOnLongClickListener(mPrimaryActionLongClickListener);
                 actionsContainer.setTag(action);
                 alternateActionButton.setOnClickListener(mSecondaryActionClickListener);
                 alternateActionButton.setTag(action);
@@ -173,6 +174,18 @@ public class QuickContactListFragment extends Fragment {
         public void onClick(View v) {
             final Action action = (Action) v.getTag();
             if (mListener != null) mListener.onItemClicked(action, false);
+        }
+    };
+
+    /** A data item was long clicked */
+    protected final OnLongClickListener mPrimaryActionLongClickListener = new OnLongClickListener() {
+        @Override
+        public boolean onLongClick(View v) {
+            final Action action = (Action) v.getTag();
+            android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE); 
+            android.content.ClipData clip = android.content.ClipData.newPlainText(action.getSubtitle(), action.getBody());
+            clipboard.setPrimaryClip(clip);
+            return true;
         }
     };
 
