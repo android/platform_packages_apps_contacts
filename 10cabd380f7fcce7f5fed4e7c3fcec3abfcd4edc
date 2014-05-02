@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0a520423_400f3201",
+        "filename": "src/com/android/contacts/quickcontact/QuickContactListFragment.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1024916
+      },
+      "writtenOn": "2014-05-02T04:13:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a3f9cb5_ff17eb5f",
+      "range": {
+        "startLine": 53,
+        "startChar": 18,
+        "endLine": 53,
+        "endChar": 32
+      },
+      "revId": "10cabd380f7fcce7f5fed4e7c3fcec3abfcd4edc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ea205093_2f81b53b",
         "filename": "src/com/android/contacts/quickcontact/QuickContactListFragment.java",
         "patchSetId": 7
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "6a71c0c6_7c23d59a",
+        "filename": "src/com/android/contacts/quickcontact/QuickContactListFragment.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1024916
+      },
+      "writtenOn": "2014-05-02T04:13:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea205093_2f81b53b",
+      "revId": "10cabd380f7fcce7f5fed4e7c3fcec3abfcd4edc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ea205093_0f86f953",
         "filename": "src/com/android/contacts/quickcontact/QuickContactListFragment.java",
         "patchSetId": 7
@@ -53,6 +95,24 @@
       "writtenOn": "2014-05-01T16:57:14Z",
       "side": 1,
       "message": "100 chars",
+      "revId": "10cabd380f7fcce7f5fed4e7c3fcec3abfcd4edc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6a71c0c6_1c289972",
+        "filename": "src/com/android/contacts/quickcontact/QuickContactListFragment.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1024916
+      },
+      "writtenOn": "2014-05-02T04:13:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea205093_0f86f953",
       "revId": "10cabd380f7fcce7f5fed4e7c3fcec3abfcd4edc",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
