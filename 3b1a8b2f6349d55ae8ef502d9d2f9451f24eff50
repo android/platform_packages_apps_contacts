@@ -1,0 +1,7 @@
+Verified+1: Deckard Autoverifier <deckard@android.com>
+Code-Review+2: Brian Attwell <brianattwell@google.com>
+Submitted-by: Brian Attwell <brianattwell@google.com>
+Submitted-at: Fri, 13 Feb 2015 21:56:51 +0000
+Reviewed-on: https://android-review.googlesource.com/130540
+Project: platform/packages/apps/Contacts
+Branch: refs/heads/master
