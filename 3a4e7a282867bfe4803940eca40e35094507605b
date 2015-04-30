@@ -1,0 +1,7 @@
+Code-Review+2: Jay Shrauner <shrauner@google.com>
+Verified+1: Deckard Autoverifier <deckard@android.com>
+Submitted-by: Jay Shrauner <shrauner@google.com>
+Submitted-at: Thu, 30 Apr 2015 18:28:53 +0000
+Reviewed-on: https://android-review.googlesource.com/73871
+Project: platform/packages/apps/Contacts
+Branch: refs/heads/master
