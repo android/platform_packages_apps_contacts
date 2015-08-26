@@ -340,31 +340,6 @@ public class QuickContactActivity extends ContactsActivity {
                 return;
             }
 
-            // Pass the touch point through the intent for use in the InCallUI
-            if (Intent.ACTION_CALL.equals(intent.getAction())) {
-                if (TouchPointManager.getInstance().hasValidPoint()) {
-                    Bundle extras = new Bundle();
-                    extras.putParcelable(TouchPointManager.TOUCH_POINT,
-                            TouchPointManager.getInstance().getPoint());
-                    intent.putExtra(TelecomManager.EXTRA_OUTGOING_CALL_EXTRAS, extras);
-                }
-            }
-
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-            mHasIntentLaunched = true;
-            try {
-                startActivity(intent);
-            } catch (SecurityException ex) {
-                Toast.makeText(QuickContactActivity.this, R.string.missing_app,
-                        Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "QuickContacts does not have permission to launch "
-                        + intent);
-            } catch (ActivityNotFoundException ex) {
-                Toast.makeText(QuickContactActivity.this, R.string.missing_app,
-                        Toast.LENGTH_SHORT).show();
-            }
-
             // Default to USAGE_TYPE_CALL. Usage is summed among all types for sorting each data id
             // so the exact usage type is not necessary in all cases
             String usageType = DataUsageFeedback.USAGE_TYPE_CALL;
