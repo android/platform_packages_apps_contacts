@@ -219,6 +219,7 @@ public class CompactPhotoEditorView extends RelativeLayout implements View.OnCli
      * Removes the current bound photo bitmap.
      */
     public void removePhoto() {
+        ContactPhotoManager.getInstance(getContext()).removePhoto(mPhotoImageView);
         mPhotoImageView.setImageBitmap(/* bitmap =*/ null);
         mIsNonDefaultPhotoBound = false;
         setDefaultPhoto(/* materialPalette =*/ null);

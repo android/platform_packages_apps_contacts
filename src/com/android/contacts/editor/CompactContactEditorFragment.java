@@ -49,9 +49,11 @@ public class CompactContactEditorFragment extends ContactEditorBaseFragment impl
 
     private static final String KEY_PHOTO_RAW_CONTACT_ID = "photo_raw_contact_id";
     private static final String KEY_UPDATED_PHOTOS = "updated_photos";
+    private static final String KEY_IS_REMOVED_PHOTO = "is_removed_photo";
 
     private long mPhotoRawContactId;
     private Bundle mUpdatedPhotos = new Bundle();
+    private boolean mIsRemovedPhoto = false;
 
     @Override
     public void onCreate(Bundle savedState) {
@@ -60,6 +62,7 @@ public class CompactContactEditorFragment extends ContactEditorBaseFragment impl
         if (savedState != null) {
             mPhotoRawContactId = savedState.getLong(KEY_PHOTO_RAW_CONTACT_ID);
             mUpdatedPhotos = savedState.getParcelable(KEY_UPDATED_PHOTOS);
+            mIsRemovedPhoto = savedState.getBoolean(KEY_IS_REMOVED_PHOTO);
         }
     }
 
@@ -77,6 +80,7 @@ public class CompactContactEditorFragment extends ContactEditorBaseFragment impl
     public void onSaveInstanceState(Bundle outState) {
         outState.putLong(KEY_PHOTO_RAW_CONTACT_ID, mPhotoRawContactId);
         outState.putParcelable(KEY_UPDATED_PHOTOS, mUpdatedPhotos);
+        outState.putBoolean(KEY_IS_REMOVED_PHOTO, mIsRemovedPhoto);
         super.onSaveInstanceState(outState);
     }
 
@@ -112,6 +116,9 @@ public class CompactContactEditorFragment extends ContactEditorBaseFragment impl
         final Uri uri = (Uri) mUpdatedPhotos.get(String.valueOf(mPhotoRawContactId));
         if (uri != null) {
             editorView.setFullSizePhoto(uri);
+        }
+        if (mIsRemovedPhoto) {
+            editorView.removePhoto();
         }
 
         // The editor is ready now so make it visible
@@ -178,6 +185,7 @@ public class CompactContactEditorFragment extends ContactEditorBaseFragment impl
     public void removePhoto() {
         getContent().removePhoto();
         mUpdatedPhotos.remove(String.valueOf(mPhotoRawContactId));
+        mIsRemovedPhoto = true;
     }
 
     public void updatePhoto(Uri uri) throws FileNotFoundException {
@@ -188,6 +196,7 @@ public class CompactContactEditorFragment extends ContactEditorBaseFragment impl
             return;
         }
         mUpdatedPhotos.putParcelable(String.valueOf(mPhotoRawContactId), uri);
+        mIsRemovedPhoto = false;
         getContent().updatePhoto(uri);
     }
 
