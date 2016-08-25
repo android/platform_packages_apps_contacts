@@ -291,7 +291,11 @@ public class PeopleActivity extends ContactsActivity implements
             final Intent intent = ImplicitIntentsUtil.composeQuickContactIntent(
                     mRequest.getContactUri(), QuickContactActivity.MODE_FULLY_EXPANDED);
             intent.putExtra(QuickContactActivity.EXTRA_PREVIOUS_SCREEN_TYPE, ScreenType.UNKNOWN);
-            ImplicitIntentsUtil.startActivityInApp(this, intent);
+            try {
+                ImplicitIntentsUtil.startActivityInApp(this, intent);
+            } catch (ActivityNotFoundException e) {
+                Log.e(TAG, "Failed to start activity: " + intent);
+            }
             return false;
         }
         return true;
