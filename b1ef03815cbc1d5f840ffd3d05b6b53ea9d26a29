@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "71883973_d44ef236",
+        "filename": "src/com/android/contacts/editor/ContactEditorFragment.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 1120253
+      },
+      "writtenOn": "2016-09-01T19:02:21Z",
+      "side": 1,
+      "message": "I think getActivity() should work and we don\u0027t need \"ContactEditorFragment.this.\".",
+      "range": {
+        "startLine": 577,
+        "startChar": 16,
+        "endLine": 577,
+        "endChar": 55
+      },
+      "revId": "b1ef03815cbc1d5f840ffd3d05b6b53ea9d26a29",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
