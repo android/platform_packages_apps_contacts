@@ -22,6 +22,30 @@
       "revId": "b1ef03815cbc1d5f840ffd3d05b6b53ea9d26a29",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71883973_d41cb22a",
+        "filename": "src/com/android/contacts/editor/ContactEditorFragment.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 1120253
+      },
+      "writtenOn": "2016-09-01T19:05:50Z",
+      "side": 1,
+      "message": "But it\u0027s up to you. :)",
+      "parentUuid": "71883973_d44ef236",
+      "range": {
+        "startLine": 577,
+        "startChar": 16,
+        "endLine": 577,
+        "endChar": 55
+      },
+      "revId": "b1ef03815cbc1d5f840ffd3d05b6b53ea9d26a29",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
