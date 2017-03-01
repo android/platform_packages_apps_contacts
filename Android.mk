@@ -35,7 +35,9 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v7-cardview \
     android-support-v7-palette \
     android-support-v4 \
-    libphonenumber
+    libphonenumber \
+    legacy-android-test \
+    junit
 
 LOCAL_PACKAGE_NAME := Contacts
 LOCAL_CERTIFICATE := shared
