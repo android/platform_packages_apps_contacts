@@ -43,6 +43,7 @@ import android.widget.TextView;
 
 import com.android.contacts.compat.CompatUtils;
 import com.android.contacts.database.SimContactDao;
+import com.android.contacts.model.account.SimAccountType;
 import com.android.contacts.editor.AccountHeaderPresenter;
 import com.android.contacts.model.AccountTypeManager;
 import com.android.contacts.model.SimCard;
@@ -128,7 +129,17 @@ public class SimImportFragment extends Fragment
         } else {
             // Default may be null in which case the first account in the list will be selected
             // after they are loaded.
-            mAccountHeaderPresenter.setCurrentAccount(mPreferences.getDefaultAccount());
+            AccountWithDataSet account = mPreferences.getDefaultAccount();
+            // filter sim account here, uses the default google account instead
+            if (account.type != null && account.type.equals(SimAccountType.ACCOUNT_TYPE)) {
+                List<AccountInfo> gAccount = mAccountTypeManager.getWritableGoogleAccounts();
+                if(gAccount.size() > 0) {
+                    account = gAccount.get(0).getAccount();
+                } else {
+                    account = AccountWithDataSet.getNullAccount();
+                }
+            }
+            mAccountHeaderPresenter.setCurrentAccount(account);
         }
         mAccountHeaderPresenter.setObserver(new AccountHeaderPresenter.Observer() {
             @Override
@@ -437,6 +448,8 @@ public class SimImportFragment extends Fragment
                 return contact.getPhone();
             } else if (contact.hasEmails()) {
                 return contact.getEmails()[0];
+            } else if(contact.hasAnrs()) {
+                return contact.getAnrs()[0];
             } else {
                 // This isn't really possible because we skip empty SIM contacts during loading
                 return "";
@@ -461,7 +474,8 @@ public class SimImportFragment extends Fragment
         protected ListenableFuture<LoaderResult> loadData() {
             final ListenableFuture<List<Object>> future = Futures.<Object>allAsList(
                     mAccountTypeManager
-                            .filterAccountsAsync(AccountTypeManager.writableFilter()),
+                            .filterAccountsAsync(AccountTypeManager.AccountFilter
+                                    .CONTACTS_WRITABLE_WITHOUT_SIM),
                     ContactsExecutors.getSimReadExecutor().<Object>submit(
                             new Callable<Object>() {
                         @Override

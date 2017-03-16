@@ -47,20 +47,26 @@ public class SimContact implements Parcelable {
     private final String mName;
     private final String mPhone;
     private final String[] mEmails;
+    private final String[] mAnrs;
 
     public SimContact(long id, String name, String phone) {
         this(id, name, phone, null);
     }
 
     public SimContact(long id, String name, String phone, String[] emails) {
+        this(id, name, phone, emails, null);
+    }
+
+    public SimContact(long id, String name, String phone, String[] emails, String[] anrs) {
         mId = id;
         mName = name;
         mPhone = phone == null ? "" : phone.trim();
         mEmails = emails;
+        mAnrs = anrs;
     }
 
     public SimContact(SimContact other) {
-        this(other.mId, other.mName, other.mPhone, other.mEmails);
+        this(other.mId, other.mName, other.mPhone, other.mEmails, other.mAnrs);
     }
 
     public long getId() {
@@ -79,10 +85,14 @@ public class SimContact implements Parcelable {
         return mEmails;
     }
 
+    public String[] getAnrs() {
+        return mAnrs;
+    }
+
     public void appendCreateContactOperations(List<ContentProviderOperation> ops,
             AccountWithDataSet targetAccount) {
         // There is nothing to save so skip it.
-        if (!hasName() && !hasPhone() && !hasEmails()) return;
+        if (!hasName() && !hasPhone() && !hasEmails() && !hasAnrs()) return;
 
         final int rawContactOpIndex = ops.size();
         ops.add(ContentProviderOperation.newInsert(ContactsContract.RawContacts.CONTENT_URI)
@@ -103,6 +113,12 @@ public class SimContact implements Parcelable {
             for (String email : mEmails) {
                 ops.add(createInsertOp(rawContactOpIndex, Email.CONTENT_ITEM_TYPE,
                         Email.ADDRESS, email));
+            }
+        }
+        if (mAnrs != null) {
+            for (String anr : mAnrs) {
+                ops.add(createInsertOp(rawContactOpIndex, Phone.CONTENT_ITEM_TYPE,
+                        Phone.NUMBER, anr));
             }
         }
     }
@@ -132,6 +148,10 @@ public class SimContact implements Parcelable {
 
     public boolean hasEmails() {
         return mEmails != null && mEmails.length > 0;
+    }
+
+    public boolean hasAnrs() {
+        return mAnrs != null && mAnrs.length > 0;
     }
 
     /**
@@ -167,7 +187,8 @@ public class SimContact implements Parcelable {
         final SimContact that = (SimContact) o;
 
         return mId == that.mId && Objects.equals(mName, that.mName) &&
-                Objects.equals(mPhone, that.mPhone) && Arrays.equals(mEmails, that.mEmails);
+                Objects.equals(mPhone, that.mPhone) && Arrays.equals(mEmails, that.mEmails)
+                && Arrays.equals(mAnrs, that.mAnrs);
     }
 
     @Override
@@ -176,6 +197,7 @@ public class SimContact implements Parcelable {
         result = 31 * result + (mName != null ? mName.hashCode() : 0);
         result = 31 * result + (mPhone != null ? mPhone.hashCode() : 0);
         result = 31 * result + Arrays.hashCode(mEmails);
+        result = 31 * result + Arrays.hashCode(mAnrs);
         return result;
     }
 
@@ -190,6 +212,7 @@ public class SimContact implements Parcelable {
         dest.writeString(mName);
         dest.writeString(mPhone);
         dest.writeStringArray(mEmails);
+        dest.writeStringArray(mAnrs);
     }
 
     public static final Creator<SimContact> CREATOR = new Creator<SimContact>() {
@@ -199,7 +222,8 @@ public class SimContact implements Parcelable {
             final String name = source.readString();
             final String phone = source.readString();
             final String[] emails = source.createStringArray();
-            return new SimContact(id, name, phone, emails);
+            final String[] anrs = source.createStringArray();
+            return new SimContact(id, name, phone, emails, anrs);
         }
 
         @Override

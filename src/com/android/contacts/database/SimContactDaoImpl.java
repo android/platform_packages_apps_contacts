@@ -82,6 +82,7 @@ public class SimContactDaoImpl extends SimContactDao {
     public static String NAME = "name";
     public static String NUMBER = "number";
     public static String EMAILS = "emails";
+    public static String ANRS = "anrs";
 
     private final Context mContext;
     private final ContentResolver mResolver;
@@ -292,7 +293,7 @@ public class SimContactDaoImpl extends SimContactDao {
         final int colName = cursor.getColumnIndex(NAME);
         final int colNumber = cursor.getColumnIndex(NUMBER);
         final int colEmails = cursor.getColumnIndex(EMAILS);
-
+        final int colAnrs = cursor.getColumnIndex(ANRS);
         final ArrayList<SimContact> result = new ArrayList<>();
 
         while (cursor.moveToNext()) {
@@ -300,10 +301,14 @@ public class SimContactDaoImpl extends SimContactDao {
             final String name = cursor.getString(colName);
             final String number = cursor.getString(colNumber);
             final String emails = cursor.getString(colEmails);
-
-            final SimContact contact = new SimContact(id, name, number, parseEmails(emails));
+            String anrs = "";
+            if (colAnrs >=0 )
+                anrs = cursor.getString(colAnrs);
+            final SimContact contact = new SimContact(id, name, number, parseEmails(emails),
+                    parseAnrs(anrs));
             // Only include contact if it has some useful data
-            if (contact.hasName() || contact.hasPhone() || contact.hasEmails()) {
+            if (contact.hasName() || contact.hasPhone() || contact.hasEmails()
+                    || contact.hasAnrs()) {
                 result.add(contact);
             }
         }
@@ -394,6 +399,10 @@ public class SimContactDaoImpl extends SimContactDao {
 
     private String[] parseEmails(String emails) {
         return !TextUtils.isEmpty(emails) ? emails.split(",") : null;
+    }
+
+    private String[] parseAnrs(String anrs) {
+        return !TextUtils.isEmpty(anrs) ? anrs.split(",") : null;
     }
 
     private boolean hasTelephony() {

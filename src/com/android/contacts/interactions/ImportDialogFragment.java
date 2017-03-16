@@ -109,7 +109,7 @@ public class ImportDialogFragment extends DialogFragment {
 
         // Start loading the accounts. This is done in onResume in case they were refreshed.
         mAccountsFuture = AccountTypeManager.getInstance(getActivity()).filterAccountsAsync(
-                AccountTypeManager.writableFilter());
+                AccountTypeManager.AccountFilter.CONTACTS_WRITABLE_WITHOUT_SIM);
     }
 
     @Override
@@ -271,7 +271,7 @@ public class ImportDialogFragment extends DialogFragment {
             args.putInt(KEY_SUBSCRIPTION_ID, subscriptionId);
             SelectAccountDialogFragment.show(
                     getFragmentManager(), R.string.dialog_new_contact_account,
-                    AccountTypeManager.AccountFilter.CONTACTS_WRITABLE, args);
+                    AccountTypeManager.AccountFilter.CONTACTS_WRITABLE_WITHOUT_SIM, args);
         } else {
             AccountSelectionUtil.doImport(getActivity(), resId,
                     (size == 1 ? accountList.get(0) : null),
