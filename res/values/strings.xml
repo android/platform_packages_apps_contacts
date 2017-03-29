@@ -1603,4 +1603,17 @@
 
     <!-- Label to clear all selection in multiple picker -->
     <string name="menu_select_none">"Unselect all"</string>
+    <!-- Action that exports all contacts to SIM -->
+    <string name="export_to_sim">Export to SIM card</string>
+    <string name="progressdialog_cancel">Cancel</string>
+    <string name="sim_contact_export_failed">Export failed, Contact name: <xliff:g id="name">%1$s</xliff:g>, number: <xliff:g id="number">%2$s</xliff:g>, email: <xliff:g id="email">%3$s</xliff:g></string>
+    <string name="export_sim_card_full">Sim Card is full, <xliff:g id="insertCount">%d</xliff:g> items are exported</string>
+    <string name="sim_card_full">Error, Sim Card is full.</string>
+    <string name="export_finished">Export finished</string>
+    <string name="export_cancelled">Export is canceled, <xliff:g id="insertCount">%s</xliff:g>items are exported</string>
+    <string name="export_no_phone_or_email">Export failed, <xliff:g id="name">%s</xliff:g>has not phone number or email address</string>
+    <string name="exporting">Exporting</string>
+    <string name="copy_done">Copy done！</string>
+    <string name="copy_failure">Copy Failed！</string>
+    <string name="card_no_space">Card has no space ,some record copy failed</string>
 </resources>

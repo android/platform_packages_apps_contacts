@@ -42,14 +42,17 @@ import android.content.ContentResolver;
 import android.content.ContentProviderOperation;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Message;
+import android.os.Handler;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
@@ -114,6 +117,7 @@ public class MultiPickContactsActivity extends Activity implements
     private ProgressDialog mProgressDialog;
     private SimContactsOperation mSimContactsOperation;
     private boolean mDelete = false;
+    private int mExportSub = -1;
 
     private static final int ACCOUNT_TYPE_COLUMN_ID = 5;
     private static final int ACCOUNT_NAME_COLUMN_ID = 6;
@@ -121,6 +125,15 @@ public class MultiPickContactsActivity extends Activity implements
 
     private static final int BUFFER_LENGTH = 400;
 
+    private static final int TOAST_EXPORT_FINISHED = 0;
+    // only for sim card is full
+    private static final int TOAST_SIM_CARD_FULL = 1;
+    // there is a case export is canceled by user
+    private static final int TOAST_EXPORT_CANCELED = 2;
+    // only for not have phone number or email address
+    private static final int TOAST_EXPORT_NO_PHONE_OR_EMAIL = 3;
+    // only for export failed in exporting progress
+    private static final int TOAST_SIM_EXPORT_FAILED = 4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -148,6 +161,7 @@ public class MultiPickContactsActivity extends Activity implements
         mPickMode = ContactsPickMode.getInstance();
         mPickMode.setMode(getIntent());
         mDelete = getIntent().getBooleanExtra("delete", false);
+        mExportSub = getIntent().getIntExtra("exportSub", -1);
         inflateSearchView();
         mSimContactsOperation = new SimContactsOperation(this);
         initResource();
@@ -395,6 +409,8 @@ public class MultiPickContactsActivity extends Activity implements
                 }
                 if (mDelete) {
                     showDialog(R.id.dialog_delete_contact_confirmation);
+                } else if(mExportSub > -1) {
+                    new ExportToSimThread().start();
                 } else {
                     Intent intent = new Intent();
                     Bundle bundle = new Bundle();
@@ -543,6 +559,391 @@ public class MultiPickContactsActivity extends Activity implements
             if (i == DialogInterface.BUTTON_NEGATIVE) {
                 mCanceled = true;
             }
+        }
+    }
+
+    /**
+     * A thread that export contacts to sim card
+     */
+    public class ExportToSimThread extends Thread {
+        private int slot;
+        private boolean canceled = false;
+        private int freeSimCount = 0;
+        private ArrayList<ContentProviderOperation> operationList =
+                new ArrayList<ContentProviderOperation>();
+        private Account account;
+        final int BATCH_INSERT_NUMBER = 400;
+
+        public ExportToSimThread() {
+            slot = ContactUtils.getActiveSlotId(mContext, mExportSub);
+            account = ContactUtils.getAcount(mContext, slot);
+            showExportProgressDialog();
+        }
+
+        @Override
+        public void run() {
+            boolean isSimCardFull = false;
+            // in case export is stopped, record the count of inserted
+            // successfully
+            int insertCount = 0;
+            freeSimCount = ContactUtils.getSimFreeCount(mContext, slot);
+            boolean canSaveAnr = ContactUtils.canSaveAnr(mContext, slot);
+            boolean canSaveEmail = ContactUtils.canSaveEmail(mContext, slot);
+            int emailCountInOneSimContact = ContactUtils
+                    .getOneSimEmailCount(mContext, slot);
+            int phoneCountInOneSimContact = ContactUtils.getOneSimAnrCount(
+                    mContext, slot) + 1;
+            int emptyAnr = ContactUtils.getSpareAnrCount(mContext, slot);
+            int emptyEmail = ContactUtils.getSpareEmailCount(mContext, slot);
+            int emptyNumber = freeSimCount + emptyAnr;
+
+            Log.d(TAG, "freeSimCount = " + freeSimCount);
+            Bundle choiceSet = (Bundle) mChoiceSet.clone();
+            Set<String> set = choiceSet.keySet();
+            Iterator<String> i = set.iterator();
+            while (i.hasNext() && !canceled) {
+                String id = String.valueOf(i.next());
+                String name = "";
+                ArrayList<String> arrayNumber = new ArrayList<String>();
+                ArrayList<String> arrayEmail = new ArrayList<String>();
+
+                Uri dataUri = Uri.withAppendedPath(
+                        ContentUris.withAppendedId(Contacts.CONTENT_URI,
+                                Long.parseLong(id)),
+                        Contacts.Data.CONTENT_DIRECTORY);
+                final String[] projection = new String[] { Contacts._ID,
+                        Contacts.Data.MIMETYPE, Contacts.Data.DATA1, };
+                Cursor c = mContext.getContentResolver().query(dataUri,
+                        projection, null, null, null);
+                try {
+                    if (c != null && c.moveToFirst()) {
+                        do {
+                            String mimeType = c.getString(1);
+                            if (StructuredName.CONTENT_ITEM_TYPE
+                                    .equals(mimeType)) {
+                                name = c.getString(2);
+                            }
+                            if (Phone.CONTENT_ITEM_TYPE.equals(mimeType)) {
+                                String number = c.getString(2);
+                                if (!TextUtils.isEmpty(number)
+                                        && emptyNumber-- > 0) {
+                                    arrayNumber.add(number);
+                                }
+                            }
+                            if (canSaveEmail) {
+                                if (Email.CONTENT_ITEM_TYPE.equals(mimeType)) {
+                                    String email = c.getString(2);
+                                    if (!TextUtils.isEmpty(email)
+                                            && emptyEmail-- > 0) {
+                                        arrayEmail.add(email);
+                                    }
+                                }
+                            }
+                        } while (c.moveToNext());
+                    }
+                } finally {
+                    if (c != null) {
+                        c.close();
+                    }
+                }
+                if (freeSimCount > 0 && 0 == arrayNumber.size()
+                        && 0 == arrayEmail.size()) {
+                    mToastHandler.sendMessage(mToastHandler.obtainMessage(
+                            TOAST_EXPORT_NO_PHONE_OR_EMAIL, name));
+                    continue;
+                }
+
+                int nameCount = (name != null && !name.equals("")) ? 1 : 0;
+                int groupNumCount = (arrayNumber.size() % phoneCountInOneSimContact) != 0 ?
+                        (arrayNumber.size() / phoneCountInOneSimContact + 1)
+                        : (arrayNumber.size() / phoneCountInOneSimContact);
+                int groupEmailCount = emailCountInOneSimContact == 0 ? 0
+                        : ((arrayEmail.size() % emailCountInOneSimContact) != 0 ? (arrayEmail
+                                .size() / emailCountInOneSimContact + 1)
+                                : (arrayEmail.size() / emailCountInOneSimContact));
+                // recalute the group when spare anr is not enough
+                if (canSaveAnr && emptyAnr >= 0 && emptyAnr <= groupNumCount) {
+                    groupNumCount = arrayNumber.size() - emptyAnr;
+                }
+                int groupCount = Math.max(groupEmailCount,
+                        Math.max(nameCount, groupNumCount));
+
+                Uri result = null;
+                if (DEBUG) {
+                    Log.d(TAG, "GroupCount = " + groupCount);
+                }
+                for (int k = 0; k < groupCount; k++) {
+                    if (freeSimCount > 0) {
+                        String num = arrayNumber.size() > 0 ? arrayNumber
+                                .remove(0) : null;
+                        StringBuilder anrNum = new StringBuilder();
+                        StringBuilder email = new StringBuilder();
+                        if (canSaveAnr) {
+                            for (int j = 1; j < phoneCountInOneSimContact; j++) {
+                                if (arrayNumber.size() > 0 && emptyAnr-- > 0) {
+                                    String s = arrayNumber.remove(0);
+                                    anrNum.append(s);
+                                    anrNum.append(SimContactsConstants.ANR_SEP);
+                                }
+                            }
+                        }
+                        if (canSaveEmail) {
+                            for (int j = 0; j < emailCountInOneSimContact; j++) {
+                                if (arrayEmail.size() > 0) {
+                                    String s = arrayEmail.remove(0);
+                                    email.append(s);
+                                    email.append(SimContactsConstants.EMAIL_SEP);
+                                }
+                            }
+                        }
+
+                        result = ContactUtils.insertToCard(mContext, name,
+                                num, email.toString(), anrNum.toString(),
+                                slot, false);
+
+                        if (null == result) {
+                            // Failed to insert to SIM card
+                            int anrNumber = 0;
+                            if (!TextUtils.isEmpty(anrNum)) {
+                                anrNumber += anrNum.toString().split(
+                                        SimContactsConstants.ANR_SEP).length;
+                            }
+                            // reset emptyNumber and emptyAnr to the value
+                            // before
+                            // the insert operation
+                            emptyAnr += anrNumber;
+                            emptyNumber += anrNumber;
+                            if (!TextUtils.isEmpty(num)) {
+                                emptyNumber++;
+                            }
+
+                            if (!TextUtils.isEmpty(email)) {
+                                // reset emptyEmail to the value before the
+                                // insert
+                                // operation
+                                emptyEmail += email.toString().split(
+                                        SimContactsConstants.EMAIL_SEP).length;
+                            }
+
+                            mToastHandler.sendMessage(mToastHandler
+                                    .obtainMessage(
+                                            TOAST_SIM_EXPORT_FAILED,
+                                            new String[] { name, num,
+                                                    email.toString() }));
+
+                        } else {
+                            if (DEBUG) {
+                                Log.d(TAG, "Exported contact [" + name + ", "
+                                        + id + "] to slot " + slot);
+                            }
+                            insertCount++;
+                            freeSimCount--;
+                            batchInsert(name, num, anrNum.toString(),
+                                    email.toString());
+                        }
+                    } else {
+                        isSimCardFull = true;
+                        mToastHandler.sendMessage(mToastHandler.obtainMessage(
+                                TOAST_SIM_CARD_FULL, insertCount, 0));
+                        break;
+                    }
+                }
+
+                if (isSimCardFull) {
+                    break;
+                }
+            }
+
+            if (operationList.size() > 0) {
+                try {
+                    mContext.getContentResolver().applyBatch(
+                            android.provider.ContactsContract.AUTHORITY,
+                            operationList);
+                } catch (Exception e) {
+                    Log.e(TAG,
+                            String.format("%s: %s", e.toString(),
+                                    e.getMessage()));
+                } finally {
+                    operationList.clear();
+                }
+            }
+
+            if (!isSimCardFull) {
+                // if canceled, show toast indicating export is interrupted.
+                if (canceled) {
+                    mToastHandler.sendMessage(mToastHandler.obtainMessage(TOAST_EXPORT_CANCELED,
+                            insertCount, 0));
+                } else {
+                    mToastHandler.sendEmptyMessage(TOAST_EXPORT_FINISHED);
+                }
+            }
+            finish();
+        }
+
+        private void batchInsert(String name, String phoneNumber, String anrs,
+                String emailAddresses) {
+            final String[] emailAddressArray;
+            final String[] anrArray;
+            if (!TextUtils.isEmpty(emailAddresses)) {
+                emailAddressArray = emailAddresses.split(",");
+            } else {
+                emailAddressArray = null;
+            }
+            if (!TextUtils.isEmpty(anrs)) {
+                anrArray = anrs.split(SimContactsConstants.ANR_SEP);
+            } else {
+                anrArray = null;
+            }
+            Log.d(TAG, "insertToPhone: name= " + name + ", phoneNumber= " + phoneNumber
+                    + ", emails= " + emailAddresses + ", anrs= " + anrs + ", account= " + account);
+            ContentProviderOperation.Builder builder = ContentProviderOperation
+                    .newInsert(RawContacts.CONTENT_URI);
+            builder.withValue(RawContacts.AGGREGATION_MODE, RawContacts.AGGREGATION_MODE_DISABLED);
+
+            int ref = operationList.size();
+            if (account != null) {
+                builder.withValue(RawContacts.ACCOUNT_NAME, account.name);
+                builder.withValue(RawContacts.ACCOUNT_TYPE, account.type);
+            }
+            operationList.add(builder.build());
+            // do not allow empty value insert into database.
+            if (!TextUtils.isEmpty(name)) {
+                builder = ContentProviderOperation.newInsert(Data.CONTENT_URI);
+                builder.withValueBackReference(StructuredName.RAW_CONTACT_ID, ref);
+                builder.withValue(Data.MIMETYPE, StructuredName.CONTENT_ITEM_TYPE);
+                builder.withValue(StructuredName.GIVEN_NAME, name);
+                operationList.add(builder.build());
+            }
+
+            if (!TextUtils.isEmpty(phoneNumber)) {
+                builder = ContentProviderOperation.newInsert(Data.CONTENT_URI);
+                builder.withValueBackReference(Phone.RAW_CONTACT_ID, ref);
+                builder.withValue(Data.MIMETYPE, Phone.CONTENT_ITEM_TYPE);
+                builder.withValue(Phone.TYPE, Phone.TYPE_MOBILE);
+                builder.withValue(Phone.NUMBER, phoneNumber);
+                builder.withValue(Data.IS_PRIMARY, 1);
+                operationList.add(builder.build());
+            }
+
+            if (anrArray != null) {
+                for (String anr : anrArray) {
+                    if (!TextUtils.isEmpty(anr)) {
+                        builder = ContentProviderOperation.newInsert(Data.CONTENT_URI);
+                        builder.withValueBackReference(Phone.RAW_CONTACT_ID, ref);
+                        builder.withValue(Data.MIMETYPE, Phone.CONTENT_ITEM_TYPE);
+                        builder.withValue(Phone.TYPE, Phone.TYPE_HOME);
+                        builder.withValue(Phone.NUMBER, anr);
+                        operationList.add(builder.build());
+                    }
+                }
+            }
+
+            if (emailAddressArray != null) {
+                for (String emailAddress : emailAddressArray) {
+                    if (!TextUtils.isEmpty(emailAddress)) {
+                        builder = ContentProviderOperation.newInsert(Data.CONTENT_URI);
+                        builder.withValueBackReference(Email.RAW_CONTACT_ID, ref);
+                        builder.withValue(Data.MIMETYPE, Email.CONTENT_ITEM_TYPE);
+                        builder.withValue(Email.TYPE, Email.TYPE_MOBILE);
+                        builder.withValue(Email.ADDRESS, emailAddress);
+                        operationList.add(builder.build());
+                    }
+                }
+            }
+
+            if (BATCH_INSERT_NUMBER - operationList.size() < 10) {
+                try {
+                    mContext.getContentResolver().applyBatch(
+                            android.provider.ContactsContract.AUTHORITY,
+                            operationList);
+                } catch (Exception e) {
+                    Log.e(TAG,
+                            String.format("%s: %s", e.toString(),
+                                    e.getMessage()));
+                } finally {
+                    operationList.clear();
+                }
+            }
+        }
+
+        private Handler mToastHandler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                int exportCount = 0;
+                switch (msg.what) {
+                case TOAST_EXPORT_FINISHED:
+                    Toast.makeText(mContext, R.string.export_finished,
+                            Toast.LENGTH_SHORT).show();
+                    break;
+                case TOAST_SIM_CARD_FULL:
+                    exportCount = msg.arg1;
+                    Toast.makeText(
+                            mContext,
+                            mContext.getString(
+                                    R.string.export_sim_card_full, exportCount),
+                            Toast.LENGTH_SHORT).show();
+                    break;
+                case TOAST_EXPORT_CANCELED:
+                    exportCount = msg.arg1;
+                    Toast.makeText(
+                            mContext,
+                            mContext.getString(R.string.export_cancelled,
+                                    String.valueOf(exportCount)),
+                            Toast.LENGTH_SHORT).show();
+                    break;
+                case TOAST_EXPORT_NO_PHONE_OR_EMAIL:
+                    String name = (String) msg.obj;
+                    Toast.makeText(
+                            mContext,
+                            mContext.getString(
+                                    R.string.export_no_phone_or_email, name),
+                            Toast.LENGTH_SHORT).show();
+                    break;
+                case TOAST_SIM_EXPORT_FAILED:
+                    String[] contactInfos = (String[]) msg.obj;
+                    if (contactInfos != null && contactInfos.length == 3) {
+                        String toastS = mContext.getString(
+                                R.string.sim_contact_export_failed,
+                                contactInfos[0] == null ? "" : contactInfos[0],
+                                contactInfos[1] == null ? "" : contactInfos[1],
+                                contactInfos[2] == null ? "" : contactInfos[2]);
+
+                        Toast.makeText(mContext, toastS,
+                                Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+                }
+            }
+        };
+
+        public void showExportProgressDialog(){
+            mProgressDialog = new ProgressDialog(MultiPickContactsActivity.this);
+            mProgressDialog.setTitle(R.string.export_to_sim);
+            mProgressDialog.setOnCancelListener(new OnCancelListener() {
+                public void onCancel(DialogInterface dialog) {
+                    Log.d(TAG, "Cancel exporting contacts");
+                    canceled = true;
+                }
+            });
+            mProgressDialog.setMessage(mContext.getString(R.string.exporting));
+            mProgressDialog.setMax(mChoiceSet.size());
+            mProgressDialog.setCanceledOnTouchOutside(false);
+
+            // add a cancel button to let user cancel explicitly.
+            mProgressDialog.setButton(DialogInterface.BUTTON_NEGATIVE,
+                    mContext.getString(R.string.progressdialog_cancel),
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Log.d(TAG, "Cancel exporting contacts by click button");
+                            canceled = true;
+                        }
+                    });
+
+            mProgressDialog.show();
+            mOKButton.setEnabled(false);
+            mOKButton.setTextColor(
+                    mContext.getResources().getColor(R.color.ok_or_clear_button_disable_color));
         }
     }
 
