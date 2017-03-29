@@ -62,6 +62,19 @@ public class ValuesDelta implements Parcelable {
         final ValuesDelta entry = new ValuesDelta();
         entry.mBefore = before;
         entry.mAfter = new ContentValues();
+        // init data1 to mAfter map for sim contacts
+        if (before.containsKey(ContactsContract.Data.DATA1)) {
+            String contactInfo = before.getAsString(ContactsContract.Data.DATA1);
+            if (null != contactInfo && !"".equals(contactInfo)) {
+                entry.mAfter.put(ContactsContract.Data.DATA1, contactInfo);
+            }
+        }
+        if (before.containsKey(ContactsContract.Data.DATA2)) {
+            String contactInfo = before.getAsString(ContactsContract.Data.DATA2);
+            if (null != contactInfo && !"".equals(contactInfo)) {
+                entry.mAfter.put(ContactsContract.Data.DATA2, contactInfo);
+            }
+        }
         return entry;
     }
 

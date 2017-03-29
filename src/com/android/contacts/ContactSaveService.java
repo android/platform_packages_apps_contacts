@@ -50,9 +50,12 @@ import android.provider.ContactsContract.RawContactsEntity;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.os.ResultReceiver;
 import android.text.TextUtils;
+import android.telephony.SubscriptionManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.contacts.ContactUtils;
+import com.android.contacts.SimContactsOperation;
 import com.android.contacts.activities.ContactEditorActivity;
 import com.android.contacts.compat.CompatUtils;
 import com.android.contacts.compat.PinnedPositionsCompat;
@@ -189,6 +192,8 @@ public class ContactSaveService extends IntentService {
 
     private static final int PERSIST_TRIES = 3;
 
+    private static SimContactsOperation mSimContactsOperation;
+
     private static final int MAX_CONTACTS_PROVIDER_BATCH_SIZE = 499;
 
     public interface Listener {
@@ -216,6 +221,7 @@ public class ContactSaveService extends IntentService {
         super.onCreate();
         mGroupsDao = new GroupsDaoImpl(this);
         mSimContactDao = SimContactDao.create(this);
+        mSimContactsOperation = new SimContactsOperation(this);
     }
 
     public static void registerListener(Listener listener) {
@@ -511,8 +517,26 @@ public class ContactSaveService extends IntentService {
         long insertedRawContactId = -1;
 
         // Attempt to persist changes
+        Integer result = RESULT_SUCCESS;
+
+        ArrayList<Long> rawContactsList = new ArrayList<Long>();
+        for (int i=0; i < state.size(); i++) {
+            final RawContactDelta entity = state.get(i);
+            final String accountType = entity.getValues().getAsString(RawContacts.ACCOUNT_TYPE);
+            final String accountName = entity.getValues().getAsString(RawContacts.ACCOUNT_NAME);
+            rawContactsList.add(entity.getRawContactId());
+            final int subscription = ContactUtils.getSubscription(
+                accountType, accountName);
+            boolean isCardOperation = (subscription != SubscriptionManager.INVALID_SUBSCRIPTION_ID)
+                    ? true : false;
+            if (isCardOperation) {
+                result = doSaveToSimCard(entity, resolver, subscription);
+                Log.d(TAG, "doSaveToSimCard result is  " + result);
+            }
+        }
         int tries = 0;
         while (tries++ < PERSIST_TRIES) {
+            if (result == RESULT_SUCCESS) {
             try {
                 // Build operations and try applying
                 final ArrayList<CPOWrapper> diffWrapper = state.buildDiffWrapper();
@@ -633,6 +657,7 @@ public class ContactSaveService extends IntentService {
                 if (isProfile) {
                     for (RawContactDelta delta : state) {
                         delta.setProfileQueryUri();
+                        }
                     }
                 }
             }
@@ -670,6 +695,24 @@ public class ContactSaveService extends IntentService {
             deliverCallback(callbackIntent);
         }
     }
+
+    private Integer doSaveToSimCard(RawContactDelta entity, ContentResolver resolver,
+            int slot) {
+            boolean isInsert = entity.isContactInsert();
+            Integer result = RESULT_FAILURE;
+            ContentValues values = entity.buildSimDiff();
+            int capacity[] = ContactUtils.getAdnRecordsCapacity(this, slot);
+            if (isInsert) {
+                Uri resultUri = mSimContactsOperation.insert(values, slot);
+                if (resultUri != null)
+                    result = RESULT_SUCCESS;
+            } else {
+                int resultInt = mSimContactsOperation.update(values, slot);
+                if (resultInt == 1)
+                    result = RESULT_SUCCESS;
+            }
+            return result;
+        }
 
     /**
      * Splits "diff" into subsets based on "MAX_CONTACTS_PROVIDER_BATCH_SIZE", applies each of the
@@ -1197,7 +1240,20 @@ public class ContactSaveService extends IntentService {
             return;
         }
 
-        getContentResolver().delete(contactUri, null, null);
+        final List<String> segments = contactUri.getPathSegments();
+        // Contains an Id.
+        final long uriContactId = Long.parseLong(segments.get(3));
+        int subscription = mSimContactsOperation.getSimSubscription(uriContactId);
+        if (subscription != SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+            ContentValues values = mSimContactsOperation
+                    .getSimAccountValues(uriContactId);
+            int result = mSimContactsOperation.delete(values, subscription);
+            if (result == RESULT_SUCCESS) {
+                getContentResolver().delete(contactUri, null, null);
+            }
+        } else {
+            getContentResolver().delete(contactUri, null, null);
+        }
     }
 
     private void deleteMultipleContacts(Intent intent) {

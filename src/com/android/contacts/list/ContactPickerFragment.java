@@ -136,7 +136,7 @@ public class ContactPickerFragment extends ContactEntryListFragment<ContactEntry
             HeaderEntryContactListAdapter adapter
                     = new HeaderEntryContactListAdapter(getActivity());
             adapter.setFilter(ContactListFilter.createFilterWithType(
-                    ContactListFilter.FILTER_TYPE_ALL_ACCOUNTS));
+                    ContactListFilter.FILTER_TYPE_ALL_WITHOUT_SIM));
             adapter.setSectionHeaderDisplayEnabled(true);
             adapter.setDisplayPhotos(true);
             adapter.setQuickContactEnabled(false);

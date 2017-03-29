@@ -27,8 +27,14 @@ import android.provider.BaseColumns;
 import android.provider.ContactsContract.Data;
 import android.provider.ContactsContract.Profile;
 import android.provider.ContactsContract.RawContacts;
+import android.provider.ContactsContract.CommonDataKinds.Email;
+import android.provider.ContactsContract.CommonDataKinds.Phone;
+import android.provider.ContactsContract.CommonDataKinds.StructuredName;
+import android.text.TextUtils;
 import android.util.Log;
 
+import com.android.contacts.SimContactsConstants;
+import com.android.contacts.model.ValuesDelta;
 import com.android.contacts.compat.CompatUtils;
 import com.android.contacts.model.account.AccountType;
 import com.android.contacts.model.account.AccountWithDataSet;
@@ -444,6 +450,119 @@ public class RawContactDelta implements Parcelable {
             builder.withValue(RawContacts.VERSION, beforeVersion);
         }
         return builder;
+    }
+
+    public ContentValues buildSimDiff() {
+        ContentValues values = new ContentValues();
+        ArrayList<ValuesDelta> names = getMimeEntries(StructuredName.CONTENT_ITEM_TYPE);
+        ArrayList<ValuesDelta> phones = getMimeEntries(Phone.CONTENT_ITEM_TYPE);
+        ArrayList<ValuesDelta> emails = getMimeEntries(Email.CONTENT_ITEM_TYPE);
+        ValuesDelta nameValuesDelta = null;
+        ValuesDelta emailValuesDelta = null;
+        if (getMimeEntriesCount(StructuredName.CONTENT_ITEM_TYPE, true) > 0) {
+            nameValuesDelta = names.get(0);
+        }
+        if (emails != null && emails.size() > 0) {
+            emailValuesDelta = emails.get(0);
+        }
+
+        String name = null;
+        String number = null;
+        String newName = null;
+        String newNumber = null;
+        StringBuilder email = new StringBuilder();
+        StringBuilder anr = new StringBuilder();
+        StringBuilder newEmail = new StringBuilder();
+        StringBuilder newAnr = new StringBuilder();
+
+        if (nameValuesDelta != null) {
+            if (isContactInsert()) {
+                name = nameValuesDelta.getAsString(StructuredName.GIVEN_NAME);
+            } else {
+                if (nameValuesDelta.getBefore() != null) {
+                    name = nameValuesDelta.getBefore()
+                        .getAsString(StructuredName.GIVEN_NAME);
+                }
+                if (nameValuesDelta.getAfter() != null) {
+                    newName = nameValuesDelta.getAfter()
+                        .getAsString(StructuredName.GIVEN_NAME);
+                }
+            }
+        }
+        if (isContactInsert() && phones != null) {
+            for (ValuesDelta valuesDelta : phones) {
+                if (valuesDelta.getAfter() != null
+                        && valuesDelta.getAfter().size() != 0) {
+                    if (Phone.TYPE_MOBILE == valuesDelta.getAfter().getAsLong(Phone.TYPE)) {
+                        number = valuesDelta.getAfter().getAsString(Phone.NUMBER);
+                    } else {
+                        anr.append(valuesDelta.getAfter().getAsString(Phone.NUMBER));
+                        anr.append(SimContactsConstants.ANR_SEP);
+                    }
+                }
+            }
+        } else if (phones != null) {
+            for (ValuesDelta valuesDelta : phones) {
+                if (valuesDelta.getBefore() != null
+                        && valuesDelta.getBefore().size() != 0) {
+                    if (Phone.TYPE_MOBILE == valuesDelta.getBefore().getAsLong(Phone.TYPE) ) {
+                        number = valuesDelta.getBefore().getAsString(Phone.NUMBER);
+                    } else {
+                        anr.append(valuesDelta.getBefore().getAsString(Phone.NUMBER));
+                        anr.append(SimContactsConstants.ANR_SEP);
+                    }
+                }
+                if (valuesDelta.getAfter() != null
+                        && valuesDelta.getAfter().size() != 0) {
+                    if (Phone.TYPE_MOBILE == valuesDelta.getAsLong(Phone.TYPE)) {
+                        newNumber = valuesDelta.getAfter().getAsString(Phone.NUMBER);
+                    } else {
+                        newAnr.append(valuesDelta.getAfter().getAsString(Phone.NUMBER));
+                        newAnr.append(SimContactsConstants.ANR_SEP);
+                    }
+                }
+            }
+        }
+
+        if (isContactInsert() && emails != null) {
+            for (ValuesDelta valuesDelta : emails) {
+                if (valuesDelta.getAfter() != null
+                        && valuesDelta.getAfter().size() != 0) {
+                    email.append(valuesDelta.getAfter().getAsString(Email.DATA));
+                    email.append(SimContactsConstants.EMAIL_SEP);
+                }
+            }
+        } else if (emails != null) {
+            for (ValuesDelta valuesDelta : emails) {
+                if (valuesDelta.getBefore() != null
+                        && valuesDelta.getBefore().size() != 0) {
+                    email.append(valuesDelta.getBefore().getAsString(Email.DATA));
+                    email.append(SimContactsConstants.EMAIL_SEP);
+                }
+                if (valuesDelta.getAfter() != null
+                        && valuesDelta.getAfter().size() != 0) {
+                        newEmail.append(valuesDelta.getAfter().getAsString(Email.DATA));
+                        newEmail.append(SimContactsConstants.EMAIL_SEP);
+                }
+            }
+        }
+
+        if (isContactInsert()) {
+            values.put(SimContactsConstants.STR_TAG, name);
+            values.put(SimContactsConstants.STR_NUMBER, number);
+            values.put(SimContactsConstants.STR_EMAILS, email.toString());
+            values.put(SimContactsConstants.STR_ANRS, anr.toString());
+        } else {
+            values.put(SimContactsConstants.STR_TAG, name);
+            values.put(SimContactsConstants.STR_NUMBER, number);
+            values.put(SimContactsConstants.STR_EMAILS, email.toString());
+            values.put(SimContactsConstants.STR_ANRS, anr.toString());
+            values.put(SimContactsConstants.STR_NEW_TAG, newName);
+            values.put(SimContactsConstants.STR_NEW_NUMBER, newNumber);
+            values.put(SimContactsConstants.STR_NEW_EMAILS, newEmail.toString());
+            values.put(SimContactsConstants.STR_NEW_ANRS, newAnr.toString());
+        }
+        return values;
     }
 
     /**

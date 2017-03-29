@@ -178,6 +178,8 @@ public class AccountTypeProvider {
                         + ", packageName=" + auth.packageName);
             }
             accountType = mLocalAccountTypeFactory.getAccountType(type);
+        } else if (SimAccountType.ACCOUNT_TYPE.equals(type)) {
+            accountType = new SimAccountType(mContext, auth.packageName);
         } else {
             if (Log.isLoggable(TAG, Log.DEBUG)) {
                 Log.d(TAG, "Registering external account type=" + type
