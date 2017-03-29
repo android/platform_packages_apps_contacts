@@ -384,4 +384,51 @@
     <!-- Side padding within the navigation drawer -->
     <dimen name="drawer_label_header_end_padding">24dp</dimen>
 
+    <!-- Multi-pick contacts' list item height. -->
+    <dimen name="multi_pick_contacts_item_height">72dp</dimen>
+
+    <!-- The linear-layout's padding-end of Multi-pick list item. -->
+    <dimen name="multi_pick_linear_layout_padding">16dp</dimen>
+
+    <dimen name="multi_pick_linear_layout_for_button_height">54dp</dimen>
+    <!-- Label's text-size in contacts item. e.g.Home, Mobile, Custom. -->
+    <dimen name="multi_pick_label_text_size">14sp</dimen>
+
+    <!-- Phone number text-size in one contacts item. -->
+    <dimen name="phone_or_number_text_size">14sp</dimen>
+    <!-- Contacts name text-size in one contacts item. -->
+    <dimen name="contacts_text_size">16sp</dimen>
+
+    <!-- The index header view's width in multi-pick. e.g.A, B, C, #.-->
+    <dimen name="contact_section_index_width">40dp</dimen>
+    <!-- The index header text-size. -->
+    <dimen name="contact_section_text_size">24sp</dimen>
+    <!-- The index header's margin-start. -->
+    <dimen name="contact_section_index_margin_start">16dp</dimen>
+    <!-- The index header's margin-end. -->
+    <dimen name="contact_section_index_margin_end">42dp</dimen>
+    <dimen name="pick_contact_photo_size">40dp</dimen>
+
+    <!-- "OK" or "CLEAR" button's margin-end. -->
+    <dimen name="ok_or_clear_button_margin_end">14dp</dimen>
+
+    <!-- Navigation view's margin-start in actionbar. -->
+    <dimen name="navigation_image_view_margin_start">16dp</dimen>
+    <!-- Navigation view's margin-end in actionbar. -->
+    <dimen name="navigation_image_view_margin_end">20dp</dimen>
+
+    <!-- Selection button's width in actionbar.  -->
+    <dimen name="action_bar_select_button_width">80dp</dimen>
+    <!-- Selection button's padding-end in actionbar. -->
+    <dimen name="action_bar_select_button_padding_end">25dp</dimen>
+
+    <!-- Popup window's width after click selection button. -->
+    <dimen name="action_bar_select_view_width">124dp</dimen>
+    <!-- Selected the same contact item's height. -->
+    <dimen name="pick_contact_same_item_height">54dp</dimen>
+    <!-- Select the first contact height in some same contacts. -->
+    <dimen name="pick_contact_first_item_height">72dp</dimen>
+    <!-- The elevation multi-pick activity's top divider. -->
+    <dimen name="multi_pick_top_divider_elevation">10dp</dimen>
+    <dimen name="header_listview_height">12dp</dimen>
 </resources>

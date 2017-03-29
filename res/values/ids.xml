@@ -18,8 +18,8 @@
     <item type="id" name="data"/>
     <item type="id" name="header_phones"/>
     <item type="id" name="dialog_sync_add"/>
-
     <!-- For ContactDeletionInteraction -->
+    <item type="id" name="dialog_delete_contact_confirmation"/>
     <item type="id" name="dialog_delete_contact_loader_id" />
 
     <!-- For ContactMultiDeletionInteraction -->
