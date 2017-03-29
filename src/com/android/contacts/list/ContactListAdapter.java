@@ -15,6 +15,7 @@
  */
 package com.android.contacts.list;
 
+import android.accounts.Account;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
@@ -23,6 +24,7 @@ import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.Data;
 import android.provider.ContactsContract.Directory;
 import android.provider.ContactsContract.SearchSnippets;
+import android.provider.ContactsContract.RawContacts;
 import android.text.TextUtils;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -50,7 +52,9 @@ public abstract class ContactListAdapter extends MultiSelectEntryContactListAdap
             Contacts.PHOTO_THUMBNAIL_URI,           // 5
             Contacts.LOOKUP_KEY,                    // 6
             Contacts.PHONETIC_NAME,                 // 7
-            Contacts.STARRED,                       // 9
+            Contacts.STARRED,                       // 8
+            RawContacts.ACCOUNT_TYPE,               // 9
+            RawContacts.ACCOUNT_NAME,               // 10
         };
 
         private static final String[] CONTACT_PROJECTION_ALTERNATIVE = new String[] {
@@ -63,6 +67,8 @@ public abstract class ContactListAdapter extends MultiSelectEntryContactListAdap
             Contacts.LOOKUP_KEY,                    // 6
             Contacts.PHONETIC_NAME,                 // 7
             Contacts.STARRED,                       // 8
+            RawContacts.ACCOUNT_TYPE,               // 9
+            RawContacts.ACCOUNT_NAME,               // 10
         };
 
         private static final String[] FILTER_PROJECTION_PRIMARY = new String[] {
@@ -75,7 +81,9 @@ public abstract class ContactListAdapter extends MultiSelectEntryContactListAdap
             Contacts.LOOKUP_KEY,                    // 6
             Contacts.PHONETIC_NAME,                 // 7
             Contacts.STARRED,                       // 8
-            SearchSnippets.SNIPPET,                 // 9
+            RawContacts.ACCOUNT_TYPE,               // 9
+            RawContacts.ACCOUNT_NAME,               // 10
+            SearchSnippets.SNIPPET,                 // 11
         };
 
         private static final String[] FILTER_PROJECTION_ALTERNATIVE = new String[] {
@@ -88,7 +96,9 @@ public abstract class ContactListAdapter extends MultiSelectEntryContactListAdap
             Contacts.LOOKUP_KEY,                    // 6
             Contacts.PHONETIC_NAME,                 // 7
             Contacts.STARRED,                       // 8
-            SearchSnippets.SNIPPET,                 // 9
+            RawContacts.ACCOUNT_TYPE,               // 9
+            RawContacts.ACCOUNT_NAME,               // 10
+            SearchSnippets.SNIPPET,                 // 11
         };
 
         public static final int CONTACT_ID               = 0;
@@ -100,7 +110,9 @@ public abstract class ContactListAdapter extends MultiSelectEntryContactListAdap
         public static final int CONTACT_LOOKUP_KEY       = 6;
         public static final int CONTACT_PHONETIC_NAME    = 7;
         public static final int CONTACT_STARRED          = 8;
-        public static final int CONTACT_SNIPPET          = 9;
+        public static final int CONTACT_ACCOUNT_TYPE     = 9;
+        public static final int CONTACT_ACCOUNT_NAME     = 10;
+        public static final int CONTACT_SNIPPET          = 11;
     }
 
     private CharSequence mUnknownNameText;
@@ -252,9 +264,15 @@ public abstract class ContactListAdapter extends MultiSelectEntryContactListAdap
         if (!cursor.isNull(ContactQuery.CONTACT_PHOTO_ID)) {
             photoId = cursor.getLong(ContactQuery.CONTACT_PHOTO_ID);
         }
-
+        Account account = null;
+        if (!cursor.isNull(ContactQuery.CONTACT_ACCOUNT_TYPE)
+                && !cursor.isNull(ContactQuery.CONTACT_ACCOUNT_NAME)) {
+            final String accountType = cursor.getString(ContactQuery.CONTACT_ACCOUNT_TYPE);
+            final String accountName = cursor.getString(ContactQuery.CONTACT_ACCOUNT_NAME);
+            account = new Account(accountName, accountType);
+        }
         if (photoId != 0) {
-            getPhotoLoader().loadThumbnail(view.getPhotoView(), photoId, false,
+            getPhotoLoader().loadThumbnail(view.getPhotoView(), photoId, account, false,
                     getCircularPhotos(), null);
         } else {
             final String photoUriString = cursor.getString(ContactQuery.CONTACT_PHOTO_URI);
@@ -265,7 +283,7 @@ public abstract class ContactListAdapter extends MultiSelectEntryContactListAdap
                         ContactQuery.CONTACT_DISPLAY_NAME,
                         ContactQuery.CONTACT_LOOKUP_KEY);
             }
-            getPhotoLoader().loadDirectoryPhoto(view.getPhotoView(), photoUri, false,
+            getPhotoLoader().loadDirectoryPhoto(view.getPhotoView(), photoUri, account, false,
                     getCircularPhotos(), request);
         }
     }

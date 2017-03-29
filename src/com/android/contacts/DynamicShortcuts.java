@@ -15,6 +15,7 @@
  */
 package com.android.contacts;
 
+import android.accounts.Account;
 import android.annotation.TargetApi;
 import android.app.job.JobInfo;
 import android.app.job.JobParameters;
@@ -298,9 +299,10 @@ public class DynamicShortcuts {
         return builder.build();
     }
 
-    public ShortcutInfo getQuickContactShortcutInfo(long id, String lookupKey, String displayName) {
+    public ShortcutInfo getQuickContactShortcutInfo(long id, String lookupKey, String displayName,
+            Account account) {
         final ShortcutInfo.Builder builder = builderForContactShortcut(id, lookupKey, displayName);
-        addIconForContact(id, lookupKey, displayName, builder);
+        addIconForContact(id, lookupKey, displayName, builder, account);
         return builder.build();
     }
 
@@ -327,9 +329,14 @@ public class DynamicShortcuts {
 
     private void addIconForContact(long id, String lookupKey, String displayName,
             ShortcutInfo.Builder builder) {
+        addIconForContact(id, lookupKey, displayName, builder, null);
+    }
+
+    private void addIconForContact(long id, String lookupKey, String displayName,
+            ShortcutInfo.Builder builder, Account account) {
         Bitmap bitmap = getContactPhoto(id);
         if (bitmap == null) {
-            bitmap = getFallbackAvatar(displayName, lookupKey);
+            bitmap = getFallbackAvatar(displayName, lookupKey, account);
         }
         final Icon icon;
         if (BuildCompat.isAtLeastO()) {
@@ -419,7 +426,7 @@ public class DynamicShortcuts {
         return scaledBitmap;
     }
 
-    private Bitmap getFallbackAvatar(String displayName, String lookupKey) {
+    private Bitmap getFallbackAvatar(String displayName, String lookupKey, Account account) {
         final int width;
         final int height;
         final int padding;
@@ -438,7 +445,7 @@ public class DynamicShortcuts {
         final ContactPhotoManager.DefaultImageRequest request =
                 new ContactPhotoManager.DefaultImageRequest(displayName, lookupKey, true);
         final Drawable avatar = ContactPhotoManager.getDefaultAvatarDrawableForContact(
-                mContext.getResources(), true, request);
+                mContext.getResources(), true, request, account);
         final Bitmap result = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         // The avatar won't draw unless it thinks it is visible
         avatar.setVisible(true, true);

@@ -281,7 +281,8 @@ public class DefaultContactListAdapter extends ContactListAdapter {
         if (isQuickContactEnabled()) {
             bindQuickContact(view, partition, cursor, ContactQuery.CONTACT_PHOTO_ID,
                     ContactQuery.CONTACT_PHOTO_URI, ContactQuery.CONTACT_ID,
-                    ContactQuery.CONTACT_LOOKUP_KEY, ContactQuery.CONTACT_DISPLAY_NAME);
+                    ContactQuery.CONTACT_LOOKUP_KEY, ContactQuery.CONTACT_DISPLAY_NAME,
+                    ContactQuery.CONTACT_ACCOUNT_TYPE, ContactQuery.CONTACT_ACCOUNT_NAME);
         } else {
             if (getDisplayPhotos()) {
                 bindPhoto(view, partition, cursor);

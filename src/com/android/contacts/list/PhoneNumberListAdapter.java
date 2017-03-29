@@ -15,6 +15,7 @@
  */
 package com.android.contacts.list;
 
+import android.accounts.Account;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.CursorLoader;
@@ -28,6 +29,7 @@ import android.provider.ContactsContract.CommonDataKinds.SipAddress;
 import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.Data;
 import android.provider.ContactsContract.Directory;
+import android.provider.ContactsContract.RawContacts;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -106,6 +108,8 @@ public class PhoneNumberListAdapter extends ContactEntryListAdapter {
             Phone.PHOTO_ID,                     // 6
             Phone.DISPLAY_NAME_PRIMARY,         // 7
             Phone.PHOTO_THUMBNAIL_URI,          // 8
+            RawContacts.ACCOUNT_TYPE,           // 9
+            RawContacts.ACCOUNT_NAME,           // 10
         };
 
         public static final String[] PROJECTION_PRIMARY;
@@ -128,6 +132,8 @@ public class PhoneNumberListAdapter extends ContactEntryListAdapter {
             Phone.PHOTO_ID,                     // 6
             Phone.DISPLAY_NAME_ALTERNATIVE,     // 7
             Phone.PHOTO_THUMBNAIL_URI,          // 8
+            RawContacts.ACCOUNT_TYPE,           // 9
+            RawContacts.ACCOUNT_NAME,           // 10
         };
 
         public static final String[] PROJECTION_ALTERNATIVE;
@@ -149,7 +155,9 @@ public class PhoneNumberListAdapter extends ContactEntryListAdapter {
         public static final int PHOTO_ID                = 6;
         public static final int DISPLAY_NAME            = 7;
         public static final int PHOTO_URI               = 8;
-        public static final int CARRIER_PRESENCE        = 9;
+        public static final int ACCOUNT_TYPE            = 9;
+        public static final int ACCOUNT_NAME            = 10;
+        public static final int CARRIER_PRESENCE        = 11;
     }
 
     private static final String IGNORE_NUMBER_TOO_LONG_CLAUSE =
@@ -447,7 +455,8 @@ public class PhoneNumberListAdapter extends ContactEntryListAdapter {
             if (isQuickContactEnabled()) {
                 bindQuickContact(view, partition, cursor, PhoneQuery.PHOTO_ID,
                         PhoneQuery.PHOTO_URI, PhoneQuery.CONTACT_ID,
-                        PhoneQuery.LOOKUP_KEY, PhoneQuery.DISPLAY_NAME);
+                        PhoneQuery.LOOKUP_KEY, PhoneQuery.DISPLAY_NAME,
+                        PhoneQuery.ACCOUNT_TYPE, PhoneQuery.ACCOUNT_NAME);
             } else {
                 if (getDisplayPhotos()) {
                     bindPhoto(view, partition, cursor);
@@ -540,9 +549,15 @@ public class PhoneNumberListAdapter extends ContactEntryListAdapter {
         if (!cursor.isNull(PhoneQuery.PHOTO_ID)) {
             photoId = cursor.getLong(PhoneQuery.PHOTO_ID);
         }
-
+        Account account = null;
+        if (!cursor.isNull(PhoneQuery.ACCOUNT_TYPE)
+                && !cursor.isNull(PhoneQuery.ACCOUNT_NAME)) {
+            final String accountType = cursor.getString(PhoneQuery.ACCOUNT_TYPE);
+            final String accountName = cursor.getString(PhoneQuery.ACCOUNT_NAME);
+            account = new Account(accountName, accountType);
+        }
         if (photoId != 0) {
-            getPhotoLoader().loadThumbnail(view.getPhotoView(), photoId, false,
+            getPhotoLoader().loadThumbnail(view.getPhotoView(), photoId, account, false,
                     getCircularPhotos(), null);
         } else {
             final String photoUriString = cursor.getString(PhoneQuery.PHOTO_URI);
@@ -554,7 +569,7 @@ public class PhoneNumberListAdapter extends ContactEntryListAdapter {
                 final String lookupKey = cursor.getString(PhoneQuery.LOOKUP_KEY);
                 request = new DefaultImageRequest(displayName, lookupKey, getCircularPhotos());
             }
-            getPhotoLoader().loadDirectoryPhoto(view.getPhotoView(), photoUri, false,
+            getPhotoLoader().loadDirectoryPhoto(view.getPhotoView(), photoUri, account, false,
                     getCircularPhotos(), request);
         }
     }

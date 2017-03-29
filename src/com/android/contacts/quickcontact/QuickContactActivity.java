@@ -2653,10 +2653,15 @@ public class QuickContactActivity extends ContactsActivity {
                                     getSystemService(SHORTCUT_SERVICE);
                             final DynamicShortcuts shortcuts =
                                     new DynamicShortcuts(QuickContactActivity.this);
+                            Account account = null;
+                            if (mContactData.getAccountName() != null) {
+                                account = new Account(mContactData.getAccountName(),
+                                        mContactData.getAccountType());
+                            }
                             shortcutManager.requestPinShortcut(
                                     shortcuts.getQuickContactShortcutInfo(
                                             mContactData.getId(), mContactData.getLookupKey(),
-                                            mContactData.getDisplayName()), null);
+                                            mContactData.getDisplayName(), account), null);
                         } else {
                             // Broadcast the shortcutIntent to the launcher to create a
                             // shortcut to this contact

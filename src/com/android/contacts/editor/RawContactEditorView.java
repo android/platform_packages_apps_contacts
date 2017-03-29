@@ -61,6 +61,7 @@ import com.android.contacts.model.ValuesDelta;
 import com.android.contacts.model.account.AccountInfo;
 import com.android.contacts.model.account.AccountType;
 import com.android.contacts.model.account.AccountWithDataSet;
+import com.android.contacts.model.account.SimAccountType;
 import com.android.contacts.model.dataitem.CustomDataItem;
 import com.android.contacts.model.dataitem.DataKind;
 import com.android.contacts.util.AccountsListAdapter;
@@ -116,6 +117,8 @@ public class RawContactEditorView extends LinearLayout implements View.OnClickLi
          * Invoked after editors have been bound for the contact.
          */
         public void onEditorsBound();
+
+        public void onClearPhotoCache();
     }
     /**
      * Sorts kinds roughly the same as quick contacts; we diverge in the following ways:
@@ -817,6 +820,9 @@ public class RawContactEditorView extends LinearLayout implements View.OnClickLi
                         UiClosables.closeQuietly(popup);
                         final AccountWithDataSet newAccount = adapter.getItem(position);
                         if (mListener != null && !mPrimaryAccount.equals(newAccount)) {
+                            if (newAccount !=null && newAccount.type != null
+                                    && SimAccountType.ACCOUNT_TYPE.equals(newAccount.type))
+                                mListener.onClearPhotoCache();
                             mIsExpanded = false;
                             mListener.onRebindEditorsForNewContact(
                                     rawContactDelta,

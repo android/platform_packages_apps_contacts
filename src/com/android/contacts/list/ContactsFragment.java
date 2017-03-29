@@ -565,7 +565,7 @@ public class ContactsFragment extends ListFragment {
             }
 
             if (cache.photoId != 0) {
-                mContactPhotoManager.loadThumbnail(photoView, cache.photoId, false, true,
+                mContactPhotoManager.loadThumbnail(photoView, cache.photoId, account, false, true,
                         null);
             } else {
                 final Uri photoUri = cache.photoUri == null ? null : cache.photoUri;
@@ -574,7 +574,7 @@ public class ContactsFragment extends ListFragment {
                     cache.lookupKey = cursor.getString(SUMMARY_LOOKUP_KEY_COLUMN_INDEX);
                     request = new DefaultImageRequest(cache.name, cache.lookupKey, true);
                 }
-                mContactPhotoManager.loadDirectoryPhoto(photoView, photoUri, false, true,
+                mContactPhotoManager.loadDirectoryPhoto(photoView, photoUri, account, false, true,
                         request);
             }
         }

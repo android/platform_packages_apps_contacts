@@ -77,6 +77,11 @@ public class ContactUtils {
     public static final int EMAIL_LENGTH_POS = 8;
     public static final int ANR_LENGTH_POS = 9;
 
+    public final static int[] IC_SIM_PICTURE = {
+        R.drawable.ic_contact_picture_sim_1,
+        R.drawable.ic_contact_picture_sim_2,
+    };
+
     public static int getSubscription(String accountType, String accountName) {
         int subscription = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
         if (accountType == null || accountName == null)

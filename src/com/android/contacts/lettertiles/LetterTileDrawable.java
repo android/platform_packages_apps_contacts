@@ -16,6 +16,8 @@
 
 package com.android.contacts.lettertiles;
 
+import android.accounts.Account;
+import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -28,7 +30,11 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
+import android.telephony.TelephonyManager;
 
+import com.android.contacts.ContactUtils;
+import com.android.contacts.SimContactsConstants;
+import com.android.contacts.model.account.SimAccountType;
 import com.android.contacts.R;
 
 import com.google.common.base.Preconditions;
@@ -51,6 +57,9 @@ public class LetterTileDrawable extends Drawable {
     private static Bitmap DEFAULT_PERSON_AVATAR;
     private static Bitmap DEFAULT_BUSINESS_AVATAR;
     private static Bitmap DEFAULT_VOICEMAIL_AVATAR;
+    private static Bitmap DEFAULT_SIM_PERSON_AVATAR;
+    private static Bitmap[] DEFAULT_CUSTOMIZE_SIM_PERSON_AVATAR =
+            new Bitmap[ContactUtils.IC_SIM_PICTURE.length];
 
     /** Reusable components to avoid new allocations */
     private static final Paint sPaint = new Paint();
@@ -73,8 +82,13 @@ public class LetterTileDrawable extends Drawable {
 
     private int mColor;
     private Character mLetter = null;
+    private Account mAccount;
 
     public LetterTileDrawable(final Resources res) {
+        this(res, null);
+    }
+
+    public LetterTileDrawable(final Resources res, final Account account) {
         if (sColors == null) {
             sColors = res.obtainTypedArray(R.array.letter_tile_colors);
             sDefaultColor = res.getColor(R.color.letter_tile_default_color);
@@ -86,6 +100,12 @@ public class LetterTileDrawable extends Drawable {
                     R.drawable.ic_business_white_120dp);
             DEFAULT_VOICEMAIL_AVATAR = BitmapFactory.decodeResource(res,
                     R.drawable.ic_voicemail_avatar);
+            DEFAULT_SIM_PERSON_AVATAR = BitmapFactory.decodeResource(res,
+                    R.drawable.ic_contact_picture_sim);
+            for (int i = 0; i < ContactUtils.IC_SIM_PICTURE.length; i++) {
+                DEFAULT_CUSTOMIZE_SIM_PERSON_AVATAR[i] = BitmapFactory
+                        .decodeResource(res, ContactUtils.IC_SIM_PICTURE[i]);
+            }
             sPaint.setTypeface(Typeface.create(
                     res.getString(R.string.letter_tile_letter_font_family), Typeface.NORMAL));
             sPaint.setTextAlign(Align.CENTER);
@@ -95,6 +115,7 @@ public class LetterTileDrawable extends Drawable {
         mPaint.setFilterBitmap(true);
         mPaint.setDither(true);
         mColor = sDefaultColor;
+        mAccount = account;
     }
 
     @Override
@@ -150,7 +171,8 @@ public class LetterTileDrawable extends Drawable {
 
         // Draw letter/digit only if the first character is an english letter or there's a override
 
-        if (mLetter != null) {
+        if (mLetter != null && (mAccount == null || (mAccount != null && !mAccount.type
+                .equals(SimAccountType.ACCOUNT_TYPE)))) {
             // Draw letter or digit.
             sFirstChar[0] = mLetter;
 
@@ -168,7 +190,7 @@ public class LetterTileDrawable extends Drawable {
                     sPaint);
         } else {
             // Draw the default image if there is no letter/digit to be drawn
-            final Bitmap bitmap = getBitmapForContactType(mContactType);
+            final Bitmap bitmap = getBitmapForContactType(mContactType, mAccount);
             drawBitmap(bitmap, bitmap.getWidth(), bitmap.getHeight(),
                     canvas);
         }
@@ -192,7 +214,17 @@ public class LetterTileDrawable extends Drawable {
         return sColors.getColor(color, sDefaultColor);
     }
 
-    private static Bitmap getBitmapForContactType(int contactType) {
+    private static Bitmap getBitmapForContactType(int contactType, Account account) {
+        if (account != null && SimAccountType.ACCOUNT_TYPE.equals(account.type)) {
+            if (account.name.equals(SimContactsConstants.SIM_NAME))
+                return DEFAULT_SIM_PERSON_AVATAR;
+            final int slot = ContactUtils.getSubscription(
+                    SimAccountType.ACCOUNT_TYPE, account.name);
+            if (slot < 0 || slot > ContactUtils.IC_SIM_PICTURE.length) {
+                return DEFAULT_PERSON_AVATAR;
+            }
+            return DEFAULT_CUSTOMIZE_SIM_PERSON_AVATAR[slot];
+        }
         switch (contactType) {
             case TYPE_PERSON:
                 return DEFAULT_PERSON_AVATAR;

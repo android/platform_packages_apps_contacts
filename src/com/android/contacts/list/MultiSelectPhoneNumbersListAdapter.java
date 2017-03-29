@@ -23,6 +23,7 @@ import android.net.Uri;
 import android.net.Uri.Builder;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.provider.ContactsContract.RawContacts;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.text.TextUtils;
 import android.view.View;
@@ -45,6 +46,8 @@ public class MultiSelectPhoneNumbersListAdapter extends MultiSelectEntryContactL
                 Phone.PHOTO_ID,                     // 6
                 Phone.DISPLAY_NAME_PRIMARY,         // 7
                 Phone.PHOTO_THUMBNAIL_URI,          // 8
+                RawContacts.ACCOUNT_TYPE,           // 9
+                RawContacts.ACCOUNT_NAME,           // 10
         };
 
         public static final String[] PROJECTION_ALTERNATIVE = new String[] {
@@ -57,6 +60,8 @@ public class MultiSelectPhoneNumbersListAdapter extends MultiSelectEntryContactL
                 Phone.PHOTO_ID,                     // 6
                 Phone.DISPLAY_NAME_ALTERNATIVE,     // 7
                 Phone.PHOTO_THUMBNAIL_URI,          // 8
+                RawContacts.ACCOUNT_TYPE,           // 9
+                RawContacts.ACCOUNT_NAME,           // 10
         };
 
         public static final int PHONE_ID                = 0;
@@ -68,6 +73,8 @@ public class MultiSelectPhoneNumbersListAdapter extends MultiSelectEntryContactL
         public static final int PHOTO_ID                = 6;
         public static final int DISPLAY_NAME            = 7;
         public static final int PHOTO_URI               = 8;
+        public static final int ACCOUNT_TYPE            = 9;
+        public static final int ACCOUNT_NAME            = 10;
     }
 
     private final CharSequence mUnknownNameText;
@@ -160,7 +167,7 @@ public class MultiSelectPhoneNumbersListAdapter extends MultiSelectEntryContactL
         if (isFirstEntry) {
             bindName(view, cursor);
             bindPhoto(view, cursor, PhoneQuery.PHOTO_ID, PhoneQuery.LOOKUP_KEY,
-                PhoneQuery.DISPLAY_NAME);
+                PhoneQuery.DISPLAY_NAME, PhoneQuery.ACCOUNT_TYPE, PhoneQuery.ACCOUNT_NAME);
         } else {
             unbindName(view);
             view.removePhotoView(true, false);

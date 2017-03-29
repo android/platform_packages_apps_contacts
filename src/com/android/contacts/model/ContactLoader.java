@@ -491,6 +491,13 @@ public class ContactLoader extends AsyncTaskLoader<Contact> {
                     currentRawContactId = rawContactId;
                     rawContact = new RawContact(loadRawContactValues(cursor));
                     rawContactsBuilder.add(rawContact);
+                    if (currentRawContactId == contact.getNameRawContactId()) {
+                        final String accountType = cursor
+                                .getString(ContactQuery.ACCOUNT_TYPE);
+                        final String accountName = cursor
+                                .getString(ContactQuery.ACCOUNT_NAME);
+                        contact.setAccountInfo(accountType, accountName);
+                    }
                 }
                 if (!cursor.isNull(ContactQuery.DATA_ID)) {
                     ContentValues data = loadDataValues(cursor);
