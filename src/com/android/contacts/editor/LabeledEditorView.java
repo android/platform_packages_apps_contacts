@@ -51,6 +51,7 @@ import com.android.contacts.model.RawContactModifier;
 import com.android.contacts.model.ValuesDelta;
 import com.android.contacts.model.account.AccountType.EditType;
 import com.android.contacts.model.dataitem.DataKind;
+import com.android.contacts.model.account.SimAccountType;
 import com.android.contacts.util.DialogManager;
 import com.android.contacts.util.DialogManager.DialogShowingView;
 
@@ -234,6 +235,14 @@ public abstract class LabeledEditorView extends LinearLayout implements Editor, 
         }
     }
 
+    private boolean isSimAccount() {
+        if (mState != null && mState.getAccountType() != null
+                && mState.getAccountType().equals(SimAccountType.ACCOUNT_TYPE)) {
+            return true;
+        }
+        return false;
+    }
+
     public void setDeleteButtonVisible(boolean visible) {
         if (mIsDeletable) {
             mDeleteContainer.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
@@ -406,7 +415,7 @@ public abstract class LabeledEditorView extends LinearLayout implements Editor, 
         setVisibility(View.VISIBLE);
 
         // Display label selector if multiple types available
-        final boolean hasTypes = RawContactModifier.hasEditTypes(kind);
+        final boolean hasTypes = RawContactModifier.hasEditTypes(kind) && !isSimAccount();
         setupLabelButton(hasTypes);
         mLabel.setEnabled(!readOnly && isEnabled());
         if (mKind.titleRes > 0) {

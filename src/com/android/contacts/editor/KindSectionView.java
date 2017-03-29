@@ -18,6 +18,8 @@ package com.android.contacts.editor;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.provider.ContactsContract.CommonDataKinds.Phone;
+import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.provider.ContactsContract.CommonDataKinds.Event;
 import android.provider.ContactsContract.CommonDataKinds.GroupMembership;
 import android.provider.ContactsContract.CommonDataKinds.Nickname;
@@ -31,10 +33,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.contacts.R;
+import com.android.contacts.SimContactsConstants;
+import com.android.contacts.ContactUtils;
 import com.android.contacts.model.RawContactDelta;
 import com.android.contacts.model.RawContactModifier;
 import com.android.contacts.model.ValuesDelta;
 import com.android.contacts.model.account.AccountType;
+import com.android.contacts.model.account.AccountType.EditType;
 import com.android.contacts.model.dataitem.DataKind;
 import com.android.contacts.preference.ContactsPreferences;
 
@@ -399,15 +404,56 @@ public class KindSectionView extends LinearLayout {
         final View view = mLayoutInflater.inflate(
                 EditorUiUtils.getLayoutResourceId(dataKind.mimeType), mEditors, false);
         view.setEnabled(isEnabled());
+        boolean hasEmail = true;
         if (view instanceof Editor) {
             final Editor editor = (Editor) view;
             editor.setDeletable(true);
             editor.setEditorListener(editorListener);
+            if (rawContactDelta.getAccountType() != null
+                    && SimContactsConstants.ACCOUNT_TYPE_SIM
+                            .equals(rawContactDelta.getAccountType())) {
+                int sub = SimContactsConstants.SLOT1;
+                if (SimContactsConstants.SIM_NAME_2.equals(rawContactDelta
+                        .getAccountName())) {
+                    sub = SimContactsConstants.SLOT2;
+                }
+                if(Phone.CONTENT_ITEM_TYPE.equals(dataKind.mimeType)) {
+                    EditType typeHome = new EditType(Phone.TYPE_HOME,
+                        Phone.getTypeLabelResource(Phone.TYPE_HOME));
+                    if (!ContactUtils.canSaveAnr(getContext(), sub)) {
+                        dataKind.typeOverallMax = 1;
+                        if (null != dataKind.typeList) {
+                            // When the sim card is not 3g the interface should
+                            // remove the TYPE_HOME number view.
+                            dataKind.typeList.remove(typeHome);
+                        }
+                    } else {
+                        dataKind.typeOverallMax = ContactUtils
+                                .getOneSimAnrCount(getContext(), sub) + 1;
+                        if (null != dataKind.typeList && !dataKind.typeList.contains(
+                                typeHome)) {
+                            // When the sim card is 3g the interface should
+                            // add the TYPE_HOME number view.
+                            dataKind.typeList.add(typeHome);
+                        }
+                    }
+                } else if (Email.CONTENT_ITEM_TYPE.equals(dataKind.mimeType)) {
+                    if (ContactUtils.canSaveEmail(getContext(), sub)) {
+                        dataKind.typeOverallMax = ContactUtils
+                                .getOneSimEmailCount(getContext(), sub);
+                    } else {
+                        hasEmail = false;
+                    }
+                }
+            }
             editor.setValues(dataKind, valuesDelta, rawContactDelta, !dataKind.editable,
                     mViewIdGenerator);
         }
-        mEditors.addView(view);
-
+        if (hasEmail) {
+            mEditors.addView(view);
+        } else {
+            mIcon.setVisibility(View.GONE);
+        }
         return view;
     }
 

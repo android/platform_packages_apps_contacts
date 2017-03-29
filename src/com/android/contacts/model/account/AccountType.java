@@ -289,6 +289,10 @@ public abstract class AccountType {
         }
     }
 
+    public boolean isSimAccount() {
+        return false;
+    }
+
     /**
      * Whether or not groups created under this account type have editable membership lists.
      */

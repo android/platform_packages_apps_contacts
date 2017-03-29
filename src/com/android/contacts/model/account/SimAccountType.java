@@ -17,6 +17,8 @@ package com.android.contacts.model.account;
 
 import android.accounts.AuthenticatorDescription;
 import android.content.Context;
+import android.provider.ContactsContract.CommonDataKinds.Email;
+import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.CommonDataKinds.Nickname;
 import android.provider.ContactsContract.CommonDataKinds.StructuredName;
 
@@ -32,19 +34,22 @@ import java.util.Collections;
  */
 public class SimAccountType extends BaseAccountType {
 
+    public static final String ACCOUNT_TYPE = "com.android.sim";
+
     public SimAccountType(Context context) {
-        this.titleRes = R.string.account_sim;
-        this.iconRes = R.drawable.quantum_ic_sim_card_vd_theme_24;
+        this(context, null);
+    }
+
+    public SimAccountType(Context context, String resPackageName) {
+        this.accountType = ACCOUNT_TYPE;
+        this.resourcePackageName = resPackageName;
+        this.syncAdapterPackageName = resPackageName;
 
         try {
             addDataKindStructuredName(context);
             addDataKindName(context);
-            final DataKind phoneKind = addDataKindPhone(context);
-            phoneKind.typeOverallMax = 1;
-            // SIM card contacts don't necessarily support separate types (based on data exposed
-            // in Samsung and LG Contacts Apps.
-            phoneKind.typeList = Collections.emptyList();
-
+            addDataKindPhone(context);
+            addDataKindEmail(context);
             mIsInitialized = true;
         } catch (DefinitionException e) {
             // Just fail fast. Because we're explicitly adding the fields in this class this
@@ -64,8 +69,14 @@ public class SimAccountType extends BaseAccountType {
     }
 
     @Override
+    public boolean isSimAccount() {
+        return true;
+    }
+
+    @Override
     public void initializeFieldsFromAuthenticator(AuthenticatorDescription authenticator) {
         // Do nothing. We want to use our local icon and title
+        super.initializeFieldsFromAuthenticator(authenticator);
     }
 
     @Override
@@ -75,14 +86,9 @@ public class SimAccountType extends BaseAccountType {
         kind.actionHeader = new SimpleInflater(R.string.nameLabelsGroup);
         kind.actionBody = new SimpleInflater(Nickname.NAME);
         kind.typeOverallMax = 1;
-
-
         kind.fieldList = Lists.newArrayList();
-        kind.fieldList.add(new EditField(StructuredName.GIVEN_NAME, R.string.name_given,
+        kind.fieldList.add(new EditField(StructuredName.GIVEN_NAME, R.string.nameLabelsGroup,
                 FLAGS_PERSON_NAME));
-        kind.fieldList.add(new EditField(StructuredName.FAMILY_NAME, R.string.name_family,
-                FLAGS_PERSON_NAME));
-
         return kind;
     }
 
@@ -98,18 +104,33 @@ public class SimAccountType extends BaseAccountType {
                 context.getResources().getBoolean(R.bool.config_editor_field_order_primary);
 
         kind.fieldList = Lists.newArrayList();
-        if (!displayOrderPrimary) {
-            kind.fieldList.add(new EditField(StructuredName.FAMILY_NAME, R.string.name_family,
-                    FLAGS_PERSON_NAME));
-            kind.fieldList.add(new EditField(StructuredName.GIVEN_NAME, R.string.name_given,
-                    FLAGS_PERSON_NAME));
-        } else {
-            kind.fieldList.add(new EditField(StructuredName.GIVEN_NAME, R.string.name_given,
-                    FLAGS_PERSON_NAME));
-            kind.fieldList.add(new EditField(StructuredName.FAMILY_NAME, R.string.name_family,
-                    FLAGS_PERSON_NAME));
-        }
+        kind.fieldList.add(new EditField(StructuredName.GIVEN_NAME,
+                R.string.nameLabelsGroup, FLAGS_PERSON_NAME));
+        return kind;
+    }
 
+    @Override
+    protected DataKind addDataKindPhone(Context context) throws DefinitionException {
+        final DataKind kind = super.addDataKindPhone(context);
+        kind.typeOverallMax = 2;
+        kind.typeColumn = Phone.TYPE;
+        kind.typeList = Lists.newArrayList();
+        kind.typeList.add(buildPhoneType(Phone.TYPE_MOBILE));
+        kind.typeList.add(buildPhoneType(Phone.TYPE_HOME));// This is used to save ANR records
+        kind.fieldList = Lists.newArrayList();
+        kind.fieldList.add(new EditField(Phone.NUMBER, R.string.phoneLabelsGroup, FLAGS_PHONE));
+
+        return kind;
+    }
+
+    @Override
+    protected DataKind addDataKindEmail(Context context) throws DefinitionException {
+        final DataKind kind = super.addDataKindEmail(context);
+
+        kind.typeOverallMax = 1;
+        kind.typeList =  Collections.emptyList();
+        kind.fieldList = Lists.newArrayList();
+        kind.fieldList.add(new EditField(Email.ADDRESS, R.string.emailLabelsGroup, FLAGS_EMAIL));
         return kind;
     }
 
@@ -118,7 +139,7 @@ public class SimAccountType extends BaseAccountType {
         // Use the "SIM" type label for the name as well because on OEM phones the "name" is
         // not always user-friendly
         return new AccountInfo(
-                new AccountDisplayInfo(account, getDisplayLabel(context), getDisplayLabel(context),
+                new AccountDisplayInfo(account, account.name, getDisplayLabel(context),
                         getDisplayIcon(context), true), this);
     }
 }
