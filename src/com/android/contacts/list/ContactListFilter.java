@@ -28,7 +28,6 @@ import android.text.TextUtils;
 import com.android.contacts.logging.ListEvent;
 import com.android.contacts.model.account.AccountWithDataSet;
 import com.android.contacts.model.account.GoogleAccountType;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +44,7 @@ public final class ContactListFilter implements Comparable<ContactListFilter>, P
     public static final int FILTER_TYPE_SINGLE_CONTACT = -6;
     public static final int FILTER_TYPE_GROUP_MEMBERS = -7;
     public static final int FILTER_TYPE_DEVICE_CONTACTS = -8;
+    public static final int FILTER_TYPE_ALL_WITHOUT_SIM = -9;
 
     public static final int FILTER_TYPE_ACCOUNT = 0;
 

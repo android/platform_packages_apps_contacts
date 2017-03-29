@@ -93,7 +93,7 @@ public class AccountSelectionUtil {
             DialogInterface.OnCancelListener onCancelListener) {
         final AccountTypeManager accountTypes = AccountTypeManager.getInstance(activity);
         final List<AccountWithDataSet> writableAccountList =
-                accountTypes.blockForWritableAccounts();
+                accountTypes.blockForWritableAccountsWithoutSim();
 
         Log.i(LOG_TAG, "The number of available accounts: " + writableAccountList.size());
 

@@ -58,7 +58,8 @@ public class SelectAccountActivity extends Activity {
         // - no account -> use phone-local storage without asking the user
         final int resId = R.string.import_from_vcf_file;
         final AccountTypeManager accountTypes = AccountTypeManager.getInstance(this);
-        final List<AccountWithDataSet> accountList = accountTypes.blockForWritableAccounts();
+        final List<AccountWithDataSet> accountList = accountTypes
+                .blockForWritableAccountsWithoutSim();
         if (accountList.size() == 0) {
             Log.w(LOG_TAG, "Account does not exist");
             finish();

@@ -1,4 +1,12 @@
 LOCAL_PATH:= $(call my-dir)
+#MAKE_JAR
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := $(call all-java-files-under, src-wrapper)
+LOCAL_JAVA_LIBRARIES := telephony-common
+LOCAL_MODULE := phonebook_wrapper
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_STATIC_JAVA_LIBRARY)
+
 include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional
@@ -48,7 +56,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     guava \
     libphonenumber \
     legacy-android-test \
-    junit
+    junit \
+    phonebook_wrapper
 
 LOCAL_PACKAGE_NAME := Contacts
 LOCAL_CERTIFICATE := shared
