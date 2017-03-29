@@ -256,5 +256,29 @@
 
     <!-- Highlight color used in places such as ripples -->
     <color name="control_highlight_color">#1A000000</color>
+    <!-- The text color of contacts item's label. -->
+    <color name="multi_pick_label_text_color">#91000000</color>
+    <!-- Contacts item's text-colors. -->
+    <color name="contacts_or_name_text_color">#DF000000</color>
+    <!-- Confirm or disable button's text-colors in multi-pick. -->
+    <color name="ok_or_clear_button_disable_color">#44000000</color>
+    <color name="ok_or_clear_button_normal_color">#ff03a9f4</color>
+    <!-- Horizontal separator line should be 10% dark in the light theme. -->
+    <color name="divider_line_color">#1A000000</color>
+
+    <!-- Search-box's colors.  -->
+    <color name="searchbox_phone_text_color">#db000000</color>
+    <color name="searchbox_phone_background_color">#ffffffff</color>
+    <color name="searchbox_phone_hint_text_color">#42000000</color>
+
+    <!-- The selection button's expand window text-color in actionbar. -->
+    <color name="action_bar_expand_text_color">#FF000000</color>
+    <color name="action_bar_select_button_text_color">#FFFFFFFF</color>
+    <color name="multi_pick_search_view_edit_text_color">#DBFFFFFF</color>
+    <color name="multi_pick_search_view_edit_hint_text_color">#42FFFFFF</color>
+    <!-- Contact section index's text-color. -->
+    <color name="contact_section_index_color">#8C000000</color>
+    <!-- Popup select button background. -->
+    <color name="select_popup_button_background">#FFFFFFFF</color>
 
 </resources>

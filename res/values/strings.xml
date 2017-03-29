@@ -1586,4 +1586,21 @@
     <!-- Text shown when viewing channel settings for default Contacts notifications [CHAR LIMIT=50] -->
     <string name="contacts_default_notification_channel">Notifications</string>
 
+    <string name="select_all">All</string>
+    <string name="btn_ok">Ok</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="deleteConfirmation_title">Delete contact?</string>
+    <string name="ContactMultiDeleteConfirmation">These contacts will be deleted.</string>
+    <string name="delete_termination">"Finished deleting"</string>
+    <string name="delete_contacts_title">Delete Contacts</string>
+    <string name="delete_contacts_message">Deleting Contacts ...</string>
+    <string name="contacts_selected">%d selected</string>
+    <string name="summary_count_numbers">%s numbers</string>
+    <string name="search_menu_search">Search</string>
+    <string name="too_many_contacts_add">Too many contacts, that should be less than <xliff:g id="count">%d</xliff:g></string>
+    <!-- Label to select all contacts in multiple picker -->
+    <string name="menu_select_all">"Select all"</string>
+
+    <!-- Label to clear all selection in multiple picker -->
+    <string name="menu_select_none">"Unselect all"</string>
 </resources>

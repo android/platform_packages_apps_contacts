@@ -523,6 +523,34 @@
             android:theme="@style/PeopleThemeAppCompat.FullScreenDialog.SimImportActivity"/>
 
 
+        <activity
+            android:name=".activities.MultiPickContactsActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:screenOrientation="nosensor"
+            android:theme="@style/PeopleTheme"
+            android:configChanges="orientation|keyboardHidden|layoutDirection|fontScale|locale">
+            <intent-filter>
+                <action android:name="com.android.contacts.action.MULTI_PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/person"/>
+                <data android:mimeType="vnd.android.cursor.dir/contact"/>
+                <data android:mimeType="vnd.android.cursor.dir/raw_contact"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.contacts.action.MULTI_PICK_CONTACT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/person"/>
+                <data android:mimeType="vnd.android.cursor.dir/contact"/>
+                <data android:mimeType="vnd.android.cursor.dir/raw_contact"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.contacts.action.MULTI_PICK_EMAIL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.dir/person"/>
+                <data android:mimeType="vnd.android.cursor.dir/contact"/>
+                <data android:mimeType="vnd.android.cursor.dir/raw_contact"/>
+            </intent-filter>
+        </activity>
         <service
             android:name=".vcard.VCardService"
             android:exported="false"/>

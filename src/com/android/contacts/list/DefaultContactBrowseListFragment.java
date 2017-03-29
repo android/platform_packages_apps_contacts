@@ -76,6 +76,7 @@ import com.android.contacts.util.AccountFilterUtil;
 import com.android.contacts.util.ImplicitIntentsUtil;
 import com.android.contacts.util.SharedPreferenceUtil;
 import com.android.contacts.util.SyncUtil;
+import com.android.contacts.SimContactsConstants;
 import com.android.contactsbind.FeatureHighlightHelper;
 import com.android.contactsbind.experiments.Flags;
 import com.google.common.util.concurrent.Futures;
@@ -1014,7 +1015,7 @@ public class DefaultContactBrowseListFragment extends ContactBrowseListFragment
         final boolean showSelectedContactOptions = mActionBarAdapter.isSelectionMode()
                 && getSelectedContactIds().size() != 0;
         makeMenuItemVisible(menu, R.id.menu_share, showSelectedContactOptions);
-        makeMenuItemVisible(menu, R.id.menu_delete, showSelectedContactOptions);
+        makeMenuItemVisible(menu, R.id.menu_delete, !isSearchOrSelectionMode);
         final boolean showLinkContactsOptions = mActionBarAdapter.isSelectionMode()
                 && getSelectedContactIds().size() > 1
                 && getSelectedSimContact() <1;
@@ -1079,7 +1080,13 @@ public class DefaultContactBrowseListFragment extends ContactBrowseListFragment
             joinSelectedContacts();
             return true;
         } else if (id == R.id.menu_delete) {
-            deleteSelectedContacts();
+            final Intent intent = new Intent(
+                    SimContactsConstants.ACTION_MULTI_PICK_CONTACT,
+                    ContactsContract.Contacts.CONTENT_URI);
+            intent.putExtra(
+                    AccountFilterActivity.EXTRA_CONTACT_LIST_FILTER, getFilter());
+            intent.putExtra("delete", true);
+            startActivity(intent);
             return true;
         } else if (id == R.id.export_database) {
             final Intent intent = new Intent("com.android.providers.contacts.DUMP_DATABASE");

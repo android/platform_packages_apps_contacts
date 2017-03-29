@@ -529,4 +529,23 @@
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"无法导入 SIM 卡中的联系人"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"正在导入 SIM 卡联系人"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"通知"</string>
+    <!-- no translation found for contacts_default_notification_channel (4754058700611188581) -->
+    <skip />
+    <string name="select_all">"全选"</string>
+    <string name="btn_ok">"确定"</string>
+    <string name="btn_cancel">"取消"</string>
+    <string name="deleteConfirmation_title">"要删除联系人吗？"</string>
+    <string name="ContactMultiDeleteConfirmation">"将会删除这些联系人。"</string>
+    <string name="delete_contacts_title">"删除联系人"</string>
+    <string name="delete_contacts_message">"正在删除..."</string>
+    <string name="delete_termination">"删除结束"</string>
+    <string name="too_many_contacts_add_to_group">联系人过多，应该少于<xliff:g id="count">%d</xliff:g>个</string>
+    <string name="contacts_selected">已选中%d个</string>
+
+    <string name="summary_count_numbers">%s 个人</string>
+    <!-- The hint text in search-view.-->
+    <string name="search_menu_search">搜索</string>
+    <string name="too_many_contacts_add">联系人太多，应该少于 <xliff:g id="count">%d</xliff:g>个</string>
+    <string name="menu_select_all" msgid="621719255150713545">"全选"</string>
+    <string name="menu_select_none" msgid="7093222469852132345">"取消全选"</string>
 </resources>
