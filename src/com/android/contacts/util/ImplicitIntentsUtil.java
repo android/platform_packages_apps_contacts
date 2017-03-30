@@ -198,6 +198,23 @@ public class ImplicitIntentsUtil {
     }
 
     /**
+     * Returns an Intent to launch Emergency Information
+     */
+    public static Intent getIntentForEmergencyInfo(Context context) {
+        if (context == null || context.getPackageManager() == null) {
+            return null;
+        }
+        Intent intent = new Intent("android.settings.EDIT_EMERGENGY_INFO")
+                .setPackage("com.android.emergency");
+        List<ResolveInfo> list = context.getPackageManager().queryIntentActivities(intent,
+                PackageManager.MATCH_DEFAULT_ONLY);
+        if (list != null && !list.isEmpty()) {
+            return intent;
+        }
+        return null;
+    }
+
+    /**
      * Returns a copy of {@param intent} with a class name set, if a class inside this app
      * has a corresponding intent filter.
      */
