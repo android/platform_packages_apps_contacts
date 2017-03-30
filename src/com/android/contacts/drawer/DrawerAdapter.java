@@ -18,6 +18,8 @@ package com.android.contacts.drawer;
 
 import android.app.Activity;
 import android.graphics.PorterDuff;
+import android.net.Uri;
+import android.provider.ContactsContract.DisplayNameSources;
 import android.support.annotation.LayoutRes;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,12 +28,14 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.contacts.ContactPhotoManager;
 import com.android.contacts.R;
 import com.android.contacts.activities.PeopleActivity.ContactsView;
 import com.android.contacts.group.GroupListItem;
 import com.android.contacts.list.ContactListFilter;
 import com.android.contacts.model.account.AccountDisplayInfo;
 import com.android.contacts.model.account.AccountDisplayInfoFactory;
+import com.android.contacts.profile.ProfileItem;
 import com.android.contacts.util.SharedPreferenceUtil;
 import com.android.contactsbind.HelpUtils;
 import com.android.contactsbind.ObjectFactory;
@@ -50,9 +54,10 @@ public class DrawerAdapter extends BaseAdapter {
     private static final int VIEW_TYPE_NAV_SPACER = 6;
     private static final int VIEW_TYPE_STATUS_SPACER = 7;
     private static final int VIEW_TYPE_NAV_DIVIDER = 8;
+    private static final int VIEW_TYPE_PROFILE_ENTRY = 9;
 
     // This count must be updated if we add more view types.
-    private static final int VIEW_TYPE_COUNT = 9;
+    private static final int VIEW_TYPE_COUNT = 10;
 
     private static final int TYPEFACE_STYLE_ACTIVATE = R.style.DrawerItemTextActiveStyle;
     private static final int TYPEFACE_STYLE_INACTIVE = R.style.DrawerItemTextInactiveStyle;
@@ -69,6 +74,7 @@ public class DrawerAdapter extends BaseAdapter {
     // Adapter elements, ordered in this way mItemsList. The ordering is based on:
     //  [Status bar spacer item]
     //  [Navigation spacer item]
+    //  [Profile Entry item]
     //  [Primary items] (Contacts, Suggestions)
     //  [Group Header]
     //  [Groups]
@@ -79,6 +85,8 @@ public class DrawerAdapter extends BaseAdapter {
     //  [Navigation spacer item]
     private StatusBarSpacerItem mStatusBarSpacerItem = null;
     private NavSpacerItem mNavSpacerItem = null;
+    private ProfileEntryItem mProfileEntryItem = null;
+    private DividerItem mProfileEntryItemDivider = null;
     private List<PrimaryItem> mPrimaryItems = new ArrayList<>();
     private HeaderItem mGroupHeader = null;
     private List<GroupEntryItem> mGroupEntries = new ArrayList<>();
@@ -101,6 +109,7 @@ public class DrawerAdapter extends BaseAdapter {
         // Spacer item for dividing sections in drawer
         mNavSpacerItem = new NavSpacerItem(R.id.nav_drawer_spacer);
         mStatusBarSpacerItem = new StatusBarSpacerItem(R.id.nav_status_bar_spacer);
+        mProfileEntryItemDivider = new DividerItem();
         // Primary items
         mPrimaryItems.add(new PrimaryItem(R.id.nav_all_contacts, R.string.contactsList,
                 R.drawable.quantum_ic_account_circle_vd_theme_24, ContactsView.ALL_CONTACTS));
@@ -130,6 +139,10 @@ public class DrawerAdapter extends BaseAdapter {
         mItemsList.clear();
         mItemsList.add(mStatusBarSpacerItem);
         mItemsList.add(mNavSpacerItem);
+        if (mProfileEntryItem != null) {
+            mItemsList.add(mProfileEntryItem);
+            mItemsList.add(mProfileEntryItemDivider);
+        }
         mItemsList.addAll(mPrimaryItems);
         if (mAreGroupWritableAccountsAvailable || !mGroupEntries.isEmpty()) {
             mItemsList.add(mGroupHeader);
@@ -144,6 +157,11 @@ public class DrawerAdapter extends BaseAdapter {
         mItemsList.addAll(mAccountEntries);
         mItemsList.addAll(mMiscItems);
         mItemsList.add(mNavSpacerItem);
+    }
+
+    public void setProfile(ProfileItem profileItem) {
+        mProfileEntryItem = new ProfileEntryItem(R.id.nav_myprofile, profileItem);
+        notifyChangeAndRebuildList();
     }
 
     public void setGroups(List<GroupListItem> groupListItems, boolean areGroupWritable) {
@@ -195,6 +213,8 @@ public class DrawerAdapter extends BaseAdapter {
         switch (drawerItem.viewType) {
             case VIEW_TYPE_STATUS_SPACER:
                 return getBaseItemView(R.layout.nav_header_main, view, viewGroup);
+            case VIEW_TYPE_PROFILE_ENTRY:
+                return getProfileEntryView((ProfileEntryItem) drawerItem, view, viewGroup);
             case VIEW_TYPE_PRIMARY_ITEM:
                 return getPrimaryItemView((PrimaryItem) drawerItem, view, viewGroup);
             case VIEW_TYPE_HEADER_ITEM:
@@ -247,6 +267,52 @@ public class DrawerAdapter extends BaseAdapter {
         final TextView textView = (TextView) result.findViewById(R.id.title);
         textView.setText(item.text);
         result.setId(item.id);
+        return result;
+    }
+
+    private View getProfileEntryView(ProfileEntryItem item, View result, ViewGroup parent) {
+        if (result == null) {
+            result = mInflater.inflate(R.layout.drawer_secondline_item, parent, false);
+            result.setId(item.id);
+        }
+
+        final ProfileItem profile = item.profile;
+
+        final ImageView icon = (ImageView) result.findViewById(R.id.icon);
+        icon.setScaleType(ImageView.ScaleType.CENTER);
+        if (profile.HasProfile()) {
+            if (profile.getPhotoId() != 0) {
+                icon.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                getPhotoLoader().loadThumbnail(icon, profile.getPhotoId(), false, true, null);
+            } else if (profile.getPhotoUri() != null) {
+                icon.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                getPhotoLoader().loadDirectoryPhoto(icon, Uri.parse(profile.getPhotoUri()), false,
+                        true, null);
+            } else {
+                // There are cases where the image cache may remain, so update once by default.
+                getPhotoLoader().loadDirectoryPhoto(icon, null, false, true, null);
+                icon.setImageResource(R.drawable.quantum_ic_drawer_my_info_32);
+            }
+        } else {
+            // There are cases where the image cache may remain, so update once by default.
+            getPhotoLoader().loadDirectoryPhoto(icon, null, false, true, null);
+            icon.setImageResource(R.drawable.quantum_ic_drawer_my_info_32);
+        }
+
+        final TextView title = (TextView) result.findViewById(R.id.title);
+        title.setText(mActivity.getString(R.string.settings_my_info_title));
+        final TextView summary = (TextView) result.findViewById(R.id.summary);
+        if (profile.HasProfile()) {
+            summary.setText(profile.getDisplayName());
+            if (profile.getDisplayNameSource() == DisplayNameSources.PHONE) {
+                summary.setTextDirection(TextView.TEXT_DIRECTION_LTR);
+            }
+        } else {
+            summary.setText(mActivity.getString(R.string.set_up_profile));
+        }
+        // Apply setTextAppearance to title only.
+        updateSelectedStatus(title, icon, false);
+        result.setTag(profile.HasProfile() ? profile.getContactId() : -1);
         return result;
     }
 
@@ -428,6 +494,16 @@ public class DrawerAdapter extends BaseAdapter {
         }
     }
 
+    // Navigation drawer item for a profile.
+    public static class ProfileEntryItem extends BaseDrawerItem {
+        private final ProfileItem profile;
+
+        public ProfileEntryItem(int id, ProfileItem profileItem) {
+            super(VIEW_TYPE_PROFILE_ENTRY, id, /* textResId */ 0, /* iconResId */ 0);
+            this.profile = profileItem;
+        }
+    }
+
     // Navigation drawer item for a group.
     public static class GroupEntryItem extends BaseDrawerItem {
         private final GroupListItem group;
@@ -446,5 +522,9 @@ public class DrawerAdapter extends BaseAdapter {
             super(VIEW_TYPE_ACCOUNT_ENTRY, id, /* textResId */ 0, /* iconResId */ 0);
             this.account = account;
         }
+    }
+
+    private ContactPhotoManager getPhotoLoader() {
+        return ContactPhotoManager.getInstance(mActivity);
     }
 }
