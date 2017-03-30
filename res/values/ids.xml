@@ -68,6 +68,9 @@
     <!-- Menu ID for each filter menu item -->
     <item type="id" name="nav_filter" />
 
+    <!-- Menu ID for ice item -->
+    <item type="id" name="nav_emergency" />
+
     <!-- Menu ID for Settings menu -->
     <item type="id" name="nav_settings" />
 

@@ -26,6 +26,8 @@ import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.SyncStatusObserver;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -1204,6 +1206,23 @@ public class PeopleActivity extends AppCompatContactsActivity implements
         final Intent intent = new Intent();
         intent.putExtra(AccountFilterActivity.EXTRA_CONTACT_LIST_FILTER, filter);
         onFilterMenuItemClicked(intent);
+    }
+
+    /*
+     * Behavior when select Emergency information on Navigation drawer.
+     */
+    @Override
+    public void onEmergencyViewSelected() {
+        if (getPackageManager() == null) {
+            return;
+        }
+        Intent intent = new Intent("android.settings.EDIT_EMERGENGY_INFO")
+                .setPackage("com.android.emergency");
+        List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent,
+                PackageManager.MATCH_DEFAULT_ONLY);
+        if (list != null && !list.isEmpty()) {
+            ImplicitIntentsUtil.startActivityOutsideApp(this, intent);
+        }
     }
 
     public boolean isGroupView() {

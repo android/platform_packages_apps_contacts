@@ -17,6 +17,9 @@
 package com.android.contacts.drawer;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.PorterDuff;
 import android.support.annotation.LayoutRes;
 import android.view.LayoutInflater;
@@ -49,9 +52,10 @@ public class DrawerAdapter extends BaseAdapter {
     private static final int VIEW_TYPE_NAV_SPACER = 6;
     private static final int VIEW_TYPE_STATUS_SPACER = 7;
     private static final int VIEW_TYPE_NAV_DIVIDER = 8;
+    private static final int VIEW_TYPE_EMERGENCY_ITEM = 9;
 
     // This count must be updated if we add more view types.
-    private static final int VIEW_TYPE_COUNT = 9;
+    private static final int VIEW_TYPE_COUNT = 10;
 
     private static final int TYPEFACE_STYLE_ACTIVATE = R.style.DrawerItemTextActiveStyle;
     private static final int TYPEFACE_STYLE_INACTIVE = R.style.DrawerItemTextInactiveStyle;
@@ -74,6 +78,8 @@ public class DrawerAdapter extends BaseAdapter {
     //  [Create Label button]
     //  [Account Header]
     //  [Accounts]
+    //  [Emergency information]
+    //  [Emergency information spacer item]
     //  [Misc items] (a divider, Settings, Help & Feedback)
     //  [Navigation spacer item]
     private StatusBarSpacerItem mStatusBarSpacerItem = null;
@@ -84,6 +90,8 @@ public class DrawerAdapter extends BaseAdapter {
     private BaseDrawerItem mCreateLabelButton = null;
     private HeaderItem mAccountHeader = null;
     private List<AccountEntryItem> mAccountEntries = new ArrayList<>();
+    private BaseDrawerItem mEmergencyItem = null;
+    private DividerItem mEmergencyItemDivider = null;
     private List<BaseDrawerItem> mMiscItems = new ArrayList<>();
 
     private List<BaseDrawerItem> mItemsList = new ArrayList<>();
@@ -114,6 +122,11 @@ public class DrawerAdapter extends BaseAdapter {
         // Create Label Button
         mCreateLabelButton = new BaseDrawerItem(VIEW_TYPE_CREATE_LABEL, R.id.nav_create_label,
                 R.string.menu_new_group_action_bar, R.drawable.quantum_ic_add_vd_theme_24);
+        // Emergency information Item
+        mEmergencyItem = new BaseDrawerItem(VIEW_TYPE_EMERGENCY_ITEM, R.id.nav_emergency,
+                R.string.menu_emergency_information_txt,
+                R.drawable.quantum_ic_drawer_emergency_info_24);
+        mEmergencyItemDivider = new DividerItem();
         // Misc Items
         mMiscItems.add(new DividerItem());
         mMiscItems.add(new MiscItem(R.id.nav_settings, R.string.menu_settings,
@@ -139,6 +152,10 @@ public class DrawerAdapter extends BaseAdapter {
             mItemsList.add(mAccountHeader);
         }
         mItemsList.addAll(mAccountEntries);
+        if (isEmergencyInfoActivityAvailable()) {
+            mItemsList.add(mEmergencyItemDivider);
+            mItemsList.add(mEmergencyItem);
+        }
         mItemsList.addAll(mMiscItems);
         mItemsList.add(mNavSpacerItem);
     }
@@ -208,6 +225,8 @@ public class DrawerAdapter extends BaseAdapter {
                 return getBaseItemView(R.layout.nav_drawer_spacer, view, viewGroup);
             case VIEW_TYPE_NAV_DIVIDER:
                 return getBaseItemView(R.layout.drawer_horizontal_divider, view, viewGroup);
+            case VIEW_TYPE_EMERGENCY_ITEM:
+                return getDrawerItemView(drawerItem, view, viewGroup);
         }
         throw new IllegalStateException("Unknown drawer item " + drawerItem);
     }
@@ -443,5 +462,22 @@ public class DrawerAdapter extends BaseAdapter {
             super(VIEW_TYPE_ACCOUNT_ENTRY, id, /* textResId */ 0, /* iconResId */ 0);
             this.account = account;
         }
+    }
+
+    /*
+     * Confirm existence of Emergency information application.
+     */
+    private boolean isEmergencyInfoActivityAvailable() {
+        if (mActivity.getPackageManager() == null) {
+            return false;
+        }
+        Intent intent = new Intent("android.settings.EDIT_EMERGENGY_INFO")
+                .setPackage("com.android.emergency");
+        List<ResolveInfo> list = mActivity.getPackageManager().queryIntentActivities(intent,
+                PackageManager.MATCH_DEFAULT_ONLY);
+        if (list != null && !list.isEmpty()) {
+            return true;
+        }
+        return false;
     }
 }
