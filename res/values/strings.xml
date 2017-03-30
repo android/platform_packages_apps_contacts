@@ -1586,4 +1586,7 @@
     <!-- Text shown when viewing channel settings for default Contacts notifications [CHAR LIMIT=50] -->
     <string name="contacts_default_notification_channel">Notifications</string>
 
+    <!--Explanation with icon of Drawer in Contacts. Your medical information ie. Date of birth, Bloodtype, allergic details can be recorded for reference. -->
+    <string name="menu_emergency_information_txt">Emergency information</string>
+
 </resources>
