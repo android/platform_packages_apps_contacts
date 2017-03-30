@@ -1206,6 +1206,25 @@ public class PeopleActivity extends AppCompatContactsActivity implements
         onFilterMenuItemClicked(intent);
     }
 
+    /*
+     * Behavior when select MyInfo on Navigation drawer.
+     * Launch in the same way as from Settings->MyInfo.
+     * Refer to DisplayOptionsPreferenceFragment's onPreferenceClick.
+     */
+    @Override
+    public void onProfileViewSelected(long profileContactId) {
+        if (profileContactId != -1) {
+            final Uri uri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI,
+                    profileContactId);
+            ImplicitIntentsUtil.startQuickContact(this, uri, ScreenType.ME_CONTACT);
+        } else {
+            final Intent intent = new Intent(Intent.ACTION_INSERT,
+                    ContactsContract.Contacts.CONTENT_URI);
+            intent.putExtra(ContactEditorFragment.INTENT_EXTRA_NEW_LOCAL_PROFILE, true);
+            ImplicitIntentsUtil.startActivityInApp(this, intent);
+        }
+    }
+
     public boolean isGroupView() {
         return mCurrentView == ContactsView.GROUP_VIEW;
     }

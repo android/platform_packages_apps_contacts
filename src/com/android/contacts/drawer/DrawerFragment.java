@@ -26,6 +26,8 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.ContactsContract.DisplayNameSources;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +48,8 @@ import com.android.contacts.model.AccountTypeManager;
 import com.android.contacts.model.account.AccountInfo;
 import com.android.contacts.model.account.AccountsLoader;
 import com.android.contacts.model.account.AccountsLoader.AccountsListener;
+import com.android.contacts.profile.ProfileLoader;
+import com.android.contacts.profile.ProfileLoader.ProfileQuery;
 import com.android.contacts.util.AccountFilterUtil;
 import com.android.contactsbind.ObjectFactory;
 
@@ -58,6 +62,7 @@ public class DrawerFragment extends Fragment implements AccountsListener {
     private static final int LOADER_GROUPS = 1;
     private static final int LOADER_ACCOUNTS = 2;
     private static final int LOADER_FILTERS = 3;
+    private static final int LOADER_PROFILE = 4;
 
     private static final String KEY_CONTACTS_VIEW = "contactsView";
     private static final String KEY_SELECTED_GROUP = "selectedGroup";
@@ -136,6 +141,25 @@ public class DrawerFragment extends Fragment implements AccountsListener {
                     }
                     mGroupsLoaded = true;
                     notifyIfReady();
+                }
+
+                public void onLoaderReset(Loader<Cursor> loader) {
+                }
+            };
+
+    private final LoaderManager.LoaderCallbacks<Cursor> mProfileLoaderListener =
+            new LoaderManager.LoaderCallbacks<Cursor>() {
+                @Override
+                public CursorLoader onCreateLoader(int id, Bundle args) {
+                    return new ProfileLoader(getActivity(),
+                            ProfileLoader.getProjection(getActivity()));
+                }
+
+                @Override
+                public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+                    // Sending MyInfo information to DrawerAdapter
+                    // when MyInfo exists(User registered MyInfo) or not.
+                    mDrawerAdapter.setProfile(ProfileLoader.getProfileItem(getActivity(), data));
                 }
 
                 public void onLoaderReset(Loader<Cursor> loader) {
@@ -221,6 +245,7 @@ public class DrawerFragment extends Fragment implements AccountsListener {
         AccountsLoader.loadAccounts(this, LOADER_ACCOUNTS,
                 AccountTypeManager.AccountFilter.GROUPS_WRITABLE);
         getLoaderManager().initLoader(LOADER_GROUPS, null, mGroupListLoaderListener);
+        getLoaderManager().initLoader(LOADER_PROFILE, null, mProfileLoaderListener);
     }
 
     @Override
@@ -236,7 +261,10 @@ public class DrawerFragment extends Fragment implements AccountsListener {
                 return;
             }
             final int viewId = v.getId();
-            if (viewId == R.id.nav_all_contacts) {
+            if (viewId == R.id.nav_myprofile) {
+                final long profileContactId = (long) v.getTag();
+                mListener.onProfileViewSelected(profileContactId);
+            } else if (viewId == R.id.nav_all_contacts) {
                 mListener.onContactsViewSelected(ContactsView.ALL_CONTACTS);
                 setNavigationItemChecked(ContactsView.ALL_CONTACTS);
             } else if (viewId == R.id.nav_assistant) {
@@ -305,6 +333,7 @@ public class DrawerFragment extends Fragment implements AccountsListener {
         void onCreateLabelButtonClicked();
         void onOpenSettings();
         void onLaunchHelpFeedback();
+        void onProfileViewSelected(long profileContactId);
     }
 
     private class WindowInsetsListener implements View.OnApplyWindowInsetsListener {

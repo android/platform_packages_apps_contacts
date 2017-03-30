@@ -44,6 +44,9 @@
     <!-- An ID to be used for contents of a custom dialog so that its state be preserved -->
     <item type="id" name="custom_dialog_content" />
 
+    <!-- Menu ID for profile item -->
+    <item type="id" name="nav_myprofile" />
+
     <!-- Menu group ID for settings and help & feedback  -->
     <item type="id" name="nav_misc" />
 
