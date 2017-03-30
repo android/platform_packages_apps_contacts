@@ -592,4 +592,13 @@ background and text color. See also android:style/Widget.Holo.TextView.ListSepar
         <item name="android:paddingStart">@dimen/drawer_side_padding</item>
         <item name="android:paddingEnd">@dimen/drawer_label_header_end_padding</item>
     </style>
+
+    <style name="DrawerSecondLineTitleTextStyle" parent="DrawerItemTextStyle">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="DrawerSecondLineSummaryTextStyle" parent="DrawerItemTextStyle">
+        <item name="android:textColor">@color/quantum_black_secondary_text</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
 </resources>
