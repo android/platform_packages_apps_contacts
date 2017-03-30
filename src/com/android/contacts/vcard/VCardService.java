@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2010 The Android Open Source Project
+ * Copyright (C) 2016 Sony Mobile Communications Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,11 +13,16 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * NOTE: This file has been modified by Sony Mobile Communications Inc.
+ * Modifications are licensed under the License.
  */
 package com.android.contacts.vcard;
 
 import android.app.Notification;
+import android.app.NotificationManager;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaScannerConnection;
 import android.media.MediaScannerConnection.MediaScannerConnectionClient;
@@ -129,6 +135,15 @@ public class VCardService extends Service {
                     VCardCommonArguments.ARG_CALLING_ACTIVITY);
         } else {
             mCallingActivity = null;
+            if (intent == null) {
+                //this happens when the service is killed and restarted by system.
+                //Need to dismiss the notifications since user has no way to dismiss it
+                //if app killed and notifications still exists.
+                NotificationManager nm = (NotificationManager) getSystemService(
+                        Context.NOTIFICATION_SERVICE);
+                nm.cancelAll();
+            }
+
         }
         return START_STICKY;
     }
@@ -255,6 +270,12 @@ public class VCardService extends Service {
                 }
             }
         } else {
+            // this case is possible that the Contacts is killed, while the
+            // progress notification is still present. So we have to dismiss
+            // the notification.
+            NotificationManager nm = (NotificationManager) getSystemService(
+                    Context.NOTIFICATION_SERVICE);
+            nm.cancel(NotificationImportExportListener.DEFAULT_NOTIFICATION_TAG, jobId);
             Log.w(LOG_TAG, String.format("Tried to remove unknown job (id: %d)", jobId));
         }
         stopServiceIfAppropriate();
