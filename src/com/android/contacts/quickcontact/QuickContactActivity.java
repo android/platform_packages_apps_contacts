@@ -1484,6 +1484,10 @@ public class QuickContactActivity extends ContactsActivity {
             final String dataString = event.buildDataStringForDisplay(context, kind);
             final Calendar cal = DateUtils.parseDate(dataString, false);
             if (cal != null) {
+                final int eventType = event.getContentValues().getAsInteger(Event.TYPE);
+                if (eventType == Event.TYPE_ANNIVERSARY || eventType == Event.TYPE_BIRTHDAY) {
+                    cal.set(Calendar.YEAR, 0);
+                }
                 final Date nextAnniversary =
                         DateUtils.getNextAnnualDate(cal);
                 final Uri.Builder builder = CalendarContract.CONTENT_URI.buildUpon();
