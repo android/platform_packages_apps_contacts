@@ -85,15 +85,19 @@ public class CancelActivity extends Activity implements ServiceConnection {
         if (id == R.id.dialog_cancel_confirmation) {
             final String message;
             if (mType == VCardService.TYPE_IMPORT) {
-                message = getString(R.string.cancel_import_confirmation_message, mDisplayName);
+                message = getString(R.string.stop_import_dialog_title_txt,
+                        mDisplayName);
             } else {
-                message = getString(R.string.cancel_export_confirmation_message, mDisplayName);
+                message = getString(R.string.stop_export_dialog_title_txt,
+                        mDisplayName);
             }
             final AlertDialog.Builder builder = new AlertDialog.Builder(this)
                     .setMessage(message)
-                    .setPositiveButton(android.R.string.ok, new RequestCancelListener())
+                    .setPositiveButton(R.string.stop_import_export_dialog_stop_txt,
+                            new RequestCancelListener())
                     .setOnCancelListener(mCancelListener)
-                    .setNegativeButton(android.R.string.cancel, mCancelListener);
+                    .setNegativeButton(R.string.stop_import_export_dialog_continue_txt,
+                            mCancelListener);
             return builder.create();
         } else if (id == R.id.dialog_cancel_failed) {
             final AlertDialog.Builder builder = new AlertDialog.Builder(this)
