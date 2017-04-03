@@ -1586,4 +1586,16 @@
     <!-- Text shown when viewing channel settings for default Contacts notifications [CHAR LIMIT=50] -->
     <string name="contacts_default_notification_channel">Notifications</string>
 
+    <!-- Button in dialog to continue import/export of vcards. This button is shown together with stop_import_dialog_title_txt or stop_export_dialog_title_txt. Tapping this will continue import/export of vcards, not quit import/export. -->
+    <string name="stop_import_export_dialog_continue_txt">Continue</string>
+
+    <!-- Button in dialog to cancel import/export of vcards. This button is shown together with stop_import_dialog_title_txt or stop_export_dialog_title_txt. Tapping this will quit import/export of vcards, not quit canceling import/export. -->
+    <string name="stop_import_export_dialog_stop_txt">Quit</string>
+
+    <!-- Dialog title prompting the user if she/he wants to cancel vcard import. %s will be replaced with an import file name. e.g. Quit import of contacts1000_20.vcf? Please make the translation of "quit" consistent with "stop_import_export_dialog_stop_txt". -->
+    <string name="stop_import_dialog_title_txt">Quit import of <xliff:g id="filename" example="import.vcf">%s</xliff:g>?</string>
+
+    <!-- Dialog title prompting the user if she/he wants to cancel vcard export. %s will be replaced with an export file name. e.g. Quit export of contacts1000_20.vcf? Please make the translation of "quit" consistent with "stop_import_export_dialog_stop_txt". -->
+    <string name="stop_export_dialog_title_txt">Quit export of <xliff:g id="filename" example="export.vcf">%s</xliff:g>?</string>
+
 </resources>
