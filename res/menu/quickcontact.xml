@@ -42,6 +42,19 @@
         android:title="@string/menu_share"
         android:alphabeticShortcut="s" />
 
+
+    <item
+        android:id="@+id/menu_copy_to_phone"
+        android:title="@string/menu_copyTo" />
+
+    <item
+        android:id="@+id/menu_copy_to_sim1"
+        android:title="@string/menu_copyTo" />
+
+    <item
+        android:id="@+id/menu_copy_to_sim2"
+        android:title="@string/menu_copyTo" />
+
     <item
         android:id="@+id/menu_create_contact_shortcut"
         android:title="@string/menu_create_contact_shortcut" />

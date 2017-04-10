@@ -37,6 +37,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.pm.ShortcutManager;
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -51,6 +52,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Trace;
 import android.provider.CalendarContract;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.provider.ContactsContract.CommonDataKinds.Event;
 import android.provider.ContactsContract.CommonDataKinds.GroupMembership;
@@ -84,6 +87,8 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextDirectionHeuristics;
 import android.text.TextUtils;
+import android.telephony.TelephonyManager;
+import android.telephony.SubscriptionManager;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -114,6 +119,9 @@ import com.android.contacts.activities.RequestPermissionsActivity;
 import com.android.contacts.compat.CompatUtils;
 import com.android.contacts.compat.EventCompat;
 import com.android.contacts.compat.MultiWindowCompat;
+import com.android.contacts.model.RawContactDelta;
+import com.android.contacts.ContactUtils;
+import com.android.contacts.SimContactsConstants;
 import com.android.contacts.detail.ContactDisplayUtils;
 import com.android.contacts.dialog.CallSubjectDialog;
 import com.android.contacts.editor.ContactEditorFragment;
@@ -326,6 +334,7 @@ public class QuickContactActivity extends ContactsActivity {
 
     private final ImageViewDrawableSetter mPhotoSetter = new ImageViewDrawableSetter();
 
+    private TelephonyManager tm;
     /**
      * {@link #LEADING_MIMETYPES} is used to sort MIME-types.
      *
@@ -395,6 +404,8 @@ public class QuickContactActivity extends ContactsActivity {
         new ConcurrentHashMap<>(4, 0.9f, 1);
 
     private static final String FRAGMENT_TAG_SELECT_ACCOUNT = "select_account_fragment";
+    private boolean simOneLoadComplete = false;
+    private boolean simTwoLoadComplete = false;
 
     final OnClickListener mEntryClickHandler = new OnClickListener() {
         @Override
@@ -798,6 +809,7 @@ public class QuickContactActivity extends ContactsActivity {
         if (CompatUtils.isLollipopCompatible()) {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
+        tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 
         processIntent(getIntent());
 
@@ -2725,7 +2737,14 @@ public class QuickContactActivity extends ContactsActivity {
             ContactDisplayUtils.configureStarredMenuItem(starredMenuItem,
                     mContactData.isDirectoryEntry(), mContactData.isUserProfile(),
                     mContactData.getStarred());
-
+            if (!simOneLoadComplete) {
+                simOneLoadComplete = (ContactUtils.getAdnRecordsCapacity(this,
+                        SimContactsConstants.SLOT1)[0] > 0) ? true : false;
+            }
+            if (!simTwoLoadComplete) {
+                simTwoLoadComplete = (ContactUtils.getAdnRecordsCapacity(this,
+                        SimContactsConstants.SLOT2)[0] > 0)? true : false;
+            }
             // Configure edit MenuItem
             final MenuItem editMenuItem = menu.findItem(R.id.menu_edit);
             editMenuItem.setVisible(true);
@@ -2775,6 +2794,70 @@ public class QuickContactActivity extends ContactsActivity {
             final MenuItem helpMenu = menu.findItem(R.id.menu_help);
             helpMenu.setVisible(HelpUtils.isHelpAndFeedbackAvailable());
 
+            final RawContact rawContact = mContactData.getRawContacts().get(0);
+            String accoutName = rawContact.getAccountName();
+            String accoutType = rawContact.getAccountTypeString();
+
+            final MenuItem copyToPhoneMenu = menu.findItem(R.id.menu_copy_to_phone);
+            if (copyToPhoneMenu != null) {
+                copyToPhoneMenu.setVisible(false);
+            }
+
+            final MenuItem copyToSim1Menu = menu.findItem(R.id.menu_copy_to_sim1);
+            if (copyToSim1Menu != null) {
+                copyToSim1Menu.setVisible(false);
+            }
+
+            final MenuItem copyToSim2Menu = menu.findItem(R.id.menu_copy_to_sim2);
+            if (copyToSim2Menu != null) {
+                copyToSim2Menu.setVisible(false);
+            }
+
+            if (!TextUtils.isEmpty(accoutType)) {
+                if (SimContactsConstants.ACCOUNT_TYPE_SIM.equals(accoutType)) {
+                    copyToPhoneMenu.setVisible(true);
+                    copyToPhoneMenu.setTitle(getString(R.string.menu_copyTo)
+                            + getString(R.string.phoneLabelsGroup));
+                    if (tm.getPhoneCount() > 1) {
+                        if (SimContactsConstants.SIM_NAME_1.equals(accoutName)
+                                && simTwoLoadComplete) {
+                            copyToSim2Menu.setTitle(getString(R.string.menu_copyTo)
+                                    + ContactUtils.getAcount( QuickContactActivity.this,
+                                            SimContactsConstants.SLOT2).name);
+                            copyToSim2Menu.setVisible(true);
+                        }
+                        if (SimContactsConstants.SIM_NAME_2.equals(accoutName)
+                                && simOneLoadComplete) {
+                            copyToSim1Menu.setTitle(getString(R.string.menu_copyTo)
+                                    + ContactUtils.getAcount(QuickContactActivity.this,
+                                            SimContactsConstants.SLOT1).name);
+                            copyToSim1Menu.setVisible(true);
+                        }
+                    }
+                }
+            } else {
+                copyToPhoneMenu.setVisible(false);
+                if (tm.getPhoneCount() > 1) {
+                    if (simOneLoadComplete) {
+                        copyToSim1Menu.setTitle(getString(R.string.menu_copyTo)
+                                + ContactUtils.getAcount(
+                                        this, SimContactsConstants.SLOT1).name);
+                        copyToSim1Menu.setVisible(true);
+                    }
+                    if (simTwoLoadComplete) {
+                        copyToSim2Menu.setTitle(getString(R.string.menu_copyTo)
+                                + ContactUtils.getAcount(
+                                        this, SimContactsConstants.SLOT2).name);
+                        copyToSim2Menu.setVisible(true);
+                    }
+                } else {
+                    if (simOneLoadComplete) {
+                        copyToSim1Menu.setTitle(getString(R.string.menu_copyTo)
+                                + SimContactsConstants.SIM_NAME);
+                        copyToSim1Menu.setVisible(true);
+                    }
+                }
+            }
             return true;
         }
         return false;
@@ -2898,12 +2981,272 @@ public class QuickContactActivity extends ContactsActivity {
             Logger.logQuickContactEvent(mReferrer, mContactType, CardType.UNKNOWN_CARD,
                     ActionType.HELP, /* thirdPartyAction */ null);
             HelpUtils.launchHelpAndFeedbackForContactScreen(this);
+        } else if(id == R.id.menu_copy_to_phone) {
+            if (mContactData == null) return false;
+            copyToPhone();
+            return true;
+        } else if(id == R.id.menu_copy_to_sim1) {
+            if (mContactData == null) return false;
+            copyToCard(SimContactsConstants.SLOT1);
+            return true;
+        }  else if(id == R.id.menu_copy_to_sim2) {
+            if (mContactData == null) return false;
+            copyToCard(SimContactsConstants.SLOT2);
+            return true;
         } else {
             Logger.logQuickContactEvent(mReferrer, mContactType, CardType.UNKNOWN_CARD,
                     ActionType.UNKNOWN_ACTION, /* thirdPartyAction */ null);
             return super.onOptionsItemSelected(item);
         }
         return true;
+    }
+
+    //supply phone number and email which could stored in one ADN
+    class UsimEntity {
+        private ArrayList<String> mNumberList = new ArrayList<String>();
+        private ArrayList<String> mEmailList = new ArrayList<String>();
+
+        public ArrayList<String> getEmailList() {
+            return mEmailList;
+        }
+
+        public ArrayList<String> getNumberList() {
+            return mNumberList;
+        }
+
+        public void putEmailList(ArrayList<String> list) {
+            mEmailList = list;
+        }
+
+        public void putNumberList(ArrayList<String> list) {
+            mNumberList = list;
+        }
+    }
+
+    private void copyToPhone() {
+        String name = mContactData.getDisplayName();
+        if (TextUtils.isEmpty(name)) {
+            name = "";
+        }
+        String phoneNumber = "";
+        StringBuilder anrNumber = new StringBuilder();
+        StringBuilder email = new StringBuilder();
+
+        //get phonenumber,email,anr from SIM contacts,then insert them to phone
+        for (RawContact rawContact : mContactData.getRawContacts()) {
+            for (DataItem dataItem : rawContact.getDataItems()) {
+                if (dataItem.getMimeType() == null) {
+                    continue;
+                }
+                if (dataItem instanceof PhoneDataItem) {
+                    PhoneDataItem phoneNum = (PhoneDataItem) dataItem;
+                    final String number = phoneNum.getNumber();
+                    if (!TextUtils.isEmpty(number)) {
+                        if (Phone.TYPE_MOBILE == phoneNum.getContentValues().getAsInteger(
+                                Phone.TYPE)) {
+                            phoneNumber = number;
+                        } else {
+                            if(!TextUtils.isEmpty(anrNumber.toString())) {
+                                anrNumber.append(SimContactsConstants.ANR_SEP);
+                            }
+                            anrNumber.append(number);
+                        }
+                    }
+                } else if (dataItem instanceof EmailDataItem) {
+                    EmailDataItem emailData = (EmailDataItem) dataItem;
+                    final String address = emailData.getData();
+                    if (!TextUtils.isEmpty(address)) {
+                        if(!TextUtils.isEmpty(email.toString())) {
+                            email.append(SimContactsConstants.EMAIL_SEP);
+                        }
+                        email.append(address);
+                    }
+                }
+            }
+        }
+
+        String[] value = new String[] {
+                name, phoneNumber, email.toString(), anrNumber.toString()
+        };
+        boolean success = ContactUtils
+                .insertToPhone(value, QuickContactActivity.this,
+                        SubscriptionManager.INVALID_SUBSCRIPTION_ID);
+        Toast.makeText(this, success ? R.string.copy_done : R.string.copy_failure,
+                Toast.LENGTH_SHORT).show();
+    }
+
+    private Handler mHandler = null;
+
+    private void copyToCard(final int sub) {
+        final int MSG_COPY_DONE = 0;
+        final int MSG_COPY_FAILURE = 1;
+        final int MSG_CARD_NO_SPACE = 2;
+        final int MSG_NO_EMPTY_EMAIL = 3;
+        if (mHandler == null) {
+            mHandler = new Handler() {
+                public void handleMessage(Message msg) {
+                    switch (msg.what) {
+                        case MSG_COPY_DONE:
+                            Toast.makeText(QuickContactActivity.this, R.string.copy_done,
+                                    Toast.LENGTH_SHORT).show();
+                            break;
+                        case MSG_COPY_FAILURE:
+                            Toast.makeText(QuickContactActivity.this, R.string.copy_failure,
+                                    Toast.LENGTH_SHORT).show();
+                            break;
+                        case MSG_CARD_NO_SPACE:
+                            Toast.makeText(QuickContactActivity.this, R.string.card_no_space,
+                                    Toast.LENGTH_SHORT).show();
+                            break;
+                        case MSG_NO_EMPTY_EMAIL:
+                            Toast.makeText(QuickContactActivity.this,
+                                    R.string.no_empty_email_in_usim,
+                                    Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                }
+            };
+        }
+
+        new Thread(new Runnable() {
+            public void run() {
+                synchronized (this) {
+                    int adnCountInSimContact = 1;
+                    int anrCountInSimContact = ContactUtils.getOneSimAnrCount
+                                (QuickContactActivity.this, sub);
+                    int emailCountInSimContact = ContactUtils.getOneSimEmailCount
+                                (QuickContactActivity.this, sub);
+                    int totalEmptyAdn = ContactUtils.getSimFreeCount(
+                            QuickContactActivity.this, sub);
+                    int totalEmptyAnr = ContactUtils.getSpareAnrCount(
+                            QuickContactActivity.this, sub);
+                    int totalEmptyEmail = ContactUtils.getSpareEmailCount(
+                            QuickContactActivity.this, sub);
+
+                    Message msg = Message.obtain();
+                    if (totalEmptyAdn <= 0) {
+                        msg.what = MSG_CARD_NO_SPACE;
+                        mHandler.sendMessage(msg);
+                        return;
+                    }
+
+                    //to indiacate how many number in one ADN can saved to SIM card,
+                    //1 means can only save one number,2,3 ... means can save anr
+                    int numEntitySize = adnCountInSimContact + anrCountInSimContact;
+
+                    //empty number is equals to the sum of adn and anr
+                    int emptyNumTotal = totalEmptyAdn + totalEmptyAnr;
+                    int nameSource = mContactData.getDisplayNameSource();
+                    String strName = "";
+                    if (nameSource == DisplayNameSources.STRUCTURED_NAME
+                            || nameSource == DisplayNameSources.NICKNAME
+                            || nameSource == DisplayNameSources.STRUCTURED_PHONETIC_NAME)
+                    strName = mContactData.getDisplayName();
+
+                    ArrayList<String> arrayNumber = new ArrayList<String>();
+                    ArrayList<String> arrayEmail = new ArrayList<String>();
+
+                    for (RawContact rawContact : mContactData.getRawContacts()) {
+                        for (DataItem dataItem : rawContact.getDataItems()) {
+                            if (dataItem.getMimeType() == null) {
+                                continue;
+                            }
+                            if (dataItem instanceof PhoneDataItem) {
+                                // Get phone string
+                                PhoneDataItem phoneNum = (PhoneDataItem) dataItem;
+                                final String number = phoneNum.getNumber();
+                                if (!TextUtils.isEmpty(number) && emptyNumTotal-- > 0) {
+                                    arrayNumber.add(number);
+                                }
+                            } else if (dataItem instanceof EmailDataItem) {
+                                // Get email string
+                                EmailDataItem emailData = (EmailDataItem) dataItem;
+                                final String address = emailData.getData();
+                                if (!TextUtils.isEmpty(address) && totalEmptyEmail-- > 0) {
+                                    arrayEmail.add(address);
+                                }
+                            }
+                        }
+                    }
+
+                    //calculate how many ADN needed according to the number and email,
+                    int groupNumCount = (arrayNumber.size() % numEntitySize) != 0 ? (arrayNumber
+                            .size() / numEntitySize + 1) : (arrayNumber.size() / numEntitySize);
+                    int groupEmailCount = emailCountInSimContact == 0 ? 0
+                            : ((arrayEmail.size() % emailCountInSimContact) != 0 ? (arrayEmail
+                                    .size() / emailCountInSimContact + 1)
+                                    : (arrayEmail.size() / emailCountInSimContact));
+
+                    int groupCount = Math.max(groupEmailCount, groupNumCount);
+
+                    ArrayList<UsimEntity> results = new ArrayList<UsimEntity>();
+                    for (int i = 0; i < groupCount; i++) {
+                        results.add(new UsimEntity());
+                    }
+
+                    UsimEntity value;
+                    //get the phone number for each ADN from arrayNumber,put them in UsimEntity
+                    for (int i = 0; i < groupNumCount; i++) {
+                        value = results.get(i);
+                        ArrayList<String> numberItem = new ArrayList<String>();
+                        for (int j = 0; j < numEntitySize; j++) {
+                            if ((i * numEntitySize + j) < arrayNumber.size()) {
+                                numberItem.add(arrayNumber.get(i * numEntitySize + j));
+                            }
+                        }
+                        value.putNumberList(numberItem);
+                    }
+
+                    for (int i = 0; i < groupEmailCount; i++) {
+                        value = results.get(i);
+                        ArrayList<String> emailItem = new ArrayList<String>();
+                        for (int j = 0; j < emailCountInSimContact; j++) {
+                            if ((i * emailCountInSimContact + j) < arrayEmail.size()) {
+                                emailItem.add(arrayEmail.get(i * emailCountInSimContact + j));
+                            }
+                        }
+                        value.putEmailList(emailItem);
+                    }
+
+                    Uri itemUri = null;
+                    if (totalEmptyEmail < 0 && ContactUtils.canSaveEmail(
+                            QuickContactActivity.this, sub)) {
+                        Message e_msg = Message.obtain();
+                        e_msg.what = MSG_NO_EMPTY_EMAIL;
+                        mHandler.sendMessage(e_msg);
+                    }
+
+                    //get phone number from UsimEntity,then insert to SIM card
+                    for (int i = 0; i < groupCount; i++) {
+                        value = results.get(i);
+                        arrayNumber = (ArrayList<String>) value.getNumberList();
+                        arrayEmail = (ArrayList<String>) value.getEmailList();
+                        String strNum = arrayNumber.size() > 0 ? arrayNumber.get(0) : null;
+                        StringBuilder strAnrNum = new StringBuilder();
+                        for (int j = 1; j < arrayNumber.size(); j++) {
+                            String s = arrayNumber.get(j);
+                            strAnrNum.append(s);
+                            strAnrNum.append(SimContactsConstants.ANR_SEP);
+                        }
+                        StringBuilder strEmail = new StringBuilder();
+                        for (int j = 0; j < arrayEmail.size(); j++) {
+                            String s = arrayEmail.get(j);
+                            strEmail.append(s);
+                            strEmail.append(SimContactsConstants.EMAIL_SEP);
+                        }
+                        itemUri = ContactUtils.insertToCard(QuickContactActivity.this, strName,
+                                strNum, strEmail.toString(), strAnrNum.toString(), sub);
+                    }
+                    if (itemUri != null) {
+                        msg.what = MSG_COPY_DONE;
+                        mHandler.sendMessage(msg);
+                    } else {
+                        msg.what = MSG_COPY_FAILURE;
+                        mHandler.sendMessage(msg);
+                    }
+                }
+            }
+        }).start();
     }
 
     private boolean showRawContactPickerDialog() {

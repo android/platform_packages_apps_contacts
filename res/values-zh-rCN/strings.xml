@@ -559,4 +559,6 @@
     <string name="copy_done">复制成功！</string>
     <string name="copy_failure">复制失败！</string>
     <string name="card_no_space">卡记录已满，部分信息未复制</string>
+    <string name="menu_copyTo">"复制到"</string>
+    <string name="no_empty_email_in_usim">"卡上电子邮件空间已满，部分邮件信息将不会复制 "</string>
 </resources>

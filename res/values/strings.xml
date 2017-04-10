@@ -1616,4 +1616,6 @@
     <string name="copy_done">Copy done！</string>
     <string name="copy_failure">Copy Failed！</string>
     <string name="card_no_space">Card has no space ,some record copy failed</string>
+    <string name="menu_copyTo">"Copy to "</string>
+    <string name="no_empty_email_in_usim">"Email is full, some record copy failed "</string>
 </resources>
