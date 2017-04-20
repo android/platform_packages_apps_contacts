@@ -233,7 +233,12 @@ public final class GroupNameEditDialogFragment extends DialogFragment implements
             dismiss();
             return;
         }
-        final String name = getGroupName();
+        String name = getGroupName();
+        // Trim group name, when group is saved.
+        // When "Group" exists, do not save " Group ". This behavior is the same as Google Contacts.
+        if (!TextUtils.isEmpty(name)) {
+            name = name.trim();
+        }
         // Note we don't check if the loader finished populating mExistingGroups. It's not the
         // end of the world if the user ends up with a duplicate group and in practice it should
         // never really happen (the query should complete much sooner than the user can edit the
@@ -283,8 +288,19 @@ public final class GroupNameEditDialogFragment extends DialogFragment implements
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         mExistingGroups = new HashSet<>();
         final GroupUtil.GroupsProjection projection = new GroupUtil.GroupsProjection(data);
+        // Initialize cursor's position. If Activity relaunched by orientation change,
+        // only onLoadFinished is called. OnCreateLoader is not called.
+        // The cursor's position is remain end position by moveToNext when the last onLoadFinished
+        // was called. Therefore, if cursor position was not initialized mExistingGroups is empty.
+        data.moveToPosition(-1);
         while (data.moveToNext()) {
-            final String title = projection.getTitle(data);
+            String title = projection.getTitle(data);
+            // Trim existing group name.
+            // When " Group " exists, do not save "Group".
+            // This behavior is the same as Google Contacts.
+            if (!TextUtils.isEmpty(title)) {
+                title = title.trim();
+            }
             // Empty system groups aren't shown in the nav drawer so it would be confusing to tell
             // the user that they already exist. Instead we allow them to create a duplicate
             // group in this case. This is how the web handles this case as well (it creates a
