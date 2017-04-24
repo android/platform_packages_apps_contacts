@@ -123,6 +123,12 @@ public class DrawerFragment extends Fragment implements AccountsListener {
                         return;
                     }
                     mGroupListItems.clear();
+                    // Initialize cursor's position. If Activity relaunched by orientation change,
+                    // only onLoadFinished is called. OnCreateLoader is not called.
+                    // The cursor's position is remain end position by moveToNext when the last
+                    // onLoadFinished was called.
+                    // Therefore, if cursor position was not initialized mGroupListItems is empty.
+                    data.moveToPosition(-1);
                     for (int i = 0; i < data.getCount(); i++) {
                         if (data.moveToNext()) {
                             mGroupListItems.add(GroupUtil.getGroupListItem(data, i));
