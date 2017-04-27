@@ -172,7 +172,7 @@ public class CustomContactListFilterActivity extends Activity implements
                     groupsUri.appendQueryParameter(Groups.DATA_SET, account.dataSet).build();
                 }
                 final Cursor cursor = resolver.query(groupsUri.build(), null, null, null, null);
-                if (cursor == null) {
+                if (cursor == null || cursor.getCount() <= 0) {
                     continue;
                 }
                 android.content.EntityIterator iterator =
