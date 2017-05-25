@@ -145,6 +145,16 @@ public class ImportDialogFragment extends DialogFragment {
                         secondaryText.setVisibility(View.GONE);
                     } else {
                         secondaryText.setText(secondary);
+                        // Fix Direction of SIM Phone number display area to LTR.
+                        // The condition to set LTR is that only Phone number is displayed.
+                        // This condition refers to getSimSecondaryText method.
+                        CharSequence phone = entry.mSim.getFormattedPhone();
+                        if (phone == null) {
+                            phone = entry.mSim.getPhone();
+                        }
+                        if (phone != null) {
+                            secondaryText.setTextDirection(TextView.TEXT_DIRECTION_LTR);
+                        }
                         secondaryText.setVisibility(View.VISIBLE);
                     }
                 }
