@@ -26,6 +26,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.text.BidiFormatter;
+import android.text.TextDirectionHeuristics;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -68,6 +70,8 @@ public class ImportDialogFragment extends DialogFragment {
     private SimContactDao mSimDao;
 
     private Future<List<AccountInfo>> mAccountsFuture;
+
+    private static BidiFormatter sBidiFormatter = BidiFormatter.getInstance();
 
     /** Preferred way to show this dialog */
     public static void show(FragmentManager fragmentManager) {
@@ -167,9 +171,10 @@ public class ImportDialogFragment extends DialogFragment {
                     // We use a template instead of format string so that the TTS span is preserved
                     final CharSequence template = getResources()
                             .getQuantityString(R.plurals.import_from_sim_secondary_template, count);
-                    return TextUtils.expandTemplate(template, String.valueOf(count), phone);
+                    return TextUtils.expandTemplate(template, String.valueOf(count),
+                            sBidiFormatter.unicodeWrap(phone, TextDirectionHeuristics.LTR));
                 } else if (phone != null) {
-                    return phone;
+                    return sBidiFormatter.unicodeWrap(phone, TextDirectionHeuristics.LTR);
                 } else if (count != -1) {
                     // count != -1
                     return getResources()
