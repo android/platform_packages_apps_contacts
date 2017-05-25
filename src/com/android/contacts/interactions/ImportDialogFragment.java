@@ -26,6 +26,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.text.BidiFormatter;
+import android.text.TextDirectionHeuristics;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -68,6 +70,8 @@ public class ImportDialogFragment extends DialogFragment {
     private SimContactDao mSimDao;
 
     private Future<List<AccountInfo>> mAccountsFuture;
+
+    private static BidiFormatter sBidiFormatter = BidiFormatter.getInstance();
 
     /** Preferred way to show this dialog */
     public static void show(FragmentManager fragmentManager) {
@@ -144,7 +148,8 @@ public class ImportDialogFragment extends DialogFragment {
                     if (TextUtils.isEmpty(secondary)) {
                         secondaryText.setVisibility(View.GONE);
                     } else {
-                        secondaryText.setText(secondary);
+                        secondaryText.setText(sBidiFormatter.unicodeWrap(secondary,
+                                TextDirectionHeuristics.LTR));
                         secondaryText.setVisibility(View.VISIBLE);
                     }
                 }
