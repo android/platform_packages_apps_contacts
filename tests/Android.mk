@@ -7,6 +7,8 @@ LOCAL_CERTIFICATE := shared
 
 LOCAL_STATIC_JAVA_LIBRARIES := android-support-test
 
+LOCAL_JAVA_LIBRARIES := android.test.mock.sdk legacy-android-test
+
 src_dirs := src \
     ../../ContactsCommon/TestCommon/src
 
