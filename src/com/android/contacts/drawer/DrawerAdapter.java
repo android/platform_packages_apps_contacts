@@ -288,6 +288,9 @@ public class DrawerAdapter extends BaseAdapter {
         icon.setScaleType(ImageView.ScaleType.FIT_CENTER);
         icon.setImageDrawable(displayableAccount.getIcon());
 
+        if (account.accountName == null) {
+            textView.setText(displayableAccount.getNameLabel());
+        }
         result.setTag(account);
         result.setActivated(activated);
         result.setContentDescription(
