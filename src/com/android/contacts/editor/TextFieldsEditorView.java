@@ -49,6 +49,7 @@ import com.android.contacts.model.ValuesDelta;
 import com.android.contacts.model.account.AccountType.EditField;
 import com.android.contacts.model.dataitem.DataKind;
 import com.android.contacts.util.PhoneNumberFormatter;
+import com.android.contacts.util.PhoneNumberHelper;
 
 /**
  * Simple editor that handles labels and any {@link EditField} defined for the
@@ -287,8 +288,9 @@ public class TextFieldsEditorView extends LabeledEditorView {
             fieldView.setInputType(inputType);
             if (inputType == InputType.TYPE_CLASS_PHONE) {
                 PhoneNumberFormatter.setPhoneNumberFormattingTextWatcher(
-                        getContext(), fieldView,
-                        /* formatAfterWatcherSet =*/ state.isContactInsert());
+                        getContext(), fieldView, /* formatAfterWatcherSet =*/
+                        PhoneNumberHelper.isUriNumber(entry.getPhoneNumber())
+                        ? false : state.isContactInsert());
                 fieldView.setTextDirection(View.TEXT_DIRECTION_LTR);
             }
             fieldView.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
