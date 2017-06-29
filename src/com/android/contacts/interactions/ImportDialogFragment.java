@@ -33,6 +33,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.contacts.R;
 import com.android.contacts.activities.SimImportActivity;
@@ -253,6 +254,12 @@ public class ImportDialogFragment extends DialogFragment {
      * Handle "import from SD".
      */
     private void handleImportRequest(int resId, int subscriptionId) {
+        //if the accounts is not initial complete, give a toast here.
+        if (mAccountsFuture == null) {
+            Toast.makeText(getActivity(), R.string.vcard_import_failed,
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
         // Get the accounts. Because this only happens after a user action this should pretty
         // much never block since it will usually be at least several seconds before the user
         // interacts with the view
