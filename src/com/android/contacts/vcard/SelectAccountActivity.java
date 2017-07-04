@@ -35,6 +35,7 @@ public class SelectAccountActivity extends Activity {
     public static final String ACCOUNT_NAME = "account_name";
     public static final String ACCOUNT_TYPE = "account_type";
     public static final String DATA_SET = "data_set";
+    public static final String LOCAL_ACCOUNT = "local_account";
 
     private class CancelListener
             implements DialogInterface.OnClickListener, DialogInterface.OnCancelListener {
