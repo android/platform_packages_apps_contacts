@@ -47,6 +47,7 @@ import android.provider.ContactsContract.Contacts;
 import android.support.annotation.VisibleForTesting;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.os.BuildCompat;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.contacts.activities.RequestPermissionsActivity;
@@ -264,8 +265,11 @@ public class DynamicShortcuts {
 
     @VisibleForTesting
     ShortcutInfo.Builder builderForContactShortcut(long id, String lookupKey, String displayName) {
-        if (lookupKey == null || displayName == null) {
+        if (lookupKey == null) {
             return null;
+        }
+        if (TextUtils.isEmpty(displayName)) {
+            displayName = mContext.getResources().getString(R.string.missing_name);
         }
         final PersistableBundle extras = new PersistableBundle();
         extras.putLong(Contacts._ID, id);
