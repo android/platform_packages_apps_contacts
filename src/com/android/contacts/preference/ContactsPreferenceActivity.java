@@ -20,6 +20,7 @@ import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+import android.provider.ContactsContract.DisplayNameSources;
 import android.provider.ContactsContract.ProviderStatus;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
@@ -202,17 +203,19 @@ public final class ContactsPreferenceActivity extends PreferenceActivity
         boolean hasProfile = false;
         String displayName = null;
         long contactId = -1;
+        int displayNameSource = DisplayNameSources.UNDEFINED;
         if (cursor != null && cursor.moveToFirst()) {
             hasProfile = cursor.getInt(ProfileQuery.CONTACT_IS_USER_PROFILE) == 1;
             displayName = cursor.getString(ProfileQuery.CONTACT_DISPLAY_NAME);
             contactId = cursor.getLong(ProfileQuery.CONTACT_ID);
+            displayNameSource = cursor.getInt(ProfileQuery.DISPLAY_NAME_SOURCE);
         }
         if (hasProfile && TextUtils.isEmpty(displayName)) {
             displayName = getString(R.string.missing_name);
         }
         final DisplayOptionsPreferenceFragment fragment = (DisplayOptionsPreferenceFragment)
                 getFragmentManager().findFragmentByTag(TAG_DISPLAY_OPTIONS);
-        fragment.updateMyInfoPreference(hasProfile, displayName, contactId);
+        fragment.updateMyInfoPreference(hasProfile, displayName, contactId, displayNameSource);
     }
 
     @Override

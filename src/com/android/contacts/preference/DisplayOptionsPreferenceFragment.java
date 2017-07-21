@@ -33,11 +33,14 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.provider.BlockedNumberContract;
 import android.provider.ContactsContract.Contacts;
+import android.provider.ContactsContract.DisplayNameSources;
 import android.provider.ContactsContract.Profile;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.LocalBroadcastManager;
 import android.telecom.TelecomManager;
 import android.telephony.TelephonyManager;
+import android.text.BidiFormatter;
+import android.text.TextDirectionHeuristics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -111,17 +114,20 @@ public class DisplayOptionsPreferenceFragment extends PreferenceFragment
                 Contacts._ID,                           // 0
                 Contacts.DISPLAY_NAME_PRIMARY,          // 1
                 Contacts.IS_USER_PROFILE,               // 2
+                Contacts.DISPLAY_NAME_SOURCE,           // 3
         };
 
         private static final String[] PROFILE_PROJECTION_ALTERNATIVE = new String[] {
                 Contacts._ID,                           // 0
                 Contacts.DISPLAY_NAME_ALTERNATIVE,      // 1
                 Contacts.IS_USER_PROFILE,               // 2
+                Contacts.DISPLAY_NAME_SOURCE,           // 3
         };
 
         public static final int CONTACT_ID               = 0;
         public static final int CONTACT_DISPLAY_NAME     = 1;
         public static final int CONTACT_IS_USER_PROFILE  = 2;
+        public static final int DISPLAY_NAME_SOURCE      = 3;
     }
 
     private String mNewLocalProfileExtra;
@@ -255,8 +261,13 @@ public class DisplayOptionsPreferenceFragment extends PreferenceFragment
         mRootView = null;
     }
 
-    public void updateMyInfoPreference(boolean hasProfile, String displayName, long contactId) {
-        final CharSequence summary = hasProfile ? displayName : getString(R.string.set_up_profile);
+    public void updateMyInfoPreference(boolean hasProfile, String displayName, long contactId,
+            int displayNameSource) {
+        final CharSequence summary = !hasProfile ?
+                getString(R.string.set_up_profile) :
+                displayNameSource == DisplayNameSources.PHONE ?
+                BidiFormatter.getInstance().unicodeWrap(displayName, TextDirectionHeuristics.LTR) :
+                displayName;
         mMyInfoPreference.setSummary(summary);
         mHasProfile = hasProfile;
         mProfileContactId = contactId;
