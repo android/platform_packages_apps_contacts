@@ -55,6 +55,11 @@ public class FakeSimContactDao extends SimContactDao {
     }
 
     @Override
+    public boolean canReadSimContacts(int slotId) {
+        return canReadSimContacts;
+    }
+
+    @Override
     public List<SimCard> getSimCards() {
         return simCards;
     }

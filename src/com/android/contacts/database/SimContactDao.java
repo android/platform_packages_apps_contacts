@@ -89,6 +89,8 @@ public abstract class SimContactDao {
 
     public abstract boolean canReadSimContacts();
 
+    public abstract boolean canReadSimContacts(int slotId);
+
     public abstract List<SimCard> getSimCards();
 
     public abstract ArrayList<SimContact> loadContactsForSim(SimCard sim);
