@@ -42,6 +42,7 @@ import android.util.SparseArray;
 
 import com.android.contacts.R;
 import com.android.contacts.compat.CompatUtils;
+import com.android.contacts.compat.TelephonyManagerCompat;
 import com.android.contacts.model.SimCard;
 import com.android.contacts.model.SimContact;
 import com.android.contacts.model.account.AccountWithDataSet;
@@ -109,6 +110,13 @@ public class SimContactDaoImpl extends SimContactDao {
         // this state
         return hasTelephony() && hasPermissions() &&
                 mTelephonyManager.getSimState() == TelephonyManager.SIM_STATE_READY;
+    }
+
+    @Override
+    public boolean canReadSimContacts(int slotId) {
+        return hasTelephony() && hasPermissions() &&
+                TelephonyManagerCompat.getSimState(mTelephonyManager, slotId)
+                        == TelephonyManager.SIM_STATE_READY;
     }
 
     @Override
@@ -257,7 +265,9 @@ public class SimContactDaoImpl extends SimContactDao {
                 .getActiveSubscriptionInfoList();
         final ArrayList<SimCard> result = new ArrayList<>();
         for (SubscriptionInfo subscriptionInfo : subscriptions) {
-            result.add(SimCard.create(subscriptionInfo));
+            if (canReadSimContacts(subscriptionInfo.getSimSlotIndex())) {
+                result.add(SimCard.create(subscriptionInfo));
+            }
         }
         return result;
     }

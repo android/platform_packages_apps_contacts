@@ -168,4 +168,37 @@ public class TelephonyManagerCompat {
         return TelephonyManagerSdkCompat
                 .isVoicemailVibrationEnabled(telephonyManager, accountHandle);
     }
+
+    /**
+     * Returns a constant indicating the state of Dual SIM card
+     *
+     * @param telephonyManager The telephony manager instance to use for method calls.
+     * @param slotId The slot id of the SIM. If Single Slot, ignore this paramter.
+     * @return The SIM state
+     * @see #SIM_STATE_UNKNOWN
+     * @see #SIM_STATE_ABSENT
+     * @see #SIM_STATE_PIN_REQUIRED
+     * @see #SIM_STATE_PUK_REQUIRED
+     * @see #SIM_STATE_NETWORK_LOCKED
+     * @see #SIM_STATE_READY
+     * @see #SIM_STATE_NOT_READY
+     * @see #SIM_STATE_PERM_DISABLED
+     * @see #SIM_STATE_CARD_IO_ERROR
+     */
+    public static int getSimState(TelephonyManager telephonyManager, int slotId) {
+        if (telephonyManager == null) {
+            return TelephonyManager.SIM_STATE_UNKNOWN;
+        }
+        if (1 == getPhoneCount(telephonyManager)) {
+            return telephonyManager.getSimState();
+        }
+        try {
+            Class[] paramTypes = { int.class };
+            Object[] params = { slotId };
+            return (int) CompatUtils.invokeMethod(telephonyManager, "getSimState",
+                    paramTypes, params);
+        } catch (Exception e) {
+        }
+        return TelephonyManager.SIM_STATE_UNKNOWN;
+    }
 }
