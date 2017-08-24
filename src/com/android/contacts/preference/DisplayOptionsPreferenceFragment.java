@@ -46,6 +46,7 @@ import android.widget.FrameLayout;
 import com.android.contacts.ContactsUtils;
 import com.android.contacts.R;
 import com.android.contacts.SimImportService;
+import com.android.contacts.activities.ContactEditorActivity;
 import com.android.contacts.compat.TelecomManagerUtil;
 import com.android.contacts.compat.TelephonyManagerCompat;
 import com.android.contacts.interactions.ExportDialogFragment;
@@ -55,6 +56,7 @@ import com.android.contacts.list.ContactListFilterController;
 import com.android.contacts.logging.ScreenEvent.ScreenType;
 import com.android.contacts.model.AccountTypeManager;
 import com.android.contacts.model.account.AccountInfo;
+import com.android.contacts.model.account.AccountWithDataSet;
 import com.android.contacts.model.account.AccountsLoader;
 import com.android.contacts.util.AccountFilterUtil;
 import com.android.contacts.util.ImplicitIntentsUtil;
@@ -352,6 +354,8 @@ public class DisplayOptionsPreferenceFragment extends PreferenceFragment
             } else {
                 final Intent intent = new Intent(Intent.ACTION_INSERT, Contacts.CONTENT_URI);
                 intent.putExtra(mNewLocalProfileExtra, true);
+                intent.putExtra(ContactEditorActivity.EXTRA_ACCOUNT_WITH_DATA_SET,
+                        AccountWithDataSet.getNullAccount());
                 ImplicitIntentsUtil.startActivityInApp(getActivity(), intent);
             }
             return true;
