@@ -254,6 +254,19 @@ public class KindSectionView extends LinearLayout {
         return (StructuredNameEditorView) mEditors.getChildAt(0);
     }
 
+    public TextFieldsEditorView getPhoneticEditorView() {
+        if (!StructuredName.CONTENT_ITEM_TYPE.equals(mKindSectionData.getMimeType())) {
+            return null;
+        }
+        for (int i = 0; i < mEditors.getChildCount(); i++) {
+            final View view = mEditors.getChildAt(i);
+            if (!(view instanceof StructuredNameEditorView)) {
+                return (TextFieldsEditorView)view;
+            }
+        }
+        return null;
+    }
+
     /**
      * Binds views for the given {@link KindSectionData}.
      *

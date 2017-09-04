@@ -444,6 +444,7 @@ public abstract class AccountType {
         public boolean optional;
         public boolean shortForm;
         public boolean longForm;
+        public String phoneticsColumn;
 
         public EditField(String column, int titleRes) {
             this.column = column;
@@ -467,6 +468,11 @@ public abstract class AccountType {
 
         public EditField setLongForm(boolean longForm) {
             this.longForm = longForm;
+            return this;
+        }
+
+        public EditField setPhoneticsColumn(String phoneticsColumn) {
+            this.phoneticsColumn = phoneticsColumn;
             return this;
         }
 
