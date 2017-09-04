@@ -191,18 +191,18 @@ public abstract class BaseAccountType extends AccountType {
                 FLAGS_PERSON_NAME).setOptional(true));
         if (!displayOrderPrimary) {
             kind.fieldList.add(new EditField(StructuredName.FAMILY_NAME, R.string.name_family,
-                    FLAGS_PERSON_NAME));
+                    FLAGS_PERSON_NAME).setPhoneticsColumn(StructuredName.PHONETIC_FAMILY_NAME));
             kind.fieldList.add(new EditField(StructuredName.MIDDLE_NAME, R.string.name_middle,
-                    FLAGS_PERSON_NAME).setOptional(true));
+                    FLAGS_PERSON_NAME).setOptional(true).setPhoneticsColumn(StructuredName.PHONETIC_MIDDLE_NAME));
             kind.fieldList.add(new EditField(StructuredName.GIVEN_NAME, R.string.name_given,
-                    FLAGS_PERSON_NAME));
+                    FLAGS_PERSON_NAME).setPhoneticsColumn(StructuredName.PHONETIC_GIVEN_NAME));
         } else {
             kind.fieldList.add(new EditField(StructuredName.GIVEN_NAME, R.string.name_given,
-                    FLAGS_PERSON_NAME));
+                    FLAGS_PERSON_NAME).setPhoneticsColumn(StructuredName.PHONETIC_GIVEN_NAME));
             kind.fieldList.add(new EditField(StructuredName.MIDDLE_NAME, R.string.name_middle,
-                    FLAGS_PERSON_NAME).setOptional(true));
+                    FLAGS_PERSON_NAME).setOptional(true).setPhoneticsColumn(StructuredName.PHONETIC_MIDDLE_NAME));
             kind.fieldList.add(new EditField(StructuredName.FAMILY_NAME, R.string.name_family,
-                    FLAGS_PERSON_NAME));
+                    FLAGS_PERSON_NAME).setPhoneticsColumn(StructuredName.PHONETIC_FAMILY_NAME));
         }
         kind.fieldList.add(new EditField(StructuredName.SUFFIX, R.string.name_suffix,
                 FLAGS_PERSON_NAME).setOptional(true));

@@ -52,6 +52,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListPopupWindow;
 import android.widget.Toast;
@@ -100,6 +101,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -1276,6 +1278,13 @@ public class ContactEditorFragment extends Fragment implements
         final Uri uri = (Uri) mUpdatedPhotos.get(String.valueOf(mPhotoRawContactId));
         if (uri != null) {
             editorView.setFullSizePhoto(uri);
+        }
+        final StructuredNameEditorView nameEditor = editorView.getNameEditorView();
+        final TextFieldsEditorView phoneticNameEditor = editorView.getPhoneticEditorView();
+        final boolean useJapaneseOrder = 
+                       Locale.JAPANESE.getLanguage().equals(Locale.getDefault().getLanguage());
+        if (useJapaneseOrder && nameEditor != null && phoneticNameEditor != null) {
+            nameEditor.setPhoneticView(phoneticNameEditor);
         }
 
         // The editor is ready now so make it visible
