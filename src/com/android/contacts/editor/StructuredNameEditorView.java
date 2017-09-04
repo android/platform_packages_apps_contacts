@@ -21,8 +21,12 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.provider.ContactsContract.CommonDataKinds.StructuredName;
+import android.text.Editable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.android.contacts.R;
 import com.android.contacts.model.RawContactDelta;
@@ -39,6 +43,8 @@ public class StructuredNameEditorView extends TextFieldsEditorView {
 
     private StructuredNameDataItem mSnapshot;
     private boolean mChanged;
+
+    TextFieldsEditorView mPhoneticView;
 
     public StructuredNameEditorView(Context context) {
         super(context);
@@ -91,6 +97,59 @@ public class StructuredNameEditorView extends TextFieldsEditorView {
 
         // Then notify the listener.
         notifyEditorListener();
+    }
+
+    public String phoneticUpdata(String column, String value) {
+        String input = "";
+        EditText view = null;
+
+        if (mPhoneticView != null) {
+            ViewGroup fields = (ViewGroup) mPhoneticView.findViewById(R.id.editors);
+
+            if (StructuredName.FAMILY_NAME.equals(column)) {
+                view = (EditText)fields.getChildAt(0);
+            } else if (StructuredName.GIVEN_NAME.equals(column)) {
+                view = (EditText)fields.getChildAt(2);
+            } else if (StructuredName.MIDDLE_NAME.equals(column)) {
+                view = (EditText)fields.getChildAt(1);
+            }
+
+            if (view != null) {
+                view.setText(value);
+                input = view.getText().toString();
+            }
+        }
+        return input;
+    }
+
+    @Override
+    public String getPhonetic(String column) {
+        String input = "";
+        EditText view = null;
+
+        if (mPhoneticView != null) {
+            ViewGroup fields = (ViewGroup) mPhoneticView.findViewById(R.id.editors);
+
+            if (StructuredName.FAMILY_NAME.equals(column)) {
+                view = (EditText)fields.getChildAt(0);
+                input = view.getText().toString();
+            } else if (StructuredName.GIVEN_NAME.equals(column)) {
+                view = (EditText)fields.getChildAt(2);
+                input = view.getText().toString();
+            } else if (StructuredName.MIDDLE_NAME.equals(column)) {
+                view = (EditText)fields.getChildAt(1);
+                input = view.getText().toString();
+            }
+
+            if (view != null) {
+                input = view.getText().toString();
+            }
+        }
+        return input;
+    }
+
+    public void setPhoneticView(TextFieldsEditorView phoneticNameEditor) {
+        mPhoneticView = phoneticNameEditor;
     }
 
     /**

@@ -25,6 +25,7 @@ import android.provider.ContactsContract;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.Spannable;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.style.TtsSpan;
@@ -69,6 +70,11 @@ public class TextFieldsEditorView extends LabeledEditorView {
     private int mMinFieldHeight;
     private int mPreviousViewHeight;
     private int mHintTextColorUnfocused;
+    private String mFixedPhonetic = "";
+    private String mFixedDisplayName = "";
+    private String tmpString;
+    private String mCurrentCulom;
+
 
     public TextFieldsEditorView(Context context) {
         super(context);
@@ -214,6 +220,19 @@ public class TextFieldsEditorView extends LabeledEditorView {
         mFieldEditTexts[field].setText(value);
     }
 
+    private boolean isUnFixed(Editable s) {
+        boolean unfixed = false;
+        Object[] spanned = s.getSpans(0, s.length(), Object.class);
+        if (spanned != null) {
+            for (Object obj : spanned) {
+                if ((s.getSpanFlags(obj) & Spanned.SPAN_COMPOSING) == Spanned.SPAN_COMPOSING) {
+                    unfixed = true;
+                }
+            }
+        }
+        return unfixed;
+    }
+
     @Override
     public void setValues(DataKind kind, ValuesDelta entry, RawContactDelta state, boolean readOnly,
             ViewIdGenerator vig) {
@@ -280,18 +299,39 @@ public class TextFieldsEditorView extends LabeledEditorView {
 
             // Prepare listener for writing changes
             fieldView.addTextChangedListener(new TextWatcher() {
+                int mStart = 0;
                 @Override
                 public void afterTextChanged(Editable s) {
                     // Trigger event for newly changed value
                     onFieldChanged(column, s.toString());
+
+                    if (DataKind.PSEUDO_MIME_TYPE_NAME.equals(getKind().mimeType)){
+                        String displayNameField = s.toString();
+                        int nonFixedLen = displayNameField.length() - mFixedDisplayName.length();
+                        if (isUnFixed(s) || nonFixedLen == 0) {
+                            tmpString = mFixedPhonetic + displayNameField.substring(mStart, displayNameField.length());
+                            tmpString = phoneticUpdata(column, tmpString);
+                        } else {
+                            mFixedPhonetic = tmpString;
+                            mFixedDisplayName=displayNameField;
+                        }
+                    }
                 }
 
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    if (column != null && !column.equals(mCurrentCulom)) {
+                        mCurrentCulom = column;
+                        if (DataKind.PSEUDO_MIME_TYPE_NAME.equals(getKind().mimeType)){
+                            mFixedPhonetic = getPhonetic(column);
+                            mFixedDisplayName= mFixedPhonetic;
+                        }
+                    }
                 }
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    mStart = start;
                     if (!ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE.equals(
                             getKind().mimeType) || !(s instanceof Spannable)) {
                         return;
