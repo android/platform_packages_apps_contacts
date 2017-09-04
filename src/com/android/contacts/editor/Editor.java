@@ -80,6 +80,9 @@ public interface Editor {
      */
     public void onFieldChanged(String column, String value);
 
+    public String phoneticUpdata(String column, String value);
+    public String getPhonetic(String column);
+
     /**
      * Marks the underlying ValuesDelta as deleted, but does not update the view.
      */

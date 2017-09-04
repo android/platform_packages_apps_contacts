@@ -22,9 +22,11 @@ import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.provider.ContactsContract;
+import android.provider.ContactsContract.CommonDataKinds.StructuredName;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.Spannable;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.style.TtsSpan;
@@ -69,6 +71,10 @@ public class TextFieldsEditorView extends LabeledEditorView {
     private int mMinFieldHeight;
     private int mPreviousViewHeight;
     private int mHintTextColorUnfocused;
+    private String mFixedPhonetic = "";
+    private String mFixedDisplayName = "";
+    private boolean needInputInitialize;
+
 
     public TextFieldsEditorView(Context context) {
         super(context);
@@ -174,6 +180,10 @@ public class TextFieldsEditorView extends LabeledEditorView {
             }
             // Rebuild the label spinner using the new colors.
             rebuildLabel();
+
+            if (hasFocus) {
+                needInputInitialize = true;
+            }
         }
     };
 
@@ -212,6 +222,38 @@ public class TextFieldsEditorView extends LabeledEditorView {
 
     public void setValue(int field, String value) {
         mFieldEditTexts[field].setText(value);
+    }
+
+    private boolean isUnFixed(Editable s) {
+        boolean unfixed = false;
+        Object[] spanned = s.getSpans(0, s.length(), Object.class);
+        if (spanned != null) {
+            for (Object obj : spanned) {
+                if ((s.getSpanFlags(obj) & Spanned.SPAN_COMPOSING) == Spanned.SPAN_COMPOSING) {
+                    unfixed = true;
+                }
+            }
+        }
+        return unfixed;
+    }
+
+    private String getNameFiled(String column) {
+
+      EditText editText=null;
+
+      if (StructuredName.FAMILY_NAME.equals(column)) {
+          editText = (EditText) mFields.getChildAt(1);
+      } else if (StructuredName.GIVEN_NAME.equals(column)) {
+          editText = (EditText)mFields.getChildAt(3);
+      } else if (StructuredName.MIDDLE_NAME.equals(column)) {
+          editText = (EditText)mFields.getChildAt(2);
+      }
+
+      if (editText != null) {
+          return editText.getText().toString();
+      }
+
+        return "";
     }
 
     @Override
@@ -280,18 +322,44 @@ public class TextFieldsEditorView extends LabeledEditorView {
 
             // Prepare listener for writing changes
             fieldView.addTextChangedListener(new TextWatcher() {
+                int mStart = 0;
                 @Override
                 public void afterTextChanged(Editable s) {
                     // Trigger event for newly changed value
                     onFieldChanged(column, s.toString());
+
+                    if (!DataKind.PSEUDO_MIME_TYPE_NAME.equals(getKind().mimeType)){
+                        return;
+                    }
+
+                    String displayNameField = s.toString();
+
+                    int nonFixedLen = displayNameField.length() - mFixedDisplayName.length();
+                    if (isUnFixed(s) || nonFixedLen == 0) {
+                        String tmpString = mFixedPhonetic + displayNameField.substring(mStart, displayNameField.length());
+
+                        phoneticUpdata(column, tmpString);
+                    } else {
+                        mFixedPhonetic = getPhonetic(column);
+                        mFixedDisplayName=displayNameField;
+                    }
                 }
 
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    if (!DataKind.PSEUDO_MIME_TYPE_NAME.equals(getKind().mimeType)){
+                        return;
+                    }
+                    if(needInputInitialize) {
+                        mFixedPhonetic = getPhonetic(column);
+                        mFixedDisplayName= getNameFiled(column);
+                        needInputInitialize = false;
+                    }
                 }
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    mStart = start;
                     if (!ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE.equals(
                             getKind().mimeType) || !(s instanceof Spannable)) {
                         return;

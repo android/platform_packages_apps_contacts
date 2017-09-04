@@ -387,6 +387,13 @@ public class RawContactEditorView extends LinearLayout implements View.OnClickLi
                 ? null : nameKindSectionView.getNameEditorView();
     }
 
+    public TextFieldsEditorView getPhoneticEditorView() {
+        final KindSectionView kindSectionView = mKindSectionViewMap
+                .get(StructuredName.CONTENT_ITEM_TYPE);
+        return kindSectionView == null
+                ? null : kindSectionView.getPhoneticEditorView();
+    }
+
     public RawContactDelta getCurrentRawContactDelta() {
         return mCurrentRawContactDelta;
     }
