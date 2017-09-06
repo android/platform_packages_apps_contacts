@@ -1,0 +1,510 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c24a63f5_5a346c7e",
+        "filename": "src/com/android/contacts/editor/ContactEditorFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1287,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "Does this handle if phoneticNameEditor is null well? Not all account types support phonetic names.",
+      "range": {
+        "startLine": 1287,
+        "startChar": 12,
+        "endLine": 1287,
+        "endChar": 59
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee9d172_48c0f423",
+        "filename": "src/com/android/contacts/editor/Editor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "Please add javadocs to these to describe what they should do, like the other methods.",
+      "range": {
+        "startLine": 83,
+        "startChar": 4,
+        "endLine": 84,
+        "endChar": 45
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "871791f6_c76c0447",
+        "filename": "src/com/android/contacts/editor/KindSectionView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "nit: space",
+      "range": {
+        "startLine": 264,
+        "startChar": 44,
+        "endLine": 264,
+        "endChar": 46
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5dc96c90_51285b35",
+        "filename": "src/com/android/contacts/editor/LabeledEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "Should this be Update?\nIf so can you rename to updatePhonetic to match the other methods",
+      "range": {
+        "startLine": 336,
+        "startChar": 18,
+        "endLine": 336,
+        "endChar": 32
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "834e574a_cb1cddcf",
+        "filename": "src/com/android/contacts/editor/StructuredNameEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "Should be private with a getter if necessary",
+      "range": {
+        "startLine": 47,
+        "startChar": 4,
+        "endLine": 47,
+        "endChar": 39
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "28194527_7b0c0993",
+        "filename": "src/com/android/contacts/editor/StructuredNameEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "What\u0027s the purpose of input here? It seems to just be value if successful or the empty string if not.",
+      "range": {
+        "startLine": 103,
+        "startChar": 8,
+        "endLine": 103,
+        "endChar": 26
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f60fc59f_031a4082",
+        "filename": "src/com/android/contacts/editor/StructuredNameEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "Should this be PHONETIC_FAMILY_NAME? here and below",
+      "range": {
+        "startLine": 109,
+        "startChar": 31,
+        "endLine": 109,
+        "endChar": 42
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c967e077_29d5cdf6",
+        "filename": "src/com/android/contacts/editor/StructuredNameEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "same comment about display order here. \nalso add a space between the (EditText) cast and fields.",
+      "range": {
+        "startLine": 109,
+        "startChar": 12,
+        "endLine": 115,
+        "endChar": 13
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b6ccec55_5651aa58",
+        "filename": "src/com/android/contacts/editor/StructuredNameEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "Don\u0027t need this line in the 3 cases since it gets set on line 145",
+      "range": {
+        "startLine": 135,
+        "startChar": 16,
+        "endLine": 135,
+        "endChar": 50
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3c91f790_62c4fb03",
+        "filename": "src/com/android/contacts/editor/StructuredNameEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "Same comments as in phoneticUpdata",
+      "range": {
+        "startLine": 130,
+        "startChar": 8,
+        "endLine": 147,
+        "endChar": 9
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cc46ba99_22a78a39",
+        "filename": "src/com/android/contacts/editor/TextFieldsEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "Can you make this a more descriptive name?",
+      "range": {
+        "startLine": 227,
+        "startChar": 39,
+        "endLine": 227,
+        "endChar": 40
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "58b53a48_02e1323f",
+        "filename": "src/com/android/contacts/editor/TextFieldsEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "Filed -\u003e Field",
+      "range": {
+        "startLine": 240,
+        "startChar": 19,
+        "endLine": 240,
+        "endChar": 31
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "91b6f198_b4704d5f",
+        "filename": "src/com/android/contacts/editor/TextFieldsEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "nit: spaces around the \u003d",
+      "range": {
+        "startLine": 242,
+        "startChar": 23,
+        "endLine": 242,
+        "endChar": 24
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d5fa7edf_3ca90075",
+        "filename": "src/com/android/contacts/editor/TextFieldsEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "I believe the location of family name and given name is dependent on the display order (see the changes in this CL in BaseAccountType). Can you verify the right fields are given when that setting is changed?",
+      "range": {
+        "startLine": 245,
+        "startChar": 51,
+        "endLine": 245,
+        "endChar": 52
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5581228_259f9a72",
+        "filename": "src/com/android/contacts/editor/TextFieldsEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "nit: space here and in the next else if",
+      "range": {
+        "startLine": 247,
+        "startChar": 30,
+        "endLine": 247,
+        "endChar": 32
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eecebd12_d60a1d3d",
+        "filename": "src/com/android/contacts/editor/TextFieldsEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "nit: indent to match the last return statement",
+      "range": {
+        "startLine": 242,
+        "startChar": 0,
+        "endLine": 254,
+        "endChar": 7
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c02c9d71_323a4e71",
+        "filename": "src/com/android/contacts/editor/TextFieldsEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "you can make this private",
+      "range": {
+        "startLine": 325,
+        "startChar": 16,
+        "endLine": 325,
+        "endChar": 31
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9263e2ea_0b623e52",
+        "filename": "src/com/android/contacts/editor/TextFieldsEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "nit: put this on the next line so it\u0027s less than 80 characters",
+      "range": {
+        "startLine": 339,
+        "startChar": 58,
+        "endLine": 339,
+        "endChar": 122
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9e7ec971_d7d3ad2a",
+        "filename": "src/com/android/contacts/editor/TextFieldsEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "nit: spaces around \u003d",
+      "range": {
+        "startLine": 344,
+        "startChar": 41,
+        "endLine": 344,
+        "endChar": 42
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "faeb7b43_30fc8121",
+        "filename": "src/com/android/contacts/editor/TextFieldsEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "nit: space between if and (",
+      "range": {
+        "startLine": 353,
+        "startChar": 21,
+        "endLine": 353,
+        "endChar": 23
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "761f7de1_a712846d",
+        "filename": "src/com/android/contacts/editor/TextFieldsEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "Nit: space before \u003d",
+      "range": {
+        "startLine": 355,
+        "startChar": 41,
+        "endLine": 355,
+        "endChar": 42
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2e743f_6dd8f1c4",
+        "filename": "src/com/android/contacts/model/account/BaseAccountType.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-06T19:09:17Z",
+      "side": 1,
+      "message": "PHONETIC_GIVEN_NAME",
+      "range": {
+        "startLine": 201,
+        "startChar": 73,
+        "endLine": 201,
+        "endChar": 93
+      },
+      "revId": "9aa933cb743d7c88c3ef55ec2221e015f01ab923",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
