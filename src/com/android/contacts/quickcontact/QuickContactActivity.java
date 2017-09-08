@@ -139,6 +139,7 @@ import com.android.contacts.model.Contact;
 import com.android.contacts.model.ContactLoader;
 import com.android.contacts.model.RawContact;
 import com.android.contacts.model.account.AccountType;
+import com.android.contacts.model.account.SimAccountType;
 import com.android.contacts.model.dataitem.CustomDataItem;
 import com.android.contacts.model.dataitem.DataItem;
 import com.android.contacts.model.dataitem.DataKind;
@@ -2721,6 +2722,9 @@ public class QuickContactActivity extends ContactsActivity {
                     mContactData.isDirectoryEntry(), mContactData.isUserProfile(),
                     mContactData.getStarred());
 
+            final String accountType = mContactData.getAccountType();
+            boolean simContact = accountType != null && accountType
+                    .equals(SimAccountType.ACCOUNT_TYPE);
             // Configure edit MenuItem
             final MenuItem editMenuItem = menu.findItem(R.id.menu_edit);
             editMenuItem.setVisible(true);
@@ -2739,7 +2743,8 @@ public class QuickContactActivity extends ContactsActivity {
             final MenuItem joinMenuItem = menu.findItem(R.id.menu_join);
             joinMenuItem.setVisible(!InvisibleContactUtil.isInvisibleAndAddable(mContactData, this)
                     && isContactEditable() && !mContactData.isUserProfile()
-                    && !mContactData.isMultipleRawContacts());
+                    && !mContactData.isMultipleRawContacts()
+                    && !simContact);
 
             // Viewing linked contacts can only happen if there are multiple raw contacts and
             // the link menu isn't available.

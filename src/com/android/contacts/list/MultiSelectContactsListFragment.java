@@ -44,6 +44,7 @@ import com.android.contacts.model.AccountTypeManager;
 import com.android.contacts.model.account.AccountType;
 import com.android.contacts.model.account.AccountWithDataSet;
 import com.android.contacts.model.account.GoogleAccountType;
+import com.android.contacts.model.account.SimAccountType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,6 +68,7 @@ public abstract class MultiSelectContactsListFragment<T extends MultiSelectEntry
     }
 
     private static final String EXTRA_KEY_SELECTED_CONTACTS = "selected_contacts";
+    private static final String EXTRA_KEY_SELECTED_SIM_CONTACT ="selected_sim";
 
     private OnCheckBoxListActionListener mCheckBoxListListener;
 
@@ -99,7 +101,10 @@ public abstract class MultiSelectContactsListFragment<T extends MultiSelectEntry
         if (savedInstanceState != null) {
             final TreeSet<Long> selectedContactIds = (TreeSet<Long>)
                     savedInstanceState.getSerializable(EXTRA_KEY_SELECTED_CONTACTS);
+            final int selectSimContact = savedInstanceState
+                    .getInt(EXTRA_KEY_SELECTED_SIM_CONTACT);
             getAdapter().setSelectedContactIds(selectedContactIds);
+            getAdapter().setSelectedSimContact(selectSimContact);
         }
     }
 
@@ -119,6 +124,10 @@ public abstract class MultiSelectContactsListFragment<T extends MultiSelectEntry
         return getAdapter().getSelectedContactIdsArray();
     }
 
+    public int getSelectedSimContact() {
+        return getAdapter().getSelectedSimContact();
+    }
+
     @Override
     protected void configureAdapter() {
         super.configureAdapter();
@@ -129,6 +138,7 @@ public abstract class MultiSelectContactsListFragment<T extends MultiSelectEntry
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putSerializable(EXTRA_KEY_SELECTED_CONTACTS, getSelectedContactIds());
+        outState.putInt(EXTRA_KEY_SELECTED_SIM_CONTACT, getSelectedSimContact());
     }
 
     public void displayCheckBoxes(boolean displayCheckBoxes) {
@@ -149,11 +159,12 @@ public abstract class MultiSelectContactsListFragment<T extends MultiSelectEntry
         final int previouslySelectedCount = getAdapter().getSelectedContactIds().size();
         final long contactId = getContactId(position);
         final int partition = getAdapter().getPartitionForPosition(position);
+        final boolean simContact = isSimContact(position);
         if (contactId >= 0 && partition == ContactsContract.Directory.DEFAULT) {
             if (mCheckBoxListListener != null) {
                 mCheckBoxListListener.onStartDisplayingCheckBoxes();
             }
-            getAdapter().toggleSelectionOfContactId(contactId);
+            getAdapter().toggleSelectionOfContactId(contactId, simContact);
             Logger.logListEvent(ActionType.SELECT, getListType(),
                     /* count */ getAdapter().getCount(), /* clickedIndex */ position,
                     /* numSelected */ 1);
@@ -178,11 +189,12 @@ public abstract class MultiSelectContactsListFragment<T extends MultiSelectEntry
     @Override
     protected void onItemClick(int position, long id) {
         final long contactId = getContactId(position);
+        final boolean simContact = isSimContact(position);
         if (contactId < 0) {
             return;
         }
         if (getAdapter().isDisplayingCheckBoxes()) {
-            getAdapter().toggleSelectionOfContactId(contactId);
+            getAdapter().toggleSelectionOfContactId(contactId, simContact);
         }
         if (mCheckBoxListListener != null && getAdapter().getSelectedContactIds().size() == 0) {
             mCheckBoxListListener.onStopDisplayingCheckBoxes();
@@ -201,6 +213,20 @@ public abstract class MultiSelectContactsListFragment<T extends MultiSelectEntry
 
         Log.w(TAG, "Failed to get contact ID from cursor column " + contactIdColumnIndex);
         return -1;
+    }
+
+    private boolean isSimContact(int position) {
+        final Cursor cursor = (Cursor) getAdapter().getItem(position);
+        final int accountTypeColumnIndex = cursor
+                .getColumnIndex(ContactsContract.RawContacts.ACCOUNT_TYPE);
+        if (cursor != null && accountTypeColumnIndex >= 0) {
+            if ((cursor.getColumnCount() > accountTypeColumnIndex)) {
+                final String accountType = cursor.getString(accountTypeColumnIndex);
+                return accountType != null
+                        && accountType.equals(SimAccountType.ACCOUNT_TYPE);
+            }
+        }
+        return false;
     }
 
     /**
