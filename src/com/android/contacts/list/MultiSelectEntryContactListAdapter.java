@@ -39,6 +39,8 @@ public abstract class MultiSelectEntryContactListAdapter extends ContactEntryLis
     private TreeSet<Long> mSelectedContactIds = new TreeSet<>();
     private boolean mDisplayCheckBoxes;
     private final int mContactIdColumnIndex;
+    //indicate how many sim contact has been selected
+    private int mSimContactSelected = 0;
 
     public interface SelectedContactsListener {
         void onSelectedContactsChanged();
@@ -90,6 +92,14 @@ public abstract class MultiSelectEntryContactListAdapter extends ContactEntryLis
         return mSelectedContactIds.size() > 0;
     }
 
+    public int getSelectedSimContact() {
+        return mSimContactSelected;
+    }
+
+    public void setSelectedSimContact(int selectedCount) {
+        this.mSimContactSelected = selectedCount;
+    }
+
     /**
      * Returns the selected contacts as an array.
      */
@@ -131,10 +141,18 @@ public abstract class MultiSelectEntryContactListAdapter extends ContactEntryLis
      * Toggle the checkbox beside the contact for {@param contactId}.
      */
     public void toggleSelectionOfContactId(long contactId) {
+        toggleSelectionOfContactId(contactId, false);
+    }
+
+    public void toggleSelectionOfContactId(long contactId, boolean simContact) {
         if (mSelectedContactIds.contains(contactId)) {
             mSelectedContactIds.remove(contactId);
+            if(simContact)
+                mSimContactSelected --;
         } else {
             mSelectedContactIds.add(contactId);
+            if(simContact)
+                mSimContactSelected ++;
         }
         notifyDataSetChanged();
         if (mSelectedContactsListener != null) {

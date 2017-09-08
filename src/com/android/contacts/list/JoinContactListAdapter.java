@@ -24,6 +24,7 @@ import android.provider.ContactsContract;
 import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.Contacts.AggregationSuggestions;
 import android.provider.ContactsContract.Directory;
+import android.provider.ContactsContract.RawContacts;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.contacts.R;
+import com.android.contacts.model.account.SimAccountType;
 import com.android.contacts.preference.ContactsPreferences;
 
 public class JoinContactListAdapter extends ContactListAdapter {
@@ -97,7 +99,9 @@ public class JoinContactListAdapter extends ContactListAdapter {
                 .build();
         }
         loader.setUri(allContactsUri);
-        loader.setSelection(Contacts._ID + "!=?");
+        loader.setSelection(Contacts._ID + "!=?" + " AND (" + RawContacts.ACCOUNT_TYPE + "!= '"
+                + SimAccountType.ACCOUNT_TYPE + "'" + " OR "
+                + RawContacts.ACCOUNT_TYPE + " IS NULL)");
         loader.setSelectionArgs(new String[]{ String.valueOf(mTargetContactId) });
         if (getSortOrder() == ContactsPreferences.SORT_ORDER_PRIMARY) {
             loader.setSortOrder(Contacts.SORT_KEY_PRIMARY);

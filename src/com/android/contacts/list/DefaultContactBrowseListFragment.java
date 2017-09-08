@@ -1017,7 +1017,8 @@ public class DefaultContactBrowseListFragment extends ContactBrowseListFragment
         makeMenuItemVisible(menu, R.id.menu_share, showSelectedContactOptions);
         makeMenuItemVisible(menu, R.id.menu_delete, !isSearchOrSelectionMode);
         final boolean showLinkContactsOptions = mActionBarAdapter.isSelectionMode()
-                && getSelectedContactIds().size() > 1;
+                && getSelectedContactIds().size() > 1
+                && getSelectedSimContact() <1;
         makeMenuItemVisible(menu, R.id.menu_join, showLinkContactsOptions);
 
         // Debug options need to be visible even in search mode.
