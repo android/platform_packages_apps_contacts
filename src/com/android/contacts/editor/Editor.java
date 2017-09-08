@@ -80,7 +80,14 @@ public interface Editor {
      */
     public void onFieldChanged(String column, String value);
 
-    public String phoneticUpdata(String column, String value);
+    /**
+     * Update the phonetic field with the specified character string.
+     */
+    public void updatePhonetic(String column, String value);
+
+    /**
+     * Returns the phonetic field string of the specified column.
+     */
     public String getPhonetic(String column);
 
     /**

@@ -1283,7 +1283,7 @@ public class ContactEditorFragment extends Fragment implements
         final TextFieldsEditorView phoneticNameEditor = editorView.getPhoneticEditorView();
         final boolean useJapaneseOrder = 
                        Locale.JAPANESE.getLanguage().equals(Locale.getDefault().getLanguage());
-        if (useJapaneseOrder && nameEditor != null) {
+        if (useJapaneseOrder && nameEditor != null && phoneticNameEditor != null) {
             nameEditor.setPhoneticView(phoneticNameEditor);
         }
 

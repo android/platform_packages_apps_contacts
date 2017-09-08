@@ -261,7 +261,7 @@ public class KindSectionView extends LinearLayout {
         for (int i = 0; i < mEditors.getChildCount(); i++) {
             final View view = mEditors.getChildAt(i);
             if (!(view instanceof StructuredNameEditorView)) {
-                return (TextFieldsEditorView)view;
+                return (TextFieldsEditorView) view;
             }
         }
         return null;

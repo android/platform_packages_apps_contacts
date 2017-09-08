@@ -333,8 +333,7 @@ public abstract class LabeledEditorView extends LinearLayout implements Editor, 
 
     /** {@inheritDoc} */
     @Override
-    public String phoneticUpdata(String column, String value) {
-        return "";
+    public void updatePhonetic(String column, String value) {
     }
 
     /** {@inheritDoc} */

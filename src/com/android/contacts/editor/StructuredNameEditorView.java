@@ -44,7 +44,7 @@ public class StructuredNameEditorView extends TextFieldsEditorView {
     private StructuredNameDataItem mSnapshot;
     private boolean mChanged;
 
-    TextFieldsEditorView mPhoneticView;
+    private TextFieldsEditorView mPhoneticView;
 
     public StructuredNameEditorView(Context context) {
         super(context);
@@ -99,27 +99,24 @@ public class StructuredNameEditorView extends TextFieldsEditorView {
         notifyEditorListener();
     }
 
-    public String phoneticUpdata(String column, String value) {
-        String input = "";
+    public void updatePhonetic(String column, String value) {
         EditText view = null;
 
         if (mPhoneticView != null) {
             ViewGroup fields = (ViewGroup) mPhoneticView.findViewById(R.id.editors);
 
             if (StructuredName.FAMILY_NAME.equals(column)) {
-                view = (EditText)fields.getChildAt(0);
+                view = (EditText) fields.getChildAt(0);
             } else if (StructuredName.GIVEN_NAME.equals(column)) {
-                view = (EditText)fields.getChildAt(2);
+                view = (EditText) fields.getChildAt(2);
             } else if (StructuredName.MIDDLE_NAME.equals(column)) {
-                view = (EditText)fields.getChildAt(1);
+                view = (EditText) fields.getChildAt(1);
             }
 
             if (view != null) {
                 view.setText(value);
-                input = view.getText().toString();
             }
         }
-        return input;
     }
 
     @Override
@@ -131,14 +128,11 @@ public class StructuredNameEditorView extends TextFieldsEditorView {
             ViewGroup fields = (ViewGroup) mPhoneticView.findViewById(R.id.editors);
 
             if (StructuredName.FAMILY_NAME.equals(column)) {
-                view = (EditText)fields.getChildAt(0);
-                input = view.getText().toString();
+                view = (EditText) fields.getChildAt(0);
             } else if (StructuredName.GIVEN_NAME.equals(column)) {
-                view = (EditText)fields.getChildAt(2);
-                input = view.getText().toString();
+                view = (EditText) fields.getChildAt(2);
             } else if (StructuredName.MIDDLE_NAME.equals(column)) {
-                view = (EditText)fields.getChildAt(1);
-                input = view.getText().toString();
+                view = (EditText) fields.getChildAt(1);
             }
 
             if (view != null) {

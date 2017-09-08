@@ -224,12 +224,12 @@ public class TextFieldsEditorView extends LabeledEditorView {
         mFieldEditTexts[field].setText(value);
     }
 
-    private boolean isUnFixed(Editable s) {
+    private boolean isUnFixed(Editable input) {
         boolean unfixed = false;
-        Object[] spanned = s.getSpans(0, s.length(), Object.class);
+        Object[] spanned = input.getSpans(0, input.length(), Object.class);
         if (spanned != null) {
             for (Object obj : spanned) {
-                if ((s.getSpanFlags(obj) & Spanned.SPAN_COMPOSING) == Spanned.SPAN_COMPOSING) {
+                if ((input.getSpanFlags(obj) & Spanned.SPAN_COMPOSING) == Spanned.SPAN_COMPOSING) {
                     unfixed = true;
                 }
             }
@@ -237,23 +237,23 @@ public class TextFieldsEditorView extends LabeledEditorView {
         return unfixed;
     }
 
-    private String getNameFiled(String column) {
+    private String getNameField(String column) {
 
-      EditText editText=null;
+      EditText editText = null;
 
       if (StructuredName.FAMILY_NAME.equals(column)) {
           editText = (EditText) mFields.getChildAt(1);
       } else if (StructuredName.GIVEN_NAME.equals(column)) {
-          editText = (EditText)mFields.getChildAt(3);
+          editText = (EditText) mFields.getChildAt(3);
       } else if (StructuredName.MIDDLE_NAME.equals(column)) {
-          editText = (EditText)mFields.getChildAt(2);
+          editText = (EditText) mFields.getChildAt(2);
       }
 
       if (editText != null) {
           return editText.getText().toString();
       }
 
-        return "";
+      return "";
     }
 
     @Override
@@ -322,7 +322,7 @@ public class TextFieldsEditorView extends LabeledEditorView {
 
             // Prepare listener for writing changes
             fieldView.addTextChangedListener(new TextWatcher() {
-                int mStart = 0;
+                private int mStart = 0;
                 @Override
                 public void afterTextChanged(Editable s) {
                     // Trigger event for newly changed value
@@ -336,12 +336,13 @@ public class TextFieldsEditorView extends LabeledEditorView {
 
                     int nonFixedLen = displayNameField.length() - mFixedDisplayName.length();
                     if (isUnFixed(s) || nonFixedLen == 0) {
-                        String tmpString = mFixedPhonetic + displayNameField.substring(mStart, displayNameField.length());
+                        String tmpString = mFixedPhonetic
+                             + displayNameField.substring(mStart, displayNameField.length());
 
-                        phoneticUpdata(column, tmpString);
+                        updatePhonetic(column, tmpString);
                     } else {
                         mFixedPhonetic = getPhonetic(column);
-                        mFixedDisplayName=displayNameField;
+                        mFixedDisplayName = displayNameField;
                     }
                 }
 
@@ -350,9 +351,9 @@ public class TextFieldsEditorView extends LabeledEditorView {
                     if (!DataKind.PSEUDO_MIME_TYPE_NAME.equals(getKind().mimeType)){
                         return;
                     }
-                    if(needInputInitialize) {
+                    if (needInputInitialize) {
                         mFixedPhonetic = getPhonetic(column);
-                        mFixedDisplayName= getNameFiled(column);
+                        mFixedDisplayName = getNameField(column);
                         needInputInitialize = false;
                     }
                 }
