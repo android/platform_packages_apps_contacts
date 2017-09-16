@@ -66,16 +66,16 @@
     <string name="contacts_deleted_two_named_toast" msgid="3642082931473111791">"Contactos <xliff:g id="NAME_0">%1$s</xliff:g> e <xliff:g id="NAME_1">%2$s</xliff:g> eliminados"</string>
     <string name="contacts_deleted_many_named_toast" msgid="7731565342428031249">"<xliff:g id="NAME_0">%1$s</xliff:g>, <xliff:g id="NAME_1">%2$s</xliff:g>, <xliff:g id="NAME_2">%3$s</xliff:g>… foram eliminados"</string>
     <plurals name="contacts_deleted_toast" formatted="false" msgid="1477708624197262295">
-      <item quantity="other">Contactos eliminados</item>
       <item quantity="one">Contacto eliminado</item>
+      <item quantity="other">Contactos eliminados</item>
     </plurals>
     <plurals name="contacts_count" formatted="false" msgid="8696793457340503668">
-      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> contactos</item>
       <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> contacto</item>
+      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> contactos</item>
     </plurals>
     <plurals name="contacts_count_with_account" formatted="false" msgid="7402583111980220575">
-      <item quantity="other"><xliff:g id="COUNT_2">%1$d</xliff:g> contactos · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
       <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> contacto · <xliff:g id="ACCOUNT_1">%2$s</xliff:g></item>
+      <item quantity="other"><xliff:g id="COUNT_2">%1$d</xliff:g> contactos · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
     </plurals>
     <string name="title_from_google" msgid="4664084747121207202">"Da Google"</string>
     <string name="title_from_other_accounts" msgid="8307885412426754288">"Da conta <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
@@ -137,8 +137,8 @@
     <string name="menu_add_contact" msgid="3198704337220892684">"Adicionar aos contactos"</string>
     <string name="menu_add_contacts" msgid="4465646512002163011">"Adicionar"</string>
     <plurals name="title_share_via" formatted="false" msgid="5886112726191455415">
-      <item quantity="other">Partilhar contactos através de</item>
       <item quantity="one">Partilhar contacto através de</item>
+      <item quantity="other">Partilhar contactos através de</item>
     </plurals>
     <string name="dialog_new_group_account" msgid="3451312333591556651">"Selecionar conta"</string>
     <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"Criar etiqueta"</string>
@@ -264,7 +264,7 @@
     <string name="call_fax_work" msgid="7467763592359059243">"Ligar para fax do emprego"</string>
     <string name="call_fax_home" msgid="8342175628887571876">"Ligar para o fax da residência"</string>
     <string name="call_pager" msgid="9003902812293983281">"Ligar para pager"</string>
-    <string name="call_other" msgid="8563753966926932052">"Ligar"</string>
+    <string name="call_other" msgid="8563753966926932052">"Telefonar"</string>
     <string name="call_callback" msgid="1910165691349426858">"Ligar para rechamada"</string>
     <string name="call_car" msgid="3280537320306436445">"Ligar para automóvel"</string>
     <string name="call_company_main" msgid="6105120947138711257">"Ligar para telefone principal da empresa"</string>
@@ -396,12 +396,12 @@
     <string name="import_from_sim" msgid="6912071635295799131">"Cartão SIM"</string>
     <string name="import_from_sim_summary_fmt" msgid="5169032449686348118">"SIM <xliff:g id="SIM_NAME">%1$s</xliff:g>"</string>
     <plurals name="import_from_sim_secondary_contact_count_fmt" formatted="false" msgid="5821095773211149295">
-      <item quantity="other">%1$d contactos</item>
       <item quantity="one">1 contacto</item>
+      <item quantity="other">%1$d contactos</item>
     </plurals>
     <plurals name="import_from_sim_secondary_template" formatted="false" msgid="2484832025802907060">
-      <item quantity="other"><xliff:g id="COUNT_2">^1</xliff:g> contactos • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
       <item quantity="one"><xliff:g id="COUNT_0">^1</xliff:g> contacto • <xliff:g id="PHONE_NUMBER_1">^2</xliff:g></item>
+      <item quantity="other"><xliff:g id="COUNT_2">^1</xliff:g> contactos • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
     </plurals>
     <string name="import_from_vcf_file" msgid="8662528435646418203">"Ficheiro .vcf"</string>
     <string name="nothing_to_import_message" msgid="1651921906873335656">"Nada para importar"</string>
@@ -509,8 +509,8 @@
     <string name="sim_import_empty_message" msgid="7743815244380189651">"Sem contactos no cartão SIM"</string>
     <string name="sim_import_contact_exists_toast" msgid="1503743663717316732">"O contacto já existe na sua lista"</string>
     <plurals name="sim_import_success_toast_fmt" formatted="false" msgid="8572156521110906443">
-      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> contactos do cartão SIM importados</item>
       <item quantity="one">1 contacto do cartão SIM importado</item>
+      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> contactos do cartão SIM importados</item>
     </plurals>
     <string name="sim_import_failed_toast" msgid="5559267299793622705">"Ocorreu uma falha ao importar os contactos do cartão SIM"</string>
     <string name="sim_import_title" msgid="2511154832820812822">"Importar do cartão SIM"</string>
