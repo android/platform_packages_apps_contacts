@@ -580,4 +580,8 @@ public class KindSectionView extends LinearLayout {
         }
         return emptyEditors;
     }
+
+    public DataKind getKind() {
+        return mKindSectionData.getDataKind();
+    }
 }

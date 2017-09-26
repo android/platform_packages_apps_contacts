@@ -54,6 +54,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListPopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.contacts.ContactSaveService;
@@ -87,6 +88,7 @@ import com.android.contacts.util.ContactDisplayUtils;
 import com.android.contacts.util.ContactPhotoUtils;
 import com.android.contacts.util.ImplicitIntentsUtil;
 import com.android.contacts.util.MaterialColorMapUtils;
+import com.android.contacts.util.SimUtil;
 import com.android.contacts.util.UiClosables;
 import com.android.contactsbind.HelpUtils;
 
@@ -1282,6 +1284,9 @@ public class ContactEditorFragment extends Fragment implements
         editorView.setEnabled(mEnabled);
         editorView.setVisibility(View.VISIBLE);
 
+        if (mIsUserProfile) {
+            disableSimNumberEditingIfNeeded(editorView);
+        }
         // Refresh the ActionBar as the visibility of the join command
         // Activity can be null if we have been detached from the Activity.
         invalidateOptionsMenu();
@@ -1746,5 +1751,59 @@ public class ContactEditorFragment extends Fragment implements
 
     private RawContactEditorView getContent() {
         return (RawContactEditorView) mContent;
+    }
+
+    public void disableSimNumberEditingIfNeeded(ViewGroup viewGroup) {
+        KindSectionView phoneSectionView = getPhoneSectionView(viewGroup);
+        disableSimNumberEditingIfNeeded(getContext(), phoneSectionView);
+    }
+
+    private KindSectionView getPhoneSectionView(ViewGroup viewGroup) {
+        for (int i = 0; i < viewGroup.getChildCount(); i++) {
+            View child = viewGroup.getChildAt(i);
+            if (child instanceof KindSectionView) {
+                KindSectionView section = (KindSectionView)child;
+                if (Phone.CONTENT_ITEM_TYPE.equals(section.getKind().mimeType)) {
+                    return section;
+                }
+            } else if (child instanceof ViewGroup) {
+                KindSectionView section = getPhoneSectionView((ViewGroup)child);
+                if (section != null) {
+                    return section;
+                }
+            }
+        }
+        return null;
+    }
+
+    private static void disableSimNumberEditingIfNeeded(Context context,
+            KindSectionView phoneSectionView) {
+        if (phoneSectionView == null) {
+            return;
+        }
+
+        ViewGroup vg = (ViewGroup)phoneSectionView.findViewById(R.id.kind_editors);
+
+        List<String> simNumbers = SimUtil.getLine1Numbers(context);
+
+        for (String simNumber : simNumbers) {
+            if (TextUtils.isEmpty(simNumber)) {
+                continue;
+            }
+            TextFieldsEditorView row = null;
+            for (int i = 0; i < vg.getChildCount(); i++) {
+                row = (TextFieldsEditorView) vg.getChildAt(i);
+                View editor = row.findViewById(R.id.editors);
+                View editTextView = ((ViewGroup) editor).getChildAt(0);
+                TextView editText = (TextView) editTextView;
+                String number = editText.getText().toString();
+                if (number.equals(simNumber)) {
+                    row.setEnabled(false);
+                    row.setAlpha(0.3f);
+                    row.setDeleteButtonVisible(false);
+                    break;
+                }
+            }
+        }
     }
 }

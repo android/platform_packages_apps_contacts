@@ -31,6 +31,7 @@ import android.util.Log;
 
 import com.android.contacts.testing.InjectedServices;
 import com.android.contacts.util.Constants;
+import com.android.contacts.util.LocalProfile;
 import com.android.contactsbind.analytics.AnalyticsUtil;
 
 import com.google.common.annotations.VisibleForTesting;
@@ -130,7 +131,7 @@ public class ContactsApplication extends Application {
             // (and thus not have the get accounts permission).
             PreferenceManager.getDefaultSharedPreferences(context);
             getContentResolver().getType(ContentUris.withAppendedId(Contacts.CONTENT_URI, 1));
-
+            LocalProfile.updateProfileWithSimNumber(context);
             return null;
         }
 
