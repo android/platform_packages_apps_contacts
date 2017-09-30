@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3c5c1a5f_98e3f7d5",
+        "filename": "src/com/android/contacts/editor/StructuredNameEditorView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-09-30T00:17:46Z",
+      "side": 1,
+      "message": "I think you\u0027ll need to add @Override here",
+      "range": {
+        "startLine": 102,
+        "startChar": 4,
+        "endLine": 102,
+        "endChar": 61
+      },
+      "revId": "5ed462afae8eb162473fe2fbd02ae60e7c73c676",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
