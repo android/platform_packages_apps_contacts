@@ -1,0 +1,10 @@
+Code-Review+2: Wenyi Wang <wenyiw@google.com>
+Code-Review+1: Kenji Yokoyama <kenji.yokoyama@sonymobile.com>
+Verified+1: Wenyi Wang <wenyiw@google.com>
+Autosubmit+1: Wenyi Wang <wenyiw@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Mon, 02 Oct 2017 22:45:30 +0000
+Reviewed-on: https://android-review.googlesource.com/494320
+Project: platform/packages/apps/Contacts
+Branch: refs/heads/master
