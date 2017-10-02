@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dda60656_206d266b",
+        "filename": "src/com/android/contacts/group/GroupNameEditDialogFragment.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1120253
+      },
+      "writtenOn": "2017-10-02T19:57:22Z",
+      "side": 1,
+      "message": "I think the current approach will work. \n\nAlternatively, we can add .trim() here so that the two changes above are fixed at the same time, but it\u0027s up to you. :)",
+      "range": {
+        "startLine": 348,
+        "startChar": 25,
+        "endLine": 348,
+        "endChar": 64
+      },
+      "revId": "f9c5a048b7e5be78869a4a6b1a2fe76cf01358b2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
