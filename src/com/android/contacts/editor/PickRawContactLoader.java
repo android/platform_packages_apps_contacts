@@ -179,7 +179,8 @@ public class PickRawContactLoader extends
         if (uri == null) {
             throw new IllegalArgumentException("Uri must not be null");
         }
-        if (!uri.toString().startsWith(Contacts.CONTENT_URI.toString())) {
+        if (!uri.toString().startsWith(Contacts.CONTENT_URI.toString()) &&
+                !uri.toString().equals(Profile.CONTENT_URI.toString())) {
             throw new IllegalArgumentException("Invalid contact Uri: " + uri);
         }
         return uri;
