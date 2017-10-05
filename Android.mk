@@ -61,7 +61,7 @@ LOCAL_PROGUARD_FLAG_FILES := \
     ../../../frameworks/support/v7/recyclerview/proguard-rules.pro
 
 LOCAL_SDK_VERSION := current
-LOCAL_MIN_SDK_VERSION := 21
+LOCAL_MIN_SDK_VERSION := 24
 
 include $(BUILD_PACKAGE)
 
