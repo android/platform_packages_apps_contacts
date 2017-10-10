@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6864fe52_f0d37bcd",
+        "filename": "src/com/android/contacts/drawer/DrawerAdapter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 1120253
+      },
+      "writtenOn": "2017-10-10T19:20:18Z",
+      "side": 1,
+      "message": "How about moving this method to a utility class so that it can be used in here as well as in PeopleActivity?",
+      "range": {
+        "startLine": 470,
+        "startChar": 20,
+        "endLine": 470,
+        "endChar": 52
+      },
+      "revId": "360925f3f05d17cfb2988cc7ed7fae5a4f1f2f8c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
