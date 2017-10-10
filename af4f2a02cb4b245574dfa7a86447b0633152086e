@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "efb012eb_4f4aeaf2",
+        "filename": "project.config",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1086523
+      },
+      "writtenOn": "2017-10-10T22:50:19Z",
+      "side": 1,
+      "message": "Should this be in the refs/heads/master section instead? (Android Maintainers already have +2 on master).",
+      "revId": "af4f2a02cb4b245574dfa7a86447b0633152086e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
