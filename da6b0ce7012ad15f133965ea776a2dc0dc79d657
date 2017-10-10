@@ -46,6 +46,30 @@
       "revId": "da6b0ce7012ad15f133965ea776a2dc0dc79d657",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2dbcf7b0_d3512573",
+        "filename": "src/com/android/contacts/interactions/ImportDialogFragment.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1096942
+      },
+      "writtenOn": "2017-10-10T03:00:40Z",
+      "side": 1,
+      "message": "Your suggestions is no problem. Just uploaded the patch set.",
+      "parentUuid": "bfcd5998_ab595bfb",
+      "range": {
+        "startLine": 151,
+        "startChar": 0,
+        "endLine": 157,
+        "endChar": 25
+      },
+      "revId": "da6b0ce7012ad15f133965ea776a2dc0dc79d657",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
