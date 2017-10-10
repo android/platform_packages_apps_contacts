@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e2ad8fa2_332e6c45",
+        "filename": "src/com/android/contacts/interactions/ImportDialogFragment.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1121978
+      },
+      "writtenOn": "2017-10-10T20:37:22Z",
+      "side": 1,
+      "message": "unicodeWrap takes in a string so you might have to wrap the phone only below in getSimSecondaryText since you might lose the span when converting to string",
+      "range": {
+        "startLine": 151,
+        "startChar": 61,
+        "endLine": 151,
+        "endChar": 72
+      },
+      "revId": "ada888fafdfcd28bfa90835e184f486ac00970e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
