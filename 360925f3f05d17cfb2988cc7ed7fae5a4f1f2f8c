@@ -46,6 +46,30 @@
       "revId": "360925f3f05d17cfb2988cc7ed7fae5a4f1f2f8c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7dc88472_1e60e16e",
+        "filename": "src/com/android/contacts/drawer/DrawerAdapter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 1234073
+      },
+      "writtenOn": "2017-10-11T06:04:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49ab10e6_90c140f3",
+      "range": {
+        "startLine": 470,
+        "startChar": 20,
+        "endLine": 470,
+        "endChar": 52
+      },
+      "revId": "360925f3f05d17cfb2988cc7ed7fae5a4f1f2f8c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
