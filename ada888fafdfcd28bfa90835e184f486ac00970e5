@@ -22,6 +22,30 @@
       "revId": "ada888fafdfcd28bfa90835e184f486ac00970e5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cf04f99f_79b66afa",
+        "filename": "src/com/android/contacts/interactions/ImportDialogFragment.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1096942
+      },
+      "writtenOn": "2017-10-11T01:47:34Z",
+      "side": 1,
+      "message": "Thanks. Will revert to patch set 1 code. Because patch set 1 code will be solved both issue and your concerns.",
+      "parentUuid": "e2ad8fa2_332e6c45",
+      "range": {
+        "startLine": 151,
+        "startChar": 61,
+        "endLine": 151,
+        "endChar": 72
+      },
+      "revId": "ada888fafdfcd28bfa90835e184f486ac00970e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
