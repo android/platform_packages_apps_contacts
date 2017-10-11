@@ -46,6 +46,30 @@
       "revId": "ada888fafdfcd28bfa90835e184f486ac00970e5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "06e3d9ed_13d0c9f6",
+        "filename": "src/com/android/contacts/interactions/ImportDialogFragment.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1121978
+      },
+      "writtenOn": "2017-10-11T20:25:42Z",
+      "side": 1,
+      "message": "have you tested the case where import_from_sim_secondary_template is used? does the number appear backwards there? In that case you should probably still bidiwrap the \"phone\" variable in getSimSecondaryText below",
+      "parentUuid": "cf04f99f_79b66afa",
+      "range": {
+        "startLine": 151,
+        "startChar": 61,
+        "endLine": 151,
+        "endChar": 72
+      },
+      "revId": "ada888fafdfcd28bfa90835e184f486ac00970e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
