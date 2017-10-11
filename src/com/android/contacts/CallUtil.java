@@ -23,6 +23,7 @@ import android.telecom.PhoneAccount;
 import android.telecom.PhoneAccountHandle;
 import android.telecom.TelecomManager;
 import android.telecom.VideoProfile;
+import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
 
 import com.android.contacts.compat.CompatUtils;
@@ -80,7 +81,17 @@ public class CallUtil {
      * automatically.
      */
     public static Intent getCallIntent(String number) {
-        return getCallIntent(getCallUri(number));
+        Uri uri = getCallUri(number);
+        return PhoneNumberUtils.isEmergencyNumber(number)
+            ? getCallIntentForEmergencyNumber(uri) : getCallIntent(uri);
+    }
+
+    /**
+     * Return an Intent to directly start Dialer when calling an emergency number. Scheme is always
+     * PhoneAccount.SCHEME_TEL.
+     */
+    private static Intent getCallIntentForEmergencyNumber(Uri uri) {
+        return new Intent(Intent.ACTION_DIAL, uri);
     }
 
     /**
