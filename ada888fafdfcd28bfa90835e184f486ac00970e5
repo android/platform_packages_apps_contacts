@@ -70,6 +70,30 @@
       "revId": "ada888fafdfcd28bfa90835e184f486ac00970e5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e91ae376_a519a9aa",
+        "filename": "src/com/android/contacts/interactions/ImportDialogFragment.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1234073
+      },
+      "writtenOn": "2017-10-13T07:13:51Z",
+      "side": 1,
+      "message": "Thanks. Just upload new solution.\nPlease review latest patch set.\nAll cases are OK in Latest patch set.",
+      "parentUuid": "06e3d9ed_13d0c9f6",
+      "range": {
+        "startLine": 151,
+        "startChar": 61,
+        "endLine": 151,
+        "endChar": 72
+      },
+      "revId": "ada888fafdfcd28bfa90835e184f486ac00970e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
