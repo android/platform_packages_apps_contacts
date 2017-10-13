@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ec61838_31501dbe",
+        "filename": "src/com/android/contacts/editor/PickRawContactLoader.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2017-10-13T17:25:17Z",
+      "side": 1,
+      "message": "I think this should be an ||",
+      "range": {
+        "startLine": 182,
+        "startChar": 72,
+        "endLine": 182,
+        "endChar": 74
+      },
+      "revId": "42668561e5328ed4905c034a60adf4c27d3f52e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
