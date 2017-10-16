@@ -344,14 +344,18 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
         private String mostUsedItemId = null;
         private int mostUsedTimes;
         private String primaryItemId = null;
+        private String mostUsedItemData = null;  // Real emails/phone numbers data
+        private String primaryItemData = null;   // Real emails/phone numbers data
 
-        public void addItem(String item, int timesUsed, boolean primaryFlag) {
+        public void addItem(String item, int timesUsed, boolean primaryFlag, String data) {
             if (mostUsedItemId == null || timesUsed > mostUsedTimes) {
                 mostUsedItemId = item;
                 mostUsedTimes = timesUsed;
+                mostUsedItemData = data;
             }
             if (primaryFlag) {
                 primaryItemId = item;
+                primaryItemData = data;
             }
             items.add(item);
         }
@@ -364,6 +368,12 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
             return primaryItemId != null
                     ? primaryItemId
                     : mostUsedItemId;
+        }
+
+        public String getDefaultSelectionItemData() {
+            return primaryItemData != null
+                    ? primaryItemData
+                    : mostUsedItemData;
         }
     }
 
@@ -408,7 +418,7 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
                     } else {
                         contact = contactMap.get(contactId);
                     }
-                    contact.addItem(itemId, timesUsed, isPrimary);
+                    contact.addItem(itemId, timesUsed, isPrimary, data);
                     itemList.add(data);
                 }
             }
@@ -444,7 +454,31 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
             return;
         }
 
-        final String itemsString = TextUtils.join(",", itemList);
+        // All contacts have a default. Send only the default address to Email/Message application.
+        final List<String> defaultItemList = new ArrayList<>();
+        for (ContactDataHelperClass i : contactMap.values()) {
+            if (i.hasDefaultItem()) {
+                // Build list of default selected item datalist
+                for (ContactDataHelperClass j : contactMap.values()) {
+                    final String selectionItemData = j.getDefaultSelectionItemData();
+                    if (selectionItemData != null) {
+                        defaultItemList.add(selectionItemData);
+                    }
+                }
+                break;
+            }
+        }
+
+        final String itemsString;
+        if (defaultItemList.size() > 0) {
+            // Send only the default address to Email/Message application.
+            itemsString = TextUtils.join(",", defaultItemList);
+        } else {
+            // This processing will not be executed.
+            // Because if even one contact do not have a primary, address picker is launched.
+            // Implemented as insurance processing.
+            itemsString = TextUtils.join(",", itemList);
+        }
         GroupUtil.startSendToSelectionActivity(this, itemsString, sendScheme, title);
     }
 
