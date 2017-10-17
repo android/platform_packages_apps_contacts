@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "54641618_1a5d9935",
+        "filename": "src/com/android/contacts/interactions/ImportDialogFragment.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1234073
+      },
+      "writtenOn": "2017-10-17T00:48:19Z",
+      "side": 1,
+      "message": "Will change to import android.support.v4.text.BidiFormatter;",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 34
+      },
+      "revId": "eb6fdff5a9afa40d96396cb79caaa57e9fd8545a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e0f762f7_7ebec1a5",
         "filename": "src/com/android/contacts/interactions/ImportDialogFragment.java",
         "patchSetId": 5
@@ -61,6 +84,30 @@
       "side": 1,
       "message": "also need to use the support library version of BidiFormatter because unicodeWrap(CharSequence, ...) was added in API 26",
       "parentUuid": "5ec9b8dd_c80633f3",
+      "range": {
+        "startLine": 167,
+        "startChar": 28,
+        "endLine": 167,
+        "endChar": 50
+      },
+      "revId": "eb6fdff5a9afa40d96396cb79caaa57e9fd8545a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae48b9b4_2ca1ded7",
+        "filename": "src/com/android/contacts/interactions/ImportDialogFragment.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1234073
+      },
+      "writtenOn": "2017-10-17T00:48:19Z",
+      "side": 1,
+      "message": "Thanks. Will change to import android.support.v4.text.BidiFormatter.",
+      "parentUuid": "55208318_6bcc8a42",
       "range": {
         "startLine": 167,
         "startChar": 28,
