@@ -22,6 +22,30 @@
       "revId": "ae4208eee4dbafc5808f4e295a42ea23cede42a1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "588e032c_21842872",
+        "filename": "src/com/android/contacts/preference/DisplayOptionsPreferenceFragment.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1121978
+      },
+      "writtenOn": "2017-10-18T01:07:51Z",
+      "side": 1,
+      "message": "its okay if the name is a string because those methods were there already. only the charsequence ones were added in api 26",
+      "parentUuid": "b91d4d73_2cb0cab4",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 44
+      },
+      "revId": "ae4208eee4dbafc5808f4e295a42ea23cede42a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
