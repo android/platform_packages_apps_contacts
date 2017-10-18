@@ -372,7 +372,7 @@ public abstract class ContactListAdapter extends MultiSelectEntryContactListAdap
     public void changeCursor(int partitionIndex, Cursor cursor) {
         super.changeCursor(partitionIndex, cursor);
 
-        if (cursor == null || !cursor.moveToFirst()) {
+        if (cursor == null || cursor.isClosed() || !cursor.moveToFirst()) {
             return;
         }
 
