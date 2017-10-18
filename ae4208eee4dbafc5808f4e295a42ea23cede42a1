@@ -46,6 +46,30 @@
       "revId": "ae4208eee4dbafc5808f4e295a42ea23cede42a1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e45566da_51c4b829",
+        "filename": "src/com/android/contacts/preference/DisplayOptionsPreferenceFragment.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1234073
+      },
+      "writtenOn": "2017-10-18T01:53:38Z",
+      "side": 1,
+      "message": "Thanks. Display name is strings. So, remains it.",
+      "parentUuid": "588e032c_21842872",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 44
+      },
+      "revId": "ae4208eee4dbafc5808f4e295a42ea23cede42a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
