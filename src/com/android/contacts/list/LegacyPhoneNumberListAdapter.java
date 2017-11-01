@@ -26,9 +26,6 @@ import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.contacts.common.list.ContactEntryListAdapter;
-import com.android.contacts.common.list.ContactListItemView;
-
 /**
  * A cursor adapter for the Phones.CONTENT_TYPE content type.
  */

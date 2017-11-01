@@ -20,7 +20,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Event;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -31,13 +30,13 @@ import com.android.contacts.R;
 import com.android.contacts.datepicker.DatePicker;
 import com.android.contacts.datepicker.DatePickerDialog;
 import com.android.contacts.datepicker.DatePickerDialog.OnDateSetListener;
-import com.android.contacts.common.model.RawContactDelta;
-import com.android.contacts.common.model.ValuesDelta;
-import com.android.contacts.common.model.account.AccountType.EditField;
-import com.android.contacts.common.model.account.AccountType.EventEditType;
-import com.android.contacts.common.model.dataitem.DataKind;
-import com.android.contacts.common.util.CommonDateUtils;
-import com.android.contacts.common.util.DateUtils;
+import com.android.contacts.model.RawContactDelta;
+import com.android.contacts.model.ValuesDelta;
+import com.android.contacts.model.account.AccountType.EditField;
+import com.android.contacts.model.account.AccountType.EventEditType;
+import com.android.contacts.model.dataitem.DataKind;
+import com.android.contacts.util.CommonDateUtils;
+import com.android.contacts.util.DateUtils;
 
 import java.text.ParsePosition;
 import java.util.Calendar;
@@ -145,11 +144,10 @@ public class EventFieldEditorView extends LabeledEditorView {
     public Dialog createDialog(Bundle bundle) {
         if (bundle == null) throw new IllegalArgumentException("bundle must not be null");
         int dialogId = bundle.getInt(DIALOG_ID_KEY);
-        switch (dialogId) {
-            case R.id.dialog_event_date_picker:
-                return createDatePickerDialog();
-            default:
-                return super.createDialog(bundle);
+        if (dialogId == R.id.dialog_event_date_picker) {
+            return createDatePickerDialog();
+        } else {
+            return super.createDialog(bundle);
         }
     }
 
@@ -173,7 +171,8 @@ public class EventFieldEditorView extends LabeledEditorView {
 
         if (!isYearOptional && !TextUtils.isEmpty(oldValue)) {
             final ParsePosition position = new ParsePosition(0);
-            final Date date2 = kind.dateFormatWithoutYear.parse(oldValue, position);
+            final Date date2 = kind.dateFormatWithoutYear == null
+                    ? null : kind.dateFormatWithoutYear.parse(oldValue, position);
 
             // Don't understand the date, lets not change it
             if (date2 == null) return;
@@ -183,7 +182,11 @@ public class EventFieldEditorView extends LabeledEditorView {
             calendar.set(defaultYear, calendar.get(Calendar.MONTH),
                     calendar.get(Calendar.DAY_OF_MONTH), CommonDateUtils.DEFAULT_HOUR, 0, 0);
 
-            onFieldChanged(column, kind.dateFormatWithYear.format(calendar.getTime()));
+            final String formattedDate = kind.dateFormatWithYear == null
+                    ? null : kind.dateFormatWithYear.format(calendar.getTime());
+            if (formattedDate == null) return;
+
+            onFieldChanged(column, formattedDate);
             rebuildDateView();
         }
     }
@@ -241,10 +244,14 @@ public class EventFieldEditorView extends LabeledEditorView {
 
                 final String resultString;
                 if (year == 0) {
-                    resultString = kind.dateFormatWithoutYear.format(outCalendar.getTime());
+                    resultString = kind.dateFormatWithoutYear == null
+                            ? null : kind.dateFormatWithoutYear.format(outCalendar.getTime());
                 } else {
-                    resultString = kind.dateFormatWithYear.format(outCalendar.getTime());
+                    resultString = kind.dateFormatWithYear == null
+                            ? null : kind.dateFormatWithYear.format(outCalendar.getTime());
                 }
+                if (resultString == null) return;
+
                 onFieldChanged(column, resultString);
                 rebuildDateView();
             }

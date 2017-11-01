@@ -14,8 +14,36 @@
      limitations under the License.
 -->
 <resources>
-    <dimen name="dialpad_digits_height">66dip</dimen>
-    <dimen name="dialpad_digits_text_size">28sp</dimen>
-    <dimen name="dialpad_digits_margin_bottom">50dip</dimen>
+    <!-- Copied from java/com/google/android/assets/launchscreens/res/values-land/dimens.xml -->
+    <!-- Adjusted higher to deal with the smaller total height we have to deal with on phones -->
+    <dimen name="launchscreens_product_logo_bottom">48dp</dimen>
+
     <dimen name="editor_type_label_width">120dip</dimen>
+
+    <!-- Top padding for the image for empty group view-->
+    <dimen name="empty_group_view_image_padding_top">0dp</dimen>
+
+    <!-- Height for the image for empty group and main view-->
+    <dimen name="empty_view_image_height">150dp</dimen>
+
+    <!-- Top padding for the text for empty group view-->
+    <dimen name="empty_group_view_text_padding_top">14dp</dimen>
+
+    <!-- Gap b/w image view and top of the screen in empty main view -->
+    <dimen name="empty_home_view_image_offset">151dp</dimen>
+
+    <!-- Top padding for the text for empty main view -->
+    <dimen name="empty_home_view_text_padding_top">16dp</dimen>
+
+    <!-- Extra margin above image in empty account view -->
+    <dimen name="empty_account_view_image_offset">0dp</dimen>
+
+    <!-- Margin offset b/w the image top and app bar bottom for no account empty view -->
+    <dimen name="contacts_no_account_empty_image_offset">151dp</dimen>
+
+    <!-- Width for the image for contacts no account empty view -->
+    <dimen name="contacts_no_account_empty_image_width">150dp</dimen>
+
+    <!-- Top padding for the text for no account empty view -->
+    <dimen name="contacts_no_account_empty_text_padding_top">16dp</dimen>
 </resources>

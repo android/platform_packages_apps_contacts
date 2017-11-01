@@ -28,8 +28,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import com.android.contacts.R;
-import com.android.contacts.common.util.DateUtils;
 import com.android.contacts.datepicker.DatePicker.OnDateChangedListener;
+import com.android.contacts.util.DateUtils;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -78,21 +78,6 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
     /**
      * @param context The context the dialog is to run in.
      * @param callBack How the parent is notified that the date is set.
-     * @param year The initial year of the dialog
-     * @param monthOfYear The initial month of the dialog.
-     * @param dayOfMonth The initial day of the dialog.
-     */
-    public DatePickerDialog(Context context,
-            OnDateSetListener callBack,
-            int year,
-            int monthOfYear,
-            int dayOfMonth) {
-        this(context, callBack, year, monthOfYear, dayOfMonth, false);
-    }
-
-    /**
-     * @param context The context the dialog is to run in.
-     * @param callBack How the parent is notified that the date is set.
      * @param year The initial year of the dialog or {@link DatePickerDialog#NO_YEAR} if no year
      *  has been specified
      * @param monthOfYear The initial month of the dialog.
@@ -106,26 +91,8 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
             int dayOfMonth,
             boolean yearOptional) {
         // Don't pass a theme id. Instead use the default alert dialog theme.
-        this(context, /* themeId = */ -1, callBack, year, monthOfYear, dayOfMonth,
+        this(context, /* themeId = */ 0, callBack, year, monthOfYear, dayOfMonth,
                 yearOptional);
-    }
-
-    /**
-     * @param context The context the dialog is to run in.
-     * @param theme the theme to apply to this dialog
-     * @param callBack How the parent is notified that the date is set.
-     * @param year The initial year of the dialog or {@link DatePickerDialog#NO_YEAR} if no year
-     *  has been specified
-     * @param monthOfYear The initial month of the dialog.
-     * @param dayOfMonth The initial day of the dialog.
-     */
-    public DatePickerDialog(Context context,
-            int theme,
-            OnDateSetListener callBack,
-            int year,
-            int monthOfYear,
-            int dayOfMonth) {
-        this(context, theme, callBack, year, monthOfYear, dayOfMonth, false);
     }
 
     /**
@@ -181,13 +148,6 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener,
     @Override
     public void onDateChanged(DatePicker view, int year, int month, int day) {
         updateTitle(year, month, day);
-    }
-
-    public void updateDate(int year, int monthOfYear, int dayOfMonth) {
-        mInitialYear = year;
-        mInitialMonth = monthOfYear;
-        mInitialDay = dayOfMonth;
-        mDatePicker.updateDate(year, monthOfYear, dayOfMonth);
     }
 
     private void updateTitle(int year, int month, int day) {

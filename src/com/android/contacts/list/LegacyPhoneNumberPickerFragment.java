@@ -19,16 +19,12 @@ package com.android.contacts.list;
 import android.net.Uri;
 import android.util.Log;
 
-import com.android.contacts.common.list.ContactEntryListAdapter;
-import com.android.contacts.common.list.ContactListItemView;
-import com.android.contacts.common.list.PhoneNumberPickerFragment;
-
 /**
  * Version of PhoneNumberPickerFragment used specifically for legacy support.
  */
 public class LegacyPhoneNumberPickerFragment extends PhoneNumberPickerFragment {
 
-    private static final String TAG = LegacyPhoneNumberPickerFragment.class.getSimpleName();
+    private static final String TAG = "LegacyPhoneNumberPicker";
 
     @Override
     protected boolean getVisibleScrollbarEnabled() {

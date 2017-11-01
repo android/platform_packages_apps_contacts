@@ -16,13 +16,13 @@
 
 package com.android.contacts.editor;
 
-import com.android.contacts.R;
-
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+
+import com.android.contacts.R;
 
 /**
  * Asks the user whether to cancel editing the contact.
@@ -35,7 +35,7 @@ public class CancelEditDialogFragment extends DialogFragment {
      * Shows a {@link CancelEditDialogFragment} after setting the given Fragment as the
      * target of the dialog.
      */
-    public static void show(ContactEditorBaseFragment fragment) {
+    public static void show(ContactEditorFragment fragment) {
         final CancelEditDialogFragment dialog = new CancelEditDialogFragment();
         dialog.setTargetFragment(fragment, 0);
         dialog.show(fragment.getFragmentManager(), TAG);

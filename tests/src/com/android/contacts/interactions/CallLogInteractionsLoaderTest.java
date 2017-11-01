@@ -3,6 +3,7 @@ package com.android.contacts.interactions;
 import android.content.ContentValues;
 import android.provider.CallLog.Calls;
 import android.test.AndroidTestCase;
+import android.test.suitebuilder.annotation.SmallTest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 /**
  * Tests {@link CallLogInteractionsLoader}
  */
+@SmallTest
 public class CallLogInteractionsLoaderTest extends AndroidTestCase {
 
     public void testCallLogInteractions_pruneDuplicates_containsDuplicates() {

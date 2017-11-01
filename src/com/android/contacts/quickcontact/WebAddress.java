@@ -16,11 +16,11 @@
 
 package com.android.contacts.quickcontact;
 
+import static android.util.Patterns.GOOD_IRI_CHAR;
+
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static android.util.Patterns.GOOD_IRI_CHAR;
 
 /**
  * Below is a partial copy of {@link android.net.WebAddress}. The original author doesn't
@@ -66,8 +66,6 @@ public class WebAddress {
         if (address == null) {
             throw new NullPointerException();
         }
-
-        // android.util.Log.d(LOGTAG, "WebAddress: " + address);
 
         mScheme = "";
         mHost = "";

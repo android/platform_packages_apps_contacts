@@ -16,7 +16,6 @@
 <resources>
 
     <bool name="quickcontact_two_panel">false</bool>
-    <bool name="contact_all_list_show_card_frame">false</bool>
     <bool name="contacteditor_two_panel">false</bool>
 
 </resources>

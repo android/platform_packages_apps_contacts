@@ -15,14 +15,12 @@
  */
 package com.android.contacts.list;
 
-import com.android.contacts.R;
-import com.android.contacts.common.list.ContactListItemView;
-import com.android.contacts.common.list.DefaultContactListAdapter;
-
 import android.content.Context;
 import android.database.Cursor;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.android.contacts.R;
 
 /**
  * Equivalent to DefaultContactListAdapter, except with an optional header entry that has the same
@@ -66,7 +64,7 @@ public class HeaderEntryContactListAdapter extends DefaultContactListAdapter {
             } else {
                 itemView = (ContactListItemView) convertView;
             }
-            itemView.setDrawableResource(R.drawable.ic_search_add_contact);
+            itemView.setDrawableResource(R.drawable.quantum_ic_person_add_vd_theme_24);
             itemView.setDisplayName(getContext().getResources().getString(
                     R.string.header_entry_contact_list_adapter_header_title));
             return itemView;

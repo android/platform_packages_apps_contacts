@@ -19,7 +19,6 @@
 
     <string-array name="allIntents">
         <!-- List modes -->
-        <item>VIEW (content uri without any id)</item>
         <item>ACTION_PICK: contact</item>
         <item>ACTION_PICK: contact (legacy)</item>
         <item>ACTION_PICK: phone</item>
@@ -39,13 +38,15 @@
         <item>ACTION_INSERT_OR_EDIT</item>
         <item>ACTION_INSERT_OR_EDIT_PHONE_NUMBER</item>
         <item>ACTION_INSERT_OR_EDIT_EMAIL_ADDRESS</item>
+        <item>ACTION_INSERT_GROUP</item>
         <item>ACTION_SEARCH (call button)</item>
         <item>ACTION_SEARCH: contact</item>
         <item>ACTION_SEARCH: email</item>
         <item>ACTION_SEARCH: phone</item>
+        <item>ACTION_SEARCH: general</item>
         <item>SEARCH_SUGGESTION_CLICKED: contact</item>
 
-        <!-- Edit Contact -->
+        <!-- Edit -->
         <item>EDIT (content uri with only id)</item>
         <item>EDIT (lookup uri without id)</item>
         <item>EDIT (lookup uri)</item>
@@ -57,16 +58,29 @@
         <item>EDIT (create new contact for account with data)</item>
         <item>EDIT (create new raw contact)</item>
         <item>EDIT (create new legacy)</item>
+        <item>EDIT (group)</item>
 
-        <!-- View Contact -->
+        <!-- View -->
+        <item>VIEW (content uri without any id)</item>
+        <item>VIEW PERSON (content uri without any id)</item>
         <item>VIEW (content uri with only id)</item>
         <item>VIEW (lookup uri without id)</item>
         <item>VIEW (lookup uri)</item>
         <item>VIEW (called for raw contact)</item>
         <item>VIEW (legacy style uri)</item>
+        <item>VIEW (group)</item>
 
         <!-- Various ways to start Contacts -->
         <item>QuickContactTestsActivity</item>
+
+        <!-- Intents accepted by PeopleActivity -->
+        <item>LIST_DEFAULT</item>
+        <item>LIST_CONTACTS</item>
+        <item>LIST_ALL_CONTACTS</item>
+        <item>LIST_CONTACTS_WITH_PHONES</item>
+        <item>LIST_STARRED</item>
+        <item>LIST_FREQUENT</item>
+        <item>LIST_STREQUENT</item>
     </string-array>
 
     <string name="pickContact">Pick contact</string>
@@ -90,5 +104,5 @@
     <string name="attribution_flicker">Flicker</string>
     <string name="attribution_twitter">Twitter</string>
 
-    <string name="authenticator_basic_label">Test adapter</string>
+    <string name="test_string">TEST STRING</string>
 </resources>

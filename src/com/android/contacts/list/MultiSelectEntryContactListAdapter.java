@@ -16,15 +16,14 @@
 
 package com.android.contacts.list;
 
-import com.android.contacts.common.list.ContactListItemView;
-import com.android.contacts.common.list.DefaultContactListAdapter;
-
 import android.content.Context;
 import android.database.Cursor;
 import android.provider.ContactsContract;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.CheckBox;
+
+import com.android.contacts.ContactPhotoManager;
+import com.android.contacts.group.GroupUtil;
 
 import java.util.TreeSet;
 
@@ -32,19 +31,47 @@ import java.util.TreeSet;
  * An extension of the default contact adapter that adds checkboxes and the ability
  * to select multiple contacts.
  */
-public class MultiSelectEntryContactListAdapter extends DefaultContactListAdapter {
+public abstract class MultiSelectEntryContactListAdapter extends ContactEntryListAdapter {
 
     private SelectedContactsListener mSelectedContactsListener;
-    private TreeSet<Long> mSelectedContactIds = new TreeSet<Long>();
+    private DeleteContactListener mDeleteContactListener;
+    private TreeSet<Long> mSelectedContactIds = new TreeSet<>();
     private boolean mDisplayCheckBoxes;
+    private final int mContactIdColumnIndex;
 
     public interface SelectedContactsListener {
         void onSelectedContactsChanged();
-        void onSelectedContactsChangedViaCheckBox();
     }
 
-    public MultiSelectEntryContactListAdapter(Context context) {
+    public interface DeleteContactListener {
+        void onContactDeleteClicked(int position);
+    }
+
+    /**
+     * @param contactIdColumnIndex the column index of the contact ID in the underlying cursor;
+     *         it is passed in so that this adapter can support different kinds of contact
+     *         lists (e.g. aggregate contacts or raw contacts).
+     */
+    public MultiSelectEntryContactListAdapter(Context context, int contactIdColumnIndex) {
         super(context);
+        mContactIdColumnIndex = contactIdColumnIndex;
+    }
+
+    /**
+     * Returns the column index of the contact ID in the underlying cursor; the contact ID
+     * retrieved using this index is the value that is selected by this adapter (and returned
+     * by {@link #getSelectedContactIds}).
+     */
+    public int getContactColumnIdIndex() {
+        return mContactIdColumnIndex;
+    }
+
+    public DeleteContactListener getDeleteContactListener() {
+        return mDeleteContactListener;
+    }
+
+    public void setDeleteContactListener(DeleteContactListener deleteContactListener) {
+        mDeleteContactListener = deleteContactListener;
     }
 
     public void setSelectedContactsListener(SelectedContactsListener listener) {
@@ -56,6 +83,17 @@ public class MultiSelectEntryContactListAdapter extends DefaultContactListAdapte
      */
     public TreeSet<Long> getSelectedContactIds() {
         return mSelectedContactIds;
+    }
+
+    public boolean hasSelectedItems() {
+        return mSelectedContactIds.size() > 0;
+    }
+
+    /**
+     * Returns the selected contacts as an array.
+     */
+    public long[] getSelectedContactIdsArray() {
+        return GroupUtil.convertLongSetToLongArray(mSelectedContactIds);
     }
 
     /**
@@ -74,9 +112,6 @@ public class MultiSelectEntryContactListAdapter extends DefaultContactListAdapte
      * Not guaranteed to work with all configurations of this adapter.
      */
     public void setDisplayCheckBoxes(boolean showCheckBoxes) {
-        if (!mDisplayCheckBoxes && showCheckBoxes) {
-            setSelectedContactIds(new TreeSet<Long>());
-        }
         mDisplayCheckBoxes = showCheckBoxes;
         notifyDataSetChanged();
         if (mSelectedContactsListener != null) {
@@ -107,44 +142,54 @@ public class MultiSelectEntryContactListAdapter extends DefaultContactListAdapte
     }
 
     @Override
+    public long getItemId(int position) {
+        Cursor cursor = (Cursor) getItem(position);
+        if (cursor != null) {
+            return cursor.getLong(getContactColumnIdIndex());
+        }
+        return 0;
+    }
+
+    @Override
     protected void bindView(View itemView, int partition, Cursor cursor, int position) {
         super.bindView(itemView, partition, cursor, position);
         final ContactListItemView view = (ContactListItemView) itemView;
-        bindCheckBox(view, cursor, position, partition == ContactsContract.Directory.DEFAULT);
+        bindViewId(view, cursor, getContactColumnIdIndex());
+        bindCheckBox(view, cursor, partition == ContactsContract.Directory.DEFAULT);
     }
 
-    private void bindCheckBox(ContactListItemView view, Cursor cursor, int position,
-            boolean isLocalDirectory) {
-        // Disable clicking on the ME profile and all contacts from remote directories
-        // when showing check boxes. We do this by telling the view to handle clicking itself.
-        view.setClickable((position == 0 && hasProfile() || !isLocalDirectory)
-                && mDisplayCheckBoxes);
+    /**
+      * Loads the photo for the photo view.
+      * @param photoIdColumn Index of the photo id column
+      * @param lookUpKeyColumn Index of the lookup key column
+      * @param displayNameColumn Index of the display name column
+      */
+    protected void bindPhoto(final ContactListItemView view, final Cursor cursor,
+           final int photoIdColumn, final int lookUpKeyColumn, final int displayNameColumn) {
+        final long photoId = cursor.isNull(photoIdColumn)
+            ? 0 : cursor.getLong(photoIdColumn);
+        final ContactPhotoManager.DefaultImageRequest imageRequest = photoId == 0
+            ? getDefaultImageRequestFromCursor(cursor, displayNameColumn,
+            lookUpKeyColumn)
+            : null;
+        getPhotoLoader().loadThumbnail(view.getPhotoView(), photoId, false, getCircularPhotos(),
+                imageRequest);
+    }
+
+    private void bindCheckBox(ContactListItemView view, Cursor cursor, boolean isLocalDirectory) {
+        // Disable clicking on all contacts from remote directories when showing check boxes. We do
+        // this by telling the view to handle clicking itself.
+        view.setClickable(!isLocalDirectory && mDisplayCheckBoxes);
         // Only show checkboxes if mDisplayCheckBoxes is enabled. Also, never show the
-        // checkbox for the Me profile entry and other directory contacts except local directory.
-        if (position == 0 && hasProfile() || !mDisplayCheckBoxes || !isLocalDirectory) {
+        // checkbox for other directory contacts except local directory.
+        if (!mDisplayCheckBoxes || !isLocalDirectory) {
             view.hideCheckBox();
             return;
         }
         final CheckBox checkBox = view.getCheckBox();
-        final long contactId = cursor.getLong(ContactQuery.CONTACT_ID);
+        final long contactId = cursor.getLong(mContactIdColumnIndex);
         checkBox.setChecked(mSelectedContactIds.contains(contactId));
+        checkBox.setClickable(false);
         checkBox.setTag(contactId);
-        checkBox.setOnClickListener(mCheckBoxClickListener);
     }
-
-    private final OnClickListener mCheckBoxClickListener = new OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            final CheckBox checkBox = (CheckBox) v;
-            final Long contactId = (Long) checkBox.getTag();
-            if (checkBox.isChecked()) {
-                mSelectedContactIds.add(contactId);
-            } else {
-                mSelectedContactIds.remove(contactId);
-            }
-            if (mSelectedContactsListener != null) {
-                mSelectedContactsListener.onSelectedContactsChangedViaCheckBox();
-            }
-        }
-    };
 }

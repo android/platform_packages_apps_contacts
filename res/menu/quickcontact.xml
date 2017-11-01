@@ -26,6 +26,14 @@
         android:showAsAction="always" />
 
     <item
+        android:id="@+id/menu_join"
+        android:title="@string/menu_joinAggregate" />
+
+    <item
+        android:id="@+id/menu_linked_contacts"
+        android:title="@string/menu_linkedContacts" />
+
+    <item
         android:id="@+id/menu_delete"
         android:title="@string/menu_deleteContact" />
 
@@ -37,6 +45,14 @@
     <item
         android:id="@+id/menu_create_contact_shortcut"
         android:title="@string/menu_create_contact_shortcut" />
+
+    <item
+        android:id="@+id/menu_set_ringtone"
+        android:title="@string/menu_set_ring_tone" />
+
+    <item
+        android:id="@+id/menu_send_to_voicemail"
+        android:title="@string/menu_redirect_calls_to_vm"/>
 
     <item
         android:id="@+id/menu_help"

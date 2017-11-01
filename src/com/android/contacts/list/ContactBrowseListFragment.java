@@ -35,12 +35,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.common.widget.CompositeCursorAdapter.Partition;
-import com.android.contacts.common.list.AutoScrollListView;
-import com.android.contacts.common.list.ContactEntryListFragment;
-import com.android.contacts.common.list.ContactListAdapter;
-import com.android.contacts.common.list.ContactListFilter;
-import com.android.contacts.common.list.DirectoryPartition;
-import com.android.contacts.common.util.ContactLoaderUtils;
+import com.android.contacts.util.ContactLoaderUtils;
 
 import java.util.List;
 
@@ -49,7 +44,7 @@ import java.util.List;
  * picking a contact with one of the PICK intents).
  */
 public abstract class ContactBrowseListFragment extends
-        ContactEntryListFragment<ContactListAdapter> {
+        MultiSelectContactsListFragment<ContactListAdapter> {
 
     private static final String TAG = "ContactList";
 
@@ -194,24 +189,23 @@ public abstract class ContactBrowseListFragment extends
         }
     }
 
-    public void setFilter(ContactListFilter filter) {
-        setFilter(filter, true);
-    }
-
-    public void setFilter(ContactListFilter filter, boolean restoreSelectedUri) {
+    public void updateListFilter(ContactListFilter filter, boolean restoreSelectedUri) {
         if (mFilter == null && filter == null) {
             return;
         }
 
         if (mFilter != null && mFilter.equals(filter)) {
+            setLogListEvents(false);
             return;
         }
 
-        Log.v(TAG, "New filter: " + filter);
+        if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "New filter: " + filter);
 
+        setListType(filter.toListType());
+        setLogListEvents(true);
         mFilter = filter;
         mLastSelectedPosition = -1;
-        saveFilter();
+
         if (restoreSelectedUri) {
             mSelectedContactUri = null;
             restoreSelectedUri(true);
@@ -383,6 +377,11 @@ public abstract class ContactBrowseListFragment extends
     }
 
     @Override
+    public ContactListAdapter getAdapter() {
+        return (ContactListAdapter) super.getAdapter();
+    }
+
+    @Override
     protected void configureAdapter() {
         super.configureAdapter();
 
@@ -401,8 +400,7 @@ public abstract class ContactBrowseListFragment extends
             }
         }
 
-        // Display the user's profile if not in search mode
-        adapter.setIncludeProfile(!searchMode);
+        adapter.setIncludeFavorites(!searchMode && mFilter.isContactsFilterType());
     }
 
     @Override
@@ -600,9 +598,10 @@ public abstract class ContactBrowseListFragment extends
         mListener = listener;
     }
 
-    public void viewContact(Uri contactUri, boolean isEnterpriseContact) {
+    public void viewContact(int position, Uri contactUri, boolean isEnterpriseContact) {
         setSelectedContactUri(contactUri, false, false, true, false);
-        if (mListener != null) mListener.onViewContactAction(contactUri, isEnterpriseContact);
+        if (mListener != null) mListener.onViewContactAction(position, contactUri,
+                isEnterpriseContact);
     }
 
     public void deleteContact(Uri contactUri) {
@@ -664,10 +663,5 @@ public abstract class ContactBrowseListFragment extends
         } else {
             return mPersistentSelectionPrefix + "-" + mFilter.getId();
         }
-    }
-
-    public boolean isOptionsMenuChanged() {
-        // This fragment does not have an option menu of its own
-        return false;
     }
 }

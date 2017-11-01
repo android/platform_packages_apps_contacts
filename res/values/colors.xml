@@ -14,27 +14,39 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Adaptive icon background layer color -->
+    <color name="ic_contacts_launcher_background">#2458CA</color>
+    <color name="ic_add_contact_shortcut_background">#F5F5F5</color>
 
-    <color name="quickcontact_name_detail_background">#66000000</color>
+    <!-- 87% black -->
+    <color name="quantum_black_text">#dd000000</color>
+
+    <!-- 54% black -->
+    <color name="quantum_black_secondary_text">#89000000</color>
+
+    <!-- 38% black -->
+    <color name="quantum_black_hint_text">#61000000</color>
+
     <color name="quickcontact_entry_sub_header_text_color">#737373</color>
     <color name="quickcontact_entry_header_text_color">#202020</color>
 
-    <color name="background_social_updates">#ffeeeeee</color>
+    <color name="action_bar_background">#2a56c6</color>
 
-    <!-- TODO: remove these colors once we delete the group code (b/16522929) -->
-    <color name="action_bar_background">#0288d1</color>
-    <color name="action_bar_background_highlight">#cecece</color>
+    <color name="nav_item_selected_background">#0f000000</color>
+
     <color name="action_bar_button_text_color">#FFFFFF</color>
 
     <color name="actionbar_background_color">@color/primary_color</color>
-    <color name="actionbar_background_color_dark">@color/primary_color_dark</color>
 
-    <color name="contextual_selection_bar_color">#616161</color>
+    <color name="contextual_selection_bar_color">#f6f6f6</color>
     <!-- Color of the status bar above the contextual selection bar. -->
-    <color name="contextual_selection_bar_status_bar_color">#424242</color>
+    <color name="contextual_selection_bar_status_bar_color">#bababa</color>
 
-    <color name="primary_color_dark">#0277bd</color>
-    <color name="primary_color">#0288d1</color>
+    <color name="primary_color_dark">#1c3aa9</color>
+    <color name="primary_color">#2a56c6</color>
+
+    <color name="group_primary_color_dark">#546E7A</color>
+    <color name="group_primary_color">#607D8B</color>
 
     <!-- Color of the selected tab underline -->
     <color name="contacts_accent_color">#FFFFFF</color>
@@ -65,15 +77,185 @@
     <!-- Color of disabled text and unfocused hint text inside the contact editor. 25% black. -->
     <color name="editor_disabled_text_color">#40000000</color>
 
-    <!-- Color of button background in compact photo picker. -->
-    <color name="google_grey_600">#757575</color>
-
-    <!-- Color of button text in compact photo picker, 85% white. -->
-    <color name="photo_action_button_color">#D9FFFFFF</color>
-
     <!-- Color of text on disabled link contacts button, 25% black. -->
     <color name="disabled_button_text">#40000000</color>
 
     <!-- Color of background of disabled link contacts button, 15% black. -->
     <color name="disabled_button_background">#26000000</color>
+
+    <!-- Color of text of people names in contact list when item is disabled. 30% black -->
+    <color name="disabled_contact_list_name_text">#4D000000</color>
+
+    <!-- Color of background of all empty states. -->
+    <color name="empty_state_background">#efefef</color>
+
+    <!-- Colors of swipeRefreshLayout's spinning circle. -->
+    <color name="swipe_refresh_color1">#0f9d58</color>
+    <color name="swipe_refresh_color2">#dd4b37</color>
+    <color name="swipe_refresh_color3">#4285f4</color>
+    <color name="swipe_refresh_color4">#f4b400</color>
+
+    <!-- Color of ripples used for views with dark backgrounds -->
+    <color name="ripple_material_dark">#a0ffffff</color>
+
+    <!-- Divider color for header separator -->
+    <color name="primary_text_color">#363636</color>
+
+    <color name="secondary_text_color">@color/dialtacts_secondary_text_color</color>
+
+    <!-- Text color for section header. -->
+    <color name="section_header_text_color">@color/dialtacts_theme_color</color>
+
+    <!-- Color of the theme of the People app -->
+    <color name="people_app_theme_color">#363636</color>
+
+    <!-- Color of the theme of the Dialer app -->
+    <color name="dialtacts_theme_color">#2a56c6</color>
+
+    <!-- Color of image view placeholder. -->
+    <color name="image_placeholder">#DDDDDD</color>
+
+    <!-- Primary text color in the Phone app -->
+    <color name="dialtacts_primary_text_color">#333333</color>
+
+    <!-- Secondary text color in the Phone app -->
+    <color name="dialtacts_secondary_text_color">#737373</color>
+
+    <color name="shortcut_overlay_text_background">#7f000000</color>
+
+    <color name="textColorIconOverlay">#fff</color>
+    <color name="textColorIconOverlayShadow">#000</color>
+
+    <!-- Background colors for LetterTileDrawables. This set of colors is a subset of
+        https://spec.googleplex.com/quantumpalette#extended which passes Google Accessibility
+        Requirements for the color in question on white with >= 3.0 contrast. We used
+        http://leaverou.github.io/contrast-ratio/#white-on-%23db4437 to double-check the contrast.
+
+        These colors are also used by MaterialColorMapUtils to generate primary activity colors.
+    -->
+    <array name="letter_tile_colors">
+        <item>#DB4437</item>
+        <item>#E91E63</item>
+        <item>#9C27B0</item>
+        <item>#673AB7</item>
+        <item>#3F51B5</item>
+        <item>#4285F4</item>
+        <item>#039BE5</item>
+        <item>#0097A7</item>
+        <item>#009688</item>
+        <item>#0F9D58</item>
+        <item>#689F38</item>
+        <item>#EF6C00</item>
+        <item>#FF5722</item>
+        <item>#757575</item>
+    </array>
+
+    <!-- Darker versions of letter_tile_colors, two shades darker. These colors are used
+        for settings secondary activity colors. -->
+    <array name="letter_tile_colors_dark">
+        <item>#C53929</item>
+        <item>#C2185B</item>
+        <item>#7B1FA2</item>
+        <item>#512DA8</item>
+        <item>#303F9F</item>
+        <item>#3367D6</item>
+        <item>#0277BD</item>
+        <item>#006064</item>
+        <item>#00796B</item>
+        <item>#0B8043</item>
+        <item>#33691E</item>
+        <item>#E65100</item>
+        <item>#E64A19</item>
+        <item>#424242</item>
+    </array>
+
+    <!-- The default color used for tinting photos when no color can be extracted via Palette,
+            this is Blue Grey 500 -->
+    <color name="quickcontact_default_photo_tint_color">#607D8B</color>
+    <!-- The default secondary color when no color can be extracted via Palette,
+            this is Blue Grey 700 -->
+    <color name="quickcontact_default_photo_tint_color_dark">#455A64</color>
+
+
+    <color name="letter_tile_default_color">#cccccc</color>
+
+    <color name="letter_tile_font_color">#ffffff</color>
+
+    <!-- Color for icons in the actionbar -->
+    <color name="actionbar_icon_color">#ffffff</color>
+
+    <!-- Color of the title to the Frequently Contacted section -->
+    <color name="frequently_contacted_title_color">@color/actionbar_background_color</color>
+
+    <!-- Color of action bar text. Ensure this stays in sync with packages/Telephony
+    phone_settings_actionbar_text_color-->
+    <color name="actionbar_text_color">#ffffff</color>
+    <!-- 54% black for icons -->
+    <color name="actionbar_icon_color_grey">#8C000000</color>
+    <!-- 87% black for actionbar text -->
+    <color name="actionbar_text_color_black">#DF000000</color>
+    <!-- Solid grey for status bar overlay-->
+    <color name="actionbar_color_grey_solid">#777777</color>
+
+    <!-- Text color of the search box text as entered by user  -->
+    <color name="searchbox_text_color">#000000</color>
+    <!-- Background color of the search box -->
+    <color name="searchbox_background_color">#ffffff</color>
+
+    <color name="searchbox_hint_text_color">#66000000</color>
+
+    <color name="search_shortcut_icon_color">@color/dialtacts_theme_color</color>
+
+    <!-- Color of the background of the contact detail and editor pages -->
+    <color name="background_primary">#f9f9f9</color>
+    <color name="contact_all_list_background_color">#FFFFFF</color>
+
+    <!-- Text color used for character counter when the max limit has been exceeded -->
+    <color name="call_subject_limit_exceeded">#d1041c</color>
+
+    <!-- Tint color for the call subject history icon. -->
+    <color name="call_subject_history_icon">#000000</color>
+
+    <!-- Divider line on the call subject dialog. -->
+    <color name="call_subject_divider">#d8d8d8</color>
+
+    <!-- Text color for the SEND & CALL button on the call subject dialog. -->
+    <color name="call_subject_button">#00c853</color>
+
+    <!-- Background color for the call subject history view. -->
+    <color name="call_subject_history_background">#ffffff</color>
+    <color name="search_video_call_icon_tint">@color/searchbox_hint_text_color</color>
+
+    <!-- Text color for an action in a snackbar. -->
+    <color name="snackbar_action_text">#ffffff</color>
+    <!-- Background color for a snackbar. -->
+    <color name="snackbar_background">#333333</color>
+
+    <!-- Color of account/custom filters -->
+    <color name="account_filter_text_color">@color/actionbar_text_color_black</color>
+    <color name="custom_filter_divider">#dbdbdb</color>
+
+    <color name="material_star_pink">#f50057</color>
+
+    <!-- Primary text color in Contacts app -->
+    <color name="contacts_text_color">#333333</color>
+
+    <!-- tint color for device account icons -->
+    <color name="device_account_tint_color">#7f7f7f</color>
+
+    <!-- Background color for sync-off alert. -->
+    <color name="alert_background">#e0e0e0</color>
+
+    <!-- Divider color in navigation drawer -->
+    <color name="drawer_divider_color">#E5E5E5</color>
+
+    <!-- Background color for the navigation drawer -->
+    <color name="navigation_drawer_background_color">#FAFAFA</color>
+
+    <!-- Background color for the current selected item in the navigation drawer -->
+    <color name="drawer_selected_color">#E8E8E8</color>
+
+    <!-- Highlight color used in places such as ripples -->
+    <color name="control_highlight_color">#1A000000</color>
+
 </resources>

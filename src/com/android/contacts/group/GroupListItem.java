@@ -27,9 +27,12 @@ public final class GroupListItem {
     private final String mTitle;
     private final boolean mIsFirstGroupInAccount;
     private final int mMemberCount;
+    private final boolean mIsReadOnly;
+    private final String mSystemId;
 
     public GroupListItem(String accountName, String accountType, String dataSet, long groupId,
-            String title, boolean isFirstGroupInAccount, int memberCount) {
+            String title, boolean isFirstGroupInAccount, int memberCount, boolean isReadOnly,
+            String systemId) {
         mAccountName = accountName;
         mAccountType = accountType;
         mDataSet = dataSet;
@@ -37,6 +40,8 @@ public final class GroupListItem {
         mTitle = title;
         mIsFirstGroupInAccount = isFirstGroupInAccount;
         mMemberCount = memberCount;
+        mIsReadOnly = isReadOnly;
+        mSystemId = systemId;
     }
 
     public String getAccountName() {
@@ -69,5 +74,13 @@ public final class GroupListItem {
 
     public boolean isFirstGroupInAccount() {
         return mIsFirstGroupInAccount;
+    }
+
+    public boolean isReadOnly() {
+        return mIsReadOnly;
+    }
+
+    public String getSystemId() {
+        return mSystemId;
     }
 }

@@ -29,7 +29,8 @@
         android:id="@+id/collapsed_suggestion_header">
 
         <ImageView
-                android:src="@drawable/quantum_ic_assistant_grey600_48"
+                android:src="@drawable/quantum_ic_assistant_vd_theme_24"
+                android:tint="@color/editor_icon_color"
                 android:layout_width="@dimen/quickcontact_collapse_icon_size"
                 android:layout_height="@dimen/quickcontact_collapse_icon_size"
                 android:layout_margin="@dimen/quickcontact_collapse_image_padding"
@@ -49,7 +50,7 @@
                 android:paddingTop="@dimen/quickcontact_collapse_text_padding"/>
 
         <ImageView
-                android:src="@drawable/ic_menu_expander_minimized_holo_light"
+                android:src="@drawable/quantum_ic_expand_more_vd_theme_24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|end"

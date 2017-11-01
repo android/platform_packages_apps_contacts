@@ -14,13 +14,37 @@
      limitations under the License.
 -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:contacts="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_add"
+        android:icon="@drawable/quantum_ic_person_add_vd_theme_24"
+        android:title="@string/menu_addToGroup"
+        contacts:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_multi_send_email"
+        android:title="@string/menu_sendEmailOption" />
+
+    <item
+        android:id="@+id/menu_multi_send_message"
+        android:title="@string/menu_sendMessageOption" />
+
     <item
         android:id="@+id/menu_edit_group"
-        android:title="@string/menu_editGroup"
-        android:alphabeticShortcut="e" />
+        android:icon="@drawable/quantum_ic_create_vd_theme_24"
+        android:title="@string/menu_editGroup" />
+
+    <item
+        android:id="@+id/menu_rename_group"
+        android:title="@string/menu_renameGroup"/>
 
     <item
         android:id="@+id/menu_delete_group"
         android:title="@string/menu_deleteGroup" />
+
+    <item
+        android:id="@+id/menu_remove_from_group"
+        android:title="@string/menu_removeFromGroup" />
 </menu>

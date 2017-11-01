@@ -17,12 +17,12 @@
 package com.android.contacts.tests;
 
 import android.app.IntentService;
-import android.content.Context;
 import android.content.Intent;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 
-import com.android.contacts.common.GeoUtil;
+import com.android.contacts.GeoUtil;
+
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.google.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberFormat;

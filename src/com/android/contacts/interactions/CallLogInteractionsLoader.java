@@ -24,11 +24,12 @@ import android.database.DatabaseUtils;
 import android.net.Uri;
 import android.provider.CallLog.Calls;
 import android.text.TextUtils;
+import android.util.Log;
+
+import com.android.contacts.compat.PhoneNumberUtilsCompat;
+import com.android.contacts.util.PermissionsUtil;
 
 import com.google.common.annotations.VisibleForTesting;
-
-import com.android.contacts.common.compat.PhoneNumberUtilsCompat;
-import com.android.contacts.common.util.PermissionsUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,30 +38,47 @@ import java.util.List;
 
 public class CallLogInteractionsLoader extends AsyncTaskLoader<List<ContactInteraction>> {
 
+    private static final String TAG = "CallLogInteractions";
+
     private final String[] mPhoneNumbers;
+    private final String[] mSipNumbers;
     private final int mMaxToRetrieve;
     private List<ContactInteraction> mData;
 
-    public CallLogInteractionsLoader(Context context, String[] phoneNumbers,
+    public CallLogInteractionsLoader(Context context, String[] phoneNumbers, String[] sipNumbers,
             int maxToRetrieve) {
         super(context);
         mPhoneNumbers = phoneNumbers;
+        mSipNumbers = sipNumbers;
         mMaxToRetrieve = maxToRetrieve;
     }
 
     @Override
     public List<ContactInteraction> loadInBackground() {
+        final boolean hasPhoneNumber = mPhoneNumbers != null && mPhoneNumbers.length > 0;
+        final boolean hasSipNumber = mSipNumbers != null && mSipNumbers.length > 0;
         if (!PermissionsUtil.hasPhonePermissions(getContext())
                 || !getContext().getPackageManager()
                         .hasSystemFeature(PackageManager.FEATURE_TELEPHONY)
-                || mPhoneNumbers == null || mPhoneNumbers.length <= 0 || mMaxToRetrieve <= 0) {
+                || (!hasPhoneNumber && !hasSipNumber) || mMaxToRetrieve <= 0) {
             return Collections.emptyList();
         }
 
         final List<ContactInteraction> interactions = new ArrayList<>();
-        for (String number : mPhoneNumbers) {
-            interactions.addAll(getCallLogInteractions(number));
+        if (hasPhoneNumber) {
+            for (String number : mPhoneNumbers) {
+                final String normalizedNumber = PhoneNumberUtilsCompat.normalizeNumber(number);
+                if (!TextUtils.isEmpty(normalizedNumber)) {
+                    interactions.addAll(getCallLogInteractions(normalizedNumber));
+                }
+            }
         }
+        if (hasSipNumber) {
+            for (String number : mSipNumbers) {
+                interactions.addAll(getCallLogInteractions(number));
+            }
+        }
+
         // Sort the call log interactions by date for duplicate removal
         Collections.sort(interactions, new Comparator<ContactInteraction>() {
             @Override
@@ -75,7 +93,8 @@ public class CallLogInteractionsLoader extends AsyncTaskLoader<List<ContactInter
             }
         });
         // Duplicates only occur because of fuzzy matching. No need to dedupe a single number.
-        if (mPhoneNumbers.length == 1) {
+        if ((hasPhoneNumber && mPhoneNumbers.length == 1 && !hasSipNumber)
+                || (hasSipNumber && mSipNumbers.length == 1 && !hasPhoneNumber)) {
             return interactions;
         }
         return pruneDuplicateCallLogInteractions(interactions, mMaxToRetrieve);
@@ -107,19 +126,19 @@ public class CallLogInteractionsLoader extends AsyncTaskLoader<List<ContactInter
     }
 
     private List<ContactInteraction> getCallLogInteractions(String phoneNumber) {
-        final String normalizedNumber = PhoneNumberUtilsCompat.normalizeNumber(phoneNumber);
-        // If the number contains only symbols, we can skip it
-        if (TextUtils.isEmpty(normalizedNumber)) {
-            return Collections.emptyList();
-        }
         final Uri uri = Uri.withAppendedPath(Calls.CONTENT_FILTER_URI,
-                Uri.encode(normalizedNumber));
+                Uri.encode(phoneNumber));
         // Append the LIMIT clause onto the ORDER BY clause. This won't cause crashes as long
         // as we don't also set the {@link android.provider.CallLog.Calls.LIMIT_PARAM_KEY} that
         // becomes available in KK.
         final String orderByAndLimit = Calls.DATE + " DESC LIMIT " + mMaxToRetrieve;
-        final Cursor cursor = getContext().getContentResolver().query(uri, null, null, null,
-                orderByAndLimit);
+        Cursor cursor = null;
+        try {
+            cursor = getContext().getContentResolver().query(uri, null, null, null,
+                    orderByAndLimit);
+        } catch (Exception e) {
+            Log.e(TAG, "Can not query calllog", e);
+        }
         try {
             if (cursor == null || cursor.getCount() < 1) {
                 return Collections.emptyList();

@@ -17,7 +17,6 @@
 package com.android.contacts.compat;
 
 import android.widget.EdgeEffect;
-import com.android.contacts.common.compat.CompatUtils;
 
 /**
  * Compatibility class for {@link android.widget.EdgeEffect}

@@ -1,3 +1,4 @@
+
 /*
  * Copyright (C) 2015 The Android Open Source Project
  *
@@ -16,11 +17,7 @@
 
 package com.android.contacts.compat;
 
-import android.os.Build;
 import android.provider.ContactsContract.ProviderStatus;
-
-import com.android.contacts.common.compat.CompatUtils;
-import com.android.contacts.common.compat.SdkVersionOverride;
 
 /**
  * This class contains constants from the pre-M version of ContactsContract.ProviderStatus class

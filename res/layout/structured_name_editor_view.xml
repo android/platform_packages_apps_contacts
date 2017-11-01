@@ -31,7 +31,7 @@
 
     <ImageView
         android:id="@+id/kind_icon"
-        android:src="@drawable/ic_person_black_24dp"
+        android:src="@drawable/quantum_ic_person_vd_theme_24"
         android:contentDescription="@string/header_name_entry"
         style="@style/EditKindIconStyle"/>
 

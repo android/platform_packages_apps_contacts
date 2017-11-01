@@ -50,6 +50,12 @@
 
         <com.android.contacts.quickcontact.ExpandingEntryCardView
             style="@style/ExpandingEntryCardStyle"
+            android:id="@+id/permission_explanation_card"
+            android:visibility="gone"
+            cardview:cardCornerRadius="@dimen/expanding_entry_card_card_corner_radius"/>
+
+        <com.android.contacts.quickcontact.ExpandingEntryCardView
+            style="@style/ExpandingEntryCardStyle"
             android:id="@+id/about_card"
             android:visibility="gone"
             cardview:cardCornerRadius="@dimen/expanding_entry_card_card_corner_radius" />

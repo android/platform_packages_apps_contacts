@@ -88,8 +88,8 @@
 
      <ImageView
          android:id="@+id/third_icon"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
+         android:layout_width="@dimen/default_clickable_icon_size"
+         android:layout_height="@dimen/default_clickable_icon_size"
          android:layout_alignParentTop="true"
          android:layout_toStartOf="@+id/icon_alternate"
          android:layout_alignWithParentIfMissing="true"
@@ -102,8 +102,8 @@
 
      <ImageView
          android:id="@+id/icon_alternate"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
+         android:layout_width="@dimen/default_clickable_icon_size"
+         android:layout_height="@dimen/default_clickable_icon_size"
          android:layout_alignParentEnd="true"
          android:layout_alignParentTop="true"
          android:visibility="gone"

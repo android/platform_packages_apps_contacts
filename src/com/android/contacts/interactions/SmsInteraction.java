@@ -15,9 +15,6 @@
  */
 package com.android.contacts.interactions;
 
-import com.android.contacts.R;
-import com.android.contacts.common.util.ContactDisplayUtils;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -28,6 +25,9 @@ import android.text.BidiFormatter;
 import android.text.Spannable;
 import android.text.TextDirectionHeuristics;
 
+import com.android.contacts.R;
+import com.android.contacts.util.ContactDisplayUtils;
+
 /**
  * Represents an sms interaction, wrapping the columns in
  * {@link android.provider.Telephony.Sms}.
@@ -35,7 +35,7 @@ import android.text.TextDirectionHeuristics;
 public class SmsInteraction implements ContactInteraction {
 
     private static final String URI_TARGET_PREFIX = "smsto:";
-    private static final int SMS_ICON_RES = R.drawable.ic_message_24dp_mirrored;
+    private static final int SMS_ICON_RES = R.drawable.quantum_ic_message_vd_theme_24;
     private static BidiFormatter sBidiFormatter = BidiFormatter.getInstance();
 
     private ContentValues mValues;

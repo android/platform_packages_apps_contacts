@@ -28,6 +28,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import com.android.contacts.util.SchedulingUtils;
+
 import com.google.common.collect.Lists;
 
 import java.util.List;

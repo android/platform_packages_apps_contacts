@@ -28,10 +28,14 @@ import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.CommonDataKinds.StructuredPostal;
 import android.provider.ContactsContract.Contacts;
+import android.provider.ContactsContract.Groups;
 import android.provider.ContactsContract.Intents;
 import android.provider.ContactsContract.Intents.Insert;
 import android.text.TextUtils;
 import android.util.Log;
+
+import com.android.contacts.group.GroupUtil;
+import com.android.contacts.model.account.AccountWithDataSet;
 
 /**
  * Parses a Contacts intent, extracting all relevant parts and packaging them
@@ -70,6 +74,13 @@ public class ContactsIntentResolver {
         } else if (UiIntentActions.LIST_GROUP_ACTION.equals(action)) {
             request.setActionCode(ContactsRequest.ACTION_GROUP);
             // We no longer support UiIntentActions.GROUP_NAME_EXTRA_KEY
+        } else if (UiIntentActions.ACTION_SELECT_ITEMS.equals(action)) {
+            final String resolvedType = intent.resolveType(mContext);
+            if (Phone.CONTENT_TYPE.equals(resolvedType)) {
+                request.setActionCode(ContactsRequest.ACTION_PICK_PHONES);
+            } else if (Email.CONTENT_TYPE.equals(resolvedType)) {
+                request.setActionCode(ContactsRequest.ACTION_PICK_EMAILS);
+            }
         } else if (Intent.ACTION_PICK.equals(action)) {
             final String resolvedType = intent.resolveType(mContext);
             if (Contacts.CONTENT_TYPE.equals(resolvedType)) {
@@ -89,6 +100,14 @@ public class ContactsIntentResolver {
                 request.setLegacyCompatibilityMode(true);
             } else if (Email.CONTENT_TYPE.equals(resolvedType)) {
                 request.setActionCode(ContactsRequest.ACTION_PICK_EMAIL);
+            } else if (Groups.CONTENT_TYPE.equals(resolvedType)) {
+                request.setActionCode(ContactsRequest.ACTION_PICK_GROUP_MEMBERS);
+                request.setAccountWithDataSet(new AccountWithDataSet(
+                        intent.getStringExtra(UiIntentActions.GROUP_ACCOUNT_NAME),
+                        intent.getStringExtra(UiIntentActions.GROUP_ACCOUNT_TYPE),
+                        intent.getStringExtra(UiIntentActions.GROUP_ACCOUNT_DATA_SET)));
+                request.setRawContactIds(intent.getStringArrayListExtra(
+                        UiIntentActions.GROUP_CONTACT_IDS));
             }
         } else if (Intent.ACTION_CREATE_SHORTCUT.equals(action)) {
             String component = intent.getComponent().getClassName();
@@ -119,6 +138,9 @@ public class ContactsIntentResolver {
             }
         } else if (Intent.ACTION_INSERT_OR_EDIT.equals(action)) {
             request.setActionCode(ContactsRequest.ACTION_INSERT_OR_EDIT_CONTACT);
+        } else if (Intent.ACTION_INSERT.equals(action) &&
+                Groups.CONTENT_TYPE.equals(intent.getType())) {
+            request.setActionCode(ContactsRequest.ACTION_INSERT_GROUP);
         } else if (Intent.ACTION_SEARCH.equals(action)) {
             String query = intent.getStringExtra(SearchManager.QUERY);
             // If the {@link SearchManager.QUERY} is empty, then check if a phone number
@@ -136,11 +158,19 @@ public class ContactsIntentResolver {
             if (ContactsContract.Contacts.CONTENT_TYPE.equals(resolvedType)
                     || android.provider.Contacts.People.CONTENT_TYPE.equals(resolvedType)) {
                 request.setActionCode(ContactsRequest.ACTION_ALL_CONTACTS);
-            } else {
+            } else if (!GroupUtil.isGroupUri(intent.getData())){
                 request.setActionCode(ContactsRequest.ACTION_VIEW_CONTACT);
                 request.setContactUri(intent.getData());
                 intent.setAction(Intent.ACTION_DEFAULT);
                 intent.setData(null);
+            } else {
+                request.setActionCode(ContactsRequest.ACTION_VIEW_GROUP);
+                request.setContactUri(intent.getData());
+            }
+        } else if (Intent.ACTION_EDIT.equals(action)) {
+            if (GroupUtil.isGroupUri(intent.getData())){
+                request.setActionCode(ContactsRequest.ACTION_EDIT_GROUP);
+                request.setContactUri(intent.getData());
             }
         // Since this is the filter activity it receives all intents
         // dispatched from the SearchManager for security reasons

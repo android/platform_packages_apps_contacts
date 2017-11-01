@@ -17,6 +17,7 @@
 package com.android.contacts;
 
 import static android.Manifest.permission.WRITE_CONTACTS;
+
 import android.app.Activity;
 import android.app.IntentService;
 import android.content.ContentProviderOperation;
@@ -29,6 +30,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.OperationApplicationException;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -45,27 +47,34 @@ import android.provider.ContactsContract.Groups;
 import android.provider.ContactsContract.Profile;
 import android.provider.ContactsContract.RawContacts;
 import android.provider.ContactsContract.RawContactsEntity;
+import android.support.v4.content.LocalBroadcastManager;
+import android.support.v4.os.ResultReceiver;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.android.contacts.activities.ContactEditorBaseActivity;
-import com.android.contacts.common.compat.CompatUtils;
-import com.android.contacts.common.database.ContactUpdateUtils;
-import com.android.contacts.common.model.AccountTypeManager;
-import com.android.contacts.common.model.CPOWrapper;
-import com.android.contacts.common.model.RawContactDelta;
-import com.android.contacts.common.model.RawContactDeltaList;
-import com.android.contacts.common.model.RawContactModifier;
-import com.android.contacts.common.model.account.AccountWithDataSet;
-import com.android.contacts.common.util.PermissionsUtil;
+import com.android.contacts.activities.ContactEditorActivity;
+import com.android.contacts.compat.CompatUtils;
 import com.android.contacts.compat.PinnedPositionsCompat;
-import com.android.contacts.activities.ContactEditorBaseActivity.ContactEditor.SaveMode;
+import com.android.contacts.database.ContactUpdateUtils;
+import com.android.contacts.database.SimContactDao;
+import com.android.contacts.model.AccountTypeManager;
+import com.android.contacts.model.CPOWrapper;
+import com.android.contacts.model.RawContactDelta;
+import com.android.contacts.model.RawContactDeltaList;
+import com.android.contacts.model.RawContactModifier;
+import com.android.contacts.model.account.AccountWithDataSet;
+import com.android.contacts.preference.ContactsPreferences;
+import com.android.contacts.util.ContactDisplayUtils;
 import com.android.contacts.util.ContactPhotoUtils;
+import com.android.contacts.util.PermissionsUtil;
+import com.android.contactsbind.FeedbackHelper;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -84,8 +93,11 @@ public class ContactSaveService extends IntentService {
     public static final String EXTRA_ACCOUNT_NAME = "accountName";
     public static final String EXTRA_ACCOUNT_TYPE = "accountType";
     public static final String EXTRA_DATA_SET = "dataSet";
+    public static final String EXTRA_ACCOUNT = "account";
     public static final String EXTRA_CONTENT_VALUES = "contentValues";
     public static final String EXTRA_CALLBACK_INTENT = "callbackIntent";
+    public static final String EXTRA_RESULT_RECEIVER = "resultReceiver";
+    public static final String EXTRA_RAW_CONTACT_IDS = "rawContactIds";
 
     public static final String ACTION_SAVE_CONTACT = "saveContact";
     public static final String EXTRA_CONTACT_STATE = "state";
@@ -109,10 +121,15 @@ public class ContactSaveService extends IntentService {
     public static final String EXTRA_CONTACT_URI = "contactUri";
     public static final String EXTRA_CONTACT_IDS = "contactIds";
     public static final String EXTRA_STARRED_FLAG = "starred";
+    public static final String EXTRA_DISPLAY_NAME = "extraDisplayName";
+    public static final String EXTRA_DISPLAY_NAME_ARRAY = "extraDisplayNameArray";
 
     public static final String ACTION_SET_SUPER_PRIMARY = "setSuperPrimary";
     public static final String ACTION_CLEAR_PRIMARY = "clearPrimary";
     public static final String EXTRA_DATA_ID = "dataId";
+
+    public static final String ACTION_SPLIT_CONTACT = "splitContact";
+    public static final String EXTRA_HARD_SPLIT = "extraHardSplit";
 
     public static final String ACTION_JOIN_CONTACTS = "joinContacts";
     public static final String ACTION_JOIN_SEVERAL_CONTACTS = "joinSeveralContacts";
@@ -124,6 +141,31 @@ public class ContactSaveService extends IntentService {
 
     public static final String ACTION_SET_RINGTONE = "setRingtone";
     public static final String EXTRA_CUSTOM_RINGTONE = "customRingtone";
+
+    public static final String ACTION_UNDO = "undo";
+    public static final String EXTRA_UNDO_ACTION = "undoAction";
+    public static final String EXTRA_UNDO_DATA = "undoData";
+
+    // For debugging and testing what happens when requests are queued up.
+    public static final String ACTION_SLEEP = "sleep";
+    public static final String EXTRA_SLEEP_DURATION = "sleepDuration";
+
+    public static final String BROADCAST_GROUP_DELETED = "groupDeleted";
+    public static final String BROADCAST_LINK_COMPLETE = "linkComplete";
+    public static final String BROADCAST_UNLINK_COMPLETE = "unlinkComplete";
+
+    public static final String BROADCAST_SERVICE_STATE_CHANGED = "serviceStateChanged";
+
+    public static final String EXTRA_RESULT_CODE = "resultCode";
+    public static final String EXTRA_RESULT_COUNT = "count";
+
+    public static final int CP2_ERROR = 0;
+    public static final int CONTACTS_LINKED = 1;
+    public static final int CONTACTS_SPLIT = 2;
+    public static final int BAD_ARGUMENTS = 3;
+    public static final int RESULT_UNKNOWN = 0;
+    public static final int RESULT_SUCCESS = 1;
+    public static final int RESULT_FAILURE = 2;
 
     private static final HashSet<String> ALLOWED_DATA_COLUMNS = Sets.newHashSet(
         Data.MIMETYPE,
@@ -156,12 +198,24 @@ public class ContactSaveService extends IntentService {
     private static final CopyOnWriteArrayList<Listener> sListeners =
             new CopyOnWriteArrayList<Listener>();
 
+    // Holds the current state of the service
+    private static final State sState = new State();
+
     private Handler mMainHandler;
+    private GroupsDao mGroupsDao;
+    private SimContactDao mSimContactDao;
 
     public ContactSaveService() {
         super(TAG);
         setIntentRedelivery(true);
         mMainHandler = new Handler(Looper.getMainLooper());
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mGroupsDao = new GroupsDaoImpl(this);
+        mSimContactDao = SimContactDao.create(this);
     }
 
     public static void registerListener(Listener listener) {
@@ -172,8 +226,21 @@ public class ContactSaveService extends IntentService {
         sListeners.add(0, listener);
     }
 
+    public static boolean canUndo(Intent resultIntent) {
+        return resultIntent.hasExtra(EXTRA_UNDO_DATA);
+    }
+
     public static void unregisterListener(Listener listener) {
         sListeners.remove(listener);
+    }
+
+    public static State getState() {
+        return sState;
+    }
+
+    private void notifyStateChanged() {
+        LocalBroadcastManager.getInstance(this)
+                .sendBroadcast(new Intent(BROADCAST_SERVICE_STATE_CHANGED));
     }
 
     /**
@@ -186,13 +253,13 @@ public class ContactSaveService extends IntentService {
         } catch (Exception exception) {
             final int resId;
             switch (saveMode) {
-                case ContactEditorBaseActivity.ContactEditor.SaveMode.SPLIT:
+                case ContactEditorActivity.ContactEditor.SaveMode.SPLIT:
                     resId = R.string.contactUnlinkErrorToast;
                     break;
-                case ContactEditorBaseActivity.ContactEditor.SaveMode.RELOAD:
+                case ContactEditorActivity.ContactEditor.SaveMode.RELOAD:
                     resId = R.string.contactJoinErrorToast;
                     break;
-                case ContactEditorBaseActivity.ContactEditor.SaveMode.CLOSE:
+                case ContactEditorActivity.ContactEditor.SaveMode.CLOSE:
                     resId = R.string.contactSavedErrorToast;
                     break;
                 default:
@@ -225,10 +292,21 @@ public class ContactSaveService extends IntentService {
         return getApplicationContext().getSystemService(name);
     }
 
+    // Parent classes Javadoc says not to override this method but we're doing it just to update
+    // our state which should be OK since we're still doing the work in onHandleIntent
     @Override
-    protected void onHandleIntent(Intent intent) {
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        sState.onStart(intent);
+        notifyStateChanged();
+        return super.onStartCommand(intent, flags, startId);
+    }
+
+    @Override
+    protected void onHandleIntent(final Intent intent) {
         if (intent == null) {
-            Log.d(TAG, "onHandleIntent: could not handle null intent");
+            if (Log.isLoggable(TAG, Log.DEBUG)) {
+                Log.d(TAG, "onHandleIntent: could not handle null intent");
+            }
             return;
         }
         if (!PermissionsUtil.hasPermission(this, WRITE_CONTACTS)) {
@@ -264,6 +342,8 @@ public class ContactSaveService extends IntentService {
             deleteMultipleContacts(intent);
         } else if (ACTION_DELETE_CONTACT.equals(action)) {
             deleteContact(intent);
+        } else if (ACTION_SPLIT_CONTACT.equals(action)) {
+            splitContact(intent);
         } else if (ACTION_JOIN_CONTACTS.equals(action)) {
             joinContacts(intent);
         } else if (ACTION_JOIN_SEVERAL_CONTACTS.equals(action)) {
@@ -272,7 +352,14 @@ public class ContactSaveService extends IntentService {
             setSendToVoicemail(intent);
         } else if (ACTION_SET_RINGTONE.equals(action)) {
             setRingtone(intent);
+        } else if (ACTION_UNDO.equals(action)) {
+            undo(intent);
+        } else if (ACTION_SLEEP.equals(action)) {
+            sleepForDebugging(intent);
         }
+
+        sState.onFinish(intent);
+        notifyStateChanged();
     }
 
     /**
@@ -493,7 +580,7 @@ public class ContactSaveService extends IntentService {
                                     rawContactId);
                     lookupUri = RawContacts.getContactLookupUri(resolver, rawContactUri);
                 }
-                if (lookupUri != null) {
+                if (lookupUri != null && Log.isLoggable(TAG, Log.VERBOSE)) {
                     Log.v(TAG, "Saved contact. New URI: " + lookupUri);
                 }
 
@@ -503,12 +590,12 @@ public class ContactSaveService extends IntentService {
 
             } catch (RemoteException e) {
                 // Something went wrong, bail without success
-                Log.e(TAG, "Problem persisting user edits", e);
+                FeedbackHelper.sendFeedback(this, TAG, "Problem persisting user edits", e);
                 break;
 
             } catch (IllegalArgumentException e) {
                 // This is thrown by applyBatch on malformed requests
-                Log.e(TAG, "Problem persisting user edits", e);
+                FeedbackHelper.sendFeedback(this, TAG, "Problem persisting user edits", e);
                 showToast(R.string.contactSavedErrorToast);
                 break;
 
@@ -693,16 +780,10 @@ public class ContactSaveService extends IntentService {
         String label = intent.getStringExtra(EXTRA_GROUP_LABEL);
         final long[] rawContactsToAdd = intent.getLongArrayExtra(EXTRA_RAW_CONTACTS_TO_ADD);
 
-        ContentValues values = new ContentValues();
-        values.put(Groups.ACCOUNT_TYPE, accountType);
-        values.put(Groups.ACCOUNT_NAME, accountName);
-        values.put(Groups.DATA_SET, dataSet);
-        values.put(Groups.TITLE, label);
-
-        final ContentResolver resolver = getContentResolver();
-
         // Create the new group
-        final Uri groupUri = resolver.insert(Groups.CONTENT_URI, values);
+        final Uri groupUri = mGroupsDao.create(label,
+                new AccountWithDataSet(accountName, accountType, dataSet));
+        final ContentResolver resolver = getContentResolver();
 
         // If there's no URI, then the insertion failed. Abort early because group members can't be
         // added if the group doesn't exist
@@ -714,8 +795,10 @@ public class ContactSaveService extends IntentService {
         // Add new group members
         addMembersToGroup(resolver, rawContactsToAdd, ContentUris.parseId(groupUri));
 
+        ContentValues values = new ContentValues();
         // TODO: Move this into the contact editor where it belongs. This needs to be integrated
-        // with the way other intent extras that are passed to the {@link ContactEditorActivity}.
+        // with the way other intent extras that are passed to the
+        // {@link ContactEditorActivity}.
         values.clear();
         values.put(Data.MIMETYPE, GroupMembership.CONTENT_ITEM_TYPE);
         values.put(GroupMembership.GROUP_ROW_ID, ContentUris.parseId(groupUri));
@@ -768,9 +851,10 @@ public class ContactSaveService extends IntentService {
      * Creates an intent that can be sent to this service to delete a group.
      */
     public static Intent createGroupDeletionIntent(Context context, long groupId) {
-        Intent serviceIntent = new Intent(context, ContactSaveService.class);
+        final Intent serviceIntent = new Intent(context, ContactSaveService.class);
         serviceIntent.setAction(ContactSaveService.ACTION_DELETE_GROUP);
         serviceIntent.putExtra(ContactSaveService.EXTRA_GROUP_ID, groupId);
+
         return serviceIntent;
     }
 
@@ -780,10 +864,32 @@ public class ContactSaveService extends IntentService {
             Log.e(TAG, "Invalid arguments for deleteGroup request");
             return;
         }
+        final Uri groupUri = ContentUris.withAppendedId(Groups.CONTENT_URI, groupId);
 
-        getContentResolver().delete(
-                ContentUris.withAppendedId(Groups.CONTENT_URI, groupId), null, null);
+        final Intent callbackIntent = new Intent(BROADCAST_GROUP_DELETED);
+        final Bundle undoData = mGroupsDao.captureDeletionUndoData(groupUri);
+        callbackIntent.putExtra(EXTRA_UNDO_ACTION, ACTION_DELETE_GROUP);
+        callbackIntent.putExtra(EXTRA_UNDO_DATA, undoData);
+
+        mGroupsDao.delete(groupUri);
+
+        LocalBroadcastManager.getInstance(this).sendBroadcast(callbackIntent);
     }
+
+    public static Intent createUndoIntent(Context context, Intent resultIntent) {
+        final Intent serviceIntent = new Intent(context, ContactSaveService.class);
+        serviceIntent.setAction(ContactSaveService.ACTION_UNDO);
+        serviceIntent.putExtras(resultIntent);
+        return serviceIntent;
+    }
+
+    private void undo(Intent intent) {
+        final String actionToUndo = intent.getStringExtra(EXTRA_UNDO_ACTION);
+        if (ACTION_DELETE_GROUP.equals(actionToUndo)) {
+            mGroupsDao.undoDeletion(intent.getBundleExtra(EXTRA_UNDO_DATA));
+        }
+    }
+
 
     /**
      * Creates an intent that can be sent to this service to rename a group as
@@ -849,7 +955,7 @@ public class ContactSaveService extends IntentService {
         deliverCallback(callbackIntent);
     }
 
-    private static void addMembersToGroup(ContentResolver resolver, long[] rawContactsToAdd,
+    private void addMembersToGroup(ContentResolver resolver, long[] rawContactsToAdd,
             long groupId) {
         if (rawContactsToAdd == null) {
             return;
@@ -889,14 +995,16 @@ public class ContactSaveService extends IntentService {
                 }
             } catch (RemoteException e) {
                 // Something went wrong, bail without success
-                Log.e(TAG, "Problem persisting user edits for raw contact ID " +
-                        String.valueOf(rawContactId), e);
+                FeedbackHelper.sendFeedback(this, TAG,
+                        "Problem persisting user edits for raw contact ID " +
+                                String.valueOf(rawContactId), e);
             } catch (OperationApplicationException e) {
                 // The assert could have failed because the contact is already in the group,
                 // just continue to the next contact
-                Log.w(TAG, "Assert failed in adding raw contact ID " +
-                        String.valueOf(rawContactId) + ". Already exists in group " +
-                        String.valueOf(groupId), e);
+                FeedbackHelper.sendFeedback(this, TAG,
+                        "Assert failed in adding raw contact ID " +
+                                String.valueOf(rawContactId) + ". Already exists in group " +
+                                String.valueOf(groupId), e);
             }
         }
     }
@@ -1074,10 +1182,11 @@ public class ContactSaveService extends IntentService {
      * Creates an intent that can be sent to this service to delete multiple contacts.
      */
     public static Intent createDeleteMultipleContactsIntent(Context context,
-            long[] contactIds) {
+            long[] contactIds, final String[] names) {
         Intent serviceIntent = new Intent(context, ContactSaveService.class);
         serviceIntent.setAction(ContactSaveService.ACTION_DELETE_MULTIPLE_CONTACTS);
         serviceIntent.putExtra(ContactSaveService.EXTRA_CONTACT_IDS, contactIds);
+        serviceIntent.putExtra(ContactSaveService.EXTRA_DISPLAY_NAME_ARRAY, names);
         return serviceIntent;
     }
 
@@ -1101,8 +1210,23 @@ public class ContactSaveService extends IntentService {
             final Uri contactUri = ContentUris.withAppendedId(Contacts.CONTENT_URI, contactId);
             getContentResolver().delete(contactUri, null, null);
         }
-        final String deleteToastMessage = getResources().getQuantityString(R.plurals
-                .contacts_deleted_toast, contactIds.length);
+        final String[] names = intent.getStringArrayExtra(
+                ContactSaveService.EXTRA_DISPLAY_NAME_ARRAY);
+        final String deleteToastMessage;
+        if (contactIds.length != names.length || names.length == 0) {
+            deleteToastMessage = getResources().getQuantityString(
+                    R.plurals.contacts_deleted_toast, contactIds.length);
+        } else if (names.length == 1) {
+            deleteToastMessage = getResources().getString(
+                    R.string.contacts_deleted_one_named_toast, names);
+        } else if (names.length == 2) {
+            deleteToastMessage = getResources().getString(
+                    R.string.contacts_deleted_two_named_toast, names);
+        } else {
+            deleteToastMessage = getResources().getString(
+                    R.string.contacts_deleted_many_named_toast, names);
+        }
+
         mMainHandler.post(new Runnable() {
             @Override
             public void run() {
@@ -1110,6 +1234,106 @@ public class ContactSaveService extends IntentService {
                         .show();
             }
         });
+    }
+
+    /**
+     * Creates an intent that can be sent to this service to split a contact into it's constituent
+     * pieces. This will set the raw contact ids to {@link AggregationExceptions#TYPE_AUTOMATIC} so
+     * they may be re-merged by the auto-aggregator.
+     */
+    public static Intent createSplitContactIntent(Context context, long[][] rawContactIds,
+            ResultReceiver receiver) {
+        final Intent serviceIntent = new Intent(context, ContactSaveService.class);
+        serviceIntent.setAction(ContactSaveService.ACTION_SPLIT_CONTACT);
+        serviceIntent.putExtra(ContactSaveService.EXTRA_RAW_CONTACT_IDS, rawContactIds);
+        serviceIntent.putExtra(ContactSaveService.EXTRA_RESULT_RECEIVER, receiver);
+        return serviceIntent;
+    }
+
+    /**
+     * Creates an intent that can be sent to this service to split a contact into it's constituent
+     * pieces. This will explicitly set the raw contact ids to
+     * {@link AggregationExceptions#TYPE_KEEP_SEPARATE}.
+     */
+    public static Intent createHardSplitContactIntent(Context context, long[][] rawContactIds) {
+        final Intent serviceIntent = new Intent(context, ContactSaveService.class);
+        serviceIntent.setAction(ContactSaveService.ACTION_SPLIT_CONTACT);
+        serviceIntent.putExtra(ContactSaveService.EXTRA_RAW_CONTACT_IDS, rawContactIds);
+        serviceIntent.putExtra(ContactSaveService.EXTRA_HARD_SPLIT, true);
+        return serviceIntent;
+    }
+
+    private void splitContact(Intent intent) {
+        final long rawContactIds[][] = (long[][]) intent
+                .getSerializableExtra(EXTRA_RAW_CONTACT_IDS);
+        final ResultReceiver receiver = intent.getParcelableExtra(EXTRA_RESULT_RECEIVER);
+        final boolean hardSplit = intent.getBooleanExtra(EXTRA_HARD_SPLIT, false);
+        if (rawContactIds == null) {
+            Log.e(TAG, "Invalid argument for splitContact request");
+            if (receiver != null) {
+                receiver.send(BAD_ARGUMENTS, new Bundle());
+            }
+            return;
+        }
+        final int batchSize = MAX_CONTACTS_PROVIDER_BATCH_SIZE;
+        final ContentResolver resolver = getContentResolver();
+        final ArrayList<ContentProviderOperation> operations = new ArrayList<>(batchSize);
+        for (int i = 0; i < rawContactIds.length; i++) {
+            for (int j = 0; j < rawContactIds.length; j++) {
+                if (i != j) {
+                    if (!buildSplitTwoContacts(operations, rawContactIds[i], rawContactIds[j],
+                            hardSplit)) {
+                        if (receiver != null) {
+                            receiver.send(CP2_ERROR, new Bundle());
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+        if (operations.size() > 0 && !applyOperations(resolver, operations)) {
+            if (receiver != null) {
+                receiver.send(CP2_ERROR, new Bundle());
+            }
+            return;
+        }
+        LocalBroadcastManager.getInstance(this)
+                .sendBroadcast(new Intent(BROADCAST_UNLINK_COMPLETE));
+        if (receiver != null) {
+            receiver.send(CONTACTS_SPLIT, new Bundle());
+        } else {
+            showToast(R.string.contactUnlinkedToast);
+        }
+    }
+
+    /**
+     * Insert aggregation exception ContentProviderOperations between {@param rawContactIds1}
+     * and {@param rawContactIds2} to {@param operations}.
+     * @return false if an error occurred, true otherwise.
+     */
+    private boolean buildSplitTwoContacts(ArrayList<ContentProviderOperation> operations,
+            long[] rawContactIds1, long[] rawContactIds2, boolean hardSplit) {
+        if (rawContactIds1 == null || rawContactIds2 == null) {
+            Log.e(TAG, "Invalid arguments for splitContact request");
+            return false;
+        }
+        // For each pair of raw contacts, insert an aggregation exception
+        final ContentResolver resolver = getContentResolver();
+        // The maximum number of operations per batch (aka yield point) is 500. See b/22480225
+        final int batchSize = MAX_CONTACTS_PROVIDER_BATCH_SIZE;
+        for (int i = 0; i < rawContactIds1.length; i++) {
+            for (int j = 0; j < rawContactIds2.length; j++) {
+                buildSplitContactDiff(operations, rawContactIds1[i], rawContactIds2[j], hardSplit);
+                // Before we get to 500 we need to flush the operations list
+                if (operations.size() > 0 && operations.size() % batchSize == 0) {
+                    if (!applyOperations(resolver, operations)) {
+                        return false;
+                    }
+                    operations.clear();
+                }
+            }
+        }
+        return true;
     }
 
     /**
@@ -1135,13 +1359,22 @@ public class ContactSaveService extends IntentService {
      * Creates an intent to join all raw contacts inside {@param contactIds}'s contacts.
      * No special attention is paid to where the resulting contact's name is taken from.
      */
-    public static Intent createJoinSeveralContactsIntent(Context context, long[] contactIds) {
-        Intent serviceIntent = new Intent(context, ContactSaveService.class);
+    public static Intent createJoinSeveralContactsIntent(Context context, long[] contactIds,
+            ResultReceiver receiver) {
+        final Intent serviceIntent = new Intent(context, ContactSaveService.class);
         serviceIntent.setAction(ContactSaveService.ACTION_JOIN_SEVERAL_CONTACTS);
         serviceIntent.putExtra(ContactSaveService.EXTRA_CONTACT_IDS, contactIds);
+        serviceIntent.putExtra(ContactSaveService.EXTRA_RESULT_RECEIVER, receiver);
         return serviceIntent;
     }
 
+    /**
+     * Creates an intent to join all raw contacts inside {@param contactIds}'s contacts.
+     * No special attention is paid to where the resulting contact's name is taken from.
+     */
+    public static Intent createJoinSeveralContactsIntent(Context context, long[] contactIds) {
+        return createJoinSeveralContactsIntent(context, contactIds, /* receiver = */ null);
+    }
 
     private interface JoinContactQuery {
         String[] PROJECTION = {
@@ -1174,10 +1407,16 @@ public class ContactSaveService extends IntentService {
     private void joinSeveralContacts(Intent intent) {
         final long[] contactIds = intent.getLongArrayExtra(EXTRA_CONTACT_IDS);
 
+        final ResultReceiver receiver = intent.getParcelableExtra(EXTRA_RESULT_RECEIVER);
+
         // Load raw contact IDs for all contacts involved.
-        long rawContactIds[] = getRawContactIdsForAggregation(contactIds);
+        final long rawContactIds[] = getRawContactIdsForAggregation(contactIds);
+        final long[][] separatedRawContactIds = getSeparatedRawContactIds(contactIds);
         if (rawContactIds == null) {
             Log.e(TAG, "Invalid arguments for joinSeveralContacts request");
+            if (receiver != null) {
+                receiver.send(BAD_ARGUMENTS, new Bundle());
+            }
             return;
         }
 
@@ -1193,32 +1432,107 @@ public class ContactSaveService extends IntentService {
                 }
                 // Before we get to 500 we need to flush the operations list
                 if (operations.size() > 0 && operations.size() % batchSize == 0) {
-                    if (!applyJoinOperations(resolver, operations)) {
+                    if (!applyOperations(resolver, operations)) {
+                        if (receiver != null) {
+                            receiver.send(CP2_ERROR, new Bundle());
+                        }
                         return;
                     }
                     operations.clear();
                 }
             }
         }
-        if (operations.size() > 0 && !applyJoinOperations(resolver, operations)) {
+        if (operations.size() > 0 && !applyOperations(resolver, operations)) {
+            if (receiver != null) {
+                receiver.send(CP2_ERROR, new Bundle());
+            }
             return;
         }
-        showToast(R.string.contactsJoinedMessage);
+
+
+        final String name = queryNameOfLinkedContacts(contactIds);
+        if (name != null) {
+            if (receiver != null) {
+                final Bundle result = new Bundle();
+                result.putSerializable(EXTRA_RAW_CONTACT_IDS, separatedRawContactIds);
+                result.putString(EXTRA_DISPLAY_NAME, name);
+                receiver.send(CONTACTS_LINKED, result);
+            } else {
+                if (TextUtils.isEmpty(name)) {
+                    showToast(R.string.contactsJoinedMessage);
+                } else {
+                    showToast(R.string.contactsJoinedNamedMessage, name);
+                }
+            }
+            LocalBroadcastManager.getInstance(this)
+                    .sendBroadcast(new Intent(BROADCAST_LINK_COMPLETE));
+        } else {
+            if (receiver != null) {
+                receiver.send(CP2_ERROR, new Bundle());
+            }
+            showToast(R.string.contactJoinErrorToast);
+        }
+    }
+
+    /** Get the display name of the top-level contact after the contacts have been linked. */
+    private String queryNameOfLinkedContacts(long[] contactIds) {
+        final StringBuilder whereBuilder = new StringBuilder(Contacts._ID).append(" IN (");
+        final String[] whereArgs = new String[contactIds.length];
+        for (int i = 0; i < contactIds.length; i++) {
+            whereArgs[i] = String.valueOf(contactIds[i]);
+            whereBuilder.append("?,");
+        }
+        whereBuilder.deleteCharAt(whereBuilder.length() - 1).append(')');
+        final Cursor cursor = getContentResolver().query(Contacts.CONTENT_URI,
+                new String[]{Contacts._ID, Contacts.DISPLAY_NAME,
+                        Contacts.DISPLAY_NAME_ALTERNATIVE},
+                whereBuilder.toString(), whereArgs, null);
+
+        String name = null;
+        String nameAlt = null;
+        long contactId = 0;
+        try {
+            if (cursor.moveToFirst()) {
+                contactId = cursor.getLong(0);
+                name = cursor.getString(1);
+                nameAlt = cursor.getString(2);
+            }
+            while(cursor.moveToNext()) {
+                if (cursor.getLong(0) != contactId) {
+                    return null;
+                }
+            }
+
+            final String formattedName = ContactDisplayUtils.getPreferredDisplayName(name, nameAlt,
+                    new ContactsPreferences(getApplicationContext()));
+            return formattedName == null ? "" : formattedName;
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
     }
 
     /** Returns true if the batch was successfully applied and false otherwise. */
-    private boolean applyJoinOperations(ContentResolver resolver,
+    private boolean applyOperations(ContentResolver resolver,
             ArrayList<ContentProviderOperation> operations) {
         try {
-            resolver.applyBatch(ContactsContract.AUTHORITY, operations);
+            final ContentProviderResult[] result =
+                    resolver.applyBatch(ContactsContract.AUTHORITY, operations);
+            for (int i = 0; i < result.length; ++i) {
+                // if no rows were modified in the operation then we count it as fail.
+                if (result[i].count < 0) {
+                    throw new OperationApplicationException();
+                }
+            }
             return true;
         } catch (RemoteException | OperationApplicationException e) {
-            Log.e(TAG, "Failed to apply aggregation exception batch", e);
+            FeedbackHelper.sendFeedback(this, TAG,
+                    "Failed to apply aggregation exception batch", e);
             showToast(R.string.contactSavedErrorToast);
             return false;
         }
     }
-
 
     private void joinContacts(Intent intent) {
         long contactId1 = intent.getLongExtra(EXTRA_CONTACT_ID1, -1);
@@ -1276,24 +1590,73 @@ public class ContactSaveService extends IntentService {
             operations.add(builder.build());
         }
 
-        boolean success = false;
         // Apply all aggregation exceptions as one batch
-        try {
-            resolver.applyBatch(ContactsContract.AUTHORITY, operations);
-            showToast(R.string.contactsJoinedMessage);
-            success = true;
-        } catch (RemoteException | OperationApplicationException e) {
-            Log.e(TAG, "Failed to apply aggregation exception batch", e);
-            showToast(R.string.contactSavedErrorToast);
-        }
+        final boolean success = applyOperations(resolver, operations);
 
+        final String name = queryNameOfLinkedContacts(new long[] {contactId1, contactId2});
         Intent callbackIntent = intent.getParcelableExtra(EXTRA_CALLBACK_INTENT);
-        if (success) {
+        if (success && name != null) {
+            if (TextUtils.isEmpty(name)) {
+                showToast(R.string.contactsJoinedMessage);
+            } else {
+                showToast(R.string.contactsJoinedNamedMessage, name);
+            }
             Uri uri = RawContacts.getContactLookupUri(resolver,
                     ContentUris.withAppendedId(RawContacts.CONTENT_URI, rawContactIds[0]));
             callbackIntent.setData(uri);
+            LocalBroadcastManager.getInstance(this)
+                    .sendBroadcast(new Intent(BROADCAST_LINK_COMPLETE));
         }
         deliverCallback(callbackIntent);
+    }
+
+    /**
+     * Gets the raw contact ids for each contact id in {@param contactIds}. Each index of the outer
+     * array of the return value holds an array of raw contact ids for one contactId.
+     * @param contactIds
+     * @return
+     */
+    private long[][] getSeparatedRawContactIds(long[] contactIds) {
+        final long[][] rawContactIds = new long[contactIds.length][];
+        for (int i = 0; i < contactIds.length; i++) {
+            rawContactIds[i] = getRawContactIds(contactIds[i]);
+        }
+        return rawContactIds;
+    }
+
+    /**
+     * Gets the raw contact ids associated with {@param contactId}.
+     * @param contactId
+     * @return Array of raw contact ids.
+     */
+    private long[] getRawContactIds(long contactId) {
+        final ContentResolver resolver = getContentResolver();
+        long rawContactIds[];
+
+        final StringBuilder queryBuilder = new StringBuilder();
+            queryBuilder.append(RawContacts.CONTACT_ID)
+                    .append("=")
+                    .append(String.valueOf(contactId));
+
+        final Cursor c = resolver.query(RawContacts.CONTENT_URI,
+                JoinContactQuery.PROJECTION,
+                queryBuilder.toString(),
+                null, null);
+        if (c == null) {
+            Log.e(TAG, "Unable to open Contacts DB cursor");
+            return null;
+        }
+        try {
+            rawContactIds = new long[c.getCount()];
+            for (int i = 0; i < rawContactIds.length; i++) {
+                c.moveToPosition(i);
+                final long rawContactId = c.getLong(JoinContactQuery._ID);
+                rawContactIds[i] = rawContactId;
+            }
+        } finally {
+            c.close();
+        }
+        return rawContactIds;
     }
 
     private long[] getRawContactIdsForAggregation(long[] contactIds) {
@@ -1302,7 +1665,6 @@ public class ContactSaveService extends IntentService {
         }
 
         final ContentResolver resolver = getContentResolver();
-        long rawContactIds[];
 
         final StringBuilder queryBuilder = new StringBuilder();
         final String stringContactIds[] = new String[contactIds.length];
@@ -1327,6 +1689,7 @@ public class ContactSaveService extends IntentService {
             showToast(R.string.contactSavedErrorToast);
             return null;
         }
+        long rawContactIds[];
         try {
             if (c.getCount() < 2) {
                 Log.e(TAG, "Not enough raw contacts to aggregate together.");
@@ -1362,6 +1725,67 @@ public class ContactSaveService extends IntentService {
     }
 
     /**
+     * Construct a {@link AggregationExceptions#TYPE_AUTOMATIC} or a
+     * {@link AggregationExceptions#TYPE_KEEP_SEPARATE} ContentProviderOperation if a hard split is
+     * requested.
+     */
+    private void buildSplitContactDiff(ArrayList<ContentProviderOperation> operations,
+            long rawContactId1, long rawContactId2, boolean hardSplit) {
+        final Builder builder =
+                ContentProviderOperation.newUpdate(AggregationExceptions.CONTENT_URI);
+        builder.withValue(AggregationExceptions.TYPE,
+                hardSplit
+                        ? AggregationExceptions.TYPE_KEEP_SEPARATE
+                        : AggregationExceptions.TYPE_AUTOMATIC);
+        builder.withValue(AggregationExceptions.RAW_CONTACT_ID1, rawContactId1);
+        builder.withValue(AggregationExceptions.RAW_CONTACT_ID2, rawContactId2);
+        operations.add(builder.build());
+    }
+
+    /**
+     * Returns an intent that can start this service and cause it to sleep for the specified time.
+     *
+     * This exists purely for debugging and manual testing. Since this service uses a single thread
+     * it is useful to have a way to test behavior when work is queued up and most of the other
+     * operations complete too quickly to simulate that under normal conditions.
+     */
+    public static Intent createSleepIntent(Context context, long millis) {
+        return new Intent(context, ContactSaveService.class).setAction(ACTION_SLEEP)
+                .putExtra(EXTRA_SLEEP_DURATION, millis);
+    }
+
+    private void sleepForDebugging(Intent intent) {
+        long duration = intent.getLongExtra(EXTRA_SLEEP_DURATION, 1000);
+        if (Log.isLoggable(TAG, Log.DEBUG)) {
+            Log.d(TAG, "sleeping for " + duration + "ms");
+        }
+        try {
+            Thread.sleep(duration);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (Log.isLoggable(TAG, Log.DEBUG)) {
+            Log.d(TAG, "finished sleeping");
+        }
+    }
+
+    /**
+     * Shows a toast on the UI thread by formatting messageId using args.
+     * @param messageId id of message string
+     * @param args args to format string
+     */
+    private void showToast(final int messageId, final Object... args) {
+        final String message = getResources().getString(messageId, args);
+        mMainHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(ContactSaveService.this, message, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+
+    /**
      * Shows a toast on the UI thread.
      */
     private void showToast(final int message) {
@@ -1394,6 +1818,166 @@ public class ContactSaveService extends IntentService {
                 listener.onServiceCompleted(callbackIntent);
                 return;
             }
+        }
+    }
+
+    public interface GroupsDao {
+        Uri create(String title, AccountWithDataSet account);
+        int delete(Uri groupUri);
+        Bundle captureDeletionUndoData(Uri groupUri);
+        Uri undoDeletion(Bundle undoData);
+    }
+
+    public static class GroupsDaoImpl implements GroupsDao {
+        public static final String KEY_GROUP_DATA = "groupData";
+        public static final String KEY_GROUP_MEMBERS = "groupMemberIds";
+
+        private static final String TAG = "GroupsDao";
+        private final Context context;
+        private final ContentResolver contentResolver;
+
+        public GroupsDaoImpl(Context context) {
+            this(context, context.getContentResolver());
+        }
+
+        public GroupsDaoImpl(Context context, ContentResolver contentResolver) {
+            this.context = context;
+            this.contentResolver = contentResolver;
+        }
+
+        public Bundle captureDeletionUndoData(Uri groupUri) {
+            final long groupId = ContentUris.parseId(groupUri);
+            final Bundle result = new Bundle();
+
+            final Cursor cursor = contentResolver.query(groupUri,
+                    new String[]{
+                            Groups.TITLE, Groups.NOTES, Groups.GROUP_VISIBLE,
+                            Groups.ACCOUNT_TYPE, Groups.ACCOUNT_NAME, Groups.DATA_SET,
+                            Groups.SHOULD_SYNC
+                    },
+                    Groups.DELETED + "=?", new String[] { "0" }, null);
+            try {
+                if (cursor.moveToFirst()) {
+                    final ContentValues groupValues = new ContentValues();
+                    DatabaseUtils.cursorRowToContentValues(cursor, groupValues);
+                    result.putParcelable(KEY_GROUP_DATA, groupValues);
+                } else {
+                    // Group doesn't exist.
+                    return result;
+                }
+            } finally {
+                cursor.close();
+            }
+
+            final Cursor membersCursor = contentResolver.query(
+                    Data.CONTENT_URI, new String[] { Data.RAW_CONTACT_ID },
+                    Data.MIMETYPE + "=? AND " + GroupMembership.GROUP_ROW_ID + "=?",
+                    new String[] { GroupMembership.CONTENT_ITEM_TYPE, String.valueOf(groupId) }, null);
+            final long[] memberIds = new long[membersCursor.getCount()];
+            int i = 0;
+            while (membersCursor.moveToNext()) {
+                memberIds[i++] = membersCursor.getLong(0);
+            }
+            result.putLongArray(KEY_GROUP_MEMBERS, memberIds);
+            return result;
+        }
+
+        public Uri undoDeletion(Bundle deletedGroupData) {
+            final ContentValues groupData = deletedGroupData.getParcelable(KEY_GROUP_DATA);
+            if (groupData == null) {
+                return null;
+            }
+            final Uri groupUri = contentResolver.insert(Groups.CONTENT_URI, groupData);
+            final long groupId = ContentUris.parseId(groupUri);
+
+            final long[] memberIds = deletedGroupData.getLongArray(KEY_GROUP_MEMBERS);
+            if (memberIds == null) {
+                return groupUri;
+            }
+            final ContentValues[] memberInsertions = new ContentValues[memberIds.length];
+            for (int i = 0; i < memberIds.length; i++) {
+                memberInsertions[i] = new ContentValues();
+                memberInsertions[i].put(Data.RAW_CONTACT_ID, memberIds[i]);
+                memberInsertions[i].put(Data.MIMETYPE, GroupMembership.CONTENT_ITEM_TYPE);
+                memberInsertions[i].put(GroupMembership.GROUP_ROW_ID, groupId);
+            }
+            final int inserted = contentResolver.bulkInsert(Data.CONTENT_URI, memberInsertions);
+            if (inserted != memberIds.length) {
+                Log.e(TAG, "Could not recover some members for group deletion undo");
+            }
+
+            return groupUri;
+        }
+
+        public Uri create(String title, AccountWithDataSet account) {
+            final ContentValues values = new ContentValues();
+            values.put(Groups.TITLE, title);
+            values.put(Groups.ACCOUNT_NAME, account.name);
+            values.put(Groups.ACCOUNT_TYPE, account.type);
+            values.put(Groups.DATA_SET, account.dataSet);
+            return contentResolver.insert(Groups.CONTENT_URI, values);
+        }
+
+        public int delete(Uri groupUri) {
+            return contentResolver.delete(groupUri, null, null);
+        }
+    }
+
+    /**
+     * Keeps track of which operations have been requested but have not yet finished for this
+     * service.
+     */
+    public static class State {
+        private final CopyOnWriteArrayList<Intent> mPending;
+
+        public State() {
+            mPending = new CopyOnWriteArrayList<>();
+        }
+
+        public State(Collection<Intent> pendingActions) {
+            mPending = new CopyOnWriteArrayList<>(pendingActions);
+        }
+
+        public boolean isIdle() {
+            return mPending.isEmpty();
+        }
+
+        public Intent getCurrentIntent() {
+            return mPending.isEmpty() ? null : mPending.get(0);
+        }
+
+        /**
+         * Returns the first intent requested that has the specified action or null if no intent
+         * with that action has been requested.
+         */
+        public Intent getNextIntentWithAction(String action) {
+            for (Intent intent : mPending) {
+                if (action.equals(intent.getAction())) {
+                    return intent;
+                }
+            }
+            return null;
+        }
+
+        public boolean isActionPending(String action) {
+            return getNextIntentWithAction(action) != null;
+        }
+
+        private void onFinish(Intent intent) {
+            if (mPending.isEmpty()) {
+                return;
+            }
+            final String action = mPending.get(0).getAction();
+            if (action.equals(intent.getAction())) {
+                mPending.remove(0);
+            }
+        }
+
+        private void onStart(Intent intent) {
+            if (intent.getAction() == null) {
+                return;
+            }
+            mPending.add(intent);
         }
     }
 }

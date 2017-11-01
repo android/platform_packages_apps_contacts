@@ -48,7 +48,7 @@ public class JoinContactConfirmationDialogFragment extends DialogFragment {
     /**
      * @param joinContactId The raw contact ID of the contact to join to after confirmation.
      */
-    public static void show(ContactEditorBaseFragment fragment, long joinContactId) {
+    public static void show(ContactEditorFragment fragment, long joinContactId) {
         final Bundle args = new Bundle();
         args.putLong(ARG_JOIN_CONTACT_ID, joinContactId);
 

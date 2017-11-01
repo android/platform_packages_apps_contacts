@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2011 The Android Open Source Project
 
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
 <resources>
-    <integer name="contact_tile_column_count">2</integer>
-    <!--  Determines the number of columns in a ContactTileRow in the favorites tab -->
-    <integer name="contact_tile_column_count_in_favorites">4</integer>
+    <!-- Top margin ratio for the image for empty group view -->
+    <integer name="empty_group_view_image_margin_divisor">4</integer>
+
+    <!-- The number of characters in the snippet before we need to tokenize and ellipse. -->
+    <!-- Yikes, there is less space on a tablet!  This makes the search experience rather
+         poor. Another reason to get rid of the exist tablet layout. -->
+    <integer name="snippet_length_before_tokenize">15</integer>
 </resources>

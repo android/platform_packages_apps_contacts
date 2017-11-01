@@ -21,18 +21,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
 
-import com.android.contacts.common.testing.NeededForTesting;
 import com.google.common.annotations.VisibleForTesting;
 
 /**
  * A general purpose adapter that is composed of multiple sub-adapters. It just
  * appends them in the order they are added. It listens to changes from all
  * sub-adapters and propagates them to its own listeners.
- *
- * This class not used for now -- but let's keep running the test in case we want to revive it...
- * (So NeededForTesting)
  */
-@NeededForTesting
 public class CompositeListAdapter extends BaseAdapter {
 
     private static final int INITIAL_CAPACITY = 2;

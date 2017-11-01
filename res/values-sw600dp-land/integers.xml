@@ -14,15 +14,19 @@
      limitations under the License.
 -->
 <resources>
-    <!--  Determines the number of columns in a ContactTileRow in the favorites tab -->
-    <integer name="contact_tile_column_count_in_favorites">5</integer>
-
-    <integer name="contact_tile_column_count">3</integer>
-
     <!-- Layout weight of space elements in PeopleActivity for favorites list and all
     contacts list-->
     <integer name="contact_list_space_layout_weight">1</integer>
     <!-- Layout weight of ListViews in PeopleActivityfor tile favorites list and all
          contacts list in PeopleActivity -->
     <integer name="contact_list_card_layout_weight">6</integer>
+
+    <!-- Top margin ratio for the image for empty group view -->
+    <integer name="empty_group_view_image_margin_divisor">8</integer>
+
+    <!-- Top margin ratio for the image for empty account view -->
+    <integer name="empty_account_view_image_margin_divisor">5</integer>
+
+    <!-- The number of characters in the snippet before we need to tokenize and ellipse. -->
+    <integer name="snippet_length_before_tokenize">20</integer>
 </resources>

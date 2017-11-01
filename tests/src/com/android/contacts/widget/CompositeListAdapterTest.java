@@ -18,6 +18,7 @@ package com.android.contacts.widget;
 import android.content.Context;
 import android.database.DataSetObserver;
 import android.test.AndroidTestCase;
+import android.test.suitebuilder.annotation.SmallTest;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -32,6 +33,7 @@ import java.util.List;
 /**
  * Tests for {@link CompositeListAdapter}.
  */
+@SmallTest
 public class CompositeListAdapterTest extends AndroidTestCase {
 
     private final class MockAdapter extends ArrayAdapter<String> {

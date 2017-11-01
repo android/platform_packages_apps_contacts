@@ -18,14 +18,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingLeft="25dip"
-    android:paddingRight="25dip"
-    android:paddingStart="25dip"
-    android:paddingEnd="25dip"
-    android:paddingTop="25dip"
-    android:paddingBottom="25dip">
+    android:paddingStart="@dimen/custom_dialog_layout_padding"
+    android:paddingEnd="@dimen/custom_dialog_layout_padding"
+    android:paddingTop="@dimen/custom_dialog_layout_padding">
+
     <EditText
         android:id="@+id/custom_dialog_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/custom_dialog_layout"
+        android:layout_marginEnd="@dimen/custom_dialog_layout"
+        android:hint="@string/label_name_dialog_hint"
+        android:minWidth="@dimen/custom_dialog_min_width"
+        android:minHeight="@dimen/dialog_edit_text_min_height"
+        android:lines="1"
+        android:textAlignment="viewStart"/>
 </FrameLayout>

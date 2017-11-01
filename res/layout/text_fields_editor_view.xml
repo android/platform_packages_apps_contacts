@@ -43,6 +43,6 @@
     <include
         android:id="@+id/delete_button_container"
         layout="@layout/edit_delete_button"
-        android:visibility="gone" />
+        android:visibility="invisible" />
 
 </com.android.contacts.editor.TextFieldsEditorView>

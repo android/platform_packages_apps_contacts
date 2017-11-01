@@ -15,12 +15,10 @@
  */
 package com.android.contacts.interactions;
 
-import com.android.contacts.common.R;
-
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.test.AndroidTestCase;
-import android.text.format.DateUtils;
+import android.test.suitebuilder.annotation.SmallTest;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -28,6 +26,7 @@ import java.util.Locale;
 /**
  * Tests for utility functions in {@link ContactInteractionUtil}
  */
+@SmallTest
 public class ContactInteractionUtilTest extends AndroidTestCase {
 
     private Locale mOriginalLocale;
@@ -80,52 +79,42 @@ public class ContactInteractionUtilTest extends AndroidTestCase {
                         getContext()));
     }
 
-    public void testFormatDateStringFromTimestamp_yesterday() {
-        // Test yesterday and tomorrow (Yesterday or Tomorrow shown)
-        calendar.add(Calendar.DAY_OF_YEAR, -1);
-        assertEquals(getContext().getResources().getString(R.string.yesterday),
-                ContactInteractionUtil.formatDateStringFromTimestamp(calendar.getTimeInMillis(),
-                        getContext()));
-    }
-
-    public void testFormatDateStringFromTimestamp_yesterdayLastYear() {
-        // Set to non leap year
-        calendar.set(Calendar.YEAR, 1999);
-        calendar.set(Calendar.DAY_OF_YEAR, 365);
-        long lastYear = calendar.getTimeInMillis();
-        calendar.add(Calendar.DAY_OF_YEAR, 1);
-
-        assertEquals(getContext().getResources().getString(R.string.yesterday),
-                ContactInteractionUtil.formatDateStringFromTimestamp(lastYear,
-                        getContext(), calendar));
-    }
-
-    public void testFormatDateStringFromTimestamp_tomorrow() {
-        calendar.add(Calendar.DAY_OF_YEAR, 1);
-        assertEquals(getContext().getResources().getString(R.string.tomorrow),
-                ContactInteractionUtil.formatDateStringFromTimestamp(calendar.getTimeInMillis(),
-                        getContext()));
-    }
-
-    public void testFormatDateStringFromTimestamp_tomorrowNewYear() {
-        calendar.set(Calendar.DAY_OF_YEAR, 1);
-        long thisYear = calendar.getTimeInMillis();
-        calendar.add(Calendar.DAY_OF_YEAR, -1);
-
-        assertEquals(getContext().getResources().getString(R.string.tomorrow),
-                ContactInteractionUtil.formatDateStringFromTimestamp(thisYear,
-                        getContext(), calendar));
-    }
-
     public void testFormatDateStringFromTimestamp_other() {
         // Test other (Month Date)
         calendar.set(
                 /* year = */ 1991,
                 /* month = */ Calendar.MONTH,
-                /* day = */ 11);
-        assertEquals("March 11",
+                /* day = */ 11,
+                /* hourOfDay = */ 8,
+                /* minute = */ 8);
+        assertEquals("Monday, March 11, 1991, 8:08 AM",
                 ContactInteractionUtil.formatDateStringFromTimestamp(calendar.getTimeInMillis(),
                         getContext()));
+    }
+
+    public void testFormatDuration_zero() {
+        assertEquals("0 sec",
+                ContactInteractionUtil.formatDuration(0, getContext()));
+    }
+
+    public void testFormatDuration_minZeroSec() {
+        assertEquals("1 min 0 sec",
+                ContactInteractionUtil.formatDuration(60, getContext()));
+    }
+
+    public void testFormatDuration_minSec() {
+        assertEquals("30 min 9 sec",
+                ContactInteractionUtil.formatDuration(1809, getContext()));
+    }
+
+    public void testFormatDuration_hrZeroMinZeroSec() {
+        assertEquals("1 hr 0 min 0 sec",
+                ContactInteractionUtil.formatDuration(3600, getContext()));
+    }
+
+    public void testFormatDuration_hrMinSec() {
+        assertEquals("2 hr 44 min 36 sec",
+                ContactInteractionUtil.formatDuration(9876, getContext()));
     }
 
     private void setLocale(Locale locale) {

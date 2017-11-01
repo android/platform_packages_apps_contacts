@@ -20,7 +20,7 @@
         android:width="24dp"
         android:viewportHeight="192.0"
         android:viewportWidth="192.0">
-  <path android:fillColor="#F5F5F5"
+  <path android:fillColor="@color/ic_add_contact_shortcut_background"
         android:pathData="M96,8C47.38,8 8,47.38 8,96s39.38,88 88,88s88,-39.38 88,-88S144.62,8 96,8z"/>
   <path android:fillColor="#039BE5"
         android:pathData="M124,100h-24v24h-8v-24H68v-8h24V68h8v24h24V100z"/>

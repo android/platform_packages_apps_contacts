@@ -20,12 +20,12 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.android.contacts.common.model.RawContactDelta;
-import com.android.contacts.common.model.ValuesDelta;
-import com.android.contacts.common.model.dataitem.DataKind;
+import com.android.contacts.model.RawContactDelta;
+import com.android.contacts.model.ValuesDelta;
+import com.android.contacts.model.dataitem.DataKind;
 
 /**
- * A class that provides unique view ids for {@link ContentEditorView}, {@link KindSectionView},
+ * A class that provides unique view ids for {@link ContentEditorView},
  * {@link LabeledEditorView} and {@link EditView} on {@link EditContactActivity}.
  * It is used to assign a unique but consistent id to each view across {@link EditContactActivity}'s
  * lifecycle, so that we can re-construct view state (e.g. focused view) when the screen rotates.

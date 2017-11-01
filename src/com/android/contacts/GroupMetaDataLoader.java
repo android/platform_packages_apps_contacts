@@ -20,13 +20,15 @@ import android.content.CursorLoader;
 import android.net.Uri;
 import android.provider.ContactsContract.Groups;
 
+import com.android.contacts.group.GroupUtil;
+
 /**
  * Group meta-data loader. Loads all groups or just a single group from the
  * database (if given a {@link Uri}).
  */
 public final class GroupMetaDataLoader extends CursorLoader {
 
-    private final static String[] COLUMNS = new String[] {
+    public final static String[] COLUMNS = new String[] {
         Groups.ACCOUNT_NAME,
         Groups.ACCOUNT_TYPE,
         Groups.DATA_SET,
@@ -49,8 +51,13 @@ public final class GroupMetaDataLoader extends CursorLoader {
     public final static int DELETED = 8;
 
     public GroupMetaDataLoader(Context context, Uri groupUri) {
-        super(context, ensureIsGroupUri(groupUri), COLUMNS, Groups.ACCOUNT_TYPE + " NOT NULL AND "
-                + Groups.ACCOUNT_NAME + " NOT NULL", null, null);
+        super(context, ensureIsGroupUri(groupUri), COLUMNS, GroupUtil.DEFAULT_SELECTION, null,
+                GroupUtil.getGroupsSortOrder());
+    }
+
+    public GroupMetaDataLoader(Context context, Uri groupUri, String selection) {
+        super(context, ensureIsGroupUri(groupUri), COLUMNS, selection, null,
+                GroupUtil.getGroupsSortOrder());
     }
 
     /**
@@ -62,7 +69,7 @@ public final class GroupMetaDataLoader extends CursorLoader {
         if (groupUri == null) {
             throw new IllegalArgumentException("Uri must not be null");
         }
-        if (!groupUri.toString().startsWith(Groups.CONTENT_URI.toString())) {
+        if (!GroupUtil.isGroupUri(groupUri)) {
             throw new IllegalArgumentException("Invalid group Uri: " + groupUri);
         }
         return groupUri;

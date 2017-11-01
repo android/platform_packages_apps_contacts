@@ -15,16 +15,41 @@
 -->
 
 <resources>
-    <!--  Determines the number of columns in a ContactTileRow in the favorites tab -->
-    <integer name="contact_tile_column_count_in_favorites">3</integer>
-
-    <!-- Determines the number of columns in a ContactTileRow -->
-    <integer name="contact_tile_column_count">2</integer>
 
     <!-- Number of lines the QuickContact title can have -->
     <integer name="quickcontact_title_lines">1</integer>
 
-    <!-- Max suggestions limit showing in quick contact suggestion card [CHAR LIMIT=30]-->
-    <integer name="quickcontact_suggestions_limit">10</integer>
+    <!-- The maximum allowed group name length -->
+    <integer name="group_name_max_length">40</integer>
 
+    <!-- Fade in/out duration of search and selection -->
+    <integer name="action_bar_animation_duration">195</integer>
+
+    <!-- Top margin ratio for the image for empty group view -->
+    <integer name="empty_group_view_image_margin_divisor">6</integer>
+
+    <!-- Top margin ratio for the image for empty account view -->
+    <integer name="empty_account_view_image_margin_divisor">4</integer>
+
+    <!-- Top margin ratio for the image for empty contacts view-->
+    <integer name="contacts_no_account_empty_image_margin_divisor">2</integer>
+
+    <!-- The number of characters in the snippet before we need to tokenize and ellipse. -->
+    <integer name="snippet_length_before_tokenize">30</integer>
+
+    <!-- Layout weight of space elements in contact list view.
+    Default to 0 to indicate no padding-->
+    <integer name="contact_list_space_layout_weight">0</integer>
+    <!-- Layout weight of card in contact list view.
+    Default to 0 to indicate no padding -->
+    <integer name="contact_list_card_layout_weight">0</integer>
+
+    <!-- Duration of the animations on the call subject dialog. -->
+    <integer name="call_subject_animation_duration">250</integer>
+
+    <!-- A big number to make sure "About contacts" always showing at the bottom of Settings.-->
+    <integer name="about_contacts_order_number">100</integer>
+
+    <!-- Duration of the animations when a contact list loads. -->
+    <integer name="lists_on_load_animation_duration">190</integer>
 </resources>

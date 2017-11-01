@@ -25,9 +25,9 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.provider.ContactsContract.CommonDataKinds.SipAddress;
-import android.text.TextUtils;
 
 import com.android.contacts.util.PhoneCapabilityTester;
+
 import com.google.common.collect.Sets;
 
 import java.lang.ref.SoftReference;

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference
+        android:icon="@null"
+        android:key="myInfo"
+        android:title="@string/settings_my_info_title"/>
+
+    <Preference
+        android:icon="@null"
+        android:key="accounts"
+        android:title="@string/settings_accounts">
+    </Preference>
+
+    <com.android.contacts.preference.DefaultAccountPreference
+        android:icon="@null"
+        android:key="defaultAccount"
+        android:title="@string/default_editor_account"
+        android:dialogTitle="@string/default_editor_account" />
+
+    <Preference
+        android:icon="@null"
+        android:key="customContactsFilter"
+        android:title="@string/menu_contacts_filter"/>
+
+    <com.android.contacts.preference.SortOrderPreference
+        android:icon="@null"
+        android:key="sortOrder"
+        android:title="@string/display_options_sort_list_by"
+        android:dialogTitle="@string/display_options_sort_list_by" />
+
+    <com.android.contacts.preference.DisplayOrderPreference
+        android:icon="@null"
+        android:key="displayOrder"
+        android:title="@string/display_options_view_names_as"
+        android:dialogTitle="@string/display_options_view_names_as" />
+
+    <com.android.contacts.preference.PhoneticNameDisplayPreference
+        android:icon="@null"
+        android:key="phoneticNameDisplay"
+        android:title="@string/display_options_phonetic_name_fields"
+        android:dialogTitle="@string/display_options_phonetic_name_fields"/>
+
+    <Preference
+        android:icon="@null"
+        android:key="import"
+        android:title="@string/menu_import"/>
+
+    <Preference
+        android:icon="@null"
+        android:key="export"
+        android:title="@string/menu_export"/>
+
+    <Preference
+        android:icon="@null"
+        android:key="blockedNumbers"
+        android:title="@string/menu_blocked_numbers" />
+
+    <Preference
+        android:icon="@null"
+        android:key="about"
+        android:title="@string/setting_about"
+        android:order="@integer/about_contacts_order_number"/>
+</PreferenceScreen>

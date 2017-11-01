@@ -23,8 +23,9 @@
     <TextView
         android:id="@+id/text"
         style="@style/ContactListSeparatorTextViewStyle"
-        android:paddingLeft="8dip"
-        android:paddingRight="8dip"
-        android:paddingStart="8dip"
-        android:paddingEnd="8dip" />
+        android:textAlignment="viewStart"
+        android:paddingLeft="24dip"
+        android:paddingRight="24dip"
+        android:paddingStart="24dip"
+        android:paddingEnd="24dip"/>
 </LinearLayout>

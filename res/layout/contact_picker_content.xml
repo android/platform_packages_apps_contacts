@@ -21,7 +21,7 @@
     <include layout="@layout/contact_list_card"/>
 
     <view
-        class="com.android.contacts.common.list.PinnedHeaderListView"
+        class="com.android.contacts.list.PinnedHeaderListView"
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

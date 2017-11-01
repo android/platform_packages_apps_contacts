@@ -14,11 +14,15 @@
      limitations under the License.
 -->
 <resources>
-    <!--  Determines the number of columns in a ContactTileRow in the favorites tab -->
-    <integer name="contact_tile_column_count_in_favorites">5</integer>
-
-    <integer name="contact_tile_column_count">4</integer>
-
     <!-- Number of lines the QuickContact title can have -->
     <integer name="quickcontact_title_lines">2</integer>
+
+    <!-- Top margin ratio for the image for empty group view -->
+    <integer name="empty_group_view_image_margin_divisor">12</integer>
+
+    <!-- Top margin ratio for the image for empty account view -->
+    <integer name="empty_account_view_image_margin_divisor">6</integer>
+
+    <!-- The number of characters in the snippet before we need to tokenize and ellipse. -->
+    <integer name="snippet_length_before_tokenize">60</integer>
 </resources>

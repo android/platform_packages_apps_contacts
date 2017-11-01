@@ -28,10 +28,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.contacts.common.ContactPhotoManager.DefaultImageRequest;
-import com.android.contacts.common.list.ContactEntryListAdapter;
-import com.android.contacts.common.list.ContactListItemView;
-import com.android.contacts.common.preference.ContactsPreferences;
+import com.android.contacts.ContactPhotoManager.DefaultImageRequest;
+import com.android.contacts.preference.ContactsPreferences;
 
 /**
  * A cursor adapter for the {@link Email#CONTENT_TYPE} content type.

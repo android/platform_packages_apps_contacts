@@ -16,13 +16,13 @@
 
 package com.android.contacts.editor;
 
-import com.android.contacts.common.model.RawContactDelta;
-import com.android.contacts.common.model.ValuesDelta;
-import com.android.contacts.common.model.account.AccountType;
-import com.android.contacts.common.model.account.AccountType.EditField;
-import com.android.contacts.common.model.dataitem.DataKind;
-
 import android.text.TextUtils;
+
+import com.android.contacts.model.RawContactDelta;
+import com.android.contacts.model.ValuesDelta;
+import com.android.contacts.model.account.AccountType;
+import com.android.contacts.model.account.AccountType.EditField;
+import com.android.contacts.model.dataitem.DataKind;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -117,5 +117,9 @@ public final class KindSectionData {
 
     public RawContactDelta getRawContactDelta() {
         return mRawContactDelta;
+    }
+
+    public String getMimeType() {
+        return mDataKind.mimeType;
     }
 }

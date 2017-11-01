@@ -22,7 +22,6 @@
     android:layout_width="wrap_content"
     android:layout_height="@dimen/editor_min_line_item_height"
     android:layout_gravity="top"
-    android:contentDescription="@string/expand_collapse_name_fields_description"
     android:importantForAccessibility="yes"
     android:focusable="true"
     android:clickable="true">
@@ -32,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:duplicateParentState="true"
+        android:tint="@color/quantum_black_secondary_text"
         android:background="?android:attr/selectableItemBackground"
         android:paddingLeft="@dimen/editor_round_button_padding_left"
         android:paddingRight="@dimen/editor_round_button_padding_right"

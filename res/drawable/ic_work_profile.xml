@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="16dp"
+    android:height="16dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- //java/com/google/android/assets/quantum:ic_enterprise_grey600_16 -->
+
+    <path
+        android:fillColor="#757575"
+        android:pathData="M28 33h-8v-3H6v8c0 2.2 1.8 4 4 4h28c2.2 0 4-1.8
+4-4v-8H28v3zm12-21h-7V9l-3-3H18l-3 3.1V12H8c-2.2 0-4 1.8-4 4v8c0 2.2 1.8 4 4
+4h12v-3h8v3h12c2.2 0 4-1.8 4-4v-8c0-2.2-1.8-4-4-4zm-10 0H18V9h12v3z" />
+    <path
+        android:pathData="M0 0h48v48H0z" />
+</vector>

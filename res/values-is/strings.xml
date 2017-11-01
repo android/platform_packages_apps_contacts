@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2006 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="applicationLabel" msgid="3906689777043645443">"Tengiliðir"</string>
+    <string name="contactsList" msgid="8661624236494819731">"Tengiliðir"</string>
+    <string name="shortcut_add_contact" msgid="7476283631356909204">"Bæta tengilið við"</string>
+    <string name="shortcutContact" msgid="749243779392912958">"Tengiliður"</string>
+    <string name="shortcutDialContact" msgid="746622101599186779">"Bein lína"</string>
+    <string name="shortcutMessageContact" msgid="2460337253595976198">"Bein skilaboð"</string>
+    <string name="shortcutActivityTitle" msgid="1504383567778497348">"Veldu tengilið"</string>
+    <string name="contactInsertOrEditActivityTitle" msgid="6527505405325862674">"Bæta við tengilið"</string>
+    <string name="contactPickerActivityTitle" msgid="4301062192337417640">"Velja tengilið"</string>
+    <string name="groupMemberPickerActivityTitle" msgid="1431750793695262522">"Velja"</string>
+    <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"Búa til nýjan tengilið"</string>
+    <string name="searchHint" msgid="8482945356247760701">"Leita í tengiliðum"</string>
+    <string name="menu_addStar" msgid="2908478235715404876">"Bæta við uppáhald"</string>
+    <string name="menu_removeStar" msgid="5844227078364227030">"Fjarlægja úr uppáhaldi"</string>
+    <string name="description_action_menu_remove_star" msgid="4699640108012265178">"Fjarlægt úr uppáhaldi"</string>
+    <string name="description_action_menu_add_star" msgid="3327186327234177456">"Bætt við uppáhald"</string>
+    <string name="menu_editContact" msgid="9042415603857662633">"Breyta"</string>
+    <string name="menu_deleteContact" msgid="6788644058868189393">"Eyða"</string>
+    <string name="menu_change_photo" msgid="7769177631511496210">"Skipta um mynd"</string>
+    <string name="menu_create_contact_shortcut" msgid="1663022219127343858">"Búa til flýtileið"</string>
+    <string name="menu_splitAggregate" msgid="2627252205317945563">"Skipta upp"</string>
+    <string name="menu_editGroup" msgid="6696843438454341063">"Fjarlægja tengiliði"</string>
+    <string name="menu_renameGroup" msgid="7169512355179757182">"Endurnefna flokk"</string>
+    <string name="menu_deleteGroup" msgid="1126469629233412249">"Eyða flokki"</string>
+    <string name="menu_addToGroup" msgid="3267409983764370041">"Bæta tengilið við"</string>
+    <string name="menu_selectForGroup" msgid="3999234528229376098">"Velja tengiliði"</string>
+    <string name="menu_addContactsToGroup" msgid="655196688840626483">"Bæta tengiliðum við"</string>
+    <string name="menu_removeFromGroup" msgid="6720354305399961978">"Taka úr flokki"</string>
+    <string name="menu_new_group_action_bar" msgid="3127059073617415221">"Búa til flokk"</string>
+    <string name="splitConfirmation" msgid="7342030840130187290">"Skipta þessum tengilið upp í fleiri tengiliði?"</string>
+    <string name="splitConfirmation_positive_button" msgid="9129409098807939699">"Skipta upp"</string>
+    <string name="splitConfirmationWithPendingChanges" msgid="7719062163511895696">"Viltu vista breytingarnar sem þegar hafa verið gerðar og skipta þessum tengilið upp í fleiri tengiliði?"</string>
+    <string name="splitConfirmationWithPendingChanges_positive_button" msgid="9073444264887244032">"Vista og skipta upp"</string>
+    <string name="joinConfirmation" msgid="8262614843581924365">"Viltu vista breytingarnar sem þegar hafa verið gerðar og tengja þær við valinn tengilið?"</string>
+    <string name="joinConfirmation_positive_button" msgid="4573092849769149516">"Vista og tengja"</string>
+    <string name="contacts_linking_progress_bar" msgid="2846494347384549277">"Tengir"</string>
+    <string name="contacts_unlinking_progress_bar" msgid="5989310198163726929">"Aftengir"</string>
+    <string name="menu_joinAggregate" msgid="3599512127797513606">"Tengja saman"</string>
+    <string name="menu_linkedContacts" msgid="400444389718855621">"Skoða tengda tengiliði"</string>
+    <string name="menu_save" msgid="1727844363591825909">"Vista"</string>
+    <string name="titleJoinContactDataWith" msgid="6825255752748313944">"Tengja tengiliði saman"</string>
+    <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"Veldu tengiliðinn sem þú vilt tengja við <xliff:g id="NAME">%s</xliff:g>:"</string>
+    <string name="separatorJoinAggregateSuggestions" msgid="2831414448851313345">"Tillögur að tengiliðum"</string>
+    <string name="separatorJoinAggregateAll" msgid="7939932265026181043">"Allir tengiliðir"</string>
+    <string name="contactsJoinedNamedMessage" msgid="1299418263439579455">"<xliff:g id="NAME">%s</xliff:g> tengt"</string>
+    <string name="contactsJoinedMessage" msgid="3343535986195643136">"Tengiliðir tengdir saman"</string>
+    <string name="contacts_deleted_one_named_toast" msgid="2252551736301363193">"<xliff:g id="NAME">%1$s</xliff:g> eytt"</string>
+    <string name="contacts_deleted_two_named_toast" msgid="3642082931473111791">"<xliff:g id="NAME_0">%1$s</xliff:g> og <xliff:g id="NAME_1">%2$s</xliff:g> eytt"</string>
+    <string name="contacts_deleted_many_named_toast" msgid="7731565342428031249">"<xliff:g id="NAME_0">%1$s</xliff:g>, <xliff:g id="NAME_1">%2$s</xliff:g>, <xliff:g id="NAME_2">%3$s</xliff:g>… eytt"</string>
+    <plurals name="contacts_deleted_toast" formatted="false" msgid="1477708624197262295">
+      <item quantity="one">Tengiliðum eytt</item>
+      <item quantity="other">Tengiliðum eytt</item>
+    </plurals>
+    <plurals name="contacts_count" formatted="false" msgid="8696793457340503668">
+      <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g> tengiliður</item>
+      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> tengiliðir</item>
+    </plurals>
+    <plurals name="contacts_count_with_account" formatted="false" msgid="7402583111980220575">
+      <item quantity="one"><xliff:g id="COUNT_2">%1$d</xliff:g> tengiliður · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
+      <item quantity="other"><xliff:g id="COUNT_2">%1$d</xliff:g> tengiliðir · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
+    </plurals>
+    <string name="title_from_google" msgid="4664084747121207202">"Af Google"</string>
+    <string name="title_from_other_accounts" msgid="8307885412426754288">"Af <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
+    <string name="menu_set_ring_tone" msgid="8728345772068064946">"Velja hringitón"</string>
+    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"Senda í talhólf"</string>
+    <string name="menu_unredirect_calls_to_vm" msgid="8725542534701811737">"Ekki senda í talhólf"</string>
+    <string name="readOnlyContactWarning" msgid="7514475664695089411">"Þessi tengiliður er skrifvarinn. Ekki er hægt að eyða honum, en þú getur falið hann."</string>
+    <string name="readOnlyContactWarning_positive_button" msgid="8914797212167683673">"Fela tengilið"</string>
+    <string name="readOnlyContactDeleteConfirmation" msgid="4717023505914239809">"Skrifvarðir reikningar á þessum tengilið verða faldir en þeim verður ekki eytt."</string>
+    <string name="single_delete_confirmation" msgid="3106905986948679720">"Eyða þessum tengilið?"</string>
+    <string name="batch_delete_confirmation" msgid="3984346060324014108">"Eyða völdum tengiliðum?"</string>
+    <string name="batch_delete_read_only_contact_confirmation" msgid="8411117621035639964">"Ekki er hægt að eyða tengiliðum af skrifvörðum reikningum, en þá er hægt að fela."</string>
+    <string name="batch_delete_multiple_accounts_confirmation" msgid="8207205649127030030">"Þeir tengiliðir sem á að eyða geyma upplýsingar af mörgum reikningum. Upplýsingar af skrifvörðum reikningum verða faldar en þeim ekki eytt."</string>
+    <string name="multipleContactDeleteConfirmation" msgid="5235324124905653550">"Ef þessum tengilið er eytt verður upplýsingum eytt af mörgum reikningum."</string>
+    <string name="deleteConfirmation" msgid="3512271779086656043">"Eyða þessum tengilið?"</string>
+    <string name="deleteConfirmation_positive_button" msgid="7857888845028586365">"Eyða"</string>
+    <string name="invalidContactMessage" msgid="8215051456181842274">"Tengiliðurinn er ekki til."</string>
+    <string name="createContactShortcutSuccessful_NoName" msgid="8831303345367275472">"Tengilið bætt á heimaskjá."</string>
+    <string name="createContactShortcutSuccessful" msgid="953651153238790069">"<xliff:g id="NAME">%s</xliff:g> bætt á heimaskjá."</string>
+    <string name="photoPickerNotFoundText" msgid="2052542573853433204">"Engar myndir eru tiltækar á tækinu."</string>
+    <string name="attach_photo_dialog_title" msgid="5599827035558557169">"Mynd tengiliðar"</string>
+    <string name="customLabelPickerTitle" msgid="1081475101983255212">"Sérsniðinn flokkur"</string>
+    <string name="removePhoto" msgid="4898105274130284565">"Fjarlægja mynd"</string>
+    <string name="noContacts" msgid="2228592924476426108">"Listinn yfir tengiliði er tómur"</string>
+    <string name="emptyGroup" msgid="5102411903247859575">"Engir tengiliðir í þessum flokki"</string>
+    <string name="emptyAccount" msgid="6873962901497975964">"Engir tengiliðir á þessum reikningi"</string>
+    <string name="emptyMainList" msgid="2772242747899664460">"Listinn yfir tengiliði er tómur"</string>
+    <string name="contactSavedNamedToast" msgid="895136068894549611">"Búið að vista <xliff:g id="DISPLAY_NAME">%s</xliff:g>"</string>
+    <string name="contactSavedToast" msgid="9171862279493213075">"Tengiliður vistaður"</string>
+    <string name="contactUnlinkedToast" msgid="7122823195786012553">"Tengiliðir aðskildir"</string>
+    <string name="contactSavedErrorToast" msgid="4827033473908688031">"Ekki tókst að vista breytingar á tengiliðnum"</string>
+    <string name="contactUnlinkErrorToast" msgid="2706297508166952431">"Ekki var hægt að skipta upp tengiliðnum"</string>
+    <string name="contactJoinErrorToast" msgid="5735129234573327701">"Ekki tókst að tengja tengilið"</string>
+    <string name="contactGenericErrorToast" msgid="3885457515665783976">"Villa við að vista tengilið"</string>
+    <string name="contactPhotoSavedErrorToast" msgid="6860883564984042194">"Ekki var hægt að vista breytingar á mynd tengiliðar"</string>
+    <string name="groupLoadErrorToast" msgid="7536267148196064554">"Ekki tókst að hlaða flokk"</string>
+    <string name="groupDeletedToast" msgid="520896687873262027">"Flokki eytt"</string>
+    <string name="groupCreatedToast" msgid="1924195126172834870">"Flokkur búinn til"</string>
+    <string name="groupCreateFailedToast" msgid="4359093891863474299">"Ekki tókst að stofna flokkinn"</string>
+    <string name="groupUpdatedToast" msgid="3667977658676267687">"Flokkur uppfærður"</string>
+    <string name="groupMembersRemovedToast" msgid="3510563559799376603">"Fjarlægðir úr flokki"</string>
+    <string name="groupMembersAddedToast" msgid="4824834898718972768">"Bætt við flokk"</string>
+    <string name="groupSavedErrorToast" msgid="2355891714292740162">"Ekki tókst að vista breytingar á flokki"</string>
+    <string name="groupExistsErrorMessage" msgid="5196811283836946189">"Þessi flokkur er þegar til"</string>
+    <string name="groupSomeContactsNoEmailsToast" msgid="8211161470235548732">"Sumir tengiliðir eru ekki með netfang."</string>
+    <string name="groupSomeContactsNoPhonesToast" msgid="5530760834827530509">"Sumir tengiliðir eru ekki með símanúmer."</string>
+    <string name="menu_sendEmailOption" msgid="5978319931321657780">"Senda tölvupóst"</string>
+    <string name="menu_sendMessageOption" msgid="8850168125274916426">"Senda skilaboð"</string>
+    <string name="pickerSelectContactsActivityTitle" msgid="1936544190231136729">"Velja tengiliði"</string>
+    <string name="send_to_selection" msgid="2251339182881603540">"Senda"</string>
+    <string name="listFoundAllContactsZero" msgid="922980883593159444">"Engir tengiliðir"</string>
+    <string name="add_contact_dlg_message_fmt" msgid="7986472669444326576">"Bæta „<xliff:g id="EMAIL">%s</xliff:g>“ við tengiliði?"</string>
+    <string name="search_settings_description" msgid="2675223022992445813">"Nöfn tengiliðanna þinna"</string>
+    <string name="quickcontact_transparent_view_description" msgid="987959416759562455">"Smelltu til að fara aftur á fyrri skjá"</string>
+    <string name="quickcontact_add_phone_number" msgid="731665835910658965">"Bæta við símanúmeri"</string>
+    <string name="quickcontact_add_email" msgid="739298028384348482">"Bæta við netfangi"</string>
+    <string name="missing_app" msgid="1466111003546611387">"Ekkert forrit fannst sem getur framkvæmt þessa aðgerð."</string>
+    <string name="menu_share" msgid="943789700636542260">"Deila"</string>
+    <string name="menu_add_contact" msgid="3198704337220892684">"Bæta við tengiliði"</string>
+    <string name="menu_add_contacts" msgid="4465646512002163011">"Bæta við"</string>
+    <plurals name="title_share_via" formatted="false" msgid="5886112726191455415">
+      <item quantity="one">Deila tengiliðum í gegnum</item>
+      <item quantity="other">Deila tengiliðum í gegnum</item>
+    </plurals>
+    <string name="dialog_new_group_account" msgid="3451312333591556651">"Veldu reikning"</string>
+    <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"Búa til flokk"</string>
+    <string name="group_name_dialog_update_title" msgid="6328021162869677383">"Endurnefna flokk"</string>
+    <string name="group_name_dialog_hint" msgid="7624523157537700160">"Heiti flokks"</string>
+    <string name="label_name_dialog_hint" msgid="1276051790427638142">"Heiti flokks"</string>
+    <string name="audio_chat" msgid="2535716629358298691">"Símtalsspjall"</string>
+    <string name="video_chat" msgid="1872255818640336072">"Myndspjall"</string>
+    <string name="account_type_format" msgid="718948015590343010">"<xliff:g id="SOURCE">%1$s</xliff:g> tengiliður"</string>
+    <string name="google_account_type_format" msgid="5283997303922067997">"<xliff:g id="SOURCE">%1$s</xliff:g> reikningur"</string>
+    <string name="take_photo" msgid="7496128293167402354">"Taka mynd"</string>
+    <string name="take_new_photo" msgid="7341354729436576304">"Taka nýja mynd"</string>
+    <string name="pick_photo" msgid="2129509985223564942">"Velja mynd"</string>
+    <string name="pick_new_photo" msgid="9122450996263688237">"Velja nýja mynd"</string>
+    <string name="search_results_searching" msgid="3984833028938569930">"Leitar…"</string>
+    <string name="event_edit_field_hint_text" msgid="5794424930242630477">"Dagsetning"</string>
+    <string name="group_edit_field_hint_text" msgid="8038224059926963133">"Flokkur"</string>
+    <string name="cancel_button_content_description" msgid="1288652456274531846">"Hætta við"</string>
+    <string name="back_arrow_content_description" msgid="4355362760545735065">"Til baka"</string>
+    <string name="action_menu_back_from_edit_select" msgid="6435476408621731420">"loka"</string>
+    <string name="aggregation_suggestion_edit_dialog_message" msgid="6549585283910518095">"Skipta yfir í að breyta völdum tengilið? Upplýsingarnar sem þú hefur sett inn nú þegar verða afritaðar."</string>
+    <string name="contact_directory_description" msgid="683398073603909119">"Skrá <xliff:g id="TYPE">%1$s</xliff:g>"</string>
+    <string name="activity_title_settings" msgid="5464130076132770781">"Stillingar"</string>
+    <string name="menu_settings" msgid="377929915873428211">"Stillingar"</string>
+    <string name="menu_help" msgid="1680178646764069976">"Hjálp og ábendingar"</string>
+    <string name="organization_company_and_title" msgid="6718207751363732025">"<xliff:g id="COMPANY_0">%2$s</xliff:g>, <xliff:g id="COMPANY_1">%1$s</xliff:g>"</string>
+    <string name="non_phone_caption" msgid="1541655052330027380">"Símanúmer"</string>
+    <string name="non_phone_add_to_contacts" msgid="6590985286250471169">"Bæta við tengiliði"</string>
+    <string name="non_phone_close" msgid="7608506439725515667">"Loka"</string>
+    <string name="date_year_toggle" msgid="7122002148518724139">"Hafa árið með"</string>
+    <string name="contacts_unavailable_add_account" msgid="4347232421410561500">"Bæta reikningi við"</string>
+    <string name="contacts_unavailable_import_contacts" msgid="3182801738595937144">"Flytja inn"</string>
+    <string name="create_group_item_label" msgid="3263064599743742865">"Búa til nýjan…"</string>
+    <string name="delete_group_dialog_message" msgid="335713829185261371">"Eyða flokknum „<xliff:g id="GROUP_LABEL">%1$s</xliff:g>“? (Tengiliðunum sjálfum verður ekki eytt.)"</string>
+    <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"Sláðu inn nafn tengiliðar áður en þú tengir hann saman við annan."</string>
+    <string name="copy_text" msgid="3257145021583508761">"Afrita á klippiborð"</string>
+    <string name="set_default" msgid="4417505153468300351">"Velja sem sjálfgefið"</string>
+    <string name="clear_default" msgid="7193185801596678067">"Hreinsa sjálfgefið"</string>
+    <string name="toast_text_copied" msgid="5143776250008541719">"Texti afritaður"</string>
+    <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"Fleygja breytingum?"</string>
+    <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"Fleygja"</string>
+    <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"Hætta við"</string>
+    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"Fleygja sérstillingum?"</string>
+    <string name="enter_contact_name" msgid="4594274696120278368">"Leita í tengiliðum"</string>
+    <string name="title_edit_group" msgid="8602752287270586734">"Fjarlægja tengiliði"</string>
+    <string name="local_profile_title" msgid="2021416826991393684">"Staðbundinn prófíll"</string>
+    <string name="external_profile_title" msgid="8034998767621359438">"<xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g> prófíllinn minn"</string>
+    <string name="contact_editor_prompt_zero_accounts" msgid="6648376557574360096">"Gefðu þér tíma til að bæta reikningi við sem mun taka afrit af tengiliðunum þínum yfir á Google."</string>
+    <string name="contact_editor_prompt_one_account" msgid="3087691056345099310">"Nýir tengiliðir verða vistaðir á <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>."</string>
+    <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"Veldu sjálfgefinn reikning fyrir nýja tengiliði:"</string>
+    <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"Búa til nýjan tengilið"</string>
+    <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"Breyta tengilið"</string>
+    <string name="contact_editor_title_read_only_contact" msgid="2443496574528842237">"Aðeins skoðun"</string>
+    <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4186699385645902152">"Veldu tengilið til að breyta"</string>
+    <string name="contact_editor_pick_linked_contact_dialog_title" msgid="4618465940423857694">"Tengdir tengiliðir"</string>
+    <string name="contact_editor_add_linked_contact" msgid="426142748048816297">"Bæta við"</string>
+    <string name="contact_editor_unlink_contacts" msgid="4525214336177236653">"Aftengja"</string>
+    <string name="add_account" msgid="8201790677994503186">"Bæta reikningi við"</string>
+    <string name="add_new_account" msgid="5748627740680940264">"Bæta nýjum reikningi við"</string>
+    <string name="menu_export_database" msgid="2659719297530170820">"Flytja út gagnagrunnsskrár"</string>
+    <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"Búa til nýjan tengilið"</string>
+    <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"Sjá meira"</string>
+    <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"Minnka"</string>
+    <string name="recent_card_title" msgid="8982782042698001695">"Nýlegt"</string>
+    <string name="about_card_title" msgid="2920942314212825637">"Um"</string>
+    <string name="toast_making_personal_copy" msgid="288549957278065542">"Býr til afrit til einkanota…"</string>
+    <string name="tomorrow" msgid="6241969467795308581">"Á morgun"</string>
+    <string name="today" msgid="8041090779381781781">"Í dag"</string>
+    <string name="today_at_time_fmt" msgid="605665249491030460">"Í dag klukkan <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
+    <string name="tomorrow_at_time_fmt" msgid="4856497969617819421">"Á morgun klukkan <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
+    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%1$s</xliff:g> kl. <xliff:g id="TIME_INTERVAL">%2$s</xliff:g>"</string>
+    <string name="untitled_event" msgid="3484859385405939366">"(Ónefndur viðburður)"</string>
+    <string name="date_time_set" msgid="4761419824439606690">"Nota"</string>
+    <string name="header_im_entry" msgid="3581720979640225615">"Spjall"</string>
+    <string name="header_organization_entry" msgid="8515394955666265406">"Fyrirtæki"</string>
+    <string name="header_nickname_entry" msgid="6743561883967451485">"Gælunafn"</string>
+    <string name="header_note_entry" msgid="4320190426480612344">"Athugasemd"</string>
+    <string name="header_website_entry" msgid="1411467850000824745">"Vefsvæði"</string>
+    <string name="header_event_entry" msgid="6738250422744401460">"Viðburður"</string>
+    <string name="header_relation_entry" msgid="1520292958088146460">"Tengsl"</string>
+    <string name="header_name_entry" msgid="1592791008096288306">"Nafn"</string>
+    <string name="header_email_entry" msgid="8666093061171624478">"Netfang"</string>
+    <string name="header_phone_entry" msgid="8450980572274173570">"Sími"</string>
+    <string name="content_description_directions" msgid="2686791825798189335">"leiðarlýsing að stað"</string>
+    <string name="content_description_recent_sms" msgid="1666389577263317445">"nýleg sms-skilaboð. <xliff:g id="MESSAGE_BODY">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. smelltu til að svara"</string>
+    <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"móttekið"</string>
+    <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"hringt"</string>
+    <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"ósvarað"</string>
+    <string name="content_description_recent_call" msgid="5183800406316723676">"nýlegt símtal. <xliff:g id="CALL_TYPE">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. smelltu til að hringja til baka"</string>
+    <string name="message_from_you_prefix" msgid="7180706529908434482">"Þú: <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
+    <string name="editor_more_fields" msgid="3630987771304393421">"Fleiri reitir"</string>
+    <string name="editor_change_photo_content_description" msgid="820879708069864340">"Skipta um mynd tengiliðar"</string>
+    <string name="editor_add_photo_content_description" msgid="4194479313465418120">"Setja inn mynd tengiliðar"</string>
+    <string name="editor_contact_photo_content_description" msgid="8571975622926162369">"Mynd tengiliðar"</string>
+    <string name="editor_failed_to_load" msgid="1623639078580475818">"Mistókst að opna ritilinn."</string>
+    <string name="editor_account_selector_title" msgid="4426337993307015833">"Vista í"</string>
+    <string name="editor_account_selector_read_only_title" msgid="4137969650184457126">"Ekki er hægt að breyta tengiliðaupplýsingum af <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
+    <string name="quickcontact_suggestion_link_button" msgid="3244619714781727946">"TENGJA TENGILIÐI SAMAN"</string>
+    <string name="quickcontact_suggestion_cancel_button" msgid="8236954313106630862">"HÆTTA VIÐ"</string>
+    <string name="suggestion_card_this_contact_title" msgid="3039457405374454914">"Þessi tengiliður"</string>
+    <string name="suggestion_card_duplicates_title" msgid="9107788743178980902">"Mögulegar tvítekningar"</string>
+    <string name="suggestion_card_help_message" msgid="4474061044387181093">"Hugsanlegt er að þessir tengiliðir séu sama manneskjan. Þú getur tengt þá saman í einn tengilið."</string>
+    <string name="editor_delete_view_description" msgid="8583095381562991959">"Eyða <xliff:g id="DATA_TYPE">%1$s </xliff:g><xliff:g id="DATA_KIND">%2$s</xliff:g>"</string>
+    <string name="editor_delete_view_description_short" msgid="7335518371270844912">"Eyða <xliff:g id="DATA_KIND">%s</xliff:g>"</string>
+    <string name="menu_assistant" msgid="5760693735722052454">"Tillögur"</string>
+    <string name="menu_assistant_new_badge" msgid="3132884821616980034">"Nýtt"</string>
+    <string name="navigation_drawer_open" msgid="1126498472143250642">"Opna yfirlitsskúffu"</string>
+    <string name="navigation_drawer_close" msgid="4137416137011817930">"Loka yfirlitsskúffu"</string>
+    <string name="navigation_drawer_label" msgid="4154758025620107419">"Flokkurinn <xliff:g id="LABEL_NAME">%s</xliff:g>"</string>
+    <string name="menu_title_groups" msgid="8356921831150278868">"Flokkar"</string>
+    <string name="menu_title_filters" msgid="8210922220185114527">"Reikningar"</string>
+    <string name="permission_explanation_header" msgid="5739405825039695327">"Sjá sameiginlegan feril ykkar"</string>
+    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"Viðburðir og skilaboð"</string>
+    <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"Viðburðir"</string>
+    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"Skilaboð"</string>
+    <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"Tillögur"</string>
+    <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"Skipuleggðu og fullnýttu þér tengiliðina þína"</string>
+    <string name="undo" msgid="1425165101664071422">"Afturkalla"</string>
+    <string name="call_custom" msgid="6385303130912713318">"Hringja í <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
+    <string name="call_home" msgid="1990519474420545392">"Hringja heim"</string>
+    <string name="call_mobile" msgid="7502236805487609178">"Hringa í farsíma"</string>
+    <string name="call_work" msgid="5328785911463744028">"Hringja í vinnusíma"</string>
+    <string name="call_fax_work" msgid="7467763592359059243">"Hringja í faxnúmer vinnu"</string>
+    <string name="call_fax_home" msgid="8342175628887571876">"Hringja í faxnúmer heima"</string>
+    <string name="call_pager" msgid="9003902812293983281">"Hringja í símboða"</string>
+    <string name="call_other" msgid="8563753966926932052">"Hringja"</string>
+    <string name="call_callback" msgid="1910165691349426858">"Hringja svarhringingu"</string>
+    <string name="call_car" msgid="3280537320306436445">"Hringja í bílasíma"</string>
+    <string name="call_company_main" msgid="6105120947138711257">"Hringja í aðalsíma fyrirtækis"</string>
+    <string name="call_isdn" msgid="1541590690193403411">"Hringja í ISDN-númer"</string>
+    <string name="call_main" msgid="6082900571803441339">"Hringja í aðalnúmer"</string>
+    <string name="call_other_fax" msgid="5745314124619636674">"Hringja í faxnúmer"</string>
+    <string name="call_radio" msgid="8296755876398357063">"Hringja í talstöð"</string>
+    <string name="call_telex" msgid="2223170774548648114">"Hringja í telex"</string>
+    <string name="call_tty_tdd" msgid="8951266948204379604">"Hringja í fjarrita"</string>
+    <string name="call_work_mobile" msgid="8707874281430105394">"Hringja í vinnufarsíma"</string>
+    <string name="call_work_pager" msgid="3419348514157949008">"Hringja í vinnusímboða"</string>
+    <string name="call_assistant" msgid="670941612175068337">"Hringja í <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
+    <string name="call_mms" msgid="6274041545876221437">"Hringja í MMS-númer"</string>
+    <string name="call_by_shortcut" msgid="2566802538698913124">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (hringja)"</string>
+    <string name="sms_custom" msgid="415060214233647603">"Senda <xliff:g id="CUSTOM_LABEL">%s</xliff:g> SMS-skilaboð"</string>
+    <string name="sms_home" msgid="7524332261493162995">"Senda SMS-skilaboð heim"</string>
+    <string name="sms_mobile" msgid="5200107250451030769">"Senda SMS-skilaboð í farsíma"</string>
+    <string name="sms_work" msgid="2269624156655267740">"Senda SMS-skilaboð í vinnusíma"</string>
+    <string name="sms_fax_work" msgid="8028189067816907075">"Senda SMS-skilaboð í faxnúmer vinnu"</string>
+    <string name="sms_fax_home" msgid="9204042076306809634">"Senda SMS-skilaboð í faxnúmer heima"</string>
+    <string name="sms_pager" msgid="7730404569637015192">"Senda SMS-skilaboð í símboða"</string>
+    <string name="sms_other" msgid="806127844607642331">"Senda SMS-skilaboð"</string>
+    <string name="sms_callback" msgid="5004824430094288752">"Senda SMS-skilaboð í svarhringingarnúmer"</string>
+    <string name="sms_car" msgid="7444227058437359641">"Senda SMS-skilaboð í bílasíma"</string>
+    <string name="sms_company_main" msgid="118970873419678087">"Senda SMS-skilaboð í aðalnúmer fyrirtækis"</string>
+    <string name="sms_isdn" msgid="8153785037515047845">"Senda SMS-skilaboð í ISDN-númer"</string>
+    <string name="sms_main" msgid="8621625784504541679">"Senda SMS-skilaboð í aðalnúmer"</string>
+    <string name="sms_other_fax" msgid="3888842199855843152">"Senda SMS-skilaboð í faxnúmer"</string>
+    <string name="sms_radio" msgid="3329166673433967820">"Senda SMS-skilaboð í talstöð"</string>
+    <string name="sms_telex" msgid="9034802430065267848">"Senda SMS-skilaboð í telex"</string>
+    <string name="sms_tty_tdd" msgid="6782284969132531532">"Senda SMS-skilaboð til fjarrita"</string>
+    <string name="sms_work_mobile" msgid="2459939960512702560">"Senda SMS-skilaboð í vinnufarsíma"</string>
+    <string name="sms_work_pager" msgid="5566924423316960597">"Senda SMS-skilaboð í vinnusímboða"</string>
+    <string name="sms_assistant" msgid="2773424339923116234">"Senda SMS-skilaboð til <xliff:g id="ASSISTANT">%s</xliff:g>"</string>
+    <string name="sms_mms" msgid="4069352461380762677">"Senda SMS-skilaboð í MMS-númer"</string>
+    <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (senda SMS)"</string>
+    <string name="description_video_call" msgid="7120921378651700947">"Hringja myndsímtal"</string>
+    <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"Hreinsa mest notuðu tengiliði?"</string>
+    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Þetta hreinsar tengiliðina sem þú hefur mest samskipti við úr forritunum Tengiliðir og Sími og þvingar tölvupóstforrit til að læra upp á nýtt hvernig þú notar netföng."</string>
+    <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"Hreinsar mest notuðu tengiliði…"</string>
+    <string name="status_available" msgid="5586870015822828392">"Laus"</string>
+    <string name="status_away" msgid="1838861100379804730">"Í burtu"</string>
+    <string name="status_busy" msgid="9147992455450257136">"Upptekin(n)"</string>
+    <string name="local_invisible_directory" msgid="6046691709127661065">"Annað"</string>
+    <string name="directory_search_label" msgid="1887759056597975053">"Skrá"</string>
+    <string name="directory_search_label_work" msgid="8618292129829443176">"Vinnuskrá"</string>
+    <string name="local_search_label" msgid="2551177578246113614">"Allir tengiliðir"</string>
+    <string name="description_quick_contact_for" msgid="6737516415168327789">"Flýtitengiliður fyrir <xliff:g id="NAME">%1$s</xliff:g>"</string>
+    <string name="missing_name" msgid="8745511583852904385">"(Nafn vantar)"</string>
+    <string name="favoritesFrequentContacted" msgid="6184232487472425690">"Oft haft samband við"</string>
+    <string name="list_filter_phones" msgid="735313795643493365">"Allir tengiliðir með símanúmer"</string>
+    <string name="list_filter_phones_work" msgid="1470173699551475015">"Tengiliðir í vinnusniði"</string>
+    <string name="view_updates_from_group" msgid="1782685984905600034">"Skoða uppfærslur"</string>
+    <string name="account_phone" msgid="7128032778471187553">"Tæki"</string>
+    <string name="account_sim" msgid="6519016427905087952">"SIM"</string>
+    <string name="nameLabelsGroup" msgid="2034640839640477827">"Nafn"</string>
+    <string name="nicknameLabelsGroup" msgid="2891682101053358010">"Gælunafn"</string>
+    <string name="name_given" msgid="4280790853455320619">"Fornafn"</string>
+    <string name="name_family" msgid="7466985689626017037">"Eftirnafn"</string>
+    <string name="name_prefix" msgid="59756378548779822">"Forskeyti nafns"</string>
+    <string name="name_middle" msgid="8467433655992690326">"Millinafn"</string>
+    <string name="name_suffix" msgid="3855278445375651441">"Viðskeyti nafns"</string>
+    <string name="name_phonetic" msgid="4259595234312430484">"Hljóðrétt nafn"</string>
+    <string name="name_phonetic_given" msgid="8723179018384187631">"Hljóðritað fornafn"</string>
+    <string name="name_phonetic_middle" msgid="8643721493320405200">"Hljóðrétt millinafn"</string>
+    <string name="name_phonetic_family" msgid="2640133663656011626">"Hljóðritað eftirnafn"</string>
+    <string name="phoneLabelsGroup" msgid="6468091477851199285">"Sími"</string>
+    <string name="emailLabelsGroup" msgid="8389931313045344406">"Netfang"</string>
+    <string name="postalLabelsGroup" msgid="3487738141112589324">"Heimilisfang"</string>
+    <string name="imLabelsGroup" msgid="3898238486262614027">"Spjall"</string>
+    <string name="organizationLabelsGroup" msgid="2478611760751832035">"Fyrirtæki"</string>
+    <string name="relationLabelsGroup" msgid="1854373894284572781">"Tengsl"</string>
+    <string name="eventLabelsGroup" msgid="7960408705307831289">"Sérstök dagsetning"</string>
+    <string name="sms" msgid="1756857139634224222">"Senda SMS-skilaboð"</string>
+    <string name="postal_address" msgid="8765560217149624536">"Heimilisfang"</string>
+    <string name="ghostData_company" msgid="5414421120553765775">"Fyrirtæki"</string>
+    <string name="ghostData_title" msgid="7496735200318496110">"Titill"</string>
+    <string name="label_notes" msgid="8337354953278341042">"Glósur"</string>
+    <string name="label_custom_field" msgid="1994056912242214426">"Sérsniðið"</string>
+    <string name="label_sip_address" msgid="7252153678613978127">"SIP"</string>
+    <string name="websiteLabelsGroup" msgid="4202998982804009261">"Vefsvæði"</string>
+    <string name="groupsLabel" msgid="7000816729542098972">"Flokkar"</string>
+    <string name="email_home" msgid="8573740658148184279">"Senda tölvupóst heim"</string>
+    <string name="email_mobile" msgid="2042889209787989814">"Senda tölvupóst í fartæki"</string>
+    <string name="email_work" msgid="2807430017302722689">"Senda tölvupóst í vinnu"</string>
+    <string name="email_other" msgid="3454004077967657109">"Senda tölvupóst"</string>
+    <string name="email_custom" msgid="5536404237099078802">"Senda <xliff:g id="CUSTOM_LABEL">%s</xliff:g> tölvupóst"</string>
+    <string name="email" msgid="5668400997660065897">"Netfang"</string>
+    <string name="postal_street" msgid="8133143961580058972">"Gata"</string>
+    <string name="postal_city" msgid="6597491300084895548">"Borg"</string>
+    <string name="postal_region" msgid="6045263193478437672">"Ríki"</string>
+    <string name="postal_postcode" msgid="572136414136673751">"Póstnúmer"</string>
+    <string name="postal_country" msgid="7638264508416368690">"Land"</string>
+    <string name="map_home" msgid="1243547733423343982">"Skoða heimilisfang"</string>
+    <string name="map_work" msgid="1360474076921878088">"Skoða póstfang vinnu"</string>
+    <string name="map_other" msgid="3817820803587012641">"Skoða póstfang"</string>
+    <string name="map_custom" msgid="8761800628069473526">"Skoða heimilisfang <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
+    <string name="chat_aim" msgid="2588492205291249142">"Spjalla með AIM"</string>
+    <string name="chat_msn" msgid="8041633440091073484">"Spjalla með Windows Live"</string>
+    <string name="chat_yahoo" msgid="6629211142719943666">"Spjalla með Yahoo"</string>
+    <string name="chat_skype" msgid="1210045020427480566">"Spjalla með Skype"</string>
+    <string name="chat_qq" msgid="4294637812847719693">"Spjalla með QQ"</string>
+    <string name="chat_gtalk" msgid="981575737258117697">"Spjalla með Google spjalli"</string>
+    <string name="chat_icq" msgid="8438405386153745775">"Spjalla með ICQ"</string>
+    <string name="chat_jabber" msgid="7561444230307829609">"Spjalla með Jabber"</string>
+    <string name="chat" msgid="9025361898797412245">"Spjalla"</string>
+    <string name="description_minus_button" msgid="6908099247930477551">"eyða"</string>
+    <string name="expand_name_fields_description" msgid="6948274252874552543">"Sýna fleiri nafnareiti"</string>
+    <string name="collapse_name_fields_description" msgid="4757877385895561556">"Minnka nafnareiti"</string>
+    <string name="expand_phonetic_name_fields_description" msgid="9133052674087187927">"Sýna fleiri nafnareiti með hljóðritun"</string>
+    <string name="collapse_phonetic_name_fields_description" msgid="9102249481855019452">"Minnka nafnareiti með hljóðritun"</string>
+    <string name="expand_fields_description" msgid="8129294181216760037">"Stækka"</string>
+    <string name="collapse_fields_description" msgid="1884143625854637874">"Minnka"</string>
+    <string name="announce_expanded_fields" msgid="1075947220478530622">"Stækkað"</string>
+    <string name="announce_collapsed_fields" msgid="6414231530177338704">"Minnkað"</string>
+    <string name="list_filter_all_accounts" msgid="8908683398914322369">"Allir tengiliðir"</string>
+    <string name="list_filter_all_starred" msgid="5031734941601931356">"Stjörnumerktir"</string>
+    <string name="list_filter_customize" msgid="4789963356004169321">"Sérsníða"</string>
+    <string name="list_filter_single" msgid="5871400283515893087">"Tengiliður"</string>
+    <string name="display_ungrouped" msgid="6885954210243119591">"Allir aðrir tengiliðir"</string>
+    <string name="display_all_contacts" msgid="2031647544742889505">"Allir tengiliðir"</string>
+    <string name="menu_sync_remove" msgid="3266725887008450161">"Fjarlægja samstillingarhóp"</string>
+    <string name="dialog_sync_add" msgid="8267045393119375803">"Bæta við samstillingarhóp"</string>
+    <string name="display_more_groups" msgid="2682547080423434170">"Fleiri hópar…"</string>
+    <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"Ef hópurinn „<xliff:g id="GROUP">%s</xliff:g>“ er fjarlægður úr samstillingu verður samstillingu einnig hætt á öllum tengiliðum sem ekki eru í hóp."</string>
+    <string name="savingDisplayGroups" msgid="2133152192716475939">"Vistar birtingarvalkosti…"</string>
+    <string name="listCustomView" msgid="1840624396582117590">"Sérsniðið yfirlit"</string>
+    <string name="dialog_new_contact_account" msgid="4969619718062454756">"Vista innflutta tengiliði á:"</string>
+    <string name="import_from_sim" msgid="6912071635295799131">"SIM-korti"</string>
+    <string name="import_from_sim_summary_fmt" msgid="5169032449686348118">"SIM <xliff:g id="SIM_NAME">%1$s</xliff:g>"</string>
+    <plurals name="import_from_sim_secondary_contact_count_fmt" formatted="false" msgid="5821095773211149295">
+      <item quantity="one">%1$d tengiliður</item>
+      <item quantity="other">%1$d tengiliðir</item>
+    </plurals>
+    <plurals name="import_from_sim_secondary_template" formatted="false" msgid="2484832025802907060">
+      <item quantity="one"><xliff:g id="COUNT_2">^1</xliff:g> tengiliður • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
+      <item quantity="other"><xliff:g id="COUNT_2">^1</xliff:g> tengiliðir • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
+    </plurals>
+    <string name="import_from_vcf_file" msgid="8662528435646418203">".vcf-skrá"</string>
+    <string name="nothing_to_import_message" msgid="1651921906873335656">"Ekkert til að flytja inn"</string>
+    <string name="import_from_vcf_file_confirmation_message" msgid="967723361108008345">"Flytja inn tengiliði af vCard?"</string>
+    <string name="cancel_import_confirmation_message" msgid="3929951040347726757">"Hætta við innflutning á <xliff:g id="FILENAME">%s</xliff:g>?"</string>
+    <string name="cancel_export_confirmation_message" msgid="1995462401949262638">"Hætta við útflutning á <xliff:g id="FILENAME">%s</xliff:g>?"</string>
+    <string name="cancel_vcard_import_or_export_failed" msgid="6139900383366166706">"Ekki tókst að hætta við flutning vCard"</string>
+    <string name="fail_reason_unknown" msgid="1714092345030570863">"Óþekkt villa."</string>
+    <string name="fail_reason_could_not_open_file" msgid="2067725459821997463">"Ekki tókst að opna „<xliff:g id="FILE_NAME">%1$s</xliff:g>“: <xliff:g id="EXACT_REASON">%2$s</xliff:g>."</string>
+    <string name="fail_reason_could_not_initialize_exporter" msgid="707260459259688510">"Ekki tókst að ræsa útflutningsverkfærið: „<xliff:g id="EXACT_REASON">%s</xliff:g>“."</string>
+    <string name="fail_reason_no_exportable_contact" msgid="8728506011371262065">"Engir tengiliðir sem flytja má út."</string>
+    <string name="missing_required_permission" msgid="5865884842972833120">"Þú hefur gert nauðsynlegt leyfi óvirkt."</string>
+    <string name="fail_reason_error_occurred_during_export" msgid="3018855323913649063">"Villa kom upp við útflutninginn: „<xliff:g id="EXACT_REASON">%s</xliff:g>“."</string>
+    <string name="fail_reason_io_error" msgid="6748358842976073255">"Inntaks-/úttaksvilla"</string>
+    <string name="fail_reason_low_memory_during_import" msgid="875222757734882898">"Ekki nægt minni. Skráin kann að vera of stór."</string>
+    <string name="fail_reason_not_supported" msgid="8219562769267148825">"Ekki er stuðningur við sniðið."</string>
+    <string name="exporting_vcard_finished_title" msgid="4767045779458185251">"Útflutningi á <xliff:g id="FILENAME">%s</xliff:g> lokið."</string>
+    <string name="exporting_vcard_finished_title_fallback" msgid="6060472638008218274">"Útflutningi tengiliða lokið."</string>
+    <string name="exporting_vcard_finished_toast" msgid="1739055986856453882">"Útflutningi tengiliða lokið, smelltu á tilkynninguna til að deila tengiliðum."</string>
+    <string name="touch_to_share_contacts" msgid="4882485525268469736">"Ýttu til að deila tengiliðum."</string>
+    <string name="exporting_vcard_canceled_title" msgid="2652222370493306887">"Hætt við útflutning á <xliff:g id="FILENAME">%s</xliff:g>."</string>
+    <string name="exporting_contact_list_title" msgid="9072240631534457415">"Flytur út tengiliðagögn"</string>
+    <string name="exporting_contact_list_message" msgid="3367949209642931952">"Verið er að flytja út tengiliðagögn."</string>
+    <string name="composer_failed_to_get_database_infomation" msgid="1765944280846236723">"Ekki tókst að sækja upplýsingar úr gagnagrunni."</string>
+    <string name="composer_has_no_exportable_contact" msgid="5712531702823346549">"Engir tengiliðir sem flytja má út."</string>
+    <string name="composer_not_initialized" msgid="2321648986367005254">"Ræsing vCard-skrifviðmótsins tókst ekki."</string>
+    <string name="exporting_contact_failed_title" msgid="4892358112409576342">"Útflutningur mistókst"</string>
+    <string name="exporting_contact_failed_message" msgid="4938527850142003141">"Tengiliðagögn voru ekki flutt út.\nÁstæða: „<xliff:g id="FAIL_REASON">%s</xliff:g>\""</string>
+    <string name="importing_vcard_description" msgid="4245275224298571351">"Flytur inn <xliff:g id="NAME">%s</xliff:g>"</string>
+    <string name="reading_vcard_failed_title" msgid="4251647443358422855">"Ekki tókst að lesa gögn úr vCard-skrá"</string>
+    <string name="importing_vcard_finished_title" msgid="3341541727268747967">"Innflutningi lokið á vCard-skránni <xliff:g id="FILENAME">%s</xliff:g>"</string>
+    <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"Hætt við innflutning á <xliff:g id="FILENAME">%s</xliff:g>"</string>
+    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"<xliff:g id="FILENAME">%s</xliff:g> verður flutt inn innan skamms."</string>
+    <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"Skráin verður flutt inn innan skamms."</string>
+    <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"Beiðni um innflutning vCard-skrár hafnað. Reyndu aftur síðar."</string>
+    <string name="contacts_export_will_start_message" msgid="8538705791417534431">"Tengiliðir verða fluttir út eftir smástund."</string>
+    <string name="vcard_export_request_rejected_message" msgid="2844874826431327531">"Beiðni um útflutning vCard-skrár hafnað. Reyndu aftur síðar."</string>
+    <string name="vcard_unknown_filename" msgid="7171709890959915954">"tengiliður"</string>
+    <string name="caching_vcard_message" msgid="4926308675041506756">"Setur vCard í skyndiminni í staðbundinni geymslu. Raunverulegur innflutningur hefst innan skamms."</string>
+    <string name="vcard_import_failed" msgid="5223531255894842406">"Ekki tókst að flytja vCard-skrá inn."</string>
+    <string name="nfc_vcard_file_name" msgid="2823095213265993609">"Tengiliður móttekinn um NFC"</string>
+    <string name="caching_vcard_title" msgid="1226272312940516605">"Setur í skyndiminni"</string>
+    <string name="progress_notifier_message" msgid="2311011466908220528">"Flytur inn <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g>: <xliff:g id="NAME">%3$s</xliff:g>"</string>
+    <string name="export_to_vcf_file" msgid="4407527157056120858">"Flytja út í .vcf-skrá"</string>
+    <string name="display_options_sort_list_by" msgid="7028809117272018712">"Raða eftir"</string>
+    <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"Hljóðrétt nafn"</string>
+    <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"Sýna alltaf"</string>
+    <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"Fela ef þetta er autt"</string>
+    <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"Fornafn"</string>
+    <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"Eftirnafn"</string>
+    <string name="display_options_view_names_as" msgid="6514632499276563482">"Nafnasnið"</string>
+    <string name="display_options_view_given_name_first" msgid="3616004640258761473">"Fornafn fyrst"</string>
+    <string name="display_options_view_family_name_first" msgid="956445100777296467">"Eftirnafn fyrst"</string>
+    <string name="settings_accounts" msgid="350219740670774576">"Reikningar"</string>
+    <string name="default_editor_account" msgid="699591683362420991">"Sjálfgefinn reikningur fyrir nýja tengiliði"</string>
+    <string name="settings_my_info_title" msgid="1534272456405343119">"Mínar upplýsingar"</string>
+    <string name="set_up_profile" msgid="7370213843590143771">"Settu upp snið"</string>
+    <string name="setting_about" msgid="7014388749752042863">"Um Tengiliði"</string>
+    <string name="share_favorite_contacts" msgid="4280926751003081042">"Deila eftirlætistengiliðum"</string>
+    <string name="share_contacts" msgid="8109287987498711664">"Deila öllum tengiliðum"</string>
+    <string name="share_contacts_failure" msgid="1216431977330560559">"Ekki tókst að deila tengiliðum."</string>
+    <string name="dialog_export" msgid="1628001095187741417">"Flytja út tengiliði"</string>
+    <string name="dialog_import" msgid="2423592905927819672">"Flytja inn tengiliði af"</string>
+    <string name="share_error" msgid="948429331673358107">"Ekki er hægt að deila þessum tengilið."</string>
+    <string name="no_contact_to_share" msgid="1276397530378323033">"Engir tengiliðir til að deila."</string>
+    <string name="menu_contacts_filter" msgid="2165153460860262501">"Tengiliðir til að birta"</string>
+    <string name="activity_title_contacts_filter" msgid="8275542497615516969">"Tengiliðir til að birta"</string>
+    <string name="custom_list_filter" msgid="9048525797111024204">"Sérsníða yfirlit"</string>
+    <string name="menu_custom_filter_save" msgid="2679793632208086460">"Vista"</string>
+    <string name="hint_findContacts" msgid="7128627979899070325">"Leita að tengiliðum"</string>
+    <string name="contactsFavoritesLabel" msgid="8417039765586853670">"Uppáhald"</string>
+    <string name="menu_import" msgid="6107961135813836467">"Flytja inn"</string>
+    <string name="menu_export" msgid="2658783911863503902">"Flytja út"</string>
+    <string name="menu_blocked_numbers" msgid="5272951629083025995">"Númer á bannlista"</string>
+    <string name="contact_status_update_attribution" msgid="752179367353018597">"í gegnum <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
+    <string name="contact_status_update_attribution_with_date" msgid="7358045508107825068">"<xliff:g id="DATE">%1$s</xliff:g> í gegnum <xliff:g id="SOURCE">%2$s</xliff:g>"</string>
+    <string name="action_menu_back_from_search" msgid="8793348588949233348">"hætta leit"</string>
+    <string name="description_clear_search" msgid="688023606766232904">"Hreinsa leit"</string>
+    <string name="select_account_dialog_title" msgid="5478489655696599219">"Reikningur"</string>
+    <string name="set_default_account" msgid="4311613760725609801">"Nota þetta alltaf fyrir símtöl"</string>
+    <string name="call_with_a_note" msgid="8389827628360791676">"Símtal með texta"</string>
+    <string name="call_subject_hint" msgid="3043028982108363572">"Sláðu inn texta til að senda með símtalinu..."</string>
+    <string name="send_and_call_button" msgid="7740295432834590737">"SENDA OG HRINGJA"</string>
+    <string name="call_subject_limit" msgid="4545212901205397669">"<xliff:g id="COUNT">%1$s</xliff:g> / <xliff:g id="LIMIT">%2$s</xliff:g>"</string>
+    <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
+    <string name="about_build_version" msgid="1765533099416999801">"Útgáfa smíðar"</string>
+    <string name="about_open_source_licenses" msgid="6479990452352919641">"Leyfi opins kóða"</string>
+    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"Leyfisupplýsingar fyrir hugbúnað með opnum kóða"</string>
+    <string name="about_privacy_policy" msgid="3705518622499152626">"Persónuverndarstefna"</string>
+    <string name="about_terms_of_service" msgid="4642400812150296723">"Þjónustuskilmálar"</string>
+    <string name="activity_title_licenses" msgid="5467767062737708066">"Leyfi opins kóða"</string>
+    <string name="url_open_error_toast" msgid="452592089815420457">"Ekki tókst að opna slóðina."</string>
+    <string name="account_filter_view_checked" msgid="6696859503887762213">"Merkt við <xliff:g id="ACCOUNT_INFO">%s</xliff:g>"</string>
+    <string name="account_filter_view_not_checked" msgid="2248684521205038389">"Ekki merkt við <xliff:g id="ACCOUNT_INFO">%s</xliff:g>"</string>
+    <string name="description_search_video_call" msgid="5841525580339803272">"Hringja myndsímtal"</string>
+    <string name="description_delete_contact" msgid="53835657343783663">"Eyða"</string>
+    <string name="description_no_name_header" msgid="8884991311595943271">"Þrípunktur"</string>
+    <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> sek."</string>
+    <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> m. <xliff:g id="SECONDS">%2$s</xliff:g> sek."</string>
+    <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> klst. <xliff:g id="MINUTES_1">%2$s</xliff:g> mín. <xliff:g id="SECONDS">%3$s</xliff:g> sek."</string>
+    <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"Þessi flýtileið hefur verið gerð óvirk"</string>
+    <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"Tengiliður var fjarlægður"</string>
+    <string name="sim_import_button_text" msgid="4270841592496619317">"Flytja inn"</string>
+    <string name="sim_import_title_none_selected" msgid="6910517331401970693">"Velja tengiliði"</string>
+    <string name="sim_import_empty_message" msgid="7743815244380189651">"Engir tengiliðir á SIM-kortinu"</string>
+    <string name="sim_import_contact_exists_toast" msgid="1503743663717316732">"Tengiliðurinn er þegar á listanum þínum"</string>
+    <plurals name="sim_import_success_toast_fmt" formatted="false" msgid="8572156521110906443">
+      <item quantity="one"><xliff:g id="COUNT">%d</xliff:g> SIM-tengiliður fluttur inn</item>
+      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> SIM-tengiliðir fluttir inn</item>
+    </plurals>
+    <string name="sim_import_failed_toast" msgid="5559267299793622705">"Ekki tókst að flytja inn SIM-tengiliðina"</string>
+    <string name="sim_import_title" msgid="2511154832820812822">"Flytja inn af SIM-korti"</string>
+    <string name="sim_import_cancel_content_description" msgid="1619832410253424452">"Hætta við"</string>
+    <string name="auto_sync_off" msgid="2180147284456026587">"Slökkt er á sjálfvirkri samstillingu. Ýttu til að kveikja á henni."</string>
+    <string name="dismiss_sync_alert" msgid="8941131776605093596">"Hunsa"</string>
+    <string name="account_sync_off" msgid="7646143254066243924">"Slökkt er á samstillingu reiknings. Ýttu til að kveikja á henni."</string>
+    <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"Kveikja á sjálfvirkri samstillingu?"</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"Breytingar sem þú gerir á öllum forritum og reikningum, ekki bara Google tengiliðum, verða uppfærðar á netinu og í tækjunum þínum."</string>
+    <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"Kveikja"</string>
+    <string name="connection_error_message" msgid="7046408921529247089">"Engin tenging"</string>
+    <string name="single_sim_display_label" msgid="6985770499439371497">"SIM"</string>
+    <string name="show_more_content_description" msgid="4277410425912984722">"Sýna meira"</string>
+    <string name="importing_sim_finished_title" msgid="5196369441294050721">"Lauk við að flytja inn SIM-kort"</string>
+    <string name="importing_sim_failed_title" msgid="39706901030537985">"Innflutningur mistókst"</string>
+    <string name="importing_sim_failed_message" msgid="3345258302998021066">"Gat ekki flutt inn tengiliði af SIM-korti"</string>
+    <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"Flytur inn SIM-kort"</string>
+    <string name="contacts_default_notification_channel" msgid="4754058700611188581">"Tilkynningar"</string>
+</resources>

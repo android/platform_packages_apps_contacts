@@ -16,16 +16,6 @@
 
 package com.android.contacts.detail;
 
-import com.google.common.collect.Iterables;
-
-import com.android.contacts.R;
-import com.android.contacts.common.model.Contact;
-import com.android.contacts.common.model.RawContact;
-import com.android.contacts.common.model.dataitem.DataItem;
-import com.android.contacts.common.model.dataitem.OrganizationDataItem;
-import com.android.contacts.common.preference.ContactsPreferences;
-import com.android.contacts.util.MoreMath;
-
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -41,9 +31,17 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.android.contacts.R;
+import com.android.contacts.model.Contact;
+import com.android.contacts.model.RawContact;
+import com.android.contacts.model.dataitem.DataItem;
+import com.android.contacts.model.dataitem.OrganizationDataItem;
+import com.android.contacts.preference.ContactsPreferences;
+import com.android.contacts.util.MoreMath;
+import com.google.common.collect.Iterables;
 
 import java.util.List;
 
@@ -156,34 +154,14 @@ public class ContactDisplayUtils {
     /**
      * Sets the starred state of this contact.
      */
-    public static void configureStarredImageView(ImageView starredView, boolean isDirectoryEntry,
-            boolean isUserProfile, boolean isStarred) {
-        // Check if the starred state should be visible
-        if (!isDirectoryEntry && !isUserProfile) {
-            starredView.setVisibility(View.VISIBLE);
-            final int resId = isStarred
-                    ? R.drawable.btn_star_on_normal_holo_light
-                    : R.drawable.btn_star_off_normal_holo_light;
-            starredView.setImageResource(resId);
-            starredView.setTag(isStarred);
-            starredView.setContentDescription(starredView.getResources().getString(
-                    isStarred ? R.string.menu_removeStar : R.string.menu_addStar));
-        } else {
-            starredView.setVisibility(View.GONE);
-        }
-    }
-
-    /**
-     * Sets the starred state of this contact.
-     */
     public static void configureStarredMenuItem(MenuItem starredMenuItem, boolean isDirectoryEntry,
             boolean isUserProfile, boolean isStarred) {
         // Check if the starred state should be visible
         if (!isDirectoryEntry && !isUserProfile) {
             starredMenuItem.setVisible(true);
             final int resId = isStarred
-                    ? R.drawable.ic_star_24dp
-                    : R.drawable.ic_star_outline_24dp;
+                    ? R.drawable.quantum_ic_star_vd_theme_24
+                    : R.drawable.quantum_ic_star_border_vd_theme_24;
             starredMenuItem.setIcon(resId);
             starredMenuItem.setChecked(isStarred);
             starredMenuItem.setTitle(isStarred ? R.string.menu_removeStar : R.string.menu_addStar);
@@ -277,11 +255,15 @@ public class ContactDisplayUtils {
             try {
                 uri = Uri.parse(source);
             } catch (Throwable e) {
-                Log.d(TAG, "Could not parse image source: " + source);
+                if (Log.isLoggable(TAG, Log.DEBUG)) {
+                    Log.d(TAG, "Could not parse image source: " + source);
+                }
                 return null;
             }
             if (!RES_SCHEME.equals(uri.getScheme())) {
-                Log.d(TAG, "Image source does not correspond to a resource: " + source);
+                if (Log.isLoggable(TAG, Log.DEBUG)) {
+                    Log.d(TAG, "Image source does not correspond to a resource: " + source);
+                }
                 return null;
             }
             // The URI authority represents the package name.
@@ -289,13 +271,17 @@ public class ContactDisplayUtils {
 
             Resources resources = getResourcesForResourceName(packageName);
             if (resources == null) {
-                Log.d(TAG, "Could not parse image source: " + source);
+                if (Log.isLoggable(TAG, Log.DEBUG)) {
+                    Log.d(TAG, "Could not parse image source: " + source);
+                }
                 return null;
             }
 
             List<String> pathSegments = uri.getPathSegments();
             if (pathSegments.size() != 1) {
-                Log.d(TAG, "Could not parse image source: " + source);
+                if (Log.isLoggable(TAG, Log.DEBUG)) {
+                    Log.d(TAG, "Could not parse image source: " + source);
+                }
                 return null;
             }
 
@@ -304,14 +290,18 @@ public class ContactDisplayUtils {
 
             if (resId == 0) {
                 // Use the default image icon in this case.
-                Log.d(TAG, "Cannot resolve resource identifier: " + source);
+                if (Log.isLoggable(TAG, Log.DEBUG)) {
+                    Log.d(TAG, "Cannot resolve resource identifier: " + source);
+                }
                 return null;
             }
 
             try {
                 return getResourceDrawable(resources, resId);
             } catch (NotFoundException e) {
-                Log.d(TAG, "Resource not found: " + source, e);
+                if (Log.isLoggable(TAG, Log.DEBUG)) {
+                    Log.d(TAG, "Resource not found: " + source, e);
+                }
                 return null;
             }
         }
@@ -329,7 +319,9 @@ public class ContactDisplayUtils {
             try {
                 return mPackageManager.getResourcesForApplication(packageName);
             } catch (NameNotFoundException e) {
-                Log.d(TAG, "Could not find package: " + packageName);
+                if (Log.isLoggable(TAG, Log.DEBUG)) {
+                    Log.d(TAG, "Could not find package: " + packageName);
+                }
                 return null;
             }
         }

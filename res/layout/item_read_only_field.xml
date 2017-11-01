@@ -16,9 +16,10 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/read_only_row"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="@dimen/editor_delete_button_width"
+    android:focusableInTouchMode="true"
     android:layout_marginBottom="@dimen/editor_padding_between_read_only_editor_views"
     android:orientation="horizontal">
 
@@ -31,6 +32,7 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/editor_account_left_margin"
         android:orientation="vertical">
 
         <TextView
@@ -40,9 +42,7 @@
             android:textSize="@dimen/editor_form_text_size"
             android:textColor="?android:attr/textColorSecondary"
             android:singleLine="true"
-            android:saveEnabled="false"
-            android:textAlignment="viewStart"
-            android:enabled="false"/>
+            android:textAlignment="viewStart"/>
 
         <TextView
             android:id="@+id/type"
@@ -51,9 +51,7 @@
             android:textSize="@dimen/editor_form_text_size"
             android:textColor="?android:attr/textColorSecondary"
             android:singleLine="true"
-            android:saveEnabled="false"
-            android:textAlignment="viewStart"
-            android:enabled="false"/>
+            android:textAlignment="viewStart"/>
 
     </LinearLayout>
 

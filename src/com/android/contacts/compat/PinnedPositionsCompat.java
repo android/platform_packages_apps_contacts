@@ -20,8 +20,6 @@ import android.content.ContentResolver;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.PinnedPositions;
 
-import com.android.contacts.common.compat.CompatUtils;
-
 /**
  * Compatibility class for {@link android.provider.ContactsContract.PinnedPositions}
  */

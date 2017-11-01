@@ -17,31 +17,17 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="applicationLabel" msgid="3906689777043645443">"通讯录"</string>
-    <string name="launcherActivityLabel" msgid="6497230399032392417">"通讯录"</string>
-    <string name="quickContactActivityLabel" msgid="7985456650689347268">"查看联系人"</string>
-    <string name="editContactActivityLabel" msgid="1129944572070802839">"修改联系人"</string>
     <string name="contactsList" msgid="8661624236494819731">"通讯录"</string>
+    <string name="shortcut_add_contact" msgid="7476283631356909204">"添加联系人"</string>
     <string name="shortcutContact" msgid="749243779392912958">"联系人"</string>
     <string name="shortcutDialContact" msgid="746622101599186779">"直接拨打电话"</string>
     <string name="shortcutMessageContact" msgid="2460337253595976198">"直接发送短信"</string>
-    <string name="shortcutActivityTitle" msgid="6642877210643565436">"选择联系人快捷方式"</string>
-    <string name="callShortcutActivityTitle" msgid="6065749861423648991">"选择一个可直接拨号的号码"</string>
-    <string name="messageShortcutActivityTitle" msgid="3084542316620335911">"选择一个可直接向其发送短信的号码"</string>
+    <string name="shortcutActivityTitle" msgid="1504383567778497348">"选择联系人"</string>
     <string name="contactInsertOrEditActivityTitle" msgid="6527505405325862674">"添加到通讯录"</string>
     <string name="contactPickerActivityTitle" msgid="4301062192337417640">"选择联系人"</string>
+    <string name="groupMemberPickerActivityTitle" msgid="1431750793695262522">"选择"</string>
     <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"创建新联系人"</string>
-    <string name="starredList" msgid="4817256136413959463">"已加星标的内容"</string>
-    <string name="frequentList" msgid="7154768136473953056">"经常联系"</string>
-    <string name="strequentList" msgid="5640192862059373511">"收藏"</string>
-    <string name="viewContactTitle" msgid="7989394521836644384">"联系人详情"</string>
-    <string name="editContactDescription" msgid="2947202828256214947">"编辑联系人"</string>
-    <string name="insertContactDescription" msgid="4709878105452681987">"创建联系人"</string>
-    <string name="editGroupDescription" msgid="6321161304201540561">"修改群组"</string>
-    <string name="insertGroupDescription" msgid="5658512271662210139">"创建群组"</string>
-    <string name="contactDetailAbout" msgid="5430408883907061400">"关于"</string>
-    <string name="contactDetailUpdates" msgid="3780588624763446941">"最新动态"</string>
     <string name="searchHint" msgid="8482945356247760701">"搜索联系人"</string>
-    <string name="menu_viewContact" msgid="2795575601596468581">"查看联系人"</string>
     <string name="menu_addStar" msgid="2908478235715404876">"添加到收藏"</string>
     <string name="menu_removeStar" msgid="5844227078364227030">"从收藏中移除"</string>
     <string name="description_action_menu_remove_star" msgid="4699640108012265178">"已从收藏中移除"</string>
@@ -49,40 +35,56 @@
     <string name="menu_editContact" msgid="9042415603857662633">"修改"</string>
     <string name="menu_deleteContact" msgid="6788644058868189393">"删除"</string>
     <string name="menu_change_photo" msgid="7769177631511496210">"更换照片"</string>
-    <string name="menu_create_contact_shortcut" msgid="1217971915748509640">"放在主屏幕上"</string>
-    <string name="menu_call" msgid="3992595586042260618">"呼叫联系人"</string>
-    <string name="menu_sendSMS" msgid="5535886767547006515">"向联系人发送短信"</string>
+    <string name="menu_create_contact_shortcut" msgid="1663022219127343858">"创建快捷方式"</string>
     <string name="menu_splitAggregate" msgid="2627252205317945563">"取消关联"</string>
-    <string name="menu_editGroup" msgid="5062005185370983720">"修改"</string>
-    <string name="menu_deleteGroup" msgid="3486380004411482874">"删除"</string>
-    <string name="menu_new_contact_action_bar" msgid="7263362129442119188">"添加联系人"</string>
-    <string name="menu_new_group_action_bar" msgid="3520232877587377175">"添加群组"</string>
+    <string name="menu_editGroup" msgid="6696843438454341063">"移除联系人"</string>
+    <string name="menu_renameGroup" msgid="7169512355179757182">"重命名标签"</string>
+    <string name="menu_deleteGroup" msgid="1126469629233412249">"删除标签"</string>
+    <string name="menu_addToGroup" msgid="3267409983764370041">"添加联系人"</string>
+    <string name="menu_selectForGroup" msgid="3999234528229376098">"选择联系人"</string>
+    <string name="menu_addContactsToGroup" msgid="655196688840626483">"添加联系人"</string>
+    <string name="menu_removeFromGroup" msgid="6720354305399961978">"从标签中移除"</string>
+    <string name="menu_new_group_action_bar" msgid="3127059073617415221">"创建标签"</string>
     <string name="splitConfirmation" msgid="7342030840130187290">"要取消此联系人与多个联系人的关联吗？"</string>
     <string name="splitConfirmation_positive_button" msgid="9129409098807939699">"取消关联"</string>
     <string name="splitConfirmationWithPendingChanges" msgid="7719062163511895696">"您要保存目前所做的更改，并取消此联系人与多个联系人的关联吗？"</string>
     <string name="splitConfirmationWithPendingChanges_positive_button" msgid="9073444264887244032">"保存并取消关联"</string>
     <string name="joinConfirmation" msgid="8262614843581924365">"您要保存目前所做的更改，并将此联系人与所选联系人建立关联吗？"</string>
     <string name="joinConfirmation_positive_button" msgid="4573092849769149516">"保存并关联"</string>
+    <string name="contacts_linking_progress_bar" msgid="2846494347384549277">"正在关联"</string>
+    <string name="contacts_unlinking_progress_bar" msgid="5989310198163726929">"正在取消关联"</string>
     <string name="menu_joinAggregate" msgid="3599512127797513606">"关联"</string>
+    <string name="menu_linkedContacts" msgid="400444389718855621">"查看已关联的联系人"</string>
     <string name="menu_save" msgid="1727844363591825909">"保存"</string>
     <string name="titleJoinContactDataWith" msgid="6825255752748313944">"关联联系人"</string>
     <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"选择您想与<xliff:g id="NAME">%s</xliff:g>关联的联系人："</string>
-    <string name="showAllContactsJoinItem" msgid="2189695051430392383">"显示所有联系人"</string>
     <string name="separatorJoinAggregateSuggestions" msgid="2831414448851313345">"建议的联系人"</string>
     <string name="separatorJoinAggregateAll" msgid="7939932265026181043">"所有联系人"</string>
+    <string name="contactsJoinedNamedMessage" msgid="1299418263439579455">"已关联<xliff:g id="NAME">%s</xliff:g>"</string>
     <string name="contactsJoinedMessage" msgid="3343535986195643136">"联系人已关联"</string>
+    <string name="contacts_deleted_one_named_toast" msgid="2252551736301363193">"已删除<xliff:g id="NAME">%1$s</xliff:g>"</string>
+    <string name="contacts_deleted_two_named_toast" msgid="3642082931473111791">"已删除<xliff:g id="NAME_0">%1$s</xliff:g>和<xliff:g id="NAME_1">%2$s</xliff:g>"</string>
+    <string name="contacts_deleted_many_named_toast" msgid="7731565342428031249">"已删除<xliff:g id="NAME_0">%1$s</xliff:g>、<xliff:g id="NAME_1">%2$s</xliff:g>、<xliff:g id="NAME_2">%3$s</xliff:g>…"</string>
     <plurals name="contacts_deleted_toast" formatted="false" msgid="1477708624197262295">
       <item quantity="other">已删除联系人</item>
       <item quantity="one">已删除联系人</item>
     </plurals>
+    <plurals name="contacts_count" formatted="false" msgid="8696793457340503668">
+      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> 位联系人</item>
+      <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> 位联系人</item>
+    </plurals>
+    <plurals name="contacts_count_with_account" formatted="false" msgid="7402583111980220575">
+      <item quantity="other"><xliff:g id="COUNT_2">%1$d</xliff:g> 位联系人 · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
+      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> 位联系人 · <xliff:g id="ACCOUNT_1">%2$s</xliff:g></item>
+    </plurals>
+    <string name="title_from_google" msgid="4664084747121207202">"来自 Google"</string>
+    <string name="title_from_other_accounts" msgid="8307885412426754288">"来自 <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
     <string name="menu_set_ring_tone" msgid="8728345772068064946">"设置铃声"</string>
-    <string name="menu_redirect_calls_to_vm" msgid="4181789196416396656">"所有来电转至语音信箱"</string>
-    <string name="readOnlyContactWarning" msgid="5526727661978307833">"系统无法删除来自只读帐号的联系人信息，但可以将这些信息隐藏。"</string>
-    <string name="readOnlyContactWarning_positive_button" msgid="6541862607313811926">"隐藏"</string>
-    <string name="readOnlyContactDeleteConfirmation" msgid="8782086424739664753">"您要删除的联系人信息中包含来自多个帐号的详细信息。系统将隐藏来自只读帐号的详细信息，而不会删除这些信息。"</string>
-    <string name="batch_link_single_contact_warning" msgid="1346058571502058767">"您至少需要选择两个联系人才能进行关联。"</string>
-    <string name="batch_link_confirmation" msgid="5845237114309114908">"要关联所选联系人吗？"</string>
-    <string name="batch_link_confirmation_positive_button" msgid="5018899675473363525">"关联"</string>
+    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"转接到语音信箱"</string>
+    <string name="menu_unredirect_calls_to_vm" msgid="8725542534701811737">"取消转接到语音信箱"</string>
+    <string name="readOnlyContactWarning" msgid="7514475664695089411">"这是只读联系人信息。您无法删除此联系人，但可以将其隐藏。"</string>
+    <string name="readOnlyContactWarning_positive_button" msgid="8914797212167683673">"隐藏联系人"</string>
+    <string name="readOnlyContactDeleteConfirmation" msgid="4717023505914239809">"此联系人的只读帐号将被隐藏，而不会被删除。"</string>
     <string name="single_delete_confirmation" msgid="3106905986948679720">"要删除此联系人吗？"</string>
     <string name="batch_delete_confirmation" msgid="3984346060324014108">"要删除所选联系人吗？"</string>
     <string name="batch_delete_read_only_contact_confirmation" msgid="8411117621035639964">"系统无法删除来自只读帐号的联系人信息，但可以将这些信息隐藏。"</string>
@@ -90,177 +92,124 @@
     <string name="multipleContactDeleteConfirmation" msgid="5235324124905653550">"删除此联系人也将删除多个帐号中的相关详细信息。"</string>
     <string name="deleteConfirmation" msgid="3512271779086656043">"要删除此联系人吗？"</string>
     <string name="deleteConfirmation_positive_button" msgid="7857888845028586365">"删除"</string>
-    <string name="menu_discard" msgid="6854657936970228164">"舍弃更改"</string>
     <string name="invalidContactMessage" msgid="8215051456181842274">"该联系人不存在。"</string>
     <string name="createContactShortcutSuccessful_NoName" msgid="8831303345367275472">"已将该联系人添加到主屏幕。"</string>
     <string name="createContactShortcutSuccessful" msgid="953651153238790069">"已将<xliff:g id="NAME">%s</xliff:g>添加到主屏幕。"</string>
-    <string name="pickerNewContactHeader" msgid="7750705279843568147">"新建联系人"</string>
-    <string name="pickerNewContactText" msgid="6166997164401048211">"创建新联系人"</string>
-  <string-array name="otherLabels">
-    <item msgid="8287841928119937597">"组织"</item>
-    <item msgid="7196592230748086755">"备注"</item>
-  </string-array>
-    <string name="photoPickerNotFoundText" product="tablet" msgid="6247290728908599701">"平板电脑上没有照片可供使用。"</string>
-    <string name="photoPickerNotFoundText" product="default" msgid="431331662154342581">"手机上没有照片。"</string>
+    <string name="photoPickerNotFoundText" msgid="2052542573853433204">"设备上没有可用的照片。"</string>
     <string name="attach_photo_dialog_title" msgid="5599827035558557169">"联系人照片"</string>
     <string name="customLabelPickerTitle" msgid="1081475101983255212">"自定义标签名称"</string>
-    <string name="send_to_voicemail_checkbox" msgid="9001686764070676353">"直接将来电转到语音信箱"</string>
     <string name="removePhoto" msgid="4898105274130284565">"删除照片"</string>
-    <string name="noContacts" msgid="4955659076981974652">"没有联系人"</string>
-    <string name="noGroups" msgid="8614664663561385253">"没有任何群组。"</string>
-    <string name="noAccounts" msgid="7768267764545265909">"您需要拥有一个帐号才能创建群组。"</string>
-    <string name="emptyGroup" msgid="7502116218697177370">"此群组中没有联系人。"</string>
-    <string name="addPeopleToGroup" msgid="7879585947222263516">"要添加联系人，请修改该群组。"</string>
-    <string name="savingContact" msgid="4075751076741924939">"正在保存联系人…"</string>
+    <string name="noContacts" msgid="2228592924476426108">"联系人列表是空的"</string>
+    <string name="emptyGroup" msgid="5102411903247859575">"此标签下没有联系人"</string>
+    <string name="emptyAccount" msgid="6873962901497975964">"此帐号中没有联系人"</string>
+    <string name="emptyMainList" msgid="2772242747899664460">"联系人列表是空的"</string>
+    <string name="contactSavedNamedToast" msgid="895136068894549611">"已保存<xliff:g id="DISPLAY_NAME">%s</xliff:g>"</string>
     <string name="contactSavedToast" msgid="9171862279493213075">"联系人已保存"</string>
     <string name="contactUnlinkedToast" msgid="7122823195786012553">"已将联系人取消关联"</string>
-    <string name="contactSavedErrorToast" msgid="3207250533172944892">"无法保存联系人更改。"</string>
-    <string name="contactUnlinkErrorToast" msgid="2758070702785994171">"无法取消关联此联系人。"</string>
-    <string name="contactJoinErrorToast" msgid="3977932531264809035">"无法关联该联系人。"</string>
-    <string name="contactGenericErrorToast" msgid="7774911165341591714">"保存此联系人时出错。"</string>
-    <string name="contactPhotoSavedErrorToast" msgid="4079032272022979114">"无法保存联系人照片更改。"</string>
-    <string name="groupSavedToast" msgid="1168756874239833756">"群组已保存。"</string>
-    <string name="groupSavedErrorToast" msgid="7984466936615304740">"无法保存所做的群组更改。"</string>
-    <plurals name="listTotalPhoneContacts" formatted="false" msgid="3692277679143308755">
-      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> 个有电话号码的联系人</item>
-      <item quantity="one">1 个有电话号码的联系人</item>
-    </plurals>
-    <string name="listTotalPhoneContactsZero" msgid="6968813857632984319">"没有联系人拥有电话号码"</string>
-    <plurals name="listFoundAllContacts" formatted="false" msgid="4872115339963093220">
-      <item quantity="other">找到 <xliff:g id="COUNT">%d</xliff:g> 个联系人</item>
-      <item quantity="one">找到 1 个联系人</item>
-    </plurals>
+    <string name="contactSavedErrorToast" msgid="4827033473908688031">"无法保存对联系人的更改"</string>
+    <string name="contactUnlinkErrorToast" msgid="2706297508166952431">"无法取消关联联系人"</string>
+    <string name="contactJoinErrorToast" msgid="5735129234573327701">"无法关联联系人"</string>
+    <string name="contactGenericErrorToast" msgid="3885457515665783976">"保存联系人时出错"</string>
+    <string name="contactPhotoSavedErrorToast" msgid="6860883564984042194">"无法保存对联系人照片的更改"</string>
+    <string name="groupLoadErrorToast" msgid="7536267148196064554">"无法加载标签"</string>
+    <string name="groupDeletedToast" msgid="520896687873262027">"已删除标签"</string>
+    <string name="groupCreatedToast" msgid="1924195126172834870">"已创建标签"</string>
+    <string name="groupCreateFailedToast" msgid="4359093891863474299">"无法创建标签"</string>
+    <string name="groupUpdatedToast" msgid="3667977658676267687">"已更新标签"</string>
+    <string name="groupMembersRemovedToast" msgid="3510563559799376603">"已从标签中移除"</string>
+    <string name="groupMembersAddedToast" msgid="4824834898718972768">"已添加到标签"</string>
+    <string name="groupSavedErrorToast" msgid="2355891714292740162">"无法保存对标签的修改"</string>
+    <string name="groupExistsErrorMessage" msgid="5196811283836946189">"该标签已存在"</string>
+    <string name="groupSomeContactsNoEmailsToast" msgid="8211161470235548732">"部分联系人没有电子邮件地址。"</string>
+    <string name="groupSomeContactsNoPhonesToast" msgid="5530760834827530509">"部分联系人没有电话号码。"</string>
+    <string name="menu_sendEmailOption" msgid="5978319931321657780">"发送电子邮件"</string>
+    <string name="menu_sendMessageOption" msgid="8850168125274916426">"发送信息"</string>
+    <string name="pickerSelectContactsActivityTitle" msgid="1936544190231136729">"选择联系人"</string>
+    <string name="send_to_selection" msgid="2251339182881603540">"发送"</string>
     <string name="listFoundAllContactsZero" msgid="922980883593159444">"没有联系人"</string>
-    <plurals name="searchFoundContacts" formatted="false" msgid="7223023725334884618">
-      <item quantity="other">找到 <xliff:g id="COUNT">%d</xliff:g> 个联系人</item>
-      <item quantity="one">找到 1 个联系人</item>
-    </plurals>
-    <string name="all_contacts_tab_label" msgid="5948889261993124839">"全部"</string>
-    <string name="favorites_tab_label" msgid="1524869648904016414">"收藏"</string>
-    <string name="callBack" msgid="5498224409038809224">"回电"</string>
-    <string name="callAgain" msgid="3197312117049874778">"重拨"</string>
-    <string name="returnCall" msgid="8171961914203617813">"回拨"</string>
     <string name="add_contact_dlg_message_fmt" msgid="7986472669444326576">"将“<xliff:g id="EMAIL">%s</xliff:g>”添加到通讯录？"</string>
-    <string name="description_contact_photo" msgid="3387458082667894062">"联系人照片"</string>
-    <string name="description_plus_button" msgid="515164827856229880">"添加"</string>
-    <string name="exporting_contact_list_progress" msgid="560522409559101193">"第 <xliff:g id="CURRENT_NUMBER">%s</xliff:g> 个联系人（共 <xliff:g id="TOTAL_NUMBER">%s</xliff:g> 个）"</string>
     <string name="search_settings_description" msgid="2675223022992445813">"联系人姓名"</string>
-    <string name="quickcontact_missing_app" msgid="358168575340921552">"未找到可处理此操作的应用。"</string>
     <string name="quickcontact_transparent_view_description" msgid="987959416759562455">"点击即可返回上一屏幕"</string>
     <string name="quickcontact_add_phone_number" msgid="731665835910658965">"添加电话号码"</string>
     <string name="quickcontact_add_email" msgid="739298028384348482">"添加电子邮件地址"</string>
     <string name="missing_app" msgid="1466111003546611387">"未找到可处理此操作的应用。"</string>
     <string name="menu_share" msgid="943789700636542260">"分享"</string>
     <string name="menu_add_contact" msgid="3198704337220892684">"添加到通讯录"</string>
-    <string name="share_via" msgid="563121028023030093">"联系人分享方式"</string>
-    <string name="dialog_new_group_account" msgid="2318032089273496830">"要在哪个帐号下创建群组？"</string>
+    <string name="menu_add_contacts" msgid="4465646512002163011">"添加"</string>
+    <plurals name="title_share_via" formatted="false" msgid="5886112726191455415">
+      <item quantity="other">通过以下应用分享联系人</item>
+      <item quantity="one">通过以下应用分享联系人</item>
+    </plurals>
+    <string name="dialog_new_group_account" msgid="3451312333591556651">"选择帐号"</string>
+    <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"创建标签"</string>
+    <string name="group_name_dialog_update_title" msgid="6328021162869677383">"重命名标签"</string>
+    <string name="group_name_dialog_hint" msgid="7624523157537700160">"标签名称"</string>
+    <string name="label_name_dialog_hint" msgid="1276051790427638142">"标签名称"</string>
     <string name="audio_chat" msgid="2535716629358298691">"语音聊天"</string>
     <string name="video_chat" msgid="1872255818640336072">"视频聊天"</string>
-    <string name="connections" msgid="8098440723172028350">"社交网络"</string>
-    <string name="add_connection_button" msgid="4861308615789601727">"添加社交网络"</string>
-    <string name="recent" msgid="2659189233141493004">"最新"</string>
-    <string name="recent_updates" msgid="4267258535615860710">"最新动态"</string>
     <string name="account_type_format" msgid="718948015590343010">"<xliff:g id="SOURCE">%1$s</xliff:g> 联系人"</string>
     <string name="google_account_type_format" msgid="5283997303922067997">"<xliff:g id="SOURCE">%1$s</xliff:g>帐号"</string>
-    <!-- no translation found for from_account_format (4469138575127580203) -->
-    <skip />
-    <string name="contact_read_only" msgid="7421346527289472273">"无法通过此应用修改。"</string>
-    <string name="group_read_only" msgid="1061762906115697637">"无法在此设备上修改。"</string>
     <string name="take_photo" msgid="7496128293167402354">"拍照"</string>
     <string name="take_new_photo" msgid="7341354729436576304">"拍摄新照片"</string>
     <string name="pick_photo" msgid="2129509985223564942">"选择照片"</string>
     <string name="pick_new_photo" msgid="9122450996263688237">"选择新照片"</string>
-    <string name="upgrade_in_progress" msgid="474511436863451061">"正在更新联系人列表。"</string>
     <string name="search_results_searching" msgid="3984833028938569930">"正在搜索..."</string>
-    <string name="menu_display_selected" msgid="6470001164297969034">"已选收件人"</string>
-    <string name="menu_display_all" msgid="8887488642609786198">"全部收件人"</string>
-    <string name="menu_select_all" msgid="621719255150713545">"全选"</string>
-    <string name="menu_select_none" msgid="7093222469852132345">"取消全选"</string>
-    <string name="add_new_entry_for_section" msgid="5223080690667565044">"添加新条目"</string>
-    <string name="add_organization" msgid="7311893231158291197">"添加工作单位"</string>
     <string name="event_edit_field_hint_text" msgid="5794424930242630477">"日期"</string>
-    <string name="group_edit_field_hint_text" msgid="3966441850870457808">"群组名称"</string>
-    <string name="change_photo" msgid="8530597935483526383">"更改"</string>
-    <string name="primary_photo" msgid="8517942231868516999">"主照片"</string>
-    <string name="description_star" msgid="2605854427360036550">"收藏"</string>
-    <string name="edit_contact" msgid="7529281274005689512">"编辑联系人"</string>
-    <string name="aggregation_suggestion_join_dialog_message" msgid="6786192560870357912">"要将当前联系人与所选联系人关联吗？"</string>
+    <string name="group_edit_field_hint_text" msgid="8038224059926963133">"标签"</string>
+    <string name="cancel_button_content_description" msgid="1288652456274531846">"取消"</string>
+    <string name="back_arrow_content_description" msgid="4355362760545735065">"返回"</string>
+    <string name="action_menu_back_from_edit_select" msgid="6435476408621731420">"关闭"</string>
     <string name="aggregation_suggestion_edit_dialog_message" msgid="6549585283910518095">"要切换至编辑所选联系人吗？系统会复制您到目前为止输入的所有信息。"</string>
-    <string name="menu_copyContact" msgid="1573960845106822639">"复制到“我的联系人”"</string>
-    <string name="add_to_my_contacts" msgid="1068274916793627723">"添加到“我的联系人”"</string>
     <string name="contact_directory_description" msgid="683398073603909119">"目录类型：<xliff:g id="TYPE">%1$s</xliff:g>"</string>
-    <string name="list_filter_custom" msgid="8910173055702057002">"自定义"</string>
     <string name="activity_title_settings" msgid="5464130076132770781">"设置"</string>
     <string name="menu_settings" msgid="377929915873428211">"设置"</string>
     <string name="menu_help" msgid="1680178646764069976">"帮助和反馈"</string>
-    <string name="preference_displayOptions" msgid="1341720270148252393">"显示选项"</string>
     <string name="organization_company_and_title" msgid="6718207751363732025">"<xliff:g id="COMPANY_0">%2$s</xliff:g>，<xliff:g id="COMPANY_1">%1$s</xliff:g>"</string>
     <string name="non_phone_caption" msgid="1541655052330027380">"电话号码"</string>
     <string name="non_phone_add_to_contacts" msgid="6590985286250471169">"添加到通讯录"</string>
-    <string name="activity_title_confirm_add_detail" msgid="4065089866210730616">"添加到现有联系人"</string>
     <string name="non_phone_close" msgid="7608506439725515667">"关闭"</string>
-    <string name="widget_name_and_phonetic" msgid="8739586586600099979">"<xliff:g id="DISPLAY_NAME">%1$s</xliff:g> (<xliff:g id="PHONETIC_NAME">%2$s</xliff:g>)"</string>
     <string name="date_year_toggle" msgid="7122002148518724139">"包含年份"</string>
-    <string name="social_widget_label" msgid="6378905543028924592">"联系人"</string>
-    <string name="social_widget_loading" msgid="5327336597364074608">"正在加载..."</string>
-    <string name="contacts_unavailable_create_contact" msgid="7014525713871959208">"创建新联系人"</string>
     <string name="contacts_unavailable_add_account" msgid="4347232421410561500">"添加帐号"</string>
-    <string name="contacts_unavailable_import_contacts" msgid="4957393255392437529">"导入联系人"</string>
-    <string name="create_group_dialog_title" msgid="6874527142828424475">"创建新群组"</string>
-    <string name="create_group_item_label" msgid="4411981763169654825">"创建新群组"</string>
-    <plurals name="num_groups_in_account" formatted="false" msgid="6189297639209663469">
-      <item quantity="other"><xliff:g id="COUNT">%0$d</xliff:g> 个群组</item>
-      <item quantity="one">1 个群组</item>
-    </plurals>
-    <string name="delete_group_dialog_message" msgid="7586856514337560529">"要删除群组“<xliff:g id="GROUP_LABEL">%1$s</xliff:g>”（并不会删除联系人本身）吗？"</string>
-    <plurals name="num_contacts_in_group" formatted="false" msgid="5520734553286350341">
-      <item quantity="other"><xliff:g id="ACCOUNT_TYPE_3">%2$s</xliff:g>中有 <xliff:g id="COUNT_2">%1$d</xliff:g> 个联系人</item>
-      <item quantity="one"><xliff:g id="ACCOUNT_TYPE_1">%2$s</xliff:g>中有 <xliff:g id="COUNT_0">%1$d</xliff:g> 个联系人</item>
-    </plurals>
-    <plurals name="group_list_num_contacts_in_group" formatted="false" msgid="8240460423614369023">
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> 个联系人</item>
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> 个联系人</item>
-    </plurals>
+    <string name="contacts_unavailable_import_contacts" msgid="3182801738595937144">"导入"</string>
+    <string name="create_group_item_label" msgid="3263064599743742865">"新建…"</string>
+    <string name="delete_group_dialog_message" msgid="335713829185261371">"要删除“<xliff:g id="GROUP_LABEL">%1$s</xliff:g>”标签吗？（系统不会删除联系人。）"</string>
     <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"请先输入联系人姓名，然后再将其与其他联系人关联。"</string>
     <string name="copy_text" msgid="3257145021583508761">"复制到剪贴板"</string>
     <string name="set_default" msgid="4417505153468300351">"设置默认值"</string>
     <string name="clear_default" msgid="7193185801596678067">"清除默认值"</string>
     <string name="toast_text_copied" msgid="5143776250008541719">"文本已复制"</string>
-    <string name="cancel_confirmation_dialog_message" msgid="5058226498605989285">"要舍弃您所做的更改并停止修改吗？"</string>
+    <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"要舍弃更改吗？"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"舍弃"</string>
-    <string name="cancel_confirmation_dialog_keep_editing_button" msgid="7737724111972855348">"继续修改"</string>
-    <string name="call_type_and_date" msgid="747163730039311423">"<xliff:g id="CALL_TYPE">%1$s</xliff:g> <xliff:g id="CALL_SHORT_DATE">%2$s</xliff:g>"</string>
-    <string name="profile_display_name" msgid="4127389543625918771">"设置我的个人资料"</string>
-    <string name="enter_contact_name" msgid="1738391320566349924">"键入联系人的姓名"</string>
-    <string name="group_name_hint" msgid="238359485263401293">"群组名称"</string>
+    <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"取消"</string>
+    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"要舍弃自定义设置吗？"</string>
+    <string name="enter_contact_name" msgid="4594274696120278368">"搜索联系人"</string>
+    <string name="title_edit_group" msgid="8602752287270586734">"移除联系人"</string>
     <string name="local_profile_title" msgid="2021416826991393684">"我的本地个人资料"</string>
     <string name="external_profile_title" msgid="8034998767621359438">"我的<xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g>个人资料"</string>
-    <string name="toast_displaying_all_contacts" msgid="2737388783898593875">"显示所有联系人"</string>
-    <string name="generic_no_account_prompt" msgid="7218827704367325460">"即使手机丢了，也能确保您的联系人信息的安全性：与在线服务同步。"</string>
-    <string name="generic_no_account_prompt_title" msgid="753783911899054860">"添加帐号"</string>
-    <string name="contact_editor_prompt_zero_accounts" msgid="1785345895691886499">"系统不会备份您的新联系人。要添加用于在线备份联系人的帐号吗？"</string>
+    <string name="contact_editor_prompt_zero_accounts" msgid="6648376557574360096">"请花一点时间添加帐号，以便将联系人备份到 Google。"</string>
     <string name="contact_editor_prompt_one_account" msgid="3087691056345099310">"新建的联系人将保存到 <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>。"</string>
     <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"选择用来保存新建联系人的默认帐号："</string>
-    <string name="contact_editor_title_new_contact" msgid="7192223018128934940">"新增联系人"</string>
+    <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"创建新联系人"</string>
     <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"修改联系人"</string>
-    <string name="keep_local" msgid="1258761699192993322">"本地保存"</string>
+    <string name="contact_editor_title_read_only_contact" msgid="2443496574528842237">"只能查看"</string>
+    <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4186699385645902152">"选择要修改的联系人"</string>
+    <string name="contact_editor_pick_linked_contact_dialog_title" msgid="4618465940423857694">"已关联的联系人"</string>
+    <string name="contact_editor_add_linked_contact" msgid="426142748048816297">"添加"</string>
+    <string name="contact_editor_unlink_contacts" msgid="4525214336177236653">"取消关联"</string>
     <string name="add_account" msgid="8201790677994503186">"添加帐号"</string>
     <string name="add_new_account" msgid="5748627740680940264">"添加新帐号"</string>
     <string name="menu_export_database" msgid="2659719297530170820">"导出数据库文件"</string>
-    <string name="action_menu_add_new_contact_button" msgid="3180222523336380017">"添加新联系人"</string>
+    <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"创建新联系人"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"查看更多"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"隐藏部分"</string>
-    <string name="expanding_entry_card_view_see_all" msgid="3845258737661412627">"查看全部"</string>
-    <string name="recent_card_title" msgid="8982782042698001695">"最近"</string>
+    <string name="recent_card_title" msgid="8982782042698001695">"近期活动"</string>
     <string name="about_card_title" msgid="2920942314212825637">"简介"</string>
-    <string name="send_message" msgid="8938418965550543196">"发送短信"</string>
-    <string name="toast_making_personal_copy" msgid="6137651078366797938">"正在创建个人副本…"</string>
-    <string name="yesterday" msgid="6840858548955018569">"昨天"</string>
+    <string name="toast_making_personal_copy" msgid="288549957278065542">"正在创建个人副本..."</string>
     <string name="tomorrow" msgid="6241969467795308581">"明天"</string>
     <string name="today" msgid="8041090779381781781">"今天"</string>
     <string name="today_at_time_fmt" msgid="605665249491030460">"今天<xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
     <string name="tomorrow_at_time_fmt" msgid="4856497969617819421">"明天<xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%s</xliff:g>，<xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
+    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%1$s</xliff:g>，<xliff:g id="TIME_INTERVAL">%2$s</xliff:g>"</string>
     <string name="untitled_event" msgid="3484859385405939366">"（未命名的活动）"</string>
     <string name="date_time_set" msgid="4761419824439606690">"设置"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"聊天工具"</string>
@@ -270,62 +219,314 @@
     <string name="header_website_entry" msgid="1411467850000824745">"网站"</string>
     <string name="header_event_entry" msgid="6738250422744401460">"活动"</string>
     <string name="header_relation_entry" msgid="1520292958088146460">"关系"</string>
-    <string name="header_account_entry" msgid="2684318506427891827">"帐号"</string>
     <string name="header_name_entry" msgid="1592791008096288306">"姓名"</string>
     <string name="header_email_entry" msgid="8666093061171624478">"电子邮件地址"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"电话号码"</string>
-    <string name="header_photo_entry" msgid="4438023151411853238">"照片"</string>
-    <string name="content_description_expand_editor" msgid="1111381475901897470">"点按即可展开联系人编辑器。"</string>
-    <string name="content_description_collapse_editor" msgid="7598061318022977825">"点按即可收起联系人编辑器。"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"到特定地点的路线"</string>
-    <string name="content_description_recent_sms" msgid="1666389577263317445">"近期短信：<xliff:g id="MESSAGE_BODY">%s</xliff:g>。<xliff:g id="PHONE_NUMBER">%s</xliff:g>，<xliff:g id="DATE">%s</xliff:g>。点按可回复。"</string>
+    <string name="content_description_recent_sms" msgid="1666389577263317445">"近期短信：<xliff:g id="MESSAGE_BODY">%1$s</xliff:g>。<xliff:g id="PHONE_NUMBER">%2$s</xliff:g>，<xliff:g id="DATE">%3$s</xliff:g>。点按可回复。"</string>
     <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"来电"</string>
     <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"外拨电话"</string>
     <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"未接电话"</string>
-    <string name="content_description_recent_call" msgid="5183800406316723676">"近期通话：<xliff:g id="CALL_TYPE">%s</xliff:g>，<xliff:g id="PHONE_NUMBER">%s</xliff:g>，<xliff:g id="DATE">%s</xliff:g>。点按可回拨。"</string>
+    <string name="content_description_recent_call" msgid="5183800406316723676">"近期通话：<xliff:g id="CALL_TYPE">%1$s</xliff:g>，<xliff:g id="PHONE_NUMBER">%2$s</xliff:g>，<xliff:g id="DATE">%3$s</xliff:g>。点按可回拨。"</string>
     <string name="message_from_you_prefix" msgid="7180706529908434482">"您：<xliff:g id="SMS_BODY">%s</xliff:g>"</string>
-    <string name="contact_editor_hangouts_im_alert" msgid="114855385615225735">"请将联系人的环聊帐号信息输入到电子邮件地址字段或电话号码字段，以便获得更佳的环聊使用体验。"</string>
-    <string name="compact_editor_more_fields" msgid="5987638193568699600">"更多字段"</string>
-    <string name="compact_editor_change_photo_content_description" msgid="5495487714301211540">"更换照片"</string>
-    <string name="compact_editor_failed_to_load" msgid="4557094426388044958">"无法开启编辑器。"</string>
-    <string name="compact_editor_account_selector_title" msgid="5119592614151786601">"保存到"</string>
-    <string name="compact_editor_account_selector_description" msgid="2127184829759350507">"目前正在保存到 <xliff:g id="ACCOUNT_NAME">%s</xliff:g>。点按两次可选择其他帐号。"</string>
-    <plurals name="compact_editor_linked_contacts_selector_title" formatted="false" msgid="9156207930915878316">
-      <item quantity="other">已关联的联系人（<xliff:g id="COUNT">%d</xliff:g> 位）</item>
-      <item quantity="one">已关联的联系人</item>
-    </plurals>
-    <string name="quickcontact_contacts_number" msgid="6036916944287597682">"<xliff:g id="COUNT">%d</xliff:g> 位已关联的联系人"</string>
-    <string name="quick_contact_display_name_with_phonetic" msgid="3692038078718876610">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> (<xliff:g id="PHONETIC_NAME">%s</xliff:g>)"</string>
+    <string name="editor_more_fields" msgid="3630987771304393421">"更多字段"</string>
+    <string name="editor_change_photo_content_description" msgid="820879708069864340">"更改联系人照片"</string>
+    <string name="editor_add_photo_content_description" msgid="4194479313465418120">"添加联系人照片"</string>
+    <string name="editor_contact_photo_content_description" msgid="8571975622926162369">"联系人照片"</string>
+    <string name="editor_failed_to_load" msgid="1623639078580475818">"无法开启编辑器。"</string>
+    <string name="editor_account_selector_title" msgid="4426337993307015833">"保存到"</string>
+    <string name="editor_account_selector_read_only_title" msgid="4137969650184457126">"无法修改来自 <xliff:g id="ACCOUNT">%s</xliff:g> 的联系人信息"</string>
     <string name="quickcontact_suggestion_link_button" msgid="3244619714781727946">"关联联系人"</string>
     <string name="quickcontact_suggestion_cancel_button" msgid="8236954313106630862">"取消"</string>
-    <plurals name="quickcontact_suggestion_card_title" formatted="false" msgid="2660005966628746406">
-      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> 位可能重复的联系人</item>
-      <item quantity="one">1 位可能重复的联系人</item>
-    </plurals>
-    <plurals name="quickcontact_suggestions_number" formatted="false" msgid="495992931510695330">
-      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> 位已关联的联系人</item>
-      <item quantity="one">1 位已关联的联系人</item>
-    </plurals>
-    <plurals name="quickcontact_suggestion_account_type_number" formatted="false" msgid="3001681298924002373">
-      <item quantity="other">(<xliff:g id="COUNT">%d</xliff:g>)</item>
-      <item quantity="one"></item>
-    </plurals>
-    <string name="quickcontact_suggestion_account_type" msgid="5878263654735376962">"<xliff:g id="ACCOUNT_TYPE_0">%s</xliff:g> <xliff:g id="ACCOUNT_TYPE_NUMBER">%s</xliff:g>"</string>
     <string name="suggestion_card_this_contact_title" msgid="3039457405374454914">"此联系人"</string>
     <string name="suggestion_card_duplicates_title" msgid="9107788743178980902">"可能重复的联系人"</string>
     <string name="suggestion_card_help_message" msgid="4474061044387181093">"这些联系人可能是同一个人。您可以将它们关联在一起，以合并成一个联系人。"</string>
-    <string name="compact_editor_linked_contacts_title" msgid="4417919183651782674">"已关联的联系人"</string>
-    <string name="from_your_accounts" msgid="1746293107836889912">"来自您的帐号"</string>
-    <string name="take_a_photo_button" msgid="6268693854069113488">"拍摄照片"</string>
-    <string name="all_photos_button" msgid="1943122929420111351">"所有照片"</string>
-    <string name="photo_picker_title" msgid="5272832995550042801">"选择照片"</string>
-    <string name="contact_from_account_name" msgid="2078526819634079406">"来源：<xliff:g id="ACCOUNT_NAME">%s</xliff:g>"</string>
-    <string name="editor_delete_view_description" msgid="8583095381562991959">"删除<xliff:g id="DATA_TYPE">%s </xliff:g><xliff:g id="DATA_KIND">%s</xliff:g>"</string>
+    <string name="editor_delete_view_description" msgid="8583095381562991959">"删除<xliff:g id="DATA_TYPE">%1$s </xliff:g><xliff:g id="DATA_KIND">%2$s</xliff:g>"</string>
     <string name="editor_delete_view_description_short" msgid="7335518371270844912">"删除<xliff:g id="DATA_KIND">%s</xliff:g>"</string>
-    <string name="photo_view_description_not_checked" msgid="8876314195990885177">"未选中来自 <xliff:g id="ACCOUNT_TYPE">%s </xliff:g><xliff:g id="USER_NAME">%s </xliff:g> 的照片"</string>
-    <string name="photo_view_description_checked" msgid="3906597168607472795">"已选中来自 <xliff:g id="ACCOUNT_TYPE">%s </xliff:g><xliff:g id="USER_NAME">%s </xliff:g> 的照片"</string>
-    <string name="photo_view_description_not_checked_no_info" msgid="2749154927006406981">"未选中来自未知帐号的照片"</string>
-    <string name="photo_view_description_checked_no_info" msgid="4974335987092590591">"已选中来自未知帐号的照片"</string>
-    <string name="locale_change_in_progress" msgid="1124266507671178413">"正在更新联系人列表，以反映语言的变更。\n\n请稍候..."</string>
+    <string name="menu_assistant" msgid="5760693735722052454">"建议"</string>
+    <string name="menu_assistant_new_badge" msgid="3132884821616980034">"新徽章"</string>
+    <string name="navigation_drawer_open" msgid="1126498472143250642">"打开抽屉式导航栏"</string>
+    <string name="navigation_drawer_close" msgid="4137416137011817930">"关闭抽屉式导航栏"</string>
+    <string name="navigation_drawer_label" msgid="4154758025620107419">"“<xliff:g id="LABEL_NAME">%s</xliff:g>”标签"</string>
+    <string name="menu_title_groups" msgid="8356921831150278868">"标签"</string>
+    <string name="menu_title_filters" msgid="8210922220185114527">"帐号"</string>
+    <string name="permission_explanation_header" msgid="5739405825039695327">"同时显示过往记录"</string>
+    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"活动和信息"</string>
+    <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"活动"</string>
+    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"信息"</string>
+    <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"建议"</string>
+    <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"让您的通讯录井井有条，方便使用"</string>
+    <string name="undo" msgid="1425165101664071422">"撤消"</string>
+    <string name="call_custom" msgid="6385303130912713318">"拨打<xliff:g id="CUSTOM_LABEL">%s</xliff:g>电话号码"</string>
+    <string name="call_home" msgid="1990519474420545392">"拨打住宅电话号码"</string>
+    <string name="call_mobile" msgid="7502236805487609178">"呼叫手机"</string>
+    <string name="call_work" msgid="5328785911463744028">"呼叫单位"</string>
+    <string name="call_fax_work" msgid="7467763592359059243">"呼叫单位传真"</string>
+    <string name="call_fax_home" msgid="8342175628887571876">"拨打住宅传真号码"</string>
+    <string name="call_pager" msgid="9003902812293983281">"呼叫寻呼机"</string>
+    <string name="call_other" msgid="8563753966926932052">"拨打电话"</string>
+    <string name="call_callback" msgid="1910165691349426858">"呼叫回拨号码"</string>
+    <string name="call_car" msgid="3280537320306436445">"呼叫车载电话"</string>
+    <string name="call_company_main" msgid="6105120947138711257">"呼叫公司总机"</string>
+    <string name="call_isdn" msgid="1541590690193403411">"呼叫 ISDN"</string>
+    <string name="call_main" msgid="6082900571803441339">"呼叫总机"</string>
+    <string name="call_other_fax" msgid="5745314124619636674">"呼叫传真号码"</string>
+    <string name="call_radio" msgid="8296755876398357063">"呼叫无线装置"</string>
+    <string name="call_telex" msgid="2223170774548648114">"呼叫电报"</string>
+    <string name="call_tty_tdd" msgid="8951266948204379604">"拨打 TTY/TDD 号码"</string>
+    <string name="call_work_mobile" msgid="8707874281430105394">"呼叫单位手机"</string>
+    <string name="call_work_pager" msgid="3419348514157949008">"呼叫单位寻呼机"</string>
+    <string name="call_assistant" msgid="670941612175068337">"拨打<xliff:g id="CUSTOM_LABEL">%s</xliff:g>的电话"</string>
+    <string name="call_mms" msgid="6274041545876221437">"呼叫彩信号码"</string>
+    <string name="call_by_shortcut" msgid="2566802538698913124">"<xliff:g id="CONTACT_NAME">%s</xliff:g>（拨打电话）"</string>
+    <string name="sms_custom" msgid="415060214233647603">"向<xliff:g id="CUSTOM_LABEL">%s</xliff:g>电话号码发短信"</string>
+    <string name="sms_home" msgid="7524332261493162995">"向住宅电话号码发短信"</string>
+    <string name="sms_mobile" msgid="5200107250451030769">"向手机发送短信"</string>
+    <string name="sms_work" msgid="2269624156655267740">"向单位电话发送短信"</string>
+    <string name="sms_fax_work" msgid="8028189067816907075">"向单位传真机发送短信"</string>
+    <string name="sms_fax_home" msgid="9204042076306809634">"向住宅传真号码发短信"</string>
+    <string name="sms_pager" msgid="7730404569637015192">"向寻呼机发送文字消息"</string>
+    <string name="sms_other" msgid="806127844607642331">"发短信"</string>
+    <string name="sms_callback" msgid="5004824430094288752">"向回拨号码发送短信"</string>
+    <string name="sms_car" msgid="7444227058437359641">"向车载电话发送短信"</string>
+    <string name="sms_company_main" msgid="118970873419678087">"向公司总机发送短信"</string>
+    <string name="sms_isdn" msgid="8153785037515047845">"向 ISDN 发送短信"</string>
+    <string name="sms_main" msgid="8621625784504541679">"向总机发送短信"</string>
+    <string name="sms_other_fax" msgid="3888842199855843152">"向传真号码发送短信"</string>
+    <string name="sms_radio" msgid="3329166673433967820">"向无线装置发送短信"</string>
+    <string name="sms_telex" msgid="9034802430065267848">"向电报发送短信"</string>
+    <string name="sms_tty_tdd" msgid="6782284969132531532">"向 TTY/TDD 号码发送短信"</string>
+    <string name="sms_work_mobile" msgid="2459939960512702560">"向单位手机发送短信"</string>
+    <string name="sms_work_pager" msgid="5566924423316960597">"向单位寻呼机发送短信"</string>
+    <string name="sms_assistant" msgid="2773424339923116234">"向<xliff:g id="ASSISTANT">%s</xliff:g>发短信"</string>
+    <string name="sms_mms" msgid="4069352461380762677">"向彩信号码发送短信"</string>
+    <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g>（发送短信）"</string>
+    <string name="description_video_call" msgid="7120921378651700947">"发起视频通话"</string>
+    <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"是否清除常用联系人？"</string>
+    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"此操作会清除“通讯录”和“电话”应用中的常用联系人列表，并强制电子邮件应用重新获取您最常使用的联系地址。"</string>
+    <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"正在清除常用联系人…"</string>
+    <string name="status_available" msgid="5586870015822828392">"在线"</string>
+    <string name="status_away" msgid="1838861100379804730">"离开"</string>
+    <string name="status_busy" msgid="9147992455450257136">"忙碌"</string>
+    <string name="local_invisible_directory" msgid="6046691709127661065">"其他"</string>
+    <string name="directory_search_label" msgid="1887759056597975053">"目录"</string>
+    <string name="directory_search_label_work" msgid="8618292129829443176">"工作目录"</string>
+    <string name="local_search_label" msgid="2551177578246113614">"所有联系人"</string>
+    <string name="description_quick_contact_for" msgid="6737516415168327789">"<xliff:g id="NAME">%1$s</xliff:g>的快捷联系方式"</string>
+    <string name="missing_name" msgid="8745511583852904385">"（无姓名）"</string>
+    <string name="favoritesFrequentContacted" msgid="6184232487472425690">"经常联系的人"</string>
+    <string name="list_filter_phones" msgid="735313795643493365">"所有拥有电话号码的联系人"</string>
+    <string name="list_filter_phones_work" msgid="1470173699551475015">"工作资料联系人"</string>
+    <string name="view_updates_from_group" msgid="1782685984905600034">"查看更新"</string>
+    <string name="account_phone" msgid="7128032778471187553">"设备"</string>
+    <string name="account_sim" msgid="6519016427905087952">"SIM 卡"</string>
+    <string name="nameLabelsGroup" msgid="2034640839640477827">"姓名"</string>
+    <string name="nicknameLabelsGroup" msgid="2891682101053358010">"昵称"</string>
+    <string name="name_given" msgid="4280790853455320619">"名字"</string>
+    <string name="name_family" msgid="7466985689626017037">"姓氏"</string>
+    <string name="name_prefix" msgid="59756378548779822">"姓名前缀"</string>
+    <string name="name_middle" msgid="8467433655992690326">"中间名"</string>
+    <string name="name_suffix" msgid="3855278445375651441">"姓名后缀"</string>
+    <string name="name_phonetic" msgid="4259595234312430484">"姓名拼音"</string>
+    <string name="name_phonetic_given" msgid="8723179018384187631">"名字拼音"</string>
+    <string name="name_phonetic_middle" msgid="8643721493320405200">"中间名拼音"</string>
+    <string name="name_phonetic_family" msgid="2640133663656011626">"姓氏拼音"</string>
+    <string name="phoneLabelsGroup" msgid="6468091477851199285">"电话"</string>
+    <string name="emailLabelsGroup" msgid="8389931313045344406">"电子邮件"</string>
+    <string name="postalLabelsGroup" msgid="3487738141112589324">"地址"</string>
+    <string name="imLabelsGroup" msgid="3898238486262614027">"即时聊天工具"</string>
+    <string name="organizationLabelsGroup" msgid="2478611760751832035">"组织"</string>
+    <string name="relationLabelsGroup" msgid="1854373894284572781">"关系"</string>
+    <string name="eventLabelsGroup" msgid="7960408705307831289">"特别的日子"</string>
+    <string name="sms" msgid="1756857139634224222">"短信"</string>
+    <string name="postal_address" msgid="8765560217149624536">"地址"</string>
+    <string name="ghostData_company" msgid="5414421120553765775">"公司"</string>
+    <string name="ghostData_title" msgid="7496735200318496110">"职位"</string>
+    <string name="label_notes" msgid="8337354953278341042">"备注"</string>
+    <string name="label_custom_field" msgid="1994056912242214426">"自定义"</string>
+    <string name="label_sip_address" msgid="7252153678613978127">"SIP"</string>
+    <string name="websiteLabelsGroup" msgid="4202998982804009261">"网站"</string>
+    <string name="groupsLabel" msgid="7000816729542098972">"标签"</string>
+    <string name="email_home" msgid="8573740658148184279">"向住宅邮箱发送电子邮件"</string>
+    <string name="email_mobile" msgid="2042889209787989814">"向手机发送电子邮件"</string>
+    <string name="email_work" msgid="2807430017302722689">"向单位邮箱发送电子邮件"</string>
+    <string name="email_other" msgid="3454004077967657109">"发送电子邮件"</string>
+    <string name="email_custom" msgid="5536404237099078802">"向<xliff:g id="CUSTOM_LABEL">%s</xliff:g>邮箱发送电子邮件"</string>
+    <string name="email" msgid="5668400997660065897">"电子邮件"</string>
+    <string name="postal_street" msgid="8133143961580058972">"街道"</string>
+    <string name="postal_city" msgid="6597491300084895548">"城市"</string>
+    <string name="postal_region" msgid="6045263193478437672">"省/直辖市/自治区"</string>
+    <string name="postal_postcode" msgid="572136414136673751">"邮编"</string>
+    <string name="postal_country" msgid="7638264508416368690">"国家/地区"</string>
+    <string name="map_home" msgid="1243547733423343982">"查看住宅地址"</string>
+    <string name="map_work" msgid="1360474076921878088">"查看单位地址"</string>
+    <string name="map_other" msgid="3817820803587012641">"查看地址"</string>
+    <string name="map_custom" msgid="8761800628069473526">"查看<xliff:g id="CUSTOM_LABEL">%s</xliff:g>地址"</string>
+    <string name="chat_aim" msgid="2588492205291249142">"使用 AIM 聊天"</string>
+    <string name="chat_msn" msgid="8041633440091073484">"使用 Windows Live 聊天"</string>
+    <string name="chat_yahoo" msgid="6629211142719943666">"使用雅虎软件聊天"</string>
+    <string name="chat_skype" msgid="1210045020427480566">"使用 Skype 聊天"</string>
+    <string name="chat_qq" msgid="4294637812847719693">"使用 QQ 聊天"</string>
+    <string name="chat_gtalk" msgid="981575737258117697">"使用 Google Talk 聊天"</string>
+    <string name="chat_icq" msgid="8438405386153745775">"使用 ICQ 聊天"</string>
+    <string name="chat_jabber" msgid="7561444230307829609">"使用 Jabber 聊天"</string>
+    <string name="chat" msgid="9025361898797412245">"聊天"</string>
+    <string name="description_minus_button" msgid="6908099247930477551">"删除"</string>
+    <string name="expand_name_fields_description" msgid="6948274252874552543">"显示更多姓名字段"</string>
+    <string name="collapse_name_fields_description" msgid="4757877385895561556">"收起姓名字段"</string>
+    <string name="expand_phonetic_name_fields_description" msgid="9133052674087187927">"显示更多姓名拼音字段"</string>
+    <string name="collapse_phonetic_name_fields_description" msgid="9102249481855019452">"收起姓名拼音字段"</string>
+    <string name="expand_fields_description" msgid="8129294181216760037">"展开"</string>
+    <string name="collapse_fields_description" msgid="1884143625854637874">"收起"</string>
+    <string name="announce_expanded_fields" msgid="1075947220478530622">"已展开"</string>
+    <string name="announce_collapsed_fields" msgid="6414231530177338704">"已收起"</string>
+    <string name="list_filter_all_accounts" msgid="8908683398914322369">"所有联系人"</string>
+    <string name="list_filter_all_starred" msgid="5031734941601931356">"已加星标"</string>
+    <string name="list_filter_customize" msgid="4789963356004169321">"自定义"</string>
+    <string name="list_filter_single" msgid="5871400283515893087">"联系人"</string>
+    <string name="display_ungrouped" msgid="6885954210243119591">"其他所有联系人"</string>
+    <string name="display_all_contacts" msgid="2031647544742889505">"所有联系人"</string>
+    <string name="menu_sync_remove" msgid="3266725887008450161">"删除同步群组"</string>
+    <string name="dialog_sync_add" msgid="8267045393119375803">"添加同步群组"</string>
+    <string name="display_more_groups" msgid="2682547080423434170">"更多群组…"</string>
+    <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"如果您停止同步“<xliff:g id="GROUP">%s</xliff:g>”，将同时停止同步所有未分组的联系人。"</string>
+    <string name="savingDisplayGroups" msgid="2133152192716475939">"正在保存显示选项…"</string>
+    <string name="listCustomView" msgid="1840624396582117590">"自定义视图"</string>
+    <string name="dialog_new_contact_account" msgid="4969619718062454756">"将导入的联系人保存到："</string>
+    <string name="import_from_sim" msgid="6912071635295799131">"SIM 卡"</string>
+    <string name="import_from_sim_summary_fmt" msgid="5169032449686348118">"SIM 卡“<xliff:g id="SIM_NAME">%1$s</xliff:g>”"</string>
+    <plurals name="import_from_sim_secondary_contact_count_fmt" formatted="false" msgid="5821095773211149295">
+      <item quantity="other">%1$d 位联系人</item>
+      <item quantity="one">1 位联系人</item>
+    </plurals>
+    <plurals name="import_from_sim_secondary_template" formatted="false" msgid="2484832025802907060">
+      <item quantity="other"><xliff:g id="COUNT_2">^1</xliff:g> 位联系人（在 <xliff:g id="PHONE_NUMBER_3">^2</xliff:g> 中）</item>
+      <item quantity="one"><xliff:g id="COUNT_0">^1</xliff:g> 位联系人（在 <xliff:g id="PHONE_NUMBER_1">^2</xliff:g> 中）</item>
+    </plurals>
+    <string name="import_from_vcf_file" msgid="8662528435646418203">".vcf 文件"</string>
+    <string name="nothing_to_import_message" msgid="1651921906873335656">"没有可导入的对象"</string>
+    <string name="import_from_vcf_file_confirmation_message" msgid="967723361108008345">"要从 vCard 中导入联系人吗？"</string>
+    <string name="cancel_import_confirmation_message" msgid="3929951040347726757">"要取消导入 <xliff:g id="FILENAME">%s</xliff:g> 吗​​？"</string>
+    <string name="cancel_export_confirmation_message" msgid="1995462401949262638">"要取消导出 <xliff:g id="FILENAME">%s</xliff:g> 吗​​？"</string>
+    <string name="cancel_vcard_import_or_export_failed" msgid="6139900383366166706">"无法取消导入/导出 vCard"</string>
+    <string name="fail_reason_unknown" msgid="1714092345030570863">"未知错误。"</string>
+    <string name="fail_reason_could_not_open_file" msgid="2067725459821997463">"无法打开“<xliff:g id="FILE_NAME">%1$s</xliff:g>”：<xliff:g id="EXACT_REASON">%2$s</xliff:g>。"</string>
+    <string name="fail_reason_could_not_initialize_exporter" msgid="707260459259688510">"无法启动导出程序：“<xliff:g id="EXACT_REASON">%s</xliff:g>”。"</string>
+    <string name="fail_reason_no_exportable_contact" msgid="8728506011371262065">"没有可导出的联系人。"</string>
+    <string name="missing_required_permission" msgid="5865884842972833120">"您已停用一项必需权限。"</string>
+    <string name="fail_reason_error_occurred_during_export" msgid="3018855323913649063">"导出时出错：“<xliff:g id="EXACT_REASON">%s</xliff:g>”。"</string>
+    <string name="fail_reason_io_error" msgid="6748358842976073255">"I/O 错误"</string>
+    <string name="fail_reason_low_memory_during_import" msgid="875222757734882898">"内存不足。该文件可能过大。"</string>
+    <string name="fail_reason_not_supported" msgid="8219562769267148825">"该格式不受支持。"</string>
+    <string name="exporting_vcard_finished_title" msgid="4767045779458185251">"导出 <xliff:g id="FILENAME">%s</xliff:g> 已完成。"</string>
+    <string name="exporting_vcard_finished_title_fallback" msgid="6060472638008218274">"已成功导出联系人。"</string>
+    <string name="exporting_vcard_finished_toast" msgid="1739055986856453882">"联系人导出已完成，点击通知即可分享联系人。"</string>
+    <string name="touch_to_share_contacts" msgid="4882485525268469736">"点按即可分享联系人。"</string>
+    <string name="exporting_vcard_canceled_title" msgid="2652222370493306887">"已取消导出 <xliff:g id="FILENAME">%s</xliff:g>。"</string>
+    <string name="exporting_contact_list_title" msgid="9072240631534457415">"正在导出联系人数据"</string>
+    <string name="exporting_contact_list_message" msgid="3367949209642931952">"正在导出联系人数据。"</string>
+    <string name="composer_failed_to_get_database_infomation" msgid="1765944280846236723">"无法获取数据库信息。"</string>
+    <string name="composer_has_no_exportable_contact" msgid="5712531702823346549">"没有可导出的联系人。"</string>
+    <string name="composer_not_initialized" msgid="2321648986367005254">"vCard 制作程序未正确启动。"</string>
+    <string name="exporting_contact_failed_title" msgid="4892358112409576342">"无法导出"</string>
+    <string name="exporting_contact_failed_message" msgid="4938527850142003141">"未导出联系人数据。\n原因：“<xliff:g id="FAIL_REASON">%s</xliff:g>”"</string>
+    <string name="importing_vcard_description" msgid="4245275224298571351">"正在导入<xliff:g id="NAME">%s</xliff:g>"</string>
+    <string name="reading_vcard_failed_title" msgid="4251647443358422855">"无法读取 vCard 数据"</string>
+    <string name="importing_vcard_finished_title" msgid="3341541727268747967">"导入 vCard <xliff:g id="FILENAME">%s</xliff:g> 已完成"</string>
+    <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"已取消导入 <xliff:g id="FILENAME">%s</xliff:g>"</string>
+    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"<xliff:g id="FILENAME">%s</xliff:g> 将在稍后导入。"</string>
+    <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"系统稍后就会导入该文件。"</string>
+    <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"vCard 导入请求遭拒，请稍后重试。"</string>
+    <string name="contacts_export_will_start_message" msgid="8538705791417534431">"即将导出联系人。"</string>
+    <string name="vcard_export_request_rejected_message" msgid="2844874826431327531">"vCard 导出请求遭拒，请稍后重试。"</string>
+    <string name="vcard_unknown_filename" msgid="7171709890959915954">"联系人"</string>
+    <string name="caching_vcard_message" msgid="4926308675041506756">"正在将 vCard 缓存到本地临时存储空间。实际导入操作即将开始。"</string>
+    <string name="vcard_import_failed" msgid="5223531255894842406">"无法导入 vCard。"</string>
+    <string name="nfc_vcard_file_name" msgid="2823095213265993609">"已通过 NFC 收到联系人信息"</string>
+    <string name="caching_vcard_title" msgid="1226272312940516605">"正在缓存..."</string>
+    <string name="progress_notifier_message" msgid="2311011466908220528">"正在导入第 <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g> 个（共 <xliff:g id="TOTAL_NUMBER">%2$s</xliff:g> 个）联系人：<xliff:g id="NAME">%3$s</xliff:g>"</string>
+    <string name="export_to_vcf_file" msgid="4407527157056120858">"导出为 .vcf 文件"</string>
+    <string name="display_options_sort_list_by" msgid="7028809117272018712">"排序方式"</string>
+    <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"姓名拼音"</string>
+    <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"一律显示"</string>
+    <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"字段为空时将其隐藏"</string>
+    <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"名字"</string>
+    <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"姓氏"</string>
+    <string name="display_options_view_names_as" msgid="6514632499276563482">"姓名格式"</string>
+    <string name="display_options_view_given_name_first" msgid="3616004640258761473">"名字在前"</string>
+    <string name="display_options_view_family_name_first" msgid="956445100777296467">"姓氏在前"</string>
+    <string name="settings_accounts" msgid="350219740670774576">"帐号"</string>
+    <string name="default_editor_account" msgid="699591683362420991">"用于保存新联系人的默认帐号"</string>
+    <string name="settings_my_info_title" msgid="1534272456405343119">"我的信息"</string>
+    <string name="set_up_profile" msgid="7370213843590143771">"设置您的个人资料"</string>
+    <string name="setting_about" msgid="7014388749752042863">"关于通讯录"</string>
+    <string name="share_favorite_contacts" msgid="4280926751003081042">"分享收藏的联系人"</string>
+    <string name="share_contacts" msgid="8109287987498711664">"分享所有联系人"</string>
+    <string name="share_contacts_failure" msgid="1216431977330560559">"无法分享联系人。"</string>
+    <string name="dialog_export" msgid="1628001095187741417">"导出联系人"</string>
+    <string name="dialog_import" msgid="2423592905927819672">"从以下来源导入联系人"</string>
+    <string name="share_error" msgid="948429331673358107">"无法分享此联系人。"</string>
+    <string name="no_contact_to_share" msgid="1276397530378323033">"没有可分享的联系人。"</string>
+    <string name="menu_contacts_filter" msgid="2165153460860262501">"要显示的联系人"</string>
+    <string name="activity_title_contacts_filter" msgid="8275542497615516969">"要显示的联系人"</string>
+    <string name="custom_list_filter" msgid="9048525797111024204">"自定义视图"</string>
+    <string name="menu_custom_filter_save" msgid="2679793632208086460">"保存"</string>
+    <string name="hint_findContacts" msgid="7128627979899070325">"搜索联系人"</string>
+    <string name="contactsFavoritesLabel" msgid="8417039765586853670">"收藏"</string>
+    <string name="menu_import" msgid="6107961135813836467">"导入"</string>
+    <string name="menu_export" msgid="2658783911863503902">"导出"</string>
     <string name="menu_blocked_numbers" msgid="5272951629083025995">"已屏蔽的号码"</string>
+    <string name="contact_status_update_attribution" msgid="752179367353018597">"来源：<xliff:g id="SOURCE">%1$s</xliff:g>"</string>
+    <string name="contact_status_update_attribution_with_date" msgid="7358045508107825068">"时间：<xliff:g id="DATE">%1$s</xliff:g>，来源：<xliff:g id="SOURCE">%2$s</xliff:g>"</string>
+    <string name="action_menu_back_from_search" msgid="8793348588949233348">"停止搜索"</string>
+    <string name="description_clear_search" msgid="688023606766232904">"清除搜索内容"</string>
+    <string name="select_account_dialog_title" msgid="5478489655696599219">"帐号"</string>
+    <string name="set_default_account" msgid="4311613760725609801">"一律使用这张卡进行通话"</string>
+    <string name="call_with_a_note" msgid="8389827628360791676">"拨打电话并发送备注"</string>
+    <string name="call_subject_hint" msgid="3043028982108363572">"输入要在拨打电话时发送的备注…"</string>
+    <string name="send_and_call_button" msgid="7740295432834590737">"发送并拨打电话"</string>
+    <string name="call_subject_limit" msgid="4545212901205397669">"<xliff:g id="COUNT">%1$s</xliff:g> / <xliff:g id="LIMIT">%2$s</xliff:g>"</string>
+    <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
+    <string name="about_build_version" msgid="1765533099416999801">"版本号"</string>
+    <string name="about_open_source_licenses" msgid="6479990452352919641">"开放源代码许可"</string>
+    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"开放源代码软件的许可详情"</string>
+    <string name="about_privacy_policy" msgid="3705518622499152626">"隐私权政策"</string>
+    <string name="about_terms_of_service" msgid="4642400812150296723">"服务条款"</string>
+    <string name="activity_title_licenses" msgid="5467767062737708066">"开放源代码许可"</string>
+    <string name="url_open_error_toast" msgid="452592089815420457">"无法打开网址。"</string>
+    <string name="account_filter_view_checked" msgid="6696859503887762213">"已选中 <xliff:g id="ACCOUNT_INFO">%s</xliff:g>"</string>
+    <string name="account_filter_view_not_checked" msgid="2248684521205038389">"未选中 <xliff:g id="ACCOUNT_INFO">%s</xliff:g>"</string>
+    <string name="description_search_video_call" msgid="5841525580339803272">"发起视频通话"</string>
+    <string name="description_delete_contact" msgid="53835657343783663">"删除"</string>
+    <string name="description_no_name_header" msgid="8884991311595943271">"省略号"</string>
+    <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> 秒"</string>
+    <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> 分钟 <xliff:g id="SECONDS">%2$s</xliff:g> 秒"</string>
+    <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> 小时 <xliff:g id="MINUTES_1">%2$s</xliff:g> 分钟 <xliff:g id="SECONDS">%3$s</xliff:g> 秒"</string>
+    <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"此快捷方式已失效"</string>
+    <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"联系人已被移除"</string>
+    <string name="sim_import_button_text" msgid="4270841592496619317">"导入"</string>
+    <string name="sim_import_title_none_selected" msgid="6910517331401970693">"选择联系人"</string>
+    <string name="sim_import_empty_message" msgid="7743815244380189651">"SIM 卡上没有联系人"</string>
+    <string name="sim_import_contact_exists_toast" msgid="1503743663717316732">"联系人已在列表中"</string>
+    <plurals name="sim_import_success_toast_fmt" formatted="false" msgid="8572156521110906443">
+      <item quantity="other">已导入 <xliff:g id="COUNT">%d</xliff:g> 位 SIM 卡联系人</item>
+      <item quantity="one">已导入 1 位 SIM 卡联系人</item>
+    </plurals>
+    <string name="sim_import_failed_toast" msgid="5559267299793622705">"无法导入 SIM 卡联系人"</string>
+    <string name="sim_import_title" msgid="2511154832820812822">"从 SIM 卡导入"</string>
+    <string name="sim_import_cancel_content_description" msgid="1619832410253424452">"取消"</string>
+    <string name="auto_sync_off" msgid="2180147284456026587">"自动同步功能已关闭。点按即可开启。"</string>
+    <string name="dismiss_sync_alert" msgid="8941131776605093596">"关闭"</string>
+    <string name="account_sync_off" msgid="7646143254066243924">"帐号同步功能已关闭。点按即可开启。"</string>
+    <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"要开启自动同步功能吗？"</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"您对所有应用和帐号（不只是 Google 通讯录）所做的更改都会在网络和您的设备之间保持同步。"</string>
+    <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"开启"</string>
+    <string name="connection_error_message" msgid="7046408921529247089">"无网络连接"</string>
+    <string name="single_sim_display_label" msgid="6985770499439371497">"SIM 卡"</string>
+    <string name="show_more_content_description" msgid="4277410425912984722">"显示更多"</string>
+    <string name="importing_sim_finished_title" msgid="5196369441294050721">"已导入 SIM 卡联系人"</string>
+    <string name="importing_sim_failed_title" msgid="39706901030537985">"导入失败"</string>
+    <string name="importing_sim_failed_message" msgid="3345258302998021066">"无法导入 SIM 卡中的联系人"</string>
+    <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"正在导入 SIM 卡联系人"</string>
+    <string name="contacts_default_notification_channel" msgid="4754058700611188581">"通知"</string>
 </resources>

@@ -17,31 +17,17 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="applicationLabel" msgid="3906689777043645443">"Επαφές"</string>
-    <string name="launcherActivityLabel" msgid="6497230399032392417">"Επαφές"</string>
-    <string name="quickContactActivityLabel" msgid="7985456650689347268">"Προβολή επαφής"</string>
-    <string name="editContactActivityLabel" msgid="1129944572070802839">"Επεξεργασία επαφής"</string>
     <string name="contactsList" msgid="8661624236494819731">"Επαφές"</string>
+    <string name="shortcut_add_contact" msgid="7476283631356909204">"Προσθήκη επαφής"</string>
     <string name="shortcutContact" msgid="749243779392912958">"Επαφή"</string>
     <string name="shortcutDialContact" msgid="746622101599186779">"Άμεση κλήση"</string>
     <string name="shortcutMessageContact" msgid="2460337253595976198">"Άμεσο μήνυμα"</string>
-    <string name="shortcutActivityTitle" msgid="6642877210643565436">"Επιλογή μιας συντόμευσης επαφών"</string>
-    <string name="callShortcutActivityTitle" msgid="6065749861423648991">"Επιλογή ενός αριθμού για κλήση"</string>
-    <string name="messageShortcutActivityTitle" msgid="3084542316620335911">"Επιλογή ενός αριθμού για μήνυμα"</string>
+    <string name="shortcutActivityTitle" msgid="1504383567778497348">"Επιλογή επαφής"</string>
     <string name="contactInsertOrEditActivityTitle" msgid="6527505405325862674">"Προσθήκη σε επαφή"</string>
     <string name="contactPickerActivityTitle" msgid="4301062192337417640">"Επιλέξτε μια επαφή"</string>
+    <string name="groupMemberPickerActivityTitle" msgid="1431750793695262522">"Επιλογή"</string>
     <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"Δημιουργία νέας επαφής"</string>
-    <string name="starredList" msgid="4817256136413959463">"Με αστέρι"</string>
-    <string name="frequentList" msgid="7154768136473953056">"Συχνές"</string>
-    <string name="strequentList" msgid="5640192862059373511">"Αγαπ."</string>
-    <string name="viewContactTitle" msgid="7989394521836644384">"Λεπτομέρειες επαφής"</string>
-    <string name="editContactDescription" msgid="2947202828256214947">"Επεξεργασία επαφής"</string>
-    <string name="insertContactDescription" msgid="4709878105452681987">"Δημιουργία επαφής"</string>
-    <string name="editGroupDescription" msgid="6321161304201540561">"Επεξεργασία ομάδας"</string>
-    <string name="insertGroupDescription" msgid="5658512271662210139">"Δημιουργία ομάδας"</string>
-    <string name="contactDetailAbout" msgid="5430408883907061400">"Σχετικά με"</string>
-    <string name="contactDetailUpdates" msgid="3780588624763446941">"Ενημερώσεις"</string>
     <string name="searchHint" msgid="8482945356247760701">"Αναζήτηση επαφών"</string>
-    <string name="menu_viewContact" msgid="2795575601596468581">"Προβολή επαφής"</string>
     <string name="menu_addStar" msgid="2908478235715404876">"Προσθήκη στα αγαπημένα"</string>
     <string name="menu_removeStar" msgid="5844227078364227030">"Κατάργηση από τα αγαπημένα"</string>
     <string name="description_action_menu_remove_star" msgid="4699640108012265178">"Καταργήθηκε από τα αγαπημένα"</string>
@@ -49,40 +35,56 @@
     <string name="menu_editContact" msgid="9042415603857662633">"Επεξεργασία"</string>
     <string name="menu_deleteContact" msgid="6788644058868189393">"Διαγραφή"</string>
     <string name="menu_change_photo" msgid="7769177631511496210">"Αλλαγή φωτογραφίας"</string>
-    <string name="menu_create_contact_shortcut" msgid="1217971915748509640">"Τοποθέτηση στην αρχική οθόνη"</string>
-    <string name="menu_call" msgid="3992595586042260618">"Κλήση επαφής"</string>
-    <string name="menu_sendSMS" msgid="5535886767547006515">"Αποστολή μηνύματος κειμένου σε επαφή"</string>
+    <string name="menu_create_contact_shortcut" msgid="1663022219127343858">"Δημιουργία συντόμευσης"</string>
     <string name="menu_splitAggregate" msgid="2627252205317945563">"Αποσύνδεση"</string>
-    <string name="menu_editGroup" msgid="5062005185370983720">"Επεξεργασία"</string>
-    <string name="menu_deleteGroup" msgid="3486380004411482874">"Διαγραφή"</string>
-    <string name="menu_new_contact_action_bar" msgid="7263362129442119188">"Προσθήκη επαφής"</string>
-    <string name="menu_new_group_action_bar" msgid="3520232877587377175">"Προσθήκη ομάδας"</string>
+    <string name="menu_editGroup" msgid="6696843438454341063">"Κατάργηση επαφών"</string>
+    <string name="menu_renameGroup" msgid="7169512355179757182">"Μετονομασία ετικέτας"</string>
+    <string name="menu_deleteGroup" msgid="1126469629233412249">"Διαγραφή ετικέτας"</string>
+    <string name="menu_addToGroup" msgid="3267409983764370041">"Προσθήκη επαφής"</string>
+    <string name="menu_selectForGroup" msgid="3999234528229376098">"Επιλογή επαφών"</string>
+    <string name="menu_addContactsToGroup" msgid="655196688840626483">"Προσθήκη επαφών"</string>
+    <string name="menu_removeFromGroup" msgid="6720354305399961978">"Κατάργηση από ετικέτα"</string>
+    <string name="menu_new_group_action_bar" msgid="3127059073617415221">"Δημιουργία ετικέτας"</string>
     <string name="splitConfirmation" msgid="7342030840130187290">"Θέλετε να αναιρέσετε τη σύνδεση αυτής της επαφής για να μετατραπεί σε πολλαπλές επαφές;"</string>
     <string name="splitConfirmation_positive_button" msgid="9129409098807939699">"Αναίρεση σύνδεσης"</string>
     <string name="splitConfirmationWithPendingChanges" msgid="7719062163511895696">"Θέλετε να αποθηκεύσετε τις αλλαγές που έχετε πραγματοποιήσει ήδη και να αναιρέσετε τη σύνδεση αυτής της επαφής για να μετατραπεί σε πολλαπλές επαφές;"</string>
     <string name="splitConfirmationWithPendingChanges_positive_button" msgid="9073444264887244032">"Αποθήκευση και αναίρεση σύνδεσης"</string>
     <string name="joinConfirmation" msgid="8262614843581924365">"Θα θέλατε να αποθηκεύσετε τις αλλαγές που έχετε πραγματοποιήσει ήδη και να κάνετε σύνδεση με την επιλεγμένη επαφή;"</string>
     <string name="joinConfirmation_positive_button" msgid="4573092849769149516">"Αποθήκευση και σύνδεση"</string>
+    <string name="contacts_linking_progress_bar" msgid="2846494347384549277">"Σύνδεση"</string>
+    <string name="contacts_unlinking_progress_bar" msgid="5989310198163726929">"Αποσύνδεση"</string>
     <string name="menu_joinAggregate" msgid="3599512127797513606">"Σύνδεση"</string>
+    <string name="menu_linkedContacts" msgid="400444389718855621">"Προβολή συνδεδεμένων επαφών"</string>
     <string name="menu_save" msgid="1727844363591825909">"Aποθήκευση"</string>
     <string name="titleJoinContactDataWith" msgid="6825255752748313944">"Σύνδεση επαφών"</string>
     <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"Επιλέξτε την επαφή που θέλετε να συνδέσετε με τον χρήστη <xliff:g id="NAME">%s</xliff:g>:"</string>
-    <string name="showAllContactsJoinItem" msgid="2189695051430392383">"Εμφάνιση όλων των επαφών"</string>
     <string name="separatorJoinAggregateSuggestions" msgid="2831414448851313345">"Προτεινόμενες επαφές"</string>
     <string name="separatorJoinAggregateAll" msgid="7939932265026181043">"Όλες οι επαφές"</string>
+    <string name="contactsJoinedNamedMessage" msgid="1299418263439579455">"<xliff:g id="NAME">%s</xliff:g> συνδέθηκε"</string>
     <string name="contactsJoinedMessage" msgid="3343535986195643136">"Οι επαφές συνδέθηκαν"</string>
+    <string name="contacts_deleted_one_named_toast" msgid="2252551736301363193">"Η επαφή <xliff:g id="NAME">%1$s</xliff:g> διαγράφηκε"</string>
+    <string name="contacts_deleted_two_named_toast" msgid="3642082931473111791">"Οι <xliff:g id="NAME_0">%1$s</xliff:g> και <xliff:g id="NAME_1">%2$s</xliff:g> διαγράφηκαν"</string>
+    <string name="contacts_deleted_many_named_toast" msgid="7731565342428031249">"Οι επαφές <xliff:g id="NAME_0">%1$s</xliff:g>, <xliff:g id="NAME_1">%2$s</xliff:g>, <xliff:g id="NAME_2">%3$s</xliff:g>… διαγράφηκαν"</string>
     <plurals name="contacts_deleted_toast" formatted="false" msgid="1477708624197262295">
       <item quantity="other"> επαφές διαγράφηκαν</item>
       <item quantity="one"> επαφή διαγράφηκε</item>
     </plurals>
+    <plurals name="contacts_count" formatted="false" msgid="8696793457340503668">
+      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> επαφές</item>
+      <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> επαφή</item>
+    </plurals>
+    <plurals name="contacts_count_with_account" formatted="false" msgid="7402583111980220575">
+      <item quantity="other"><xliff:g id="COUNT_2">%1$d</xliff:g> επαφές · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
+      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> επαφή · <xliff:g id="ACCOUNT_1">%2$s</xliff:g></item>
+    </plurals>
+    <string name="title_from_google" msgid="4664084747121207202">"Από την Google"</string>
+    <string name="title_from_other_accounts" msgid="8307885412426754288">"Από: <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
     <string name="menu_set_ring_tone" msgid="8728345772068064946">"Ήχος κλήσης"</string>
-    <string name="menu_redirect_calls_to_vm" msgid="4181789196416396656">"Όλες οι κλήσ. στον τηλεφωνητή"</string>
-    <string name="readOnlyContactWarning" msgid="5526727661978307833">"Δεν είναι δυνατή η διαγραφή επαφών από λογαριασμούς που προορίζονται μόνο για ανάγνωση, αλλά είναι δυνατή η απόκρυψή τους."</string>
-    <string name="readOnlyContactWarning_positive_button" msgid="6541862607313811926">"Απόκρυψη"</string>
-    <string name="readOnlyContactDeleteConfirmation" msgid="8782086424739664753">"Η επαφή που πρόκειται να διαγραφεί περιέχει στοιχεία από πολλαπλούς λογαριασμούς. Τα στοιχεία που προέρχονται από λογαριασμούς που προορίζονται μόνο για ανάγνωση θα είναι κρυφά, αλλά δεν θα διαγραφούν."</string>
-    <string name="batch_link_single_contact_warning" msgid="1346058571502058767">"Θα πρέπει να έχουν επιλεγεί τουλάχιστον δύο επαφές για να πραγματοποιηθεί μια σύνδεση."</string>
-    <string name="batch_link_confirmation" msgid="5845237114309114908">"Θέλετε να συνδέσετε τις επιλεγμένες επαφές;"</string>
-    <string name="batch_link_confirmation_positive_button" msgid="5018899675473363525">"Σύνδεση"</string>
+    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"Δρομολόγηση σε αυτ. τηλεφωνητή"</string>
+    <string name="menu_unredirect_calls_to_vm" msgid="8725542534701811737">"Κατάργηση δρομ. σε τηλεφωνητή"</string>
+    <string name="readOnlyContactWarning" msgid="7514475664695089411">"Αυτή η επαφή είναι μόνο για ανάγνωση. Δεν μπορεί να διαγραφεί, αλλά μπορείτε να την αποκρύψετε."</string>
+    <string name="readOnlyContactWarning_positive_button" msgid="8914797212167683673">"Απόκρυψη επαφής"</string>
+    <string name="readOnlyContactDeleteConfirmation" msgid="4717023505914239809">"Οι λογαριασμοί μόνο για ανάγνωση σε αυτήν την επαφή θα είναι κρυφοί, δεν θα διαγραφούν."</string>
     <string name="single_delete_confirmation" msgid="3106905986948679720">"Να διαγραφεί αυτή η επαφή;"</string>
     <string name="batch_delete_confirmation" msgid="3984346060324014108">"Να διαγραφούν οι επιλεγμένες επαφές;"</string>
     <string name="batch_delete_read_only_contact_confirmation" msgid="8411117621035639964">"Δεν είναι δυνατή η διαγραφή επαφών από λογαριασμούς που προορίζονται μόνο για ανάγνωση, αλλά είναι δυνατή η απόκρυψή τους."</string>
@@ -90,177 +92,124 @@
     <string name="multipleContactDeleteConfirmation" msgid="5235324124905653550">"Με τη διαγραφή αυτής της επαφής, θα διαγραφούν στοιχεία από πολλαπλούς λογαριασμούς."</string>
     <string name="deleteConfirmation" msgid="3512271779086656043">"Να διαγραφεί αυτή η επαφή;"</string>
     <string name="deleteConfirmation_positive_button" msgid="7857888845028586365">"Διαγραφή"</string>
-    <string name="menu_discard" msgid="6854657936970228164">"Απόρριψη αλλαγών"</string>
     <string name="invalidContactMessage" msgid="8215051456181842274">"Η επαφή δεν υπάρχει."</string>
     <string name="createContactShortcutSuccessful_NoName" msgid="8831303345367275472">"Η επαφή προστέθηκε στην Αρχική οθόνη."</string>
     <string name="createContactShortcutSuccessful" msgid="953651153238790069">"Ο/Η <xliff:g id="NAME">%s</xliff:g> προστέθηκε στην Αρχική οθόνη."</string>
-    <string name="pickerNewContactHeader" msgid="7750705279843568147">"Δημιουργία νέας επαφής"</string>
-    <string name="pickerNewContactText" msgid="6166997164401048211">"Δημιουργία νέας επαφής"</string>
-  <string-array name="otherLabels">
-    <item msgid="8287841928119937597">"Εταιρεία"</item>
-    <item msgid="7196592230748086755">"Σημείωση"</item>
-  </string-array>
-    <string name="photoPickerNotFoundText" product="tablet" msgid="6247290728908599701">"Δεν υπάρχουν διαθέσιμες εικόνες στο tablet."</string>
-    <string name="photoPickerNotFoundText" product="default" msgid="431331662154342581">"Δεν υπάρχουν διαθέσιμες εικόνες στο τηλέφωνο."</string>
+    <string name="photoPickerNotFoundText" msgid="2052542573853433204">"Δεν υπάρχουν διαθέσιμες εικόνες στη συσκευή."</string>
     <string name="attach_photo_dialog_title" msgid="5599827035558557169">"Φωτογραφία επαφής"</string>
     <string name="customLabelPickerTitle" msgid="1081475101983255212">"Προσαρμοσμένο όνομα ετικέτας"</string>
-    <string name="send_to_voicemail_checkbox" msgid="9001686764070676353">"Αποστολή κλήσεων απευθείας στον αυτόματο τηλεφωνητή"</string>
     <string name="removePhoto" msgid="4898105274130284565">"Κατάργηση εικόνας"</string>
-    <string name="noContacts" msgid="4955659076981974652">"Δεν υπάρχουν επαφές"</string>
-    <string name="noGroups" msgid="8614664663561385253">"Δεν υπάρχουν ομάδες."</string>
-    <string name="noAccounts" msgid="7768267764545265909">"Για να δημιουργήσετε ομάδες πρέπει να έχετε έναν λογαριασμό."</string>
-    <string name="emptyGroup" msgid="7502116218697177370">"Δεν υπάρχουν άτομα σε αυτήν την ομάδα."</string>
-    <string name="addPeopleToGroup" msgid="7879585947222263516">"Αν θέλετε να προσθέσετε άτομα, επεξεργαστείτε την ομάδα."</string>
-    <string name="savingContact" msgid="4075751076741924939">"Αποθήκευση επαφής…"</string>
+    <string name="noContacts" msgid="2228592924476426108">"Η λίστα επαφών σας είναι άδεια"</string>
+    <string name="emptyGroup" msgid="5102411903247859575">"Δεν υπάρχουν επαφές με αυτήν την εκτικέτα"</string>
+    <string name="emptyAccount" msgid="6873962901497975964">"Δεν υπάρχουν επαφές σε αυτόν το λογαριασμό"</string>
+    <string name="emptyMainList" msgid="2772242747899664460">"Η λίστα επαφών σας είναι άδεια"</string>
+    <string name="contactSavedNamedToast" msgid="895136068894549611">"Η επαφή \"<xliff:g id="DISPLAY_NAME">%s</xliff:g>\" αποθηκεύτηκε"</string>
     <string name="contactSavedToast" msgid="9171862279493213075">"Η επαφή αποθηκεύτηκε"</string>
     <string name="contactUnlinkedToast" msgid="7122823195786012553">"Οι επαφές αποσυνδέθηκαν"</string>
-    <string name="contactSavedErrorToast" msgid="3207250533172944892">"Δεν ήταν δυνατή η αποθήκευση των αλλαγών που πραγματοποιήθηκαν στις επαφές."</string>
-    <string name="contactUnlinkErrorToast" msgid="2758070702785994171">"Δεν ήταν δυνατή η αποσύνδεση επαφής."</string>
-    <string name="contactJoinErrorToast" msgid="3977932531264809035">"Δεν ήταν δυνατή η σύνδεση της επαφής."</string>
-    <string name="contactGenericErrorToast" msgid="7774911165341591714">"Σφάλμα κατά την αποθήκευση επαφής."</string>
-    <string name="contactPhotoSavedErrorToast" msgid="4079032272022979114">"Δεν ήταν δυνατή η αποθήκευση των αλλαγών που πραγματοποιήθηκαν στη φωτογραφία της επαφής."</string>
-    <string name="groupSavedToast" msgid="1168756874239833756">"Η ομάδα αποθηκεύτηκε."</string>
-    <string name="groupSavedErrorToast" msgid="7984466936615304740">"Δεν ήταν δυνατή η αποθήκευση των αλλαγών που πραγματοποιήθηκαν στην ομάδα."</string>
-    <plurals name="listTotalPhoneContacts" formatted="false" msgid="3692277679143308755">
-      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> επαφές με αριθμό τηλεφώνου</item>
-      <item quantity="one">1 επαφή με αριθμό τηλεφώνου</item>
-    </plurals>
-    <string name="listTotalPhoneContactsZero" msgid="6968813857632984319">"Δεν υπάρχουν επαφές με αριθμούς τηλεφώνου"</string>
-    <plurals name="listFoundAllContacts" formatted="false" msgid="4872115339963093220">
-      <item quantity="other">Βρέθηκαν <xliff:g id="COUNT">%d</xliff:g></item>
-      <item quantity="one">Βρέθηκε 1</item>
-    </plurals>
+    <string name="contactSavedErrorToast" msgid="4827033473908688031">"Δεν ήταν δυνατή η αποθήκευση των αλλαγών που πραγματοποιήθηκαν στην επαφή"</string>
+    <string name="contactUnlinkErrorToast" msgid="2706297508166952431">"Δεν ήταν δυνατή η αποσύνδεση επαφής"</string>
+    <string name="contactJoinErrorToast" msgid="5735129234573327701">"Δεν ήταν δυνατή η σύνδεση της επαφής"</string>
+    <string name="contactGenericErrorToast" msgid="3885457515665783976">"Σφάλμα κατά την αποθήκευση της επαφής"</string>
+    <string name="contactPhotoSavedErrorToast" msgid="6860883564984042194">"Δεν ήταν δυνατή η αποθήκευση των αλλαγών που πραγματοποιήθηκαν στη φωτογραφία της επαφής"</string>
+    <string name="groupLoadErrorToast" msgid="7536267148196064554">"Η φόρτωση ετικέτας απέτυχε"</string>
+    <string name="groupDeletedToast" msgid="520896687873262027">"Η ετικέτα διαγράφηκε"</string>
+    <string name="groupCreatedToast" msgid="1924195126172834870">"Η ετικέτα δημιουργήθηκε"</string>
+    <string name="groupCreateFailedToast" msgid="4359093891863474299">"Δεν είναι δυνατή η δημιουργία ετικέτας"</string>
+    <string name="groupUpdatedToast" msgid="3667977658676267687">"Η ετικέτα ενημερώθηκε"</string>
+    <string name="groupMembersRemovedToast" msgid="3510563559799376603">"Καταργήθηκε από ετικέτα"</string>
+    <string name="groupMembersAddedToast" msgid="4824834898718972768">"Προστέθηκε στην ετικέτα"</string>
+    <string name="groupSavedErrorToast" msgid="2355891714292740162">"Δεν ήταν δυνατή η αποθήκευση των αλλαγών ετικέτας"</string>
+    <string name="groupExistsErrorMessage" msgid="5196811283836946189">"Η ετικέτα υπάρχει ήδη"</string>
+    <string name="groupSomeContactsNoEmailsToast" msgid="8211161470235548732">"Ορισμένες επαφές δεν έχουν δ/νση ηλ. ταχυδρομείου."</string>
+    <string name="groupSomeContactsNoPhonesToast" msgid="5530760834827530509">"Ορισμένες επαφές δεν έχουν αριθμούς τηλεφώνου."</string>
+    <string name="menu_sendEmailOption" msgid="5978319931321657780">"Αποστολή μηνύματος ηλ. ταχυδρ."</string>
+    <string name="menu_sendMessageOption" msgid="8850168125274916426">"Αποστολή μηνύματος"</string>
+    <string name="pickerSelectContactsActivityTitle" msgid="1936544190231136729">"Επιλογή επαφών"</string>
+    <string name="send_to_selection" msgid="2251339182881603540">"Αποστολή"</string>
     <string name="listFoundAllContactsZero" msgid="922980883593159444">"Δεν υπάρχουν επαφές"</string>
-    <plurals name="searchFoundContacts" formatted="false" msgid="7223023725334884618">
-      <item quantity="other">Βρέθηκαν <xliff:g id="COUNT">%d</xliff:g></item>
-      <item quantity="one">Βρέθηκε 1</item>
-    </plurals>
-    <string name="all_contacts_tab_label" msgid="5948889261993124839">"Όλες"</string>
-    <string name="favorites_tab_label" msgid="1524869648904016414">"Αγαπημένα"</string>
-    <string name="callBack" msgid="5498224409038809224">"Επανάκληση"</string>
-    <string name="callAgain" msgid="3197312117049874778">"Επανάληψη κλήσης"</string>
-    <string name="returnCall" msgid="8171961914203617813">"Επιστροφή κλήσης"</string>
     <string name="add_contact_dlg_message_fmt" msgid="7986472669444326576">"Προσθήκη του \"<xliff:g id="EMAIL">%s</xliff:g>\" στις επαφές?"</string>
-    <string name="description_contact_photo" msgid="3387458082667894062">"φωτογραφία επαφής"</string>
-    <string name="description_plus_button" msgid="515164827856229880">"συν"</string>
-    <string name="exporting_contact_list_progress" msgid="560522409559101193">"<xliff:g id="CURRENT_NUMBER">%s</xliff:g> από <xliff:g id="TOTAL_NUMBER">%s</xliff:g> επαφές"</string>
     <string name="search_settings_description" msgid="2675223022992445813">"Ονόματα των επαφών σας"</string>
-    <string name="quickcontact_missing_app" msgid="358168575340921552">"Δεν βρέθηκε εφαρμογή για τη διαχείριση αυτής της ενέργειας."</string>
     <string name="quickcontact_transparent_view_description" msgid="987959416759562455">"Κάντε κλικ για να επιστρέψετε στην προηγούμενη οθόνη"</string>
     <string name="quickcontact_add_phone_number" msgid="731665835910658965">"Προσθήκη αριθμού τηλεφώνου"</string>
     <string name="quickcontact_add_email" msgid="739298028384348482">"Προσθήκη email"</string>
     <string name="missing_app" msgid="1466111003546611387">"Δεν βρέθηκε εφαρμογή για τη διαχείριση αυτής της ενέργειας."</string>
     <string name="menu_share" msgid="943789700636542260">"Κοινοποίηση"</string>
     <string name="menu_add_contact" msgid="3198704337220892684">"Προσθήκη στις επαφές"</string>
-    <string name="share_via" msgid="563121028023030093">"Κοινοποίηση μέσω"</string>
-    <string name="dialog_new_group_account" msgid="2318032089273496830">"Δημιουργία ομάδας στο λογαριασμό"</string>
+    <string name="menu_add_contacts" msgid="4465646512002163011">"Προσθήκη"</string>
+    <plurals name="title_share_via" formatted="false" msgid="5886112726191455415">
+      <item quantity="other">Κοινοποίηση επαφών μέσω</item>
+      <item quantity="one">Κοινοποίηση επαφής μέσω</item>
+    </plurals>
+    <string name="dialog_new_group_account" msgid="3451312333591556651">"Επιλογή λογαριασμού"</string>
+    <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"Δημιουργία ετικέτας"</string>
+    <string name="group_name_dialog_update_title" msgid="6328021162869677383">"Μετονομασία ετικέτας"</string>
+    <string name="group_name_dialog_hint" msgid="7624523157537700160">"Όνομα ετικέτας"</string>
+    <string name="label_name_dialog_hint" msgid="1276051790427638142">"Όνομα ετικέτας"</string>
     <string name="audio_chat" msgid="2535716629358298691">"Φωνητική συνομιλία"</string>
     <string name="video_chat" msgid="1872255818640336072">"Συζήτηση μέσω βίντεο"</string>
-    <string name="connections" msgid="8098440723172028350">"Συνδέσεις"</string>
-    <string name="add_connection_button" msgid="4861308615789601727">"Προσθ. σύνδεσης"</string>
-    <string name="recent" msgid="2659189233141493004">"Πρόσφατες"</string>
-    <string name="recent_updates" msgid="4267258535615860710">"Πρόσφατες ενημερώσεις"</string>
     <string name="account_type_format" msgid="718948015590343010">"Επαφή <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
     <string name="google_account_type_format" msgid="5283997303922067997">"Λογαριασμός <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
-    <!-- no translation found for from_account_format (4469138575127580203) -->
-    <skip />
-    <string name="contact_read_only" msgid="7421346527289472273">"Αδυναμία επεξεργασ. από αυτήν την εφαρμ."</string>
-    <string name="group_read_only" msgid="1061762906115697637">"Αδυναμία επεξεργασίας στη συσκευή."</string>
     <string name="take_photo" msgid="7496128293167402354">"Λήψη φωτογραφίας"</string>
     <string name="take_new_photo" msgid="7341354729436576304">"Λήψη νέας φωτογραφίας"</string>
     <string name="pick_photo" msgid="2129509985223564942">"Επιλογή φωτογραφίας"</string>
     <string name="pick_new_photo" msgid="9122450996263688237">"Επιλογή νέας φωτογραφίας"</string>
-    <string name="upgrade_in_progress" msgid="474511436863451061">"Γίνεται ενημέρωση της λίστας επαφών."</string>
     <string name="search_results_searching" msgid="3984833028938569930">"Αναζήτηση…"</string>
-    <string name="menu_display_selected" msgid="6470001164297969034">"Εμφάνιση επιλεγμένων"</string>
-    <string name="menu_display_all" msgid="8887488642609786198">"Εμφάνιση όλων"</string>
-    <string name="menu_select_all" msgid="621719255150713545">"Επιλογή όλων"</string>
-    <string name="menu_select_none" msgid="7093222469852132345">"Αποεπιλογή όλων"</string>
-    <string name="add_new_entry_for_section" msgid="5223080690667565044">"Προσθήκη νέου"</string>
-    <string name="add_organization" msgid="7311893231158291197">"Προσθήκη οργανισμού"</string>
     <string name="event_edit_field_hint_text" msgid="5794424930242630477">"Ημερομηνία"</string>
-    <string name="group_edit_field_hint_text" msgid="3966441850870457808">"Όν. ομάδ."</string>
-    <string name="change_photo" msgid="8530597935483526383">"Αλλαγή"</string>
-    <string name="primary_photo" msgid="8517942231868516999">"Κύρια φωτογραφία"</string>
-    <string name="description_star" msgid="2605854427360036550">"αγαπημένο"</string>
-    <string name="edit_contact" msgid="7529281274005689512">"Επεξεργασία"</string>
-    <string name="aggregation_suggestion_join_dialog_message" msgid="6786192560870357912">"Να γίνει σύνδεση της τρέχουσας επαφής με την επιλεγμένη επαφή;"</string>
+    <string name="group_edit_field_hint_text" msgid="8038224059926963133">"Ετικέτα"</string>
+    <string name="cancel_button_content_description" msgid="1288652456274531846">"Ακύρωση"</string>
+    <string name="back_arrow_content_description" msgid="4355362760545735065">"Πίσω"</string>
+    <string name="action_menu_back_from_edit_select" msgid="6435476408621731420">"κλείσιμο"</string>
     <string name="aggregation_suggestion_edit_dialog_message" msgid="6549585283910518095">"Να γίνει μετάβαση σε επεξεργασία της επιλεγμένης επαφής; Θα γίνει αντιγραφή των στοιχείων που έχετε εισαγάγει μέχρι τώρα."</string>
-    <string name="menu_copyContact" msgid="1573960845106822639">"Αντιγραφή στις Επαφές μου"</string>
-    <string name="add_to_my_contacts" msgid="1068274916793627723">"Προσθήκη στις Επαφές μου"</string>
     <string name="contact_directory_description" msgid="683398073603909119">"Κατάλογος <xliff:g id="TYPE">%1$s</xliff:g>"</string>
-    <string name="list_filter_custom" msgid="8910173055702057002">"Προσαρμοσμένη"</string>
     <string name="activity_title_settings" msgid="5464130076132770781">"Ρυθμίσεις"</string>
     <string name="menu_settings" msgid="377929915873428211">"Ρυθμίσεις"</string>
     <string name="menu_help" msgid="1680178646764069976">"Βοήθεια και σχόλια"</string>
-    <string name="preference_displayOptions" msgid="1341720270148252393">"Επιλογές προβολής"</string>
     <string name="organization_company_and_title" msgid="6718207751363732025">"<xliff:g id="COMPANY_0">%2$s</xliff:g>, <xliff:g id="COMPANY_1">%1$s</xliff:g>"</string>
     <string name="non_phone_caption" msgid="1541655052330027380">"Αριθμός τηλεφώνου"</string>
     <string name="non_phone_add_to_contacts" msgid="6590985286250471169">"Προσθήκη στις επαφές"</string>
-    <string name="activity_title_confirm_add_detail" msgid="4065089866210730616">"Προσθ.σε επαφή"</string>
     <string name="non_phone_close" msgid="7608506439725515667">"Κλείσιμο"</string>
-    <string name="widget_name_and_phonetic" msgid="8739586586600099979">"<xliff:g id="DISPLAY_NAME">%1$s</xliff:g> (<xliff:g id="PHONETIC_NAME">%2$s</xliff:g>)"</string>
     <string name="date_year_toggle" msgid="7122002148518724139">"Συμπερίληψη έτους"</string>
-    <string name="social_widget_label" msgid="6378905543028924592">"Επαφή"</string>
-    <string name="social_widget_loading" msgid="5327336597364074608">"Φόρτωση…"</string>
-    <string name="contacts_unavailable_create_contact" msgid="7014525713871959208">"Δημιουργία νέας επαφής"</string>
     <string name="contacts_unavailable_add_account" msgid="4347232421410561500">"Προσθήκη λογαριασμού"</string>
-    <string name="contacts_unavailable_import_contacts" msgid="4957393255392437529">"Εισαγωγή επαφών"</string>
-    <string name="create_group_dialog_title" msgid="6874527142828424475">"Δημιουργία νέας ομάδας"</string>
-    <string name="create_group_item_label" msgid="4411981763169654825">"Δημιουργία νέας ομάδας"</string>
-    <plurals name="num_groups_in_account" formatted="false" msgid="6189297639209663469">
-      <item quantity="other"><xliff:g id="COUNT">%0$d</xliff:g> ομάδες</item>
-      <item quantity="one">1 ομάδα</item>
-    </plurals>
-    <string name="delete_group_dialog_message" msgid="7586856514337560529">"Να διαγραφεί η ομάδα \"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\"; (Οι επαφές δεν θα διαγραφούν.)"</string>
-    <plurals name="num_contacts_in_group" formatted="false" msgid="5520734553286350341">
-      <item quantity="other"><xliff:g id="COUNT_2">%1$d</xliff:g> άτομα από <xliff:g id="ACCOUNT_TYPE_3">%2$s</xliff:g></item>
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> άτομο από <xliff:g id="ACCOUNT_TYPE_1">%2$s</xliff:g></item>
-    </plurals>
-    <plurals name="group_list_num_contacts_in_group" formatted="false" msgid="8240460423614369023">
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> άτομα</item>
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> άτομο</item>
-    </plurals>
+    <string name="contacts_unavailable_import_contacts" msgid="3182801738595937144">"Εισαγωγή"</string>
+    <string name="create_group_item_label" msgid="3263064599743742865">"Δημιουργία νέας…"</string>
+    <string name="delete_group_dialog_message" msgid="335713829185261371">"Διαγραφή της ετικέτας \"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\"; (Οι ίδιες οι επαφές δεν θα διαγραφούν)"</string>
     <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"Πληκτρολογήστε το όνομα της επαφής προτού τη συνδέσετε με κάποια άλλη."</string>
     <string name="copy_text" msgid="3257145021583508761">"Αντιγραφή στο πρόχειρο"</string>
     <string name="set_default" msgid="4417505153468300351">"Ορισμός ως προεπιλογή"</string>
     <string name="clear_default" msgid="7193185801596678067">"Εκκαθάριση προεπιλεγμένων"</string>
     <string name="toast_text_copied" msgid="5143776250008541719">"Το κείμενο αντιγράφηκε"</string>
-    <string name="cancel_confirmation_dialog_message" msgid="5058226498605989285">"Να απορριφθούν οι αλλαγές που πραγματοποιήσατε και να τερματιστεί η επεξεργασία;"</string>
+    <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"Να απορριφθούν οι αλλαγές;"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"Απόρριψη"</string>
-    <string name="cancel_confirmation_dialog_keep_editing_button" msgid="7737724111972855348">"Συνέχεια επεξεργασίας"</string>
-    <string name="call_type_and_date" msgid="747163730039311423">"<xliff:g id="CALL_TYPE">%1$s</xliff:g> <xliff:g id="CALL_SHORT_DATE">%2$s</xliff:g>"</string>
-    <string name="profile_display_name" msgid="4127389543625918771">"Ρύθμιση του προφίλ μου"</string>
-    <string name="enter_contact_name" msgid="1738391320566349924">"Πληκτρολογήστε το όνομα του ατόμου"</string>
-    <string name="group_name_hint" msgid="238359485263401293">"Όνομα ομάδας"</string>
+    <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"Ακύρωση"</string>
+    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"Απόρριψη προσαρμογών;"</string>
+    <string name="enter_contact_name" msgid="4594274696120278368">"Αναζήτηση επαφών"</string>
+    <string name="title_edit_group" msgid="8602752287270586734">"Κατάργηση επαφών"</string>
     <string name="local_profile_title" msgid="2021416826991393684">"Τοπικό προφίλ"</string>
     <string name="external_profile_title" msgid="8034998767621359438">"Προφίλ μου <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g>"</string>
-    <string name="toast_displaying_all_contacts" msgid="2737388783898593875">"Εμφάνιση όλων των επαφών"</string>
-    <string name="generic_no_account_prompt" msgid="7218827704367325460">"Διατηρήστε τις επαφές σας ασφαλείς ακόμα και αν χάσετε το τηλέφωνό σας: συγχρονισμός με άλλη συσκευή στο διαδίκτυο."</string>
-    <string name="generic_no_account_prompt_title" msgid="753783911899054860">"Προσθήκη λογαριασμού"</string>
-    <string name="contact_editor_prompt_zero_accounts" msgid="1785345895691886499">"Δεν θα δημιουργηθεί αντίγραφο ασφαλείας για τη νέα επαφή σας. Θέλετε να προσθέσετε ένα λογαριασμό που δημιουργεί αντίγραφα ασφαλείας επαφών στο διαδίκτυο;"</string>
+    <string name="contact_editor_prompt_zero_accounts" msgid="6648376557574360096">"Αφιερώστε λίγο χρόνο για να προσθέσετε έναν λογαριασμό μέσω του οποίου θα δημιουργήσετε αντίγραφα ασφαλείας των επαφών σας στην Google."</string>
     <string name="contact_editor_prompt_one_account" msgid="3087691056345099310">"Οι νέες επαφές θα αποθηκευτούν στο λογαριασμό <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>."</string>
     <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"Επιλέξτε έναν προεπιλεγμένο λογαριασμό για νέες επαφές:"</string>
-    <string name="contact_editor_title_new_contact" msgid="7192223018128934940">"Προσθήκη νεάς επαφής"</string>
+    <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"Δημιουρ. επαφής"</string>
     <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"Επεξεργασία επαφής"</string>
-    <string name="keep_local" msgid="1258761699192993322">"Αποθ. τοπικά"</string>
+    <string name="contact_editor_title_read_only_contact" msgid="2443496574528842237">"Μόνο για προβολή"</string>
+    <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4186699385645902152">"Επιλέξτε επαφή προς επεξεργασία"</string>
+    <string name="contact_editor_pick_linked_contact_dialog_title" msgid="4618465940423857694">"Συνδεδεμένες επαφές"</string>
+    <string name="contact_editor_add_linked_contact" msgid="426142748048816297">"Προσθήκη"</string>
+    <string name="contact_editor_unlink_contacts" msgid="4525214336177236653">"Αποσύνδεση"</string>
     <string name="add_account" msgid="8201790677994503186">"Προσθήκη λογαριασμού"</string>
     <string name="add_new_account" msgid="5748627740680940264">"Προσθήκη νέου λογαριασμού"</string>
     <string name="menu_export_database" msgid="2659719297530170820">"Εξαγωγή αρχείων βάσης δεδομένων"</string>
-    <string name="action_menu_add_new_contact_button" msgid="3180222523336380017">"προσθήκη νέας επαφής"</string>
+    <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"Δημιουργία νέας επαφής"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"Δείτε περισσότερα"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"Δείτε λιγότερα"</string>
-    <string name="expanding_entry_card_view_see_all" msgid="3845258737661412627">"Εμφάνιση όλων"</string>
     <string name="recent_card_title" msgid="8982782042698001695">"Πρόσφατα"</string>
     <string name="about_card_title" msgid="2920942314212825637">"Σχετικά με"</string>
-    <string name="send_message" msgid="8938418965550543196">"Αποστολή μηνύματος"</string>
-    <string name="toast_making_personal_copy" msgid="6137651078366797938">"Δημιουργία προσωπικού αντιγράφου…"</string>
-    <string name="yesterday" msgid="6840858548955018569">"Χθες"</string>
+    <string name="toast_making_personal_copy" msgid="288549957278065542">"Δημιουργία προσωπικού αντιγράφου..."</string>
     <string name="tomorrow" msgid="6241969467795308581">"Αύριο"</string>
     <string name="today" msgid="8041090779381781781">"Σήμερα"</string>
     <string name="today_at_time_fmt" msgid="605665249491030460">"Σήμερα στις <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
     <string name="tomorrow_at_time_fmt" msgid="4856497969617819421">"Αύριο στις <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%s</xliff:g>, <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
+    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%1$s</xliff:g>, <xliff:g id="TIME_INTERVAL">%2$s</xliff:g>"</string>
     <string name="untitled_event" msgid="3484859385405939366">"(Εκδήλωση χωρίς τίτλο)"</string>
     <string name="date_time_set" msgid="4761419824439606690">"Ορισμός"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"Ανταλλαγή άμεσων μηνυμάτων (IM)"</string>
@@ -270,62 +219,314 @@
     <string name="header_website_entry" msgid="1411467850000824745">"Ιστότοπος"</string>
     <string name="header_event_entry" msgid="6738250422744401460">"Συμβάν"</string>
     <string name="header_relation_entry" msgid="1520292958088146460">"Σχέση"</string>
-    <string name="header_account_entry" msgid="2684318506427891827">"Λογαριασμός"</string>
     <string name="header_name_entry" msgid="1592791008096288306">"Όνομα"</string>
     <string name="header_email_entry" msgid="8666093061171624478">"Διεύθυνση ηλεκτρονικού ταχυδρομείου"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"Τηλέφωνο"</string>
-    <string name="header_photo_entry" msgid="4438023151411853238">"Φωτογραφία"</string>
-    <string name="content_description_expand_editor" msgid="1111381475901897470">"Κάντε κλικ για επέκταση της επεξεργασίας επαφών."</string>
-    <string name="content_description_collapse_editor" msgid="7598061318022977825">"Κάντε κλικ για σύμπτυξη της επεξεργασίας επαφών."</string>
     <string name="content_description_directions" msgid="2686791825798189335">"οδηγίες προς την τοποθεσία"</string>
-    <string name="content_description_recent_sms" msgid="1666389577263317445">"πρόσφατο sms. <xliff:g id="MESSAGE_BODY">%s</xliff:g>. <xliff:g id="PHONE_NUMBER">%s</xliff:g>. <xliff:g id="DATE">%s</xliff:g>. κάντε κλικ για απάντηση"</string>
+    <string name="content_description_recent_sms" msgid="1666389577263317445">"πρόσφατο sms. <xliff:g id="MESSAGE_BODY">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. κάντε κλικ για απάντηση"</string>
     <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"εισερχόμενες"</string>
     <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"εξερχόμενες"</string>
     <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"αναπάντητες"</string>
-    <string name="content_description_recent_call" msgid="5183800406316723676">"πρόσφατη κλήση. <xliff:g id="CALL_TYPE">%s</xliff:g>. <xliff:g id="PHONE_NUMBER">%s</xliff:g>. <xliff:g id="DATE">%s</xliff:g>. κάντε κλικ για επιστροφή της κλήσης"</string>
+    <string name="content_description_recent_call" msgid="5183800406316723676">"πρόσφατη κλήση. <xliff:g id="CALL_TYPE">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. κάντε κλικ για επιστροφή της κλήσης"</string>
     <string name="message_from_you_prefix" msgid="7180706529908434482">"Εσείς: <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
-    <string name="contact_editor_hangouts_im_alert" msgid="114855385615225735">"Το Hangouts λειτουργεί καλύτερα όταν εισάγετε το αναγνωριστικό Hangouts του ατόμου στο πεδίο ηλεκτρονικού ταχυδρομείου ή τηλεφώνου."</string>
-    <string name="compact_editor_more_fields" msgid="5987638193568699600">"Περισσότερα πεδία"</string>
-    <string name="compact_editor_change_photo_content_description" msgid="5495487714301211540">"Αλλαγή φωτογραφίας"</string>
-    <string name="compact_editor_failed_to_load" msgid="4557094426388044958">"Αποτυχία ανοίγματος προγράμματος επεξεργασίας."</string>
-    <string name="compact_editor_account_selector_title" msgid="5119592614151786601">"Αποθήκευση σε"</string>
-    <string name="compact_editor_account_selector_description" msgid="2127184829759350507">"Γίνεται αποθήκευση στο λογαριασμό <xliff:g id="ACCOUNT_NAME">%s</xliff:g>. Πατήστε δύο φορές για να επιλέξετε διαφορετικό λογαριασμό."</string>
-    <plurals name="compact_editor_linked_contacts_selector_title" formatted="false" msgid="9156207930915878316">
-      <item quantity="other">Συνδεδεμένες επαφές (<xliff:g id="COUNT">%d</xliff:g>)</item>
-      <item quantity="one">Συνδεδεμένη επαφή</item>
-    </plurals>
-    <string name="quickcontact_contacts_number" msgid="6036916944287597682">"<xliff:g id="COUNT">%d</xliff:g> συνδεδεμένες επαφές"</string>
-    <string name="quick_contact_display_name_with_phonetic" msgid="3692038078718876610">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> (<xliff:g id="PHONETIC_NAME">%s</xliff:g>)"</string>
+    <string name="editor_more_fields" msgid="3630987771304393421">"Περισσότερα πεδία"</string>
+    <string name="editor_change_photo_content_description" msgid="820879708069864340">"Αλλαγή φωτογραφίας επαφής"</string>
+    <string name="editor_add_photo_content_description" msgid="4194479313465418120">"Προσθήκη φωτογραφίας επαφής"</string>
+    <string name="editor_contact_photo_content_description" msgid="8571975622926162369">"Φωτογραφία επαφής"</string>
+    <string name="editor_failed_to_load" msgid="1623639078580475818">"Αποτυχία ανοίγματος προγράμματος επεξεργασίας."</string>
+    <string name="editor_account_selector_title" msgid="4426337993307015833">"Αποθήκευση σε"</string>
+    <string name="editor_account_selector_read_only_title" msgid="4137969650184457126">"Τα στοιχεία επαφής από το <xliff:g id="ACCOUNT">%s</xliff:g> δεν είναι επεξεργάσιμα"</string>
     <string name="quickcontact_suggestion_link_button" msgid="3244619714781727946">"ΣΥΝΔΕΣΗ ΕΠΑΦΩΝ"</string>
     <string name="quickcontact_suggestion_cancel_button" msgid="8236954313106630862">"ΑΚΥΡΩΣΗ"</string>
-    <plurals name="quickcontact_suggestion_card_title" formatted="false" msgid="2660005966628746406">
-      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> πιθανά διπλότυπα</item>
-      <item quantity="one">1 πιθανό διπλότυπο</item>
-    </plurals>
-    <plurals name="quickcontact_suggestions_number" formatted="false" msgid="495992931510695330">
-      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> συνδεδεμένες επαφές</item>
-      <item quantity="one">1 συνδεδεμένη επαφή</item>
-    </plurals>
-    <plurals name="quickcontact_suggestion_account_type_number" formatted="false" msgid="3001681298924002373">
-      <item quantity="other">(<xliff:g id="COUNT">%d</xliff:g>)</item>
-      <item quantity="one"></item>
-    </plurals>
-    <string name="quickcontact_suggestion_account_type" msgid="5878263654735376962">"<xliff:g id="ACCOUNT_TYPE_0">%s</xliff:g><xliff:g id="ACCOUNT_TYPE_NUMBER">%s</xliff:g>"</string>
     <string name="suggestion_card_this_contact_title" msgid="3039457405374454914">"Αυτή η επαφή"</string>
     <string name="suggestion_card_duplicates_title" msgid="9107788743178980902">"Πιθανά διπλότυπα"</string>
     <string name="suggestion_card_help_message" msgid="4474061044387181093">"Αυτές οι επαφές μπορεί να αντιστοιχούν στο ίδιο άτομο. Μπορείτε να τις συνδέσετε σε μία μεμονωμένη επαφή."</string>
-    <string name="compact_editor_linked_contacts_title" msgid="4417919183651782674">"Συνδεδεμένες επαφές"</string>
-    <string name="from_your_accounts" msgid="1746293107836889912">"Από τους λογαριασμούς σας"</string>
-    <string name="take_a_photo_button" msgid="6268693854069113488">"Λήψη φωτογραφίας"</string>
-    <string name="all_photos_button" msgid="1943122929420111351">"Όλες οι φωτογραφίες"</string>
-    <string name="photo_picker_title" msgid="5272832995550042801">"Επιλογή φωτογραφίας"</string>
-    <string name="contact_from_account_name" msgid="2078526819634079406">"Από <xliff:g id="ACCOUNT_NAME">%s</xliff:g>"</string>
-    <string name="editor_delete_view_description" msgid="8583095381562991959">"Διαγραφή <xliff:g id="DATA_TYPE">%s </xliff:g><xliff:g id="DATA_KIND">%s</xliff:g>"</string>
+    <string name="editor_delete_view_description" msgid="8583095381562991959">"Διαγραφή <xliff:g id="DATA_TYPE">%1$s </xliff:g><xliff:g id="DATA_KIND">%2$s</xliff:g>"</string>
     <string name="editor_delete_view_description_short" msgid="7335518371270844912">"Διαγραφή <xliff:g id="DATA_KIND">%s</xliff:g>"</string>
-    <string name="photo_view_description_not_checked" msgid="8876314195990885177">"Δεν επιλέχθηκε φωτογραφία από <xliff:g id="ACCOUNT_TYPE">%s </xliff:g><xliff:g id="USER_NAME">%s </xliff:g>"</string>
-    <string name="photo_view_description_checked" msgid="3906597168607472795">"Επιλέχθηκε φωτογραφία από <xliff:g id="ACCOUNT_TYPE">%s </xliff:g><xliff:g id="USER_NAME">%s </xliff:g>"</string>
-    <string name="photo_view_description_not_checked_no_info" msgid="2749154927006406981">"Δεν επιλέχθηκε φωτογραφία από άγνωστο λογαριασμό"</string>
-    <string name="photo_view_description_checked_no_info" msgid="4974335987092590591">"Επιλέχθηκε φωτογραφία από άγνωστο λογαριασμό"</string>
-    <string name="locale_change_in_progress" msgid="1124266507671178413">"Η λίστα επαφών ενημερώνεται ώστε να αντικατοπτρίζει την αλλαγή γλώσσας.\n\nΠεριμένετε..."</string>
+    <string name="menu_assistant" msgid="5760693735722052454">"Προτάσεις"</string>
+    <string name="menu_assistant_new_badge" msgid="3132884821616980034">"Νέο"</string>
+    <string name="navigation_drawer_open" msgid="1126498472143250642">"Άνοιγμα συρταριού πλοήγησης"</string>
+    <string name="navigation_drawer_close" msgid="4137416137011817930">"Κλείσιμο συρταριού πλοήγησης"</string>
+    <string name="navigation_drawer_label" msgid="4154758025620107419">"Ετικέτα \"<xliff:g id="LABEL_NAME">%s</xliff:g>\""</string>
+    <string name="menu_title_groups" msgid="8356921831150278868">"Ετικέτες"</string>
+    <string name="menu_title_filters" msgid="8210922220185114527">"Λογαριασμοί"</string>
+    <string name="permission_explanation_header" msgid="5739405825039695327">"Δείτε το ιστορικό σας μαζί"</string>
+    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"Συμβάντα και μηνύματα"</string>
+    <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"Συμβάντα"</string>
+    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"Μηνύματα"</string>
+    <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"Προτάσεις"</string>
+    <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"Διατηρήστε τις επαφές σας οργανωμένες και χρήσιμες"</string>
+    <string name="undo" msgid="1425165101664071422">"Αναίρεση"</string>
+    <string name="call_custom" msgid="6385303130912713318">"Κλήση προς <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
+    <string name="call_home" msgid="1990519474420545392">"Κλήση οικίας"</string>
+    <string name="call_mobile" msgid="7502236805487609178">"Κλήση κινητής συσκευής"</string>
+    <string name="call_work" msgid="5328785911463744028">"Κλήση εργασίας"</string>
+    <string name="call_fax_work" msgid="7467763592359059243">"Κλήση φαξ εργασίας"</string>
+    <string name="call_fax_home" msgid="8342175628887571876">"Κλήση φαξ οικίας"</string>
+    <string name="call_pager" msgid="9003902812293983281">"Κλήση βομβητή"</string>
+    <string name="call_other" msgid="8563753966926932052">"Κλήση"</string>
+    <string name="call_callback" msgid="1910165691349426858">"Κλήση αριθμού επανάκλησης"</string>
+    <string name="call_car" msgid="3280537320306436445">"Κλήση τηλεφώνου αυτοκινήτου"</string>
+    <string name="call_company_main" msgid="6105120947138711257">"Κλήση κύριας εταιρικής γραμμής"</string>
+    <string name="call_isdn" msgid="1541590690193403411">"Κλήση ISDN"</string>
+    <string name="call_main" msgid="6082900571803441339">"Κλήση κύριου αριθμού"</string>
+    <string name="call_other_fax" msgid="5745314124619636674">"Κλήση φαξ"</string>
+    <string name="call_radio" msgid="8296755876398357063">"Κλήση πομπού"</string>
+    <string name="call_telex" msgid="2223170774548648114">"Κλήση σε τηλέτυπο"</string>
+    <string name="call_tty_tdd" msgid="8951266948204379604">"Κλήση σε τηλέφωνο TTY/TDD"</string>
+    <string name="call_work_mobile" msgid="8707874281430105394">"Κλήση κινητού τηλεφώνου εργασίας"</string>
+    <string name="call_work_pager" msgid="3419348514157949008">"Κλήση βομβητή εργασίας"</string>
+    <string name="call_assistant" msgid="670941612175068337">"Κλήση προς <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
+    <string name="call_mms" msgid="6274041545876221437">"Κλήση MMS"</string>
+    <string name="call_by_shortcut" msgid="2566802538698913124">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Κλήση)"</string>
+    <string name="sms_custom" msgid="415060214233647603">"Αποστολή SMS προς <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
+    <string name="sms_home" msgid="7524332261493162995">"Αποστολή μηνύματος κειμένου προς οικία"</string>
+    <string name="sms_mobile" msgid="5200107250451030769">"Αποστολή μηνύματος κειμένου προς κινητή συσκευή"</string>
+    <string name="sms_work" msgid="2269624156655267740">"Αποστολή μηνύματος κειμένου προς εργασία"</string>
+    <string name="sms_fax_work" msgid="8028189067816907075">"Αποστολή μηνύματος κειμένου προς φαξ εργασίας"</string>
+    <string name="sms_fax_home" msgid="9204042076306809634">"Αποστολή μηνύματος κειμένου προς φαξ οικίας"</string>
+    <string name="sms_pager" msgid="7730404569637015192">"Αποστολή μηνύματος κειμένου προς βομβητή"</string>
+    <string name="sms_other" msgid="806127844607642331">"Αποστολή μηνύματος κειμένου"</string>
+    <string name="sms_callback" msgid="5004824430094288752">"Αποστολή μηνύματος κειμένου σε αριθμό επανάκλησης"</string>
+    <string name="sms_car" msgid="7444227058437359641">"Αποστολή μηνύματος κειμένου προς τηλέφωνο αυτοκινήτου"</string>
+    <string name="sms_company_main" msgid="118970873419678087">"Αποστολή μηνύματος κειμένου προς κύρια εταιρική γραμμή"</string>
+    <string name="sms_isdn" msgid="8153785037515047845">"Αποστολή κειμένου σε ISDN"</string>
+    <string name="sms_main" msgid="8621625784504541679">"Αποστολή μηνύματος κειμένου προς κύριο αριθμό"</string>
+    <string name="sms_other_fax" msgid="3888842199855843152">"Αποστολή μηνύματος κειμένου σε φαξ"</string>
+    <string name="sms_radio" msgid="3329166673433967820">"Αποστολή μηνύματος κειμένου προς πομπό"</string>
+    <string name="sms_telex" msgid="9034802430065267848">"Αποστολή μηνύματος κειμένου σε τηλέτυπο"</string>
+    <string name="sms_tty_tdd" msgid="6782284969132531532">"Αποστολή μηνύματος κειμένου προς τηλέφωνο TTY/TDD"</string>
+    <string name="sms_work_mobile" msgid="2459939960512702560">"Αποστολή μηνύματος κειμένου προς κινητό τηλέφωνο εργασίας"</string>
+    <string name="sms_work_pager" msgid="5566924423316960597">"Αποστολή μηνύματος κειμένου προς βομβητή εργασίας"</string>
+    <string name="sms_assistant" msgid="2773424339923116234">"Αποστολή μηνύματος κειμένου προς <xliff:g id="ASSISTANT">%s</xliff:g>"</string>
+    <string name="sms_mms" msgid="4069352461380762677">"Αποστολή μηνύματος κειμένου ως MMS"</string>
+    <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Μήνυμα)"</string>
+    <string name="description_video_call" msgid="7120921378651700947">"Πραγματοποίηση βιντεοκλήσης"</string>
+    <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"Διαγραφή ατόμων με συχνή επικοινωνία;"</string>
+    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Θα διαγράψετε τη λίστα συχνών επαφών στις εφαρμογές Επαφές και Τηλέφωνο και θα επιβάλλετε στις εφαρμογές ηλεκτρονικού ταχυδρομείου να μάθουν τις προτιμήσεις διευθύνσεών σας από την αρχή."</string>
+    <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"Διαγρ. ατόμων με συχνή επικοινωνία…"</string>
+    <string name="status_available" msgid="5586870015822828392">"Διαθέσιμος"</string>
+    <string name="status_away" msgid="1838861100379804730">"Απουσιάζω"</string>
+    <string name="status_busy" msgid="9147992455450257136">"Απασχολημένος"</string>
+    <string name="local_invisible_directory" msgid="6046691709127661065">"Άλλο"</string>
+    <string name="directory_search_label" msgid="1887759056597975053">"Κατάλογος"</string>
+    <string name="directory_search_label_work" msgid="8618292129829443176">"Κατάλογος εργασίας"</string>
+    <string name="local_search_label" msgid="2551177578246113614">"Όλες οι επαφές"</string>
+    <string name="description_quick_contact_for" msgid="6737516415168327789">"Γρήγορη επαφή για <xliff:g id="NAME">%1$s</xliff:g>"</string>
+    <string name="missing_name" msgid="8745511583852904385">"(Χωρίς όνομα)"</string>
+    <string name="favoritesFrequentContacted" msgid="6184232487472425690">"Επαφές που έχετε συχνή επικοινωνία"</string>
+    <string name="list_filter_phones" msgid="735313795643493365">"Όλες οι επαφές με αριθμούς τηλεφώνου"</string>
+    <string name="list_filter_phones_work" msgid="1470173699551475015">"Επαφές προφίλ εργασίας"</string>
+    <string name="view_updates_from_group" msgid="1782685984905600034">"Προβολή ενημερώσεων"</string>
+    <string name="account_phone" msgid="7128032778471187553">"Συσκευή"</string>
+    <string name="account_sim" msgid="6519016427905087952">"SIM"</string>
+    <string name="nameLabelsGroup" msgid="2034640839640477827">"Όνομα"</string>
+    <string name="nicknameLabelsGroup" msgid="2891682101053358010">"Ψευδώνυμο"</string>
+    <string name="name_given" msgid="4280790853455320619">"Όνομα"</string>
+    <string name="name_family" msgid="7466985689626017037">"Επώνυμο"</string>
+    <string name="name_prefix" msgid="59756378548779822">"Πρόθεμα ονόματος"</string>
+    <string name="name_middle" msgid="8467433655992690326">"Πατρώνυμο"</string>
+    <string name="name_suffix" msgid="3855278445375651441">"Επίθημα ονόματος"</string>
+    <string name="name_phonetic" msgid="4259595234312430484">"Όνομα σε φωνητική γραφή"</string>
+    <string name="name_phonetic_given" msgid="8723179018384187631">"Φωνητικό όνομα"</string>
+    <string name="name_phonetic_middle" msgid="8643721493320405200">"Φωνητική γραφή ονόματος πατρός"</string>
+    <string name="name_phonetic_family" msgid="2640133663656011626">"Φωνητικό επώνυμο"</string>
+    <string name="phoneLabelsGroup" msgid="6468091477851199285">"Τηλέφωνο"</string>
+    <string name="emailLabelsGroup" msgid="8389931313045344406">"Διεύθυνση ηλεκτρονικού ταχυδρομείου"</string>
+    <string name="postalLabelsGroup" msgid="3487738141112589324">"Διεύθυνση"</string>
+    <string name="imLabelsGroup" msgid="3898238486262614027">"Ανταλ.άμεσων μην.(IM)"</string>
+    <string name="organizationLabelsGroup" msgid="2478611760751832035">"Οργανισμός"</string>
+    <string name="relationLabelsGroup" msgid="1854373894284572781">"Σχέση"</string>
+    <string name="eventLabelsGroup" msgid="7960408705307831289">"Ειδική ημερομηνία"</string>
+    <string name="sms" msgid="1756857139634224222">"Μήνυμα κειμένου"</string>
+    <string name="postal_address" msgid="8765560217149624536">"Διεύθυνση"</string>
+    <string name="ghostData_company" msgid="5414421120553765775">"Εταιρεία"</string>
+    <string name="ghostData_title" msgid="7496735200318496110">"Τίτλος"</string>
+    <string name="label_notes" msgid="8337354953278341042">"Σημειώσεις"</string>
+    <string name="label_custom_field" msgid="1994056912242214426">"Προσαρμοσμένο"</string>
+    <string name="label_sip_address" msgid="7252153678613978127">"SIP"</string>
+    <string name="websiteLabelsGroup" msgid="4202998982804009261">"Ιστότοπος"</string>
+    <string name="groupsLabel" msgid="7000816729542098972">"Ετικέτες"</string>
+    <string name="email_home" msgid="8573740658148184279">"Αποστολή μηνύματος ηλεκτρονικού ταχυδρομείου προς οικία"</string>
+    <string name="email_mobile" msgid="2042889209787989814">"Αποστολή μηνύματος ηλεκτρονικού ταχυδρομείου προς κινητή συσκευή"</string>
+    <string name="email_work" msgid="2807430017302722689">"Αποστολή μηνύματος ηλεκτρονικού ταχυδρομείου προς εργασία"</string>
+    <string name="email_other" msgid="3454004077967657109">"Μήνυμα ηλεκτρονικού ταχυδρομείου"</string>
+    <string name="email_custom" msgid="5536404237099078802">"Αποστολή μηνύματος ηλεκτρονικού ταχυδρομείου προς <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
+    <string name="email" msgid="5668400997660065897">"Διεύθυνση ηλεκτρονικού ταχυδρομείου"</string>
+    <string name="postal_street" msgid="8133143961580058972">"Οδός"</string>
+    <string name="postal_city" msgid="6597491300084895548">"Πόλη"</string>
+    <string name="postal_region" msgid="6045263193478437672">"Πολιτεία"</string>
+    <string name="postal_postcode" msgid="572136414136673751">"Ταχυδρομικός κώδικας"</string>
+    <string name="postal_country" msgid="7638264508416368690">"Χώρα"</string>
+    <string name="map_home" msgid="1243547733423343982">"Προβολή διεύθυνσης οικίας"</string>
+    <string name="map_work" msgid="1360474076921878088">"Προβολή διεύθυνσης εργασίας"</string>
+    <string name="map_other" msgid="3817820803587012641">"Προβολή διεύθυνσης"</string>
+    <string name="map_custom" msgid="8761800628069473526">"Προβολή διεύθυνσης <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
+    <string name="chat_aim" msgid="2588492205291249142">"Συζήτηση μέσω AIM"</string>
+    <string name="chat_msn" msgid="8041633440091073484">"Συζήτηση μέσω Windows Live"</string>
+    <string name="chat_yahoo" msgid="6629211142719943666">"Συζήτηση μέσω Yahoo"</string>
+    <string name="chat_skype" msgid="1210045020427480566">"Συζήτηση μέσω Skype"</string>
+    <string name="chat_qq" msgid="4294637812847719693">"Συζήτηση μέσω QQ"</string>
+    <string name="chat_gtalk" msgid="981575737258117697">"Συζήτηση μέσω Google Talk"</string>
+    <string name="chat_icq" msgid="8438405386153745775">"Συζήτηση μέσω ICQ"</string>
+    <string name="chat_jabber" msgid="7561444230307829609">"Συζήτηση μέσω Jabber"</string>
+    <string name="chat" msgid="9025361898797412245">"Συζήτηση"</string>
+    <string name="description_minus_button" msgid="6908099247930477551">"διαγραφή"</string>
+    <string name="expand_name_fields_description" msgid="6948274252874552543">"Εμφάνιση περισσότερων πεδίων ονόματος"</string>
+    <string name="collapse_name_fields_description" msgid="4757877385895561556">"Σύμπτυξη πεδίων ονομάτων"</string>
+    <string name="expand_phonetic_name_fields_description" msgid="9133052674087187927">"Εμφάνιση περισσότερων πεδίων φωνητικού ονόματος"</string>
+    <string name="collapse_phonetic_name_fields_description" msgid="9102249481855019452">"Σύμπτυξη πεδίων φωνητικού ονόματος"</string>
+    <string name="expand_fields_description" msgid="8129294181216760037">"Ανάπτυξη"</string>
+    <string name="collapse_fields_description" msgid="1884143625854637874">"Σύμπτυξη"</string>
+    <string name="announce_expanded_fields" msgid="1075947220478530622">"Αναπτύχθηκε"</string>
+    <string name="announce_collapsed_fields" msgid="6414231530177338704">"Συμπτύχθηκε"</string>
+    <string name="list_filter_all_accounts" msgid="8908683398914322369">"Όλες οι επαφές"</string>
+    <string name="list_filter_all_starred" msgid="5031734941601931356">"Με αστέρι"</string>
+    <string name="list_filter_customize" msgid="4789963356004169321">"Προσαρμογή"</string>
+    <string name="list_filter_single" msgid="5871400283515893087">"Επαφή"</string>
+    <string name="display_ungrouped" msgid="6885954210243119591">"Όλες οι άλλες επαφές"</string>
+    <string name="display_all_contacts" msgid="2031647544742889505">"Όλες οι επαφές"</string>
+    <string name="menu_sync_remove" msgid="3266725887008450161">"Κατάργηση ομάδας συγχρονισμού"</string>
+    <string name="dialog_sync_add" msgid="8267045393119375803">"Προσθήκη ομάδας συγχρονισμού"</string>
+    <string name="display_more_groups" msgid="2682547080423434170">"Περισσότερες ομάδες…"</string>
+    <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"Η κατάργηση της ομάδας \"<xliff:g id="GROUP">%s</xliff:g>\" από τον συγχρονισμό θα καταργήσει επίσης και τις επαφές χωρίς ομαδοποίηση από τον συγχρονισμό."</string>
+    <string name="savingDisplayGroups" msgid="2133152192716475939">"Αποθήκευση επιλογών προβολής…"</string>
+    <string name="listCustomView" msgid="1840624396582117590">"Προσαρμοσμένη προβολή"</string>
+    <string name="dialog_new_contact_account" msgid="4969619718062454756">"Αποθήκευση επαφών που εισήχθησαν σε:"</string>
+    <string name="import_from_sim" msgid="6912071635295799131">"Κάρτα SIM"</string>
+    <string name="import_from_sim_summary_fmt" msgid="5169032449686348118">"SIM <xliff:g id="SIM_NAME">%1$s</xliff:g>"</string>
+    <plurals name="import_from_sim_secondary_contact_count_fmt" formatted="false" msgid="5821095773211149295">
+      <item quantity="other">%1$d επαφές</item>
+      <item quantity="one">1 επαφή</item>
+    </plurals>
+    <plurals name="import_from_sim_secondary_template" formatted="false" msgid="2484832025802907060">
+      <item quantity="other"><xliff:g id="COUNT_2">^1</xliff:g> επαφές • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
+      <item quantity="one"><xliff:g id="COUNT_0">^1</xliff:g> επαφή • <xliff:g id="PHONE_NUMBER_1">^2</xliff:g></item>
+    </plurals>
+    <string name="import_from_vcf_file" msgid="8662528435646418203">"Αρχείο .vcf"</string>
+    <string name="nothing_to_import_message" msgid="1651921906873335656">"Δεν υπάρχει τίποτα προς εισαγωγή"</string>
+    <string name="import_from_vcf_file_confirmation_message" msgid="967723361108008345">"Εισαγωγή επαφών από vCard;"</string>
+    <string name="cancel_import_confirmation_message" msgid="3929951040347726757">"Να ακυρωθεί η εισαγωγή του αρχείου <xliff:g id="FILENAME">%s</xliff:g>;"</string>
+    <string name="cancel_export_confirmation_message" msgid="1995462401949262638">"Να ακυρωθεί η εξαγωγή του αρχείου <xliff:g id="FILENAME">%s</xliff:g>;"</string>
+    <string name="cancel_vcard_import_or_export_failed" msgid="6139900383366166706">"Αδ.ακύρ.εισαγ./εξαγ.vCard"</string>
+    <string name="fail_reason_unknown" msgid="1714092345030570863">"Άγνωστο σφάλμα."</string>
+    <string name="fail_reason_could_not_open_file" msgid="2067725459821997463">"Δεν ήταν δυνατό το άνοιγμα του αρχείου \"<xliff:g id="FILE_NAME">%1$s</xliff:g>\": <xliff:g id="EXACT_REASON">%2$s</xliff:g>."</string>
+    <string name="fail_reason_could_not_initialize_exporter" msgid="707260459259688510">"Δεν ήταν δυνατή η έναρξη του εξαγωγέα: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
+    <string name="fail_reason_no_exportable_contact" msgid="8728506011371262065">"Δεν υπάρχει επαφή με δυνατότητα εξαγωγής."</string>
+    <string name="missing_required_permission" msgid="5865884842972833120">"Απενεργοποιήσατε μια απαιτούμενη άδεια."</string>
+    <string name="fail_reason_error_occurred_during_export" msgid="3018855323913649063">"Προέκυψε κάποιο σφάλμα κατά την εξαγωγή: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
+    <string name="fail_reason_io_error" msgid="6748358842976073255">"Σφάλμα I/O"</string>
+    <string name="fail_reason_low_memory_during_import" msgid="875222757734882898">"Δεν υπάρχει αρκετή μνήμη. Το αρχείο ενδέχεται να είναι πάρα πολύ μεγάλο."</string>
+    <string name="fail_reason_not_supported" msgid="8219562769267148825">"Η μορφή δεν υποστηρίζεται."</string>
+    <string name="exporting_vcard_finished_title" msgid="4767045779458185251">"Η εξαγωγή του αρχείου <xliff:g id="FILENAME">%s</xliff:g> ολοκληρώθηκε."</string>
+    <string name="exporting_vcard_finished_title_fallback" msgid="6060472638008218274">"Ολοκλήρωση εξαγωγής επαφών."</string>
+    <string name="exporting_vcard_finished_toast" msgid="1739055986856453882">"Ολοκληρώθηκε η εξαγωγή των επαφών. Κάντε κλικ στην ειδοποίηση για να μοιραστείτε επαφές."</string>
+    <string name="touch_to_share_contacts" msgid="4882485525268469736">"Πατήστε για να μοιραστείτε επαφές."</string>
+    <string name="exporting_vcard_canceled_title" msgid="2652222370493306887">"Η εξαγωγή του αρχείου <xliff:g id="FILENAME">%s</xliff:g> ακυρώθηκε."</string>
+    <string name="exporting_contact_list_title" msgid="9072240631534457415">"Εξαγωγή δεδομένων επαφών"</string>
+    <string name="exporting_contact_list_message" msgid="3367949209642931952">"Γίνεται εξαγωγή των δεδομένων επαφών."</string>
+    <string name="composer_failed_to_get_database_infomation" msgid="1765944280846236723">"Δεν ήταν δυνατή η λήψη πληροφοριών βάσης δεδομένων."</string>
+    <string name="composer_has_no_exportable_contact" msgid="5712531702823346549">"Δεν υπάρχουν επαφές προς εξαγωγή."</string>
+    <string name="composer_not_initialized" msgid="2321648986367005254">"Η έναρξη της vCard δεν ήταν σωστή."</string>
+    <string name="exporting_contact_failed_title" msgid="4892358112409576342">"Αδυναμία εξαγωγής"</string>
+    <string name="exporting_contact_failed_message" msgid="4938527850142003141">"Δεν έγινε εξαγωγή των δεδομένων επαφής.\nΑιτία: \"<xliff:g id="FAIL_REASON">%s</xliff:g>\""</string>
+    <string name="importing_vcard_description" msgid="4245275224298571351">"Εισαγωγή <xliff:g id="NAME">%s</xliff:g>"</string>
+    <string name="reading_vcard_failed_title" msgid="4251647443358422855">"Αδύν. ανάγν. δεδομ. vCard"</string>
+    <string name="importing_vcard_finished_title" msgid="3341541727268747967">"Η εισαγωγή vCard ολοκληρώθηκε <xliff:g id="FILENAME">%s</xliff:g>"</string>
+    <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"Η εισαγωγή του αρχείου <xliff:g id="FILENAME">%s</xliff:g> ακυρώθηκε"</string>
+    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"Η <xliff:g id="FILENAME">%s</xliff:g> θα εισαχθεί σύντομα."</string>
+    <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"Η εισαγωγή του αρχείου θα γίνει σύντομα."</string>
+    <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"Το αίτημα εισαγωγής vCard απορρίφθηκε. Δοκιμάστε ξανά αργότερα."</string>
+    <string name="contacts_export_will_start_message" msgid="8538705791417534431">"Σε λίγο θα ξεκινήσει η εξαγωγή επαφών."</string>
+    <string name="vcard_export_request_rejected_message" msgid="2844874826431327531">"Το αίτημα εξαγωγής vCard απορρίφθηκε. Δοκιμάστε ξανά αργότερα."</string>
+    <string name="vcard_unknown_filename" msgid="7171709890959915954">"επαφή"</string>
+    <string name="caching_vcard_message" msgid="4926308675041506756">"Αλλαγή vCard σε τοπικό χώρο προσωρινής αποθήκευσης. Η εισαγωγή θα ξεκινήσει σύντομα."</string>
+    <string name="vcard_import_failed" msgid="5223531255894842406">"Δεν ήταν δυνατή η εισαγωγή κάρτας vCard."</string>
+    <string name="nfc_vcard_file_name" msgid="2823095213265993609">"Λήψ.επ.μέσω ΕΚΠ"</string>
+    <string name="caching_vcard_title" msgid="1226272312940516605">"Προσωρινή αποθήκευση"</string>
+    <string name="progress_notifier_message" msgid="2311011466908220528">"Εισαγωγή <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g>: <xliff:g id="NAME">%3$s</xliff:g>"</string>
+    <string name="export_to_vcf_file" msgid="4407527157056120858">"Εξαγωγή σε αρχείο .vcf"</string>
+    <string name="display_options_sort_list_by" msgid="7028809117272018712">"Ταξινόμηση κατά"</string>
+    <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"Φωνητικό όνομα"</string>
+    <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"Να εμφανίζεται πάντα"</string>
+    <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"Απόκρυψη, εάν είναι κενό"</string>
+    <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"Όνομα"</string>
+    <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"Επώνυμο"</string>
+    <string name="display_options_view_names_as" msgid="6514632499276563482">"Μορφή ονόματος"</string>
+    <string name="display_options_view_given_name_first" msgid="3616004640258761473">"Πρώτα το όνομα"</string>
+    <string name="display_options_view_family_name_first" msgid="956445100777296467">"Πρώτα το επώνυμο"</string>
+    <string name="settings_accounts" msgid="350219740670774576">"Λογαριασμοί"</string>
+    <string name="default_editor_account" msgid="699591683362420991">"Προεπιλεγμένος λογαριασμός για νέες επαφές"</string>
+    <string name="settings_my_info_title" msgid="1534272456405343119">"Τα στοιχεία μου"</string>
+    <string name="set_up_profile" msgid="7370213843590143771">"Ρυθμίστε το προφίλ σας"</string>
+    <string name="setting_about" msgid="7014388749752042863">"Σχετικά με τις Επαφές"</string>
+    <string name="share_favorite_contacts" msgid="4280926751003081042">"Κοινοποίηση αγαπημένων επαφών"</string>
+    <string name="share_contacts" msgid="8109287987498711664">"Κοινή χρήση όλων των επαφών"</string>
+    <string name="share_contacts_failure" msgid="1216431977330560559">"Αποτυχία κοινής χρήσης επαφών."</string>
+    <string name="dialog_export" msgid="1628001095187741417">"Εξαγωγή επαφών"</string>
+    <string name="dialog_import" msgid="2423592905927819672">"Εισαγωγή επαφών από"</string>
+    <string name="share_error" msgid="948429331673358107">"Δεν είναι δυνατή η κοινή χρήση αυτής της επαφής."</string>
+    <string name="no_contact_to_share" msgid="1276397530378323033">"Δεν υπάρχουν επαφές για κοινοποίηση."</string>
+    <string name="menu_contacts_filter" msgid="2165153460860262501">"Επαφές για εμφάνιση"</string>
+    <string name="activity_title_contacts_filter" msgid="8275542497615516969">"Επαφές για προβολή"</string>
+    <string name="custom_list_filter" msgid="9048525797111024204">"Προσαρμογή προβολής"</string>
+    <string name="menu_custom_filter_save" msgid="2679793632208086460">"Αποθήκευση"</string>
+    <string name="hint_findContacts" msgid="7128627979899070325">"Αναζήτηση στις επαφές"</string>
+    <string name="contactsFavoritesLabel" msgid="8417039765586853670">"Αγαπ."</string>
+    <string name="menu_import" msgid="6107961135813836467">"Εισαγωγή"</string>
+    <string name="menu_export" msgid="2658783911863503902">"Εξαγωγή"</string>
     <string name="menu_blocked_numbers" msgid="5272951629083025995">"Αποκλεισμένοι αριθμοί"</string>
+    <string name="contact_status_update_attribution" msgid="752179367353018597">"μέσω <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
+    <string name="contact_status_update_attribution_with_date" msgid="7358045508107825068">"<xliff:g id="DATE">%1$s</xliff:g> μέσω <xliff:g id="SOURCE">%2$s</xliff:g>"</string>
+    <string name="action_menu_back_from_search" msgid="8793348588949233348">"τέλος αναζήτησης"</string>
+    <string name="description_clear_search" msgid="688023606766232904">"Διαγραφή αναζητήσεων"</string>
+    <string name="select_account_dialog_title" msgid="5478489655696599219">"Λογαριασμός"</string>
+    <string name="set_default_account" msgid="4311613760725609801">"Χρήση πάντα για κλήσεις"</string>
+    <string name="call_with_a_note" msgid="8389827628360791676">"Κλήση με σημείωση"</string>
+    <string name="call_subject_hint" msgid="3043028982108363572">"Πληκτρολογήστε μια σημείωση για αποστολή με την κλήση…"</string>
+    <string name="send_and_call_button" msgid="7740295432834590737">"ΑΠΟΣΤΟΛΗ ΚΑΙ ΚΛΗΣΗ"</string>
+    <string name="call_subject_limit" msgid="4545212901205397669">"<xliff:g id="COUNT">%1$s</xliff:g> / <xliff:g id="LIMIT">%2$s</xliff:g>"</string>
+    <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
+    <string name="about_build_version" msgid="1765533099416999801">"Έκδοση build"</string>
+    <string name="about_open_source_licenses" msgid="6479990452352919641">"Άδειες λογισμικού ανοικτού κώδικα"</string>
+    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"Λεπτομέρειες άδειας λογισμικού ανοικτού κώδικα"</string>
+    <string name="about_privacy_policy" msgid="3705518622499152626">"Πολιτική απορρήτου"</string>
+    <string name="about_terms_of_service" msgid="4642400812150296723">"Όροι παροχής υπηρεσιών"</string>
+    <string name="activity_title_licenses" msgid="5467767062737708066">"Άδειες λογισμικού ανοικτού κώδικα"</string>
+    <string name="url_open_error_toast" msgid="452592089815420457">"Αποτυχία ανοίγματος url."</string>
+    <string name="account_filter_view_checked" msgid="6696859503887762213">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> ελέγχθηκε"</string>
+    <string name="account_filter_view_not_checked" msgid="2248684521205038389">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> δεν ελέγχθηκε"</string>
+    <string name="description_search_video_call" msgid="5841525580339803272">"Πραγματοποίηση βιντεοκλήσης"</string>
+    <string name="description_delete_contact" msgid="53835657343783663">"Πλήκτρο Delete"</string>
+    <string name="description_no_name_header" msgid="8884991311595943271">"Αποσιωπητικά"</string>
+    <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> δ."</string>
+    <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> λ <xliff:g id="SECONDS">%2$s</xliff:g> δ."</string>
+    <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> ώ. <xliff:g id="MINUTES_1">%2$s</xliff:g> λ. <xliff:g id="SECONDS">%3$s</xliff:g> δ."</string>
+    <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"Η συντόμευση απενεργοποιήθηκε"</string>
+    <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"Η επαφή καταργήθηκε"</string>
+    <string name="sim_import_button_text" msgid="4270841592496619317">"Εισαγωγή"</string>
+    <string name="sim_import_title_none_selected" msgid="6910517331401970693">"Επιλογή επαφών"</string>
+    <string name="sim_import_empty_message" msgid="7743815244380189651">"Δεν υπάρχουν επαφές στην κάρτα SIM"</string>
+    <string name="sim_import_contact_exists_toast" msgid="1503743663717316732">"Η επαφή υπάρχει ήδη στη λίστα σας"</string>
+    <plurals name="sim_import_success_toast_fmt" formatted="false" msgid="8572156521110906443">
+      <item quantity="other">Έγινε εισαγωγή <xliff:g id="COUNT">%d</xliff:g> επαφών από τη SIM</item>
+      <item quantity="one">Έγινε εισαγωγή 1 επαφής από τη SIM</item>
+    </plurals>
+    <string name="sim_import_failed_toast" msgid="5559267299793622705">"Απέτυχε η εισαγωγή των επαφών από τη SIM"</string>
+    <string name="sim_import_title" msgid="2511154832820812822">"Εισαγωγή από SIM"</string>
+    <string name="sim_import_cancel_content_description" msgid="1619832410253424452">"Ακύρωση"</string>
+    <string name="auto_sync_off" msgid="2180147284456026587">"Ο αυτόματος συγχρονισμός είναι ανενεργός. Πατήστε για να τον ενεργοποιήσετε."</string>
+    <string name="dismiss_sync_alert" msgid="8941131776605093596">"Παράβλεψη"</string>
+    <string name="account_sync_off" msgid="7646143254066243924">"Ο συγχρονισμός λογαριασμού είναι ανενεργός. Πατήστε για να τον ενεργοποιήσετε."</string>
+    <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"Ενεργοποίηση αυτόματου συγχρονισμού;"</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"Θα γίνει συγχρονισμός όλων των αλλαγών που πραγματοποιείτε σε όλες τις εφαρμογές και τους λογαριασμούς, όχι μόνο στις Επαφές Google, τόσο στον ιστό όσο και στις συσκευές σας."</string>
+    <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"Ενεργοποίηση"</string>
+    <string name="connection_error_message" msgid="7046408921529247089">"Δεν υπάρχει σύνδεση"</string>
+    <string name="single_sim_display_label" msgid="6985770499439371497">"SIM"</string>
+    <string name="show_more_content_description" msgid="4277410425912984722">"Εμφάνιση περισσότερων"</string>
+    <string name="importing_sim_finished_title" msgid="5196369441294050721">"Ολοκληρώθηκε εισαγωγή από κάρτα SIM"</string>
+    <string name="importing_sim_failed_title" msgid="39706901030537985">"Αποτυχία εισαγωγής"</string>
+    <string name="importing_sim_failed_message" msgid="3345258302998021066">"Δεν ήταν δυνατή η εισαγωγή επαφών από την κάρτα SIM"</string>
+    <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"Εισαγωγή από SIM"</string>
+    <string name="contacts_default_notification_channel" msgid="4754058700611188581">"Ειδοποιήσεις"</string>
 </resources>

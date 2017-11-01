@@ -29,14 +29,12 @@ import android.preference.PreferenceManager;
 import android.provider.ContactsContract.Contacts;
 import android.util.Log;
 
-import com.android.contacts.common.testing.InjectedServices;
-import com.android.contacts.common.util.Constants;
-import com.android.contacts.commonbind.analytics.AnalyticsUtil;
+import com.android.contacts.testing.InjectedServices;
+import com.android.contacts.util.Constants;
+import com.android.contactsbind.analytics.AnalyticsUtil;
 
-import com.android.contacts.common.testing.NeededForTesting;
 import com.google.common.annotations.VisibleForTesting;
 
-@NeededForTesting
 public class ContactsApplication extends Application {
     private static final boolean ENABLE_LOADER_LOG = false; // Don't submit with true
     private static final boolean ENABLE_FRAGMENT_LOG = false; // Don't submit with true

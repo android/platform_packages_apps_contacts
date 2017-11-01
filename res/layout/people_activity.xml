@@ -14,40 +14,24 @@
      limitations under the License.
 -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/list_container"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
 
-    <include
-        layout="@layout/people_activity_toolbar"
-        android:id="@+id/toolbar_parent" />
-
-    <!--
-        ViewPager for swiping between tabs.  We put StrequentContactListFragment,
-        DefaultContactBrowseListFragment and GroupBrowseListFragment at runtime.
-
-        (Adding them directly as the children of this view is not recommended.  ViewPager should
-        be treated like a ListView, which doesn't expect children to be added from the layout.)
-    -->
-    <android.support.v4.view.ViewPager
-        android:id="@+id/tab_pager"
+    <!-- This is kind of a hack. Really we should be able to put the ContactsUnavailableFragment
+         into contacts_list_container but that causes issues with the fragment back stack
+         on older API levels -->
+    <FrameLayout
+        android:id="@+id/contacts_unavailable_container"
         android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:layout_below="@id/toolbar_parent"
-        />
+        android:layout_width="match_parent" />
 
     <FrameLayout
-        android:id="@+id/contacts_unavailable_view"
-        android:layout_width="match_parent"
+        android:id="@+id/contacts_list_container"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar_parent"
-        android:visibility="gone">
-        <FrameLayout
-            android:id="@+id/contacts_unavailable_container"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent" />
-    </FrameLayout>
+        android:layout_width="match_parent" />
 
     <include layout="@layout/floating_action_button" />
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

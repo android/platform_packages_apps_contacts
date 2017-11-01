@@ -1,12 +1,12 @@
 package com.android.contacts.interactions;
 
-import com.android.contacts.R;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.text.format.DateFormat;
 import android.text.format.DateUtils;
 import android.text.format.Time;
+
+import com.android.contacts.R;
 
 import java.util.Formatter;
 import java.util.Locale;

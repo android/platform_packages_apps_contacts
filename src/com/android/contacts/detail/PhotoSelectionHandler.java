@@ -38,12 +38,12 @@ import android.widget.Toast;
 
 import com.android.contacts.R;
 import com.android.contacts.editor.PhotoActionPopup;
-import com.android.contacts.common.model.AccountTypeManager;
-import com.android.contacts.common.model.RawContactModifier;
-import com.android.contacts.common.model.RawContactDelta;
-import com.android.contacts.common.model.ValuesDelta;
-import com.android.contacts.common.model.account.AccountType;
-import com.android.contacts.common.model.RawContactDeltaList;
+import com.android.contacts.model.AccountTypeManager;
+import com.android.contacts.model.RawContactDelta;
+import com.android.contacts.model.RawContactDeltaList;
+import com.android.contacts.model.RawContactModifier;
+import com.android.contacts.model.ValuesDelta;
+import com.android.contacts.model.account.AccountType;
 import com.android.contacts.util.ContactPhotoUtils;
 import com.android.contacts.util.UiClosables;
 
@@ -127,17 +127,16 @@ public abstract class PhotoSelectionHandler implements OnClickListener {
             switch (requestCode) {
                 // Cropped photo was returned
                 case REQUEST_CROP_PHOTO: {
-                    final Uri uri;
                     if (data != null && data.getData() != null) {
-                        uri = data.getData();
-                    } else {
-                        uri = mCroppedPhotoUri;
+                        final Uri croppedUri = data.getData();
+                        ContactPhotoUtils.savePhotoFromUriToUri(mContext, croppedUri,
+                                mCroppedPhotoUri, /* deleteAfterSave */ false);
                     }
 
                     try {
                         // delete the original temporary photo if it exists
                         mContext.getContentResolver().delete(mTempPhotoUri, null, null);
-                        listener.onPhotoSelected(uri);
+                        listener.onPhotoSelected(mCroppedPhotoUri);
                         return true;
                     } catch (FileNotFoundException e) {
                         return false;
@@ -169,7 +168,9 @@ public abstract class PhotoSelectionHandler implements OnClickListener {
                                 return false;
                             }
                         } catch (SecurityException e) {
-                            Log.d(TAG, "Did not have read-access to uri : " + uri);
+                            if (Log.isLoggable(TAG, Log.DEBUG)) {
+                                Log.d(TAG, "Did not have read-access to uri : " + uri);
+                            }
                             return false;
                         }
                     }

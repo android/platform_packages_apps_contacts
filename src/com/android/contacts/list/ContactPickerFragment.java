@@ -24,13 +24,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 
 import com.android.contacts.R;
-import com.android.contacts.common.list.ContactEntryListAdapter;
-import com.android.contacts.common.list.ContactEntryListFragment;
-import com.android.contacts.common.list.ContactListAdapter;
-import com.android.contacts.common.list.ContactListFilter;
-import com.android.contacts.common.list.DirectoryListLoader;
-import com.android.contacts.common.list.ShortcutIntentBuilder;
-import com.android.contacts.common.list.ShortcutIntentBuilder.OnShortcutIntentCreatedListener;
+import com.android.contacts.ShortcutIntentBuilder;
+import com.android.contacts.ShortcutIntentBuilder.OnShortcutIntentCreatedListener;
 
 /**
  * Fragment for the contact list used for browsing contacts (as compared to
@@ -60,16 +55,8 @@ public class ContactPickerFragment extends ContactEntryListFragment<ContactEntry
         mListener = listener;
     }
 
-    public boolean isCreateContactEnabled() {
-        return mCreateContactEnabled;
-    }
-
     public void setCreateContactEnabled(boolean flag) {
         this.mCreateContactEnabled = flag;
-    }
-
-    public boolean isEditMode() {
-        return mEditMode;
     }
 
     public void setEditMode(boolean flag) {
@@ -102,16 +89,6 @@ public class ContactPickerFragment extends ContactEntryListFragment<ContactEntry
     }
 
     @Override
-    protected void onCreateView(LayoutInflater inflater, ViewGroup container) {
-        super.onCreateView(inflater, container);
-        if (mCreateContactEnabled && isLegacyCompatibilityMode()) {
-            // Since we are using the legacy adapter setShowCreateContact(true) isn't supported.
-            // So we need to add an ugly header above the list.
-            getListView().addHeaderView(inflater.inflate(R.layout.create_new_contact, null, false));
-        }
-    }
-
-    @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (position == 0 && mCreateContactEnabled && mListener != null) {
             mListener.onCreateNewContactAction();
@@ -138,12 +115,6 @@ public class ContactPickerFragment extends ContactEntryListFragment<ContactEntry
             builder.createContactShortcutIntent(uri);
         } else {
             pickContact(uri);
-        }
-    }
-
-    public void createNewContact() {
-        if (mListener != null) {
-            mListener.onCreateNewContactAction();
         }
     }
 
@@ -177,16 +148,6 @@ public class ContactPickerFragment extends ContactEntryListFragment<ContactEntry
             adapter.setDisplayPhotos(false);
             return adapter;
         }
-    }
-
-    @Override
-    protected void configureAdapter() {
-        super.configureAdapter();
-
-        ContactEntryListAdapter adapter = getAdapter();
-
-        // If "Create new contact" is shown, don't display the empty list UI
-        adapter.setEmptyListEnabled(!isCreateContactEnabled());
     }
 
     @Override

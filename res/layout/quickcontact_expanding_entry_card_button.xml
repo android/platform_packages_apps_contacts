@@ -32,13 +32,12 @@
 
         <ImageView
             android:id="@+id/arrow"
-            android:src="@drawable/expanding_entry_card_expand_white_24"
+            android:src="@drawable/quantum_ic_expand_more_vd_theme_24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/expanding_entry_card_item_padding_start"
             android:paddingBottom="@dimen/expanding_entry_card_button_padding_vertical"
-            android:paddingTop="@dimen/expanding_entry_card_button_padding_vertical"
-            android:layout_weight="0" />
+            android:paddingTop="@dimen/expanding_entry_card_button_padding_vertical"/>
 
         <TextView
             android:id="@+id/text"
@@ -46,22 +45,10 @@
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/expanding_entry_card_item_image_spacing"
             android:gravity="center_vertical"
-            android:layout_weight="0"
             android:paddingBottom="@dimen/expanding_entry_card_button_padding_vertical"
             android:paddingTop="@dimen/expanding_entry_card_button_padding_vertical"
             android:textColor="@color/expanding_entry_card_button_text_color"
             android:textSize="@dimen/expanding_entry_card_title_text_size" />
-
-        <LinearLayout
-            android:id="@+id/badge_container"
-            android:gravity="end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="11dp"
-            android:layout_marginTop="@dimen/expanding_entry_card_button_padding_vertical"
-            android:layout_weight="1"
-            android:alpha=".3"
-            android:orientation="horizontal" />
     </LinearLayout>
 
 </LinearLayout>

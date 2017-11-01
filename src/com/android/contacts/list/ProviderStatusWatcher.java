@@ -15,7 +15,6 @@
  */
 package com.android.contacts.list;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.ContentObserver;
 import android.database.Cursor;
@@ -26,6 +25,7 @@ import android.provider.ContactsContract.ProviderStatus;
 import android.util.Log;
 
 import com.android.contacts.compat.ProviderStatusCompat;
+import com.android.contactsbind.FeedbackHelper;
 
 import com.google.common.collect.Lists;
 
@@ -230,6 +230,10 @@ public class ProviderStatusWatcher extends ContentObserver {
                         cursor.close();
                     }
                 }
+                return false;
+            } catch (SecurityException e) {
+                FeedbackHelper.sendFeedback(mContext, TAG,
+                        "Security exception when querying provider status", e);
                 return false;
             } finally {
                 synchronized (mSignal) {

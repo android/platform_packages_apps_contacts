@@ -38,8 +38,11 @@ import android.widget.Toast;
 
 import com.android.contacts.ContactSaveService;
 import com.android.contacts.R;
-import com.android.contacts.common.model.AccountTypeManager;
-import com.android.contacts.common.model.account.AccountType;
+import com.android.contacts.model.AccountTypeManager;
+import com.android.contacts.model.account.AccountType;
+import com.android.contacts.preference.ContactsPreferences;
+import com.android.contacts.util.ContactDisplayUtils;
+
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Sets;
 
@@ -51,7 +54,7 @@ import java.util.HashSet;
 public class ContactDeletionInteraction extends Fragment
         implements LoaderCallbacks<Cursor>, OnDismissListener {
 
-    private static final String TAG = "ContactDeletionInteraction";
+    private static final String TAG = "ContactDeletion";
     private static final String FRAGMENT_TAG = "deleteContact";
 
     private static final String KEY_ACTIVE = "active";
@@ -66,6 +69,8 @@ public class ContactDeletionInteraction extends Fragment
         Entity.DATA_SET, // 2
         Entity.CONTACT_ID, // 3
         Entity.LOOKUP_KEY, // 4
+        Entity.DISPLAY_NAME, // 5
+        Entity.DISPLAY_NAME_ALTERNATIVE, // 6
     };
 
     private static final int COLUMN_INDEX_RAW_CONTACT_ID = 0;
@@ -73,9 +78,13 @@ public class ContactDeletionInteraction extends Fragment
     private static final int COLUMN_INDEX_DATA_SET = 2;
     private static final int COLUMN_INDEX_CONTACT_ID = 3;
     private static final int COLUMN_INDEX_LOOKUP_KEY = 4;
+    private static final int COLUMN_INDEX_DISPLAY_NAME = 5;
+    private static final int COLUMN_INDEX_DISPLAY_NAME_ALT = 6;
 
     private boolean mActive;
     private Uri mContactUri;
+    private String mDisplayName;
+    private String mDisplayNameAlt;
     private boolean mFinishActivityWhenDone;
     private Context mContext;
     private AlertDialog mDialog;
@@ -248,6 +257,8 @@ public class ContactDeletionInteraction extends Fragment
             final String dataSet = cursor.getString(COLUMN_INDEX_DATA_SET);
             contactId = cursor.getLong(COLUMN_INDEX_CONTACT_ID);
             lookupKey = cursor.getString(COLUMN_INDEX_LOOKUP_KEY);
+            mDisplayName = cursor.getString(COLUMN_INDEX_DISPLAY_NAME);
+            mDisplayNameAlt = cursor.getString(COLUMN_INDEX_DISPLAY_NAME_ALT);
             AccountType type = accountTypes.getAccountType(accountType, dataSet);
             boolean writable = type == null || type.areContactsWritable();
             if (writable) {
@@ -338,8 +349,16 @@ public class ContactDeletionInteraction extends Fragment
         if (isAdded() && mFinishActivityWhenDone) {
             getActivity().setResult(RESULT_CODE_DELETED);
             getActivity().finish();
-            final String deleteToastMessage = getResources().getQuantityString(R.plurals
-                    .contacts_deleted_toast, /* quantity */ 1);
+            final String deleteToastMessage;
+            final String name = ContactDisplayUtils.getPreferredDisplayName(mDisplayName,
+                    mDisplayNameAlt, new ContactsPreferences(mContext));
+            if (TextUtils.isEmpty(name)) {
+                deleteToastMessage = getResources().getQuantityString(
+                        R.plurals.contacts_deleted_toast, /* quantity */ 1);
+            } else {
+                deleteToastMessage = getResources().getString(
+                        R.string.contacts_deleted_one_named_toast, name);
+            }
             Toast.makeText(mContext, deleteToastMessage, Toast.LENGTH_LONG).show();
         }
     }

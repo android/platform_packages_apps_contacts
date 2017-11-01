@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/text"
+    style="?android:checkedTextViewStyle"
+    android:layout_width="match_parent"
+    android:layout_height="?android:listPreferredItemHeight"
+    android:drawableEnd="?android:listChoiceIndicatorMultiple"
+    android:enabled="false"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:textAppearance="?android:textAppearanceListItem"
+    android:textColor="@color/contact_list_name_text_color"/>

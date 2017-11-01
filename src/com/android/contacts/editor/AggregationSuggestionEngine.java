@@ -38,8 +38,11 @@ import android.provider.ContactsContract.Data;
 import android.provider.ContactsContract.RawContacts;
 import android.text.TextUtils;
 
-import com.android.contacts.common.model.ValuesDelta;
 import com.android.contacts.compat.AggregationSuggestionsCompat;
+import com.android.contacts.model.ValuesDelta;
+import com.android.contacts.model.account.AccountWithDataSet;
+
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.Lists;
 
 import java.util.ArrayList;
@@ -50,42 +53,32 @@ import java.util.List;
  * Runs asynchronous queries to obtain aggregation suggestions in the as-you-type mode.
  */
 public class AggregationSuggestionEngine extends HandlerThread {
-    public static final String TAG = "AggregationSuggestionEngine";
-
     public interface Listener {
         void onAggregationSuggestionChange();
     }
 
-    public static final class RawContact {
-        public long rawContactId;
-        public String accountType;
-        public String accountName;
-        public String dataSet;
-
-        @Override
-        public String toString() {
-            return "ID: " + rawContactId + " account: " + accountType + "/" + accountName
-                    + " dataSet: " + dataSet;
-        }
-    }
-
     public static final class Suggestion {
-
         public long contactId;
-        public long photoId;
-        public String lookupKey;
+        public String contactLookupKey;
+        public long rawContactId;
+        public long photoId = -1;
         public String name;
         public String phoneNumber;
         public String emailAddress;
         public String nickname;
-        public byte[] photo;
-        public List<RawContact> rawContacts;
 
         @Override
         public String toString() {
-            return "ID: " + contactId + " rawContacts: " + rawContacts + " name: " + name
-            + " phone: " + phoneNumber + " email: " + emailAddress + " nickname: "
-            + nickname + (photo != null ? " [has photo]" : "");
+            return MoreObjects.toStringHelper(Suggestion.class)
+                    .add("contactId", contactId)
+                    .add("contactLookupKey", contactLookupKey)
+                    .add("rawContactId", rawContactId)
+                    .add("photoId", photoId)
+                    .add("name", name)
+                    .add("phoneNumber", phoneNumber)
+                    .add("emailAddress", emailAddress)
+                    .add("nickname", nickname)
+                    .toString();
         }
     }
 
@@ -106,19 +99,19 @@ public class AggregationSuggestionEngine extends HandlerThread {
 
     private static final long SUGGESTION_LOOKUP_DELAY_MILLIS = 300;
 
+    private static final int SUGGESTIONS_LIMIT = 3;
+
     private final Context mContext;
 
     private long[] mSuggestedContactIds = new long[0];
-
     private Handler mMainHandler;
     private Handler mHandler;
     private long mContactId;
+    private AccountWithDataSet mAccountFilter;
     private Listener mListener;
     private Cursor mDataCursor;
     private ContentObserver mContentObserver;
     private Uri mSuggestionsUri;
-    private int mSuggestionsLimit = 3;
-    private boolean mPruneInvisibleContacts = true;
 
     public AggregationSuggestionEngine(Context context) {
         super("AggregationSuggestions", Process.THREAD_PRIORITY_BACKGROUND);
@@ -150,12 +143,8 @@ public class AggregationSuggestionEngine extends HandlerThread {
         }
     }
 
-    public void setSuggestionsLimit(int suggestionsLimit) {
-        mSuggestionsLimit = suggestionsLimit;
-    }
-
-    public void setPruneInvisibleContacts (boolean pruneInvisibleContacts) {
-        mPruneInvisibleContacts = pruneInvisibleContacts;
+    public void setAccountFilter(AccountWithDataSet account) {
+        mAccountFilter = account;
     }
 
     public void setListener(Listener listener) {
@@ -216,10 +205,6 @@ public class AggregationSuggestionEngine extends HandlerThread {
         appendValue(nameSb, values, StructuredName.FAMILY_NAME);
         appendValue(nameSb, values, StructuredName.SUFFIX);
 
-        if (nameSb.length() == 0) {
-            appendValue(nameSb, values, StructuredName.DISPLAY_NAME);
-        }
-
         StringBuilder phoneticNameSb = new StringBuilder();
         appendValue(phoneticNameSb, values, StructuredName.PHONETIC_FAMILY_NAME);
         appendValue(phoneticNameSb, values, StructuredName.PHONETIC_MIDDLE_NAME);
@@ -232,7 +217,7 @@ public class AggregationSuggestionEngine extends HandlerThread {
         // AggregationSuggestions.Builder() became visible in API level 23, so use it if applicable.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             final Builder uriBuilder = new AggregationSuggestions.Builder()
-                    .setLimit(mSuggestionsLimit)
+                    .setLimit(SUGGESTIONS_LIMIT)
                     .setContactId(mContactId);
             if (nameSb.length() != 0) {
                 uriBuilder.addNameParameter(nameSb.toString());
@@ -246,7 +231,7 @@ public class AggregationSuggestionEngine extends HandlerThread {
         // For previous SDKs, use the backup plan.
         final AggregationSuggestionsCompat.Builder uriBuilder =
                 new AggregationSuggestionsCompat.Builder()
-                .setLimit(mSuggestionsLimit)
+                .setLimit(SUGGESTIONS_LIMIT)
                 .setContactId(mContactId);
         if (nameSb.length() != 0) {
             uriBuilder.addNameParameter(nameSb.toString());
@@ -282,42 +267,36 @@ public class AggregationSuggestionEngine extends HandlerThread {
 
         public static final String SELECTION_PREFIX =
                 Data.MIMETYPE + " IN ('"
-                    + Phone.CONTENT_ITEM_TYPE + "','"
-                    + Email.CONTENT_ITEM_TYPE + "','"
-                    + StructuredName.CONTENT_ITEM_TYPE + "','"
-                    + Nickname.CONTENT_ITEM_TYPE + "','"
-                    + Photo.CONTENT_ITEM_TYPE + "')"
-                + " AND " + Data.CONTACT_ID + " IN (";
+                        + Phone.CONTENT_ITEM_TYPE + "','"
+                        + Email.CONTENT_ITEM_TYPE + "','"
+                        + StructuredName.CONTENT_ITEM_TYPE + "','"
+                        + Nickname.CONTENT_ITEM_TYPE + "','"
+                        + Photo.CONTENT_ITEM_TYPE + "')"
+                        + " AND " + Data.CONTACT_ID + " IN (";
 
         public static final String[] COLUMNS = {
-            Data._ID,
-            Data.CONTACT_ID,
-            Data.LOOKUP_KEY,
-            Data.PHOTO_ID,
-            Data.DISPLAY_NAME,
-            Data.RAW_CONTACT_ID,
-            Data.MIMETYPE,
-            Data.DATA1,
-            Data.IS_SUPER_PRIMARY,
-            Photo.PHOTO,
-            RawContacts.ACCOUNT_TYPE,
-            RawContacts.ACCOUNT_NAME,
-            RawContacts.DATA_SET
+                Data.CONTACT_ID,
+                Data.LOOKUP_KEY,
+                Data.RAW_CONTACT_ID,
+                Data.MIMETYPE,
+                Data.DATA1,
+                Data.IS_SUPER_PRIMARY,
+                RawContacts.ACCOUNT_TYPE,
+                RawContacts.ACCOUNT_NAME,
+                RawContacts.DATA_SET,
+                Contacts.Photo._ID
         };
 
-        public static final int ID = 0;
-        public static final int CONTACT_ID = 1;
-        public static final int LOOKUP_KEY = 2;
-        public static final int PHOTO_ID = 3;
-        public static final int DISPLAY_NAME = 4;
-        public static final int RAW_CONTACT_ID = 5;
-        public static final int MIMETYPE = 6;
-        public static final int DATA1 = 7;
-        public static final int IS_SUPERPRIMARY = 8;
-        public static final int PHOTO = 9;
-        public static final int ACCOUNT_TYPE = 10;
-        public static final int ACCOUNT_NAME = 11;
-        public static final int DATA_SET = 12;
+        public static final int CONTACT_ID = 0;
+        public static final int LOOKUP_KEY = 1;
+        public static final int RAW_CONTACT_ID = 2;
+        public static final int MIMETYPE = 3;
+        public static final int DATA1 = 4;
+        public static final int IS_SUPERPRIMARY = 5;
+        public static final int ACCOUNT_TYPE = 6;
+        public static final int ACCOUNT_NAME = 7;
+        public static final int DATA_SET = 8;
+        public static final int PHOTO_ID = 9;
     }
 
     private void loadAggregationSuggestions(Uri uri) {
@@ -346,12 +325,12 @@ public class AggregationSuggestionEngine extends HandlerThread {
                 sb.append(mSuggestedContactIds[i]);
             }
             sb.append(')');
-            sb.toString();
 
             Cursor dataCursor = contentResolver.query(Data.CONTENT_URI,
                     DataQuery.COLUMNS, sb.toString(), null, Data.CONTACT_ID);
             if (dataCursor != null) {
-                mMainHandler.sendMessage(mMainHandler.obtainMessage(MESSAGE_DATA_CURSOR, dataCursor));
+                mMainHandler.sendMessage(
+                        mMainHandler.obtainMessage(MESSAGE_DATA_CURSOR, dataCursor));
             }
         } finally {
             cursor.close();
@@ -364,8 +343,7 @@ public class AggregationSuggestionEngine extends HandlerThread {
         final ArrayList<Long> newIds = new ArrayList<Long>(count);
         while (cursor.moveToNext()) {
             final long contactId = cursor.getLong(0);
-            if (!changed &&
-                    Arrays.binarySearch(mSuggestedContactIds, contactId) < 0) {
+            if (!changed && Arrays.binarySearch(mSuggestedContactIds, contactId) < 0) {
                 changed = true;
             }
             newIds.add(contactId);
@@ -398,99 +376,64 @@ public class AggregationSuggestionEngine extends HandlerThread {
     }
 
     public List<Suggestion> getSuggestions() {
-        final ArrayList<Long> visibleContacts = new ArrayList<>();
-        if (mPruneInvisibleContacts) {
-            final Uri contactFilterUri = Data.CONTENT_URI.buildUpon()
-                    .appendQueryParameter(Data.VISIBLE_CONTACTS_ONLY, "true")
-                    .build();
-            final ContentResolver contentResolver = mContext.getContentResolver();
-            final Cursor contactCursor = contentResolver.query(contactFilterUri,
-                    new String[]{Data.CONTACT_ID}, null, null, null);
-            try {
-                if (contactCursor != null) {
-                    while (contactCursor.moveToNext()) {
-                        final long contactId = contactCursor.getLong(0);
-                        visibleContacts.add(contactId);
-                    }
-                }
-            } finally {
-                contactCursor.close();
-            }
+        final ArrayList<Suggestion> list = Lists.newArrayList();
 
-        }
-
-        ArrayList<Suggestion> list = Lists.newArrayList();
-        if (mDataCursor != null) {
+        if (mDataCursor != null && mAccountFilter != null) {
             Suggestion suggestion = null;
-            long currentContactId = -1;
+            long currentRawContactId = -1;
             mDataCursor.moveToPosition(-1);
             while (mDataCursor.moveToNext()) {
-                long contactId = mDataCursor.getLong(DataQuery.CONTACT_ID);
-                if (mPruneInvisibleContacts && !visibleContacts.contains(contactId)) {
-                    continue;
-                }
-                if (contactId != currentContactId) {
+                final long rawContactId = mDataCursor.getLong(DataQuery.RAW_CONTACT_ID);
+                if (rawContactId != currentRawContactId) {
                     suggestion = new Suggestion();
-                    suggestion.contactId = contactId;
-                    suggestion.name = mDataCursor.getString(DataQuery.DISPLAY_NAME);
-                    suggestion.lookupKey = mDataCursor.getString(DataQuery.LOOKUP_KEY);
-                    suggestion.rawContacts = Lists.newArrayList();
-                    list.add(suggestion);
-                    currentContactId = contactId;
+                    suggestion.rawContactId = rawContactId;
+                    suggestion.contactId = mDataCursor.getLong(DataQuery.CONTACT_ID);
+                    suggestion.contactLookupKey = mDataCursor.getString(DataQuery.LOOKUP_KEY);
+                    final String accountName = mDataCursor.getString(DataQuery.ACCOUNT_NAME);
+                    final String accountType = mDataCursor.getString(DataQuery.ACCOUNT_TYPE);
+                    final String dataSet = mDataCursor.getString(DataQuery.DATA_SET);
+                    final AccountWithDataSet account = new AccountWithDataSet(
+                            accountName, accountType, dataSet);
+                    if (mAccountFilter.equals(account)) {
+                        list.add(suggestion);
+                    }
+                    currentRawContactId = rawContactId;
                 }
 
-                long rawContactId = mDataCursor.getLong(DataQuery.RAW_CONTACT_ID);
-                if (!containsRawContact(suggestion, rawContactId)) {
-                    RawContact rawContact = new RawContact();
-                    rawContact.rawContactId = rawContactId;
-                    rawContact.accountName = mDataCursor.getString(DataQuery.ACCOUNT_NAME);
-                    rawContact.accountType = mDataCursor.getString(DataQuery.ACCOUNT_TYPE);
-                    rawContact.dataSet = mDataCursor.getString(DataQuery.DATA_SET);
-                    suggestion.rawContacts.add(rawContact);
-                }
-
-                String mimetype = mDataCursor.getString(DataQuery.MIMETYPE);
+                final String mimetype = mDataCursor.getString(DataQuery.MIMETYPE);
                 if (Phone.CONTENT_ITEM_TYPE.equals(mimetype)) {
-                    String data = mDataCursor.getString(DataQuery.DATA1);
+                    final String data = mDataCursor.getString(DataQuery.DATA1);
                     int superprimary = mDataCursor.getInt(DataQuery.IS_SUPERPRIMARY);
                     if (!TextUtils.isEmpty(data)
                             && (superprimary != 0 || suggestion.phoneNumber == null)) {
                         suggestion.phoneNumber = data;
                     }
                 } else if (Email.CONTENT_ITEM_TYPE.equals(mimetype)) {
-                    String data = mDataCursor.getString(DataQuery.DATA1);
+                    final String data = mDataCursor.getString(DataQuery.DATA1);
                     int superprimary = mDataCursor.getInt(DataQuery.IS_SUPERPRIMARY);
                     if (!TextUtils.isEmpty(data)
                             && (superprimary != 0 || suggestion.emailAddress == null)) {
                         suggestion.emailAddress = data;
                     }
                 } else if (Nickname.CONTENT_ITEM_TYPE.equals(mimetype)) {
-                    String data = mDataCursor.getString(DataQuery.DATA1);
+                    final String data = mDataCursor.getString(DataQuery.DATA1);
                     if (!TextUtils.isEmpty(data)) {
                         suggestion.nickname = data;
                     }
+                } else if (StructuredName.CONTENT_ITEM_TYPE.equals(mimetype)) {
+                    // DATA1 stores the display name for the raw contact.
+                    final String data = mDataCursor.getString(DataQuery.DATA1);
+                    if (!TextUtils.isEmpty(data) && suggestion.name == null) {
+                        suggestion.name = data;
+                    }
                 } else if (Photo.CONTENT_ITEM_TYPE.equals(mimetype)) {
-                    long dataId = mDataCursor.getLong(DataQuery.ID);
-                    long photoId = mDataCursor.getLong(DataQuery.PHOTO_ID);
-                    if (dataId == photoId && !mDataCursor.isNull(DataQuery.PHOTO)) {
-                        suggestion.photo = mDataCursor.getBlob(DataQuery.PHOTO);
-                        suggestion.photoId = photoId;
+                    final Long id = mDataCursor.getLong(DataQuery.PHOTO_ID);
+                    if (suggestion.photoId == -1) {
+                        suggestion.photoId = id;
                     }
                 }
             }
         }
         return list;
-    }
-
-    public boolean containsRawContact(Suggestion suggestion, long rawContactId) {
-        if (suggestion.rawContacts != null) {
-            int count = suggestion.rawContacts.size();
-            for (int i = 0; i < count; i++) {
-                if (suggestion.rawContacts.get(i).rawContactId == rawContactId) {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 }

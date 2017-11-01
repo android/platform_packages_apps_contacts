@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:background="@color/background_primary">
+        android:background="@color/empty_state_background">
         <include layout="@layout/contacts_unavailable_fragment_content"/>
     </ScrollView>
 </FrameLayout>

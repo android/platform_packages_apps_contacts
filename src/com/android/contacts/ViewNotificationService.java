@@ -23,8 +23,8 @@ import android.content.Loader.OnLoadCompleteListener;
 import android.os.IBinder;
 import android.util.Log;
 
-import com.android.contacts.common.model.Contact;
-import com.android.contacts.common.model.ContactLoader;
+import com.android.contacts.model.Contact;
+import com.android.contacts.model.ContactLoader;
 
 
 /**

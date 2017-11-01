@@ -24,14 +24,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView android:id="@+id/text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dip"
-        android:layout_marginStart="24dip"
-        android:paddingTop="15dip"
-        android:paddingBottom="15dip"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+    <include
+        android:id="@+id/text"
+        layout="@layout/dialog_title"/>
 
     <View
         android:layout_width="match_parent"
@@ -42,8 +37,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
-        android:layout_marginLeft="8dip"
-        android:layout_marginStart="8dip"
         android:fadingEdge="none"/>
 
     <View
@@ -54,7 +47,9 @@
     <Button
         android:id="@+id/add_account_button"
         style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="24dp"
+        android:layout_marginBottom="8dp"/>
 
 </LinearLayout>

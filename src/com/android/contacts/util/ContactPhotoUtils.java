@@ -23,12 +23,12 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.util.Log;
 
 import com.android.contacts.R;
+
 import com.google.common.io.Closeables;
 
 import java.io.ByteArrayOutputStream;
@@ -162,7 +162,9 @@ public class ContactPhotoUtils {
                 outputStream.write(buffer, 0, length);
                 totalLength += length;
             }
-            Log.v(TAG, "Wrote " + totalLength + " bytes for photo " + inputUri.toString());
+            if (Log.isLoggable(TAG, Log.VERBOSE)) {
+                Log.v(TAG, "Wrote " + totalLength + " bytes for photo " + inputUri.toString());
+            }
         } catch (IOException | NullPointerException e) {
             Log.e(TAG, "Failed to write photo: " + inputUri.toString() + " because: " + e);
             return false;

@@ -13,26 +13,13 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+           xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="DetailActivityTheme" parent="@android:style/Theme.Holo.Light">
-        <item name="android:actionBarStyle">@style/ContactsActionBarStyle</item>
-        <item name="android:homeAsUpIndicator">@drawable/ic_menu_back</item>
-        <item name="android:actionOverflowButtonStyle">@style/ContactsActionBarOverflow</item>
-        <item name="android:actionBarItemBackground">@drawable/action_bar_item_background</item>
-        <item name="android:actionBarWidgetTheme">@style/ContactsActionBarTheme</item>
-        <item name="android:textColorPrimary">@color/primary_text_color</item>
-        <item name="android:textColorSecondary">@color/secondary_text_color</item>
-        <item name="android:listViewStyle">@style/ListViewStyle</item>
-    </style>
-
-    <style name="EditorActivityTheme" parent="@style/PeopleTheme">
-        <item name="android:listViewStyle">@style/ListViewStyle</item>
-        <item name="android:actionBarStyle">@style/EditorActionBarStyle</item>
-        <item name="android:colorButtonNormal">@color/background_primary</item>
-    </style>
-
-    <style name="Theme">
+    <style name="EditorActivityTheme" parent="@style/PeopleActivityTheme">
+        <item name="actionBarStyle">@style/EditorActionBarStyle</item>
+        <item name="colorButtonNormal">@color/background_primary</item>
+        <item name="windowActionModeOverlay">true</item>
     </style>
 
     <style name="Theme.QuickContact" parent="@style/PeopleTheme">
@@ -47,22 +34,16 @@
         <item name="android:listViewStyle">@style/ListViewStyle</item>
         <!-- We need to use a light ripple behind ActionBar items in order for them to
              be visible when using some of the darker ActionBar tints -->
-        <item name="android:actionBarItemBackground">@drawable/item_background_material_borderless_dark</item>
+        <item name="android:actionBarItemBackground">
+            @drawable/item_background_material_borderless_dark
+        </item>
     </style>
 
-    <style name="PeopleTheme" parent="@android:style/Theme.Material.Light">
+    <style name="PeopleTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/ContactsActionBarStyle</item>
-        <!-- Style for the tab bar (for the divider between tabs) -->
-        <item name="android:actionBarTabBarStyle">@style/ContactsActionBarTabBarStyle</item>
-        <!-- Style for the tab bar text (for text on tabs) -->
-        <item name="android:actionBarTabTextStyle">@style/ContactsActionBarTabTextStyle</item>
-        <!--  Drawable for the back button -->
-        <item name="android:homeAsUpIndicator">@drawable/ic_back_arrow</item>
         <!-- Style for the overflow button in the actionbar. -->
         <item name="android:actionOverflowButtonStyle">@style/ContactsActionBarOverflowQP</item>
-        <item name="android:actionModeCloseDrawable">@drawable/ic_close_lt</item>
-        <item name="android:fastScrollThumbDrawable">@drawable/fastscroll_thumb</item>
-        <item name="android:fastScrollTrackDrawable">@null</item>
+        <item name="android:actionModeCloseDrawable">@drawable/quantum_ic_close_vd_theme_24</item>
         <item name="android:textColorPrimary">@color/primary_text_color</item>
         <item name="android:textColorSecondary">@color/secondary_text_color</item>
         <item name="android:icon">@android:color/transparent</item>
@@ -72,9 +53,7 @@
         <item name="android:colorPrimary">@color/primary_color</item>
         <item name="android:colorAccent">@color/primary_color</item>
         <item name="android:alertDialogTheme">@style/ContactsAlertDialogTheme</item>
-        <item name="list_item_height">?android:attr/listPreferredItemHeight</item>
-        <item name="activated_background">@drawable/list_item_activated_background</item>
-        <item name="section_header_background">@drawable/list_title_holo</item>
+        <item name="list_item_height">@dimen/contact_browser_list_item_height</item>
         <item name="list_section_header_height">24dip</item>
         <item name="list_item_padding_top">
             @dimen/contact_browser_list_item_padding_top_or_bottom
@@ -83,7 +62,7 @@
         <item name="list_item_padding_bottom">
             @dimen/contact_browser_list_item_padding_top_or_bottom
         </item>
-        <item name="list_item_padding_left">16dip</item>
+        <item name="list_item_padding_left">0dp</item>
         <item name="list_item_gap_between_image_and_text">
             @dimen/contact_browser_list_item_gap_between_image_and_text
         </item>
@@ -97,19 +76,114 @@
         <item name="list_item_header_text_color">@color/people_app_theme_color</item>
         <item name="list_item_header_text_size">14sp</item>
         <item name="list_item_header_height">30dip</item>
-        <item name="list_item_data_width_weight">5</item>
-        <item name="list_item_label_width_weight">3</item>
         <item name="list_item_header_text_indent">8dip</item>
         <item name="contact_browser_list_padding_left">0dip</item>
         <item name="contact_browser_list_padding_right">0dip</item>
         <item name="contact_browser_background">@color/background_primary</item>
         <item name="list_item_text_indent">@dimen/contact_browser_list_item_text_indent</item>
+        <item name="list_item_text_offset_top">-2dp</item>
+        <item name="list_item_avatar_offset_top">-1dp</item>
         <!-- Favorites -->
         <item name="favorites_padding_bottom">0dip</item>
+        <!-- Popup menu -->
+        <item name="android:popupMenuStyle">@style/PopupMenuStyle</item>
     </style>
 
-    <style name="ContactsActionBarOverflow" parent="@android:style/Widget.Holo.ActionButton.Overflow">
-        <item name="android:src">@drawable/ic_overflow_menu</item>
+    <style name="LaunchScreenTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowBackground">@drawable/quantum_launchscreen_contacts</item>
+        <!-- Ensure the status bar color matches the background (grey 500) -->
+        <!-- TODO(yaolu): Switch to use quantum_grey if in Google3 -->
+        <item name="android:colorPrimaryDark">#9e9e9e</item>
+    </style>
+
+    <style name="PeopleActivityTheme" parent="@style/PeopleThemeAppCompat">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:listSelector">?android:attr/listChoiceBackgroundIndicator</item>
+    </style>
+
+    <style name="PeopleThemeAppCompat" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Styles that require AppCompat compatibility, remember to update both sets -->
+        <item name="android:actionBarStyle">@style/ContactsActionBarStyleAppCompat</item>
+        <item name="actionBarStyle">@style/ContactsActionBarStyleAppCompat</item>
+        <item name="android:actionButtonStyle">@style/ContactsActionButtonStyle</item>
+        <item name="actionButtonStyle">@style/ContactsActionButtonStyle</item>
+        <!-- Style for the overflow button in the actionbar. -->
+        <item name="android:actionOverflowButtonStyle">@style/ContactsActionBarOverflowQP</item>
+        <item name="actionOverflowButtonStyle">@style/ContactsActionBarOverflowQP</item>
+        <item name="toolbarNavigationButtonStyle">@style/ContactToolbarNavigationButtonStyle</item>
+        <item name="android:actionModeCloseDrawable">@drawable/quantum_ic_close_vd_theme_24</item>
+        <item name="android:textColorPrimary">@color/primary_text_color</item>
+        <item name="android:textColorSecondary">@color/secondary_text_color</item>
+        <item name="android:icon">@android:color/transparent</item>
+        <item name="android:listViewStyle">@style/ListViewStyle</item>
+        <item name="android:windowBackground">@color/background_primary</item>
+        <item name="android:colorPrimaryDark">@color/primary_color_dark</item>
+        <item name="colorPrimaryDark">@color/primary_color_dark</item>
+        <item name="android:colorPrimary">@color/primary_color</item>
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="android:colorAccent">@color/primary_color</item>
+        <item name="colorAccent">@color/primary_color</item>
+        <item name="android:alertDialogTheme">@style/ContactsAlertDialogThemeAppCompat</item>
+        <item name="alertDialogTheme">@style/ContactsAlertDialogThemeAppCompat</item>
+        <item name="list_item_height">@dimen/contact_browser_list_item_height</item>
+        <item name="list_section_header_height">24dip</item>
+        <item name="list_item_padding_top">
+            @dimen/contact_browser_list_item_padding_top_or_bottom
+        </item>
+        <item name="list_item_padding_right">32dp</item>
+        <item name="list_item_padding_bottom">
+            @dimen/contact_browser_list_item_padding_top_or_bottom
+        </item>
+        <item name="list_item_padding_left">0dp</item>
+        <item name="list_item_gap_between_image_and_text">
+            @dimen/contact_browser_list_item_gap_between_image_and_text
+        </item>
+        <item name="list_item_gap_between_indexer_and_image">
+            @dimen/contact_browser_list_item_gap_between_indexer_and_image
+        </item>
+        <item name="list_item_gap_between_label_and_data">5dip</item>
+        <item name="list_item_presence_icon_margin">4dip</item>
+        <item name="list_item_presence_icon_size">16dip</item>
+        <item name="list_item_photo_size">@dimen/contact_browser_list_item_photo_size</item>
+        <item name="list_item_profile_photo_size">70dip</item>
+        <item name="list_item_prefix_highlight_color">@color/people_app_theme_color</item>
+        <item name="list_item_background_color">@color/list_item_pinned_header_color</item>
+        <item name="list_item_header_text_color">@color/people_app_theme_color</item>
+        <item name="list_item_header_text_size">14sp</item>
+        <item name="list_item_header_height">30dip</item>
+        <item name="list_item_header_text_indent">8dip</item>
+        <item name="contact_browser_list_padding_left">0dip</item>
+        <item name="contact_browser_list_padding_right">0dip</item>
+        <item name="contact_browser_background">@color/background_primary</item>
+        <item name="list_item_text_indent">@dimen/contact_browser_list_item_text_indent</item>
+        <item name="list_item_text_offset_top">-2dp</item>
+        <item name="list_item_avatar_offset_top">-1dp</item>
+        <!-- Favorites -->
+        <item name="favorites_padding_bottom">0dip</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <!-- Popup menu -->
+        <item name="android:popupMenuStyle">@style/PopupMenuStyleAppCompat</item>
+        <item name="popupMenuStyle">@style/PopupMenuStyleAppCompat</item>
+    </style>
+
+    <style name="PopupMenuStyle" parent="@android:style/Widget.PopupMenu">
+        <item name="android:popupBackground">@android:color/white</item>
+    </style>
+
+    <style name="PopupMenuStyleAppCompat" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@android:color/white</item>
+    </style>
+
+    <style name="ContactsActionButtonStyle" parent="Widget.AppCompat.ActionButton">
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">false</item>
+        <item name="color">@android:color/white</item>
+        <item name="android:color">@android:color/white</item>
     </style>
 
     <!-- Use the non-light style so that the up button & icons aren't black. If we use the
@@ -122,87 +196,87 @@
         <item name="android:icon">@android:color/transparent</item>
     </style>
 
-    <style name="EditorActionBarStyle" parent="@style/ContactsActionBarStyle">
+    <style name="ContactsActionBarStyleAppCompat"
+        parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <!-- Styles that require AppCompat compatibility, remember to update both sets -->
+        <item name="android:background">@color/actionbar_background_color</item>
+        <item name="background">@color/actionbar_background_color</item>
+        <item name="android:titleTextStyle">@style/ContactsActionBarTitleTextAppCompat</item>
+        <item name="titleTextStyle">@style/ContactsActionBarTitleTextAppCompat</item>
+        <item name="android:backgroundStacked">@color/actionbar_background_color</item>
+        <item name="backgroundStacked">@color/actionbar_background_color</item>
+        <!-- Empty icon -->
+        <item name="android:icon">@android:color/transparent</item>
+        <item name="icon">@android:color/transparent</item>
+    </style>
+
+    <style name="EditorActionBarStyle" parent="@style/ContactsToolbarStyle">
         <item name="android:contentInsetStart">72dp</item>
+        <item name="android:contentInsetStartWithNavigation">72dp</item>
+        <item name="android:titleTextAppearance">@style/ContactsActionBarTitleText</item>
     </style>
 
     <!-- When this style was added, android:toolbarStyle was private. Therefore, this style
          must be directly applied to every toolbar -->
-    <style name="ContactsToolbarStyle" parent="@android:style/Widget.Toolbar">
-        <item name="android:titleTextAppearance">@style/ContactsActionBarTitleText</item>
+    <style name="ContactsToolbarStyle" parent="@style/Widget.AppCompat.Toolbar">
+        <!-- Styles that require AppCompat compatibility, remember to update both sets -->
+        <item name="android:titleTextAppearance">@style/ContactsActionBarTitleTextAppCompat</item>
+        <item name="titleTextAppearance">@style/ContactsActionBarTitleTextAppCompat</item>
     </style>
 
-    <style name="ContactsPickerActionBarStyle" parent="@style/ContactsActionBarStyle">
-        <!-- when first loading, don't show title or up button -->
-        <item name="android:displayOptions"></item>
+    <style name="LightToolbarNavigationButtonStyle" parent="@style/Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:tint">?android:textColorSecondary</item>
     </style>
 
-    <style name="ContactPickerSearchTheme" parent="@style/PeopleTheme">
-        <item name="android:textColorPrimary">@android:color/white</item>
-        <item name="android:textColorHint">?android:textColorHintInverse</item>
-        <item name="android:colorControlActivated">?android:textColorHintInverse</item>
-        <item name="android:colorControlNormal">@android:color/white</item>
+    <style name="LightToolbarThemeOverlay" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="toolbarNavigationButtonStyle">@style/LightToolbarNavigationButtonStyle</item>
+    </style>
+
+    <style name="LightToolbarStyle" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/contextual_selection_bar_color</item>
+        <item name="background">@color/contextual_selection_bar_color</item>
+        <item name="android:titleTextAppearance">@style/ContactsActionBarTitleTextBlack</item>
+        <item name="titleTextAppearance">@style/ContactsActionBarTitleTextBlack</item>
     </style>
 
     <!-- Text in the action bar at the top of the screen -->
     <style name="ContactsActionBarTitleText"
-           parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
+        parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
+        <item name="android:textSize">20dp</item>
         <item name="android:textColor">@color/actionbar_text_color</item>
     </style>
 
-    <!-- Styling for the tab bar; handles styling of the divider line. -->
-    <style name="ContactsActionBarTabBarStyle"
-           parent="@android:style/Widget.Material.ActionBar.TabBar">
-        <item name="android:showDividers">none</item>
+    <style name="ContactsActionBarTitleTextAppCompat" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/actionbar_text_color</item>
     </style>
 
-    <!-- Text style for tabs. -->
-    <style name="ContactsActionBarTabTextStyle"
-           parent="android:style/Widget.Material.Light.ActionBar.TabText">
-        <item name="android:textColor">@color/tab_text_color</item>
-        <item name="android:textSize">@dimen/tab_text_size</item>
-        <item name="android:fontFamily">@string/tab_font_family</item>
-        <item name="android:elevation">0dp</item>
-        <item name="android:textStyle">bold</item>
+    <style name="ContactsActionBarTitleTextBlack" parent="@style/ContactsActionBarTitleTextAppCompat">
+        <item name="android:textColor">@color/actionbar_text_color_black</item>
     </style>
 
     <!-- Action bar overflow menu icon. -->
     <style name="ContactsActionBarOverflowQP"
-           parent="@android:style/Widget.Material.Light.ActionButton.Overflow">
-        <item name="android:src">@drawable/ic_more_vert</item>
+        parent="Widget.AppCompat.Light.ActionButton.Overflow">
+        <item name="android:src">@drawable/quantum_ic_more_vert_vd_theme_24</item>
         <item name="android:tint">@color/action_bar_button_text_color</item>
     </style>
 
-    <style name="ContactsActionBarDropDownStyle" parent="@android:style/Widget.Holo.Light.Spinner">
-        <item name="android:background">@drawable/ab_dropdown_navigation_item_background</item>
+    <!-- Toolbar navigation button. -->
+    <style name="ContactToolbarNavigationButtonStyle" parent="@style/Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:tint">@color/action_bar_button_text_color</item>
     </style>
 
-    <style name="ContactsActionBarTheme" parent="@android:style/Theme.Holo.Light">
-        <item name="android:textColorHint">#CCCCCC</item>
-        <item name="android:textColor">@android:color/black</item>
-        <item name="android:popupMenuStyle">@android:style/Widget.Holo.Light.PopupMenu</item>
-        <item name="android:dropDownListViewStyle">@style/ListViewDropdownStyle</item>
+    <style name="ContactPickerTheme" parent="PeopleActivityTheme">
     </style>
 
-    <style name="ListViewDropdownStyle" parent="@android:style/Widget.ListView.DropDown">
-        <item name="android:listSelector">?android:attr/listChoiceBackgroundIndicator</item>
-    </style>
-
-    <style name="ContactPickerTheme" parent="@style/PeopleTheme" >
-        <item name="android:actionBarStyle">@style/ContactsPickerActionBarStyle</item>
-    </style>
-
-    <style name="ContactPickerLayout" parent="ContactPickerTheme">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
-    </style>
-
-    <style name="ContactsPreferencesTheme" parent="@style/PeopleTheme">
+    <style name="ContactsPreferencesTheme" parent="@style/PeopleThemeAppCompat">
         <item name="android:listViewStyle">@style/ListViewStyle</item>
     </style>
 
     <style name="ContactListFilterTheme" parent="@style/PeopleTheme">
         <item name="android:listViewStyle">@style/ListViewStyle</item>
+        <item name="android:actionButtonStyle">@style/FilterActionButtonStyle</item>
     </style>
 
     <style name="NonPhoneActivityTheme" parent="@android:Theme.Translucent.NoTitleBar">
@@ -223,58 +297,8 @@
         <item name="android:colorAccent">@color/primary_color</item>
     </style>
 
-    <style name="SectionDivider">
-        <item name="android:background">#7e7e87</item>
-        <item name="android:layout_height">1dip</item>
-        <item name="android:layout_width">match_parent</item>
-    </style>
-
-    <style name="ConfirmAddDetailViewStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-    </style>
-
-    <style name="ConfirmAddDetailHeaderViewStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">150dip</item>
-    </style>
-
     <style name="SelectableItem" parent="@android:style/Theme.Material.Light">
         <item name="android:background">?android:attr/selectableItemBackground</item>
-    </style>
-
-    <style name="QuickContactListItemTextWrapperStyle">
-        <item name="android:layout_width">0dip</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:paddingLeft">16dip</item>
-        <item name="android:paddingRight">16dip</item>
-        <item name="android:paddingStart">16dip</item>
-        <item name="android:paddingEnd">16dip</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:orientation">vertical</item>
-    </style>
-
-    <style name="Theme.PhotoSelector" parent="@android:style/Theme.Holo.Light">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowFrame">@null</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowAnimationStyle">@null</item>
-        <item name="android:backgroundDimEnabled">false</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowNoTitle">true</item>
-    </style>
-
-    <style name="GroupMembershipSizeTextAppearance" parent="@android:style/TextAppearance.Small"/>
-
-    <style name="PeopleNavigationDropDownTextAppearance">
-        <item name="android:textColor">@color/primary_text_color</item>
-        <item name="android:textSize">18sp</item>
-    </style>
-
-    <style name="PeopleNavigationDropDownHeaderTextAppearance">
-        <item name="android:textColor">@color/primary_text_color</item>
-        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="ExpandingEntryCardStyle">
@@ -316,6 +340,11 @@
         <item name="android:colorAccent">@color/primary_color</item>
     </style>
 
+    <style name="ContactsAlertDialogThemeAppCompat" parent="Theme.AppCompat.Light.Dialog.MinWidth">
+        <item name="android:colorAccent">@color/primary_color</item>
+        <item name="colorAccent">@color/primary_color</item>
+    </style>
+
     <style name="EditKindIconStyle">
         <item name="android:layout_width">24dp</item>
         <item name="android:layout_height">24dp</item>
@@ -348,5 +377,219 @@
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">#363636</item>
         <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="NavigationDrawerMenuItemTextAppearance">
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- Text style for empty states (no account view, empty label). -->
+    <style name="EmptyStateTextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:alpha">0.54</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Button style for main contacts no account empty view. -->
+    <style name="NoAccountViewButtonStyle" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/primary_color</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Add contacts button style for empty states. -->
+    <style name="AddContactsButtonStyle" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/primary_color</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="SectionHeaderStyle" parent="@android:style/TextAppearance.Large">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/section_header_text_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DirectoryHeaderStyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/dialtacts_secondary_text_color</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!-- TextView style used for headers.
+
+This is similar to ?android:attr/listSeparatorTextView but uses different
+background and text color. See also android:style/Widget.Holo.TextView.ListSeparator
+(which is private, so we cannot specify it as a parent style).  -->
+    <style name="ContactListSeparatorTextViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!-- See comments for @dimen/list_section_divider_min_height -->
+        <item name="android:minHeight">@dimen/list_section_divider_min_height</item>
+        <item name="android:textAppearance">@style/DirectoryHeaderStyle</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">8dip</item>
+        <item name="android:paddingStart">8dip</item>
+        <item name="android:paddingTop">4dip</item>
+        <item name="android:paddingBottom">4dip</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TextAppearanceMedium" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="TextAppearanceSmall" parent="@android:style/TextAppearance.Small">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#737373</item>
+    </style>
+
+    <style name="ListViewStyle" parent="@android:style/Widget.Material.Light.ListView">
+        <item name="android:overScrollMode">always</item>
+    </style>
+
+    <!-- Adding padding to action button doesn't move it to left, we increase the button width to
+     make margin between the button and screen edge 16dp -->
+    <style name="FilterActionButtonStyle" parent="@android:Widget.ActionButton">
+        <item name="android:minWidth">@dimen/contact_filter_action_button_width</item>
+        <item name="android:textColor">@color/actionbar_text_color</item>
+    </style>
+
+    <style name="CustomContactListFilterView" parent="ContactListFilterTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="BackgroundOnlyTheme" parent="@android:style/Theme.Material.Light">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- Activities that use this theme are background activities without obvious displays.
+            However, some also have dialogs. Therefore, it doesn't make sense to set this true.-->
+        <item name="android:windowNoDisplay">false</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="Theme.CallSubjectDialogTheme" parent="@android:style/Theme.Material.Light.Dialog">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+
+        <!-- No backgrounds, titles or window float -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowElevation">0dp</item>
+    </style>
+
+    <!-- Transparent/blank activity -->
+    <style name="TransparentThemeAppCompat" parent="@style/PeopleActivityTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="FullScreenDialogAnimationStyle">
+        <item name="android:windowEnterAnimation">@anim/slide_and_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_and_fade_out</item>
+    </style>
+
+    <style name="PeopleThemeAppCompat.FullScreenDialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:listSelector">?android:attr/listChoiceBackgroundIndicator</item>
+        <item name="android:windowAnimationStyle">@style/FullScreenDialogAnimationStyle</item>
+    </style>
+
+    <style name="PeopleThemeAppCompat.FullScreenDialog.SimImportActivity">
+        <!-- This is necessary because the window is partially transparent during the enter
+             and exit animations -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:statusBarColor">@color/contextual_selection_bar_status_bar_color</item>
+    </style>
+
+    <!-- Style for item in navigation drawer -->
+    <style name="DrawerItemStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/drawer_item_fixed_height</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:background">@drawable/drawer_item_background</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">@dimen/drawer_side_padding</item>
+    </style>
+
+    <style name="DrawerPrimaryItemStyle" parent="DrawerItemStyle">
+        <item name="android:paddingEnd">@dimen/drawer_item_text_margin</item>
+    </style>
+
+    <!-- Style for item icon in navigation drawer -->
+    <style name="DrawerItemIconStyle">
+        <item name="android:layout_width">@dimen/drawer_item_icon_size</item>
+        <item name="android:layout_height">@dimen/drawer_item_icon_size</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">center</item>
+    </style>
+
+    <!-- Style for primary item text in navigation drawer -->
+    <style name="DrawerItemTextStyle" parent="DrawerTextStyle">
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">@dimen/drawer_item_text_margin</item>
+        <item name="android:layout_marginEnd">@dimen/drawer_item_text_margin</item>
+    </style>
+
+    <style name="DrawerTextStyle">
+        <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-medium</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="DrawerItemTextActiveStyle">
+        <item name="android:textColor">@color/primary_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DrawerItemTextInactiveStyle">
+        <item name="android:textColor">@color/quantum_black_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DrawerHeaderTextStyle" parent="DrawerTextStyle">
+        <item name="android:layout_gravity">center_vertical|start</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textColor">@color/quantum_black_secondary_text</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="DrawerBadgeStyle" parent="DrawerHeaderTextStyle">
+        <item name="android:layout_gravity">center_vertical|end</item>
+    </style>
+
+    <style name="DrawerHeaderItemStyle">
+        <item name="android:paddingStart">@dimen/drawer_side_padding</item>
+        <item name="android:paddingEnd">@dimen/drawer_label_header_end_padding</item>
     </style>
 </resources>

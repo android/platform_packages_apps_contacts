@@ -24,26 +24,16 @@
     <FrameLayout
         android:id="@+id/toolbar_frame"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/actionbar_background_color">
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
 
-        <Toolbar
+        <!-- the attribute padding removes the gap between this Toolbar and its parent FrameLayout on tablet -->
+        <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="?android:attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
             android:id="@+id/toolbar"
+            android:padding="0dp"
             style="@style/ContactsToolbarStyle" />
 
     </FrameLayout>
-
-    <com.android.contacts.common.list.ViewPagerTabs
-        android:id="@+id/lists_pager_header"
-        android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:textAllCaps="true"
-        android:orientation="horizontal"
-        android:layout_gravity="top"
-        android:layout_weight="0"
-        android:layout_below="@id/toolbar"
-        style="@style/ContactsActionBarTabTextStyle" />
-
 </LinearLayout>

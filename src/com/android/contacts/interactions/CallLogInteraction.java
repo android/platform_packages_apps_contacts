@@ -15,10 +15,6 @@
  */
 package com.android.contacts.interactions;
 
-import com.android.contacts.R;
-import com.android.contacts.common.util.BitmapUtil;
-import com.android.contacts.common.util.ContactDisplayUtils;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -31,6 +27,12 @@ import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.text.BidiFormatter;
 import android.text.Spannable;
 import android.text.TextDirectionHeuristics;
+
+import com.android.contacts.GeoUtil;
+import com.android.contacts.R;
+import com.android.contacts.compat.PhoneNumberUtilsCompat;
+import com.android.contacts.util.BitmapUtil;
+import com.android.contacts.util.ContactDisplayUtils;
 
 /**
  * Represents a call log event interaction, wrapping the columns in
@@ -47,7 +49,7 @@ import android.text.TextDirectionHeuristics;
 public class CallLogInteraction implements ContactInteraction {
 
     private static final String URI_TARGET_PREFIX = "tel:";
-    private static final int CALL_LOG_ICON_RES = R.drawable.ic_phone_24dp;
+    private static final int CALL_LOG_ICON_RES = R.drawable.quantum_ic_phone_vd_theme_24;
     private static final int CALL_ARROW_ICON_RES = R.drawable.ic_call_arrow;
     private static BidiFormatter sBidiFormatter = BidiFormatter.getInstance();
 
@@ -66,7 +68,14 @@ public class CallLogInteraction implements ContactInteraction {
 
     @Override
     public String getViewHeader(Context context) {
-        return getNumber();
+        String number = mValues.getAsString(Calls.NUMBER);
+        if (number != null) {
+            number = PhoneNumberUtilsCompat.formatNumber(number,
+                    PhoneNumberUtilsCompat.normalizeNumber(number),
+                    GeoUtil.getCurrentCountryIso(context));
+            return sBidiFormatter.unicodeWrap(number, TextDirectionHeuristics.LTR);
+        }
+        return null;
     }
 
     @Override
@@ -87,9 +96,18 @@ public class CallLogInteraction implements ContactInteraction {
 
     @Override
     public String getViewFooter(Context context) {
-        Long date = getDate();
-        return date == null ? null : ContactInteractionUtil.formatDateStringFromTimestamp(
-                date, context);
+        final Long date = getDate();
+        if (date != null) {
+            final StringBuilder callDetail = new StringBuilder();
+            callDetail.append(ContactInteractionUtil.formatDateStringFromTimestamp(date, context));
+            final Long duration = getDuration();
+            if (duration != null) {
+                callDetail.append("\n");
+                callDetail.append(ContactInteractionUtil.formatDuration(duration, context));
+            }
+            return callDetail.toString();
+        }
+        return null;
     }
 
     @Override
@@ -113,12 +131,12 @@ public class CallLogInteraction implements ContactInteraction {
         switch (type) {
             case Calls.INCOMING_TYPE:
                 callArrow = res.getDrawable(CALL_ARROW_ICON_RES);
-                callArrow.setColorFilter(res.getColor(R.color.call_arrow_green),
+                callArrow.mutate().setColorFilter(res.getColor(R.color.call_arrow_green),
                         PorterDuff.Mode.MULTIPLY);
                 break;
             case Calls.MISSED_TYPE:
                 callArrow = res.getDrawable(CALL_ARROW_ICON_RES);
-                callArrow.setColorFilter(res.getColor(R.color.call_arrow_red),
+                callArrow.mutate().setColorFilter(res.getColor(R.color.call_arrow_red),
                         PorterDuff.Mode.MULTIPLY);
                 break;
             case Calls.OUTGOING_TYPE:

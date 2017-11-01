@@ -18,37 +18,28 @@ package com.android.contacts.activities;
 
 import android.content.ContentUris;
 import android.content.ContentValues;
-import android.content.Intent;
-import android.content.Loader;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.Directory;
 import android.provider.ContactsContract.Groups;
 import android.provider.ContactsContract.ProviderStatus;
-import android.provider.Settings;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.SmallTest;
-import android.widget.TextView;
 
+import com.android.contacts.ContactPhotoManager;
 import com.android.contacts.ContactsApplication;
-import com.android.contacts.R;
-import com.android.contacts.common.ContactPhotoManager;
-import com.android.contacts.common.testing.InjectedServices;
-import com.android.contacts.common.test.mocks.ContactsMockContext;
-import com.android.contacts.common.test.mocks.MockContentProvider;
-import com.android.contacts.common.test.mocks.MockContentProvider.Query;
-import com.android.contacts.interactions.TestLoaderManager;
-import com.android.contacts.list.ContactBrowseListFragment;
-import com.android.contacts.common.model.AccountTypeManager;
-import com.android.contacts.common.model.account.AccountType;
-import com.android.contacts.common.model.account.AccountWithDataSet;
-import com.android.contacts.common.model.account.BaseAccountType;
-import com.android.contacts.common.preference.ContactsPreferences;
-import com.android.contacts.common.test.mocks.MockAccountTypeManager;
-import com.android.contacts.common.test.mocks.MockContactPhotoManager;
-import com.android.contacts.common.test.mocks.MockSharedPreferences;
-import com.android.contacts.util.PhoneCapabilityTester;
+import com.android.contacts.model.AccountTypeManager;
+import com.android.contacts.model.account.AccountType;
+import com.android.contacts.model.account.AccountWithDataSet;
+import com.android.contacts.model.account.BaseAccountType;
+import com.android.contacts.test.mocks.ContactsMockContext;
+import com.android.contacts.test.mocks.MockAccountTypeManager;
+import com.android.contacts.test.mocks.MockContactPhotoManager;
+import com.android.contacts.test.mocks.MockContentProvider;
+import com.android.contacts.test.mocks.MockContentProvider.Query;
+import com.android.contacts.test.mocks.MockSharedPreferences;
+import com.android.contacts.testing.InjectedServices;
 
 /**
  * This test is so outdated that it's disabled temporarily.  TODO Update the test and re-enable it.

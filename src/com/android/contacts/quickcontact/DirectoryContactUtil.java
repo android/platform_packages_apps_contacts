@@ -16,16 +16,16 @@
 
 package com.android.contacts.quickcontact;
 
-import com.android.contacts.ContactSaveService;
-import com.android.contacts.R;
-import com.android.contacts.common.model.Contact;
-import com.android.contacts.common.model.account.AccountWithDataSet;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.provider.ContactsContract.Directory;
 import android.widget.Toast;
+
+import com.android.contacts.ContactSaveService;
+import com.android.contacts.R;
+import com.android.contacts.model.Contact;
+import com.android.contacts.model.account.AccountWithDataSet;
 
 import java.util.ArrayList;
 

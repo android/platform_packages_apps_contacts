@@ -1,16 +1,5 @@
 package com.android.contacts.interactions;
 
-import com.google.common.base.Preconditions;
-
-import com.android.contacts.common.util.PermissionsUtil;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import android.Manifest.permission;
 import android.content.AsyncTaskLoader;
 import android.content.ContentValues;
@@ -21,6 +10,17 @@ import android.provider.CalendarContract;
 import android.provider.CalendarContract.Calendars;
 import android.util.Log;
 
+import com.android.contacts.util.PermissionsUtil;
+
+import com.google.common.base.Preconditions;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 
 /**
  * Loads a list of calendar interactions showing shared calendar events with everyone passed in
@@ -29,7 +29,7 @@ import android.util.Log;
  * Note: the calendar provider treats mailing lists as atomic email addresses.
  */
 public class CalendarInteractionsLoader extends AsyncTaskLoader<List<ContactInteraction>> {
-    private static final String TAG = CalendarInteractionsLoader.class.getSimpleName();
+    private static final String TAG = "CalendarInteractions";
 
     private List<String> mEmailAddresses;
     private int mMaxFutureToRetrieve;
@@ -73,7 +73,9 @@ public class CalendarInteractionsLoader extends AsyncTaskLoader<List<ContactInte
         allInteractions.addAll(interactions);
         allInteractions.addAll(interactions2);
 
-        Log.v(TAG, "# ContactInteraction Loaded: " + allInteractions.size());
+        if (Log.isLoggable(TAG, Log.VERBOSE)) {
+            Log.v(TAG, "# ContactInteraction Loaded: " + allInteractions.size());
+        }
         return allInteractions;
     }
 

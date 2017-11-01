@@ -9,27 +9,109 @@
   public void *(android.view.MenuItem);
 }
 
--keep class com.android.contacts.common.** { *;}
-# For test:
--keep class com.android.contacts.commonbind.analytics.AnalyticsUtil { *;}
--keep class com.android.contacts.interactions.** { *;}
--keep class com.google.common.base.Objects { *;}
--keep class com.google.common.base.Preconditions { *;}
--keep class com.google.common.collect.Lists { *;}
--keep class com.google.common.collect.Maps { *;}
--keep class com.google.common.collect.Sets { *;}
+# Needed for tests
+-keep class com.android.contacts.compat.CompatUtils { *; }
+-keep class com.android.contacts.Collapser { *; }
+-keep class com.android.contacts.ContactPhotoManager { *; }
+-keep class com.android.contacts.ContactsApplication { *; }
+-keep class com.android.contacts.ContactsUtils { *; }
+-keep class com.android.contacts.ContactSaveService { *; }
+-keep class com.android.contacts.ContactSaveService$* { *; }
+-keep class com.android.contacts.database.NoNullCursorAsyncQueryHandler { *; }
+-keep class com.android.contacts.database.SimContactDao { *; }
+-keep class com.android.contacts.database.SimContactDao$* { *; }
+-keep class com.android.contacts.database.SimContactDaoImpl { *; }
+-keep class com.android.contacts.DynamicShortcuts { *; }
+-keep class com.android.contacts.editor.ContactEditorUtils { *; }
+-keep class com.android.contacts.editor.EditorUiUtils { *; }
+-keep class com.android.contacts.format.FormatUtils { *; }
+-keep class com.android.contacts.format.TextHighlighter { *; }
+-keep class com.android.contacts.group.GroupUtil { *; }
+-keep class com.android.contacts.interactions.CallLogInteraction { *; }
+-keep class com.android.contacts.interactions.CallLogInteractionsLoader { *; }
+-keep class com.android.contacts.interactions.ContactDeletionInteraction { *; }
+-keep class com.android.contacts.interactions.ContactInteractionUtil { *; }
+-keep class com.android.contacts.list.ContactListItemView { *; }
+-keep class com.android.contacts.list.ContactsSectionIndexer { *; }
+-keep class com.android.contacts.location.CountryDetector { *; }
+-keep class com.android.contacts.model.account.AccountDisplayInfo { *; }
+-keep class com.android.contacts.model.account.AccountDisplayInfoFactory { *; }
+-keep class com.android.contacts.model.account.AccountInfo { *; }
+-keep class com.android.contacts.model.account.AccountType { *; }
+-keep class com.android.contacts.model.account.AccountType$* { *; }
+-keep class com.android.contacts.model.account.AccountTypeWithDataSet { *; }
+-keep class com.android.contacts.model.account.AccountWithDataSet { *; }
+-keep class com.android.contacts.model.account.BaseAccountType { *; }
+-keep class com.android.contacts.model.account.BaseAccountType$* { *; }
+-keep class com.android.contacts.model.account.DeviceLocalAccountType { *; }
+-keep class com.android.contacts.model.account.ExchangeAccountType { *; }
+-keep class com.android.contacts.model.account.ExternalAccountType { *; }
+-keep class com.android.contacts.model.account.FallbackAccountType { *; }
+-keep class com.android.contacts.model.account.GoogleAccountType { *; }
+-keep class com.android.contacts.model.account.SimAccountType { *; }
+-keep class com.android.contacts.model.AccountTypeManager { *; }
+-keep class com.android.contacts.model.AccountTypeManagerImpl { *; }
+-keep class com.android.contacts.model.BuilderWrapper { *; }
+-keep class com.android.contacts.model.Contact { *; }
+-keep class com.android.contacts.model.ContactLoader { *; }
+-keep class com.android.contacts.model.Cp2DeviceLocalAccountLocator { *; }
+-keep class com.android.contacts.model.CPOWrapper { *; }
+-keep class com.android.contacts.model.dataitem.DataItem { *; }
+-keep class com.android.contacts.model.dataitem.DataKind { *; }
+-keep class com.android.contacts.model.dataitem.EmailDataItem { *; }
+-keep class com.android.contacts.model.dataitem.EventDataItem { *; }
+-keep class com.android.contacts.model.dataitem.ImDataItem { *; }
+-keep class com.android.contacts.model.dataitem.NicknameDataItem { *; }
+-keep class com.android.contacts.model.dataitem.NoteDataItem { *; }
+-keep class com.android.contacts.model.dataitem.OrganizationDataItem { *; }
+-keep class com.android.contacts.model.dataitem.PhoneDataItem { *; }
+-keep class com.android.contacts.model.dataitem.RelationDataItem { *; }
+-keep class com.android.contacts.model.dataitem.SipAddressDataItem { *; }
+-keep class com.android.contacts.model.dataitem.StructuredNameDataItem { *; }
+-keep class com.android.contacts.model.dataitem.StructuredPostalDataItem { *; }
+-keep class com.android.contacts.model.dataitem.WebsiteDataItem { *; }
+-keep class com.android.contacts.model.DeviceLocalAccountLocator { *; }
+-keep class com.android.contacts.model.RawContact { *; }
+-keep class com.android.contacts.model.RawContactDelta { *; }
+-keep class com.android.contacts.model.RawContactDeltaList { *; }
+-keep class com.android.contacts.model.RawContactModifier { *; }
+-keep class com.android.contacts.model.SimCard { *; }
+-keep class com.android.contacts.model.SimContact { *; }
+-keep class com.android.contacts.model.ValuesDelta { *; }
+-keep class com.android.contacts.MoreContactUtils { *; }
+-keep class com.android.contacts.preference.ContactsPreferences { *; }
+-keep class com.android.contacts.SimImportService { *; }
+-keep class com.android.contacts.SimImportService$* { *; }
+-keep class com.android.contacts.test.mocks.MockContactPhotoManager { *; }
+-keep class com.android.contacts.testing.InjectedServices { *; }
+-keep class com.android.contacts.util.BitmapUtil { *; }
+-keep class com.android.contacts.util.ContactDisplayUtils { *; }
+-keep class com.android.contacts.util.DateUtils { *; }
+-keep class com.android.contacts.util.DeviceLocalAccountTypeFactory { *; }
+-keep class com.android.contacts.util.DeviceLocalAccountTypeFactory$* { *; }
+-keep class com.android.contacts.util.NameConverter { *; }
+-keep class com.android.contacts.util.PermissionsUtil { *; }
+-keep class com.android.contacts.util.SearchUtil { *; }
+-keep class com.android.contacts.util.SearchUtil$* { *; }
+-keep class com.android.contacts.util.SyncUtil { *; }
+-keep class com.android.contacts.widget.CompositeListAdapter { *; }
+-keep class com.google.common.base.Function { *; }
+-keep class com.google.common.base.Functions { *; }
+-keep class com.google.common.base.Objects { *; }
+-keep class com.google.common.base.Preconditions { *; }
+-keep class com.google.common.collect.** { *; }
+-keep class com.google.common.util.concurrent.** { *; }
 
-# Any class or method annotated with NeededForTesting or NeededForReflection.
--keep @com.android.contacts.common.testing.NeededForTesting class *
+-keep class com.android.common.widget.CompositeCursorAdapter { *; }
+
+# Any class or method annotated with NeededForReflection.
 -keep @com.android.contacts.test.NeededForReflection class *
 -keepclassmembers class * {
-@com.android.contacts.common.testing.NeededForTesting *;
 @com.android.contacts.test.NeededForReflection *;
 }
+
 # Keep classes and methods that have the guava @VisibleForTesting annotation
 -keep @com.google.common.annotations.VisibleForTesting class *
 -keepclassmembers class * {
   @com.google.common.annotations.VisibleForTesting *;
 }
-
--verbose

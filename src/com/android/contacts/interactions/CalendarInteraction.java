@@ -1,20 +1,17 @@
 package com.android.contacts.interactions;
 
-import com.android.contacts.R;
-
-import android.content.ContentValues;
 import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.provider.CalendarContract.Attendees;
 import android.provider.CalendarContract.Events;
 import android.text.Spannable;
 import android.text.TextUtils;
 import android.text.format.Time;
-import android.util.Log;
+
+import com.android.contacts.R;
 
 /**
  * Represents a calendar event interaction, wrapping the columns in
@@ -23,7 +20,7 @@ import android.util.Log;
 public class CalendarInteraction implements ContactInteraction {
     private static final String TAG = CalendarInteraction.class.getSimpleName();
 
-    private static final int CALENDAR_ICON_RES = R.drawable.ic_event_24dp;
+    private static final int CALENDAR_ICON_RES = R.drawable.quantum_ic_event_vd_theme_24;
 
     private ContentValues mValues;
 

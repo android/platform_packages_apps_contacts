@@ -37,19 +37,20 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.android.contacts.ContactsUtils;
 import com.android.contacts.R;
-import com.android.contacts.common.model.RawContactDelta;
-import com.android.contacts.common.ContactsUtils;
-import com.android.contacts.common.model.ValuesDelta;
-import com.android.contacts.common.model.RawContactModifier;
-import com.android.contacts.common.model.account.AccountType.EditType;
-import com.android.contacts.common.model.dataitem.DataKind;
+import com.android.contacts.model.RawContactDelta;
+import com.android.contacts.model.RawContactModifier;
+import com.android.contacts.model.ValuesDelta;
+import com.android.contacts.model.account.AccountType.EditType;
+import com.android.contacts.model.dataitem.DataKind;
 import com.android.contacts.util.DialogManager;
 import com.android.contacts.util.DialogManager.DialogShowingView;
 
@@ -69,7 +70,7 @@ public abstract class LabeledEditorView extends LinearLayout implements Editor, 
 
     private Spinner mLabel;
     private EditTypeAdapter mEditTypeAdapter;
-    private View mDeleteContainer;
+    protected View mDeleteContainer;
     private ImageView mDelete;
 
     private DataKind mKind;
@@ -86,6 +87,7 @@ public abstract class LabeledEditorView extends LinearLayout implements Editor, 
     private DialogManager mDialogManager = null;
     private EditorListener mListener;
     protected int mMinLineItemHeight;
+    private int mSelectedLabelIndex;
 
     /**
      * A marker in the spinner adapter of the currently selected custom type.
@@ -228,7 +230,7 @@ public abstract class LabeledEditorView extends LinearLayout implements Editor, 
             mDeleteContainer.setVisibility(View.VISIBLE);
             mDelete.setEnabled(!mReadOnly && isEnabled());
         } else {
-            mDeleteContainer.setVisibility(View.GONE);
+            mDeleteContainer.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -292,6 +294,7 @@ public abstract class LabeledEditorView extends LinearLayout implements Editor, 
      */
     public void rebuildLabel() {
         mEditTypeAdapter = new EditTypeAdapter(getContext());
+        mEditTypeAdapter.setSelectedIndex(mSelectedLabelIndex);
         mLabel.setAdapter(mEditTypeAdapter);
         if (mEditTypeAdapter.hasCustomSelection()) {
             mLabel.setSelection(mEditTypeAdapter.getPosition(CUSTOM_SELECTION));
@@ -300,13 +303,13 @@ public abstract class LabeledEditorView extends LinearLayout implements Editor, 
                             mEntry.getAsString(mType.customColumn),
                             getContext().getString(mKind.titleRes)));
         } else {
-            mLabel.setSelection(mEditTypeAdapter.getPosition(mType));
-            if (mType != null) {
+            if (mType != null && mType.labelRes > 0 && mKind.titleRes > 0) {
+                mLabel.setSelection(mEditTypeAdapter.getPosition(mType));
                 mDeleteContainer.setContentDescription(
                         getContext().getString(R.string.editor_delete_view_description,
                                 getContext().getString(mType.labelRes),
                                 getContext().getString(mKind.titleRes)));
-            } else {
+            } else if (mKind.titleRes > 0) {
                 mDeleteContainer.setContentDescription(
                         getContext().getString(R.string.editor_delete_view_description_short,
                                 getContext().getString(mKind.titleRes)));
@@ -406,12 +409,11 @@ public abstract class LabeledEditorView extends LinearLayout implements Editor, 
         final boolean hasTypes = RawContactModifier.hasEditTypes(kind);
         setupLabelButton(hasTypes);
         mLabel.setEnabled(!readOnly && isEnabled());
-        mLabel.setContentDescription(getContext().getResources().getString(mKind.titleRes));
-
-        if (hasTypes) {
-            mType = RawContactModifier.getCurrentType(entry, kind);
-            rebuildLabel();
+        if (mKind.titleRes > 0) {
+            mLabel.setContentDescription(getContext().getResources().getString(mKind.titleRes));
         }
+        mType = RawContactModifier.getCurrentType(entry, kind);
+        rebuildLabel();
     }
 
     public ValuesDelta getValues() {
@@ -520,6 +522,7 @@ public abstract class LabeledEditorView extends LinearLayout implements Editor, 
             // User picked type, and we're sure it's ok to actually write the entry.
             mType = selected;
             mEntry.put(mKind.typeColumn, mType.rawValue);
+            mSelectedLabelIndex = position;
             rebuildLabel();
             requestFocusForFirstEditField();
             onLabelRebuilt();
@@ -565,6 +568,7 @@ public abstract class LabeledEditorView extends LinearLayout implements Editor, 
         private boolean mHasCustomSelection;
         private int mTextColorHintUnfocused;
         private int mTextColorDark;
+        private int mSelectedIndex;
 
         public EditTypeAdapter(Context context) {
             super(context, 0);
@@ -611,8 +615,11 @@ public abstract class LabeledEditorView extends LinearLayout implements Editor, 
 
         @Override
         public View getDropDownView(int position, View convertView, ViewGroup parent) {
-            return createViewFromResource(
+            final CheckedTextView dropDownView = (CheckedTextView) createViewFromResource(
                     position, convertView, parent, android.R.layout.simple_spinner_dropdown_item);
+            dropDownView.setBackground(getContext().getDrawable(R.drawable.drawer_item_background));
+            dropDownView.setChecked(position == mSelectedIndex);
+            return dropDownView;
         }
 
         private TextView createViewFromResource(int position, View convertView, ViewGroup parent,
@@ -637,6 +644,10 @@ public abstract class LabeledEditorView extends LinearLayout implements Editor, 
             }
             textView.setText(text);
             return textView;
+        }
+
+        public void setSelectedIndex(int selectedIndex) {
+            mSelectedIndex = selectedIndex;
         }
     }
 }

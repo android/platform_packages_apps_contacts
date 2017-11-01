@@ -16,13 +16,13 @@
 
 package com.android.contacts.quickcontact;
 
-import com.android.contacts.common.util.ImplicitIntentsUtil;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.ContactsContract.QuickContact;
+
+import com.android.contacts.util.ImplicitIntentsUtil;
 
 /**
  * Broadcast receiver for invoking QuickContact using the widget. The purpose of this pass-through

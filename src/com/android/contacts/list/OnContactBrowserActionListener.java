@@ -31,9 +31,10 @@ public interface OnContactBrowserActionListener  {
     /**
      * Opens the specified contact for viewing.
      *
-     * @param contactLookupUri The lookup-uri of the Contact that should be opened
+     * @param position The index of the contact that should be opened
+     * @param contactLookupUri The lookup-uri of the contact that should be opened
      */
-    void onViewContactAction(Uri contactLookupUri, boolean isEnterpriseContact);
+    void onViewContactAction(int position, Uri contactLookupUri, boolean isEnterpriseContact);
 
     /**
      * Initiates the contact deletion process.

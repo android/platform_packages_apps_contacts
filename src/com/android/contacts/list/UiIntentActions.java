@@ -29,15 +29,75 @@ public class UiIntentActions {
             "com.android.contacts.action.LIST_DEFAULT";
 
     /**
+     * The action for contacts list tab.
+     */
+    public static final String LIST_CONTACTS =
+            "com.android.contacts.action.LIST_CONTACTS";
+
+    /**
+     * The action for selecting multiple items (email, phone) from a list.
+     */
+    public static final String ACTION_SELECT_ITEMS =
+            "com.android.contacts.action.ACTION_SELECT_ITEMS";
+
+    /**
      * The action for the contacts list tab.
      */
     public static final String LIST_GROUP_ACTION =
             "com.android.contacts.action.LIST_GROUP";
 
     /**
+     * The send scheme for multi email/phone picker fragment
+     */
+    public static final String SELECTION_SEND_SCHEME =
+            "com.android.contacts.extra.SELECTION_SEND_SCHEME";
+
+    /**
+     * The send title for multi email/phone picker fragment
+     */
+    public static final String SELECTION_SEND_TITLE =
+            "com.android.contacts.extra.SELECTION_SEND_TITLE";
+
+    /**
+     * The item ids for multi select picker fragment/adapter
+     */
+    public static final String SELECTION_ITEM_LIST =
+            "com.android.contacts.extra.SELECTION_ITEM_LIST";
+
+    /**
+     * The default selection flags for the multi select picker fragment/adapter
+     */
+    public static final String SELECTION_DEFAULT_SELECTION =
+            "com.android.contacts.extra.SELECTION_DEFAULT_SELECTION";
+
+    /**
      * When in LIST_GROUP_ACTION mode, this is the group to display.
      */
     public static final String GROUP_NAME_EXTRA_KEY = "com.android.contacts.extra.GROUP";
+
+    /**
+     * The account name used to filter potential new group members.
+     */
+    public static final String GROUP_ACCOUNT_NAME =
+            "com.android.contacts.extra.GROUP_ACCOUNT_NAME";
+
+    /**
+     * The account type used to filter potential new group members.
+     */
+    public static final String GROUP_ACCOUNT_TYPE =
+            "com.android.contacts.extra.GROUP_ACCOUNT_TYPE";
+
+    /**
+     * The account data set used to filter potential new group members.
+     */
+    public static final String GROUP_ACCOUNT_DATA_SET =
+            "com.android.contacts.extra.GROUP_ACCOUNT_DATA_SET";
+
+    /**
+     * The contact IDs for existing group members.
+     */
+    public static final String GROUP_CONTACT_IDS =
+            "com.android.contacts.extra.GROUP_CONTACT_IDS";
 
     /**
      * The action for the all contacts list tab.
@@ -99,4 +159,7 @@ public class UiIntentActions {
      */
     public static final String TARGET_CONTACT_ID_EXTRA_KEY
             = "com.android.contacts.action.CONTACT_ID";
+
+    public static final String TARGET_CONTACT_IDS_EXTRA_KEY
+            = "com.android.contacts.action.CONTACT_IDS";
 }

@@ -20,7 +20,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 
-import com.android.contacts.common.Collapser;
+import com.android.contacts.Collapser;
 
 /**
  * Abstract definition of an action that could be performed, along with

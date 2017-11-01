@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2011 The Android Open Source Project
+<!--
+     Copyright (C) 2015 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,59 +16,66 @@
 -->
 
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/account_container"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:minHeight="48dip"
-    android:background="#EEEEEE"
-    android:orientation="horizontal"
-    android:paddingTop="8dip"
-    android:paddingBottom="8dip"
-    android:gravity="center_vertical"
-    android:paddingLeft="@dimen/account_container_left_padding"
-    android:paddingRight="28dip"
-    android:paddingStart="@dimen/account_container_left_padding"
-    android:paddingEnd="28dip">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/account_header_container"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="@dimen/editor_min_line_item_height"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/editor_name_top_margin"
+        >
+
+
+    <ImageView
+            android:id="@+id/account_type_icon"
+            style="@style/EditSelectorIconStyle"/>
 
     <LinearLayout
-        android:id="@+id/account"
-        android:layout_height="wrap_content"
-        android:layout_width="0dip"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:background="?android:attr/selectableItemBackground">
-
-        <TextView
-            android:id="@+id/account_type"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:singleLine="true"
-            android:textColor="@color/primary_text_color"
-            android:ellipsize="end" />
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/editor_account_header_top_margin"
+            android:layout_marginStart="@dimen/editor_account_left_margin"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            >
 
         <TextView
-             android:id="@+id/account_name"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:textAppearance="?android:attr/textAppearanceSmall"
-             android:textColor="@color/primary_text_color"
-             android:singleLine="true"
-             android:ellipsize="end" />
+                android:id="@+id/account_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:textColor="@color/primary_text_color"
+                android:ellipsize="end"
+                android:textAlignment="viewStart"
+                />
+
+        <TextView
+                android:id="@+id/account_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:singleLine="true"
+                android:textColor="@color/secondary_text_color"
+                android:ellipsize="end"
+                android:textAlignment="viewStart"
+                />
 
     </LinearLayout>
 
-    <FrameLayout
+    <ImageView
+        android:id="@+id/account_expander_icon"
+        android:src="@drawable/quantum_ic_expand_more_vd_theme_24"
+        android:tint="@color/quantum_black_secondary_text"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
-
-        <ImageView
-             android:id="@+id/account_icon"
-             android:layout_width="32dip"
-             android:layout_height="32dip"
-             android:layout_gravity="center_vertical" />
-
-    </FrameLayout>
-
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|end"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/show_more_content_description"
+        android:paddingStart="@dimen/editor_round_button_padding_left"
+        android:paddingEnd="@dimen/editor_round_button_padding_right"
+        android:paddingTop="@dimen/editor_round_button_padding_top"
+        android:paddingBottom="@dimen/editor_round_button_padding_bottom"
+        android:visibility="gone"/>
 </LinearLayout>

@@ -35,7 +35,7 @@ import android.widget.TextView;
  * Does not perform any action by itself.
  */
 public class SelectAccountDialogFragment extends DialogFragment {
-    public static final String TAG = "SelectAccountDialogFragment";
+    public static final String TAG = "SelectAccountDialog";
 
     private static final String EXTRA_TAG = "tag";
 

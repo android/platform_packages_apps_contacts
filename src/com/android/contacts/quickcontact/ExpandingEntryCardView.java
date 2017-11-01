@@ -47,12 +47,11 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.contacts.R;
-import com.android.contacts.common.dialog.CallSubjectDialog;
+import com.android.contacts.dialog.CallSubjectDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -118,6 +117,7 @@ public class ExpandingEntryCardView extends CardView {
         private final int mIconResourceId;
         private final int mThirdAction;
         private final Bundle mThirdExtras;
+        private final boolean mShouldApplyThirdIconColor;
 
         public Entry(int id, Drawable mainIcon, String header, String subHeader,
                 Drawable subHeaderIcon, String text, Drawable textIcon,
@@ -126,7 +126,7 @@ public class ExpandingEntryCardView extends CardView {
                 Spannable alternateContentDescription, boolean shouldApplyColor, boolean isEditable,
                 EntryContextMenuInfo entryContextMenuInfo, Drawable thirdIcon, Intent thirdIntent,
                 String thirdContentDescription, int thirdAction, Bundle thirdExtras,
-                int iconResourceId) {
+                boolean shouldApplyThirdIconColor, int iconResourceId) {
             mId = id;
             mIcon = mainIcon;
             mHeader = header;
@@ -147,6 +147,7 @@ public class ExpandingEntryCardView extends CardView {
             mThirdContentDescription = thirdContentDescription;
             mThirdAction = thirdAction;
             mThirdExtras = thirdExtras;
+            mShouldApplyThirdIconColor = shouldApplyThirdIconColor;
             mIconResourceId = iconResourceId;
         }
 
@@ -233,6 +234,10 @@ public class ExpandingEntryCardView extends CardView {
         public Bundle getThirdExtras() {
             return mThirdExtras;
         }
+
+        boolean shouldApplyThirdIconColor() {
+            return mShouldApplyThirdIconColor;
+        }
     }
 
     public interface ExpandingEntryCardViewListener {
@@ -244,8 +249,6 @@ public class ExpandingEntryCardView extends CardView {
     private View mExpandCollapseButton;
     private TextView mExpandCollapseTextView;
     private TextView mTitleTextView;
-    private CharSequence mExpandButtonText;
-    private CharSequence mCollapseButtonText;
     private OnClickListener mOnClickListener;
     private OnCreateContextMenuListener mOnCreateContextMenuListener;
     private boolean mIsExpanded = false;
@@ -263,17 +266,9 @@ public class ExpandingEntryCardView extends CardView {
     private final ImageView mExpandCollapseArrow;
     private int mThemeColor;
     private ColorFilter mThemeColorFilter;
-    /**
-     * Whether to prioritize the first entry type. If prioritized, we should show at least two
-     * of this entry type.
-     */
-    private boolean mShowFirstEntryTypeTwice;
     private boolean mIsAlwaysExpanded;
     /** The ViewGroup to run the expand/collapse animation on */
     private ViewGroup mAnimationViewGroup;
-    private LinearLayout mBadgeContainer;
-    private final List<ImageView> mBadges;
-    private final List<Integer> mBadgeIds;
     private final int mDividerLineHeightPixels;
     /**
      * List to hold the separators. This saves us from reconstructing every expand/collapse and
@@ -311,19 +306,8 @@ public class ExpandingEntryCardView extends CardView {
         mExpandCollapseTextView = (TextView) mExpandCollapseButton.findViewById(R.id.text);
         mExpandCollapseArrow = (ImageView) mExpandCollapseButton.findViewById(R.id.arrow);
         mExpandCollapseButton.setOnClickListener(mExpandCollapseButtonListener);
-        mBadgeContainer = (LinearLayout) mExpandCollapseButton.findViewById(R.id.badge_container);
         mDividerLineHeightPixels = getResources()
                 .getDimensionPixelSize(R.dimen.divider_line_height);
-
-        mBadges = new ArrayList<ImageView>();
-        mBadgeIds = new ArrayList<Integer>();
-    }
-
-    public void initialize(List<List<Entry>> entries, int numInitialVisibleEntries,
-            boolean isExpanded, boolean isAlwaysExpanded, ExpandingEntryCardViewListener listener,
-            ViewGroup animationViewGroup) {
-        initialize(entries, numInitialVisibleEntries, isExpanded, isAlwaysExpanded,
-                listener, animationViewGroup, /* showFirstEntryTypeTwice = */ false);
     }
 
     /**
@@ -332,9 +316,8 @@ public class ExpandingEntryCardView extends CardView {
      * @param entries The Entry list to display.
      */
     public void initialize(List<List<Entry>> entries, int numInitialVisibleEntries,
-            boolean isExpanded, boolean isAlwaysExpanded,
-            ExpandingEntryCardViewListener listener, ViewGroup animationViewGroup,
-            boolean showFirstEntryTypeTwice) {
+            boolean isExpanded, boolean isAlwaysExpanded, ExpandingEntryCardViewListener listener,
+            ViewGroup animationViewGroup) {
         LayoutInflater layoutInflater = LayoutInflater.from(getContext());
         mIsExpanded = isExpanded;
         mIsAlwaysExpanded = isAlwaysExpanded;
@@ -344,7 +327,6 @@ public class ExpandingEntryCardView extends CardView {
         mEntries = entries;
         mNumEntries = 0;
         mAllEntriesInflated = false;
-        mShowFirstEntryTypeTwice = showFirstEntryTypeTwice;
         for (List<Entry> entryList : mEntries) {
             mNumEntries += entryList.size();
             mEntryViews.add(new ArrayList<View>());
@@ -366,30 +348,6 @@ public class ExpandingEntryCardView extends CardView {
         }
         insertEntriesIntoViewGroup();
         applyColor();
-    }
-
-    /**
-     * Sets the text for the expand button.
-     *
-     * @param expandButtonText The expand button text.
-     */
-    public void setExpandButtonText(CharSequence expandButtonText) {
-        mExpandButtonText = expandButtonText;
-        if (mExpandCollapseTextView != null && !mIsExpanded) {
-            mExpandCollapseTextView.setText(expandButtonText);
-        }
-    }
-
-    /**
-     * Sets the text for the expand button.
-     *
-     * @param expandButtonText The expand button text.
-     */
-    public void setCollapseButtonText(CharSequence expandButtonText) {
-        mCollapseButtonText = expandButtonText;
-        if (mExpandCollapseTextView != null && mIsExpanded) {
-            mExpandCollapseTextView.setText(mCollapseButtonText);
-        }
     }
 
     @Override
@@ -468,19 +426,9 @@ public class ExpandingEntryCardView extends CardView {
                 viewsToDisplay.add(entryViewList.get(0));
                 numInViewGroup++;
 
-                int indexInEntryViewList = 1;
-                if (mShowFirstEntryTypeTwice && i == 0 && entryViewList.size() > 1) {
-                    viewsToDisplay.add(entryViewList.get(1));
-                    numInViewGroup++;
-                    extraEntries--;
-                    indexInEntryViewList++;
-                }
-
                 // Insert entries in this list to hit mCollapsedEntriesCount.
-                for (int j = indexInEntryViewList;
-                        j < entryViewList.size() && numInViewGroup < mCollapsedEntriesCount &&
-                        extraEntries > 0;
-                        j++) {
+                for (int j = 1; j < entryViewList.size() && numInViewGroup < mCollapsedEntriesCount
+                        && extraEntries > 0; j++) {
                     viewsToDisplay.add(entryViewList.get(j));
                     numInViewGroup++;
                     extraEntries--;
@@ -497,12 +445,12 @@ public class ExpandingEntryCardView extends CardView {
         if (TextUtils.isEmpty(mTitleTextView.getText()) &&
                 entriesViewGroup.size() > 0) {
             final View entry = entriesViewGroup.get(0);
-            entry.setPadding(entry.getPaddingLeft(),
+            entry.setPaddingRelative(entry.getPaddingStart(),
                     getResources().getDimensionPixelSize(
                             R.dimen.expanding_entry_card_item_padding_top) +
                     getResources().getDimensionPixelSize(
                             R.dimen.expanding_entry_card_null_title_top_extra_padding),
-                    entry.getPaddingRight(),
+                    entry.getPaddingEnd(),
                     entry.getPaddingBottom());
         }
     }
@@ -532,21 +480,13 @@ public class ExpandingEntryCardView extends CardView {
     }
 
     private CharSequence getExpandButtonText() {
-        if (!TextUtils.isEmpty(mExpandButtonText)) {
-            return mExpandButtonText;
-        } else {
-            // Default to "See more".
-            return getResources().getText(R.string.expanding_entry_card_view_see_more);
-        }
+        // Default to "See more".
+        return getResources().getText(R.string.expanding_entry_card_view_see_more);
     }
 
     private CharSequence getCollapseButtonText() {
-        if (!TextUtils.isEmpty(mCollapseButtonText)) {
-            return mCollapseButtonText;
-        } else {
-            // Default to "See less".
-            return getResources().getText(R.string.expanding_entry_card_view_see_less);
-        }
+        // Default to "See less".
+        return getResources().getText(R.string.expanding_entry_card_view_see_less);
     }
 
     /**
@@ -569,18 +509,8 @@ public class ExpandingEntryCardView extends CardView {
                         /* showIcon = */ View.VISIBLE));
                 numInflated++;
 
-                int indexInEntryViewList = 1;
-                if (mShowFirstEntryTypeTwice && i == 0 && entryList.size() > 1) {
-                    entryViewList.add(createEntryView(layoutInflater, entryList.get(1),
-                        /* showIcon = */ View.INVISIBLE));
-                    numInflated++;
-                    extraEntries--;
-                    indexInEntryViewList++;
-                }
-
                 // Inflate entries in this list to hit mCollapsedEntriesCount.
-                for (int j = indexInEntryViewList; j < entryList.size()
-                        && numInflated < mCollapsedEntriesCount
+                for (int j = 1; j < entryList.size() && numInflated < mCollapsedEntriesCount
                         && extraEntries > 0; j++) {
                     entryViewList.add(createEntryView(layoutInflater, entryList.get(j),
                             /* showIcon = */ View.INVISIBLE));
@@ -638,6 +568,19 @@ public class ExpandingEntryCardView extends CardView {
         }
     }
 
+    public void setEntrySubHeaderColor(int color) {
+        if (mEntries != null) {
+            for (List<View> entryList : mEntryViews) {
+                for (View entryView : entryList) {
+                    final TextView subHeader = (TextView) entryView.findViewById(R.id.sub_header);
+                    if (subHeader != null) {
+                        subHeader.setTextColor(color);
+                    }
+                }
+            }
+        }
+    }
+
     /**
      * The ColorFilter is passed in along with the color so that a new one only needs to be created
      * once for the entire activity.
@@ -670,7 +613,7 @@ public class ExpandingEntryCardView extends CardView {
                             alternateIcon.setColorFilter(mThemeColorFilter);
                         }
                         Drawable thirdIcon = entry.getThirdIcon();
-                        if (thirdIcon != null) {
+                        if (thirdIcon != null && entry.shouldApplyThirdIconColor()) {
                             thirdIcon.mutate();
                             thirdIcon.setColorFilter(mThemeColorFilter);
                         }
@@ -828,50 +771,7 @@ public class ExpandingEntryCardView extends CardView {
             animator.setDuration(duration);
             animator.start();
         }
-        updateBadges();
-
         mExpandCollapseTextView.setText(buttonText);
-    }
-
-    private void updateBadges() {
-        if (mIsExpanded) {
-            mBadgeContainer.removeAllViews();
-        } else {
-            int numberOfMimeTypesShown = mCollapsedEntriesCount;
-            if (mShowFirstEntryTypeTwice && mEntries.size() > 0
-                    && mEntries.get(0).size() > 1) {
-                numberOfMimeTypesShown--;
-            }
-            // Inflate badges if not yet created
-            if (mBadges.size() < mEntries.size() - numberOfMimeTypesShown) {
-                for (int i = numberOfMimeTypesShown; i < mEntries.size(); i++) {
-                    Drawable badgeDrawable = mEntries.get(i).get(0).getIcon();
-                    int badgeResourceId = mEntries.get(i).get(0).getIconResourceId();
-                    // Do not add the same badge twice
-                    if (badgeResourceId != 0 && mBadgeIds.contains(badgeResourceId)) {
-                        continue;
-                    }
-                    if (badgeDrawable != null) {
-                        ImageView badgeView = new ImageView(getContext());
-                        LinearLayout.LayoutParams badgeViewParams = new LinearLayout.LayoutParams(
-                                (int) getResources().getDimension(
-                                        R.dimen.expanding_entry_card_item_icon_width),
-                                (int) getResources().getDimension(
-                                        R.dimen.expanding_entry_card_item_icon_height));
-                        badgeViewParams.setMarginEnd((int) getResources().getDimension(
-                                R.dimen.expanding_entry_card_badge_separator_margin));
-                        badgeView.setLayoutParams(badgeViewParams);
-                        badgeView.setImageDrawable(badgeDrawable);
-                        mBadges.add(badgeView);
-                        mBadgeIds.add(badgeResourceId);
-                    }
-                }
-            }
-            mBadgeContainer.removeAllViews();
-            for (ImageView badge : mBadges) {
-                mBadgeContainer.addView(badge);
-            }
-        }
     }
 
     private void expand() {

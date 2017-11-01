@@ -14,47 +14,57 @@
      limitations under the License.
 -->
 <resources>
-    <dimen name="editor_padding_top">32dip</dimen>
-    <dimen name="editor_type_label_width">122dip</dimen>
-    <dimen name="editor_add_field_label_left_padding">16dip</dimen>
-    <dimen name="detail_item_vertical_margin">16dip</dimen>
-    <dimen name="detail_item_icon_margin">8dip</dimen>
-    <dimen name="shortcut_icon_size">64dip</dimen>
-    <dimen name="list_section_height">37dip</dimen>
-    <dimen name="group_detail_border_padding">16dip</dimen>
-    <dimen name="search_view_width">400dip</dimen>
-    <dimen name="contact_tile_list_padding_top">18dip</dimen>
-    <dimen name="contact_browser_list_item_text_size">18sp</dimen>
-    <dimen name="contact_browser_list_item_photo_size">50dp</dimen>
-    <dimen name="contact_browser_list_item_gap_between_image_and_text">25dp</dimen>
-    <dimen name="contact_browser_list_top_margin">18dp</dimen>
-    <!-- Contact list (vertical scroll bar comes left) -->
-    <dimen name="list_visible_scrollbar_padding">32dip</dimen>
-    <dimen name="list_header_extra_top_padding">@dimen/contact_browser_list_top_margin</dimen>
+    <!-- Copied from java/com/google/android/assets/launchscreens/res/values-sw600dp-port-v21/dimens.xml -->
+    <!-- Values adjusted for nav bar size due to windowDrawsSystemBarBackgrounds -->
+    <dimen name="launchscreens_product_logo_bottom">72dp</dimen>
+    <dimen name="launchscreens_google_logo_bottom">96dp</dimen>
 
-    <dimen name="quick_contact_photo_container_height">360dip</dimen>
-    <!-- Height of the selection indicator of a tab. -->
-    <dimen name="tab_selected_underline_height">3dp</dimen>
-    <!-- Size of text in tabs. -->
-    <dimen name="tab_text_size">16sp</dimen>
+    <dimen name="editor_type_label_width">122dip</dimen>
+    <dimen name="shortcut_icon_size">64dip</dimen>
+    <dimen name="contact_browser_list_item_text_size">18sp</dimen>
+    <dimen name="contact_browser_list_item_gap_between_image_and_text">25dp</dimen>
+    <dimen name="contact_browser_list_item_gap_between_indexer_and_image">25dp</dimen>
+    <dimen name="directory_header_extra_top_padding">0dp</dimen>
 
     <!-- Because the "join" screen has the vertical scroll bar on right,
       we cannot use @dimen/contact_browser_list_header_left_margin as is. -->
     <dimen name="join_header_left_margin">24dip</dimen>
-    <dimen name="join_header_right_margin">@dimen/list_visible_scrollbar_padding</dimen>
+    <dimen name="join_header_right_margin">32dip</dimen>
     <dimen name="join_header_top_margin">16dip</dimen>
     <dimen name="join_header_bottom_margin">16dip</dimen>
 
-    <!-- Left padding for a group member list item -->
-    <dimen name="group_member_item_left_padding">12dip</dimen>
-    <!-- Left margin for the group member list to match the built in margin in the autocomplete asset -->
-    <dimen name="group_editor_member_list_left_margin">4dip</dimen>
-    <!-- Right margin for the group member list to match the built in margin in the autocomplete asset -->
-    <dimen name="group_editor_member_list_right_margin">4dip</dimen>
-    <!-- Account title left padding -->
-    <dimen name="account_container_left_padding">16dip</dimen>
-    <!-- Left padding of the auto complete field to line hint text up with member list -->
-    <dimen name="group_editor_autocomplete_left_padding">16dip</dimen>
-    <dimen name="contact_detail_list_top_padding">8dip</dimen>
     <dimen name="frequently_contacted_title_text_size">24sp</dimen>
+
+    <!-- End margin of edit group title -->
+    <dimen name="edit_group_end_margin">80dp</dimen>
+
+    <!-- Top padding for the image for empty group view -->
+    <dimen name="empty_group_view_image_padding_top">0dp</dimen>
+
+    <!-- Top and bottom padding for the text for empty account view -->
+    <dimen name="empty_account_view_text_padding_top">32dp</dimen>
+
+    <!-- Gap b/w image view and top of the screen in empty main view -->
+    <dimen name="empty_home_view_image_offset">218dp</dimen>
+
+    <!-- Margin offset b/w the image top and app bar bottom for no account empty view -->
+    <dimen name="contacts_no_account_empty_image_offset">238dp</dimen>
+
+    <dimen name="contact_browser_list_header_left_margin">@dimen/list_visible_scrollbar_padding</dimen>
+    <dimen name="contact_browser_list_header_right_margin">24dip</dimen>
+
+    <!-- End margin of the account filter header icon -->
+    <dimen name="contact_browser_list_header_icon_right_margin">22dp</dimen>
+    <dimen name="contact_browser_list_header_icon_right_margin_alt">24dp</dimen>
+
+    <dimen name="contact_filter_list_item_padding_start">24dp</dimen>
+    <dimen name="contact_filter_left_margin">16dp</dimen>
+
+    <!-- Right margin of the floating action button -->
+    <dimen name="floating_action_button_margin_right">32dp</dimen>
+    <!-- Bottom margin of the floating action button -->
+    <dimen name="floating_action_button_margin_bottom">32dp</dimen>
+
+    <!-- Side padding within the navigation drawer -->
+    <dimen name="drawer_side_padding">24dp</dimen>
 </resources>

@@ -16,294 +16,217 @@
 
 package com.android.contacts.editor;
 
-import android.test.AndroidTestCase;
-import android.test.MoreAsserts;
-import android.test.suitebuilder.annotation.SmallTest;
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
-import com.android.contacts.common.model.account.AccountType;
-import com.android.contacts.common.model.account.AccountWithDataSet;
-import com.android.contacts.common.test.mocks.MockAccountTypeManager;
-import com.google.common.collect.Sets;
+import android.support.test.InstrumentationRegistry;
+import android.support.test.filters.SmallTest;
+import android.support.test.runner.AndroidJUnit4;
 
-import java.util.Collection;
-import java.util.Set;
+import com.android.contacts.model.account.AccountType;
+import com.android.contacts.model.account.AccountWithDataSet;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Test case for {@link ContactEditorUtils}.
  *
  * adb shell am instrument -w -e class com.android.contacts.editor.ContactEditorUtilsTest \
        com.android.contacts.tests/android.test.InstrumentationTestRunner
+
+ * <p>It may make sense to just delete or move these tests since the code under test just forwards
+ * calls to {@link com.android.contacts.preference.ContactsPreferences} and that logic is already
+ * covered by {@link com.android.contacts.preference.ContactsPreferencesTest}
+ * </p>
  */
 @SmallTest
-public class ContactEditorUtilsTest extends AndroidTestCase {
-    private MockAccountTypeManager mAccountTypes;
+@RunWith(AndroidJUnit4.class)
+public class ContactEditorUtilsTest {
     private ContactEditorUtils mTarget;
 
-    private static final MockAccountType TYPE1 = new MockAccountType("type1", null, true);
-    private static final MockAccountType TYPE2 = new MockAccountType("type2", null, true);
-    private static final MockAccountType TYPE2EX = new MockAccountType("type2", "ext", true);
+    private static final String TYPE1 = "type1";
+    private static final String TYPE2 = "type2";
+    private static final String TYPE2_EXT = "ext";
 
-    // Only type 3 is "readonly".
-    private static final MockAccountType TYPE3 = new MockAccountType("type3", null, false);
+    private static final AccountWithDataSet ACCOUNT_1_A = new AccountWithDataSet("a", TYPE1, null);
+    private static final AccountWithDataSet ACCOUNT_1_B = new AccountWithDataSet("b", TYPE1, null);
 
-    private static final AccountWithDataSet ACCOUNT_1_A = new AccountWithDataSet(
-            "a", TYPE1.accountType, TYPE1.dataSet);
-    private static final AccountWithDataSet ACCOUNT_1_B = new AccountWithDataSet(
-            "b", TYPE1.accountType, TYPE1.dataSet);
-
-    private static final AccountWithDataSet ACCOUNT_2_A = new AccountWithDataSet(
-            "a", TYPE2.accountType, TYPE2.dataSet);
+    private static final AccountWithDataSet ACCOUNT_2_A = new AccountWithDataSet("a", TYPE2, null);
     private static final AccountWithDataSet ACCOUNT_2EX_A = new AccountWithDataSet(
-            "a", TYPE2EX.accountType, TYPE2EX.dataSet);
+            "a", TYPE2, TYPE2_EXT);
 
-    private static final AccountWithDataSet ACCOUNT_3_C = new AccountWithDataSet(
-            "c", TYPE3.accountType, TYPE3.dataSet);
-
-    @Override
-    protected void setUp() throws Exception {
-        // Initialize with 0 types, 0 accounts.
-        mAccountTypes = new MockAccountTypeManager(new AccountType[] {},
-                new AccountWithDataSet[] {});
-        mTarget = new ContactEditorUtils(getContext(), mAccountTypes);
+    @Before
+    public void setUp() throws Exception {
+        mTarget = ContactEditorUtils.create(InstrumentationRegistry.getTargetContext());
 
         // Clear the preferences.
         mTarget.cleanupForTest();
     }
 
-    private void setAccountTypes(AccountType... types) {
-        mAccountTypes.mTypes = types;
-    }
-
-    private void setAccounts(AccountWithDataSet... accounts) {
-        mAccountTypes.mAccounts = accounts;
-    }
-
-    public void testGetWritableAccountTypeStrings() {
-        String[] types;
-
-        // 0 writable types
-        setAccountTypes();
-
-        types = mTarget.getWritableAccountTypeStrings();
-        MoreAsserts.assertEquals(types, new String[0]);
-
-        // 1 writable type
-        setAccountTypes(TYPE1);
-
-        types = mTarget.getWritableAccountTypeStrings();
-        MoreAsserts.assertEquals(Sets.newHashSet(TYPE1.accountType), Sets.newHashSet(types));
-
-        // 2 writable types
-        setAccountTypes(TYPE1, TYPE2EX);
-
-        types = mTarget.getWritableAccountTypeStrings();
-        MoreAsserts.assertEquals(Sets.newHashSet(TYPE1.accountType, TYPE2EX.accountType),
-                Sets.newHashSet(types));
-
-        // 3 writable types + 1 readonly type
-        setAccountTypes(TYPE1, TYPE2, TYPE2EX, TYPE3);
-
-        types = mTarget.getWritableAccountTypeStrings();
-        MoreAsserts.assertEquals(
-                Sets.newHashSet(TYPE1.accountType, TYPE2.accountType, TYPE2EX.accountType),
-                Sets.newHashSet(types));
-    }
-
     /**
      * Test for
-     * - {@link ContactEditorUtils#saveDefaultAndAllAccounts}
-     * - {@link ContactEditorUtils#getDefaultAccount}
-     * - {@link ContactEditorUtils#getSavedAccounts()}
+     * - {@link ContactEditorUtils#saveDefaultAccount}
+     * - {@link ContactEditorUtils#getOnlyOrDefaultAccount}
      */
-    public void testSaveDefaultAndAllAccounts() {
-        // Use these account types here.
-        setAccountTypes(TYPE1, TYPE2);
+    @Test
+    public void testSaveDefaultAccount() {
+        mTarget.saveDefaultAccount(null);
+        assertNull(mTarget.getOnlyOrDefaultAccount(Collections.<AccountWithDataSet>emptyList()));
 
-        // If none has been saved, it should return an empty list.
-        assertEquals(0, mTarget.getSavedAccounts().size());
-
-        // Save 0 accounts.
-        mAccountTypes.mAccounts = new AccountWithDataSet[]{};
-        mTarget.saveDefaultAndAllAccounts(null);
-        assertNull(mTarget.getDefaultAccount());
-        MoreAsserts.assertEquals(
-                Sets.newHashSet(mAccountTypes.mAccounts),
-                toSet(mTarget.getSavedAccounts()));
-
-        // 1 account
-        mAccountTypes.mAccounts = new AccountWithDataSet[]{ACCOUNT_1_A};
-        mTarget.saveDefaultAndAllAccounts(ACCOUNT_1_A);
-        assertEquals(ACCOUNT_1_A, mTarget.getDefaultAccount());
-        MoreAsserts.assertEquals(
-                Sets.newHashSet(mAccountTypes.mAccounts),
-                toSet(mTarget.getSavedAccounts()));
-
-        // 2 accounts
-        mAccountTypes.mAccounts = new AccountWithDataSet[]{ACCOUNT_1_A, ACCOUNT_1_B};
-        mTarget.saveDefaultAndAllAccounts(ACCOUNT_1_B);
-        assertEquals(ACCOUNT_1_B, mTarget.getDefaultAccount());
-        MoreAsserts.assertEquals(
-                Sets.newHashSet(mAccountTypes.mAccounts),
-                toSet(mTarget.getSavedAccounts()));
-
-        // 2 accounts, and save null as the default.  Even though there are accounts, the saved
-        // account list should be empty in this case.
-        mTarget.saveDefaultAndAllAccounts(null);
-        assertNull(mTarget.getDefaultAccount());
-        assertEquals(0, mTarget.getSavedAccounts().size());
-    }
-
-    public void testIsAccountValid() {
-        // Use these account types here.
-        setAccountTypes(TYPE1, TYPE2);
-
-        // 0 accounts
-        mAccountTypes.mAccounts = new AccountWithDataSet[]{};
-        assertFalse(mTarget.isValidAccount(ACCOUNT_1_A));
-        assertTrue(mTarget.isValidAccount(null)); // null is always valid
-
-        // 2 accounts
-        mAccountTypes.mAccounts = new AccountWithDataSet[]{ACCOUNT_1_A, ACCOUNT_2_A};
-        assertTrue(mTarget.isValidAccount(ACCOUNT_1_A));
-        assertTrue(mTarget.isValidAccount(ACCOUNT_2_A));
-        assertFalse(mTarget.isValidAccount(ACCOUNT_2EX_A));
-        assertTrue(mTarget.isValidAccount(null)); // null is always valid
+        mTarget.saveDefaultAccount(ACCOUNT_1_A);
+        assertEquals(ACCOUNT_1_A, mTarget.getOnlyOrDefaultAccount(Collections.
+                <AccountWithDataSet>emptyList()));
     }
 
     /**
-     * Tests for {@link ContactEditorUtils#shouldShowAccountChangedNotification()}, starting with
-     * 0 accounts.
+     * Tests for
+     * {@link ContactEditorUtils#shouldShowAccountChangedNotification(List<AccountWithDataSet>)},
+     * starting with 0 accounts.
      */
+    @Test
     public void testShouldShowAccountChangedNotification_0Accounts() {
-        // There's always at least one writable type...
-        setAccountTypes(TYPE1);
-
-        // First launch -- always true.
-        assertTrue(mTarget.shouldShowAccountChangedNotification());
+        List<AccountWithDataSet> currentAccounts = new ArrayList<>();
+        assertTrue(mTarget.shouldShowAccountChangedNotification(currentAccounts));
 
         // We show the notification here, and user clicked "add account"
-        setAccounts(ACCOUNT_1_A);
+        currentAccounts.add(ACCOUNT_1_A);
 
         // Now we open the contact editor with the new account.
 
         // When closing the editor, we save the default account.
-        mTarget.saveDefaultAndAllAccounts(ACCOUNT_1_A);
+        mTarget.saveDefaultAccount(ACCOUNT_1_A);
 
         // Next time the user creates a contact, we don't show the notification.
-        assertFalse(mTarget.shouldShowAccountChangedNotification());
+        assertFalse(mTarget.shouldShowAccountChangedNotification(currentAccounts));
 
         // User added a new writable account, ACCOUNT_1_B.
-        setAccounts(ACCOUNT_1_A, ACCOUNT_1_B);
+        currentAccounts.add(ACCOUNT_1_B);
 
         // Since default account is still ACCOUNT_1_A, we don't show the notification.
-        assertFalse(mTarget.shouldShowAccountChangedNotification());
+        assertFalse(mTarget.shouldShowAccountChangedNotification(currentAccounts));
 
         // User saved a new contact.  We update the account list and the default account.
-        mTarget.saveDefaultAndAllAccounts(ACCOUNT_1_B);
+        mTarget.saveDefaultAccount(ACCOUNT_1_B);
 
         // User created another contact.  Now we don't show the notification.
-        assertFalse(mTarget.shouldShowAccountChangedNotification());
+        assertFalse(mTarget.shouldShowAccountChangedNotification(currentAccounts));
 
         // User installed a new contact sync adapter...
 
-        // Added a new account type: TYPE2, and the TYPE2EX extension.
-        setAccountTypes(TYPE1, TYPE2, TYPE2EX);
         // Add new accounts: ACCOUNT_2_A, ACCOUNT_2EX_A.
-        setAccounts(ACCOUNT_1_A, ACCOUNT_1_B, ACCOUNT_2_A, ACCOUNT_2EX_A);
+        currentAccounts.add(ACCOUNT_2_A);
+        currentAccounts.add(ACCOUNT_2EX_A);
 
         // New added account but default account is still not changed, so no notification.
-        assertFalse(mTarget.shouldShowAccountChangedNotification());
+        assertFalse(mTarget.shouldShowAccountChangedNotification(currentAccounts));
 
         // User saves a new contact, with a different default account.
-        mTarget.saveDefaultAndAllAccounts(ACCOUNT_2_A);
+        mTarget.saveDefaultAccount(ACCOUNT_2_A);
 
         // Next time user creates a contact, no notification.
-        assertFalse(mTarget.shouldShowAccountChangedNotification());
+        assertFalse(mTarget.shouldShowAccountChangedNotification(currentAccounts));
 
         // Remove ACCOUNT_2EX_A.
-        setAccountTypes(TYPE1, TYPE2, TYPE2EX);
-        setAccounts(ACCOUNT_1_A, ACCOUNT_1_B, ACCOUNT_2_A);
+        currentAccounts.remove(ACCOUNT_2EX_A);
 
         // ACCOUNT_2EX_A was not default, so no notification either.
-        assertFalse(mTarget.shouldShowAccountChangedNotification());
+        assertFalse(mTarget.shouldShowAccountChangedNotification(currentAccounts));
 
-        // Remove ACCOUNT_1_B, which is default.
-        setAccountTypes(TYPE1, TYPE2, TYPE2EX);
-        setAccounts(ACCOUNT_1_A, ACCOUNT_1_B);
+        // Remove ACCOUNT_2_A, which is default.
+        currentAccounts.remove(ACCOUNT_2_A);
 
         // Now we show the notification.
-        assertTrue(mTarget.shouldShowAccountChangedNotification());
+        assertTrue(mTarget.shouldShowAccountChangedNotification(currentAccounts));
 
         // Do not save the default account, and add a new account now.
-        setAccountTypes(TYPE1, TYPE2, TYPE2EX);
-        setAccounts(ACCOUNT_1_A, ACCOUNT_1_B, ACCOUNT_2EX_A);
+        currentAccounts.add(ACCOUNT_2EX_A);
 
         // No default account, so show notification.
-        assertTrue(mTarget.shouldShowAccountChangedNotification());
+        assertTrue(mTarget.shouldShowAccountChangedNotification(currentAccounts));
     }
 
     /**
-     * Tests for {@link ContactEditorUtils#shouldShowAccountChangedNotification()}, starting with
-     * 1 accounts.
+     * Tests for
+     * {@link ContactEditorUtils#shouldShowAccountChangedNotification(List<AccountWithDataSet>)},
+     * starting with 1 accounts.
      */
+    @Test
     public void testShouldShowAccountChangedNotification_1Account() {
-        setAccountTypes(TYPE1, TYPE2);
-        setAccounts(ACCOUNT_1_A);
-
-        // First launch -- always true.
-        assertTrue(mTarget.shouldShowAccountChangedNotification());
+        // Always returns false when 1 writable account.
+        assertFalse(mTarget.shouldShowAccountChangedNotification(
+                Collections.singletonList(ACCOUNT_1_A)));
 
         // User saves a new contact.
-        mTarget.saveDefaultAndAllAccounts(ACCOUNT_1_A);
+        mTarget.saveDefaultAccount(ACCOUNT_1_A);
 
         // Next time, no notification.
-        assertFalse(mTarget.shouldShowAccountChangedNotification());
+        assertFalse(mTarget.shouldShowAccountChangedNotification(
+                Collections.singletonList(ACCOUNT_1_A)));
 
         // The rest is the same...
     }
 
     /**
-     * Tests for {@link ContactEditorUtils#shouldShowAccountChangedNotification()}, starting with
-     * 0 accounts, and the user selected "local only".
+     * Tests for
+     * {@link ContactEditorUtils#shouldShowAccountChangedNotification(List<AccountWithDataSet>)},
+     * starting with 0 accounts, and the user selected "local only".
      */
+    @Test
     public void testShouldShowAccountChangedNotification_0Account_localOnly() {
-        // There's always at least one writable type...
-        setAccountTypes(TYPE1);
-
         // First launch -- always true.
-        assertTrue(mTarget.shouldShowAccountChangedNotification());
+        assertTrue(mTarget.shouldShowAccountChangedNotification(Collections.
+                <AccountWithDataSet>emptyList()));
 
         // We show the notification here, and user clicked "keep local" and saved an contact.
-        mTarget.saveDefaultAndAllAccounts(null);
+        mTarget.saveDefaultAccount(AccountWithDataSet.getNullAccount());
 
         // Now there are no accounts, and default account is null.
 
         // The user created another contact, but this we shouldn't show the notification.
-        assertFalse(mTarget.shouldShowAccountChangedNotification());
+        assertFalse(mTarget.shouldShowAccountChangedNotification(Collections.
+                <AccountWithDataSet>emptyList()));
     }
 
+    @Test
     public void testShouldShowAccountChangedNotification_sanity_check() {
         // Prepare 1 account and save it as the default.
-        setAccountTypes(TYPE1);
-        setAccounts(ACCOUNT_1_A);
-
-        mTarget.saveDefaultAndAllAccounts(ACCOUNT_1_A);
+        mTarget.saveDefaultAccount(ACCOUNT_1_A);
 
         // Right after a save, the dialog shouldn't show up.
-        assertFalse(mTarget.shouldShowAccountChangedNotification());
+        assertFalse(mTarget.shouldShowAccountChangedNotification(
+                Collections.singletonList(ACCOUNT_1_A)));
 
         // Remove the default account to emulate broken preferences.
         mTarget.removeDefaultAccountForTest();
 
         // The dialog shouldn't show up.
         // The logic is, if there's a writable account, we'll pick it as default
-        assertFalse(mTarget.shouldShowAccountChangedNotification());
+        assertFalse(mTarget.shouldShowAccountChangedNotification(
+                Collections.singletonList(ACCOUNT_1_A)));
     }
 
-    private static <T> Set<T> toSet(Collection<T> collection) {
-        Set<T> ret = Sets.newHashSet();
-        ret.addAll(collection);
-        return ret;
+    @Test
+    public void testShouldShowAccountChangedNotification_nullAccount() {
+        final List<AccountWithDataSet> currentAccounts = new ArrayList<>();
+        final AccountWithDataSet nullAccount = AccountWithDataSet.getNullAccount();
+        currentAccounts.add(nullAccount);
+
+        assertTrue(mTarget.shouldShowAccountChangedNotification(currentAccounts));
+
+        // User chooses to keep the "device" account as the default
+        mTarget.saveDefaultAccount(nullAccount);
+
+        // Right after a save, the dialog shouldn't show up.
+        assertFalse(mTarget.shouldShowAccountChangedNotification(currentAccounts));
     }
 
     private static class MockAccountType extends AccountType {

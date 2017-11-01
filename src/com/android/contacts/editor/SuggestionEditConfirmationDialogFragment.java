@@ -16,22 +16,24 @@
 
 package com.android.contacts.editor;
 
-import com.android.contacts.R;
-
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+
+import com.android.contacts.R;
 
 public class SuggestionEditConfirmationDialogFragment extends DialogFragment {
 
     private static final String ARG_CONTACT_URI = "contactUri";
+    private static final String ARG_RAW_CONTACT_ID = "rawContactId";
 
-    public static void show(ContactEditorBaseFragment fragment, Uri contactUri) {
+    public static void show(ContactEditorFragment fragment, Uri contactUri, long rawContactId) {
         final Bundle args = new Bundle();
         args.putParcelable(ARG_CONTACT_URI, contactUri);
+        args.putLong(ARG_RAW_CONTACT_ID, rawContactId);
 
         final SuggestionEditConfirmationDialogFragment dialog = new
                 SuggestionEditConfirmationDialogFragment();
@@ -49,11 +51,13 @@ public class SuggestionEditConfirmationDialogFragment extends DialogFragment {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                final ContactEditorBaseFragment targetFragment =
-                                        (ContactEditorBaseFragment) getTargetFragment();
+                                final ContactEditorFragment targetFragment =
+                                        (ContactEditorFragment) getTargetFragment();
                                 final Uri contactUri =
                                         getArguments().getParcelable(ARG_CONTACT_URI);
-                                targetFragment.doEditSuggestedContact(contactUri);
+                                final long rawContactId =
+                                        getArguments().getLong(ARG_RAW_CONTACT_ID);
+                                targetFragment.doEditSuggestedContact(contactUri, rawContactId);
                             }
                         }
                 )

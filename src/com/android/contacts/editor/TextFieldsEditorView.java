@@ -18,6 +18,7 @@ package com.android.contacts.editor;
 
 import android.content.Context;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.provider.ContactsContract;
@@ -38,14 +39,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.android.contacts.ContactsUtils;
 import com.android.contacts.R;
-import com.android.contacts.common.model.RawContactDelta;
-import com.android.contacts.common.compat.PhoneNumberUtilsCompat;
-import com.android.contacts.common.ContactsUtils;
-import com.android.contacts.common.model.ValuesDelta;
-import com.android.contacts.common.model.account.AccountType.EditField;
-import com.android.contacts.common.model.dataitem.DataKind;
-import com.android.contacts.common.util.PhoneNumberFormatter;
+import com.android.contacts.compat.PhoneNumberUtilsCompat;
+import com.android.contacts.model.RawContactDelta;
+import com.android.contacts.model.ValuesDelta;
+import com.android.contacts.model.account.AccountType.EditField;
+import com.android.contacts.model.dataitem.DataKind;
+import com.android.contacts.util.PhoneNumberFormatter;
 
 /**
  * Simple editor that handles labels and any {@link EditField} defined for the
@@ -57,8 +58,12 @@ public class TextFieldsEditorView extends LabeledEditorView {
 
     private EditText[] mFieldEditTexts = null;
     private ViewGroup mFields = null;
-    private View mExpansionViewContainer;
-    private ImageView mExpansionView;
+    protected View mExpansionViewContainer;
+    protected ImageView mExpansionView;
+    protected String mCollapseButtonDescription;
+    protected String mExpandButtonDescription;
+    protected String mCollapsedAnnouncement;
+    protected String mExpandedAnnouncement;
     private boolean mHideOptional = true;
     private boolean mHasShortAndLongForms;
     private int mMinFieldHeight;
@@ -90,6 +95,15 @@ public class TextFieldsEditorView extends LabeledEditorView {
         mFields = (ViewGroup) findViewById(R.id.editors);
         mHintTextColorUnfocused = getResources().getColor(R.color.editor_disabled_text_color);
         mExpansionView = (ImageView) findViewById(R.id.expansion_view);
+        mCollapseButtonDescription = getResources()
+                .getString(R.string.collapse_fields_description);
+        mCollapsedAnnouncement = getResources()
+                .getString(R.string.announce_collapsed_fields);
+        mExpandButtonDescription = getResources()
+                .getString(R.string.expand_fields_description);
+        mExpandedAnnouncement = getResources()
+                .getString(R.string.announce_expanded_fields);
+
         mExpansionViewContainer = findViewById(R.id.expansion_view_container);
         if (mExpansionViewContainer != null) {
             mExpansionViewContainer.setOnClickListener(new OnClickListener() {
@@ -98,7 +112,7 @@ public class TextFieldsEditorView extends LabeledEditorView {
                     mPreviousViewHeight = mFields.getHeight();
 
                     // Save focus
-                    final View focusedChild = getFocusedChild();
+                    final View focusedChild = findFocus();
                     final int focusedViewId = focusedChild == null ? -1 : focusedChild.getId();
 
                     // Reconfigure GUI
@@ -115,6 +129,8 @@ public class TextFieldsEditorView extends LabeledEditorView {
                     newFocusView.requestFocus();
 
                     EditorAnimator.getInstance().slideAndFadeIn(mFields, mPreviousViewHeight);
+                    announceForAccessibility(mHideOptional ?
+                            mCollapsedAnnouncement : mExpandedAnnouncement);
                 }
             });
         }
@@ -165,9 +181,12 @@ public class TextFieldsEditorView extends LabeledEditorView {
      * Creates or removes the type/label button. Doesn't do anything if already correctly configured
      */
     private void setupExpansionView(boolean shouldExist, boolean collapsed) {
-        mExpansionView.setImageResource(collapsed
-                ? R.drawable.ic_menu_expander_minimized_holo_light
-                : R.drawable.ic_menu_expander_maximized_holo_light);
+        final Drawable expandIcon = getContext().getDrawable(collapsed
+                ? R.drawable.quantum_ic_expand_more_vd_theme_24
+                : R.drawable.quantum_ic_expand_less_vd_theme_24);
+        mExpansionView.setImageDrawable(expandIcon);
+        mExpansionView.setContentDescription(collapsed ? mExpandButtonDescription
+                : mCollapseButtonDescription);
         mExpansionViewContainer.setVisibility(shouldExist ? View.VISIBLE : View.INVISIBLE);
     }
 
@@ -226,7 +245,8 @@ public class TextFieldsEditorView extends LabeledEditorView {
             fieldView.setInputType(inputType);
             if (inputType == InputType.TYPE_CLASS_PHONE) {
                 PhoneNumberFormatter.setPhoneNumberFormattingTextWatcher(
-                        getContext(), fieldView, /* formatAfterWatcherSet =*/ false);
+                        getContext(), fieldView,
+                        /* formatAfterWatcherSet =*/ state.isContactInsert());
                 fieldView.setTextDirection(View.TEXT_DIRECTION_LTR);
             }
             fieldView.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
@@ -387,6 +407,7 @@ public class TextFieldsEditorView extends LabeledEditorView {
         for (int i = 0; i < numChildren; i++) {
             mFieldEditTexts[i].setVisibility(ss.mVisibilities[i]);
         }
+        rebuildValues();
     }
 
     private static class SavedState extends BaseSavedState {

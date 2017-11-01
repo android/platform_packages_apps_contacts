@@ -23,7 +23,7 @@ import android.provider.ContactsContract.CommonDataKinds.Organization;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.CommonDataKinds.StructuredPostal;
 
-import com.android.contacts.common.model.RawContactModifier;
+import com.android.contacts.model.RawContactModifier;
 
 /**
  * This class contains utility functions for determining the precedence of

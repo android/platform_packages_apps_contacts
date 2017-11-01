@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2015 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:id="@+id/call_subject_dialog"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent">
+
+        <!-- The call subject dialog will be centered in the space above the subject list. -->
+        <LinearLayout
+            android:id="@+id/dialog_view"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:theme="@android:style/Theme.Material.Light.Dialog"
+            android:elevation="16dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/dialog_background_material">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/call_subject_dialog_margin"
+                android:layout_marginEnd="@dimen/call_subject_dialog_margin"
+                android:layout_marginTop="@dimen/call_subject_dialog_margin">
+
+                <QuickContactBadge
+                    android:id="@+id/contact_photo"
+                    android:layout_width="@dimen/call_subject_dialog_contact_photo_size"
+                    android:layout_height="@dimen/call_subject_dialog_contact_photo_size"
+                    android:layout_gravity="top"
+                    android:focusable="true"
+                    android:layout_marginEnd="@dimen/call_subject_dialog_margin" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/dialtacts_primary_text_color"
+                        android:textSize="@dimen/call_subject_dialog_secondary_text_size"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:id="@+id/number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/call_subject_dialog_between_line_margin"
+                        android:textColor="@color/dialtacts_secondary_text_color"
+                        android:textSize="@dimen/call_subject_dialog_secondary_text_size"
+                        android:singleLine="true" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/call_subject"
+                android:hint="@string/call_subject_hint"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="top"
+                android:textColor="@color/dialtacts_secondary_text_color"
+                android:textSize="@dimen/call_subject_dialog_secondary_text_size"
+                android:gravity="top"
+                android:background="@null"
+                android:layout_marginTop="@dimen/call_subject_dialog_edit_spacing"
+                android:layout_marginStart="@dimen/call_subject_dialog_margin"
+                android:layout_marginEnd="@dimen/call_subject_dialog_margin"
+                />
+
+            <TextView
+                android:id="@+id/character_limit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dialtacts_secondary_text_color"
+                android:textSize="@dimen/call_subject_dialog_secondary_text_size"
+                android:singleLine="true"
+                android:layout_marginStart="@dimen/call_subject_dialog_margin"
+                android:layout_marginEnd="@dimen/call_subject_dialog_margin"
+                android:layout_marginTop="@dimen/call_subject_dialog_margin"
+                android:layout_marginBottom="@dimen/call_subject_dialog_margin"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/call_subject_divider"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/call_subject_dialog_margin"
+                android:layout_marginEnd="@dimen/call_subject_dialog_margin"
+                android:layout_marginTop="@dimen/call_subject_dialog_margin"
+                android:layout_marginBottom="@dimen/call_subject_dialog_margin">
+
+                <ImageView
+                    android:id="@+id/history_button"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/quantum_ic_history_vd_theme_24"
+                    android:tint="@color/call_subject_history_icon"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true" />
+
+                <TextView
+                    android:id="@+id/send_and_call_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/send_and_call_button"
+                    android:textColor="@color/call_subject_button"
+                    android:textSize="@dimen/call_subject_dialog_secondary_text_size"
+                    android:singleLine="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <!-- The subject list is pinned to the bottom of the screen. -->
+    <ListView
+        android:id="@+id/subject_list"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/dialog_view"
+        android:background="@color/call_subject_history_background"
+        android:divider="@null"
+        android:elevation="8dp" />
+
+</LinearLayout>

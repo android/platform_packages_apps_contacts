@@ -19,33 +19,60 @@
 
 <resources>
 
-    <!-- If true, phonetic name is included in the contact editor by default -->
-    <bool name="config_editor_include_phonetic_name">false</bool>
-
-    <!-- If true, the "home" icon on the action bar will be shown. -->
-    <bool name="show_home_icon">false</bool>
-
-    <!--
-      If true, the "view updates from group" button in the action bar will be
-      shown. Otherwise it will be part of the content on the group detail page.
-    -->
-    <bool name="config_show_group_action_in_action_bar">false</bool>
-
     <!-- Help URL pointing to main TOC for People. This is intentionally empty because
          the overlay will fill this in during build time. -->
     <string name="help_url_people_main"></string>
-
-    <!-- Help URL pointing to adding contacts in People. This is intentionally empty because
-         the overlay will fill this in during build time. -->
-    <string name="help_url_people_add"></string>
-
-    <!-- Help URL pointing to editing contacts in People. This is intentionally empty because
-         the overlay will fill this in during build time. -->
-    <string name="help_url_people_edit"></string>
 
     <!-- File Authority for the photo picker -->
     <string name="photo_file_provider_authority">com.android.contacts.files</string>
 
     <!-- File Authority for AOSP Contacts files -->
     <string name="contacts_file_provider_authority">com.android.contacts.files</string>
+    <!-- Flag indicating whether Contacts app is allowed to import contacts -->
+    <bool name="config_allow_import_from_vcf_file">true</bool>
+
+    <!-- If true, an option is shown in Display Options UI to choose a sort order -->
+    <bool name="config_sort_order_user_changeable">true</bool>
+
+    <!-- If true, the default sort order is primary (i.e. by given name) -->
+    <bool name="config_default_sort_order_primary">true</bool>
+
+    <!-- If true, an option is shown in Display Options UI to choose a name display order -->
+    <bool name="config_display_order_user_changeable">true</bool>
+
+    <!-- If true, the default sort order is primary (i.e. by given name) -->
+    <bool name="config_default_display_order_primary">true</bool>
+
+    <!-- If true, an option is shown in Display Options UI to choose a phonetic name display preference -->
+    <bool name="config_phonetic_name_display_user_changeable">true</bool>
+
+    <!-- If true, phonetic name fields are not visible when empty -->
+    <bool name="config_default_hide_phonetic_name_if_empty">true</bool>
+
+    <!-- If true, the order of name fields in the editor is primary (i.e. given name first) -->
+    <bool name="config_editor_field_order_primary">true</bool>
+
+    <!-- If true, an option is shown in Display Options UI to choose a default account -->
+    <bool name="config_default_account_user_changeable">true</bool>
+
+    <!-- Contacts preferences key for contact editor default account -->
+    <string name="contact_editor_default_account_key">ContactEditorUtils_default_account</string>
+
+    <!-- The type of VCard for export. If you want to let the app emit vCard which is
+    specific to some vendor (like DoCoMo), specify this type (e.g. "docomo") -->
+    <string name="config_export_vcard_type" translatable="false">default</string>
+
+    <!-- The filename that is suggested that users use when exporting vCards. Should include the .vcf extension. -->
+    <string name="exporting_vcard_filename" translatable="false">contacts.vcf</string>
+
+    <!-- Flag indicating whether Contacts app is allowed to export contacts -->
+    <bool name="config_allow_export">true</bool>
+
+    <!-- Flag indicating whether Contacts app is allowed to share contacts with devices outside -->
+    <bool name="config_allow_share_contacts">true</bool>
+
+    <string name="pref_build_version_key">pref_build_version</string>
+    <string name="pref_open_source_licenses_key">pref_open_source_licenses</string>
+    <string name="pref_privacy_policy_key">pref_privacy_policy</string>
+    <string name="pref_terms_of_service_key">pref_terms_of_service</string>
 </resources>

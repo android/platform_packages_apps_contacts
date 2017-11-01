@@ -1,7 +1,5 @@
 package com.android.contacts.widget;
 
-import com.android.contacts.common.lettertiles.LetterTileDrawable;
-
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -9,6 +7,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 import com.android.contacts.R;
+import com.android.contacts.lettertiles.LetterTileDrawable;
 
 /**
  * An {@link ImageView} designed to display QuickContact's contact photo. When requested to draw

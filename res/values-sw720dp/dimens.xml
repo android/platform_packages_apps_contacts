@@ -17,17 +17,11 @@
     <dimen name="editor_type_label_width">180dip</dimen>
     <dimen name="editor_round_button_padding_left">8dip</dimen>
     <dimen name="editor_round_button_padding_right">8dip</dimen>
-    <dimen name="group_editor_side_padding">16dip</dimen>
-    <dimen name="quick_contact_photo_container_height">360dip</dimen>
-    <dimen name="contact_picker_contact_list_min_height">650dip</dimen>
-    <dimen name="list_visible_scrollbar_padding">48dip</dimen>
 
     <!-- When QC is uncollapsed, the title has this much margin on its left and right -->
     <dimen name="quickcontact_title_initial_margin">32dp</dimen>
     <!-- When QC is uncollapsed, the title has this much margin on its bottom -->
     <dimen name="quickcontact_title_initial_bottom_margin">0dp</dimen>
-    <!-- Right margin of the floating action button -->
-    <dimen name="floating_action_button_margin_right">100dp</dimen>
 
     <dimen name="expanding_entry_card_marginStartEnd">10dp</dimen>
 

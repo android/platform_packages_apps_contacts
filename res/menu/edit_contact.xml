@@ -14,11 +14,12 @@
      limitations under the License.
 -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_save"
-        android:showAsAction="always"
-        android:icon="@drawable/ic_done_wht_24dp"
+        app:showAsAction="always"
+        app:actionLayout="@layout/editor_save_button"
         android:title="@string/menu_save" />
 
     <item
@@ -32,15 +33,6 @@
     <item
         android:id="@+id/menu_delete"
         android:title="@string/menu_deleteContact" />
-
-    <item
-        android:id="@+id/menu_set_ringtone"
-        android:title="@string/menu_set_ring_tone" />
-
-    <item
-        android:id="@+id/menu_send_to_voicemail"
-        android:checkable="true"
-        android:title="@string/menu_redirect_calls_to_vm" />
 
     <item
         android:id="@+id/menu_help"

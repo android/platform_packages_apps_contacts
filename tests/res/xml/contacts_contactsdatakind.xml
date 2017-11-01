@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!--
+    contacts.xml to build a "fallback account type" equivalent with
+    an additional test ContactsDataKind
+-->
+
+<ContactsAccountType
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    accountType="com.android.contacts.tests.testauth.basic"
+    accountTypeLabel="@string/applicationLabel"
+    accountTypeIcon="@mipmap/ic_contacts_launcher"
+    >
+    <EditSchema
+        >
+        <DataKind kind="name"
+            maxOccurs="1"
+            supportsPrefix="true"
+            supportsMiddleName="true"
+            supportsSuffix="true"
+            supportsPhoneticFamilyName="true"
+            supportsPhoneticMiddleName="true"
+            supportsPhoneticGivenName="true"
+            >
+        </DataKind>
+        <DataKind kind="photo" maxOccurs="1" />
+        <DataKind kind="phone" >
+            <Type type="mobile" />
+            <Type type="home" />
+            <Type type="work" />
+            <Type type="fax_work" />
+            <Type type="fax_home" />
+            <Type type="pager" />
+            <Type type="other" />
+            <Type type="custom"/>
+            <Type type="callback" />
+            <Type type="car" />
+            <Type type="company_main" />
+            <Type type="isdn" />
+            <Type type="main" />
+            <Type type="other_fax" />
+            <Type type="radio" />
+            <Type type="telex" />
+            <Type type="tty_tdd" />
+            <Type type="work_mobile"/>
+            <Type type="work_pager" />
+            <Type type="assistant" />
+            <Type type="mms" />
+        </DataKind>
+        <DataKind kind="email" >
+            <Type type="home" />
+            <Type type="work" />
+            <Type type="other" />
+            <Type type="mobile" />
+            <Type type="custom" />
+        </DataKind>
+        <DataKind kind="nickname" maxOccurs="1" />
+        <DataKind kind="im" >
+            <Type type="aim" />
+            <Type type="msn" />
+            <Type type="yahoo" />
+            <Type type="skype" />
+            <Type type="qq" />
+            <Type type="google_talk" />
+            <Type type="icq" />
+            <Type type="jabber" />
+            <Type type="custom" />
+        </DataKind>
+        <DataKind kind="postal" needsStructured="false" >
+            <Type type="home" />
+            <Type type="work" />
+            <Type type="other" />
+            <Type type="custom" />
+        </DataKind>
+        <DataKind kind="organization" maxOccurs="1" />
+        <DataKind kind="website" />
+        <DataKind kind="sip_address" maxOccurs="1" />
+        <DataKind kind="note" maxOccurs="1" />
+        <DataKind kind="group_membership" maxOccurs="1" />
+    </EditSchema>
+
+    <ContactsDataKind
+        android:mimeType="vnd.android.cursor.item/vnd.contactstest.profile"
+        android:icon="@mipmap/ic_contacts_launcher"
+        android:summaryColumn="data2"
+        android:detailColumn="data3" />
+
+</ContactsAccountType>

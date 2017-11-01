@@ -17,6 +17,7 @@ package com.android.contacts.list;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -28,12 +29,14 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.contacts.R;
-import com.android.contacts.activities.ActionBarAdapter.TabState;
 import com.android.contacts.compat.ProviderStatusCompat;
+import com.android.contacts.interactions.ImportDialogFragment;
+import com.android.contacts.util.ImplicitIntentsUtil;
 
 /**
  * Fragment shown when contacts are unavailable. It contains provider status
@@ -48,17 +51,8 @@ public class ContactsUnavailableFragment extends Fragment implements OnClickList
     private Button mImportContactsButton;
     private ProgressBar mProgress;
     private View mButtonsContainer;
-    private int mNoContactsMsgResId = -1;
-    private int mLastTab = -1;
-
-    private OnContactsUnavailableActionListener mListener;
 
     private Integer mProviderStatus;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Override
     public View onCreateView(
@@ -66,6 +60,17 @@ public class ContactsUnavailableFragment extends Fragment implements OnClickList
         mView = inflater.inflate(R.layout.contacts_unavailable_fragment, null);
 
         mImageView = (ImageView) mView.findViewById(R.id.empty_image);
+        final LinearLayout.LayoutParams layoutParams =
+                (LinearLayout.LayoutParams) mImageView.getLayoutParams();
+        final int screenHeight = getResources().getDisplayMetrics().heightPixels;
+        final int topMargin =
+                screenHeight / getResources()
+                        .getInteger(R.integer.contacts_no_account_empty_image_margin_divisor)
+                - getResources()
+                        .getDimensionPixelSize(R.dimen.contacts_no_account_empty_image_offset);
+        layoutParams.setMargins(0, topMargin, 0, 0);
+        layoutParams.gravity = Gravity.CENTER_HORIZONTAL;
+        mImageView.setLayoutParams(layoutParams);
 
         mMessageView = (TextView) mView.findViewById(R.id.message);
         mAddAccountButton = (Button) mView.findViewById(R.id.add_account_button);
@@ -89,11 +94,6 @@ public class ContactsUnavailableFragment extends Fragment implements OnClickList
         return mView;
     }
 
-    public void setOnContactsUnavailableActionListener(
-            OnContactsUnavailableActionListener listener) {
-        mListener = listener;
-    }
-
     public void updateStatus(int providerStatus) {
         mProviderStatus = providerStatus;
         if (mView == null) {
@@ -102,10 +102,9 @@ public class ContactsUnavailableFragment extends Fragment implements OnClickList
         }
         if (providerStatus == ProviderStatusCompat.STATUS_EMPTY) {
             updateViewsForEmptyStatus();
-        } else if (providerStatus == ProviderStatusCompat.STATUS_BUSY) {
-            updateViewsForBusyStatus(R.string.upgrade_in_progress);
-        } else if (providerStatus == ProviderStatusCompat.STATUS_CHANGING_LOCALE) {
-            updateViewsForBusyStatus(R.string.locale_change_in_progress);
+        } else if (providerStatus == ProviderStatusCompat.STATUS_BUSY
+                || providerStatus == ProviderStatusCompat.STATUS_CHANGING_LOCALE) {
+            updateViewsForBusyStatus();
         }
     }
 
@@ -113,80 +112,35 @@ public class ContactsUnavailableFragment extends Fragment implements OnClickList
      * Update views in the fragment when provider status is empty.
      */
     private void updateViewsForEmptyStatus() {
-        setTabInfo(mNoContactsMsgResId, mLastTab);
-        if (mLastTab == TabState.ALL) {
-            updateButtonVisibilty(View.VISIBLE);
-        }
+        mMessageView.setVisibility(View.VISIBLE);
+        updateButtonVisibility(View.VISIBLE);
         mProgress.setVisibility(View.GONE);
     }
 
     /**
      * Update views in the fragment when provider status is busy.
-     *
-     * @param resId resource ID of the string to show in mMessageView.
      */
-    private void updateViewsForBusyStatus(int resId) {
-        mMessageView.setText(resId);
-        mMessageView.setGravity(Gravity.CENTER_HORIZONTAL);
-        mMessageView.setVisibility(View.VISIBLE);
-        updateButtonVisibilty(View.GONE);
+    private void updateViewsForBusyStatus() {
+        mMessageView.setVisibility(View.GONE);
+        mImageView.setVisibility(View.GONE);
+        updateButtonVisibility(View.GONE);
         mProgress.setVisibility(View.VISIBLE);
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            final ViewGroup.MarginLayoutParams lp =
-                    (ViewGroup.MarginLayoutParams) mMessageView.getLayoutParams();
-            final int marginTop =
-                    (int) getResources().getDimension(R.dimen.update_contact_list_top_margin);
-            lp.setMargins(0, marginTop, 0, 0);
-            mImageView.setVisibility(View.GONE);
-        } else {
-            mImageView.setVisibility(View.INVISIBLE);
-        }
     }
 
     @Override
     public void onClick(View v) {
-        if (mListener == null) {
-            return;
-        }
-        switch (v.getId()) {
-            case R.id.add_account_button:
-                mListener.onAddAccountAction();
-                break;
-            case R.id.import_contacts_button:
-                mListener.onImportContactsFromFileAction();
-                break;
+        final int id = v.getId();
+        if (id == R.id.add_account_button) {
+            final Intent intent = ImplicitIntentsUtil.getIntentForAddingGoogleAccount();
+            ImplicitIntentsUtil.startActivityOutsideApp(getActivity(), intent);
+
+        } else if (id == R.id.import_contacts_button) {
+            ImportDialogFragment.show(getFragmentManager());
+
         }
     }
 
-    /**
-     * Set the message to be shown if no data is available for the selected tab
-     *
-     * @param resId - String resource ID of the message , -1 means view will not be visible
-     */
-    public void setTabInfo(int resId, int callerTab) {
-        mNoContactsMsgResId = resId;
-        mLastTab = callerTab;
-        if ((mMessageView != null) && (mProviderStatus != null) &&
-                mProviderStatus.equals(ProviderStatusCompat.STATUS_EMPTY)) {
-            if (resId != -1) {
-                mMessageView.setText(mNoContactsMsgResId);
-                mMessageView.setGravity(Gravity.CENTER_HORIZONTAL);
-                mMessageView.setVisibility(View.VISIBLE);
-                if (callerTab == TabState.FAVORITES) {
-                    mImageView.setImageResource(R.drawable.ic_star_black_128dp);
-                    mProgress.setVisibility(View.GONE);
-                    updateButtonVisibilty(View.GONE);
-                } else if (callerTab == TabState.ALL) {
-                    mImageView.setImageResource(R.drawable.ic_person_black_128dp);
-                    updateButtonVisibilty(View.VISIBLE);
-                }
-            } else {
-                mMessageView.setVisibility(View.GONE);
-            }
-        }
-    }
-
-    private void updateButtonVisibilty(int visibility) {
+    private void updateButtonVisibility(int visibility) {
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             mAddAccountButton.setVisibility(visibility);
             mImportContactsButton.setVisibility(visibility);

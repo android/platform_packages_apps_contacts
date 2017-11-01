@@ -17,7 +17,6 @@
 package com.android.contacts.util;
 
 import android.view.View;
-import android.view.ViewTreeObserver.OnDrawListener;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 

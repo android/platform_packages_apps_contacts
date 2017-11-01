@@ -18,6 +18,8 @@ package com.android.contacts.interactions;
 
 import android.app.LoaderManager;
 
+import com.google.common.annotations.VisibleForTesting;
+
 /**
  * A {@link LoaderManager} that records which loaders have been completed.
  * <p>
@@ -71,6 +73,7 @@ import android.app.LoaderManager;
  *   }
  * </pre>
  */
+@VisibleForTesting
 abstract class TestLoaderManagerBase extends LoaderManager {
 
     /**
@@ -84,6 +87,7 @@ abstract class TestLoaderManagerBase extends LoaderManager {
      * It can not be set to null. Once set, it cannot be changed (but it allows setting it to the
      * same value again).
      */
+    @VisibleForTesting
     public abstract void setDelegate(LoaderManager delegate);
 
 }

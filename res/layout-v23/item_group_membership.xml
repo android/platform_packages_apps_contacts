@@ -23,7 +23,7 @@
 
     <ImageView
         android:id="@+id/kind_icon"
-        android:src="@drawable/ic_people_black_24dp"
+        android:src="@drawable/quantum_ic_label_vd_theme_24"
         style="@style/EditKindIconStyle" />
 
     <Button

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2009 The Android Open Source Project
+ * Copyright (C) 2015 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,258 +18,203 @@ package com.android.contacts.editor;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.provider.ContactsContract.CommonDataKinds.Photo;
-import android.provider.ContactsContract.DisplayPhoto;
+import android.provider.ContactsContract;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
+import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
+import com.android.contacts.ContactPhotoManager;
 import com.android.contacts.R;
-import com.android.contacts.common.ContactPhotoManager.DefaultImageProvider;
-import com.android.contacts.common.ContactPhotoManager.DefaultImageRequest;
-import com.android.contacts.common.model.RawContactDelta;
-import com.android.contacts.common.ContactPhotoManager;
-import com.android.contacts.common.ContactsUtils;
-import com.android.contacts.common.model.ValuesDelta;
-import com.android.contacts.common.model.dataitem.DataKind;
-import com.android.contacts.util.ContactPhotoUtils;
+import com.android.contacts.model.ValuesDelta;
+import com.android.contacts.util.MaterialColorMapUtils.MaterialPalette;
+import com.android.contacts.util.SchedulingUtils;
+import com.android.contacts.widget.QuickContactImageView;
 
 /**
- * Simple editor for {@link Photo}.
+ * Displays a photo and calls the host back when the user clicks it.
  */
-public class PhotoEditorView extends LinearLayout implements Editor {
+public class PhotoEditorView extends RelativeLayout implements View.OnClickListener {
 
-    private ImageView mPhotoImageView;
-    private Button mChangeButton;
-    private RadioButton mPrimaryCheckBox;
+    /**
+     * Callbacks for the host of this view.
+     */
+    public interface Listener {
 
-    private ValuesDelta mEntry;
-    private EditorListener mListener;
-    private ContactPhotoManager mContactPhotoManager;
+        /**
+         * Invoked when the user wants to change their photo.
+         */
+        void onPhotoEditorViewClicked();
+    }
 
-    private boolean mHasSetPhoto = false;
+    private Listener mListener;
+
+    private final float mLandscapePhotoRatio;
+    private final float mPortraitPhotoRatio;
+    private final boolean mIsTwoPanel;
+
+    private QuickContactImageView mPhotoImageView;
+    private View mPhotoIcon;
+    private View mPhotoIconOverlay;
+    private View mPhotoTouchInterceptOverlay;
+    private MaterialPalette mMaterialPalette;
+
+    private boolean mReadOnly;
+    private boolean mIsNonDefaultPhotoBound;
 
     public PhotoEditorView(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public PhotoEditorView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        mLandscapePhotoRatio = getTypedFloat(R.dimen.quickcontact_landscape_photo_ratio);
+        mPortraitPhotoRatio = getTypedFloat(R.dimen.editor_portrait_photo_ratio);
+        mIsTwoPanel = getResources().getBoolean(R.bool.contacteditor_two_panel);
     }
 
-    @Override
-    public void setEnabled(boolean enabled) {
-        super.setEnabled(enabled);
+    private float getTypedFloat(int resourceId) {
+        final TypedValue typedValue = new TypedValue();
+        getResources().getValue(resourceId, typedValue, /* resolveRefs =*/ true);
+        return typedValue.getFloat();
     }
 
-    @Override
-    public void editNewlyAddedField() {
-        // Never called, since the user never adds a new photo-editor;
-        // you can only change the picture in an existing editor.
-    }
-
-    /** {@inheritDoc} */
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mContactPhotoManager = ContactPhotoManager.getInstance(getContext());
-        mPhotoImageView = (ImageView) findViewById(R.id.photo);
-        mPrimaryCheckBox = (RadioButton) findViewById(R.id.primary_checkbox);
-        mChangeButton = (Button) findViewById(R.id.change_button);
-        mPrimaryCheckBox = (RadioButton) findViewById(R.id.primary_checkbox);
-        if (mChangeButton != null) {
-            mChangeButton.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (mListener != null) {
-                        mListener.onRequest(EditorListener.REQUEST_PICK_PHOTO);
-                    }
-                }
-            });
+        mPhotoImageView = (QuickContactImageView) findViewById(R.id.photo);
+        mPhotoIcon = findViewById(R.id.photo_icon);
+        mPhotoIconOverlay = findViewById(R.id.photo_icon_overlay);
+        mPhotoTouchInterceptOverlay = findViewById(R.id.photo_touch_intercept_overlay);
+
+    }
+
+    public void setListener(Listener listener) {
+        mListener = listener;
+    }
+
+    public void setReadOnly(boolean readOnly) {
+        mReadOnly = readOnly;
+        if (mReadOnly) {
+            mPhotoIcon.setVisibility(View.GONE);
+            mPhotoIconOverlay.setVisibility(View.GONE);
+            mPhotoTouchInterceptOverlay.setClickable(false);
+            mPhotoTouchInterceptOverlay.setContentDescription(getContext().getString(
+                    R.string.editor_contact_photo_content_description));
+        } else {
+            mPhotoIcon.setVisibility(View.VISIBLE);
+            mPhotoIconOverlay.setVisibility(View.VISIBLE);
+            mPhotoTouchInterceptOverlay.setOnClickListener(this);
+            updatePhotoDescription();
         }
-        // Turn off own state management. We do this ourselves on rotation.
-        mPrimaryCheckBox.setSaveEnabled(false);
-        mPrimaryCheckBox.setOnClickListener(new OnClickListener() {
+    }
+
+    public void setPalette(MaterialPalette palette) {
+        mMaterialPalette = palette;
+    }
+
+    /**
+     * Tries to bind a full size photo or a bitmap loaded from the given ValuesDelta,
+     * and falls back to the default avatar, tinted using the given MaterialPalette (if it's not
+     * null);
+     */
+    public void setPhoto(ValuesDelta valuesDelta) {
+        // Check if we can update to the full size photo immediately
+        final Long photoFileId = EditorUiUtils.getPhotoFileId(valuesDelta);
+        if (photoFileId != null) {
+            final Uri photoUri = ContactsContract.DisplayPhoto.CONTENT_URI.buildUpon()
+                    .appendPath(photoFileId.toString()).build();
+            setFullSizedPhoto(photoUri);
+            adjustDimensions();
+            return;
+        }
+
+        // Use the bitmap image from the values delta
+        final Bitmap bitmap = EditorUiUtils.getPhotoBitmap(valuesDelta);
+        if (bitmap != null) {
+            setPhoto(bitmap);
+            adjustDimensions();
+            return;
+        }
+
+        setDefaultPhoto(mMaterialPalette);
+        adjustDimensions();
+    }
+
+    private void adjustDimensions() {
+        // Follow the same logic as MultiShrinkScroll.initialize
+        SchedulingUtils.doOnPreDraw(this, /* drawNextFrame =*/ false, new Runnable() {
             @Override
-            public void onClick(View v) {
-                if (mListener != null) {
-                    mListener.onRequest(EditorListener.REQUEST_PICK_PRIMARY_PHOTO);
+            public void run() {
+                final int photoHeight, photoWidth;
+                if (mIsTwoPanel) {
+                    photoHeight = getHeight();
+                    photoWidth = (int) (photoHeight * mLandscapePhotoRatio);
+                } else {
+                    // Make the photo slightly shorter that it is wide
+                    photoWidth = getWidth();
+                    photoHeight = (int) (photoWidth / mPortraitPhotoRatio);
                 }
+                final ViewGroup.LayoutParams layoutParams = getLayoutParams();
+                layoutParams.height = photoHeight;
+                layoutParams.width = photoWidth;
+                setLayoutParams(layoutParams);
             }
         });
     }
 
-    /** {@inheritDoc} */
-    @Override
-    public void onFieldChanged(String column, String value) {
-        throw new UnsupportedOperationException("Photos don't support direct field changes");
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void setValues(DataKind kind, ValuesDelta values, RawContactDelta state, boolean readOnly,
-            ViewIdGenerator vig) {
-        mEntry = values;
-
-        setId(vig.getId(state, kind, values, 0));
-
-        mPrimaryCheckBox.setChecked(values != null && values.isSuperPrimary());
-
-        if (values != null) {
-            // Try decoding photo if actual entry
-            final byte[] photoBytes = values.getAsByteArray(Photo.PHOTO);
-            if (photoBytes != null) {
-                final Bitmap photo = BitmapFactory.decodeByteArray(photoBytes, 0,
-                        photoBytes.length);
-
-                mPhotoImageView.setImageBitmap(photo);
-                mHasSetPhoto = true;
-                mEntry.setFromTemplate(false);
-
-                if (values.getAfter() == null || values.getAfter().get(Photo.PHOTO) == null) {
-                    // If the user hasn't updated the PHOTO value, then PHOTO_FILE_ID may contain
-                    // a reference to a larger version of PHOTO that we can bind to the UI.
-                    // Otherwise, we need to wait for a call to #setFullSizedPhoto() to update
-                    // our full sized image.
-                    final Integer photoFileId = values.getAsInteger(Photo.PHOTO_FILE_ID);
-                    if (photoFileId != null) {
-                        final Uri photoUri = DisplayPhoto.CONTENT_URI.buildUpon()
-                                .appendPath(photoFileId.toString()).build();
-                        setFullSizedPhoto(photoUri);
-                    }
-                }
-
-            } else {
-                resetDefault();
-            }
-        } else {
-            resetDefault();
-        }
-    }
-
     /**
-     * Whether to display a "Primary photo" RadioButton. This is only needed if there are multiple
-     * candidate photos.
+     * Whether a removable, non-default photo is bound to this view.
      */
-    public void setShowPrimary(boolean showPrimaryCheckBox) {
-        mPrimaryCheckBox.setVisibility(showPrimaryCheckBox ? View.VISIBLE : View.GONE);
+    public boolean isWritablePhotoSet() {
+        return !mReadOnly && mIsNonDefaultPhotoBound;
     }
 
     /**
-     * Return true if a valid {@link Photo} has been set.
+     * Binds the given bitmap.
      */
-    public boolean hasSetPhoto() {
-        return mHasSetPhoto;
+    private void setPhoto(Bitmap bitmap) {
+        mPhotoImageView.setImageBitmap(bitmap);
+        mIsNonDefaultPhotoBound = true;
+        updatePhotoDescription();
     }
 
-    /**
-     * Assign the given {@link Bitmap} as the new value for the sake of building
-     * {@link ValuesDelta}. We may as well bind a thumbnail to the UI while we are at it.
-     */
-    public void setPhotoEntry(Bitmap photo) {
-        if (photo == null) {
-            // Clear any existing photo and return
-            mEntry.put(Photo.PHOTO, (byte[])null);
-            resetDefault();
-            return;
-        }
-
-        final int size = ContactsUtils.getThumbnailSize(getContext());
-        final Bitmap scaled = Bitmap.createScaledBitmap(photo, size, size, false);
-
-        mPhotoImageView.setImageBitmap(scaled);
-        mHasSetPhoto = true;
-        mEntry.setFromTemplate(false);
-
-        // When the user chooses a new photo mark it as super primary
-        mEntry.setSuperPrimary(true);
-
-        // Even though high-res photos cannot be saved by passing them via
-        // an EntityDeltaList (since they cause the Bundle size limit to be
-        // exceeded), we still pass a low-res thumbnail. This simplifies
-        // code all over the place, because we don't have to test whether
-        // there is a change in EITHER the delta-list OR a changed photo...
-        // this way, there is always a change in the delta-list.
-        final byte[] compressed = ContactPhotoUtils.compressBitmap(scaled);
-        if (compressed != null) {
-            mEntry.setPhoto(compressed);
-        }
+    private void setDefaultPhoto(MaterialPalette materialPalette) {
+        mIsNonDefaultPhotoBound = false;
+        updatePhotoDescription();
+        EditorUiUtils.setDefaultPhoto(mPhotoImageView, getResources(), materialPalette);
     }
 
+    private void updatePhotoDescription() {
+        mPhotoTouchInterceptOverlay.setContentDescription(getContext().getString(
+                mIsNonDefaultPhotoBound
+                        ? R.string.editor_change_photo_content_description
+                        : R.string.editor_add_photo_content_description));
+    }
     /**
-     * Bind the {@param photoUri}'s photo to editor's UI. This doesn't affect {@link ValuesDelta}.
+     * Binds a full size photo loaded from the given Uri.
      */
     public void setFullSizedPhoto(Uri photoUri) {
-        if (photoUri != null) {
-            final DefaultImageProvider fallbackToPreviousImage = new DefaultImageProvider() {
-                @Override
-                public void applyDefaultImage(ImageView view, int extent, boolean darkTheme,
-                        DefaultImageRequest defaultImageRequest) {
-                    // Before we finish setting the full sized image, don't change the current
-                    // image that is set in any way.
-                }
-            };
-            mContactPhotoManager.loadPhoto(mPhotoImageView, photoUri,
-                    mPhotoImageView.getWidth(), /* darkTheme = */ false, /* isCircular = */ false,
-                    /* defaultImageRequest = */ null, fallbackToPreviousImage);
+        EditorUiUtils.loadPhoto(ContactPhotoManager.getInstance(getContext()),
+                mPhotoImageView, photoUri);
+        mIsNonDefaultPhotoBound = true;
+        updatePhotoDescription();
+    }
+
+    /**
+     * Removes the current bound photo bitmap.
+     */
+    public void removePhoto() {
+        setDefaultPhoto(mMaterialPalette);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (mListener != null) {
+            mListener.onPhotoEditorViewClicked();
         }
-    }
-
-    /**
-     * Set the super primary bit on the photo.
-     */
-    public void setSuperPrimary(boolean superPrimary) {
-        mEntry.put(Photo.IS_SUPER_PRIMARY, superPrimary ? 1 : 0);
-    }
-
-    protected void resetDefault() {
-        // Invalid photo, show default "add photo" place-holder
-        mPhotoImageView.setImageDrawable(
-                ContactPhotoManager.getDefaultAvatarDrawableForContact(getResources(), false, null));
-        mHasSetPhoto = false;
-        mEntry.setFromTemplate(true);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public void setEditorListener(EditorListener listener) {
-        mListener = listener;
-    }
-
-    @Override
-    public void setDeletable(boolean deletable) {
-        // Photo is not deletable
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return !mHasSetPhoto;
-    }
-
-    @Override
-    public void markDeleted() {
-        // Photo is not deletable
-    }
-
-    @Override
-    public void deleteEditor() {
-        // Photo is not deletable
-    }
-
-    @Override
-    public void clearAllFields() {
-        resetDefault();
-    }
-
-    /**
-     * The change drop down menu should be anchored to this view.
-     */
-    public View getChangeAnchorView() {
-        return mChangeButton;
     }
 }

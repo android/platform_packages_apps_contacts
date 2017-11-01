@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<android.support.design.widget.TextInputLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/text_input_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/custom_dialog_layout_padding"
+    android:paddingEnd="@dimen/custom_dialog_layout_padding"
+    android:paddingStart="@dimen/custom_dialog_layout_padding"
+    app:errorEnabled="true"
+    app:hintEnabled="false">
+
+    <android.support.design.widget.TextInputEditText
+        android:id="@android:id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/custom_dialog_layout"
+        android:layout_marginEnd="@dimen/custom_dialog_layout"
+        android:hint="@string/group_name_dialog_hint"
+        android:inputType="text"
+        android:maxLength="@integer/group_name_max_length"
+        android:minHeight="@dimen/dialog_edit_text_min_height"
+        android:textAlignment="viewStart"
+        android:singleLine="true"/>
+</android.support.design.widget.TextInputLayout>

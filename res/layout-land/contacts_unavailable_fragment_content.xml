@@ -14,76 +14,62 @@
      limitations under the License.
 -->
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center_horizontal">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/empty_image"
+        android:layout_width="@dimen/contacts_no_account_empty_image_width"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/contacts_no_account_empty" />
+
+    <TextView
+        android:id="@+id/message"
+        style="@style/EmptyStateTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/contacts_no_account_empty_text_padding_top"
+        android:text="@string/noContacts" />
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
+        android:id="@+id/buttons_container"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
-        <ImageView
-            android:id="@+id/empty_image"
-            android:layout_height="128dp"
-            android:layout_width="128dp"
-            android:layout_marginTop="60dp"
-            android:alpha="0.38"
-            android:gravity="center_horizontal"/>
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/message"
+        <Button
+            android:id="@+id/add_account_button"
+            style="@style/NoAccountViewButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="?android:attr/textColorSecondary"
-            android:layout_gravity="center_horizontal"
-            android:textIsSelectable="false"/>
+            android:layout_marginEnd="@dimen/contacts_no_account_buttons_margin"
+            android:text="@string/contacts_unavailable_add_account" />
+
+        <Button
+            android:id="@+id/import_contacts_button"
+            style="@style/NoAccountViewButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/contacts_unavailable_import_contacts" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ProgressBar
             android:id="@+id/progress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:indeterminate="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="12dp" />
-    </LinearLayout>
-
-    <!-- This buttons_container is landscape exclusive because we want the two buttons to be of
-         the same width (wrapping the longer content) and the layout width to be 208dp. -->
-    <LinearLayout
-        android:id="@+id/buttons_container"
-        android:orientation="vertical"
-        android:layout_width="208dp"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal">
-
-            <Button
-                android:id="@+id/add_account_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="85dp"
-                android:layout_marginBottom="10dp"
-                android:textColor="@android:color/white"
-                android:text="@string/contacts_unavailable_add_account" />
-
-            <Button
-                android:id="@+id/import_contacts_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:text="@string/contacts_unavailable_import_contacts" />
-        </LinearLayout>
-    </LinearLayout>
-
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="gone" />
+    </FrameLayout>
 </LinearLayout>

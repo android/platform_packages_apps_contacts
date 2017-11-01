@@ -39,19 +39,23 @@ import android.widget.Toast;
 
 import com.android.contacts.ContactSaveService;
 import com.android.contacts.ContactsActivity;
+import com.android.contacts.ContactsUtils;
 import com.android.contacts.R;
-import com.android.contacts.common.activity.RequestPermissionsActivity;
-import com.android.contacts.common.model.Contact;
-import com.android.contacts.common.model.ContactLoader;
-import com.android.contacts.common.model.RawContactDelta;
-import com.android.contacts.common.model.RawContactDeltaList;
-import com.android.contacts.common.model.RawContactModifier;
-import com.android.contacts.common.ContactsUtils;
-import com.android.contacts.common.model.account.AccountType;
-import com.android.contacts.common.model.ValuesDelta;
-import com.android.contacts.common.model.account.AccountWithDataSet;
 import com.android.contacts.editor.ContactEditorUtils;
+import com.android.contacts.model.AccountTypeManager;
+import com.android.contacts.model.Contact;
+import com.android.contacts.model.ContactLoader;
+import com.android.contacts.model.RawContactDelta;
+import com.android.contacts.model.RawContactDeltaList;
+import com.android.contacts.model.RawContactModifier;
+import com.android.contacts.model.ValuesDelta;
+import com.android.contacts.model.account.AccountInfo;
+import com.android.contacts.model.account.AccountType;
+import com.android.contacts.model.account.AccountWithDataSet;
 import com.android.contacts.util.ContactPhotoUtils;
+import com.google.common.base.Preconditions;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
 
 import java.io.FileNotFoundException;
 import java.util.List;
@@ -78,6 +82,8 @@ public class AttachPhotoActivity extends ContactsActivity {
 
     private ContentResolver mContentResolver;
 
+    private ListenableFuture<List<AccountInfo>> mAccountsFuture;
+
     // Height and width (in pixels) to request for the photo - queried from the provider.
     private static int mPhotoDim;
     // Default photo dimension to use if unable to query the provider.
@@ -89,7 +95,7 @@ public class AttachPhotoActivity extends ContactsActivity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        if (RequestPermissionsActivity.startPermissionActivity(this)) {
+        if (RequestPermissionsActivity.startPermissionActivityIfNeeded(this)) {
             return;
         }
 
@@ -125,6 +131,10 @@ public class AttachPhotoActivity extends ContactsActivity {
                 }
             }
         }
+
+        // Start loading accounts in case they are needed.
+        mAccountsFuture = AccountTypeManager.getInstance(this).filterAccountsAsync(
+                AccountTypeManager.writableFilter());
     }
 
     @Override
@@ -327,7 +337,9 @@ public class AttachPhotoActivity extends ContactsActivity {
         values.setPhoto(compressed);
 
         // Finally, invoke the ContactSaveService.
-        Log.v(TAG, "all prerequisites met, about to save photo to contact");
+        if (Log.isLoggable(TAG, Log.VERBOSE)) {
+            Log.v(TAG, "all prerequisites met, about to save photo to contact");
+        }
         Intent intent = ContactSaveService.createSaveContactIntent(
                 this,
                 deltaList,
@@ -342,17 +354,28 @@ public class AttachPhotoActivity extends ContactsActivity {
     }
 
     private void selectAccountAndCreateContact() {
+        Preconditions.checkNotNull(mAccountsFuture, "Accounts future must be initialized first");
         // If there is no default account or the accounts have changed such that we need to
         // prompt the user again, then launch the account prompt.
-        final ContactEditorUtils editorUtils = ContactEditorUtils.getInstance(this);
-        if (editorUtils.shouldShowAccountChangedNotification()) {
-            Intent intent = new Intent(this, ContactEditorAccountsChangedActivity.class);
+        final ContactEditorUtils editorUtils = ContactEditorUtils.create(this);
+
+        // Technically this could block but in reality this method won't be called until the user
+        // presses the save button which should allow plenty of time for the accounts to
+        // finish loading. Note also that this could be stale if the accounts have changed since
+        // we requested them but that's OK since ContactEditorAccountsChangedActivity will reload
+        // the accounts
+        final List<AccountInfo> accountInfos = Futures.getUnchecked(mAccountsFuture);
+
+        final List<AccountWithDataSet> accounts = AccountInfo.extractAccounts(accountInfos);
+        if (editorUtils.shouldShowAccountChangedNotification(accounts)) {
+            Intent intent = new Intent(this, ContactEditorAccountsChangedActivity.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivityForResult(intent, REQUEST_PICK_DEFAULT_ACCOUNT_FOR_NEW_CONTACT);
         } else {
-            // Otherwise, there should be a default account. Then either create a local contact
+            // Otherwise, there should be a default account. Then either create a null contact
             // (if default account is null) or create a contact with the specified account.
-            AccountWithDataSet defaultAccount = editorUtils.getDefaultAccount();
-            createNewRawContact(defaultAccount);
+            final AccountWithDataSet targetAccount = editorUtils.getOnlyOrDefaultAccount(accounts);
+            createNewRawContact(targetAccount);
         }
     }
 

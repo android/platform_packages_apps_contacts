@@ -21,20 +21,20 @@ import android.net.Uri;
 import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.Contacts.Entity;
 import android.test.ActivityInstrumentationTestCase2;
-import android.test.suitebuilder.annotation.SmallTest;
+import android.test.suitebuilder.annotation.MediumTest;
 
 import com.android.contacts.ContactsApplication;
 import com.android.contacts.R;
-import com.android.contacts.common.test.FragmentTestActivity;
-import com.android.contacts.common.test.IntegrationTestUtils;
-import com.android.contacts.common.test.mocks.ContactsMockContext;
-import com.android.contacts.common.test.mocks.MockContentProvider;
-import com.android.contacts.common.test.mocks.MockContentProvider.Query;
-import com.android.contacts.common.model.AccountTypeManager;
-import com.android.contacts.common.model.account.AccountType;
-import com.android.contacts.common.model.account.BaseAccountType;
-import com.android.contacts.common.testing.InjectedServices;
-import com.android.contacts.common.test.mocks.MockAccountTypeManager;
+import com.android.contacts.model.AccountTypeManager;
+import com.android.contacts.model.account.AccountType;
+import com.android.contacts.model.account.BaseAccountType;
+import com.android.contacts.test.FragmentTestActivity;
+import com.android.contacts.test.IntegrationTestUtils;
+import com.android.contacts.test.mocks.ContactsMockContext;
+import com.android.contacts.test.mocks.MockAccountTypeManager;
+import com.android.contacts.test.mocks.MockContentProvider;
+import com.android.contacts.test.mocks.MockContentProvider.Query;
+import com.android.contacts.testing.InjectedServices;
 
 /**
  * Tests for {@link ContactDeletionInteraction}.
@@ -46,7 +46,7 @@ import com.android.contacts.common.test.mocks.MockAccountTypeManager;
  *   adb shell am instrument \
  *     -w com.android.contacts.tests/android.test.InstrumentationTestRunner
  */
-@SmallTest
+@MediumTest
 public class ContactDeletionInteractionTest
         extends ActivityInstrumentationTestCase2<FragmentTestActivity> {
     private static final Uri CONTACT_URI = ContentUris.withAppendedId(Contacts.CONTENT_URI, 13);
@@ -107,33 +107,33 @@ public class ContactDeletionInteractionTest
     }
 
     public void testSingleWritableRawContact() {
-        expectQuery().returnRow(1, WRITABLE_ACCOUNT_TYPE, null, 13, "foo");
+        expectQuery().returnRow(1, WRITABLE_ACCOUNT_TYPE, null, 13, "foo", "baz", "bazAlt");
         assertWithMessageId(R.string.deleteConfirmation);
     }
 
     public void testReadOnlyRawContacts() {
-        expectQuery().returnRow(1, READONLY_ACCOUNT_TYPE, null, 13, "foo");
+        expectQuery().returnRow(1, READONLY_ACCOUNT_TYPE, null, 13, "foo", "baz", "bazAlt");
         assertWithMessageId(R.string.readOnlyContactWarning);
     }
 
     public void testMixOfWritableAndReadOnlyRawContacts() {
         expectQuery()
-                .returnRow(1, WRITABLE_ACCOUNT_TYPE, null, 13, "foo")
-                .returnRow(2, READONLY_ACCOUNT_TYPE, null, 13, "foo");
+                .returnRow(1, WRITABLE_ACCOUNT_TYPE, null, 13, "foo", "baz", "bazAlt")
+                .returnRow(2, READONLY_ACCOUNT_TYPE, null, 13, "foo", "baz", "bazAlt");
         assertWithMessageId(R.string.readOnlyContactDeleteConfirmation);
     }
 
     public void testMultipleWritableRawContacts() {
         expectQuery()
-                .returnRow(1, WRITABLE_ACCOUNT_TYPE, null, 13, "foo")
-                .returnRow(2, WRITABLE_ACCOUNT_TYPE, null, 13, "foo");
+                .returnRow(1, WRITABLE_ACCOUNT_TYPE, null, 13, "foo", "baz", "bazAlt")
+                .returnRow(2, WRITABLE_ACCOUNT_TYPE, null, 13, "foo", "baz", "bazAlt");
         assertWithMessageId(R.string.multipleContactDeleteConfirmation);
     }
 
     private Query expectQuery() {
         return mContactsProvider.expectQuery(ENTITY_URI).withProjection(
                 Entity.RAW_CONTACT_ID, Entity.ACCOUNT_TYPE, Entity.DATA_SET, Entity.CONTACT_ID,
-                Entity.LOOKUP_KEY);
+                Entity.LOOKUP_KEY, Entity.DISPLAY_NAME, Entity.DISPLAY_NAME_ALTERNATIVE);
     }
 
     private void assertWithMessageId(int messageId) {

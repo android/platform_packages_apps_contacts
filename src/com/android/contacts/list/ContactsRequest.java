@@ -16,10 +16,11 @@
 
 package com.android.contacts.list;
 
-import android.content.Intent;
 import android.net.Uri;
-import android.os.Parcel;
-import android.os.Parcelable;
+
+import com.android.contacts.model.account.AccountWithDataSet;
+
+import java.util.ArrayList;
 
 /**
  * Parsed form of the intent sent to the Contacts application.
@@ -37,6 +38,18 @@ public class ContactsRequest {
 
     /** Show contents of a specific group */
     public static final int ACTION_GROUP = 20;
+
+    /** Show potential new members of a specific group */
+    public static final int ACTION_PICK_GROUP_MEMBERS = 21;
+
+    /** Create a new group */
+    public static final int ACTION_INSERT_GROUP = 22;
+
+    /** View a group */
+    public static final int ACTION_VIEW_GROUP = 23;
+
+    /** Edit a group */
+    public static final int ACTION_EDIT_GROUP = 24;
 
     /** Show all starred contacts */
     public static final int ACTION_STARRED = 30;
@@ -65,6 +78,12 @@ public class ContactsRequest {
     /** Show all postal addresses and pick them when clicking */
     public static final int ACTION_PICK_EMAIL = 105;
 
+    /** Show a list of emails for selected contacts and select them when clicking */
+    public static final int ACTION_PICK_EMAILS = 106;
+
+    /** Show a list of phones for selected contacts and select them when clicking */
+    public static final int ACTION_PICK_PHONES = 107;
+
     /** Show all contacts and create a shortcut for the picked contact */
     public static final int ACTION_CREATE_SHORTCUT_CONTACT = 110;
 
@@ -85,10 +104,12 @@ public class ContactsRequest {
     private CharSequence mTitle;
     private boolean mSearchMode;
     private String mQueryString;
-    private boolean mIncludeProfile;
+    private boolean mIncludeFavorites;
     private boolean mLegacyCompatibilityMode;
     private boolean mDirectorySearchEnabled = true;
     private Uri mContactUri;
+    private AccountWithDataSet mAccountWithDataSet;
+    private ArrayList<String> mRawContactIds;
 
     @Override
     public String toString() {
@@ -97,10 +118,12 @@ public class ContactsRequest {
                 + " mTitle=" + mTitle
                 + " mSearchMode=" + mSearchMode
                 + " mQueryString=" + mQueryString
-                + " mIncludeProfile=" + mIncludeProfile
+                + " mIncludeFavorites=" + mIncludeFavorites
                 + " mLegacyCompatibilityMode=" + mLegacyCompatibilityMode
                 + " mDirectorySearchEnabled=" + mDirectorySearchEnabled
                 + " mContactUri=" + mContactUri
+                + " mAccountWithDataSet=" + mAccountWithDataSet
+                + " mRawContactIds=" + mRawContactIds
                 + "}";
     }
 
@@ -144,12 +167,12 @@ public class ContactsRequest {
         mQueryString = string;
     }
 
-    public boolean shouldIncludeProfile() {
-        return mIncludeProfile;
+    public boolean shouldIncludeFavorites() {
+        return mIncludeFavorites;
     }
 
-    public void setIncludeProfile(boolean includeProfile) {
-        mIncludeProfile = includeProfile;
+    public void setIncludeFavorites(boolean includeFavorites) {
+        mIncludeFavorites = includeFavorites;
     }
 
     public boolean isLegacyCompatibilityMode() {
@@ -178,5 +201,21 @@ public class ContactsRequest {
 
     public void setContactUri(Uri contactUri) {
         this.mContactUri = contactUri;
+    }
+
+    public AccountWithDataSet getAccountWithDataSet() {
+        return mAccountWithDataSet;
+    }
+
+    public void setAccountWithDataSet(AccountWithDataSet accountWithDataSet) {
+        mAccountWithDataSet = accountWithDataSet;
+    }
+
+    public ArrayList<String> getRawContactIds() {
+        return mRawContactIds;
+    }
+
+    public void setRawContactIds(ArrayList<String> rawContactIds) {
+        mRawContactIds = rawContactIds;
     }
 }

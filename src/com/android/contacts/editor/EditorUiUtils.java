@@ -18,13 +18,17 @@ package com.android.contacts.editor;
 
 import static android.provider.ContactsContract.CommonDataKinds.GroupMembership;
 import static android.provider.ContactsContract.CommonDataKinds.StructuredName;
-import static com.android.contacts.common.util.MaterialColorMapUtils.getDefaultPrimaryAndSecondaryColors;
+
+import static com.android.contacts.util.MaterialColorMapUtils.getDefaultPrimaryAndSecondaryColors;
 
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.os.Build;
 import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.provider.ContactsContract.CommonDataKinds.Event;
 import android.provider.ContactsContract.CommonDataKinds.Im;
@@ -36,25 +40,21 @@ import android.provider.ContactsContract.CommonDataKinds.Relation;
 import android.provider.ContactsContract.CommonDataKinds.SipAddress;
 import android.provider.ContactsContract.CommonDataKinds.StructuredPostal;
 import android.provider.ContactsContract.CommonDataKinds.Website;
-import android.media.RingtoneManager;
-import android.net.Uri;
-import android.os.Build;
+import android.support.v4.content.res.ResourcesCompat;
 import android.text.TextUtils;
-import android.util.Pair;
 import android.widget.ImageView;
 
+import com.android.contacts.ContactPhotoManager;
+import com.android.contacts.ContactPhotoManager.DefaultImageProvider;
+import com.android.contacts.ContactPhotoManager.DefaultImageRequest;
+import com.android.contacts.ContactsUtils;
 import com.android.contacts.R;
-import com.android.contacts.common.ContactPhotoManager;
-import com.android.contacts.common.ContactPhotoManager.DefaultImageProvider;
-import com.android.contacts.common.ContactPhotoManager.DefaultImageRequest;
-import com.android.contacts.common.ContactsUtils;
-import com.android.contacts.common.model.ValuesDelta;
-import com.android.contacts.common.model.account.AccountType;
-import com.android.contacts.common.model.account.GoogleAccountType;
-import com.android.contacts.common.model.dataitem.DataKind;
-import com.android.contacts.common.testing.NeededForTesting;
-import com.android.contacts.common.util.MaterialColorMapUtils.MaterialPalette;
+import com.android.contacts.model.ValuesDelta;
+import com.android.contacts.model.account.AccountDisplayInfo;
+import com.android.contacts.model.account.AccountInfo;
+import com.android.contacts.model.dataitem.DataKind;
 import com.android.contacts.util.ContactPhotoUtils;
+import com.android.contacts.util.MaterialColorMapUtils.MaterialPalette;
 import com.android.contacts.widget.QuickContactImageView;
 
 import com.google.common.collect.Maps;
@@ -65,7 +65,6 @@ import java.util.HashMap;
 /**
  * Utility methods for creating contact editor.
  */
-@NeededForTesting
 public class EditorUiUtils {
 
     // Maps DataKind.mimeType to editor view layouts.
@@ -89,9 +88,6 @@ public class EditorUiUtils {
         // Relation.CONTENT_ITEM_TYPE
         //
         // Un-supported mime types need to mapped with -1.
-
-        mimetypeLayoutMap.put(DataKind.PSEUDO_MIME_TYPE_PHONETIC_NAME,
-                R.layout.phonetic_name_editor_view);
         mimetypeLayoutMap.put(StructuredName.CONTENT_ITEM_TYPE,
                 R.layout.structured_name_editor_view);
         mimetypeLayoutMap.put(GroupMembership.CONTENT_ITEM_TYPE, -1);
@@ -113,57 +109,34 @@ public class EditorUiUtils {
         return id;
     }
 
-    /**
-     * Returns the account name and account type labels to display for local accounts.
-     */
-    @NeededForTesting
-    public static Pair<String,String> getLocalAccountInfo(Context context,
-            String accountName, AccountType accountType) {
-        if (TextUtils.isEmpty(accountName)) {
-            return new Pair<>(
-                    /* accountName =*/ null,
-                    context.getString(R.string.local_profile_title));
+
+    public static String getAccountHeaderLabelForMyProfile(Context context,
+            AccountInfo accountInfo) {
+        if (accountInfo.isDeviceAccount()) {
+            return context.getString(R.string.local_profile_title);
+        } else {
+            return context.getString(R.string.external_profile_title,
+                    accountInfo.getTypeLabel());
         }
-        return new Pair<>(
-                accountName,
-                context.getString(R.string.external_profile_title,
-                        accountType.getDisplayLabel(context)));
     }
 
-    /**
-     * Returns the account name and account type labels to display for the given account type.
-     */
-    @NeededForTesting
-    public static Pair<String,String> getAccountInfo(Context context, String accountName,
-            AccountType accountType) {
-        CharSequence accountTypeDisplayLabel = accountType.getDisplayLabel(context);
-        if (TextUtils.isEmpty(accountTypeDisplayLabel)) {
-            accountTypeDisplayLabel = context.getString(R.string.account_phone);
+    public static String getAccountTypeHeaderLabel(Context context, AccountDisplayInfo
+            displayableAccount)  {
+        if (displayableAccount.isDeviceAccount()) {
+            // Do nothing. Type label should be "Device"
+            return displayableAccount.getTypeLabel().toString();
+        } else if (displayableAccount.isGoogleAccount()) {
+            return context.getString(R.string.google_account_type_format,
+                    displayableAccount.getTypeLabel());
+        } else {
+            return context.getString(R.string.account_type_format,
+                    displayableAccount.getTypeLabel());
         }
-
-        if (TextUtils.isEmpty(accountName)) {
-            return new Pair<>(
-                    /* accountName =*/ null,
-                    context.getString(R.string.account_type_format, accountTypeDisplayLabel));
-        }
-
-        final String accountNameDisplayLabel =
-                context.getString(R.string.from_account_format, accountName);
-
-        if (GoogleAccountType.ACCOUNT_TYPE.equals(accountType.accountType)
-                && accountType.dataSet == null) {
-            return new Pair<>(
-                    accountNameDisplayLabel,
-                    context.getString(R.string.google_account_type_format, accountTypeDisplayLabel));
-        }
-        return new Pair<>(
-                accountNameDisplayLabel,
-                context.getString(R.string.account_type_format, accountTypeDisplayLabel));
     }
 
     /**
      * Returns a content description String for the container of the account information
-     * returned by {@link #getAccountInfo}.
+     * returned by {@link #getAccountTypeHeaderLabel(Context, AccountDisplayInfo)}.
      */
     public static String getAccountInfoContentDescription(CharSequence accountName,
             CharSequence accountType) {
@@ -183,32 +156,44 @@ public class EditorUiUtils {
     public static Drawable getMimeTypeDrawable(Context context, String mimeType) {
         switch (mimeType) {
             case StructuredName.CONTENT_ITEM_TYPE:
-                return context.getResources().getDrawable(R.drawable.ic_person_black_24dp);
+                return ResourcesCompat.getDrawable(context.getResources(),
+                        R.drawable.quantum_ic_person_vd_theme_24, null);
             case StructuredPostal.CONTENT_ITEM_TYPE:
-                return context.getResources().getDrawable(R.drawable.ic_place_24dp);
+                return ResourcesCompat.getDrawable(context.getResources(),
+                        R.drawable.quantum_ic_place_vd_theme_24, null);
             case SipAddress.CONTENT_ITEM_TYPE:
-                return context.getResources().getDrawable(R.drawable.ic_dialer_sip_black_24dp);
+                return ResourcesCompat.getDrawable(context.getResources(),
+                        R.drawable.quantum_ic_dialer_sip_vd_theme_24, null);
             case Phone.CONTENT_ITEM_TYPE:
-                return context.getResources().getDrawable(R.drawable.ic_phone_24dp);
+                return ResourcesCompat.getDrawable(context.getResources(),
+                        R.drawable.quantum_ic_phone_vd_theme_24, null);
             case Im.CONTENT_ITEM_TYPE:
-                return context.getResources().getDrawable(R.drawable.ic_message_24dp);
+                return ResourcesCompat.getDrawable(context.getResources(),
+                        R.drawable.quantum_ic_message_vd_theme_24, null);
             case Event.CONTENT_ITEM_TYPE:
-                return context.getResources().getDrawable(R.drawable.ic_event_24dp);
+                return ResourcesCompat.getDrawable(context.getResources(),
+                        R.drawable.quantum_ic_event_vd_theme_24, null);
             case Email.CONTENT_ITEM_TYPE:
-                return context.getResources().getDrawable(R.drawable.ic_email_24dp);
+                return ResourcesCompat.getDrawable(context.getResources(),
+                        R.drawable.quantum_ic_email_vd_theme_24, null);
             case Website.CONTENT_ITEM_TYPE:
-                return context.getResources().getDrawable(R.drawable.ic_public_black_24dp);
+                return ResourcesCompat.getDrawable(context.getResources(),
+                        R.drawable.quantum_ic_public_vd_theme_24, null);
             case Photo.CONTENT_ITEM_TYPE:
-                return context.getResources().getDrawable(R.drawable.ic_camera_alt_black_24dp);
+                return ResourcesCompat.getDrawable(context.getResources(),
+                        R.drawable.quantum_ic_camera_alt_vd_theme_24, null);
             case GroupMembership.CONTENT_ITEM_TYPE:
-                return context.getResources().getDrawable(R.drawable.ic_people_black_24dp);
+                return ResourcesCompat.getDrawable(context.getResources(),
+                        R.drawable.quantum_ic_label_vd_theme_24, null);
             case Organization.CONTENT_ITEM_TYPE:
-                return context.getResources().getDrawable(R.drawable.ic_business_black_24dp);
+                return ResourcesCompat.getDrawable(context.getResources(),
+                        R.drawable.quantum_ic_business_vd_theme_24, null);
             case Note.CONTENT_ITEM_TYPE:
-                return context.getResources().getDrawable(R.drawable.ic_insert_comment_black_24dp);
+                return ResourcesCompat.getDrawable(context.getResources(),
+                        R.drawable.quantum_ic_insert_comment_vd_theme_24, null);
             case Relation.CONTENT_ITEM_TYPE:
-                return context.getResources().getDrawable(
-                        R.drawable.ic_circles_extended_black_24dp);
+                return ResourcesCompat.getDrawable(context.getResources(),
+                        R.drawable.quantum_ic_circles_ext_vd_theme_24, null);
             default:
                 return null;
         }
@@ -217,7 +202,6 @@ public class EditorUiUtils {
     /**
      * Returns a ringtone string based on the ringtone URI and version #.
      */
-    @NeededForTesting
     public static String getRingtoneStringFromUri(Uri pickedUri, int currentVersion) {
         if (isNewerThanM(currentVersion)) {
             if (pickedUri == null) return ""; // silent ringtone
@@ -230,7 +214,6 @@ public class EditorUiUtils {
     /**
      * Returns a ringtone URI, based on the string and version #.
      */
-    @NeededForTesting
     public static Uri getRingtoneUriFromString(String str, int currentVersion) {
         if (str != null) {
             if (isNewerThanM(currentVersion) && TextUtils.isEmpty(str)) return null;
@@ -300,4 +283,5 @@ public class EditorUiUtils {
                 bitmap, size, size, /* filter =*/ false);
         return ContactPhotoUtils.compressBitmap(bitmapScaled);
     }
+
 }

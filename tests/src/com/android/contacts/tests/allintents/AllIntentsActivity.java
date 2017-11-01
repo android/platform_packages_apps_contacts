@@ -35,6 +35,7 @@ import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.CommonDataKinds.StructuredPostal;
 import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.Data;
+import android.provider.ContactsContract.Groups;
 import android.provider.ContactsContract.Intents;
 import android.provider.ContactsContract.Intents.Insert;
 import android.provider.ContactsContract.RawContacts;
@@ -43,6 +44,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.contacts.group.GroupUtil;
+import com.android.contacts.list.UiIntentActions;
 import com.android.contacts.tests.R;
 import com.android.contacts.tests.quickcontact.QuickContactTestsActivity;
 
@@ -65,7 +68,6 @@ public class AllIntentsActivity extends ListActivity
             "com.android.contacts.activities.PeopleActivity";
 
     public enum ContactsIntent {
-        VIEW_CONTACT_WITHOUT_ID,
         ACTION_PICK_CONTACT,
         ACTION_PICK_CONTACT_LEGACY,
         ACTION_PICK_PHONE,
@@ -85,10 +87,12 @@ public class AllIntentsActivity extends ListActivity
         ACTION_INSERT_OR_EDIT,
         ACTION_INSERT_OR_EDIT_PHONE_NUMBER,
         ACTION_INSERT_OR_EDIT_EMAIL_ADDRESS,
+        ACTION_INSERT_GROUP,
         ACTION_SEARCH_CALL,
         ACTION_SEARCH_CONTACT,
         ACTION_SEARCH_EMAIL,
         ACTION_SEARCH_PHONE,
+        ACTION_SEARCH_GENERAL,
         SEARCH_SUGGESTION_CLICKED_CONTACT,
         EDIT_CONTACT,
         EDIT_CONTACT_LOOKUP,
@@ -101,12 +105,23 @@ public class AllIntentsActivity extends ListActivity
         EDIT_NEW_CONTACT_FOR_ACCOUNT_WITH_DATA,
         EDIT_NEW_RAW_CONTACT,
         EDIT_NEW_LEGACY,
+        EDIT_GROUP,
+        VIEW_CONTACT_WITHOUT_ID,
+        VIEW_PERSON_WITHOUT_ID,
         VIEW_CONTACT,
         VIEW_CONTACT_LOOKUP,
         VIEW_CONTACT_LOOKUP_ID,
         VIEW_RAW_CONTACT,
         VIEW_LEGACY,
-        QUICK_CONTACT_TESTS_ACTIVITY;
+        VIEW_GROUP,
+        QUICK_CONTACT_TESTS_ACTIVITY,
+        LIST_DEFAULT,
+        LIST_CONTACTS,
+        LIST_ALL_CONTACTS,
+        LIST_CONTACTS_WITH_PHONES,
+        LIST_STARRED,
+        LIST_FREQUENT,
+        LIST_STREQUENT;
 
         public static ContactsIntent get(int ordinal) {
             return values()[ordinal];
@@ -238,6 +253,12 @@ public class AllIntentsActivity extends ListActivity
                 startActivity(intent);
                 break;
             }
+            case ACTION_INSERT_GROUP: {
+                final Intent intent = new Intent(Intent.ACTION_INSERT);
+                intent.setType(Groups.CONTENT_TYPE);
+                startActivity(intent);
+                break;
+            }
             case ACTION_SEARCH_CALL: {
                 Intent intent = new Intent(Intent.ACTION_SEARCH);
                 intent.putExtra(SearchManager.ACTION_MSG, "call");
@@ -261,6 +282,12 @@ public class AllIntentsActivity extends ListActivity
             case ACTION_SEARCH_PHONE: {
                 Intent intent = new Intent(Intent.ACTION_SEARCH);
                 intent.putExtra(Insert.PHONE, "800");
+                startSearchResultActivity(intent);
+                break;
+            }
+            case ACTION_SEARCH_GENERAL: {
+                Intent intent = new Intent(Intent.ACTION_SEARCH);
+                intent.putExtra(SearchManager.QUERY, "a");
                 startSearchResultActivity(intent);
                 break;
             }
@@ -358,6 +385,13 @@ public class AllIntentsActivity extends ListActivity
                 startActivity(new Intent(Intent.ACTION_INSERT, legacyContentUri));
                 break;
             }
+            case EDIT_GROUP: {
+                final Intent intent = findArbitraryGroupIntent(Intent.ACTION_EDIT);
+                if (intent != null) {
+                    startActivity(intent);
+                }
+                break;
+            }
             case VIEW_CONTACT: {
                 final long contactId = findArbitraryContactWithPhoneNumber();
                 if (contactId != -1) {
@@ -369,6 +403,12 @@ public class AllIntentsActivity extends ListActivity
             }
             case VIEW_CONTACT_WITHOUT_ID: {
                 startActivity(new Intent(Intent.ACTION_VIEW, Contacts.CONTENT_URI));
+                break;
+            }
+            case VIEW_PERSON_WITHOUT_ID: {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setType("vnd.android.cursor.dir/person");
+                startActivity(intent);
                 break;
             }
             case VIEW_CONTACT_LOOKUP: {
@@ -420,8 +460,43 @@ public class AllIntentsActivity extends ListActivity
                 }
                 break;
             }
+            case VIEW_GROUP: {
+                final Intent intent = findArbitraryGroupIntent(Intent.ACTION_VIEW);
+                if (intent != null) {
+                    startActivity(intent);
+                }
+                break;
+            }
             case QUICK_CONTACT_TESTS_ACTIVITY: {
                 startActivity(new Intent(this, QuickContactTestsActivity.class));
+                break;
+            }
+            case LIST_DEFAULT: {
+                startActivity(new Intent(UiIntentActions.LIST_DEFAULT));
+                break;
+            }
+            case LIST_CONTACTS: {
+                startActivity(new Intent(UiIntentActions.LIST_CONTACTS));
+                break;
+            }
+            case LIST_ALL_CONTACTS: {
+                startActivity(new Intent(UiIntentActions.LIST_ALL_CONTACTS_ACTION));
+                break;
+            }
+            case LIST_CONTACTS_WITH_PHONES: {
+                startActivity(new Intent(UiIntentActions.LIST_CONTACTS_WITH_PHONES_ACTION));
+                break;
+            }
+            case LIST_STARRED: {
+                startActivity(new Intent(UiIntentActions.LIST_STARRED_ACTION));
+                break;
+            }
+            case LIST_FREQUENT: {
+                startActivity(new Intent(UiIntentActions.LIST_FREQUENT_ACTION));
+                break;
+            }
+            case LIST_STREQUENT: {
+                startActivity(new Intent(UiIntentActions.LIST_STREQUENT_ACTION));
                 break;
             }
 
@@ -493,6 +568,34 @@ public class AllIntentsActivity extends ListActivity
         }
         Toast.makeText(this, "Failed to find a raw contact of contact with ID " + contactId +
                 ". Aborting", Toast.LENGTH_SHORT).show();
+        return -1;
+    }
+
+    private Intent findArbitraryGroupIntent(String action) {
+        final long groupId = findArbitraryGroup();
+        if (groupId == -1) return  null;
+        final Intent intent = new Intent(action) ;
+        intent.setData(ContentUris.withAppendedId(Groups.CONTENT_URI, groupId));
+        // TODO: ContactsProvider2#getType does handle the group mimetype
+        intent.setClassName("com.google.android.contacts",
+                "com.android.contacts.activities.PeopleActivity");
+        return intent;
+    }
+
+    private long findArbitraryGroup() {
+        final Cursor cursor = getContentResolver().query(Groups.CONTENT_URI,
+                new String[] { Groups._ID },
+                GroupUtil.DEFAULT_SELECTION,
+                null,
+                "RANDOM() LIMIT 1");
+        try {
+            if (cursor.moveToFirst()) {
+                return cursor.getLong(0);
+            }
+        } finally {
+            cursor.close();
+        }
+        Toast.makeText(this, "Failed to find any group. Aborting.", Toast.LENGTH_SHORT).show();
         return -1;
     }
 
