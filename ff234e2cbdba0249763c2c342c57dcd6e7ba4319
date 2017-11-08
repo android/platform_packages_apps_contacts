@@ -1,0 +1,10 @@
+Verified+1: John Shao <johnshao@google.com>
+Code-Review+2: John Shao <johnshao@google.com>
+Code-Review+1: Takahiro Manabe <takahiro.manabe@sony.com>
+Autosubmit+1: John Shao <johnshao@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Wed, 08 Nov 2017 20:37:43 +0000
+Reviewed-on: https://android-review.googlesource.com/518976
+Project: platform/packages/apps/Contacts
+Branch: refs/heads/master
