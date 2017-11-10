@@ -1,0 +1,10 @@
+Code-Review+2: Walter Jang <wjang@google.com>
+Code-Review+2: Gary Mai <garymai@google.com>
+Autosubmit+1: Gary Mai <garymai@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Verified+1: Gary Mai <garymai@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Fri, 10 Nov 2017 17:59:36 +0000
+Reviewed-on: https://android-review.googlesource.com/480857
+Project: platform/packages/apps/Contacts
+Branch: refs/heads/master
