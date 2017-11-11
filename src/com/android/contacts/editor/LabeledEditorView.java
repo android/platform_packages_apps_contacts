@@ -331,6 +331,17 @@ public abstract class LabeledEditorView extends LinearLayout implements Editor, 
         notifyEditorListener();
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public void updatePhonetic(String column, String value) {
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public String getPhonetic(String column){
+        return "";
+    }
+
     protected void saveValue(String column, String value) {
         mEntry.put(column, value);
     }

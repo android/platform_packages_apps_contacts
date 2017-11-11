@@ -1033,8 +1033,6 @@ public class QuickContactActivity extends ContactsActivity {
             mCachedCp2DataCardModel = null;
         }
         mContactLoader.forceLoad();
-
-        NfcHandler.register(this, mLookupUri);
     }
 
     private void destroyInteractionLoaders() {
@@ -1157,6 +1155,7 @@ public class QuickContactActivity extends ContactsActivity {
             }
         };
         mEntriesAndActionsTask.execute();
+        NfcHandler.register(this, mContactData.getLookupUri());
     }
 
     private void bindDataToCards(Cp2DataCardModel cp2DataCardModel) {
