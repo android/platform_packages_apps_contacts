@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8f32f992_81f34c51",
+        "filename": "src/com/android/contacts/vcard/CancelActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1121978
+      },
+      "writtenOn": "2017-11-17T18:05:47Z",
+      "side": 1,
+      "message": "sorry, yes and no here are the same as ok and cancel. you will need to add your own string resource",
+      "range": {
+        "startLine": 94,
+        "startChar": 56,
+        "endLine": 94,
+        "endChar": 59
+      },
+      "revId": "6bfd8523188b604b329128a7bd3bf6037ffd455c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
