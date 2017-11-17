@@ -91,9 +91,10 @@ public class CancelActivity extends Activity implements ServiceConnection {
             }
             final AlertDialog.Builder builder = new AlertDialog.Builder(this)
                     .setMessage(message)
-                    .setPositiveButton(android.R.string.ok, new RequestCancelListener())
+                    .setPositiveButton(R.string.stop_import_export_dialog_yes_txt,
+                            new RequestCancelListener())
                     .setOnCancelListener(mCancelListener)
-                    .setNegativeButton(android.R.string.cancel, mCancelListener);
+                    .setNegativeButton(R.string.stop_import_export_dialog_no_txt, mCancelListener);
             return builder.create();
         } else if (id == R.id.dialog_cancel_failed) {
             final AlertDialog.Builder builder = new AlertDialog.Builder(this)
