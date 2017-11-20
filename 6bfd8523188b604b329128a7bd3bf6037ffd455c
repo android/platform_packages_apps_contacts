@@ -22,6 +22,30 @@
       "revId": "6bfd8523188b604b329128a7bd3bf6037ffd455c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cc4f676a_a887b818",
+        "filename": "src/com/android/contacts/vcard/CancelActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1234073
+      },
+      "writtenOn": "2017-11-20T00:53:28Z",
+      "side": 1,
+      "message": "Thanks. Fixed our code.",
+      "parentUuid": "8f32f992_81f34c51",
+      "range": {
+        "startLine": 94,
+        "startChar": 56,
+        "endLine": 94,
+        "endChar": 59
+      },
+      "revId": "6bfd8523188b604b329128a7bd3bf6037ffd455c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
