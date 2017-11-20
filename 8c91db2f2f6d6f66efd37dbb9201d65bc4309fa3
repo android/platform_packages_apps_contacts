@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0086638f_8469ad25",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 1589,
+      "author": {
+        "id": 1121978
+      },
+      "writtenOn": "2017-11-20T18:36:23Z",
+      "side": 1,
+      "message": "dont forget to change the descriptions",
+      "range": {
+        "startLine": 1589,
+        "startChar": 9,
+        "endLine": 1589,
+        "endChar": 141
+      },
+      "revId": "8c91db2f2f6d6f66efd37dbb9201d65bc4309fa3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
