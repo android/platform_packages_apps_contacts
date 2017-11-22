@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8b289486_8a23e7f0",
+        "filename": "src/com/android/contacts/list/CustomContactListFilterActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1121978
+      },
+      "writtenOn": "2017-11-22T20:39:34Z",
+      "side": 1,
+      "message": "all you need here is DELETED\u003d0, all groups selection includes not null selections for account name and type which are already in the group query",
+      "range": {
+        "startLine": 176,
+        "startChar": 24,
+        "endLine": 176,
+        "endChar": 54
+      },
+      "revId": "e8734f6b404f29b9311e5d755253899b5ed28334",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
