@@ -22,6 +22,30 @@
       "revId": "e8734f6b404f29b9311e5d755253899b5ed28334",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a3f0a83_89da7231",
+        "filename": "src/com/android/contacts/list/CustomContactListFilterActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1234073
+      },
+      "writtenOn": "2017-11-29T06:52:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b289486_8a23e7f0",
+      "range": {
+        "startLine": 176,
+        "startChar": 24,
+        "endLine": 176,
+        "endChar": 54
+      },
+      "revId": "e8734f6b404f29b9311e5d755253899b5ed28334",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
