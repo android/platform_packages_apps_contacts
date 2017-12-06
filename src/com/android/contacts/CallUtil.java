@@ -19,18 +19,23 @@ package com.android.contacts;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.telecom.PhoneAccount;
 import android.telecom.PhoneAccountHandle;
 import android.telecom.TelecomManager;
 import android.telecom.VideoProfile;
+import android.telephony.CarrierConfigManager;
 import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.android.contacts.compat.CompatUtils;
 import com.android.contacts.compat.PhoneAccountSdkCompat;
 import com.android.contacts.util.PermissionsUtil;
 import com.android.contacts.util.PhoneNumberHelper;
 import com.android.contactsbind.FeedbackHelper;
+import com.android.contactsbind.experiments.Flags;
 import com.android.phone.common.PhoneConstants;
 
 import java.util.List;
@@ -60,6 +65,14 @@ public class CallUtil {
      * determined by the presence status associated with contacts.
      */
     public static final int VIDEO_CALLING_PRESENCE = 2;
+
+    /** {@link PhoneAccount#EXTRA_SUPPORTS_VIDEO_CALLING_FALLBACK} */
+    private static final String EXTRA_SUPPORTS_VIDEO_CALLING_FALLBACK =
+            "android.telecom.extra.SUPPORTS_VIDEO_CALLING_FALLBACK";
+
+    /** {@link CarrierConfigManager#CONFIG_ALLOW_VIDEO_CALLING_FALLBACK} */
+    private static final String CONFIG_ALLOW_VIDEO_CALLING_FALLBACK =
+            "allow_video_calling_fallback_bool";
 
     /**
      * Return an Intent for making a phone call. Scheme (e.g. tel, sip) will be determined
@@ -209,5 +222,67 @@ public class CallUtil {
             return false;
         }
 
+    }
+
+    /**
+     * Determines if we're able to use Tachyon as a fallback for video calling.
+     *
+     * @param context The context.
+     * @return {@code true} if there exists a call capable phone account which supports using a
+     * fallback for video calling, the carrier configuration supports a fallback, and the
+     * experiment for using a fallback is enabled. Otherwise {@code false} is returned.
+     */
+    public static boolean isTachyonEnabled(Context context) {
+        // Need to be able to read phone state, and be on at least N to check PhoneAccount extras.
+        if (!PermissionsUtil.hasPermission(context, android.Manifest.permission.READ_PHONE_STATE)
+                || !CompatUtils.isNCompatible()) {
+            return false;
+        }
+        TelecomManager telecommMgr = (TelecomManager)
+                context.getSystemService(Context.TELECOM_SERVICE);
+        if (telecommMgr == null) {
+            return false;
+        }
+        try {
+            List<PhoneAccountHandle> accountHandles = telecommMgr.getCallCapablePhoneAccounts();
+            for (PhoneAccountHandle accountHandle : accountHandles) {
+                PhoneAccount account = telecommMgr.getPhoneAccount(accountHandle);
+                if (account == null) {
+                    continue;
+                }
+                // Check availability for the device config.
+                final Bundle accountExtras = account.getExtras();
+                final boolean deviceEnabled = accountExtras != null && accountExtras.getBoolean(
+                        EXTRA_SUPPORTS_VIDEO_CALLING_FALLBACK);
+                if (Log.isLoggable(TAG, Log.DEBUG)) {
+                    Log.d(TAG, "Device video fallback config: " + deviceEnabled);
+                }
+
+                // Check availability from carrier config.
+                final PersistableBundle carrierConfig = context.getSystemService(
+                        CarrierConfigManager.class).getConfig();
+                final boolean carrierEnabled =
+                        carrierConfig != null && carrierConfig.getBoolean(
+                                CONFIG_ALLOW_VIDEO_CALLING_FALLBACK);
+                if (Log.isLoggable(TAG, Log.DEBUG)) {
+                    Log.d(TAG, "Carrier video fallback config: " + carrierEnabled);
+                }
+
+                // Check experiment value.
+                final boolean experimentEnabled = Flags.getInstance().getBoolean(
+                        Experiments.QUICK_CONTACT_VIDEO_CALL);
+                if (Log.isLoggable(TAG, Log.DEBUG)) {
+                    Log.d(TAG, "Experiment video fallback config: " + experimentEnabled);
+                }
+
+                // All three checks above must be true to enable Tachyon calling.
+                return deviceEnabled && carrierEnabled && experimentEnabled;
+            }
+            return false;
+        } catch (SecurityException e) {
+            FeedbackHelper.sendFeedback(context, TAG,
+                    "Security exception when getting call capable phone accounts", e);
+            return false;
+        }
     }
 }

@@ -529,4 +529,6 @@
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"ಸಿಮ್‌ ಕಾರ್ಡ್‌ನಿಂದ ಸಂಪರ್ಕಗಳನ್ನು ಆಮದು ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"ಸಿಮ್‌ ಆಮದು ಮಾಡಲಾಗುತ್ತಿದೆ"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"ಅಧಿಸೂಚನೆಗಳು"</string>
+    <string name="yes_button" msgid="1268479086848288060">"ಹೌದು"</string>
+    <string name="no_button" msgid="5742815694687835125">"ಇಲ್ಲ"</string>
 </resources>

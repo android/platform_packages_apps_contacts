@@ -529,4 +529,6 @@
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"นำเข้ารายชื่อติดต่อจากซิมการ์ดไม่ได้"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"กำลังนำเข้าจากซิมการ์ด"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"การแจ้งเตือน"</string>
+    <string name="yes_button" msgid="1268479086848288060">"ใช่"</string>
+    <string name="no_button" msgid="5742815694687835125">"ไม่"</string>
 </resources>

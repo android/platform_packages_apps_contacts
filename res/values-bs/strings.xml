@@ -22,9 +22,9 @@
     <string name="shortcutContact" msgid="749243779392912958">"Kontakt"</string>
     <string name="shortcutDialContact" msgid="746622101599186779">"Direktno biranje"</string>
     <string name="shortcutMessageContact" msgid="2460337253595976198">"Direktna poruka"</string>
-    <string name="shortcutActivityTitle" msgid="1504383567778497348">"Izaberi kontakt"</string>
+    <string name="shortcutActivityTitle" msgid="1504383567778497348">"Odaberi kontakt"</string>
     <string name="contactInsertOrEditActivityTitle" msgid="6527505405325862674">"Dodaj u kontakt"</string>
-    <string name="contactPickerActivityTitle" msgid="4301062192337417640">"Izaberi kontakt"</string>
+    <string name="contactPickerActivityTitle" msgid="4301062192337417640">"Odaberi kontakt"</string>
     <string name="groupMemberPickerActivityTitle" msgid="1431750793695262522">"Odaberi"</string>
     <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"Napravi novi kontakt"</string>
     <string name="searchHint" msgid="8482945356247760701">"Pretraži kontakte"</string>
@@ -57,7 +57,7 @@
     <string name="menu_linkedContacts" msgid="400444389718855621">"Prikaz povezanih kontakata"</string>
     <string name="menu_save" msgid="1727844363591825909">"Sačuvaj"</string>
     <string name="titleJoinContactDataWith" msgid="6825255752748313944">"Poveži kontakte"</string>
-    <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"Izaberite kontakt koji želite povezati s kontaktom <xliff:g id="NAME">%s</xliff:g>:"</string>
+    <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"Odaberite kontakt koji želite povezati s kontaktom <xliff:g id="NAME">%s</xliff:g>:"</string>
     <string name="separatorJoinAggregateSuggestions" msgid="2831414448851313345">"Predloženi kontakti"</string>
     <string name="separatorJoinAggregateAll" msgid="7939932265026181043">"Svi kontakti"</string>
     <string name="contactsJoinedNamedMessage" msgid="1299418263439579455">"<xliff:g id="NAME">%s</xliff:g> je povezan"</string>
@@ -127,7 +127,7 @@
     <string name="groupSomeContactsNoPhonesToast" msgid="5530760834827530509">"Neki kontakti nemaju brojeve telefona."</string>
     <string name="menu_sendEmailOption" msgid="5978319931321657780">"Pošalji poruku e-pošte"</string>
     <string name="menu_sendMessageOption" msgid="8850168125274916426">"Pošalji poruku"</string>
-    <string name="pickerSelectContactsActivityTitle" msgid="1936544190231136729">"Izaberite kontakte"</string>
+    <string name="pickerSelectContactsActivityTitle" msgid="1936544190231136729">"Odaberite kontakte"</string>
     <string name="send_to_selection" msgid="2251339182881603540">"Pošalji"</string>
     <string name="listFoundAllContactsZero" msgid="922980883593159444">"Nema kontakata"</string>
     <string name="add_contact_dlg_message_fmt" msgid="7986472669444326576">"Dodati \"<xliff:g id="EMAIL">%s</xliff:g>\" u kontakte?"</string>
@@ -144,7 +144,7 @@
       <item quantity="few">Podijeli kontakte putem</item>
       <item quantity="other">Podijeli kontakte putem</item>
     </plurals>
-    <string name="dialog_new_group_account" msgid="3451312333591556651">"Izaberi račun"</string>
+    <string name="dialog_new_group_account" msgid="3451312333591556651">"Odaberi račun"</string>
     <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"Napravi oznaku"</string>
     <string name="group_name_dialog_update_title" msgid="6328021162869677383">"Preimenuj oznaku"</string>
     <string name="group_name_dialog_hint" msgid="7624523157537700160">"Naziv oznake"</string>
@@ -155,7 +155,7 @@
     <string name="google_account_type_format" msgid="5283997303922067997">"Račun <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
     <string name="take_photo" msgid="7496128293167402354">"Snimi fotografiju"</string>
     <string name="take_new_photo" msgid="7341354729436576304">"Snimi novu fotografiju"</string>
-    <string name="pick_photo" msgid="2129509985223564942">"Izaberi fotografiju"</string>
+    <string name="pick_photo" msgid="2129509985223564942">"Odaberi fotografiju"</string>
     <string name="pick_new_photo" msgid="9122450996263688237">"Odaberi novu fotografiju"</string>
     <string name="search_results_searching" msgid="3984833028938569930">"Pretraživanje…"</string>
     <string name="event_edit_field_hint_text" msgid="5794424930242630477">"Datum"</string>
@@ -192,11 +192,11 @@
     <string name="external_profile_title" msgid="8034998767621359438">"Moj profil <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g>"</string>
     <string name="contact_editor_prompt_zero_accounts" msgid="6648376557574360096">"Odvojite malo vremena da dodate račun putem kojeg će se kontakti sigurnosno kopirati na Google."</string>
     <string name="contact_editor_prompt_one_account" msgid="3087691056345099310">"Novi kontakti će biti sačuvani na račun <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>."</string>
-    <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"Izaberite zadani račun za nove kontakte:"</string>
+    <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"Odaberite zadani račun za nove kontakte:"</string>
     <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"Napravi novi kontakt"</string>
     <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"Uredi kontakt"</string>
     <string name="contact_editor_title_read_only_contact" msgid="2443496574528842237">"Samo prikaz"</string>
-    <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4186699385645902152">"Izaberite kontakt za uređivanje"</string>
+    <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4186699385645902152">"Odaberite kontakt za uređivanje"</string>
     <string name="contact_editor_pick_linked_contact_dialog_title" msgid="4618465940423857694">"Povezani kontakti"</string>
     <string name="contact_editor_add_linked_contact" msgid="426142748048816297">"Dodaj"</string>
     <string name="contact_editor_unlink_contacts" msgid="4525214336177236653">"Prekini povezanost"</string>

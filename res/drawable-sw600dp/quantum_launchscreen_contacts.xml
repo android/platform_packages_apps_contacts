@@ -24,11 +24,4 @@
             android:gravity="center"
             android:src="@drawable/product_logo_contacts_color_192" />
     </item>
-    <item
-        android:id="@+id/launchscreens_logo_text"
-        android:bottom="@dimen/launchscreens_google_logo_bottom">
-        <bitmap
-            android:gravity="center_horizontal|bottom"
-            android:src="@drawable/googlelogo_dark20_color_184x60" />
-    </item>
 </layer-list>
