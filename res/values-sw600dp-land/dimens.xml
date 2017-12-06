@@ -17,7 +17,6 @@
     <!-- Copied from java/com/google/android/assets/launchscreens/res/values-sw600dp-land-v21/dimens.xml -->
     <!-- Values adjusted for nav bar size due to windowDrawsSystemBarBackgrounds -->
     <dimen name="launchscreens_product_logo_bottom">72dp</dimen>
-    <dimen name="launchscreens_google_logo_bottom">96dp</dimen>
 
     <!-- Height for the image for empty group view-->
     <dimen name="empty_view_image_height">180dp</dimen>

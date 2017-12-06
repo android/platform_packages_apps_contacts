@@ -35,6 +35,7 @@ import android.content.IntentFilter;
 import android.content.Loader;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -105,7 +106,6 @@ import com.android.contacts.ContactSaveService;
 import com.android.contacts.ContactsActivity;
 import com.android.contacts.ContactsUtils;
 import com.android.contacts.DynamicShortcuts;
-import com.android.contacts.Experiments;
 import com.android.contacts.NfcHandler;
 import com.android.contacts.R;
 import com.android.contacts.ShortcutIntentBuilder;
@@ -176,7 +176,6 @@ import com.android.contacts.widget.MultiShrinkScroller;
 import com.android.contacts.widget.MultiShrinkScroller.MultiShrinkScrollerListener;
 import com.android.contacts.widget.QuickContactImageView;
 import com.android.contactsbind.HelpUtils;
-import com.android.contactsbind.experiments.Flags;
 
 import com.google.common.collect.Lists;
 
@@ -1460,6 +1459,7 @@ public class QuickContactActivity extends ContactsActivity {
         Trace.beginSection("Build data items map");
 
         final Map<String, List<DataItem>> dataItemsMap = new HashMap<>();
+        final boolean tachyonEnabled = CallUtil.isTachyonEnabled(this);
 
         for (RawContact rawContact : data.getRawContacts()) {
             for (DataItem dataItem : rawContact.getDataItems()) {
@@ -1469,6 +1469,7 @@ public class QuickContactActivity extends ContactsActivity {
                 if (mimeType == null) continue;
 
                 if (!MIMETYPE_TACHYON.equals(mimeType)) {
+                    // Only validate non-Tachyon mimetypes.
                     final AccountType accountType = rawContact.getAccountType(this);
                     final DataKind dataKind = AccountTypeManager.getInstance(this)
                             .getKindOrFallback(accountType, mimeType);
@@ -1480,6 +1481,9 @@ public class QuickContactActivity extends ContactsActivity {
                             dataKind));
 
                     if (isMimeExcluded(mimeType) || !hasData) continue;
+                } else if (!tachyonEnabled) {
+                    // If tachyon isn't enabled, skip its mimetypes.
+                    continue;
                 }
 
                 List<DataItem> dataItemListByType = dataItemsMap.get(mimeType);
@@ -1824,7 +1828,7 @@ public class QuickContactActivity extends ContactsActivity {
                     thirdIntent.putExtra(EXTRA_ACTION_TYPE, ActionType.VIDEOCALL);
                     thirdContentDescription =
                             res.getString(R.string.description_video_call);
-                } else if (Flags.getInstance().getBoolean(Experiments.QUICK_CONTACT_VIDEO_CALL)
+                } else if (CallUtil.isTachyonEnabled(context)
                         && ((PhoneDataItem) dataItem).isTachyonReachable()) {
                     thirdIcon = res.getDrawable(R.drawable.quantum_ic_videocam_vd_theme_24);
                     thirdAction = Entry.ACTION_INTENT;
@@ -1919,8 +1923,8 @@ public class QuickContactActivity extends ContactsActivity {
                     aboutCardName.value = res.getString(R.string.about_card_title);
                 }
             }
-        } else if (Flags.getInstance().getBoolean(Experiments.QUICK_CONTACT_VIDEO_CALL)
-                && MIMETYPE_TACHYON.equals(dataItem.getMimeType())) {
+        } else if (CallUtil.isTachyonEnabled(context) && MIMETYPE_TACHYON.equals(
+                dataItem.getMimeType())) {
             // Skip these actions. They will be placed by the phone number.
             return null;
         } else {
@@ -2698,21 +2702,26 @@ public class QuickContactActivity extends ContactsActivity {
      * Creates a launcher shortcut with the current contact.
      */
     private void createLauncherShortcutWithContact() {
-        final ShortcutIntentBuilder builder = new ShortcutIntentBuilder(this,
-                new OnShortcutIntentCreatedListener() {
+        if (BuildCompat.isAtLeastO()) {
+            final ShortcutManager shortcutManager = (ShortcutManager)
+                    getSystemService(SHORTCUT_SERVICE);
+            final DynamicShortcuts shortcuts =
+                    new DynamicShortcuts(QuickContactActivity.this);
+            String displayName = mContactData.getDisplayName();
+            if (displayName == null) {
+                displayName = getString(R.string.missing_name);
+            }
+            final ShortcutInfo shortcutInfo = shortcuts.getQuickContactShortcutInfo(
+                    mContactData.getId(), mContactData.getLookupKey(), displayName);
+            if (shortcutInfo != null) {
+                shortcutManager.requestPinShortcut(shortcutInfo, null);
+            }
+        } else {
+            final ShortcutIntentBuilder builder = new ShortcutIntentBuilder(this,
+                    new OnShortcutIntentCreatedListener() {
 
-                    @Override
-                    public void onShortcutIntentCreated(Uri uri, Intent shortcutIntent) {
-                        if (BuildCompat.isAtLeastO()) {
-                            final ShortcutManager shortcutManager = (ShortcutManager)
-                                    getSystemService(SHORTCUT_SERVICE);
-                            final DynamicShortcuts shortcuts =
-                                    new DynamicShortcuts(QuickContactActivity.this);
-                            shortcutManager.requestPinShortcut(
-                                    shortcuts.getQuickContactShortcutInfo(
-                                            mContactData.getId(), mContactData.getLookupKey(),
-                                            mContactData.getDisplayName()), null);
-                        } else {
+                        @Override
+                        public void onShortcutIntentCreated(Uri uri, Intent shortcutIntent) {
                             // Broadcast the shortcutIntent to the launcher to create a
                             // shortcut to this contact
                             shortcutIntent.setAction(ACTION_INSTALL_SHORTCUT);
@@ -2728,9 +2737,9 @@ public class QuickContactActivity extends ContactsActivity {
                             Toast.makeText(QuickContactActivity.this, toastMessage,
                                     Toast.LENGTH_SHORT).show();
                         }
-                    }
-                });
-        builder.createContactShortcutIntent(mContactData.getLookupUri());
+                    });
+            builder.createContactShortcutIntent(mContactData.getLookupUri());
+        }
     }
 
     private boolean isShortcutCreatable() {

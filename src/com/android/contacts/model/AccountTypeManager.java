@@ -622,9 +622,10 @@ class AccountTypeManagerImpl extends AccountTypeManager
             final AccountWithDataSet accountWithDataSet = new AccountWithDataSet(
                     account.name, account.type, null);
             final AccountType type = mTypeProvider.getTypeForAccount(accountWithDataSet);
-
-            // Accounts with a dataSet (e.g. Google plus accounts) are not writable.
-            result.add(type.wrapAccount(mContext, accountWithDataSet));
+            if (type != null) {
+                // Accounts with a dataSet (e.g. Google plus accounts) are not writable.
+                result.add(type.wrapAccount(mContext, accountWithDataSet));
+            }
         }
         return result;
     }

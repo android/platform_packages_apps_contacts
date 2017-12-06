@@ -216,7 +216,7 @@
     <string name="add_new_account" msgid="5748627740680940264">"إضافة حساب جديد"</string>
     <string name="menu_export_database" msgid="2659719297530170820">"تصدير ملفات قاعدة البيانات"</string>
     <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"إنشاء جهة اتصال جديدة"</string>
-    <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"الاطلاع على المزيد"</string>
+    <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"الاطّلاع على المزيد"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"عرض أقل"</string>
     <string name="recent_card_title" msgid="8982782042698001695">"الأخيرة"</string>
     <string name="about_card_title" msgid="2920942314212825637">"حول"</string>
@@ -266,7 +266,7 @@
     <string name="navigation_drawer_label" msgid="4154758025620107419">"التصنيف <xliff:g id="LABEL_NAME">%s</xliff:g>"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"التصنيفات"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"الحسابات"</string>
-    <string name="permission_explanation_header" msgid="5739405825039695327">"الاطلاع على المحادثات والأحداث التي جمعتكما"</string>
+    <string name="permission_explanation_header" msgid="5739405825039695327">"الاطّلاع على المحادثات والأحداث التي جمعتكما"</string>
     <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"الأحداث والرسائل"</string>
     <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"الأحداث"</string>
     <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"الرسائل"</string>
@@ -486,7 +486,7 @@
     <string name="setting_about" msgid="7014388749752042863">"حول جهات الاتصال"</string>
     <string name="share_favorite_contacts" msgid="4280926751003081042">"مشاركة جهات الاتصال المفضلة"</string>
     <string name="share_contacts" msgid="8109287987498711664">"مشاركة جميع جهات الاتصال"</string>
-    <string name="share_contacts_failure" msgid="1216431977330560559">"أخفقت مشاركة جهات الاتصال."</string>
+    <string name="share_contacts_failure" msgid="1216431977330560559">"تعذّرت مشاركة جهات الاتصال."</string>
     <string name="dialog_export" msgid="1628001095187741417">"تصدير جهات الاتصال"</string>
     <string name="dialog_import" msgid="2423592905927819672">"استيراد جهات اتصال من"</string>
     <string name="share_error" msgid="948429331673358107">"لا يمكن مشاركة جهة الاتصال هذه."</string>
@@ -557,4 +557,6 @@
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"‏تعذر استيراد جهات الاتصال من شريحة SIM"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"‏استيراد SIM"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"الإشعارات"</string>
+    <string name="yes_button" msgid="1268479086848288060">"نعم"</string>
+    <string name="no_button" msgid="5742815694687835125">"لا"</string>
 </resources>

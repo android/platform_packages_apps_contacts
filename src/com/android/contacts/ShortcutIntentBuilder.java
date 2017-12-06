@@ -276,6 +276,9 @@ public class ShortcutIntentBuilder {
     private void createContactShortcutIntent(Uri contactUri, String contentType, String displayName,
             String lookupKey, byte[] bitmapData) {
         Intent intent = null;
+        if (TextUtils.isEmpty(displayName)) {
+            displayName = mContext.getResources().getString(R.string.missing_name);
+        }
         if (BuildCompat.isAtLeastO()) {
             final long contactId = ContentUris.parseId(contactUri);
             final ShortcutManager sm = (ShortcutManager)
@@ -283,12 +286,11 @@ public class ShortcutIntentBuilder {
             final DynamicShortcuts dynamicShortcuts = new DynamicShortcuts(mContext);
             final ShortcutInfo shortcutInfo = dynamicShortcuts.getQuickContactShortcutInfo(
                     contactId, lookupKey, displayName);
-            intent = sm.createShortcutResultIntent(shortcutInfo);
+            if (shortcutInfo != null) {
+                intent = sm.createShortcutResultIntent(shortcutInfo);
+            }
         }
         final Drawable drawable = getPhotoDrawable(bitmapData, displayName, lookupKey);
-        if (TextUtils.isEmpty(displayName)) {
-            displayName = mContext.getResources().getString(R.string.missing_name);
-        }
 
         final Intent shortcutIntent = ImplicitIntentsUtil.getIntentForQuickContactLauncherShortcut(
                 mContext, contactUri);
@@ -346,7 +348,9 @@ public class ShortcutIntentBuilder {
             final DynamicShortcuts dynamicShortcuts = new DynamicShortcuts(mContext);
             final ShortcutInfo shortcutInfo = dynamicShortcuts.getActionShortcutInfo(
                     id, displayName, shortcutIntent, compatAdaptiveIcon.toIcon());
-            intent = sm.createShortcutResultIntent(shortcutInfo);
+            if (shortcutInfo != null) {
+                intent = sm.createShortcutResultIntent(shortcutInfo);
+            }
         }
 
         intent = intent == null ? new Intent() : intent;

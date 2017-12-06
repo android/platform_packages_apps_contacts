@@ -297,6 +297,7 @@ public class DynamicShortcuts {
         final ShortcutInfo.Builder builder = new ShortcutInfo.Builder(mContext, id)
                 .setIntent(action)
                 .setIcon(icon)
+                .setExtras(extras)
                 .setDisabledMessage(mContext.getString(R.string.dynamic_shortcut_disabled_message));
 
         setLabel(builder, label);
@@ -305,6 +306,9 @@ public class DynamicShortcuts {
 
     public ShortcutInfo getQuickContactShortcutInfo(long id, String lookupKey, String displayName) {
         final ShortcutInfo.Builder builder = builderForContactShortcut(id, lookupKey, displayName);
+        if (builder == null) {
+            return null;
+        }
         addIconForContact(id, lookupKey, displayName, builder);
         return builder.build();
     }

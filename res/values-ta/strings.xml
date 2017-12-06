@@ -529,4 +529,6 @@
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"சிம் கார்டிலிருந்து தொடர்புகளை இறக்க முடியவில்லை"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"சிம் கார்டை இறக்குகிறது"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"அறிவிப்புகள்"</string>
+    <string name="yes_button" msgid="1268479086848288060">"ஆம்"</string>
+    <string name="no_button" msgid="5742815694687835125">"இல்லை"</string>
 </resources>

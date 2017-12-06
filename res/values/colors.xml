@@ -14,8 +14,6 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Adaptive icon background layer color -->
-    <color name="ic_contacts_launcher_background">#2458CA</color>
     <color name="ic_add_contact_shortcut_background">#F5F5F5</color>
 
     <!-- 87% black -->
