@@ -521,7 +521,7 @@
     <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"Avto sinxronlash yoqilsinmi?"</string>
     <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"Ilova va hisoblarga kiritgan o‘zgarishlar (nafaqat Google Kontaktlar), ularning veb-versiyalaridan qurilmalarga avtomatik sinxronlanadi."</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"Yoqish"</string>
-    <string name="connection_error_message" msgid="7046408921529247089">"Aloqa yo‘q"</string>
+    <string name="connection_error_message" msgid="7046408921529247089">"Internetga ulanmagansiz"</string>
     <string name="single_sim_display_label" msgid="6985770499439371497">"SIM karta"</string>
     <string name="show_more_content_description" msgid="4277410425912984722">"Yana"</string>
     <string name="importing_sim_finished_title" msgid="5196369441294050721">"Kontaktlar SIM kartadan import qilindi"</string>
@@ -529,4 +529,6 @@
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"Kontaktlarni SIM kartadan import qilib bo‘lmadi."</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"Kontakt. SIM kartadan import qilinmoqda…"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"Bildirishnomalar"</string>
+    <string name="yes_button" msgid="1268479086848288060">"Ha"</string>
+    <string name="no_button" msgid="5742815694687835125">"Yo‘q"</string>
 </resources>
