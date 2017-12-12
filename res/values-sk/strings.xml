@@ -543,4 +543,6 @@
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"Nepodarilo sa importovať kontakty zo SIM karty"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"Importuje sa SIM karta"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"Upozornenia"</string>
+    <string name="yes_button" msgid="1268479086848288060">"Áno"</string>
+    <string name="no_button" msgid="5742815694687835125">"Nie"</string>
 </resources>

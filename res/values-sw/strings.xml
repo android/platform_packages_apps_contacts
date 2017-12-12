@@ -421,7 +421,7 @@
     <string name="exporting_vcard_finished_title" msgid="4767045779458185251">"Imemaliza kuhamisha <xliff:g id="FILENAME">%s</xliff:g>"</string>
     <string name="exporting_vcard_finished_title_fallback" msgid="6060472638008218274">"Anwani zimehamishwa."</string>
     <string name="exporting_vcard_finished_toast" msgid="1739055986856453882">"Anwani zimehamishwa; bofya arifa ili ushiriki anwani."</string>
-    <string name="touch_to_share_contacts" msgid="4882485525268469736">"Gonga ili ushiriki anwani."</string>
+    <string name="touch_to_share_contacts" msgid="4882485525268469736">"Gusa ili ushiriki anwani."</string>
     <string name="exporting_vcard_canceled_title" msgid="2652222370493306887">"Kuhamisha <xliff:g id="FILENAME">%s</xliff:g> kumeghairiwa"</string>
     <string name="exporting_contact_list_title" msgid="9072240631534457415">"Inahamisha data ya anwani"</string>
     <string name="exporting_contact_list_message" msgid="3367949209642931952">"Data ya anwani inahamishwa."</string>
@@ -515,9 +515,9 @@
     <string name="sim_import_failed_toast" msgid="5559267299793622705">"Imeshindwa kuleta anwani zilizo kwenye SIM kadi"</string>
     <string name="sim_import_title" msgid="2511154832820812822">"Leta kutoka kwenye SIM kadi"</string>
     <string name="sim_import_cancel_content_description" msgid="1619832410253424452">"Ghairi"</string>
-    <string name="auto_sync_off" msgid="2180147284456026587">"Usawazishaji wa kiotomatiki umezimwa. Gonga ili uuwashe."</string>
+    <string name="auto_sync_off" msgid="2180147284456026587">"Usawazishaji wa kiotomatiki umezimwa. Gusa ili uuwashe."</string>
     <string name="dismiss_sync_alert" msgid="8941131776605093596">"Ondoa"</string>
-    <string name="account_sync_off" msgid="7646143254066243924">"Usawazishaji wa akaunti umezimwa. Gonga ili uuwashe."</string>
+    <string name="account_sync_off" msgid="7646143254066243924">"Usawazishaji wa akaunti umezimwa. Gusa ili uuwashe."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"Je, unataka kuwasha usawazishaji wa kiotomatiki?"</string>
     <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"Mabadiliko utakayofanya katika programu na akaunti zote, wala si katika Anwani tu, yatasawazishwa kwenye wavuti na kwenye vifaa vyako."</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"Washa"</string>
@@ -529,4 +529,6 @@
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"Imeshindwa kuleta anwani kutoka kwenye SIM kadi"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"Anwani zilizo kwenye SIM kadi zinaletwa"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"Arifa"</string>
+    <string name="yes_button" msgid="1268479086848288060">"Ndiyo"</string>
+    <string name="no_button" msgid="5742815694687835125">"La"</string>
 </resources>

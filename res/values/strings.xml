@@ -1586,4 +1586,10 @@
     <!-- Text shown when viewing channel settings for default Contacts notifications [CHAR LIMIT=50] -->
     <string name="contacts_default_notification_channel">Notifications</string>
 
+    <!-- Text of Positive Button in dialog -->
+    <string name="yes_button">Yes</string>
+
+    <!-- Text of Negative Button in dialog -->
+    <string name="no_button">No</string>
+
 </resources>

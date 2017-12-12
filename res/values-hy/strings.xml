@@ -529,4 +529,6 @@
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"Չհաջողվեց կոնտակտներ ներմուծել SIM քարտից"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"SIM քարտի ներմուծում"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"Ծանուցումներ"</string>
+    <string name="yes_button" msgid="1268479086848288060">"Այո"</string>
+    <string name="no_button" msgid="5742815694687835125">"Ոչ"</string>
 </resources>

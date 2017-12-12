@@ -529,4 +529,6 @@
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"সিম কার্ড থেকে পরিচিতিগুলি আমদানি করা গেল না"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"সিম আমদানি করা হচ্ছে"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"বিজ্ঞপ্তি"</string>
+    <string name="yes_button" msgid="1268479086848288060">"হ্যাঁ"</string>
+    <string name="no_button" msgid="5742815694687835125">"না"</string>
 </resources>

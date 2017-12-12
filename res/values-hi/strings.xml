@@ -240,7 +240,7 @@
     <string name="quickcontact_suggestion_cancel_button" msgid="8236954313106630862">"अभी नहीं"</string>
     <string name="suggestion_card_this_contact_title" msgid="3039457405374454914">"यह संपर्क"</string>
     <string name="suggestion_card_duplicates_title" msgid="9107788743178980902">"संभावित कॉपी"</string>
-    <string name="suggestion_card_help_message" msgid="4474061044387181093">"हो सकता है कि ये संपर्क एक ही व्‍यक्‍ति हो. आप उन्हें एकल संपर्क के रूप में एक साथ लिंक कर सकते हैं."</string>
+    <string name="suggestion_card_help_message" msgid="4474061044387181093">"हो सकता है कि ये संपर्क एक ही व्‍यक्‍ति हो. आप उन्हें एक ही संपर्क के रूप में एक साथ लिंक कर सकते हैं."</string>
     <string name="editor_delete_view_description" msgid="8583095381562991959">"<xliff:g id="DATA_TYPE">%1$s </xliff:g><xliff:g id="DATA_KIND">%2$s</xliff:g> हटाएं"</string>
     <string name="editor_delete_view_description_short" msgid="7335518371270844912">"<xliff:g id="DATA_KIND">%s</xliff:g> हटाएं"</string>
     <string name="menu_assistant" msgid="5760693735722052454">"सुझाव"</string>
@@ -529,4 +529,6 @@
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"SIM कार्ड से संपर्क आयात नहीं किए जा सके"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"SIM को आयात किया जा रहा है"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"नोटिफ़िकेशन"</string>
+    <string name="yes_button" msgid="1268479086848288060">"हां"</string>
+    <string name="no_button" msgid="5742815694687835125">"नहीं"</string>
 </resources>

@@ -529,4 +529,6 @@
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"SIM ਕਾਰਡ ਤੋਂ ਸੰਪਰਕ ਆਯਾਤ ਨਹੀਂ ਕੀਤੇ ਜਾ ਸਕੇ"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"ਸਿਮ ਆਯਾਤ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"ਸੂਚਨਾਵਾਂ"</string>
+    <string name="yes_button" msgid="1268479086848288060">"ਹਾਂ"</string>
+    <string name="no_button" msgid="5742815694687835125">"ਨਹੀਂ"</string>
 </resources>

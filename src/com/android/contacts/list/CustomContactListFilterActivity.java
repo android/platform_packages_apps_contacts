@@ -171,7 +171,8 @@ public class CustomContactListFilterActivity extends Activity implements
                 if (account.dataSet != null) {
                     groupsUri.appendQueryParameter(Groups.DATA_SET, account.dataSet).build();
                 }
-                final Cursor cursor = resolver.query(groupsUri.build(), null, null, null, null);
+                final Cursor cursor = resolver.query(groupsUri.build(), null,
+                        Groups.DELETED + "=0", null, null);
                 if (cursor == null) {
                     continue;
                 }
