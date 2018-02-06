@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "88c7235e_9a2ca5fb",
+        "filename": "src/com/android/contacts/compat/TelephonyManagerCompat.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1121978
+      },
+      "writtenOn": "2018-02-06T00:07:20Z",
+      "side": 1,
+      "message": "/** Returns a constant indicating the state of the device SIM card in a slot. */\n  public static int getSimState(@Nullable TelephonyManager telephonyManager, int slotId) {\n    if (telephonyManager \u003d\u003d null) {\n      return TelephonyManager.SIM_STATE_UNKNOWN;\n    }\n\n    if (CompatUtils.isOCompatible()) {\n      return telephonyManager.getSimState(slotId);\n    }\n\n    if (getPhoneCount(telephonyManager) \u003d\u003d 1) {\n      return telephonyManager.getSimState();\n    }\n\n    Integer result \u003d null;\n    if (CompatUtils.isMarshmallowCompatible()) {\n      result \u003d\n          (Integer)\n              CompatUtils.invokeMethod(\n                  telephonyManager,\n                  \"getSimState\",\n                  new Class\u003c?\u003e[] {Integer.TYPE},\n                  new Object[] {slotId});\n    }\n    return result !\u003d null ? result : TelephonyManager.SIM_STATE_UNKNOWN;\n  }",
+      "range": {
+        "startLine": 171,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 5
+      },
+      "revId": "bb7a89264d6c46e21c2340c03e3a68415a62cf7b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
