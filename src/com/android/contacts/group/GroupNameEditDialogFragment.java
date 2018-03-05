@@ -133,7 +133,7 @@ public final class GroupNameEditDialogFragment extends DialogFragment implements
         mAccount = getArguments().getParcelable(ARG_ACCOUNT);
 
         // There is only one loader so the id arg doesn't matter.
-        getLoaderManager().initLoader(0, null, this);
+        getLoaderManager().restartLoader(0, null, this);
     }
 
     @Override
