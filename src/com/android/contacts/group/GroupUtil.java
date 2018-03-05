@@ -170,9 +170,11 @@ public final class GroupUtil {
         final Intent intent = new Intent(context, ContactSelectionActivity.class);
         intent.setAction(Intent.ACTION_PICK);
         intent.setType(Groups.CONTENT_TYPE);
-        intent.putExtra(UiIntentActions.GROUP_ACCOUNT_NAME, groupMetaData.accountName);
-        intent.putExtra(UiIntentActions.GROUP_ACCOUNT_TYPE, groupMetaData.accountType);
-        intent.putExtra(UiIntentActions.GROUP_ACCOUNT_DATA_SET, groupMetaData.dataSet);
+        if (groupMetaData != null) {
+            intent.putExtra(UiIntentActions.GROUP_ACCOUNT_NAME, groupMetaData.accountName);
+            intent.putExtra(UiIntentActions.GROUP_ACCOUNT_TYPE, groupMetaData.accountType);
+            intent.putExtra(UiIntentActions.GROUP_ACCOUNT_DATA_SET, groupMetaData.dataSet);
+        }
         intent.putExtra(UiIntentActions.GROUP_CONTACT_IDS, memberContactIds);
         return intent;
     }
