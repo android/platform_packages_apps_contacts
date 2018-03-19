@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "84266c31_6a6d4d8e",
+        "filename": "res/drawable/quantum_ic_drawer_emergency_info_24.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1058725
+      },
+      "writtenOn": "2018-03-19T14:53:30Z",
+      "side": 1,
+      "message": "indentation",
+      "revId": "ba0439d6119fc655c521262c4ac8d4b10ce9b049",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b317670_5d549bcb",
+        "filename": "src/com/android/contacts/util/ImplicitIntentsUtil.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1058725
+      },
+      "writtenOn": "2018-03-19T14:53:30Z",
+      "side": 1,
+      "message": "android.settings.EDIT_EMERGENCY_INFO",
+      "range": {
+        "startLine": 207,
+        "startChar": 36,
+        "endLine": 207,
+        "endChar": 72
+      },
+      "revId": "ba0439d6119fc655c521262c4ac8d4b10ce9b049",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
