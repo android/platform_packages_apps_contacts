@@ -88,7 +88,8 @@ public class PhotoSourceDialogFragment extends DialogFragment {
                         listener.onPickFromGalleryChosen();
                         break;
                 }
-                dismiss();
+                //dismiss();
+                dismissAllowingStateLoss();
             }
         };
 
