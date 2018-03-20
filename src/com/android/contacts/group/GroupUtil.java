@@ -60,7 +60,8 @@ public final class GroupUtil {
     public static final String ACTION_SWITCH_GROUP = "switchGroup";
     public static final String ACTION_UPDATE_GROUP = "updateGroup";
 
-    public static final int RESULT_SEND_TO_SELECTION = 100;
+    public static final int RESULT_GROUP_ADD_MEMBER = 100;
+    public static final int RESULT_SEND_TO_SELECTION = 200;
 
     // System IDs of FFC groups in Google accounts
     private static final Set<String> FFC_GROUPS =

@@ -90,7 +90,6 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
 
     private static final int LOADER_GROUP_METADATA = 100;
     private static final int MSG_FAIL_TO_LOAD = 1;
-    private static final int RESULT_GROUP_ADD_MEMBER = 100;
 
     /** Filters out duplicate contacts. */
     private class FilterCursorWrapper extends CursorWrapper {
@@ -448,7 +447,7 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
 
     private void startGroupAddMemberActivity() {
         startActivityForResult(GroupUtil.createPickMemberIntent(getContext(), mGroupMetaData,
-                getMemberContactIds()), RESULT_GROUP_ADD_MEMBER);
+                getMemberContactIds()), GroupUtil.RESULT_GROUP_ADD_MEMBER);
     }
 
     @Override
@@ -504,7 +503,7 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode != Activity.RESULT_OK || data == null
-                || requestCode != RESULT_GROUP_ADD_MEMBER) {
+                || requestCode != GroupUtil.RESULT_GROUP_ADD_MEMBER) {
             return;
         }
 
@@ -776,7 +775,7 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
             @Override
             public void onClick(View v) {
                 startActivityForResult(GroupUtil.createPickMemberIntent(getContext(),
-                        mGroupMetaData, getMemberContactIds()), RESULT_GROUP_ADD_MEMBER);
+                        mGroupMetaData, getMemberContactIds()), GroupUtil.RESULT_GROUP_ADD_MEMBER);
             }
         });
         return view;
