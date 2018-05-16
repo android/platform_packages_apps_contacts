@@ -90,7 +90,7 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
 
     private static final String ARG_GROUP_URI = "groupUri";
 
-    private static final int LOADER_GROUP_METADATA = 0;
+    private static final int LOADER_GROUP_METADATA = 100;
     private static final int MSG_FAIL_TO_LOAD = 1;
     private static final int RESULT_GROUP_ADD_MEMBER = 100;
 
