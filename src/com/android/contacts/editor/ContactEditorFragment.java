@@ -950,8 +950,10 @@ public class ContactEditorFragment extends Fragment implements
         if (isEditingReadOnlyRawContactWithNewContact()) {
             // We created a new raw contact delta with a default display name.
             // We must test for pending changes while ignoring the default display name.
-            final ValuesDelta beforeDelta = mState.getByRawContactId(mReadOnlyDisplayNameId)
-                    .getSuperPrimaryEntry(StructuredName.CONTENT_ITEM_TYPE);
+            final RawContactDelta beforeRawContactDelta = mState
+                    .getByRawContactId(mReadOnlyDisplayNameId);
+            final ValuesDelta beforeDelta = beforeRawContactDelta == null ? null :
+                  beforeRawContactDelta.getSuperPrimaryEntry(StructuredName.CONTENT_ITEM_TYPE);
             final ValuesDelta pendingDelta = mState
                     .getSuperPrimaryEntry(StructuredName.CONTENT_ITEM_TYPE);
             if (structuredNamesAreEqual(beforeDelta, pendingDelta)) {

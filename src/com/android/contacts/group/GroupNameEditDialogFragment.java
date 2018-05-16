@@ -318,6 +318,9 @@ public final class GroupNameEditDialogFragment extends DialogFragment implements
     }
 
     private void showInputMethod(View view) {
+        if (getActivity() == null) {
+            return;
+        }
         final InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(
                 Context.INPUT_METHOD_SERVICE);
         if (imm != null) {
