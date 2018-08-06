@@ -250,7 +250,7 @@
     <string name="navigation_drawer_label" msgid="4154758025620107419">"Etichetta <xliff:g id="LABEL_NAME">%s</xliff:g>"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"Etichette"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"Account"</string>
-    <string name="permission_explanation_header" msgid="5739405825039695327">"Visualizza la cronologia insieme"</string>
+    <string name="permission_explanation_header" msgid="5739405825039695327">"Vedi la vostra cronologia insieme"</string>
     <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"Eventi e messaggi"</string>
     <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"Eventi"</string>
     <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"Messaggi"</string>
@@ -469,7 +469,7 @@
     <string name="no_contact_to_share" msgid="1276397530378323033">"Nessun contatto da condividere."</string>
     <string name="menu_contacts_filter" msgid="2165153460860262501">"Contatti da visualizzare"</string>
     <string name="activity_title_contacts_filter" msgid="8275542497615516969">"Contatti da visualizzare"</string>
-    <string name="custom_list_filter" msgid="9048525797111024204">"Personalizza visualiz."</string>
+    <string name="custom_list_filter" msgid="9048525797111024204">"Personalizza visualizzazione"</string>
     <string name="menu_custom_filter_save" msgid="2679793632208086460">"Salva"</string>
     <string name="hint_findContacts" msgid="7128627979899070325">"Cerca contatti"</string>
     <string name="contactsFavoritesLabel" msgid="8417039765586853670">"Preferiti"</string>

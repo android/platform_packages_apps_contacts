@@ -440,10 +440,10 @@
     <string name="contacts_export_will_start_message" msgid="8538705791417534431">"Danh bạ sẽ được xuất ngay."</string>
     <string name="vcard_export_request_rejected_message" msgid="2844874826431327531">"Yêu cầu xuất vCard bị từ chối. Hãy thử lại sau."</string>
     <string name="vcard_unknown_filename" msgid="7171709890959915954">"địa chỉ liên hệ"</string>
-    <string name="caching_vcard_message" msgid="4926308675041506756">"Đang lưu vào bộ nhớ cache các tệp vCard sẽ được nhập vào bộ nhớ cục bộ tạm thời. Thao tác nhập thực sự sẽ sớm bắt đầu."</string>
+    <string name="caching_vcard_message" msgid="4926308675041506756">"Đang lưu vào bộ nhớ đệm các tệp vCard sẽ được nhập vào bộ nhớ cục bộ tạm thời. Thao tác nhập thực sự sẽ sớm bắt đầu."</string>
     <string name="vcard_import_failed" msgid="5223531255894842406">"Không thể nhập vCard."</string>
     <string name="nfc_vcard_file_name" msgid="2823095213265993609">"L.h nhận qua NFC"</string>
-    <string name="caching_vcard_title" msgid="1226272312940516605">"Đang lưu vào bộ nhớ cache"</string>
+    <string name="caching_vcard_title" msgid="1226272312940516605">"Đang lưu vào bộ nhớ đệm"</string>
     <string name="progress_notifier_message" msgid="2311011466908220528">"Đang nhập <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g>: <xliff:g id="NAME">%3$s</xliff:g>"</string>
     <string name="export_to_vcf_file" msgid="4407527157056120858">"Xuất sang tệp .vcf"</string>
     <string name="display_options_sort_list_by" msgid="7028809117272018712">"Sắp xếp theo"</string>

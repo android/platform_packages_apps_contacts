@@ -16,12 +16,12 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.android.contacts"
-          android:versionCode="10721"
-          android:versionName="1.7.21">
+          android:versionCode="10731"
+          android:versionName="1.7.31">
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="25"/>
+        android:targetSdkVersion="28"/>
 
     <original-package android:name="com.android.contacts"/>
 
@@ -56,6 +56,8 @@
     <!-- Following used for getting the status of the contacts sync adapter -->
     <uses-permission android:name="android.permission.READ_SYNC_STATS"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <!-- Required in P to run Service.startForeground() -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <uses-feature
         android:name="android.hardware.telephony"

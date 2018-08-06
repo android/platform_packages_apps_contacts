@@ -553,6 +553,7 @@ background and text color. See also android:style/Widget.Holo.TextView.ListSepar
         <item name="android:layout_width">0dip</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:textAlignment">viewStart</item>
         <item name="android:layout_marginStart">@dimen/drawer_item_text_margin</item>
         <item name="android:layout_marginEnd">@dimen/drawer_item_text_margin</item>
     </style>

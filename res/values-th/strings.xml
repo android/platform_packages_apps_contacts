@@ -181,7 +181,7 @@
     <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"ยกเลิกการเปลี่ยนแปลงหรือไม่"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"ทิ้ง"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"ยกเลิก"</string>
-    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"ยกเลิกการปรับแต่งหรือไม่"</string>
+    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"ทิ้งการปรับแต่งหรือไม่"</string>
     <string name="enter_contact_name" msgid="4594274696120278368">"ค้นหารายชื่อติดต่อ"</string>
     <string name="title_edit_group" msgid="8602752287270586734">"นำรายชื่อติดต่อออก"</string>
     <string name="local_profile_title" msgid="2021416826991393684">"โปรไฟล์ในอุปกรณ์ของฉัน"</string>
@@ -286,7 +286,7 @@
     <string name="sms_fax_work" msgid="8028189067816907075">"ส่งข้อความถึงแฟกซ์ที่ทำงาน"</string>
     <string name="sms_fax_home" msgid="9204042076306809634">"ส่งข้อความเข้าหมายเลขแฟกซ์บ้าน"</string>
     <string name="sms_pager" msgid="7730404569637015192">"ส่งข้อความถึงเพจเจอร์"</string>
-    <string name="sms_other" msgid="806127844607642331">"ข้อความ"</string>
+    <string name="sms_other" msgid="806127844607642331">"ส่งข้อความ"</string>
     <string name="sms_callback" msgid="5004824430094288752">"ส่งข้อความถึงหมายเลขติดต่อกลับ"</string>
     <string name="sms_car" msgid="7444227058437359641">"ส่งข้อความถึงรถยนต์"</string>
     <string name="sms_company_main" msgid="118970873419678087">"ส่งข้อความเข้าโทรศัพท์หลักของบริษัท"</string>
@@ -350,9 +350,9 @@
     <string name="email_home" msgid="8573740658148184279">"ส่งไปที่อีเมลส่วนตัว"</string>
     <string name="email_mobile" msgid="2042889209787989814">"ส่งอีเมลเข้ามือถือ"</string>
     <string name="email_work" msgid="2807430017302722689">"ส่งอีเมลถึงที่ทำงาน"</string>
-    <string name="email_other" msgid="3454004077967657109">"อีเมล"</string>
-    <string name="email_custom" msgid="5536404237099078802">"ส่งอีเมล <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
-    <string name="email" msgid="5668400997660065897">"อีเมล"</string>
+    <string name="email_other" msgid="3454004077967657109">"ส่งอีเมล"</string>
+    <string name="email_custom" msgid="5536404237099078802">"ส่งอีเมลถึง <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
+    <string name="email" msgid="5668400997660065897">"ส่งอีเมล"</string>
     <string name="postal_street" msgid="8133143961580058972">"ถนน"</string>
     <string name="postal_city" msgid="6597491300084895548">"เมือง"</string>
     <string name="postal_region" msgid="6045263193478437672">"รัฐ"</string>
@@ -488,11 +488,11 @@
     <string name="call_subject_limit" msgid="4545212901205397669">"<xliff:g id="COUNT">%1$s</xliff:g>/<xliff:g id="LIMIT">%2$s</xliff:g>"</string>
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="1765533099416999801">"เวอร์ชันบิวด์"</string>
-    <string name="about_open_source_licenses" msgid="6479990452352919641">"สัญญาอนุญาตโอเพนซอร์ส"</string>
-    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"รายละเอียดสัญญาอนุญาตสำหรับซอฟต์แวร์โอเพนซอร์ส"</string>
+    <string name="about_open_source_licenses" msgid="6479990452352919641">"ใบอนุญาตโอเพนซอร์ส"</string>
+    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"รายละเอียดใบอนุญาตสำหรับซอฟต์แวร์โอเพนซอร์ส"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"นโยบายความเป็นส่วนตัว"</string>
     <string name="about_terms_of_service" msgid="4642400812150296723">"ข้อกำหนดในการให้บริการ"</string>
-    <string name="activity_title_licenses" msgid="5467767062737708066">"สัญญาอนุญาตโอเพนซอร์ส"</string>
+    <string name="activity_title_licenses" msgid="5467767062737708066">"ใบอนุญาตโอเพนซอร์ส"</string>
     <string name="url_open_error_toast" msgid="452592089815420457">"เปิด URL ไม่สำเร็จ"</string>
     <string name="account_filter_view_checked" msgid="6696859503887762213">"เลือก <xliff:g id="ACCOUNT_INFO">%s</xliff:g> แล้ว"</string>
     <string name="account_filter_view_not_checked" msgid="2248684521205038389">"ไม่ได้เลือก <xliff:g id="ACCOUNT_INFO">%s</xliff:g>"</string>

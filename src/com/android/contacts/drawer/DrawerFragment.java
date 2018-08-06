@@ -297,6 +297,14 @@ public class DrawerFragment extends Fragment implements AccountsListener {
         }
     }
 
+    private void applyTopInset(int insetTop) {
+        // set height of the scrim
+        mScrimDrawable.setIntrinsicHeight(insetTop);
+        mDrawerListView.setPadding(mDrawerListView.getPaddingLeft(),
+                insetTop, mDrawerListView.getPaddingRight(),
+                mDrawerListView.getPaddingBottom());
+    }
+
     public interface DrawerFragmentListener {
         void onDrawerItemClicked();
         void onContactsViewSelected(ContactsView mode);
@@ -311,8 +319,7 @@ public class DrawerFragment extends Fragment implements AccountsListener {
         @Override
         public WindowInsets onApplyWindowInsets(View v, WindowInsets insets) {
             final int insetTop = insets.getSystemWindowInsetTop();
-            // set height of the scrim
-            mScrimDrawable.setIntrinsicHeight(insetTop);
+            applyTopInset(insetTop);
             return insets;
         }
     }

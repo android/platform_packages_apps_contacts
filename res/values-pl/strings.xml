@@ -324,7 +324,7 @@
     <string name="missing_name" msgid="8745511583852904385">"(Bez nazwy)"</string>
     <string name="favoritesFrequentContacted" msgid="6184232487472425690">"Częste kontakty"</string>
     <string name="list_filter_phones" msgid="735313795643493365">"Wszystkie kontakty z numerami telefonów"</string>
-    <string name="list_filter_phones_work" msgid="1470173699551475015">"Kontakty w profilu do pracy"</string>
+    <string name="list_filter_phones_work" msgid="1470173699551475015">"Kontakty w profilu służbowym"</string>
     <string name="view_updates_from_group" msgid="1782685984905600034">"Pokaż aktualizacje"</string>
     <string name="account_phone" msgid="7128032778471187553">"Urządzenie"</string>
     <string name="account_sim" msgid="6519016427905087952">"SIM"</string>

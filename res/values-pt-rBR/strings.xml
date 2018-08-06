@@ -49,7 +49,7 @@
     <string name="splitConfirmation_positive_button" msgid="9129409098807939699">"Desvincular"</string>
     <string name="splitConfirmationWithPendingChanges" msgid="7719062163511895696">"Gostaria de salvar as alterações já feitas e desvincular este contato em vários contatos?"</string>
     <string name="splitConfirmationWithPendingChanges_positive_button" msgid="9073444264887244032">"Salvar e desvincular"</string>
-    <string name="joinConfirmation" msgid="8262614843581924365">"Gostaria de salvar as alterações já efetuadas e vincular com o contato selecionado?"</string>
+    <string name="joinConfirmation" msgid="8262614843581924365">"Gostaria de salvar as alterações já feitas e vincular com o contato selecionado?"</string>
     <string name="joinConfirmation_positive_button" msgid="4573092849769149516">"Salvar e vincular"</string>
     <string name="contacts_linking_progress_bar" msgid="2846494347384549277">"Vinculando"</string>
     <string name="contacts_unlinking_progress_bar" msgid="5989310198163726929">"Desvinculando"</string>
@@ -57,7 +57,7 @@
     <string name="menu_linkedContacts" msgid="400444389718855621">"Ver contatos vinculados"</string>
     <string name="menu_save" msgid="1727844363591825909">"Salvar"</string>
     <string name="titleJoinContactDataWith" msgid="6825255752748313944">"Vincular contatos"</string>
-    <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"Selecione o contato que você deseja vincular com <xliff:g id="NAME">%s</xliff:g>:"</string>
+    <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"Selecione o contato que você quer vincular com <xliff:g id="NAME">%s</xliff:g>:"</string>
     <string name="separatorJoinAggregateSuggestions" msgid="2831414448851313345">"Contatos sugeridos"</string>
     <string name="separatorJoinAggregateAll" msgid="7939932265026181043">"Todos os contatos"</string>
     <string name="contactsJoinedNamedMessage" msgid="1299418263439579455">"Nome vinculado: <xliff:g id="NAME">%s</xliff:g>"</string>

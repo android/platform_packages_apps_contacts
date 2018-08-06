@@ -572,7 +572,7 @@ public class PinnedHeaderListView extends AutoScrollListView
             canvas.translate(translateX, header.y);
             if (header.state == FADING) {
                 mBounds.set(0, 0, view.getWidth(), view.getHeight());
-                canvas.saveLayerAlpha(mBounds, header.alpha, Canvas.ALL_SAVE_FLAG);
+                canvas.saveLayerAlpha(mBounds, header.alpha);
             }
             view.draw(canvas);
             canvas.restoreToCount(saveCount);

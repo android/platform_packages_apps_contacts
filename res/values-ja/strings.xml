@@ -100,7 +100,7 @@
     <string name="customLabelPickerTitle" msgid="1081475101983255212">"カスタムラベル名"</string>
     <string name="removePhoto" msgid="4898105274130284565">"写真を削除"</string>
     <string name="noContacts" msgid="2228592924476426108">"連絡先リストが空です"</string>
-    <string name="emptyGroup" msgid="5102411903247859575">"このラベルを使用している連絡先はいません"</string>
+    <string name="emptyGroup" msgid="5102411903247859575">"このラベルを適用した連絡先はありません"</string>
     <string name="emptyAccount" msgid="6873962901497975964">"このアカウントに保存されている連絡先はありません"</string>
     <string name="emptyMainList" msgid="2772242747899664460">"連絡先リストが空です"</string>
     <string name="contactSavedNamedToast" msgid="895136068894549611">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> さんを保存しました"</string>
@@ -243,7 +243,7 @@
     <string name="suggestion_card_help_message" msgid="4474061044387181093">"これらの連絡先は同一人物である可能性があります。リンクして1つの連絡先にまとめることができます。"</string>
     <string name="editor_delete_view_description" msgid="8583095381562991959">"<xliff:g id="DATA_TYPE">%1$s </xliff:g><xliff:g id="DATA_KIND">%2$s</xliff:g>を削除"</string>
     <string name="editor_delete_view_description_short" msgid="7335518371270844912">"<xliff:g id="DATA_KIND">%s</xliff:g>を削除"</string>
-    <string name="menu_assistant" msgid="5760693735722052454">"候補"</string>
+    <string name="menu_assistant" msgid="5760693735722052454">"おすすめのアクション"</string>
     <string name="menu_assistant_new_badge" msgid="3132884821616980034">"New"</string>
     <string name="navigation_drawer_open" msgid="1126498472143250642">"ナビゲーションドロワーを開く"</string>
     <string name="navigation_drawer_close" msgid="4137416137011817930">"ナビゲーションドロワーを閉じる"</string>
@@ -254,7 +254,7 @@
     <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"予定とメッセージ"</string>
     <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"予定"</string>
     <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"メッセージ"</string>
-    <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"候補"</string>
+    <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"おすすめのアクション"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"連絡先を使いやすく整理できます"</string>
     <string name="undo" msgid="1425165101664071422">"元に戻す"</string>
     <string name="call_custom" msgid="6385303130912713318">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g>宛に通話を発信"</string>
@@ -446,9 +446,9 @@
     <string name="caching_vcard_title" msgid="1226272312940516605">"キャッシュしています"</string>
     <string name="progress_notifier_message" msgid="2311011466908220528">"<xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g>件（<xliff:g id="NAME">%3$s</xliff:g>）をインポート中"</string>
     <string name="export_to_vcf_file" msgid="4407527157056120858">".vcf にエクスポート"</string>
-    <string name="display_options_sort_list_by" msgid="7028809117272018712">"並べ替え"</string>
+    <string name="display_options_sort_list_by" msgid="7028809117272018712">"並べ替え順序"</string>
     <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"フリガナ（名前）"</string>
-    <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"常に表示"</string>
+    <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"常に表示する"</string>
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"空白の場合は非表示にする"</string>
     <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"名"</string>
     <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"姓"</string>

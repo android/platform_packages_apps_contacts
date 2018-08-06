@@ -49,6 +49,7 @@ import android.graphics.drawable.Drawable;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Trace;
 import android.provider.CalendarContract;
@@ -2826,8 +2827,10 @@ public class QuickContactActivity extends ContactsActivity {
             ringToneMenuItem.setVisible(!mContactData.isUserProfile() && mArePhoneOptionsChangable);
 
             final MenuItem sendToVoiceMailMenuItem = menu.findItem(R.id.menu_send_to_voicemail);
-            sendToVoiceMailMenuItem.setVisible(!mContactData.isUserProfile()
-                    && mArePhoneOptionsChangable);
+            sendToVoiceMailMenuItem.setVisible(
+                    Build.VERSION.SDK_INT < Build.VERSION_CODES.M
+                            && !mContactData.isUserProfile()
+                            && mArePhoneOptionsChangable);
             sendToVoiceMailMenuItem.setTitle(mSendToVoicemailState
                     ? R.string.menu_unredirect_calls_to_vm : R.string.menu_redirect_calls_to_vm);
 

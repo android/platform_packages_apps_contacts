@@ -174,7 +174,7 @@
     <string name="create_group_item_label" msgid="3263064599743742865">"Жаңасын жасау…"</string>
     <string name="delete_group_dialog_message" msgid="335713829185261371">"\"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\" тобы жойылсын ба? Контактілер өздігінен жойылмайды."</string>
     <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"Басқа контактімен байланыстыру алдында контактінің атын теріңіз."</string>
-    <string name="copy_text" msgid="3257145021583508761">"Аралық сақтағышқа көшіру"</string>
+    <string name="copy_text" msgid="3257145021583508761">"Буферге көшіру"</string>
     <string name="set_default" msgid="4417505153468300351">"Бастапқы ретінде орнату"</string>
     <string name="clear_default" msgid="7193185801596678067">"Бастапқыны өшіру"</string>
     <string name="toast_text_copied" msgid="5143776250008541719">"Мәтін көшірмесі жасалды"</string>
@@ -203,7 +203,7 @@
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"Көбірек көру"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"Азырақ көру"</string>
     <string name="recent_card_title" msgid="8982782042698001695">"Жақындағы"</string>
-    <string name="about_card_title" msgid="2920942314212825637">"Туралы"</string>
+    <string name="about_card_title" msgid="2920942314212825637">"Мәлімет"</string>
     <string name="toast_making_personal_copy" msgid="288549957278065542">"Жеке көшірме жасау…"</string>
     <string name="tomorrow" msgid="6241969467795308581">"Ертең"</string>
     <string name="today" msgid="8041090779381781781">"Бүгін"</string>
@@ -217,7 +217,7 @@
     <string name="header_nickname_entry" msgid="6743561883967451485">"Бүркеншік ат"</string>
     <string name="header_note_entry" msgid="4320190426480612344">"Ескертпе"</string>
     <string name="header_website_entry" msgid="1411467850000824745">"Веб-сайт"</string>
-    <string name="header_event_entry" msgid="6738250422744401460">"Оқиға"</string>
+    <string name="header_event_entry" msgid="6738250422744401460">"Іс-шара"</string>
     <string name="header_relation_entry" msgid="1520292958088146460">"Қатынас"</string>
     <string name="header_name_entry" msgid="1592791008096288306">"Аты"</string>
     <string name="header_email_entry" msgid="8666093061171624478">"Электрондық пошта"</string>

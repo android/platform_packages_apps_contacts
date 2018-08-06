@@ -21,7 +21,7 @@
     <string name="shortcut_add_contact" msgid="7476283631356909204">"Contact toevoegen"</string>
     <string name="shortcutContact" msgid="749243779392912958">"Contacten"</string>
     <string name="shortcutDialContact" msgid="746622101599186779">"Direct bellen"</string>
-    <string name="shortcutMessageContact" msgid="2460337253595976198">"Direct bericht"</string>
+    <string name="shortcutMessageContact" msgid="2460337253595976198">"Privéchat"</string>
     <string name="shortcutActivityTitle" msgid="1504383567778497348">"Contact kiezen"</string>
     <string name="contactInsertOrEditActivityTitle" msgid="6527505405325862674">"Aan contact toevoegen"</string>
     <string name="contactPickerActivityTitle" msgid="4301062192337417640">"Een contact kiezen"</string>
