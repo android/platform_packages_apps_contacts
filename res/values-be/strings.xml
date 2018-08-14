@@ -183,8 +183,8 @@
     <string name="delete_group_dialog_message" msgid="335713829185261371">"Выдаліць метку \"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\"? (Самі кантакты не будуць выдалены.)"</string>
     <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"Перад звязваннем кантакту з іншым увядзіце імя кантакту."</string>
     <string name="copy_text" msgid="3257145021583508761">"Скапіраваць у буфер абмену"</string>
-    <string name="set_default" msgid="4417505153468300351">"Усталяваць па змаўчанні"</string>
-    <string name="clear_default" msgid="7193185801596678067">"Скінуць налады па змаўчанні"</string>
+    <string name="set_default" msgid="4417505153468300351">"Задаць у якасці стандартнага"</string>
+    <string name="clear_default" msgid="7193185801596678067">"Скінуць стандартныя налады"</string>
     <string name="toast_text_copied" msgid="5143776250008541719">"Тэкст скапіяваны"</string>
     <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"Скасаваць змены?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"Скасаваць"</string>
@@ -196,7 +196,7 @@
     <string name="external_profile_title" msgid="8034998767621359438">"Мой профіль у <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g>"</string>
     <string name="contact_editor_prompt_zero_accounts" msgid="6648376557574360096">"Знайдзіце хвілінку, каб дадаць уліковы запіс, які дазволіць стварыць рэзервовую копію вашых кантактаў у Google."</string>
     <string name="contact_editor_prompt_one_account" msgid="3087691056345099310">"Новыя кантакты будуць захаваны ва ўліковы запіс <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>."</string>
-    <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"Выбраць уліковы запіс па змаўчанні для новых кантактаў:"</string>
+    <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"Прадвызначыць уліковы запіс для новых кантактаў:"</string>
     <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"Новы кантакт"</string>
     <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"Рэдагаваць кантакт"</string>
     <string name="contact_editor_title_read_only_contact" msgid="2443496574528842237">"Толькі прагляд"</string>
@@ -543,4 +543,6 @@
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"Не ўдалося імпартаваць кантакты з SIM-карты"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"Імпартаванне SIM"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"Апавяшчэнні"</string>
+    <string name="yes_button" msgid="1268479086848288060">"Так"</string>
+    <string name="no_button" msgid="5742815694687835125">"Не"</string>
 </resources>

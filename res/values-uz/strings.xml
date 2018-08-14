@@ -446,7 +446,7 @@
     <string name="caching_vcard_title" msgid="1226272312940516605">"Keshga yuklanmoqda"</string>
     <string name="progress_notifier_message" msgid="2311011466908220528">"Import qilinmoqda: <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g> – <xliff:g id="NAME">%3$s</xliff:g>"</string>
     <string name="export_to_vcf_file" msgid="4407527157056120858">"VCF faylga eksport qilish"</string>
-    <string name="display_options_sort_list_by" msgid="7028809117272018712">"Saralash tartibi"</string>
+    <string name="display_options_sort_list_by" msgid="7028809117272018712">"Saralash"</string>
     <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"Ism talaffuzi"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"Har doim ko‘rsatish"</string>
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"Bo‘sh maydonni berkitish"</string>

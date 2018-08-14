@@ -104,7 +104,8 @@ public class ContactsUtils {
      * dialer is running inside Work Profile.
      */
     @Retention(RetentionPolicy.SOURCE)
-    @IntDef({USER_TYPE_CURRENT, USER_TYPE_WORK})
+    // TODO: Switch to @LongDef once @LongDef is available in the support library
+    @IntDef({(int)USER_TYPE_CURRENT, (int)USER_TYPE_WORK})
     public @interface UserType {}
 
     /**

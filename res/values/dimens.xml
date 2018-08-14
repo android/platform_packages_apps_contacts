@@ -188,9 +188,6 @@
 
     <dimen name="contact_browser_list_item_height">56dp</dimen>
 
-    <!-- Navigation drawer header height, the same as the status bar in landscape and portrait modes -->
-    <dimen name="nav_header_height">24dp</dimen>
-
     <!-- Default activity margins, per the Android Material Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>

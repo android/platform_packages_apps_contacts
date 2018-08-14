@@ -153,7 +153,7 @@
     <string name="take_new_photo" msgid="7341354729436576304">"নতুন ফটো তুলুন"</string>
     <string name="pick_photo" msgid="2129509985223564942">"ফটো বেছে নিন"</string>
     <string name="pick_new_photo" msgid="9122450996263688237">"নতুন ফটো বেছে নিন"</string>
-    <string name="search_results_searching" msgid="3984833028938569930">"অনুসন্ধান করছে..."</string>
+    <string name="search_results_searching" msgid="3984833028938569930">"সার্চ করছে..."</string>
     <string name="event_edit_field_hint_text" msgid="5794424930242630477">"তারিখ"</string>
     <string name="group_edit_field_hint_text" msgid="8038224059926963133">"লেবেল"</string>
     <string name="cancel_button_content_description" msgid="1288652456274531846">"বাতিল করুন"</string>
@@ -172,7 +172,7 @@
     <string name="contacts_unavailable_add_account" msgid="4347232421410561500">"অ্যাকাউন্ট যোগ করুন"</string>
     <string name="contacts_unavailable_import_contacts" msgid="3182801738595937144">"আমদানি করুন"</string>
     <string name="create_group_item_label" msgid="3263064599743742865">"নতুন তৈরি করুন…"</string>
-    <string name="delete_group_dialog_message" msgid="335713829185261371">"\"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\" গোষ্ঠী মুছবেন? (পরিচিতিগুলি নিজে থেকে মুছে যাবে না৷)"</string>
+    <string name="delete_group_dialog_message" msgid="335713829185261371">"\"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\" গ্রুপ মুছবেন? (পরিচিতিগুলি নিজে থেকে মুছে যাবে না৷)"</string>
     <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"অন্য একটির সাথে লিঙ্ক করার আগে পরিচিতির নাম লিখুন৷"</string>
     <string name="copy_text" msgid="3257145021583508761">"ক্লিপবোর্ডে কপি করুন"</string>
     <string name="set_default" msgid="4417505153468300351">"ডিফল্ট সেট করুন"</string>
@@ -222,7 +222,7 @@
     <string name="header_name_entry" msgid="1592791008096288306">"নাম"</string>
     <string name="header_email_entry" msgid="8666093061171624478">"ইমেল"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"ফোন"</string>
-    <string name="content_description_directions" msgid="2686791825798189335">"অবস্থান জানার দিকনির্দেশ"</string>
+    <string name="content_description_directions" msgid="2686791825798189335">"লোকেশন জানার দিকনির্দেশ"</string>
     <string name="content_description_recent_sms" msgid="1666389577263317445">"সাম্প্রতিক sms৷ <xliff:g id="MESSAGE_BODY">%1$s</xliff:g>৷ <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>৷ <xliff:g id="DATE">%3$s</xliff:g>৷ প্রতিক্রিয়া জানাতে ক্লিক করুন"</string>
     <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"আগত"</string>
     <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"আউটগোয়িং"</string>
@@ -386,9 +386,9 @@
     <string name="list_filter_single" msgid="5871400283515893087">"পরিচিতি"</string>
     <string name="display_ungrouped" msgid="6885954210243119591">"অন্যান্য সকল পরিচিতি"</string>
     <string name="display_all_contacts" msgid="2031647544742889505">"সকল পরিচিতি"</string>
-    <string name="menu_sync_remove" msgid="3266725887008450161">"সমন্বয় গোষ্ঠী সরান"</string>
-    <string name="dialog_sync_add" msgid="8267045393119375803">"সমন্বয় গোষ্ঠী যোগ করুন"</string>
-    <string name="display_more_groups" msgid="2682547080423434170">"আরও গোষ্ঠী…"</string>
+    <string name="menu_sync_remove" msgid="3266725887008450161">"সমন্বয় গ্রুপ সরান"</string>
+    <string name="dialog_sync_add" msgid="8267045393119375803">"সমন্বয় গ্রুপ যোগ করুন"</string>
+    <string name="display_more_groups" msgid="2682547080423434170">"আরও গ্রুপ…"</string>
     <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"সমন্বয় থেকে \"<xliff:g id="GROUP">%s</xliff:g>\" সরানো হলে তা সমন্বয় থেকে যেকোনো অগোষ্ঠীবদ্ধ পরিচিতিগুলিকেও সরাবে৷"</string>
     <string name="savingDisplayGroups" msgid="2133152192716475939">"প্রদর্শনের বিকল্পগুলি সংরক্ষণ করা হচ্ছে..."</string>
     <string name="listCustomView" msgid="1840624396582117590">"কাস্টমাইজ করা দৃশ্য"</string>
@@ -478,8 +478,8 @@
     <string name="menu_blocked_numbers" msgid="5272951629083025995">"অবরোধ করা নম্বরগুলি"</string>
     <string name="contact_status_update_attribution" msgid="752179367353018597">"<xliff:g id="SOURCE">%1$s</xliff:g> এর মাধ্যমে"</string>
     <string name="contact_status_update_attribution_with_date" msgid="7358045508107825068">"<xliff:g id="SOURCE">%2$s</xliff:g> এর মাধ্যমে <xliff:g id="DATE">%1$s</xliff:g>"</string>
-    <string name="action_menu_back_from_search" msgid="8793348588949233348">"অনুসন্ধান বন্ধ করুন"</string>
-    <string name="description_clear_search" msgid="688023606766232904">"অনুসন্ধান সাফ করুন"</string>
+    <string name="action_menu_back_from_search" msgid="8793348588949233348">"সার্চ বন্ধ করুন"</string>
+    <string name="description_clear_search" msgid="688023606766232904">"সার্চ সাফ করুন"</string>
     <string name="select_account_dialog_title" msgid="5478489655696599219">"অ্যাকাউন্ট"</string>
     <string name="set_default_account" msgid="4311613760725609801">"কলের জন্য সবসময় এটি ব্যবহার করুন"</string>
     <string name="call_with_a_note" msgid="8389827628360791676">"একটি নোট সহ কল করুন"</string>
@@ -488,11 +488,11 @@
     <string name="call_subject_limit" msgid="4545212901205397669">"<xliff:g id="COUNT">%1$s</xliff:g> / <xliff:g id="LIMIT">%2$s</xliff:g>"</string>
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="1765533099416999801">"বিল্ডের সংস্করণ"</string>
-    <string name="about_open_source_licenses" msgid="6479990452352919641">"মুক্ত উৎস লাইসেন্স"</string>
+    <string name="about_open_source_licenses" msgid="6479990452352919641">"ওপেন সোর্স লাইসেন্স"</string>
     <string name="about_open_source_licenses_summary" msgid="57418386931763994">"মুক্ত উৎস সফ্টওয়্যারের লাইসেন্স বিবরণ"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"গোপনীয়তা নীতি"</string>
     <string name="about_terms_of_service" msgid="4642400812150296723">"পরিষেবার শর্তাবলী"</string>
-    <string name="activity_title_licenses" msgid="5467767062737708066">"মুক্ত উৎস লাইসেন্সগুলি"</string>
+    <string name="activity_title_licenses" msgid="5467767062737708066">"ওপেন সোর্স লাইসেন্স"</string>
     <string name="url_open_error_toast" msgid="452592089815420457">"url খুলতে ব্যর্থ হয়েছে৷"</string>
     <string name="account_filter_view_checked" msgid="6696859503887762213">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> এ টিক চিহ্ন দেওয়া হয়েছে"</string>
     <string name="account_filter_view_not_checked" msgid="2248684521205038389">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> এ টিক চিহ্ন দেওয়া হয়নি"</string>

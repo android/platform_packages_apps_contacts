@@ -97,7 +97,7 @@
     <string name="createContactShortcutSuccessful" msgid="953651153238790069">"<xliff:g id="NAME">%s</xliff:g> ditambahkan ke layar Utama."</string>
     <string name="photoPickerNotFoundText" msgid="2052542573853433204">"Tidak ada gambar yang tersedia di perangkat."</string>
     <string name="attach_photo_dialog_title" msgid="5599827035558557169">"Foto kontak"</string>
-    <string name="customLabelPickerTitle" msgid="1081475101983255212">"Nama label khusus"</string>
+    <string name="customLabelPickerTitle" msgid="1081475101983255212">"Nama label kustom"</string>
     <string name="removePhoto" msgid="4898105274130284565">"Hapus foto"</string>
     <string name="noContacts" msgid="2228592924476426108">"Daftar kontak Anda kosong"</string>
     <string name="emptyGroup" msgid="5102411903247859575">"Tidak ada kontak dengan label ini"</string>
@@ -488,11 +488,11 @@
     <string name="call_subject_limit" msgid="4545212901205397669">"<xliff:g id="COUNT">%1$s</xliff:g> / <xliff:g id="LIMIT">%2$s</xliff:g>"</string>
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="1765533099416999801">"Versi build"</string>
-    <string name="about_open_source_licenses" msgid="6479990452352919641">"Lisensi sumber terbuka"</string>
+    <string name="about_open_source_licenses" msgid="6479990452352919641">"Lisensi open source"</string>
     <string name="about_open_source_licenses_summary" msgid="57418386931763994">"Detail lisensi untuk software sumber terbuka"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"Kebijakan privasi"</string>
     <string name="about_terms_of_service" msgid="4642400812150296723">"Persyaratan layanan"</string>
-    <string name="activity_title_licenses" msgid="5467767062737708066">"Lisensi sumber terbuka"</string>
+    <string name="activity_title_licenses" msgid="5467767062737708066">"Lisensi open source"</string>
     <string name="url_open_error_toast" msgid="452592089815420457">"Gagal membuka url."</string>
     <string name="account_filter_view_checked" msgid="6696859503887762213">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> dicentang"</string>
     <string name="account_filter_view_not_checked" msgid="2248684521205038389">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> tidak dicentang"</string>

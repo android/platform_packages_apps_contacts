@@ -74,7 +74,7 @@
       <item quantity="one">تم حذف جهة الاتصال</item>
     </plurals>
     <plurals name="contacts_count" formatted="false" msgid="8696793457340503668">
-      <item quantity="zero">ليست هناك أية جهة اتصال (<xliff:g id="COUNT_1">%d</xliff:g>)</item>
+      <item quantity="zero">ليست هناك أي جهة اتصال (<xliff:g id="COUNT_1">%d</xliff:g>)</item>
       <item quantity="two">جهتا اتصال (<xliff:g id="COUNT_1">%d</xliff:g>)</item>
       <item quantity="few"><xliff:g id="COUNT_1">%d</xliff:g> جهات اتصال</item>
       <item quantity="many"><xliff:g id="COUNT_1">%d</xliff:g> جهة اتصال</item>
@@ -92,8 +92,8 @@
     <string name="title_from_google" msgid="4664084747121207202">"‏من Google"</string>
     <string name="title_from_other_accounts" msgid="8307885412426754288">"من <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
     <string name="menu_set_ring_tone" msgid="8728345772068064946">"تعيين نغمة رنين"</string>
-    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"إرسال إلى البريد الصوتي"</string>
-    <string name="menu_unredirect_calls_to_vm" msgid="8725542534701811737">"عدم إرسال إلى البريد الصوتي"</string>
+    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"الإرسال إلى البريد الصوتي"</string>
+    <string name="menu_unredirect_calls_to_vm" msgid="8725542534701811737">"عدم الإرسال إلى البريد الصوتي"</string>
     <string name="readOnlyContactWarning" msgid="7514475664695089411">"جهة الاتصال هذه للقراءة فقط. لا يمكن حذفها، ولكن يمكنك إخفاؤها."</string>
     <string name="readOnlyContactWarning_positive_button" msgid="8914797212167683673">"إخفاء جهة الاتصال"</string>
     <string name="readOnlyContactDeleteConfirmation" msgid="4717023505914239809">"سيتم فقط إخفاء حسابات القراءة فقط الموجودة في جهة الاتصال هذه، ولم يتم حذفها."</string>
@@ -107,7 +107,7 @@
     <string name="invalidContactMessage" msgid="8215051456181842274">"جهة الاتصال غير موجودة."</string>
     <string name="createContactShortcutSuccessful_NoName" msgid="8831303345367275472">"تمت إضافة جهة الاتصال إلى الشاشة الرئيسية."</string>
     <string name="createContactShortcutSuccessful" msgid="953651153238790069">"تمت إضافة <xliff:g id="NAME">%s</xliff:g> إلى الشاشة الرئيسية."</string>
-    <string name="photoPickerNotFoundText" msgid="2052542573853433204">"لا تتوفر أية صور على الهاتف."</string>
+    <string name="photoPickerNotFoundText" msgid="2052542573853433204">"لا تتوفر أي صور على الهاتف."</string>
     <string name="attach_photo_dialog_title" msgid="5599827035558557169">"صورة جهة الاتصال"</string>
     <string name="customLabelPickerTitle" msgid="1081475101983255212">"اسم تصنيف مخصص"</string>
     <string name="removePhoto" msgid="4898105274130284565">"إزالة الصورة"</string>
@@ -161,8 +161,8 @@
     <string name="group_name_dialog_update_title" msgid="6328021162869677383">"إعادة تسمية التصنيف"</string>
     <string name="group_name_dialog_hint" msgid="7624523157537700160">"اسم التصنيف"</string>
     <string name="label_name_dialog_hint" msgid="1276051790427638142">"اسم التصنيف"</string>
-    <string name="audio_chat" msgid="2535716629358298691">"دردشة صوتية"</string>
-    <string name="video_chat" msgid="1872255818640336072">"دردشة فيديو"</string>
+    <string name="audio_chat" msgid="2535716629358298691">"محادثة صوتية"</string>
+    <string name="video_chat" msgid="1872255818640336072">"محادثة فيديو"</string>
     <string name="account_type_format" msgid="718948015590343010">"جهة اتصال <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
     <string name="google_account_type_format" msgid="5283997303922067997">"حساب <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
     <string name="take_photo" msgid="7496128293167402354">"التقاط صورة"</string>
@@ -179,7 +179,7 @@
     <string name="contact_directory_description" msgid="683398073603909119">"الدليل <xliff:g id="TYPE">%1$s</xliff:g>"</string>
     <string name="activity_title_settings" msgid="5464130076132770781">"الإعدادات"</string>
     <string name="menu_settings" msgid="377929915873428211">"الإعدادات"</string>
-    <string name="menu_help" msgid="1680178646764069976">"مساعدة وتعليقات"</string>
+    <string name="menu_help" msgid="1680178646764069976">"المساعدة والتعليقات"</string>
     <string name="organization_company_and_title" msgid="6718207751363732025">"<xliff:g id="COMPANY_0">%2$s</xliff:g>، <xliff:g id="COMPANY_1">%1$s</xliff:g>"</string>
     <string name="non_phone_caption" msgid="1541655052330027380">"رقم الهاتف"</string>
     <string name="non_phone_add_to_contacts" msgid="6590985286250471169">"إضافة إلى جهات الاتصال"</string>
@@ -192,19 +192,19 @@
     <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"اكتب اسم جهة الاتصال قبل ربطها بجهة اتصال أخرى."</string>
     <string name="copy_text" msgid="3257145021583508761">"نسخ إلى الحافظة"</string>
     <string name="set_default" msgid="4417505153468300351">"تعيين كافتراضي"</string>
-    <string name="clear_default" msgid="7193185801596678067">"محو الإعدادات الافتراضية"</string>
+    <string name="clear_default" msgid="7193185801596678067">"محو الإعدادات التلقائية"</string>
     <string name="toast_text_copied" msgid="5143776250008541719">"تم نسخ النص"</string>
     <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"هل تريد إلغاء التغييرات؟"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"تجاهل"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"إلغاء"</string>
-    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"تجاهل عمليات التخصيص؟"</string>
+    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"هل تريد إزالة عمليات التخصيص؟"</string>
     <string name="enter_contact_name" msgid="4594274696120278368">"البحث في جهات الاتصال"</string>
     <string name="title_edit_group" msgid="8602752287270586734">"إزالة جهات الاتصال"</string>
     <string name="local_profile_title" msgid="2021416826991393684">"ملفي الشخصي المحلي"</string>
     <string name="external_profile_title" msgid="8034998767621359438">"ملفي الشخصي في <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g>"</string>
     <string name="contact_editor_prompt_zero_accounts" msgid="6648376557574360096">"‏خذ دقيقة من وقتك لإضافة حساب يحفظ نسخة احتياطية من جهات اتصالك على Google."</string>
     <string name="contact_editor_prompt_one_account" msgid="3087691056345099310">"سيتم حفظ جهات الاتصال الجديدة في <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>."</string>
-    <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"اختيار حساب افتراضي لجهات الاتصال الجديدة:"</string>
+    <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"اختيار حساب تلقائي لجهات الاتصال الجديدة:"</string>
     <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"إنشاء جهة اتصال"</string>
     <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"تعديل جهة الاتصال"</string>
     <string name="contact_editor_title_read_only_contact" msgid="2443496574528842237">"للعرض فقط"</string>
@@ -302,7 +302,7 @@
     <string name="sms_fax_work" msgid="8028189067816907075">"إرسال رسالة نصية قصيرة إلى فاكس العمل"</string>
     <string name="sms_fax_home" msgid="9204042076306809634">"إرسال رسالة نصية إلى فاكس المنزل"</string>
     <string name="sms_pager" msgid="7730404569637015192">"إرسال رسالة نصية إلى جهاز النداء"</string>
-    <string name="sms_other" msgid="806127844607642331">"إرسال رسالة نصية"</string>
+    <string name="sms_other" msgid="806127844607642331">"رسالة نصية"</string>
     <string name="sms_callback" msgid="5004824430094288752">"إرسال رسالة إلى هاتف معاودة الاتصال"</string>
     <string name="sms_car" msgid="7444227058437359641">"إرسال رسالة نصية إلى هاتف السيارة"</string>
     <string name="sms_company_main" msgid="118970873419678087">"إرسال رسالة نصية قصيرة على الهاتف الرئيسي للشركة"</string>
@@ -343,7 +343,7 @@
     <string name="name_prefix" msgid="59756378548779822">"بادئة الاسم"</string>
     <string name="name_middle" msgid="8467433655992690326">"الاسم الأوسط"</string>
     <string name="name_suffix" msgid="3855278445375651441">"لاحقة الاسم"</string>
-    <string name="name_phonetic" msgid="4259595234312430484">"الاسم صوتياً"</string>
+    <string name="name_phonetic" msgid="4259595234312430484">"الاسم صوتيًا"</string>
     <string name="name_phonetic_given" msgid="8723179018384187631">"الاسم الأول صوتيًا"</string>
     <string name="name_phonetic_middle" msgid="8643721493320405200">"الاسم الأوسط صوتيًا"</string>
     <string name="name_phonetic_family" msgid="2640133663656011626">"اسم العائلة صوتيًا"</string>
@@ -378,15 +378,15 @@
     <string name="map_work" msgid="1360474076921878088">"عرض عنوان العمل"</string>
     <string name="map_other" msgid="3817820803587012641">"عرض عنوان"</string>
     <string name="map_custom" msgid="8761800628069473526">"عرض عنوان <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
-    <string name="chat_aim" msgid="2588492205291249142">"‏الدردشة باستخدام AIM"</string>
-    <string name="chat_msn" msgid="8041633440091073484">"‏الدردشة باستخدام Windows Live"</string>
-    <string name="chat_yahoo" msgid="6629211142719943666">"‏الدردشة باستخدام Yahoo"</string>
-    <string name="chat_skype" msgid="1210045020427480566">"‏الدردشة باستخدام Skype"</string>
-    <string name="chat_qq" msgid="4294637812847719693">"‏الدردشة باستخدام QQ"</string>
-    <string name="chat_gtalk" msgid="981575737258117697">"‏الدردشة باستخدام Google Talk"</string>
-    <string name="chat_icq" msgid="8438405386153745775">"‏الدردشة باستخدام ICQ"</string>
-    <string name="chat_jabber" msgid="7561444230307829609">"‏الدردشة باستخدام Jabber"</string>
-    <string name="chat" msgid="9025361898797412245">"دردشة"</string>
+    <string name="chat_aim" msgid="2588492205291249142">"‏المحادثة باستخدام AIM"</string>
+    <string name="chat_msn" msgid="8041633440091073484">"‏المحادثة باستخدام Windows Live"</string>
+    <string name="chat_yahoo" msgid="6629211142719943666">"‏المحادثة باستخدام Yahoo"</string>
+    <string name="chat_skype" msgid="1210045020427480566">"‏المحادثة باستخدام Skype"</string>
+    <string name="chat_qq" msgid="4294637812847719693">"‏المحادثة باستخدام QQ"</string>
+    <string name="chat_gtalk" msgid="981575737258117697">"‏المحادثة باستخدام Google Talk"</string>
+    <string name="chat_icq" msgid="8438405386153745775">"‏المحادثة باستخدام ICQ"</string>
+    <string name="chat_jabber" msgid="7561444230307829609">"‏المحادثة باستخدام Jabber"</string>
+    <string name="chat" msgid="9025361898797412245">"محادثة"</string>
     <string name="description_minus_button" msgid="6908099247930477551">"حذف"</string>
     <string name="expand_name_fields_description" msgid="6948274252874552543">"عرض المزيد من حقول الأسماء"</string>
     <string name="collapse_name_fields_description" msgid="4757877385895561556">"تصغير حقول الأسماء"</string>
@@ -405,9 +405,9 @@
     <string name="menu_sync_remove" msgid="3266725887008450161">"إزالة مجموعة متزامنة"</string>
     <string name="dialog_sync_add" msgid="8267045393119375803">"إضافة مجموعة متزامنة"</string>
     <string name="display_more_groups" msgid="2682547080423434170">"مزيد من المجموعات..."</string>
-    <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"ستؤدي إزالة \"<xliff:g id="GROUP">%s</xliff:g>\" من المزامنة أيضًا إلى إزالة أية جهات اتصال غير مجمعة من المزامنة."</string>
+    <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"ستؤدي إزالة \"<xliff:g id="GROUP">%s</xliff:g>\" من المزامنة أيضًا إلى إزالة أي جهات اتصال غير مجمعة من المزامنة."</string>
     <string name="savingDisplayGroups" msgid="2133152192716475939">"جارٍ حفظ خيارات العرض..."</string>
-    <string name="listCustomView" msgid="1840624396582117590">"عرض مُخصص"</string>
+    <string name="listCustomView" msgid="1840624396582117590">"عرض مخصّص"</string>
     <string name="dialog_new_contact_account" msgid="4969619718062454756">"حفظ جهات الاتصال المستوردة إلى:"</string>
     <string name="import_from_sim" msgid="6912071635295799131">"‏شريحة SIM"</string>
     <string name="import_from_sim_summary_fmt" msgid="5169032449686348118">"‏شريحة SIM <xliff:g id="SIM_NAME">%1$s</xliff:g>"</string>
@@ -437,7 +437,7 @@
     <string name="fail_reason_could_not_open_file" msgid="2067725459821997463">"تعذر فتح \"<xliff:g id="FILE_NAME">%1$s</xliff:g>\": <xliff:g id="EXACT_REASON">%2$s</xliff:g>."</string>
     <string name="fail_reason_could_not_initialize_exporter" msgid="707260459259688510">"تعذر بدء المُصدر: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
     <string name="fail_reason_no_exportable_contact" msgid="8728506011371262065">"ليست هناك جهة اتصال قابلة للتصدير."</string>
-    <string name="missing_required_permission" msgid="5865884842972833120">"لقد عطلت إذنًا مطلوبًا."</string>
+    <string name="missing_required_permission" msgid="5865884842972833120">"لقد أوقفت إذنًا مطلوبًا."</string>
     <string name="fail_reason_error_occurred_during_export" msgid="3018855323913649063">"حدث خطأ أثناء التصدير: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
     <string name="fail_reason_io_error" msgid="6748358842976073255">"‏خطأ I/O"</string>
     <string name="fail_reason_low_memory_during_import" msgid="875222757734882898">"الذاكرة غير كافية. ربما يكون الملف أكبر مما يجب."</string>
@@ -470,8 +470,8 @@
     <string name="caching_vcard_title" msgid="1226272312940516605">"تخزين مؤقت"</string>
     <string name="progress_notifier_message" msgid="2311011466908220528">"استيراد <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g>: <xliff:g id="NAME">%3$s</xliff:g>"</string>
     <string name="export_to_vcf_file" msgid="4407527157056120858">"‏تصدير إلى ملف vcf."</string>
-    <string name="display_options_sort_list_by" msgid="7028809117272018712">"ترتيب بحسب"</string>
-    <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"الاسم صوتياً"</string>
+    <string name="display_options_sort_list_by" msgid="7028809117272018712">"الترتيب بحسب"</string>
+    <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"الاسم صوتيًا"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"الإظهار دائمًا"</string>
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"الإخفاء إذا كان فارغًا"</string>
     <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"الاسم الأول"</string>
@@ -480,7 +480,7 @@
     <string name="display_options_view_given_name_first" msgid="3616004640258761473">"الاسم الأول أولاً"</string>
     <string name="display_options_view_family_name_first" msgid="956445100777296467">"اسم العائلة أوّلًا"</string>
     <string name="settings_accounts" msgid="350219740670774576">"الحسابات"</string>
-    <string name="default_editor_account" msgid="699591683362420991">"الحساب الافتراضي لجهات الاتصال الجديدة"</string>
+    <string name="default_editor_account" msgid="699591683362420991">"الحساب التلقائي لجهات الاتصال الجديدة"</string>
     <string name="settings_my_info_title" msgid="1534272456405343119">"معلوماتي"</string>
     <string name="set_up_profile" msgid="7370213843590143771">"إعداد الملف الشخصي"</string>
     <string name="setting_about" msgid="7014388749752042863">"حول جهات الاتصال"</string>
@@ -526,7 +526,7 @@
     <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> ثانية"</string>
     <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> دقيقة <xliff:g id="SECONDS">%2$s</xliff:g> ثانية"</string>
     <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> ساعة <xliff:g id="MINUTES_1">%2$s</xliff:g> دقيقة <xliff:g id="SECONDS">%3$s</xliff:g> ثانية"</string>
-    <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"تم تعطيل هذا الاختصار"</string>
+    <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"تم إيقاف هذا الاختصار"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"تمت إزالة جهة الاتصال"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"استيراد"</string>
     <string name="sim_import_title_none_selected" msgid="6910517331401970693">"تحديد جهات الاتصال"</string>

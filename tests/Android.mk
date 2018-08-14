@@ -23,6 +23,11 @@ LOCAL_STATIC_JAVA_LIBRARIES += \
     mockito-target-minus-junit4 \
     ub-uiautomator
 
+LOCAL_JAVA_LIBRARIES := \
+    android.test.runner.stubs \
+    android.test.base.stubs \
+    android.test.mock.stubs \
+
 
 LOCAL_AAPT_FLAGS := \
     --auto-add-overlay \

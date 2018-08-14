@@ -24,21 +24,21 @@
     <string name="shortcutMessageContact" msgid="2460337253595976198">"Direktna poruka"</string>
     <string name="shortcutActivityTitle" msgid="1504383567778497348">"Odaberi kontakt"</string>
     <string name="contactInsertOrEditActivityTitle" msgid="6527505405325862674">"Dodaj u kontakt"</string>
-    <string name="contactPickerActivityTitle" msgid="4301062192337417640">"Odaberi kontakt"</string>
+    <string name="contactPickerActivityTitle" msgid="4301062192337417640">"Odabir kontakta"</string>
     <string name="groupMemberPickerActivityTitle" msgid="1431750793695262522">"Odaberi"</string>
-    <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"Napravi novi kontakt"</string>
+    <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"Izrada novog kontakta"</string>
     <string name="searchHint" msgid="8482945356247760701">"Pretraži kontakte"</string>
-    <string name="menu_addStar" msgid="2908478235715404876">"Dodaj u favorite"</string>
-    <string name="menu_removeStar" msgid="5844227078364227030">"Ukloni iz favorita"</string>
-    <string name="description_action_menu_remove_star" msgid="4699640108012265178">"Uklonjeno iz favorita"</string>
-    <string name="description_action_menu_add_star" msgid="3327186327234177456">"Dodano u favorite"</string>
+    <string name="menu_addStar" msgid="2908478235715404876">"Dodaj u omiljeno"</string>
+    <string name="menu_removeStar" msgid="5844227078364227030">"Ukloni iz omiljenih"</string>
+    <string name="description_action_menu_remove_star" msgid="4699640108012265178">"Uklonjeno iz omiljenog"</string>
+    <string name="description_action_menu_add_star" msgid="3327186327234177456">"Dodano u omiljeno"</string>
     <string name="menu_editContact" msgid="9042415603857662633">"Uredi"</string>
     <string name="menu_deleteContact" msgid="6788644058868189393">"Izbriši"</string>
     <string name="menu_change_photo" msgid="7769177631511496210">"Promijeni fotografiju"</string>
     <string name="menu_create_contact_shortcut" msgid="1663022219127343858">"Napravi prečicu"</string>
     <string name="menu_splitAggregate" msgid="2627252205317945563">"Razdvoji"</string>
-    <string name="menu_editGroup" msgid="6696843438454341063">"Ukloni kontakte"</string>
-    <string name="menu_renameGroup" msgid="7169512355179757182">"Preimenuj oznaku"</string>
+    <string name="menu_editGroup" msgid="6696843438454341063">"Uklanjanje kontakata"</string>
+    <string name="menu_renameGroup" msgid="7169512355179757182">"Promijeni naziv oznake"</string>
     <string name="menu_deleteGroup" msgid="1126469629233412249">"Izbriši oznaku"</string>
     <string name="menu_addToGroup" msgid="3267409983764370041">"Dodaj kontakt"</string>
     <string name="menu_selectForGroup" msgid="3999234528229376098">"Odaberite kontakte"</string>
@@ -102,10 +102,10 @@
     <string name="attach_photo_dialog_title" msgid="5599827035558557169">"Fotografija kontakta"</string>
     <string name="customLabelPickerTitle" msgid="1081475101983255212">"Prilagođeni naziv oznake"</string>
     <string name="removePhoto" msgid="4898105274130284565">"Ukloni fotografiju"</string>
-    <string name="noContacts" msgid="2228592924476426108">"Spisak kontakata je prazan"</string>
+    <string name="noContacts" msgid="2228592924476426108">"Lista kontakata je prazna"</string>
     <string name="emptyGroup" msgid="5102411903247859575">"Nema kontakata s ovom oznakom"</string>
     <string name="emptyAccount" msgid="6873962901497975964">"Nema kontakata na ovom računu"</string>
-    <string name="emptyMainList" msgid="2772242747899664460">"Spisak kontakata je prazan"</string>
+    <string name="emptyMainList" msgid="2772242747899664460">"Lista kontakata je prazna"</string>
     <string name="contactSavedNamedToast" msgid="895136068894549611">"Kontakt <xliff:g id="DISPLAY_NAME">%s</xliff:g> je sačuvan"</string>
     <string name="contactSavedToast" msgid="9171862279493213075">"Kontakt je sačuvan"</string>
     <string name="contactUnlinkedToast" msgid="7122823195786012553">"Kontakti su razdvojeni"</string>
@@ -125,7 +125,7 @@
     <string name="groupExistsErrorMessage" msgid="5196811283836946189">"Ta oznaka već postoji"</string>
     <string name="groupSomeContactsNoEmailsToast" msgid="8211161470235548732">"Neki kontakti nemaju adrese e-pošte."</string>
     <string name="groupSomeContactsNoPhonesToast" msgid="5530760834827530509">"Neki kontakti nemaju brojeve telefona."</string>
-    <string name="menu_sendEmailOption" msgid="5978319931321657780">"Pošalji poruku e-pošte"</string>
+    <string name="menu_sendEmailOption" msgid="5978319931321657780">"Pošalji e-poruku"</string>
     <string name="menu_sendMessageOption" msgid="8850168125274916426">"Pošalji poruku"</string>
     <string name="pickerSelectContactsActivityTitle" msgid="1936544190231136729">"Odaberite kontakte"</string>
     <string name="send_to_selection" msgid="2251339182881603540">"Pošalji"</string>
@@ -136,17 +136,17 @@
     <string name="quickcontact_add_phone_number" msgid="731665835910658965">"Dodajte broj telefona"</string>
     <string name="quickcontact_add_email" msgid="739298028384348482">"Dodajte adresu e-pošte"</string>
     <string name="missing_app" msgid="1466111003546611387">"Nije pronađena aplikacija za obavljanje ove radnje."</string>
-    <string name="menu_share" msgid="943789700636542260">"Podijeli"</string>
+    <string name="menu_share" msgid="943789700636542260">"Dijeli"</string>
     <string name="menu_add_contact" msgid="3198704337220892684">"Dodaj u kontakte"</string>
     <string name="menu_add_contacts" msgid="4465646512002163011">"Dodaj"</string>
     <plurals name="title_share_via" formatted="false" msgid="5886112726191455415">
-      <item quantity="one">Podijeli kontakte putem</item>
-      <item quantity="few">Podijeli kontakte putem</item>
-      <item quantity="other">Podijeli kontakte putem</item>
+      <item quantity="one">Dijeli kontakte putem</item>
+      <item quantity="few">Dijeli kontakte putem</item>
+      <item quantity="other">Dijeli kontakte putem</item>
     </plurals>
     <string name="dialog_new_group_account" msgid="3451312333591556651">"Odaberi račun"</string>
-    <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"Napravi oznaku"</string>
-    <string name="group_name_dialog_update_title" msgid="6328021162869677383">"Preimenuj oznaku"</string>
+    <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"Izrada oznake"</string>
+    <string name="group_name_dialog_update_title" msgid="6328021162869677383">"Promijeni naziv oznake"</string>
     <string name="group_name_dialog_hint" msgid="7624523157537700160">"Naziv oznake"</string>
     <string name="label_name_dialog_hint" msgid="1276051790427638142">"Naziv oznake"</string>
     <string name="audio_chat" msgid="2535716629358298691">"Glasovno ćaskanje"</string>
@@ -187,14 +187,14 @@
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"Otkaži"</string>
     <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"Odbaciti prilagođavanja?"</string>
     <string name="enter_contact_name" msgid="4594274696120278368">"Pretraži kontakte"</string>
-    <string name="title_edit_group" msgid="8602752287270586734">"Ukloni kontakte"</string>
+    <string name="title_edit_group" msgid="8602752287270586734">"Uklanjanje kontakata"</string>
     <string name="local_profile_title" msgid="2021416826991393684">"Moj lokalni profil"</string>
     <string name="external_profile_title" msgid="8034998767621359438">"Moj profil <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g>"</string>
     <string name="contact_editor_prompt_zero_accounts" msgid="6648376557574360096">"Odvojite malo vremena da dodate račun putem kojeg će se kontakti sigurnosno kopirati na Google."</string>
     <string name="contact_editor_prompt_one_account" msgid="3087691056345099310">"Novi kontakti će biti sačuvani na račun <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>."</string>
     <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"Odaberite zadani račun za nove kontakte:"</string>
-    <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"Napravi novi kontakt"</string>
-    <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"Uredi kontakt"</string>
+    <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"Izrada novog kontakta"</string>
+    <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"Uređivanje kontakta"</string>
     <string name="contact_editor_title_read_only_contact" msgid="2443496574528842237">"Samo prikaz"</string>
     <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4186699385645902152">"Odaberite kontakt za uređivanje"</string>
     <string name="contact_editor_pick_linked_contact_dialog_title" msgid="4618465940423857694">"Povezani kontakti"</string>
@@ -203,7 +203,7 @@
     <string name="add_account" msgid="8201790677994503186">"Dodajte račun"</string>
     <string name="add_new_account" msgid="5748627740680940264">"Dodaj novi račun"</string>
     <string name="menu_export_database" msgid="2659719297530170820">"Izvezi fajlove baze podataka"</string>
-    <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"Napravi novi kontakt"</string>
+    <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"Kreiraj novi kontakt"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"Pogledaj više"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"Vidi manje"</string>
     <string name="recent_card_title" msgid="8982782042698001695">"Nedavno"</string>
@@ -305,7 +305,7 @@
     <string name="sms_assistant" msgid="2773424339923116234">"Pošalji tekstualnu poruku <xliff:g id="ASSISTANT">%s</xliff:g>"</string>
     <string name="sms_mms" msgid="4069352461380762677">"Pošalji tekstualnu poruku na MMS broj"</string>
     <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Poruka)"</string>
-    <string name="description_video_call" msgid="7120921378651700947">"Uputi videopoziv"</string>
+    <string name="description_video_call" msgid="7120921378651700947">"Uputi video poziv"</string>
     <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"Obrisati često kontaktirane osobe?"</string>
     <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Obrisat ćete listu često kontaktiranih osoba u aplikaciji Kontakti i Aplikaciji za telefon, pa će aplikacije za e-poštu morati ispočetka učiti vaše postavke adresa."</string>
     <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"Brisanje često kontaktiranih osoba…"</string>
@@ -342,7 +342,7 @@
     <string name="organizationLabelsGroup" msgid="2478611760751832035">"Organizacija"</string>
     <string name="relationLabelsGroup" msgid="1854373894284572781">"Odnos"</string>
     <string name="eventLabelsGroup" msgid="7960408705307831289">"Posebni datum"</string>
-    <string name="sms" msgid="1756857139634224222">"Tekstualna poruka"</string>
+    <string name="sms" msgid="1756857139634224222">"SMS"</string>
     <string name="postal_address" msgid="8765560217149624536">"Adresa"</string>
     <string name="ghostData_company" msgid="5414421120553765775">"Kompanija"</string>
     <string name="ghostData_title" msgid="7496735200318496110">"Pozicija"</string>
@@ -351,11 +351,11 @@
     <string name="label_sip_address" msgid="7252153678613978127">"SIP"</string>
     <string name="websiteLabelsGroup" msgid="4202998982804009261">"Web lokacija"</string>
     <string name="groupsLabel" msgid="7000816729542098972">"Oznake"</string>
-    <string name="email_home" msgid="8573740658148184279">"Pošalji poruku e-pošte na kućnu adresu e-pošte"</string>
+    <string name="email_home" msgid="8573740658148184279">"Pošalji e-poruku na kućnu adresu e-pošte"</string>
     <string name="email_mobile" msgid="2042889209787989814">"Mobilna e-pošta"</string>
-    <string name="email_work" msgid="2807430017302722689">"Pošalji poruku e-pošte na poslovnu adresu e-pošte"</string>
+    <string name="email_work" msgid="2807430017302722689">"Pošalji e-poruku na poslovnu adresu e-pošte"</string>
     <string name="email_other" msgid="3454004077967657109">"E-pošta"</string>
-    <string name="email_custom" msgid="5536404237099078802">"Pošalji poruku e-pošte na <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
+    <string name="email_custom" msgid="5536404237099078802">"Pošalji e-poruku na <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
     <string name="email" msgid="5668400997660065897">"E-pošta"</string>
     <string name="postal_street" msgid="8133143961580058972">"Ulica"</string>
     <string name="postal_city" msgid="6597491300084895548">"Grad"</string>
@@ -366,22 +366,22 @@
     <string name="map_work" msgid="1360474076921878088">"Prikaži poslovnu adresu"</string>
     <string name="map_other" msgid="3817820803587012641">"Prikaži adresu"</string>
     <string name="map_custom" msgid="8761800628069473526">"Prikaži <xliff:g id="CUSTOM_LABEL">%s</xliff:g> adresu"</string>
-    <string name="chat_aim" msgid="2588492205291249142">"Ćaskanje putem aplikacije AIM"</string>
-    <string name="chat_msn" msgid="8041633440091073484">"Ćaskanje putem aplikacije Windows Live"</string>
-    <string name="chat_yahoo" msgid="6629211142719943666">"Ćaskanje putem aplikacije Yahoo"</string>
-    <string name="chat_skype" msgid="1210045020427480566">"Ćaskanje putem aplikacije Skype"</string>
-    <string name="chat_qq" msgid="4294637812847719693">"Ćaskanje putem aplikacije QQ"</string>
-    <string name="chat_gtalk" msgid="981575737258117697">"Ćaskanje putem aplikacije Google Talk"</string>
-    <string name="chat_icq" msgid="8438405386153745775">"Ćaskanje putem aplikacije ICQ"</string>
-    <string name="chat_jabber" msgid="7561444230307829609">"Ćaskanje putem aplikacije Jabber"</string>
-    <string name="chat" msgid="9025361898797412245">"Ćaskanje"</string>
+    <string name="chat_aim" msgid="2588492205291249142">"Chat putem aplikacije AIM"</string>
+    <string name="chat_msn" msgid="8041633440091073484">"Chat putem aplikacije Windows Live"</string>
+    <string name="chat_yahoo" msgid="6629211142719943666">"Chat putem aplikacije Yahoo"</string>
+    <string name="chat_skype" msgid="1210045020427480566">"Chat putem aplikacije Skype"</string>
+    <string name="chat_qq" msgid="4294637812847719693">"Chat putem aplikacije QQ"</string>
+    <string name="chat_gtalk" msgid="981575737258117697">"Chat putem aplikacije Google Talk"</string>
+    <string name="chat_icq" msgid="8438405386153745775">"Chat putem aplikacije ICQ"</string>
+    <string name="chat_jabber" msgid="7561444230307829609">"Chat putem aplikacije Jabber"</string>
+    <string name="chat" msgid="9025361898797412245">"Chat"</string>
     <string name="description_minus_button" msgid="6908099247930477551">"izbriši"</string>
     <string name="expand_name_fields_description" msgid="6948274252874552543">"Prikaži više polja za ime"</string>
-    <string name="collapse_name_fields_description" msgid="4757877385895561556">"Skupi polja za imena"</string>
+    <string name="collapse_name_fields_description" msgid="4757877385895561556">"Suzi polja za imena"</string>
     <string name="expand_phonetic_name_fields_description" msgid="9133052674087187927">"Prikaži više polja za fonetsko ime"</string>
-    <string name="collapse_phonetic_name_fields_description" msgid="9102249481855019452">"Skupi polja za fonetska imena"</string>
+    <string name="collapse_phonetic_name_fields_description" msgid="9102249481855019452">"Suzi polja za fonetska imena"</string>
     <string name="expand_fields_description" msgid="8129294181216760037">"Proširi"</string>
-    <string name="collapse_fields_description" msgid="1884143625854637874">"Skupi"</string>
+    <string name="collapse_fields_description" msgid="1884143625854637874">"Suzi"</string>
     <string name="announce_expanded_fields" msgid="1075947220478530622">"Prošireno"</string>
     <string name="announce_collapsed_fields" msgid="6414231530177338704">"Skupljeno"</string>
     <string name="list_filter_all_accounts" msgid="8908683398914322369">"Svi kontakti"</string>
@@ -419,7 +419,7 @@
     <string name="fail_reason_could_not_open_file" msgid="2067725459821997463">"Nije moguće otvoriti \"<xliff:g id="FILE_NAME">%1$s</xliff:g>\": <xliff:g id="EXACT_REASON">%2$s</xliff:g>."</string>
     <string name="fail_reason_could_not_initialize_exporter" msgid="707260459259688510">"Nije moguće pokrenuti program za izvoz: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
     <string name="fail_reason_no_exportable_contact" msgid="8728506011371262065">"Nema sadržaja za izvoz."</string>
-    <string name="missing_required_permission" msgid="5865884842972833120">"Onemogućili ste potrebnu dozvolu."</string>
+    <string name="missing_required_permission" msgid="5865884842972833120">"Onemogućili ste potrebno odobrenje."</string>
     <string name="fail_reason_error_occurred_during_export" msgid="3018855323913649063">"Došlo je do greške prilikom izvoza: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
     <string name="fail_reason_io_error" msgid="6748358842976073255">"I/O greška"</string>
     <string name="fail_reason_low_memory_during_import" msgid="875222757734882898">"Nema dovoljno memorije. Možda je fajl prevelik."</string>
@@ -470,7 +470,7 @@
     <string name="share_contacts" msgid="8109287987498711664">"Dijeli sve kontakte"</string>
     <string name="share_contacts_failure" msgid="1216431977330560559">"Dijeljenje kontakata nije uspjelo."</string>
     <string name="dialog_export" msgid="1628001095187741417">"Izvezi kontakte"</string>
-    <string name="dialog_import" msgid="2423592905927819672">"Uvezi kontakte sa"</string>
+    <string name="dialog_import" msgid="2423592905927819672">"Uvoz kontakata sa"</string>
     <string name="share_error" msgid="948429331673358107">"Ovaj kontakt se ne može podijeliti."</string>
     <string name="no_contact_to_share" msgid="1276397530378323033">"Nema kontakata za dijeljenje."</string>
     <string name="menu_contacts_filter" msgid="2165153460860262501">"Kontakti za prikaz"</string>
@@ -478,9 +478,9 @@
     <string name="custom_list_filter" msgid="9048525797111024204">"Prilagodi prikaz"</string>
     <string name="menu_custom_filter_save" msgid="2679793632208086460">"Sačuvaj"</string>
     <string name="hint_findContacts" msgid="7128627979899070325">"Pretraži kontakte"</string>
-    <string name="contactsFavoritesLabel" msgid="8417039765586853670">"Favoriti"</string>
-    <string name="menu_import" msgid="6107961135813836467">"Uvezi"</string>
-    <string name="menu_export" msgid="2658783911863503902">"Izvezi"</string>
+    <string name="contactsFavoritesLabel" msgid="8417039765586853670">"Omiljeni"</string>
+    <string name="menu_import" msgid="6107961135813836467">"Uvoz"</string>
+    <string name="menu_export" msgid="2658783911863503902">"Izvoz"</string>
     <string name="menu_blocked_numbers" msgid="5272951629083025995">"Blokirani brojevi"</string>
     <string name="contact_status_update_attribution" msgid="752179367353018597">"putem <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
     <string name="contact_status_update_attribution_with_date" msgid="7358045508107825068">"<xliff:g id="DATE">%1$s</xliff:g> putem <xliff:g id="SOURCE">%2$s</xliff:g>"</string>
@@ -496,13 +496,13 @@
     <string name="about_build_version" msgid="1765533099416999801">"Podverzija"</string>
     <string name="about_open_source_licenses" msgid="6479990452352919641">"Licence otvorenog koda"</string>
     <string name="about_open_source_licenses_summary" msgid="57418386931763994">"Detalji o licenci za softver otvorenog koda"</string>
-    <string name="about_privacy_policy" msgid="3705518622499152626">"Pravila o privatnosti"</string>
-    <string name="about_terms_of_service" msgid="4642400812150296723">"Uslovi pružanja usluge"</string>
+    <string name="about_privacy_policy" msgid="3705518622499152626">"Pravila privatnosti"</string>
+    <string name="about_terms_of_service" msgid="4642400812150296723">"Uslovi korištenja usluge"</string>
     <string name="activity_title_licenses" msgid="5467767062737708066">"Licence otvorenog koda"</string>
     <string name="url_open_error_toast" msgid="452592089815420457">"Otvaranje URL-a nije uspjelo."</string>
     <string name="account_filter_view_checked" msgid="6696859503887762213">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> je označen"</string>
     <string name="account_filter_view_not_checked" msgid="2248684521205038389">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> nije označen"</string>
-    <string name="description_search_video_call" msgid="5841525580339803272">"Uputi videopoziv"</string>
+    <string name="description_search_video_call" msgid="5841525580339803272">"Uputi video poziv"</string>
     <string name="description_delete_contact" msgid="53835657343783663">"Izbriši"</string>
     <string name="description_no_name_header" msgid="8884991311595943271">"Elipsa"</string>
     <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> sek."</string>
@@ -526,7 +526,7 @@
     <string name="dismiss_sync_alert" msgid="8941131776605093596">"Odbaci"</string>
     <string name="account_sync_off" msgid="7646143254066243924">"Sinhronizacija računa je isključena. Dodirnite da je uključite."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"Želite li uključiti automatsko sinhroniziranje?"</string>
-    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"Promjene koje načinite u svim aplikacijama i računima, ne samo u Google kontaktima, bit će ažurirani i na internetu i na vašim uređajima."</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"Promjene koje načinite u svim aplikacijama i računima, ne samo u Google Kontaktima, bit će ažurirani i na internetu i na vašim uređajima."</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"Uključi"</string>
     <string name="connection_error_message" msgid="7046408921529247089">"Niste povezani na mrežu"</string>
     <string name="single_sim_display_label" msgid="6985770499439371497">"SIM"</string>
@@ -536,4 +536,6 @@
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"Nije moguće uvesti kontakte sa SIM kartice"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"Uvoz sa SIM kartice"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"Obavještenja"</string>
+    <string name="yes_button" msgid="1268479086848288060">"Da"</string>
+    <string name="no_button" msgid="5742815694687835125">"Ne"</string>
 </resources>

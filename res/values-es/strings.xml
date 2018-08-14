@@ -321,7 +321,7 @@
     <string name="account_phone" msgid="7128032778471187553">"Dispositivo"</string>
     <string name="account_sim" msgid="6519016427905087952">"Tarjeta SIM"</string>
     <string name="nameLabelsGroup" msgid="2034640839640477827">"Nombre"</string>
-    <string name="nicknameLabelsGroup" msgid="2891682101053358010">"Mote"</string>
+    <string name="nicknameLabelsGroup" msgid="2891682101053358010">"Apodo"</string>
     <string name="name_given" msgid="4280790853455320619">"Nombre"</string>
     <string name="name_family" msgid="7466985689626017037">"Apellidos"</string>
     <string name="name_prefix" msgid="59756378548779822">"Prefijo del nombre"</string>
@@ -454,7 +454,7 @@
     <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"Apellidos"</string>
     <string name="display_options_view_names_as" msgid="6514632499276563482">"Formato de nombre"</string>
     <string name="display_options_view_given_name_first" msgid="3616004640258761473">"Nombre primero"</string>
-    <string name="display_options_view_family_name_first" msgid="956445100777296467">"Apellido primero"</string>
+    <string name="display_options_view_family_name_first" msgid="956445100777296467">"Apellidos primero"</string>
     <string name="settings_accounts" msgid="350219740670774576">"Cuentas"</string>
     <string name="default_editor_account" msgid="699591683362420991">"Cuenta predeterminada para nuevos contactos"</string>
     <string name="settings_my_info_title" msgid="1534272456405343119">"Mi información"</string>

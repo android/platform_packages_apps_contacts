@@ -66,16 +66,16 @@
     <string name="contacts_deleted_two_named_toast" msgid="3642082931473111791">"Contactos <xliff:g id="NAME_0">%1$s</xliff:g> e <xliff:g id="NAME_1">%2$s</xliff:g> eliminados"</string>
     <string name="contacts_deleted_many_named_toast" msgid="7731565342428031249">"<xliff:g id="NAME_0">%1$s</xliff:g>, <xliff:g id="NAME_1">%2$s</xliff:g>, <xliff:g id="NAME_2">%3$s</xliff:g>… foram eliminados"</string>
     <plurals name="contacts_deleted_toast" formatted="false" msgid="1477708624197262295">
-      <item quantity="one">Contacto eliminado</item>
       <item quantity="other">Contactos eliminados</item>
+      <item quantity="one">Contacto eliminado</item>
     </plurals>
     <plurals name="contacts_count" formatted="false" msgid="8696793457340503668">
-      <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> contacto</item>
       <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> contactos</item>
+      <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> contacto</item>
     </plurals>
     <plurals name="contacts_count_with_account" formatted="false" msgid="7402583111980220575">
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> contacto · <xliff:g id="ACCOUNT_1">%2$s</xliff:g></item>
       <item quantity="other"><xliff:g id="COUNT_2">%1$d</xliff:g> contactos · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
+      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> contacto · <xliff:g id="ACCOUNT_1">%2$s</xliff:g></item>
     </plurals>
     <string name="title_from_google" msgid="4664084747121207202">"Da Google"</string>
     <string name="title_from_other_accounts" msgid="8307885412426754288">"Da conta <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
@@ -98,7 +98,7 @@
     <string name="photoPickerNotFoundText" msgid="2052542573853433204">"Não existem imagens disponíveis no dispositivo."</string>
     <string name="attach_photo_dialog_title" msgid="5599827035558557169">"Fotografia do contacto"</string>
     <string name="customLabelPickerTitle" msgid="1081475101983255212">"Nome da etiqueta personalizada"</string>
-    <string name="removePhoto" msgid="4898105274130284565">"Remover fotografia"</string>
+    <string name="removePhoto" msgid="4898105274130284565">"Remover foto"</string>
     <string name="noContacts" msgid="2228592924476426108">"A sua lista de contactos está vazia"</string>
     <string name="emptyGroup" msgid="5102411903247859575">"Sem contactos com esta etiqueta"</string>
     <string name="emptyAccount" msgid="6873962901497975964">"Não existem contactos nesta conta"</string>
@@ -137,8 +137,8 @@
     <string name="menu_add_contact" msgid="3198704337220892684">"Adicionar aos contactos"</string>
     <string name="menu_add_contacts" msgid="4465646512002163011">"Adicionar"</string>
     <plurals name="title_share_via" formatted="false" msgid="5886112726191455415">
-      <item quantity="one">Partilhar contacto através de</item>
       <item quantity="other">Partilhar contactos através de</item>
+      <item quantity="one">Partilhar contacto através de</item>
     </plurals>
     <string name="dialog_new_group_account" msgid="3451312333591556651">"Selecionar conta"</string>
     <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"Criar etiqueta"</string>
@@ -150,9 +150,9 @@
     <string name="account_type_format" msgid="718948015590343010">"Contacto <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
     <string name="google_account_type_format" msgid="5283997303922067997">"Conta <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
     <string name="take_photo" msgid="7496128293167402354">"Tirar foto"</string>
-    <string name="take_new_photo" msgid="7341354729436576304">"Tirar nova fotografia"</string>
+    <string name="take_new_photo" msgid="7341354729436576304">"Tirar nova foto"</string>
     <string name="pick_photo" msgid="2129509985223564942">"Escolher foto"</string>
-    <string name="pick_new_photo" msgid="9122450996263688237">"Selecionar nova fotografia"</string>
+    <string name="pick_new_photo" msgid="9122450996263688237">"Selecionar nova foto"</string>
     <string name="search_results_searching" msgid="3984833028938569930">"A pesquisar..."</string>
     <string name="event_edit_field_hint_text" msgid="5794424930242630477">"Data"</string>
     <string name="group_edit_field_hint_text" msgid="8038224059926963133">"Etiqueta"</string>
@@ -347,9 +347,9 @@
     <string name="label_sip_address" msgid="7252153678613978127">"SIP"</string>
     <string name="websiteLabelsGroup" msgid="4202998982804009261">"Web site"</string>
     <string name="groupsLabel" msgid="7000816729542098972">"Etiquetas"</string>
-    <string name="email_home" msgid="8573740658148184279">"Enviar e-mail para residência"</string>
-    <string name="email_mobile" msgid="2042889209787989814">"Enviar e-mail para telemóvel"</string>
-    <string name="email_work" msgid="2807430017302722689">"Enviar e-mail para emprego"</string>
+    <string name="email_home" msgid="8573740658148184279">"Enviar email para residência"</string>
+    <string name="email_mobile" msgid="2042889209787989814">"Enviar email para telemóvel"</string>
+    <string name="email_work" msgid="2807430017302722689">"Enviar email para emprego"</string>
     <string name="email_other" msgid="3454004077967657109">"Email"</string>
     <string name="email_custom" msgid="5536404237099078802">"Enviar email para <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
     <string name="email" msgid="5668400997660065897">"Email"</string>
@@ -396,12 +396,12 @@
     <string name="import_from_sim" msgid="6912071635295799131">"Cartão SIM"</string>
     <string name="import_from_sim_summary_fmt" msgid="5169032449686348118">"SIM <xliff:g id="SIM_NAME">%1$s</xliff:g>"</string>
     <plurals name="import_from_sim_secondary_contact_count_fmt" formatted="false" msgid="5821095773211149295">
-      <item quantity="one">1 contacto</item>
       <item quantity="other">%1$d contactos</item>
+      <item quantity="one">1 contacto</item>
     </plurals>
     <plurals name="import_from_sim_secondary_template" formatted="false" msgid="2484832025802907060">
-      <item quantity="one"><xliff:g id="COUNT_0">^1</xliff:g> contacto • <xliff:g id="PHONE_NUMBER_1">^2</xliff:g></item>
       <item quantity="other"><xliff:g id="COUNT_2">^1</xliff:g> contactos • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
+      <item quantity="one"><xliff:g id="COUNT_0">^1</xliff:g> contacto • <xliff:g id="PHONE_NUMBER_1">^2</xliff:g></item>
     </plurals>
     <string name="import_from_vcf_file" msgid="8662528435646418203">"Ficheiro .vcf"</string>
     <string name="nothing_to_import_message" msgid="1651921906873335656">"Nada para importar"</string>
@@ -509,8 +509,8 @@
     <string name="sim_import_empty_message" msgid="7743815244380189651">"Sem contactos no cartão SIM"</string>
     <string name="sim_import_contact_exists_toast" msgid="1503743663717316732">"O contacto já existe na sua lista"</string>
     <plurals name="sim_import_success_toast_fmt" formatted="false" msgid="8572156521110906443">
-      <item quantity="one">1 contacto do cartão SIM importado</item>
       <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> contactos do cartão SIM importados</item>
+      <item quantity="one">1 contacto do cartão SIM importado</item>
     </plurals>
     <string name="sim_import_failed_toast" msgid="5559267299793622705">"Ocorreu uma falha ao importar os contactos do cartão SIM"</string>
     <string name="sim_import_title" msgid="2511154832820812822">"Importar do cartão SIM"</string>
