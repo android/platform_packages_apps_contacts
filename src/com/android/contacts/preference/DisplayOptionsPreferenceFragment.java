@@ -37,7 +37,6 @@ import android.provider.ContactsContract.Profile;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.LocalBroadcastManager;
 import android.telecom.TelecomManager;
-import android.telephony.TelephonyManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -283,8 +282,7 @@ public class DisplayOptionsPreferenceFragment extends PreferenceFragment
             getPreferenceScreen().removePreference(findPreference(KEY_DISPLAY_ORDER));
         }
 
-        final boolean isPhone = TelephonyManagerCompat.isVoiceCapable(
-                (TelephonyManager) getContext().getSystemService(Context.TELEPHONY_SERVICE));
+        final boolean isPhone = TelephonyManagerCompat.isVoiceCapable(getContext());
         final boolean showBlockedNumbers = isPhone && ContactsUtils.FLAG_N_FEATURE
                 && BlockedNumberContract.canCurrentUserBlockNumbers(getContext());
         if (!showBlockedNumbers) {
