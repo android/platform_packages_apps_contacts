@@ -17,6 +17,9 @@
 package com.android.contacts.compat;
 
 import android.net.Uri;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.telecom.PhoneAccountHandle;
 import android.telephony.TelephonyManager;
@@ -39,9 +42,14 @@ public class TelephonyManagerCompat {
      * on any device with a telephony radio, even if the device is
      * data-only.
      */
-    public static boolean isVoiceCapable(@Nullable TelephonyManager telephonyManager) {
+    public static boolean isVoiceCapable(@NonNull Context context) {
+        TelephonyManager telephonyManager =
+                (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         if (telephonyManager == null) {
             return false;
+        }
+        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_AUTOMOTIVE)) {
+            return true;
         }
         if (CompatUtils.isLollipopMr1Compatible()
                 || CompatUtils.isMethodAvailable(TELEPHONY_MANAGER_CLASS, "isVoiceCapable")) {
