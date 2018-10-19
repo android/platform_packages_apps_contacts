@@ -446,7 +446,7 @@
     <string name="reading_vcard_failed_title" msgid="4251647443358422855">"Ошибка чтения vCard-файла"</string>
     <string name="importing_vcard_finished_title" msgid="3341541727268747967">"Импорт файла vCard <xliff:g id="FILENAME">%s</xliff:g> завершен"</string>
     <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"Импорт файла \"<xliff:g id="FILENAME">%s</xliff:g>\" отменен"</string>
-    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"Импорт <xliff:g id="FILENAME">%s</xliff:g> начнется в ближайшее время."</string>
+    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"Импорт скоро начнется (<xliff:g id="FILENAME">%s</xliff:g>)"</string>
     <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"Файл будет импортирован в ближайшее время."</string>
     <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"Запрос на импорт данных vCard отклонен. Повторите попытку позже."</string>
     <string name="contacts_export_will_start_message" msgid="8538705791417534431">"Контакты скоро будут экспортированы"</string>

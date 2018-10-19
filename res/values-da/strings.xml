@@ -16,8 +16,8 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="applicationLabel" msgid="3906689777043645443">"Kontaktpersoner"</string>
-    <string name="contactsList" msgid="8661624236494819731">"Kontaktpersoner"</string>
+    <string name="applicationLabel" msgid="3906689777043645443">"Kontakter"</string>
+    <string name="contactsList" msgid="8661624236494819731">"Kontakter"</string>
     <string name="shortcut_add_contact" msgid="7476283631356909204">"Tilføj kontakt"</string>
     <string name="shortcutContact" msgid="749243779392912958">"Kontakt"</string>
     <string name="shortcutDialContact" msgid="746622101599186779">"Direkte opkald"</string>
@@ -87,7 +87,7 @@
     <string name="readOnlyContactDeleteConfirmation" msgid="4717023505914239809">"Data om denne kontakt fra skrivebeskyttede konti bliver skjult, men ikke slettet."</string>
     <string name="single_delete_confirmation" msgid="3106905986948679720">"Vil du slette denne kontakt?"</string>
     <string name="batch_delete_confirmation" msgid="3984346060324014108">"Vil du slette de valgte kontaktpersoner?"</string>
-    <string name="batch_delete_read_only_contact_confirmation" msgid="8411117621035639964">"Kontaktpersoner fra dine skrivebeskyttede konti kan ikke slettes, men de kan skjules."</string>
+    <string name="batch_delete_read_only_contact_confirmation" msgid="8411117621035639964">"Kontakter fra dine skrivebeskyttede konti kan ikke slettes, men de kan skjules."</string>
     <string name="batch_delete_multiple_accounts_confirmation" msgid="8207205649127030030">"De kontaktpersoner, du vil slette, indeholder oplysninger fra flere konti. Oplysninger fra skrivebeskyttede konti skjules fremfor at blive slettet."</string>
     <string name="multipleContactDeleteConfirmation" msgid="5235324124905653550">"Sletning af denne kontakt sletter oplysninger fra flere konti."</string>
     <string name="deleteConfirmation" msgid="3512271779086656043">"Vil du slette denne kontakt?"</string>
@@ -303,7 +303,7 @@
     <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (send besked)"</string>
     <string name="description_video_call" msgid="7120921378651700947">"Foretag videoopkald"</string>
     <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"Vil du rydde de ofte kontaktede?"</string>
-    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Hvis du gør dette, rydder du listen over personer, som du ofte kontakter, i dine apps Kontaktpersoner og Telefon. Du vil samtidig tvinge e-mailapps til at lære dine adressepræferencer fra bunden."</string>
+    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Hvis du gør dette, rydder du listen over personer, som du ofte kontakter, i dine apps Kontakter og Telefon. Du vil samtidig tvinge e-mailapps til at lære dine adressepræferencer fra bunden."</string>
     <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"Rydder ofte kontaktede personer…"</string>
     <string name="status_available" msgid="5586870015822828392">"Tilgængelig"</string>
     <string name="status_away" msgid="1838861100379804730">"Ikke til stede"</string>
@@ -316,7 +316,7 @@
     <string name="missing_name" msgid="8745511583852904385">"(Intet navn)"</string>
     <string name="favoritesFrequentContacted" msgid="6184232487472425690">"Jævnligt kontaktet"</string>
     <string name="list_filter_phones" msgid="735313795643493365">"Alle kontaktpersoner med telefonnumre"</string>
-    <string name="list_filter_phones_work" msgid="1470173699551475015">"Kontaktpersoner for arbejdsprofil"</string>
+    <string name="list_filter_phones_work" msgid="1470173699551475015">"Kontakter for arbejdsprofil"</string>
     <string name="view_updates_from_group" msgid="1782685984905600034">"Se opdateringer"</string>
     <string name="account_phone" msgid="7128032778471187553">"Enhed"</string>
     <string name="account_sim" msgid="6519016427905087952">"SIM-kort"</string>
@@ -459,7 +459,7 @@
     <string name="default_editor_account" msgid="699591683362420991">"Standardkonto til nye kontaktpersoner"</string>
     <string name="settings_my_info_title" msgid="1534272456405343119">"Mine oplysninger"</string>
     <string name="set_up_profile" msgid="7370213843590143771">"Konfigurer din profil"</string>
-    <string name="setting_about" msgid="7014388749752042863">"Om Kontaktpersoner"</string>
+    <string name="setting_about" msgid="7014388749752042863">"Om Kontakter"</string>
     <string name="share_favorite_contacts" msgid="4280926751003081042">"Del foretrukne kontaktpersoner"</string>
     <string name="share_contacts" msgid="8109287987498711664">"Del alle kontaktpersoner"</string>
     <string name="share_contacts_failure" msgid="1216431977330560559">"Kontaktpersonerne kunne ikke deles."</string>
@@ -519,7 +519,7 @@
     <string name="dismiss_sync_alert" msgid="8941131776605093596">"Luk"</string>
     <string name="account_sync_off" msgid="7646143254066243924">"Kontosynkronisering er slået fra. Tryk for at slå funktionen til."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"Vil du slå automatisk synkronisering til?"</string>
-    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"De ændringer, du foretager af alle apps og konti og ikke kun Google Kontaktpersoner, holdes opdateret mellem nettet og dine enheder."</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"De ændringer, du foretager af alle apps og konti og ikke kun Google Kontakter, holdes opdateret mellem nettet og dine enheder."</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"Slå til"</string>
     <string name="connection_error_message" msgid="7046408921529247089">"Der er ingen forbindelse"</string>
     <string name="single_sim_display_label" msgid="6985770499439371497">"SIM-kort"</string>
