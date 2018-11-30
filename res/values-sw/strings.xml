@@ -175,8 +175,8 @@
     <string name="delete_group_dialog_message" msgid="335713829185261371">"Ungependa kufuta lebo iitwayo \"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\"? (Anwani zenyewe hazitafutwa.)"</string>
     <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"Andika jina ya anwani kabla ya kuiunganisha na nyingine."</string>
     <string name="copy_text" msgid="3257145021583508761">"Nakili kwenye ubao wa kunakili"</string>
-    <string name="set_default" msgid="4417505153468300351">"Weka chaguo msingi"</string>
-    <string name="clear_default" msgid="7193185801596678067">"Ondoa chaguo msingi"</string>
+    <string name="set_default" msgid="4417505153468300351">"Weka chaguomsingi"</string>
+    <string name="clear_default" msgid="7193185801596678067">"Ondoa chaguomsingi"</string>
     <string name="toast_text_copied" msgid="5143776250008541719">"Maandishi yamenakiliwa"</string>
     <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"Una uhakika hutaki kuhifadhi mabadiliko uliyofanya?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"Tupa"</string>
@@ -456,7 +456,7 @@
     <string name="display_options_view_given_name_first" msgid="3616004640258761473">"Anza kwa jina la kwanza"</string>
     <string name="display_options_view_family_name_first" msgid="956445100777296467">"Anza kwa jina la mwisho"</string>
     <string name="settings_accounts" msgid="350219740670774576">"Akaunti"</string>
-    <string name="default_editor_account" msgid="699591683362420991">"Akaunti chaguo msingi ya kuhifadhi anwani mpya"</string>
+    <string name="default_editor_account" msgid="699591683362420991">"Akaunti chaguomsingi ya kuhifadhi anwani mpya"</string>
     <string name="settings_my_info_title" msgid="1534272456405343119">"Maelezo yangu"</string>
     <string name="set_up_profile" msgid="7370213843590143771">"Weka wasifu wako"</string>
     <string name="setting_about" msgid="7014388749752042863">"Kuhusu Anwani"</string>
