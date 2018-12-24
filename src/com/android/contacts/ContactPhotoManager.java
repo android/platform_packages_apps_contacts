@@ -25,6 +25,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -57,6 +58,7 @@ import android.widget.ImageView;
 
 import com.android.contacts.lettertiles.LetterTileDrawable;
 import com.android.contacts.util.BitmapUtil;
+import com.android.contacts.util.ContactPhotoUtils;
 import com.android.contacts.util.PermissionsUtil;
 import com.android.contacts.util.TrafficStatsTags;
 import com.android.contacts.util.UriUtils;
@@ -1208,7 +1210,9 @@ class ContactPhotoManagerImpl extends ContactPhotoManager implements Callback {
             mBitmapHolderCache.put(key, holder);
             if (mBitmapHolderCache.get(key) != holder) {
                 Log.w(TAG, "Bitmap too big to fit in cache.");
-                mBitmapHolderCache.put(key, BITMAP_UNAVAILABLE);
+                if (!cacheCompressBitmap(key, bytes)) {
+                    mBitmapHolderCache.put(key, BITMAP_UNAVAILABLE);
+                }
             }
         } else {
             mBitmapHolderCache.put(key, BITMAP_UNAVAILABLE);
@@ -1745,5 +1749,33 @@ class ContactPhotoManagerImpl extends ContactPhotoManager implements Callback {
             }
             mDefaultProvider.applyDefaultImage(view, mRequestedExtent, mDarkTheme, request);
         }
+    }
+
+    private boolean cacheCompressBitmap(Object key, byte[] bytes) {
+        if (bytes == null) {
+            Log.w(TAG, "[cacheCompressBitmap] bytes is null.");
+            return false;
+        }
+        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        if (bitmap == null) {
+            Log.w(TAG, "[cacheCompressBitmap] bitmap is null.");
+            return false;
+        }
+        final int size = ContactsUtils.getThumbnailSize(mContext);
+        final Bitmap bitmapScaled = Bitmap.createScaledBitmap(
+                bitmap, size, size, /* filter =*/ false);
+        final byte[] compressBytes = ContactPhotoUtils.compressBitmap(bitmapScaled);
+        if (compressBytes == null) {
+            Log.w(TAG, "[cacheCompressBitmap] compressBytes is null.");
+            return false;
+        }
+        BitmapHolder compressHolder = new BitmapHolder(compressBytes,
+                BitmapUtil.getSmallerExtentFromBytes(compressBytes));
+        mBitmapHolderCache.put(key, compressHolder);
+        if (mBitmapHolderCache.get(key) != compressHolder) {
+            Log.w(TAG, "[cacheCompressBitmap] Compress Bitmap too big to fit in cache.");
+            return false;
+        }
+        return true;
     }
 }
