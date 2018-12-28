@@ -25,6 +25,9 @@
     <!-- For ContactMultiDeletionInteraction -->
     <item type="id" name="dialog_delete_multiple_contact_loader_id" />
 
+    <!-- For ContactMultiShareInteraction -->
+    <item type="id" name="dialog_share_multiple_contact_loader_id" />
+
     <!-- For PhoneNumberInteraction -->
     <item type="id" name="dialog_phone_number_call_disambiguation"/>
 
