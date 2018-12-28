@@ -21,6 +21,7 @@ import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
@@ -28,7 +29,9 @@ import android.content.DialogInterface.OnDismissListener;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.ContactsContract.RawContacts;
+import android.support.v4.os.ResultReceiver;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -82,6 +85,7 @@ public class ContactMultiDeletionInteraction extends Fragment
     private TreeSet<Long> mContactIds;
     private Context mContext;
     private AlertDialog mDialog;
+    private ProgressDialog mProgressDialog;
     private MultiContactDeleteListener mListener;
 
     /**
@@ -165,19 +169,17 @@ public class ContactMultiDeletionInteraction extends Fragment
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         final TreeSet<Long> contactIds = (TreeSet<Long>) args.getSerializable(ARG_CONTACT_IDS);
         final Object[] parameterObject = contactIds.toArray();
-        final String[] parameters = new String[contactIds.size()];
 
-        final StringBuilder builder = new StringBuilder();
+        final StringBuilder builder = new StringBuilder(RawContacts.CONTACT_ID + " in (");
         for (int i = 0; i < contactIds.size(); i++) {
-            parameters[i] = String.valueOf(parameterObject[i]);
-            builder.append(RawContacts.CONTACT_ID + " =?");
-            if (i == contactIds.size() -1) {
-                break;
+            if (i > 0) {
+                builder.append(",");
             }
-            builder.append(" OR ");
+            builder.append(String.valueOf(parameterObject[i]));
         }
+        builder.append(")");
         return new CursorLoader(mContext, RawContacts.CONTENT_URI, RAW_CONTACT_PROJECTION,
-                builder.toString(), parameters, null);
+                builder.toString(), null, null);
     }
 
     @Override
@@ -310,9 +312,40 @@ public class ContactMultiDeletionInteraction extends Fragment
         }
     }
 
+    private void showProgressDialog() {
+        CharSequence title = getString(R.string.delete_contacts_title);
+
+        mProgressDialog = new ProgressDialog(mContext);
+        mProgressDialog.setTitle(title);
+        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        mProgressDialog.setProgress(0);
+        mProgressDialog.setMax(mContactIds.size());
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.show();
+    }
+
     protected void doDeleteContact(long[] contactIds, final String[] names) {
+        ResultReceiver receiver = new ResultReceiver(new Handler()) {
+            @Override
+            protected void onReceiveResult(int resultCode, Bundle resultData) {
+                super.onReceiveResult(resultCode, resultData);
+                switch (resultCode){
+                    case ContactSaveService.CONTACTS_DELETE_STARTED:
+                        showProgressDialog();
+                        break;
+                    case ContactSaveService.CONTACTS_DELETE_INCREMENT:
+                        mProgressDialog.incrementProgressBy(1);
+                        break;
+                    case ContactSaveService.CONTACTS_DELETE_COMPLETE:
+                        mProgressDialog.dismiss();
+                        mProgressDialog = null;
+                        break;
+                }
+            }
+        };
+
         mContext.startService(ContactSaveService.createDeleteMultipleContactsIntent(mContext,
-                contactIds, names));
+                contactIds, names, receiver));
         mListener.onDeletionFinished();
     }
 
