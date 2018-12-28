@@ -166,6 +166,9 @@ public class ContactSaveService extends IntentService {
     public static final int RESULT_UNKNOWN = 0;
     public static final int RESULT_SUCCESS = 1;
     public static final int RESULT_FAILURE = 2;
+    public static final int CONTACTS_DELETE_STARTED = 0;
+    public static final int CONTACTS_DELETE_INCREMENT = 1;
+    public static final int CONTACTS_DELETE_COMPLETE = 2;
 
     private static final HashSet<String> ALLOWED_DATA_COLUMNS = Sets.newHashSet(
         Data.MIMETYPE,
@@ -1183,10 +1186,19 @@ public class ContactSaveService extends IntentService {
      */
     public static Intent createDeleteMultipleContactsIntent(Context context,
             long[] contactIds, final String[] names) {
+        return createDeleteMultipleContactsIntent(context, contactIds, names, /* receiver = */null);
+    }
+
+    /**
+     * Creates an intent that can be sent to this service to delete multiple contacts.
+     */
+    public static Intent createDeleteMultipleContactsIntent(Context context,
+            long[] contactIds, final String[] names, ResultReceiver receiver) {
         Intent serviceIntent = new Intent(context, ContactSaveService.class);
         serviceIntent.setAction(ContactSaveService.ACTION_DELETE_MULTIPLE_CONTACTS);
         serviceIntent.putExtra(ContactSaveService.EXTRA_CONTACT_IDS, contactIds);
         serviceIntent.putExtra(ContactSaveService.EXTRA_DISPLAY_NAME_ARRAY, names);
+        serviceIntent.putExtra(ContactSaveService.EXTRA_RESULT_RECEIVER, receiver);
         return serviceIntent;
     }
 
@@ -1206,9 +1218,13 @@ public class ContactSaveService extends IntentService {
             Log.e(TAG, "Invalid arguments for deleteMultipleContacts request");
             return;
         }
+        final ResultReceiver receiver = intent.getParcelableExtra(
+                ContactSaveService.EXTRA_RESULT_RECEIVER);
+        notifyActionProgress(CONTACTS_DELETE_STARTED, receiver);
         for (long contactId : contactIds) {
             final Uri contactUri = ContentUris.withAppendedId(Contacts.CONTENT_URI, contactId);
             getContentResolver().delete(contactUri, null, null);
+            notifyActionProgress(CONTACTS_DELETE_INCREMENT, receiver);
         }
         final String[] names = intent.getStringArrayExtra(
                 ContactSaveService.EXTRA_DISPLAY_NAME_ARRAY);
@@ -1227,6 +1243,7 @@ public class ContactSaveService extends IntentService {
                     R.string.contacts_deleted_many_named_toast, (Object[]) names);
         }
 
+        notifyActionProgress(CONTACTS_DELETE_COMPLETE, receiver);
         mMainHandler.post(new Runnable() {
             @Override
             public void run() {
@@ -1234,6 +1251,12 @@ public class ContactSaveService extends IntentService {
                         .show();
             }
         });
+    }
+
+    private void notifyActionProgress(int state, ResultReceiver receiver){
+        if (receiver != null) {
+            receiver.send(state, new Bundle());
+        }
     }
 
     /**

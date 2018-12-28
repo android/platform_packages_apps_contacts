@@ -189,6 +189,23 @@ public abstract class MultiSelectContactsListFragment<T extends MultiSelectEntry
         }
     }
 
+    /**
+     * @param selected all contacts
+     */
+    public void setSelectedAll() {
+        TreeSet<Long> allContactIds = new TreeSet<Long>();
+        for (int i = 0; i < getAdapter().getCount(); i++) {
+            final long contactId = getContactId(i);
+            if (contactId < 0) {
+                return;
+            }
+            allContactIds.add(contactId);
+        }
+        if (getAdapter().isDisplayingCheckBoxes()) {
+            getAdapter().setSelectedContactIds(allContactIds);
+        }
+    }
+
     private long getContactId(int position) {
         final int contactIdColumnIndex = getAdapter().getContactColumnIdIndex();
 
