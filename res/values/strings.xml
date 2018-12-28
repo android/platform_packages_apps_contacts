@@ -232,6 +232,9 @@
     <!-- Positive button text of confirmation dialog contents after users selects to delete a Writable contact. [CHAR LIMIT=30] -->
     <string name="deleteConfirmation_positive_button">Delete</string>
 
+    <!-- Deleting dialog, shown after users selects to delete multiple contacts writable contacts. [CHAR LIMIT=NONE]  -->
+    <string name="delete_contacts_title">Deleting contacts</string>
+
     <!-- Message displayed in a toast when you try to view the details of a contact that
          for some reason doesn't exist anymore. [CHAR LIMIT=NONE]-->
     <string name="invalidContactMessage">The contact doesn\'t exist.</string>
@@ -365,6 +368,9 @@
 
     <!-- The menu item to share the currently viewed contact [CHAR LIMIT=30] -->
     <string name="menu_share">Share</string>
+
+    <!-- The menu item to select all contacts -->
+    <string name="menu_select_all">Select all</string>
 
     <!-- The menu item to add the the currently viewed contact to your contacts [CHAR LIMIT=30] -->
     <string name="menu_add_contact">Add to contacts</string>
