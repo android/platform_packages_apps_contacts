@@ -37,7 +37,9 @@ LOCAL_AAPT_FLAGS := \
 
 LOCAL_PACKAGE_NAME := Contacts
 LOCAL_CERTIFICATE := shared
+LOCAL_PRODUCT_MODULE := true
 LOCAL_PRIVILEGED_MODULE := true
+LOCAL_REQUIRED_MODULES := privapp_whitelist_com.android.contacts
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 

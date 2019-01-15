@@ -163,7 +163,7 @@
     <string name="contact_directory_description" msgid="683398073603909119">"Directory <xliff:g id="TYPE">%1$s</xliff:g>"</string>
     <string name="activity_title_settings" msgid="5464130076132770781">"Instellingen"</string>
     <string name="menu_settings" msgid="377929915873428211">"Instellingen"</string>
-    <string name="menu_help" msgid="1680178646764069976">"Help en feedback"</string>
+    <string name="menu_help" msgid="1680178646764069976">"Hulp en feedback"</string>
     <string name="organization_company_and_title" msgid="6718207751363732025">"<xliff:g id="COMPANY_0">%2$s</xliff:g>, <xliff:g id="COMPANY_1">%1$s</xliff:g>"</string>
     <string name="non_phone_caption" msgid="1541655052330027380">"Telefoonnummer"</string>
     <string name="non_phone_add_to_contacts" msgid="6590985286250471169">"Toevoegen aan contacten"</string>
@@ -227,7 +227,7 @@
     <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"binnenkomend"</string>
     <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"uitgaand"</string>
     <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"gemist"</string>
-    <string name="content_description_recent_call" msgid="5183800406316723676">"recente oproep. <xliff:g id="CALL_TYPE">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. klik om terug te bellen"</string>
+    <string name="content_description_recent_call" msgid="5183800406316723676">"recent gesprek. <xliff:g id="CALL_TYPE">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. klik om terug te bellen"</string>
     <string name="message_from_you_prefix" msgid="7180706529908434482">"Jij: <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"Meer velden"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"Contactfoto wijzigen"</string>
@@ -481,9 +481,9 @@
     <string name="action_menu_back_from_search" msgid="8793348588949233348">"stoppen met zoeken"</string>
     <string name="description_clear_search" msgid="688023606766232904">"Zoekopdracht wissen"</string>
     <string name="select_account_dialog_title" msgid="5478489655696599219">"Account"</string>
-    <string name="set_default_account" msgid="4311613760725609801">"Altijd gebruiken voor oproepen"</string>
-    <string name="call_with_a_note" msgid="8389827628360791676">"Oproep met een notitie"</string>
-    <string name="call_subject_hint" msgid="3043028982108363572">"Typ een notitie om te verzenden met de oproep…"</string>
+    <string name="set_default_account" msgid="4311613760725609801">"Altijd gebruiken voor gesprekken"</string>
+    <string name="call_with_a_note" msgid="8389827628360791676">"Gesprek met een notitie"</string>
+    <string name="call_subject_hint" msgid="3043028982108363572">"Typ een notitie om te verzenden met het gesprek…"</string>
     <string name="send_and_call_button" msgid="7740295432834590737">"VERZENDEN EN BELLEN"</string>
     <string name="call_subject_limit" msgid="4545212901205397669">"<xliff:g id="COUNT">%1$s</xliff:g>/<xliff:g id="LIMIT">%2$s</xliff:g>"</string>
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
