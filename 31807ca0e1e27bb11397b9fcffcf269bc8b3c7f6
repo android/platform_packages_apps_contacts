@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "acf71d2b_a6919127",
+        "filename": "OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1226721
+      },
+      "writtenOn": "2019-01-18T22:37:12Z",
+      "side": 1,
+      "message": "Replace wenyiw with:\navipul\nhayesjordan\njohnshao\nlaskey\nyaolu\n\nIf it\u0027s preferred to keep the list small, could probably just remove wenyiw",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 17
+      },
+      "revId": "31807ca0e1e27bb11397b9fcffcf269bc8b3c7f6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
