@@ -22,6 +22,30 @@
       "revId": "31807ca0e1e27bb11397b9fcffcf269bc8b3c7f6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bffd9987_24d5ecbe",
+        "filename": "OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1052399
+      },
+      "writtenOn": "2019-01-18T22:59:16Z",
+      "side": 1,
+      "message": "Done, except 3 people not found in AOSP Gerrit",
+      "parentUuid": "acf71d2b_a6919127",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 17
+      },
+      "revId": "31807ca0e1e27bb11397b9fcffcf269bc8b3c7f6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
