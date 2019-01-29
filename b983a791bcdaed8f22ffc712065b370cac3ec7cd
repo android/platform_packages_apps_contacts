@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df874556_0b0f20a5",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1434023
+      },
+      "writtenOn": "2019-01-29T05:03:44Z",
+      "side": 1,
+      "message": "Any constructor to pass this information in one shot instead of several statements ?",
+      "range": {
+        "startLine": 322,
+        "startChar": 24,
+        "endLine": 322,
+        "endChar": 30
+      },
+      "revId": "b983a791bcdaed8f22ffc712065b370cac3ec7cd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
