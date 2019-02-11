@@ -434,7 +434,7 @@
     <string name="reading_vcard_failed_title" msgid="4251647443358422855">"ไม่สามารถอ่านข้อมูล vCard"</string>
     <string name="importing_vcard_finished_title" msgid="3341541727268747967">"นำเข้า vCard <xliff:g id="FILENAME">%s</xliff:g> เรียบร้อยแล้ว"</string>
     <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"ยกเลิกการนำเข้า <xliff:g id="FILENAME">%s</xliff:g> แล้ว"</string>
-    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"การนำเข้า <xliff:g id="FILENAME">%s</xliff:g> จะเกิดขึ้นในไม่ช้า"</string>
+    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"ระบบจะนำเข้า <xliff:g id="FILENAME">%s</xliff:g> เร็วๆ นี้"</string>
     <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"ไฟล์จะถููกนำเข้าในไม่ช้า"</string>
     <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"คำขอนำเข้า vCard ถูกปฏิเสธ ลองใหม่ภายหลัง"</string>
     <string name="contacts_export_will_start_message" msgid="8538705791417534431">"ระบบจะส่งออกรายชื่อติดต่อในไม่ช้า"</string>

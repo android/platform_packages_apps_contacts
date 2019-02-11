@@ -434,7 +434,7 @@
     <string name="reading_vcard_failed_title" msgid="4251647443358422855">"No se pudieron leer los datos de vCard."</string>
     <string name="importing_vcard_finished_title" msgid="3341541727268747967">"Finalizó la importación de la vCard <xliff:g id="FILENAME">%s</xliff:g>"</string>
     <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"Se canceló la importación de <xliff:g id="FILENAME">%s</xliff:g>."</string>
-    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"<xliff:g id="FILENAME">%s</xliff:g> se importará en breve."</string>
+    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"Se importará(n) en breve <xliff:g id="FILENAME">%s</xliff:g>"</string>
     <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"El archivo se importará en breve."</string>
     <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"Se rechazó la solicitud de importación de la vCard. Vuelve a intentarlo más tarde."</string>
     <string name="contacts_export_will_start_message" msgid="8538705791417534431">"Los contactos se exportarán en breve."</string>
@@ -490,7 +490,7 @@
     <string name="about_build_version" msgid="1765533099416999801">"Versión de compilación"</string>
     <string name="about_open_source_licenses" msgid="6479990452352919641">"Licencias de código abierto"</string>
     <string name="about_open_source_licenses_summary" msgid="57418386931763994">"Detalles de la licencia de software de código abierto"</string>
-    <string name="about_privacy_policy" msgid="3705518622499152626">"Política de privacidad"</string>
+    <string name="about_privacy_policy" msgid="3705518622499152626">"Política de Privacidad"</string>
     <string name="about_terms_of_service" msgid="4642400812150296723">"Condiciones del servicio"</string>
     <string name="activity_title_licenses" msgid="5467767062737708066">"Licencias de código abierto"</string>
     <string name="url_open_error_toast" msgid="452592089815420457">"No se pudo abrir la URL."</string>

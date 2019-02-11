@@ -47,9 +47,9 @@
     <string name="menu_new_group_action_bar" msgid="3127059073617415221">"लेबल तयार करा"</string>
     <string name="splitConfirmation" msgid="7342030840130187290">"एकाधिक संपर्कांमध्‍ये या संपर्काचा दुवा रद्द करायचा?"</string>
     <string name="splitConfirmation_positive_button" msgid="9129409098807939699">"दुवा रद्द करा"</string>
-    <string name="splitConfirmationWithPendingChanges" msgid="7719062163511895696">"आपण आधीपासून केलेले बदल आपण सेव्ह करू आणि एकाधिक संपर्कांमध्‍ये या संपर्काचा दुवा रद्द करू इच्छिता?"</string>
+    <string name="splitConfirmationWithPendingChanges" msgid="7719062163511895696">"तुम्ही आधीपासून केलेले बदल तुम्ही सेव्ह करू आणि एकाधिक संपर्कांमध्‍ये या संपर्काचा दुवा रद्द करू इच्छिता?"</string>
     <string name="splitConfirmationWithPendingChanges_positive_button" msgid="9073444264887244032">"सेव्ह करा आणि दुवा रद्द करा"</string>
-    <string name="joinConfirmation" msgid="8262614843581924365">"आपण आधीपासून केलेले बदल आपण सेव्ह करू आणि निवडलेल्या संपर्काशी दुवा जोडू इच्छिता?"</string>
+    <string name="joinConfirmation" msgid="8262614843581924365">"तुम्ही आधीपासून केलेले बदल तुम्ही सेव्ह करू आणि निवडलेल्या संपर्काशी दुवा जोडू इच्छिता?"</string>
     <string name="joinConfirmation_positive_button" msgid="4573092849769149516">"सेव्ह करा आणि दुवा जोडा"</string>
     <string name="contacts_linking_progress_bar" msgid="2846494347384549277">"दुवा साधत आहे"</string>
     <string name="contacts_unlinking_progress_bar" msgid="5989310198163726929">"दुवा रद्द करत आहे"</string>
@@ -57,7 +57,7 @@
     <string name="menu_linkedContacts" msgid="400444389718855621">"दुवा जोडलेले संपर्क"</string>
     <string name="menu_save" msgid="1727844363591825909">"सेव्ह करा"</string>
     <string name="titleJoinContactDataWith" msgid="6825255752748313944">"संपर्कांचा दुवा साधा"</string>
-    <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"आपण <xliff:g id="NAME">%s</xliff:g> सह ज्या संपर्काचा दुवा जोडू इच्छिता तो निवडा:"</string>
+    <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"तुम्ही <xliff:g id="NAME">%s</xliff:g> सह ज्या संपर्काचा दुवा जोडू इच्छिता तो निवडा:"</string>
     <string name="separatorJoinAggregateSuggestions" msgid="2831414448851313345">"सूचित संपर्क"</string>
     <string name="separatorJoinAggregateAll" msgid="7939932265026181043">"सर्व संपर्क"</string>
     <string name="contactsJoinedNamedMessage" msgid="1299418263439579455">"<xliff:g id="NAME">%s</xliff:g> चा दुवा जोडला"</string>
@@ -82,7 +82,7 @@
     <string name="menu_set_ring_tone" msgid="8728345772068064946">"रिंगटोन सेट करा"</string>
     <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"व्हॉइसमेल मार्गस्थ करा"</string>
     <string name="menu_unredirect_calls_to_vm" msgid="8725542534701811737">"व्हॉइसमेलवर मार्गस्थ रद्द करा"</string>
-    <string name="readOnlyContactWarning" msgid="7514475664695089411">"हा संपर्क केवळ-वाचनीय आहे, तो हटवणे शक्य नाही, परंतु आपण तो लपवू शकता."</string>
+    <string name="readOnlyContactWarning" msgid="7514475664695089411">"हा संपर्क केवळ-वाचनीय आहे, तो हटवणे शक्य नाही, परंतु तुम्ही तो लपवू शकता."</string>
     <string name="readOnlyContactWarning_positive_button" msgid="8914797212167683673">"संपर्क लपवा"</string>
     <string name="readOnlyContactDeleteConfirmation" msgid="4717023505914239809">"या संंपर्कावरील केवळ-वाचनीय खाती लपविली जातील, हटविली जाणार नाहीत."</string>
     <string name="single_delete_confirmation" msgid="3106905986948679720">"हा संपर्क हटवायचा?"</string>
@@ -159,7 +159,7 @@
     <string name="cancel_button_content_description" msgid="1288652456274531846">"रद्द करा"</string>
     <string name="back_arrow_content_description" msgid="4355362760545735065">"परत"</string>
     <string name="action_menu_back_from_edit_select" msgid="6435476408621731420">"बंद करा"</string>
-    <string name="aggregation_suggestion_edit_dialog_message" msgid="6549585283910518095">"निवडलेले संपर्क संपादित करण्‍यावर स्‍विच करायचे? आपण आत्तापर्यंत प्रविष्‍ट केलेली माहिती कॉपी केली जाईल."</string>
+    <string name="aggregation_suggestion_edit_dialog_message" msgid="6549585283910518095">"निवडलेले संपर्क संपादित करण्‍यावर स्‍विच करायचे? तुम्ही आत्तापर्यंत प्रविष्‍ट केलेली माहिती कॉपी केली जाईल."</string>
     <string name="contact_directory_description" msgid="683398073603909119">"निर्देशिका <xliff:g id="TYPE">%1$s</xliff:g>"</string>
     <string name="activity_title_settings" msgid="5464130076132770781">"सेटिंग्ज"</string>
     <string name="menu_settings" msgid="377929915873428211">"सेटिंग्ज"</string>
@@ -228,7 +228,7 @@
     <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"केले जाणारे"</string>
     <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"सुटलेले"</string>
     <string name="content_description_recent_call" msgid="5183800406316723676">"अलीकडील कॉल. <xliff:g id="CALL_TYPE">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. परत कॉल करण्यासाठी क्लिक करा"</string>
-    <string name="message_from_you_prefix" msgid="7180706529908434482">"आपण: <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
+    <string name="message_from_you_prefix" msgid="7180706529908434482">"तुम्ही: <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"आणखी फील्ड"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"संपर्क फोटो बदला"</string>
     <string name="editor_add_photo_content_description" msgid="4194479313465418120">"संपर्क फोटो जोडा"</string>
@@ -240,7 +240,7 @@
     <string name="quickcontact_suggestion_cancel_button" msgid="8236954313106630862">"रद्द करा"</string>
     <string name="suggestion_card_this_contact_title" msgid="3039457405374454914">"हा संपर्क"</string>
     <string name="suggestion_card_duplicates_title" msgid="9107788743178980902">"संभाव्य डुप्लिकेट"</string>
-    <string name="suggestion_card_help_message" msgid="4474061044387181093">"हे संपर्क म्हणजे कदाचित एकच व्यक्ती असू शकते. आपण त्या सर्वांना एकल दुवा म्हणून एकत्र जोडू शकता."</string>
+    <string name="suggestion_card_help_message" msgid="4474061044387181093">"हे संपर्क म्हणजे कदाचित एकच व्यक्ती असू शकते. तुम्ही त्या सर्वांना एकल दुवा म्हणून एकत्र जोडू शकता."</string>
     <string name="editor_delete_view_description" msgid="8583095381562991959">"<xliff:g id="DATA_TYPE">%1$s </xliff:g><xliff:g id="DATA_KIND">%2$s</xliff:g> हटवा"</string>
     <string name="editor_delete_view_description_short" msgid="7335518371270844912">"<xliff:g id="DATA_KIND">%s</xliff:g> हटवा"</string>
     <string name="menu_assistant" msgid="5760693735722052454">"सूचना"</string>
@@ -250,12 +250,12 @@
     <string name="navigation_drawer_label" msgid="4154758025620107419">"<xliff:g id="LABEL_NAME">%s</xliff:g> लेबल"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"लेबले"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"खाती"</string>
-    <string name="permission_explanation_header" msgid="5739405825039695327">"येथे आपला इतिहास एकत्र पहा"</string>
+    <string name="permission_explanation_header" msgid="5739405825039695327">"येथे तुमचा इतिहास एकत्र पहा"</string>
     <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"इव्हेंट आणि संदेश"</string>
     <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"इव्हेंट"</string>
     <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"संदेश"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"सूचना"</string>
-    <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"आपले संपर्क व्यवस्थापित आणि उपयुक्त ठेवा"</string>
+    <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"तुमचे संपर्क व्यवस्थापित आणि उपयुक्त ठेवा"</string>
     <string name="undo" msgid="1425165101664071422">"पूर्ववत करा"</string>
     <string name="call_custom" msgid="6385303130912713318">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g> ला कॉल करा"</string>
     <string name="call_home" msgid="1990519474420545392">"निवासस्‍थानी कॉल करा"</string>
@@ -303,7 +303,7 @@
     <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (संदेश)"</string>
     <string name="description_video_call" msgid="7120921378651700947">"व्‍हिडिओ कॉल करा"</string>
     <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"वारंवार सपर्क साधलेले साफ करायचे?"</string>
-    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"आपण संपर्क आणि फोन अ‍ॅप्‍स मधील वारंवार संपर्क साधलेली सूची साफ कराल आणि ईमेल अ‍ॅप्‍सना सुरवातीपासून तुमची पत्ता प्राधान्‍ये जाणून घेण्‍याची सक्ती कराल."</string>
+    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"तुम्ही संपर्क आणि फोन अ‍ॅप्‍स मधील वारंवार संपर्क साधलेली सूची साफ कराल आणि ईमेल अ‍ॅप्‍सना सुरवातीपासून तुमची पत्ता प्राधान्‍ये जाणून घेण्‍याची सक्ती कराल."</string>
     <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"वारंवार सपर्क साधलेले साफ करत आहे..."</string>
     <string name="status_available" msgid="5586870015822828392">"उपलब्ध"</string>
     <string name="status_away" msgid="1838861100379804730">"दूर आहे"</string>
@@ -413,15 +413,15 @@
     <string name="fail_reason_could_not_open_file" msgid="2067725459821997463">"\"<xliff:g id="FILE_NAME">%1$s</xliff:g>\" उघडू शकलो नाही: <xliff:g id="EXACT_REASON">%2$s</xliff:g>."</string>
     <string name="fail_reason_could_not_initialize_exporter" msgid="707260459259688510">"निर्यातकर्ता प्रारंभ करू शकला नाही: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
     <string name="fail_reason_no_exportable_contact" msgid="8728506011371262065">"कोणताही निर्यात करण्‍यायोग्‍य संपर्क नाही."</string>
-    <string name="missing_required_permission" msgid="5865884842972833120">"आपण आवश्‍यक असलेली एक परवानगी अक्षम केली आहे."</string>
+    <string name="missing_required_permission" msgid="5865884842972833120">"तुम्ही आवश्‍यक असलेली एक परवानगी अक्षम केली आहे."</string>
     <string name="fail_reason_error_occurred_during_export" msgid="3018855323913649063">"निर्यात दरम्‍यान एरर आलीt: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
     <string name="fail_reason_io_error" msgid="6748358842976073255">"I/O एरर"</string>
     <string name="fail_reason_low_memory_during_import" msgid="875222757734882898">"पुरेशी मेमरी नाही. फाईल कदाचित खूप मोठी असू शकते."</string>
     <string name="fail_reason_not_supported" msgid="8219562769267148825">"स्वरूपन समर्थित नाही."</string>
     <string name="exporting_vcard_finished_title" msgid="4767045779458185251">"<xliff:g id="FILENAME">%s</xliff:g> निर्यात करणे समाप्त झाले."</string>
     <string name="exporting_vcard_finished_title_fallback" msgid="6060472638008218274">"संपर्क आयात करणे समाप्त झाले"</string>
-    <string name="exporting_vcard_finished_toast" msgid="1739055986856453882">"संपर्क निर्यात करणे समाप्त झाले, संपर्क सामायिक करण्यासाठी सूचनेवर क्लिक करा."</string>
-    <string name="touch_to_share_contacts" msgid="4882485525268469736">"संपर्क सामायिक करण्यासाठी टॅप करा."</string>
+    <string name="exporting_vcard_finished_toast" msgid="1739055986856453882">"संपर्क निर्यात करणे समाप्त झाले, संपर्क शेअर करण्यासाठी सूचनेवर क्लिक करा."</string>
+    <string name="touch_to_share_contacts" msgid="4882485525268469736">"संपर्क शेअर करण्यासाठी टॅप करा."</string>
     <string name="exporting_vcard_canceled_title" msgid="2652222370493306887">"<xliff:g id="FILENAME">%s</xliff:g> निर्यात करणे रद्द केले."</string>
     <string name="exporting_contact_list_title" msgid="9072240631534457415">"संपर्क डेटा निर्यात करत आहे"</string>
     <string name="exporting_contact_list_message" msgid="3367949209642931952">"संपर्क डेटा निर्यात केला जात आहे."</string>
@@ -458,15 +458,15 @@
     <string name="settings_accounts" msgid="350219740670774576">"खाती"</string>
     <string name="default_editor_account" msgid="699591683362420991">"नवीन संपर्कांसाठी डीफॉल्ट खाते"</string>
     <string name="settings_my_info_title" msgid="1534272456405343119">"माझी माहिती"</string>
-    <string name="set_up_profile" msgid="7370213843590143771">"आपले प्रोफाईल सेट करा"</string>
+    <string name="set_up_profile" msgid="7370213843590143771">"तुमचे प्रोफाईल सेट करा"</string>
     <string name="setting_about" msgid="7014388749752042863">"संपर्कांबद्दल"</string>
     <string name="share_favorite_contacts" msgid="4280926751003081042">"आवडते संपर्क शेअर करा"</string>
     <string name="share_contacts" msgid="8109287987498711664">"सर्व संपर्क शेअर करा"</string>
-    <string name="share_contacts_failure" msgid="1216431977330560559">"संपर्क सामायिक करण्यात अयशस्वी झाले."</string>
+    <string name="share_contacts_failure" msgid="1216431977330560559">"संपर्क शेअर करण्यात अयशस्वी झाले."</string>
     <string name="dialog_export" msgid="1628001095187741417">"संपर्क निर्यात करा"</string>
     <string name="dialog_import" msgid="2423592905927819672">"यावरून संपर्क आयात करा"</string>
-    <string name="share_error" msgid="948429331673358107">"हा संपर्क सामायिक केला जाऊ शकत नाही."</string>
-    <string name="no_contact_to_share" msgid="1276397530378323033">"सामायिक करण्यासाठी कोणतेही संपर्क नाहीत."</string>
+    <string name="share_error" msgid="948429331673358107">"हा संपर्क शेअर केला जाऊ शकत नाही."</string>
+    <string name="no_contact_to_share" msgid="1276397530378323033">"शेअर करण्यासाठी कोणतेही संपर्क नाहीत."</string>
     <string name="menu_contacts_filter" msgid="2165153460860262501">"प्रदर्शित करण्यासाठी संपर्क"</string>
     <string name="activity_title_contacts_filter" msgid="8275542497615516969">"प्रदर्शित करण्यासाठी संपर्क"</string>
     <string name="custom_list_filter" msgid="9048525797111024204">"दृश्य सानुकूल करा"</string>
@@ -519,7 +519,7 @@
     <string name="dismiss_sync_alert" msgid="8941131776605093596">"डिसमिस करा"</string>
     <string name="account_sync_off" msgid="7646143254066243924">"स्वयं-संकालन बंद आहे. चालू करण्यासाठी टॅप करा."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"स्वयं-संकालन चालू करायचे?"</string>
-    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"फक्त संपर्कांमध्ये नाही, तर आपण सर्व अॅप्स आणि खात्यांमध्ये करता ते बदल, वेब आणि आपल्या अन्य डिव्हाइसेस दरम्यान अपडेट ठेवले जातील."</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"फक्त संपर्कांमध्ये नाही, तर तुम्ही सर्व अॅप्स आणि खात्यांमध्ये करता ते बदल, वेब आणि आपल्या अन्य डिव्हाइसेस दरम्यान अपडेट ठेवले जातील."</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"चालू करा"</string>
     <string name="connection_error_message" msgid="7046408921529247089">"कोणतेही कनेक्शन नाही"</string>
     <string name="single_sim_display_label" msgid="6985770499439371497">"सिम"</string>

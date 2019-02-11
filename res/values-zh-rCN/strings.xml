@@ -434,7 +434,7 @@
     <string name="reading_vcard_failed_title" msgid="4251647443358422855">"无法读取 vCard 数据"</string>
     <string name="importing_vcard_finished_title" msgid="3341541727268747967">"导入 vCard <xliff:g id="FILENAME">%s</xliff:g> 已完成"</string>
     <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"已取消导入 <xliff:g id="FILENAME">%s</xliff:g>"</string>
-    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"<xliff:g id="FILENAME">%s</xliff:g> 将在稍后导入。"</string>
+    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"<xliff:g id="FILENAME">%s</xliff:g>将在稍后导入。"</string>
     <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"系统稍后就会导入该文件。"</string>
     <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"vCard 导入请求遭拒，请稍后重试。"</string>
     <string name="contacts_export_will_start_message" msgid="8538705791417534431">"即将导出联系人。"</string>
