@@ -393,7 +393,7 @@
     <string name="savingDisplayGroups" msgid="2133152192716475939">"Salvando opções de exibição…"</string>
     <string name="listCustomView" msgid="1840624396582117590">"Visualização personalizada"</string>
     <string name="dialog_new_contact_account" msgid="4969619718062454756">"Salvar contatos importados em:"</string>
-    <string name="import_from_sim" msgid="6912071635295799131">"Cartão SIM"</string>
+    <string name="import_from_sim" msgid="6912071635295799131">"Chip"</string>
     <string name="import_from_sim_summary_fmt" msgid="5169032449686348118">"SIM <xliff:g id="SIM_NAME">%1$s</xliff:g>"</string>
     <plurals name="import_from_sim_secondary_contact_count_fmt" formatted="false" msgid="5821095773211149295">
       <item quantity="one">%1$d contato</item>
@@ -506,14 +506,14 @@
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"O contato foi removido"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"Importar"</string>
     <string name="sim_import_title_none_selected" msgid="6910517331401970693">"Selecionar contatos"</string>
-    <string name="sim_import_empty_message" msgid="7743815244380189651">"Não há contatos no seu cartão SIM"</string>
+    <string name="sim_import_empty_message" msgid="7743815244380189651">"Não há contatos no seu chip"</string>
     <string name="sim_import_contact_exists_toast" msgid="1503743663717316732">"O contato já existe na sua lista"</string>
     <plurals name="sim_import_success_toast_fmt" formatted="false" msgid="8572156521110906443">
-      <item quantity="one"><xliff:g id="COUNT">%d</xliff:g> contato importado do SIM</item>
-      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> contatos importados do SIM</item>
+      <item quantity="one"><xliff:g id="COUNT">%d</xliff:g> contato importado do chip</item>
+      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> contatos importados do chip</item>
     </plurals>
-    <string name="sim_import_failed_toast" msgid="5559267299793622705">"Falha ao importar contatos do SIM"</string>
-    <string name="sim_import_title" msgid="2511154832820812822">"Importar do SIM"</string>
+    <string name="sim_import_failed_toast" msgid="5559267299793622705">"Falha ao importar contatos do chip"</string>
+    <string name="sim_import_title" msgid="2511154832820812822">"Importar do chip"</string>
     <string name="sim_import_cancel_content_description" msgid="1619832410253424452">"Cancelar"</string>
     <string name="auto_sync_off" msgid="2180147284456026587">"A sincronização automática está desativada. Toque para ativar."</string>
     <string name="dismiss_sync_alert" msgid="8941131776605093596">"Dispensar"</string>
@@ -524,10 +524,10 @@
     <string name="connection_error_message" msgid="7046408921529247089">"Sem conexão"</string>
     <string name="single_sim_display_label" msgid="6985770499439371497">"SIM"</string>
     <string name="show_more_content_description" msgid="4277410425912984722">"Mostrar mais"</string>
-    <string name="importing_sim_finished_title" msgid="5196369441294050721">"A importação do cartão SIM foi concluída"</string>
+    <string name="importing_sim_finished_title" msgid="5196369441294050721">"A importação do chip foi concluída"</string>
     <string name="importing_sim_failed_title" msgid="39706901030537985">"Falha na importação"</string>
-    <string name="importing_sim_failed_message" msgid="3345258302998021066">"Não foi possível importar os contatos do cartão SIM"</string>
-    <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"Importando do cartão SIM"</string>
+    <string name="importing_sim_failed_message" msgid="3345258302998021066">"Não foi possível importar os contatos do chip"</string>
+    <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"Importando do chip"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"Notificações"</string>
     <string name="yes_button" msgid="1268479086848288060">"Sim"</string>
     <string name="no_button" msgid="5742815694687835125">"Não"</string>

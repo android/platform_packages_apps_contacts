@@ -434,7 +434,7 @@
     <string name="reading_vcard_failed_title" msgid="4251647443358422855">"無法讀取 vCard 資料"</string>
     <string name="importing_vcard_finished_title" msgid="3341541727268747967">"已完成匯入 vCard <xliff:g id="FILENAME">%s</xliff:g>"</string>
     <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"已取消匯入「<xliff:g id="FILENAME">%s</xliff:g>」的操作"</string>
-    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"<xliff:g id="FILENAME">%s</xliff:g> 將在稍後匯入。"</string>
+    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"<xliff:g id="FILENAME">%s</xliff:g>將在稍後匯入。"</string>
     <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"稍後即將匯入檔案。"</string>
     <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"vCard 匯入要求已被拒，請稍後再試。"</string>
     <string name="contacts_export_will_start_message" msgid="8538705791417534431">"系統即將匯出聯絡人。"</string>

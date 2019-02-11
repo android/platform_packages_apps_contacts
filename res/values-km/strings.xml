@@ -475,7 +475,7 @@
     <string name="contactsFavoritesLabel" msgid="8417039765586853670">"សំណព្វ"</string>
     <string name="menu_import" msgid="6107961135813836467">"នាំចូល"</string>
     <string name="menu_export" msgid="2658783911863503902">"នាំ​ចេញ"</string>
-    <string name="menu_blocked_numbers" msgid="5272951629083025995">"លេខបានរារាំង"</string>
+    <string name="menu_blocked_numbers" msgid="5272951629083025995">"លេខដែលបានទប់ស្កាត់"</string>
     <string name="contact_status_update_attribution" msgid="752179367353018597">"តាម​រយៈ <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
     <string name="contact_status_update_attribution_with_date" msgid="7358045508107825068">"<xliff:g id="DATE">%1$s</xliff:g> តាម​រយៈ <xliff:g id="SOURCE">%2$s</xliff:g>"</string>
     <string name="action_menu_back_from_search" msgid="8793348588949233348">"បញ្ឈប់​ការ​ស្វែងរក"</string>

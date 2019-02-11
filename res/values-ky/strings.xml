@@ -390,7 +390,7 @@
     <string name="dialog_sync_add" msgid="8267045393119375803">"Шайкештирүү тобуна кошуу"</string>
     <string name="display_more_groups" msgid="2682547080423434170">"Дагы топтор…"</string>
     <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"\"<xliff:g id="GROUP">%s</xliff:g>\" тобун шайкештирүүдөн алып салуу топко кирбеген башка байланыштарды дагы шайкештирүүдөн чыгарып салат."</string>
-    <string name="savingDisplayGroups" msgid="2133152192716475939">"Көрсөтүү параметрлери сакталууда…"</string>
+    <string name="savingDisplayGroups" msgid="2133152192716475939">"Жөндөөлөр сакталууда…"</string>
     <string name="listCustomView" msgid="1840624396582117590">"Ылайыкташтырылган көрүнүш"</string>
     <string name="dialog_new_contact_account" msgid="4969619718062454756">"Өткөрүлүп алынган байланыштар төмөнкүгө сакталсын:"</string>
     <string name="import_from_sim" msgid="6912071635295799131">"SIM-карта"</string>

@@ -55,7 +55,7 @@
     <string name="contacts_unlinking_progress_bar" msgid="5989310198163726929">"လင့်ခ်ဖြုတ်နေသည်"</string>
     <string name="menu_joinAggregate" msgid="3599512127797513606">"လင့်ခ်"</string>
     <string name="menu_linkedContacts" msgid="400444389718855621">"လင့်ခ်အဆက်အသွယ်များ ကြည့်ရန်"</string>
-    <string name="menu_save" msgid="1727844363591825909">"သိမ်းဆည်းရန်"</string>
+    <string name="menu_save" msgid="1727844363591825909">"သိမ်းရန်"</string>
     <string name="titleJoinContactDataWith" msgid="6825255752748313944">"အဆက်အသွယ်များ ချိတ်ဆက်ရန်"</string>
     <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"<xliff:g id="NAME">%s</xliff:g> နှင့်ချိတ်လိုသည့် အဆက်အသွယ်ကို ရွေးပါ −"</string>
     <string name="separatorJoinAggregateSuggestions" msgid="2831414448851313345">"အကြုံပြုလိုသော အဆက်အသွယ်များ"</string>

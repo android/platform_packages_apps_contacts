@@ -489,7 +489,7 @@
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="1765533099416999801">"বিল্ডের সংস্করণ"</string>
     <string name="about_open_source_licenses" msgid="6479990452352919641">"ওপেন সোর্স লাইসেন্স"</string>
-    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"মুক্ত উৎস সফ্টওয়্যারের লাইসেন্স বিবরণ"</string>
+    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"ওপেন সোর্স সফ্টওয়্যারের লাইসেন্স বিবরণ"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"গোপনীয়তা নীতি"</string>
     <string name="about_terms_of_service" msgid="4642400812150296723">"পরিষেবার শর্তাবলী"</string>
     <string name="activity_title_licenses" msgid="5467767062737708066">"ওপেন সোর্স লাইসেন্স"</string>

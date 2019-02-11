@@ -487,7 +487,7 @@
     <string name="send_and_call_button" msgid="7740295432834590737">"BIDALI ETA DEITU"</string>
     <string name="call_subject_limit" msgid="4545212901205397669">"<xliff:g id="COUNT">%1$s</xliff:g>/<xliff:g id="LIMIT">%2$s</xliff:g>"</string>
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
-    <string name="about_build_version" msgid="1765533099416999801">"Konpilazioaren bertsioa"</string>
+    <string name="about_build_version" msgid="1765533099416999801">"Konpilazio-bertsioa"</string>
     <string name="about_open_source_licenses" msgid="6479990452352919641">"Kode irekiko lizentziak"</string>
     <string name="about_open_source_licenses_summary" msgid="57418386931763994">"Kode irekiko softwarearen lizentziaren xehetasunak"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"Pribatutasun-gidalerroak"</string>

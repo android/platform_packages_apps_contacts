@@ -489,7 +489,7 @@
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="1765533099416999801">"Versiyasi"</string>
     <string name="about_open_source_licenses" msgid="6479990452352919641">"Ochiq kodli DT litsenziyalari"</string>
-    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"Ochiq kodli DT litsenziyalari haqida ma’lumot"</string>
+    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"Ochiq kodli DT litsenziyalari haqida axborot"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"Maxfiylik siyosati"</string>
     <string name="about_terms_of_service" msgid="4642400812150296723">"Foydalanish shartlari"</string>
     <string name="activity_title_licenses" msgid="5467767062737708066">"Ochiq kodli DT litsenziyalari"</string>

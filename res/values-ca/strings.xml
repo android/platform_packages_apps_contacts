@@ -329,7 +329,7 @@
     <string name="name_suffix" msgid="3855278445375651441">"Sufix del nom"</string>
     <string name="name_phonetic" msgid="4259595234312430484">"Nom fonètic"</string>
     <string name="name_phonetic_given" msgid="8723179018384187631">"Nom fonètic"</string>
-    <string name="name_phonetic_middle" msgid="8643721493320405200">"Primer cognom fonètic"</string>
+    <string name="name_phonetic_middle" msgid="8643721493320405200">"Segon nom fonètic"</string>
     <string name="name_phonetic_family" msgid="2640133663656011626">"Cognoms fonètics"</string>
     <string name="phoneLabelsGroup" msgid="6468091477851199285">"Telèfon"</string>
     <string name="emailLabelsGroup" msgid="8389931313045344406">"Correu electrònic"</string>
