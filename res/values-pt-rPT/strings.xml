@@ -345,7 +345,7 @@
     <string name="label_notes" msgid="8337354953278341042">"Notas"</string>
     <string name="label_custom_field" msgid="1994056912242214426">"Personalizado"</string>
     <string name="label_sip_address" msgid="7252153678613978127">"SIP"</string>
-    <string name="websiteLabelsGroup" msgid="4202998982804009261">"Web site"</string>
+    <string name="websiteLabelsGroup" msgid="4202998982804009261">"Website"</string>
     <string name="groupsLabel" msgid="7000816729542098972">"Etiquetas"</string>
     <string name="email_home" msgid="8573740658148184279">"Enviar email para residência"</string>
     <string name="email_mobile" msgid="2042889209787989814">"Enviar email para telemóvel"</string>

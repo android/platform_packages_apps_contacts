@@ -307,7 +307,7 @@
     <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Poruka)"</string>
     <string name="description_video_call" msgid="7120921378651700947">"Uputi video poziv"</string>
     <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"Obrisati često kontaktirane osobe?"</string>
-    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Obrisat ćete listu često kontaktiranih osoba u aplikaciji Kontakti i Aplikaciji za telefon, pa će aplikacije za e-poštu morati ispočetka učiti vaše postavke adresa."</string>
+    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Obrisat ćete listu često kontaktiranih osoba u aplikacijama Kontakti i Telefon, pa će aplikacije za e-poštu morati ispočetka učiti vaše postavke adresa."</string>
     <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"Brisanje često kontaktiranih osoba…"</string>
     <string name="status_available" msgid="5586870015822828392">"Dostupno"</string>
     <string name="status_away" msgid="1838861100379804730">"Odsutan"</string>
