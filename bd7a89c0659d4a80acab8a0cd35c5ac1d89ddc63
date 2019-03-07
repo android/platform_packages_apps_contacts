@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c5caef5c_773ac9a7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1237773
+      },
+      "writtenOn": "2019-03-07T23:55:31Z",
+      "side": 1,
+      "message": "I\u0027m not sure whether this license is OK. AOSP generally uses Apache (see https://source.android.com/setup/start/licenses) with some limited exceptions. Is this additional copyright notice required?\n\nIf so I will have to ask around (perhaps with legal) to see whether it is OK to include this contribution.",
+      "revId": "bd7a89c0659d4a80acab8a0cd35c5ac1d89ddc63",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
