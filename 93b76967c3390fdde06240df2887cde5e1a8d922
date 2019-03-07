@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "32fd2a49_87171c78",
+        "filename": "src/com/android/contacts/ContactSaveService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1256,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bff03bf2_89083a4e",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "af1eaf5b_748f1480",
         "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
         "patchSetId": 4
@@ -33,6 +51,24 @@
       "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "167c010f_32b86674",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af1eaf5b_748f1480",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "a072d8e5_afa5096c",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53aaee96_85cf23e5",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c053b336_c8fac9ca",
         "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
         "patchSetId": 4
@@ -67,6 +121,24 @@
       "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66f8f9a4_1575a342",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c053b336_c8fac9ca",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "6759f473_849caa9a",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9135437b_e4f7ddc1",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba631e7f_0336e26f",
         "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
         "patchSetId": 4
@@ -101,6 +191,24 @@
       "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0516f516_67e29a0d",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba631e7f_0336e26f",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -122,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "31075bef_2bfbe069",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7bcb6f4a_106458d3",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "631c79a1_759751d7",
         "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
         "patchSetId": 4
@@ -137,6 +263,24 @@
       "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10737046_4e53b94f",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "631c79a1_759751d7",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -157,6 +301,24 @@
     },
     {
       "key": {
+        "uuid": "d1ae3117_0fc72984",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40f61d7a_39a55f03",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "42e7ead0_3ae60784",
         "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
         "patchSetId": 4
@@ -174,6 +336,24 @@
     },
     {
       "key": {
+        "uuid": "ef4ab6fd_69cee4f2",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "42e7ead0_3ae60784",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "54aa8730_83e2af8a",
         "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
         "patchSetId": 4
@@ -188,6 +368,24 @@
       "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8294b883_d9ec8793",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54aa8730_83e2af8a",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -225,6 +423,24 @@
     },
     {
       "key": {
+        "uuid": "891806c9_b36e2d9a",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dac14e16_bb5cec9c",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f2872b5_c568afb9",
         "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
         "patchSetId": 4
@@ -239,6 +455,24 @@
       "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ffefd95_4b1ca8b1",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f2872b5_c568afb9",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -259,6 +493,24 @@
     },
     {
       "key": {
+        "uuid": "145d0e9c_7496f5df",
+        "filename": "src/com/android/contacts/list/DefaultContactBrowseListFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6cc23d96_c54a0f83",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "13f0fab7_068e04a0",
         "filename": "src/com/android/contacts/list/DefaultContactBrowseListFragment.java",
         "patchSetId": 4
@@ -273,6 +525,24 @@
       "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3582c0b_d1cefd77",
+        "filename": "src/com/android/contacts/list/DefaultContactBrowseListFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1091,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T07:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13f0fab7_068e04a0",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
