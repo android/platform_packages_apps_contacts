@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5cc873b7_9c598c2e",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T08:07:46Z",
+      "side": 1,
+      "message": "public",
+      "revId": "fe1e944964da0d991c838acf9dece22ddf3624a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e311cb3c_13e7e47e",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T08:07:46Z",
+      "side": 1,
+      "message": "private?",
+      "revId": "fe1e944964da0d991c838acf9dece22ddf3624a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbd82065_9ccb9c56",
+        "filename": "src/com/android/contacts/list/DefaultContactBrowseListFragment.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T08:07:46Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "fe1e944964da0d991c838acf9dece22ddf3624a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fec46449_b3bbeb9d",
+        "filename": "src/com/android/contacts/list/DefaultContactBrowseListFragment.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 1156,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T08:07:46Z",
+      "side": 1,
+      "message": "ContactMultiShareInteraction.ACTIVITY_REQUEST_CODE_SHARE",
+      "revId": "fe1e944964da0d991c838acf9dece22ddf3624a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
