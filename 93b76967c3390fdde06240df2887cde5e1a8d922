@@ -1,0 +1,278 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff03bf2_89083a4e",
+        "filename": "src/com/android/contacts/ContactSaveService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1256,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "space after (",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af1eaf5b_748f1480",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "should be sorted",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "53aaee96_85cf23e5",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c053b336_c8fac9ca",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "missing space after (",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9135437b_e4f7ddc1",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "missing space after (",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba631e7f_0336e26f",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "missing space after (",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7bcb6f4a_106458d3",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "missing space\ncan it be null? I would say it always gets initialized on CONTACTS_DELETE_STARTED case and the current workflow ensures that",
+      "parentUuid": "",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "631c79a1_759751d7",
+        "filename": "src/com/android/contacts/interactions/ContactMultiDeletionInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "ditto\nI would just remove the null check",
+      "parentUuid": "",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40f61d7a_39a55f03",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "should be sorted",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42e7ead0_3ae60784",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "missing space after (",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54aa8730_83e2af8a",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "missing space after (",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbc00605_ed8d00dc",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "missing space after (",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dac14e16_bb5cec9c",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "missing space after (",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f2872b5_c568afb9",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "missing space after (",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6cc23d96_c54a0f83",
+        "filename": "src/com/android/contacts/list/DefaultContactBrowseListFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "sort",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13f0fab7_068e04a0",
+        "filename": "src/com/android/contacts/list/DefaultContactBrowseListFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1091,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-03-07T06:56:00Z",
+      "side": 1,
+      "message": "missing space after (",
+      "revId": "93b76967c3390fdde06240df2887cde5e1a8d922",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
