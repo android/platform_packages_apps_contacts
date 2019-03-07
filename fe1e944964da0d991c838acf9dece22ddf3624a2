@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e633b77d_0dfa4a39",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T11:30:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5cc873b7_9c598c2e",
+      "revId": "fe1e944964da0d991c838acf9dece22ddf3624a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e311cb3c_13e7e47e",
         "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
         "patchSetId": 8
@@ -33,6 +51,24 @@
       "revId": "fe1e944964da0d991c838acf9dece22ddf3624a2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50a8e3ad_ecd0c352",
+        "filename": "src/com/android/contacts/interactions/ContactMultiShareInteraction.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T11:30:20Z",
+      "side": 1,
+      "message": "yes. should be private",
+      "parentUuid": "e311cb3c_13e7e47e",
+      "revId": "fe1e944964da0d991c838acf9dece22ddf3624a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "f08a2cb5_38f8e143",
+        "filename": "src/com/android/contacts/list/DefaultContactBrowseListFragment.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T11:30:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fbd82065_9ccb9c56",
+      "revId": "fe1e944964da0d991c838acf9dece22ddf3624a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fec46449_b3bbeb9d",
         "filename": "src/com/android/contacts/list/DefaultContactBrowseListFragment.java",
         "patchSetId": 8
@@ -67,6 +121,24 @@
       "revId": "fe1e944964da0d991c838acf9dece22ddf3624a2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b9d68f1_60bb43e5",
+        "filename": "src/com/android/contacts/list/DefaultContactBrowseListFragment.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 1156,
+      "author": {
+        "id": 1415884
+      },
+      "writtenOn": "2019-03-07T11:30:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fec46449_b3bbeb9d",
+      "revId": "fe1e944964da0d991c838acf9dece22ddf3624a2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
