@@ -25,7 +25,7 @@
     <string name="shortcutActivityTitle" msgid="1504383567778497348">"Névjegy kiválasztása"</string>
     <string name="contactInsertOrEditActivityTitle" msgid="6527505405325862674">"Hozzáadás névjegyhez"</string>
     <string name="contactPickerActivityTitle" msgid="4301062192337417640">"Névjegy kiválasztása"</string>
-    <string name="groupMemberPickerActivityTitle" msgid="1431750793695262522">"Választás"</string>
+    <string name="groupMemberPickerActivityTitle" msgid="1431750793695262522">"Kiválasztás"</string>
     <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"Új névjegy létrehozása"</string>
     <string name="searchHint" msgid="8482945356247760701">"Keresés a névjegyek között"</string>
     <string name="menu_addStar" msgid="2908478235715404876">"Hozzáadás a kedvencekhez"</string>

@@ -48,14 +48,14 @@
     <string name="splitConfirmation" msgid="7342030840130187290">"एकाधिक खातों में इन संपर्कों को अनलिंक करें?"</string>
     <string name="splitConfirmation_positive_button" msgid="9129409098807939699">"अनलिंक करें"</string>
     <string name="splitConfirmationWithPendingChanges" msgid="7719062163511895696">"क्या आप पहले से किए गए बदलावों को सहेजना और इस संपर्क को एकाधिक संपर्कों में अनलिंक करना चाहते हैं?"</string>
-    <string name="splitConfirmationWithPendingChanges_positive_button" msgid="9073444264887244032">"सहेजें और अनलिंक करें"</string>
+    <string name="splitConfirmationWithPendingChanges_positive_button" msgid="9073444264887244032">"सेव करें और अनलिंक करें"</string>
     <string name="joinConfirmation" msgid="8262614843581924365">"क्या आप पहले से किए गए बदलावों को सहेजना और चयनित संपर्कों से लिंक करना चाहते हैं?"</string>
-    <string name="joinConfirmation_positive_button" msgid="4573092849769149516">"सहेजें और लिंक करें"</string>
+    <string name="joinConfirmation_positive_button" msgid="4573092849769149516">"सेव करें और लिंक करें"</string>
     <string name="contacts_linking_progress_bar" msgid="2846494347384549277">"लिंक किए जा रहे हैं"</string>
     <string name="contacts_unlinking_progress_bar" msgid="5989310198163726929">"अनलिंक कर रहे हैं"</string>
     <string name="menu_joinAggregate" msgid="3599512127797513606">"लिंक करें"</string>
     <string name="menu_linkedContacts" msgid="400444389718855621">"लिंक किए गए संपर्क देखें"</string>
-    <string name="menu_save" msgid="1727844363591825909">"सहेजें"</string>
+    <string name="menu_save" msgid="1727844363591825909">"सेव करें"</string>
     <string name="titleJoinContactDataWith" msgid="6825255752748313944">"संपर्क लिंक करें"</string>
     <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"वह संपर्क चुनें जिसे आप <xliff:g id="NAME">%s</xliff:g> के साथ लिंक करना चाहते हैं:"</string>
     <string name="separatorJoinAggregateSuggestions" msgid="2831414448851313345">"सुझाए गए संपर्क"</string>
@@ -392,7 +392,7 @@
     <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"\"<xliff:g id="GROUP">%s</xliff:g>\" को समन्‍वयन से निकालने से समन्‍वयन से सभी असमूहीकृत संपर्क भी  निकल जाएंगे."</string>
     <string name="savingDisplayGroups" msgid="2133152192716475939">"प्रदर्शन विकल्प सहेज रहा है…"</string>
     <string name="listCustomView" msgid="1840624396582117590">"कस्टमाइज़ किया गया दृश्य"</string>
-    <string name="dialog_new_contact_account" msgid="4969619718062454756">"आयातित संपर्कों को इसमें सहेजें:"</string>
+    <string name="dialog_new_contact_account" msgid="4969619718062454756">"आयातित संपर्कों को इसमें सेव करें:"</string>
     <string name="import_from_sim" msgid="6912071635295799131">"SIM कार्ड"</string>
     <string name="import_from_sim_summary_fmt" msgid="5169032449686348118">"सिम <xliff:g id="SIM_NAME">%1$s</xliff:g>"</string>
     <plurals name="import_from_sim_secondary_contact_count_fmt" formatted="false" msgid="5821095773211149295">
@@ -416,10 +416,10 @@
     <string name="missing_required_permission" msgid="5865884842972833120">"आपने एक आवश्यक अनुमति को अक्षम कर दिया है."</string>
     <string name="fail_reason_error_occurred_during_export" msgid="3018855323913649063">"निर्यात करते समय कोई गड़बड़ी आई: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
     <string name="fail_reason_io_error" msgid="6748358842976073255">"I/O गड़बड़ी"</string>
-    <string name="fail_reason_low_memory_during_import" msgid="875222757734882898">"स्‍मृति पर्याप्त नहीं है. हो सकता है फ़ाइल बहुत बड़ी हो."</string>
+    <string name="fail_reason_low_memory_during_import" msgid="875222757734882898">"स्‍मृति काफ़ी नहीं है. हो सकता है फ़ाइल बहुत बड़ी हो."</string>
     <string name="fail_reason_not_supported" msgid="8219562769267148825">"प्रारूप समर्थित नहीं है."</string>
     <string name="exporting_vcard_finished_title" msgid="4767045779458185251">"<xliff:g id="FILENAME">%s</xliff:g> का निर्यात करना पूर्ण."</string>
-    <string name="exporting_vcard_finished_title_fallback" msgid="6060472638008218274">"संपर्कों का निर्यात किया जाना समाप्त हो गया."</string>
+    <string name="exporting_vcard_finished_title_fallback" msgid="6060472638008218274">"संपर्कों का निर्यात किया जाना खत्म हो गया."</string>
     <string name="exporting_vcard_finished_toast" msgid="1739055986856453882">"संपर्कों का निर्यात पूरा हो गया है, संपर्क शेयर करने के लिए नोटिफ़िकेशन क्लिक करें."</string>
     <string name="touch_to_share_contacts" msgid="4882485525268469736">"संपर्क शेयर करने के लिए टैप करें."</string>
     <string name="exporting_vcard_canceled_title" msgid="2652222370493306887">"<xliff:g id="FILENAME">%s</xliff:g> को निर्यात करना रद्द किया गया."</string>
@@ -436,9 +436,9 @@
     <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"<xliff:g id="FILENAME">%s</xliff:g> को आयात करना रद्द किया गया"</string>
     <string name="vcard_import_will_start_message" msgid="2804911199145873396">"<xliff:g id="FILENAME">%s</xliff:g> को जल्‍दी ही आयात किया जाएगा."</string>
     <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"फ़ाइल शीघ्र ही आयात की जाएगी."</string>
-    <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"vCard आयात अनुरोध अस्‍वीकार हो गया था. बाद में पुन: प्रयास करें."</string>
+    <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"vCard आयात अनुरोध अस्‍वीकार हो गया था. बाद में फिर से प्रयास करें."</string>
     <string name="contacts_export_will_start_message" msgid="8538705791417534431">"संपर्कों को शीघ्र ही निर्यात किया जाएगा."</string>
-    <string name="vcard_export_request_rejected_message" msgid="2844874826431327531">"vCard आयात अनुरोध अस्‍वीकार हो गया था. बाद में पुन: प्रयास करें."</string>
+    <string name="vcard_export_request_rejected_message" msgid="2844874826431327531">"vCard आयात अनुरोध अस्‍वीकार हो गया था. बाद में फिर से प्रयास करें."</string>
     <string name="vcard_unknown_filename" msgid="7171709890959915954">"संपर्क"</string>
     <string name="caching_vcard_message" msgid="4926308675041506756">"vCard को स्‍थानीय अस्‍थायी मेमोरी में संचित कर रहा है. वास्‍तविक आयात जल्‍दी ही प्रारंभ होगा."</string>
     <string name="vcard_import_failed" msgid="5223531255894842406">"vCard आयात नहीं कर सका."</string>
@@ -470,7 +470,7 @@
     <string name="menu_contacts_filter" msgid="2165153460860262501">"डिसप्ले के लिए संपर्क"</string>
     <string name="activity_title_contacts_filter" msgid="8275542497615516969">"डिसप्ले के लिए संपर्क"</string>
     <string name="custom_list_filter" msgid="9048525797111024204">"दृश्य कस्टमाइज़ करें"</string>
-    <string name="menu_custom_filter_save" msgid="2679793632208086460">"सहेजें"</string>
+    <string name="menu_custom_filter_save" msgid="2679793632208086460">"सेव करें"</string>
     <string name="hint_findContacts" msgid="7128627979899070325">"संपर्क खोजें"</string>
     <string name="contactsFavoritesLabel" msgid="8417039765586853670">"पसंदीदा"</string>
     <string name="menu_import" msgid="6107961135813836467">"संपर्क लेकर आएं"</string>
@@ -515,7 +515,7 @@
     <string name="sim_import_failed_toast" msgid="5559267299793622705">"सिम संपर्कों को आयात करने में विफल रहा"</string>
     <string name="sim_import_title" msgid="2511154832820812822">"सिम से आयात करें"</string>
     <string name="sim_import_cancel_content_description" msgid="1619832410253424452">"रद्द करें"</string>
-    <string name="auto_sync_off" msgid="2180147284456026587">"स्वतः समन्वयन बंद है. चालू करने के लिए टैप करें."</string>
+    <string name="auto_sync_off" msgid="2180147284456026587">"अपने आप समन्वयन बंद है. चालू करने के लिए टैप करें."</string>
     <string name="dismiss_sync_alert" msgid="8941131776605093596">"खारिज करें"</string>
     <string name="account_sync_off" msgid="7646143254066243924">"खाता समन्वयन बंद है. चालू करने के लिए टैप करें."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"ऑटो सिंक चालू करना चाहते हैं?"</string>

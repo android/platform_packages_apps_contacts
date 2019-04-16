@@ -32,7 +32,4 @@
 
     <!-- If true, the order of name fields in the editor is primary (i.e. given name first) -->
     <bool name="config_editor_field_order_primary">false</bool>
-
-    <!-- If true, phonetic name is included in the contact editor by default -->
-    <bool name="config_editor_include_phonetic_name">true</bool>
 </resources>
