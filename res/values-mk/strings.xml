@@ -338,7 +338,7 @@
     <string name="organizationLabelsGroup" msgid="2478611760751832035">"Организација"</string>
     <string name="relationLabelsGroup" msgid="1854373894284572781">"Врска"</string>
     <string name="eventLabelsGroup" msgid="7960408705307831289">"Посебен датум"</string>
-    <string name="sms" msgid="1756857139634224222">"SMS-порака"</string>
+    <string name="sms" msgid="1756857139634224222">"Текстуална порака"</string>
     <string name="postal_address" msgid="8765560217149624536">"Адреса"</string>
     <string name="ghostData_company" msgid="5414421120553765775">"Компанија"</string>
     <string name="ghostData_title" msgid="7496735200318496110">"Наслов"</string>
