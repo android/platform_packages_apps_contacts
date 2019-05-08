@@ -214,7 +214,7 @@
     <string name="date_time_set" msgid="4761419824439606690">"Հաստատել"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"IM"</string>
     <string name="header_organization_entry" msgid="8515394955666265406">"Կազմակերպություն"</string>
-    <string name="header_nickname_entry" msgid="6743561883967451485">"Կեղծանուն"</string>
+    <string name="header_nickname_entry" msgid="6743561883967451485">"Մականուն"</string>
     <string name="header_note_entry" msgid="4320190426480612344">"Գրառում"</string>
     <string name="header_website_entry" msgid="1411467850000824745">"Վեբկայք"</string>
     <string name="header_event_entry" msgid="6738250422744401460">"Միջոցառում"</string>
@@ -300,7 +300,7 @@
     <string name="sms_work_pager" msgid="5566924423316960597">"Հաղորդագրել աշտատանքային փեյջերին"</string>
     <string name="sms_assistant" msgid="2773424339923116234">"Հաղորդագրել <xliff:g id="ASSISTANT">%s</xliff:g>-ին"</string>
     <string name="sms_mms" msgid="4069352461380762677">"Հաղորդագրել MMS համարին"</string>
-    <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Գրել SMS)"</string>
+    <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Գրել ՍՄՍ)"</string>
     <string name="description_video_call" msgid="7120921378651700947">"Տեսազանգ սկսել"</string>
     <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"Մաքրե՞լ հաճախակի հաղորդակցվողները"</string>
     <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Կոնտակտներ և Հեռախոս հավելվածներից կմաքրվի հաճախակի օգտագործվող կոնտակտների ցանկը, և էլփոստի հավելվածները զրոյից են սովորելու ձեր հաճախակի օգտագործվող կոնտակտները։"</string>

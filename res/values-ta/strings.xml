@@ -35,7 +35,7 @@
     <string name="menu_editContact" msgid="9042415603857662633">"திருத்து"</string>
     <string name="menu_deleteContact" msgid="6788644058868189393">"நீக்கு"</string>
     <string name="menu_change_photo" msgid="7769177631511496210">"படத்தை மாற்று"</string>
-    <string name="menu_create_contact_shortcut" msgid="1663022219127343858">"ஷார்ட்கட்டை உருவாக்கு"</string>
+    <string name="menu_create_contact_shortcut" msgid="1663022219127343858">"குறுக்குவழியை உருவாக்கு"</string>
     <string name="menu_splitAggregate" msgid="2627252205317945563">"தொடர்பைப் பிரி"</string>
     <string name="menu_editGroup" msgid="6696843438454341063">"தொடர்புகளை அகற்று"</string>
     <string name="menu_renameGroup" msgid="7169512355179757182">"லேபிளின் பெயரை மாற்று"</string>
@@ -96,7 +96,7 @@
     <string name="createContactShortcutSuccessful_NoName" msgid="8831303345367275472">"தொடர்பு முகப்புத் திரையில் சேர்க்கப்பட்டது."</string>
     <string name="createContactShortcutSuccessful" msgid="953651153238790069">"<xliff:g id="NAME">%s</xliff:g> என்ற தொடர்பு முகப்புத் திரையில் சேர்க்கப்பட்டது."</string>
     <string name="photoPickerNotFoundText" msgid="2052542573853433204">"சாதனத்தில் படங்கள் எதுவுமில்லை."</string>
-    <string name="attach_photo_dialog_title" msgid="5599827035558557169">"தொடர்பின் படம்"</string>
+    <string name="attach_photo_dialog_title" msgid="5599827035558557169">"தொடர்பு படம்"</string>
     <string name="customLabelPickerTitle" msgid="1081475101983255212">"தனிப்பயன் லேபிள் பெயர்"</string>
     <string name="removePhoto" msgid="4898105274130284565">"படத்தை அகற்று"</string>
     <string name="noContacts" msgid="2228592924476426108">"தொடர்புகள் பட்டியல் காலியாக உள்ளது"</string>
@@ -502,7 +502,7 @@
     <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> வி"</string>
     <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> நி <xliff:g id="SECONDS">%2$s</xliff:g> வி"</string>
     <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> ம <xliff:g id="MINUTES_1">%2$s</xliff:g> நி <xliff:g id="SECONDS">%3$s</xliff:g> வி"</string>
-    <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"இந்த ஷார்ட்கட் முடக்கப்பட்டது"</string>
+    <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"இந்தக் குறுக்குவழி முடக்கப்பட்டது"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"தொடர்பு அகற்றப்பட்டது"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"இறக்கு"</string>
     <string name="sim_import_title_none_selected" msgid="6910517331401970693">"தொடர்புகளைத் தேர்ந்தெடு"</string>
