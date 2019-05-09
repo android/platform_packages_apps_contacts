@@ -84,9 +84,9 @@
       <item quantity="other"><xliff:g id="COUNT_2">%1$d</xliff:g> контакта · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
     </plurals>
     <string name="title_from_google" msgid="4664084747121207202">"Из Google"</string>
-    <string name="title_from_other_accounts" msgid="8307885412426754288">"От кого: <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
+    <string name="title_from_other_accounts" msgid="8307885412426754288">"Из аккаунта <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
     <string name="menu_set_ring_tone" msgid="8728345772068064946">"Задать рингтон"</string>
-    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"Направлять на голосовую почту"</string>
+    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"Переключать на голосовую почту"</string>
     <string name="menu_unredirect_calls_to_vm" msgid="8725542534701811737">"Исключить голосовую почту"</string>
     <string name="readOnlyContactWarning" msgid="7514475664695089411">"Этот контакт доступен только для чтения. Его нельзя удалить, но можно скрыть."</string>
     <string name="readOnlyContactWarning_positive_button" msgid="8914797212167683673">"Скрыть контакт"</string>
@@ -139,14 +139,14 @@
     <string name="quickcontact_add_phone_number" msgid="731665835910658965">"Добавить номер телефона"</string>
     <string name="quickcontact_add_email" msgid="739298028384348482">"Добавить адрес электронной почты"</string>
     <string name="missing_app" msgid="1466111003546611387">"Действие не поддерживается ни в одном приложении."</string>
-    <string name="menu_share" msgid="943789700636542260">"Поделиться"</string>
+    <string name="menu_share" msgid="943789700636542260">"Отправить"</string>
     <string name="menu_add_contact" msgid="3198704337220892684">"Добавить в контакты"</string>
     <string name="menu_add_contacts" msgid="4465646512002163011">"Добавить"</string>
     <plurals name="title_share_via" formatted="false" msgid="5886112726191455415">
-      <item quantity="one">Выберите способ</item>
-      <item quantity="few">Выберите способ</item>
-      <item quantity="many">Выберите способ</item>
-      <item quantity="other">Выберите способ</item>
+      <item quantity="one">Выберите способ отправки</item>
+      <item quantity="few">Выберите способ отправки</item>
+      <item quantity="many">Выберите способ отправки</item>
+      <item quantity="other">Выберите способ отправки</item>
     </plurals>
     <string name="dialog_new_group_account" msgid="3451312333591556651">"Выберите аккаунт"</string>
     <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"Создание ярлыка"</string>
@@ -175,7 +175,7 @@
     <string name="organization_company_and_title" msgid="6718207751363732025">"<xliff:g id="COMPANY_0">%2$s</xliff:g>, <xliff:g id="COMPANY_1">%1$s</xliff:g>"</string>
     <string name="non_phone_caption" msgid="1541655052330027380">"Номер телефона"</string>
     <string name="non_phone_add_to_contacts" msgid="6590985286250471169">"Добавить в контакты"</string>
-    <string name="non_phone_close" msgid="7608506439725515667">"Скрыть"</string>
+    <string name="non_phone_close" msgid="7608506439725515667">"Закрыть"</string>
     <string name="date_year_toggle" msgid="7122002148518724139">"Указать год"</string>
     <string name="contacts_unavailable_add_account" msgid="4347232421410561500">"Добавить аккаунт"</string>
     <string name="contacts_unavailable_import_contacts" msgid="3182801738595937144">"Импортировать"</string>
@@ -218,7 +218,7 @@
     <string name="today_at_time_fmt" msgid="605665249491030460">"Сегодня, <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
     <string name="tomorrow_at_time_fmt" msgid="4856497969617819421">"Завтра, <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
     <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%1$s</xliff:g>, <xliff:g id="TIME_INTERVAL">%2$s</xliff:g>"</string>
-    <string name="untitled_event" msgid="3484859385405939366">"Мероприятие без названия"</string>
+    <string name="untitled_event" msgid="3484859385405939366">"(событие без названия)"</string>
     <string name="date_time_set" msgid="4761419824439606690">"Установить"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"Чат"</string>
     <string name="header_organization_entry" msgid="8515394955666265406">"Организация"</string>
@@ -259,7 +259,7 @@
     <string name="menu_title_groups" msgid="8356921831150278868">"Ярлыки"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"Аккаунты"</string>
     <string name="permission_explanation_header" msgid="5739405825039695327">"Показывать объединенную историю"</string>
-    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"(мероприятия и сообщения)"</string>
+    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"Мероприятия и сообщения"</string>
     <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"Мероприятия"</string>
     <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"Сообщения"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"Предложения"</string>
@@ -272,7 +272,7 @@
     <string name="call_fax_work" msgid="7467763592359059243">"Рабочий факс"</string>
     <string name="call_fax_home" msgid="8342175628887571876">"Домашний факс"</string>
     <string name="call_pager" msgid="9003902812293983281">"Пейджер"</string>
-    <string name="call_other" msgid="8563753966926932052">"Вызов"</string>
+    <string name="call_other" msgid="8563753966926932052">"Позвонить"</string>
     <string name="call_callback" msgid="1910165691349426858">"Обратный вызов"</string>
     <string name="call_car" msgid="3280537320306436445">"Тел. в машине"</string>
     <string name="call_company_main" msgid="6105120947138711257">"Офис"</string>
@@ -390,7 +390,7 @@
     <string name="announce_collapsed_fields" msgid="6414231530177338704">"Поля скрыты"</string>
     <string name="list_filter_all_accounts" msgid="8908683398914322369">"Все контакты"</string>
     <string name="list_filter_all_starred" msgid="5031734941601931356">"Помеченные"</string>
-    <string name="list_filter_customize" msgid="4789963356004169321">"Другой"</string>
+    <string name="list_filter_customize" msgid="4789963356004169321">"Настроить"</string>
     <string name="list_filter_single" msgid="5871400283515893087">"Контакт"</string>
     <string name="display_ungrouped" msgid="6885954210243119591">"Все контакты"</string>
     <string name="display_all_contacts" msgid="2031647544742889505">"Все контакты"</string>
@@ -446,10 +446,10 @@
     <string name="reading_vcard_failed_title" msgid="4251647443358422855">"Ошибка чтения vCard-файла"</string>
     <string name="importing_vcard_finished_title" msgid="3341541727268747967">"Импорт файла vCard <xliff:g id="FILENAME">%s</xliff:g> завершен"</string>
     <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"Импорт файла \"<xliff:g id="FILENAME">%s</xliff:g>\" отменен"</string>
-    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"Импорт скоро начнется (<xliff:g id="FILENAME">%s</xliff:g>)"</string>
+    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"Импорт <xliff:g id="FILENAME">%s</xliff:g> начнется в ближайшее время."</string>
     <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"Файл будет импортирован в ближайшее время."</string>
     <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"Запрос на импорт данных vCard отклонен. Повторите попытку позже."</string>
-    <string name="contacts_export_will_start_message" msgid="8538705791417534431">"Контакты скоро будут экспортированы"</string>
+    <string name="contacts_export_will_start_message" msgid="8538705791417534431">"Контакты скоро будут экспортированы."</string>
     <string name="vcard_export_request_rejected_message" msgid="2844874826431327531">"Запрос на экспорт данных vCard отклонен. Повторите попытку позже."</string>
     <string name="vcard_unknown_filename" msgid="7171709890959915954">"контакт"</string>
     <string name="caching_vcard_message" msgid="4926308675041506756">"Выполняется кеширование файлов vCard в локальное временное хранилище. Импорт скоро начнется."</string>
@@ -462,13 +462,13 @@
     <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"Транскрипция имени"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"Всегда показывать"</string>
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"Скрывать пустое поле"</string>
-    <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"По имени"</string>
-    <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"По фамилии"</string>
+    <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"Имя"</string>
+    <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"Фамилия"</string>
     <string name="display_options_view_names_as" msgid="6514632499276563482">"Формат имени и фамилии"</string>
     <string name="display_options_view_given_name_first" msgid="3616004640258761473">"Сначала имя"</string>
     <string name="display_options_view_family_name_first" msgid="956445100777296467">"Сначала фамилия"</string>
     <string name="settings_accounts" msgid="350219740670774576">"Аккаунты"</string>
-    <string name="default_editor_account" msgid="699591683362420991">"Аккаунт для новых контактов"</string>
+    <string name="default_editor_account" msgid="699591683362420991">"Аккаунт по умолчанию для новых контактов"</string>
     <string name="settings_my_info_title" msgid="1534272456405343119">"Мои данные"</string>
     <string name="set_up_profile" msgid="7370213843590143771">"Настройте профиль"</string>
     <string name="setting_about" msgid="7014388749752042863">"О Контактах"</string>
@@ -476,12 +476,12 @@
     <string name="share_contacts" msgid="8109287987498711664">"Поделиться всеми контактами"</string>
     <string name="share_contacts_failure" msgid="1216431977330560559">"Не удалось поделиться контактами"</string>
     <string name="dialog_export" msgid="1628001095187741417">"Экспорт контактов"</string>
-    <string name="dialog_import" msgid="2423592905927819672">"Импортировать"</string>
+    <string name="dialog_import" msgid="2423592905927819672">"Импорт контактов"</string>
     <string name="share_error" msgid="948429331673358107">"Не удалось передать данные."</string>
     <string name="no_contact_to_share" msgid="1276397530378323033">"Видимых контактов нет"</string>
     <string name="menu_contacts_filter" msgid="2165153460860262501">"Фильтр контактов"</string>
     <string name="activity_title_contacts_filter" msgid="8275542497615516969">"Фильтр контактов"</string>
-    <string name="custom_list_filter" msgid="9048525797111024204">"Настроить фильтр"</string>
+    <string name="custom_list_filter" msgid="9048525797111024204">"Настроить просмотр"</string>
     <string name="menu_custom_filter_save" msgid="2679793632208086460">"Сохранить"</string>
     <string name="hint_findContacts" msgid="7128627979899070325">"Поиск в контактах"</string>
     <string name="contactsFavoritesLabel" msgid="8417039765586853670">"Избранное"</string>
@@ -530,7 +530,7 @@
     <string name="sim_import_title" msgid="2511154832820812822">"Импорт с SIM-карты"</string>
     <string name="sim_import_cancel_content_description" msgid="1619832410253424452">"Отмена"</string>
     <string name="auto_sync_off" msgid="2180147284456026587">"Автосинхронизация отключена. Нажмите, чтобы ее включить."</string>
-    <string name="dismiss_sync_alert" msgid="8941131776605093596">"Скрыть"</string>
+    <string name="dismiss_sync_alert" msgid="8941131776605093596">"Закрыть"</string>
     <string name="account_sync_off" msgid="7646143254066243924">"Синхронизация аккаунта отключена. Нажмите, чтобы ее включить."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"Включить автосинхронизацию?"</string>
     <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"Изменения всех приложений и аккаунтов (не только Google Контактов) будут синхронизироваться между веб-интерфейсом и вашими устройствами."</string>

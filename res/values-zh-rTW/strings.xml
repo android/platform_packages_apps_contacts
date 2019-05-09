@@ -250,7 +250,7 @@
     <string name="navigation_drawer_label" msgid="4154758025620107419">"「<xliff:g id="LABEL_NAME">%s</xliff:g>」標籤"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"標籤"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"帳戶"</string>
-    <string name="permission_explanation_header" msgid="5739405825039695327">"一併顯示記錄"</string>
+    <string name="permission_explanation_header" msgid="5739405825039695327">"一併顯示紀錄"</string>
     <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"活動和簡訊"</string>
     <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"活動"</string>
     <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"訊息"</string>
@@ -310,13 +310,13 @@
     <string name="status_busy" msgid="9147992455450257136">"忙碌"</string>
     <string name="local_invisible_directory" msgid="6046691709127661065">"其他"</string>
     <string name="directory_search_label" msgid="1887759056597975053">"目錄"</string>
-    <string name="directory_search_label_work" msgid="8618292129829443176">"工作聯絡人目錄"</string>
+    <string name="directory_search_label_work" msgid="8618292129829443176">"Work 聯絡人目錄"</string>
     <string name="local_search_label" msgid="2551177578246113614">"所有聯絡人"</string>
     <string name="description_quick_contact_for" msgid="6737516415168327789">"<xliff:g id="NAME">%1$s</xliff:g>的快速聯絡人相片"</string>
     <string name="missing_name" msgid="8745511583852904385">"(無姓名)"</string>
     <string name="favoritesFrequentContacted" msgid="6184232487472425690">"常用聯絡人"</string>
     <string name="list_filter_phones" msgid="735313795643493365">"所有包含電話號碼的聯絡人資訊"</string>
-    <string name="list_filter_phones_work" msgid="1470173699551475015">"工作資料夾聯絡人"</string>
+    <string name="list_filter_phones_work" msgid="1470173699551475015">"Work 設定檔聯絡人"</string>
     <string name="view_updates_from_group" msgid="1782685984905600034">"查看更新"</string>
     <string name="account_phone" msgid="7128032778471187553">"裝置"</string>
     <string name="account_sim" msgid="6519016427905087952">"SIM 卡"</string>

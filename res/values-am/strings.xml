@@ -253,7 +253,7 @@
     <string name="permission_explanation_header" msgid="5739405825039695327">"ታሪክዎን አብረው ይመልከቱ"</string>
     <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"ኩነቶች እና መልዕክቶች"</string>
     <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"ኩነቶች"</string>
-    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"መልዕክቶች"</string>
+    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"መልእክቶች"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"ጥቆማዎች"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"እውቂያዎችዎን የተደራጁና ጠቃሚ እንደሆኑ ያቆዩ"</string>
     <string name="undo" msgid="1425165101664071422">"ቀልብስ"</string>

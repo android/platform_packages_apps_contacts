@@ -175,7 +175,7 @@
     <string name="delete_group_dialog_message" msgid="335713829185261371">"¿Seguro que quieres eliminar la etiqueta \"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\"? Los contactos no se eliminarán."</string>
     <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"Para vincular el contacto, escribe el nombre del otro contacto."</string>
     <string name="copy_text" msgid="3257145021583508761">"Copiar en el portapapeles"</string>
-    <string name="set_default" msgid="4417505153468300351">"Elegir como predeterminado"</string>
+    <string name="set_default" msgid="4417505153468300351">"Establecer como predeterminado"</string>
     <string name="clear_default" msgid="7193185801596678067">"Borrar predeterminado"</string>
     <string name="toast_text_copied" msgid="5143776250008541719">"Texto copiado"</string>
     <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"¿Descartar cambios?"</string>
@@ -307,7 +307,7 @@
     <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"Borrando contactos frecuentes…"</string>
     <string name="status_available" msgid="5586870015822828392">"Disponible"</string>
     <string name="status_away" msgid="1838861100379804730">"Ausente"</string>
-    <string name="status_busy" msgid="9147992455450257136">"No disponible"</string>
+    <string name="status_busy" msgid="9147992455450257136">"Ocupado"</string>
     <string name="local_invisible_directory" msgid="6046691709127661065">"Otro"</string>
     <string name="directory_search_label" msgid="1887759056597975053">"Directorio"</string>
     <string name="directory_search_label_work" msgid="8618292129829443176">"Directorio de trabajo"</string>
@@ -321,7 +321,7 @@
     <string name="account_phone" msgid="7128032778471187553">"Dispositivo"</string>
     <string name="account_sim" msgid="6519016427905087952">"Tarjeta SIM"</string>
     <string name="nameLabelsGroup" msgid="2034640839640477827">"Nombre"</string>
-    <string name="nicknameLabelsGroup" msgid="2891682101053358010">"Apodo"</string>
+    <string name="nicknameLabelsGroup" msgid="2891682101053358010">"Mote"</string>
     <string name="name_given" msgid="4280790853455320619">"Nombre"</string>
     <string name="name_family" msgid="7466985689626017037">"Apellidos"</string>
     <string name="name_prefix" msgid="59756378548779822">"Prefijo del nombre"</string>
@@ -454,7 +454,7 @@
     <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"Apellidos"</string>
     <string name="display_options_view_names_as" msgid="6514632499276563482">"Formato de nombre"</string>
     <string name="display_options_view_given_name_first" msgid="3616004640258761473">"Nombre primero"</string>
-    <string name="display_options_view_family_name_first" msgid="956445100777296467">"Apellidos primero"</string>
+    <string name="display_options_view_family_name_first" msgid="956445100777296467">"Apellido primero"</string>
     <string name="settings_accounts" msgid="350219740670774576">"Cuentas"</string>
     <string name="default_editor_account" msgid="699591683362420991">"Cuenta predeterminada para nuevos contactos"</string>
     <string name="settings_my_info_title" msgid="1534272456405343119">"Mi información"</string>
@@ -516,7 +516,7 @@
     <string name="sim_import_title" msgid="2511154832820812822">"Importar de la SIM"</string>
     <string name="sim_import_cancel_content_description" msgid="1619832410253424452">"Cancelar"</string>
     <string name="auto_sync_off" msgid="2180147284456026587">"La sincronización automática está desactivada. Toca para activarla."</string>
-    <string name="dismiss_sync_alert" msgid="8941131776605093596">"Cerrar"</string>
+    <string name="dismiss_sync_alert" msgid="8941131776605093596">"Descartar"</string>
     <string name="account_sync_off" msgid="7646143254066243924">"La sincronización de la cuenta está desactivada. Toca para activarla."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"¿Activar la sincronización automática?"</string>
     <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"Los cambios que realices en todas las aplicaciones y cuentas, no solo en Contactos de Google, se actualizarán en la Web y en tus dispositivos."</string>

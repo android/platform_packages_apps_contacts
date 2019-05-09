@@ -489,7 +489,7 @@
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="1765533099416999801">"ಬಿಲ್ಡ್ ಆವೃತ್ತಿ"</string>
     <string name="about_open_source_licenses" msgid="6479990452352919641">"ತೆರೆದ ಮೂಲ ಪರವಾನಗಿಗಳು"</string>
-    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"ಓಪನ್ ಸೋರ್ಸ್ ಸಾಫ್ಟ್‌ವೇರ್‌ಗಾಗಿ ಪರವಾನಗಿ ವಿವರಗಳು"</string>
+    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"ಮುಕ್ತ ಮೂಲ ಸಾಫ್ಟ್‌ವೇರ್‌ಗಾಗಿ ಪರವಾನಗಿ ವಿವರಗಳು"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"ಗೌಪ್ಯತೆ ನೀತಿ"</string>
     <string name="about_terms_of_service" msgid="4642400812150296723">"ಸೇವಾ ನಿಯಮಗಳು"</string>
     <string name="activity_title_licenses" msgid="5467767062737708066">"ತೆರೆದ ಮೂಲ ಪರವಾನಗಿಗಳು"</string>
