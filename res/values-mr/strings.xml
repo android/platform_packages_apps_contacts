@@ -170,7 +170,7 @@
     <string name="non_phone_close" msgid="7608506439725515667">"बंद करा"</string>
     <string name="date_year_toggle" msgid="7122002148518724139">"वर्ष समाविष्‍ट करा"</string>
     <string name="contacts_unavailable_add_account" msgid="4347232421410561500">"खाते जोडा"</string>
-    <string name="contacts_unavailable_import_contacts" msgid="3182801738595937144">"आयात करा"</string>
+    <string name="contacts_unavailable_import_contacts" msgid="3182801738595937144">"इंपोर्ट करा"</string>
     <string name="create_group_item_label" msgid="3263064599743742865">"नवीन तयार करा…"</string>
     <string name="delete_group_dialog_message" msgid="335713829185261371">"\"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\" लेबल हटवायचे? (संपर्क आपणहून हटविले जाणार नाहीत.)"</string>
     <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"दुसर्‍यासह दुवा जोडण्‍याआधी संपर्क नाव टाइप करा."</string>
@@ -198,7 +198,7 @@
     <string name="contact_editor_unlink_contacts" msgid="4525214336177236653">"दुवा रद्द करा"</string>
     <string name="add_account" msgid="8201790677994503186">"खाते जोडा"</string>
     <string name="add_new_account" msgid="5748627740680940264">"नवीन खाते जोडा"</string>
-    <string name="menu_export_database" msgid="2659719297530170820">"डेटाबेस फाईल निर्यात करा"</string>
+    <string name="menu_export_database" msgid="2659719297530170820">"डेटाबेस फाईल एक्सपोर्ट करा"</string>
     <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"नवीन संपर्क तयार करा"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"अधिक पहा"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"कमी पहा"</string>
@@ -392,7 +392,7 @@
     <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"संकालन करा मधून \"<xliff:g id="GROUP">%s</xliff:g>\" हटविल्‍याने संकालन करा मधून कोणत्‍याही गटबद्ध न केलेल्‍या संपर्कांना देखील हटवेल."</string>
     <string name="savingDisplayGroups" msgid="2133152192716475939">"प्रदर्शन पर्याय सेव्ह करत आहे…"</string>
     <string name="listCustomView" msgid="1840624396582117590">"सानुकूलित दृश्य"</string>
-    <string name="dialog_new_contact_account" msgid="4969619718062454756">"आयात केलेले संपर्क यावर सेव्ह करा:"</string>
+    <string name="dialog_new_contact_account" msgid="4969619718062454756">"इंपोर्ट केलेले संपर्क यावर सेव्ह करा:"</string>
     <string name="import_from_sim" msgid="6912071635295799131">"सिम कार्ड"</string>
     <string name="import_from_sim_summary_fmt" msgid="5169032449686348118">"सिम <xliff:g id="SIM_NAME">%1$s</xliff:g>"</string>
     <plurals name="import_from_sim_secondary_contact_count_fmt" formatted="false" msgid="5821095773211149295">
@@ -404,48 +404,48 @@
       <item quantity="other"><xliff:g id="COUNT_2">^1</xliff:g> संपर्क • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
     </plurals>
     <string name="import_from_vcf_file" msgid="8662528435646418203">".vcf फाईल"</string>
-    <string name="nothing_to_import_message" msgid="1651921906873335656">"आयात करण्यासाठी काहीही नाही"</string>
-    <string name="import_from_vcf_file_confirmation_message" msgid="967723361108008345">"vCard मधून संपर्क आयात करायचे?"</string>
-    <string name="cancel_import_confirmation_message" msgid="3929951040347726757">"<xliff:g id="FILENAME">%s</xliff:g> चे आयात रद्द करायचे?"</string>
-    <string name="cancel_export_confirmation_message" msgid="1995462401949262638">"<xliff:g id="FILENAME">%s</xliff:g> चे निर्यात रद्द करायचे?"</string>
-    <string name="cancel_vcard_import_or_export_failed" msgid="6139900383366166706">"vCard आयात/निर्यात रद्द करू शकल नाही"</string>
+    <string name="nothing_to_import_message" msgid="1651921906873335656">"इंपोर्ट करण्यासाठी काहीही नाही"</string>
+    <string name="import_from_vcf_file_confirmation_message" msgid="967723361108008345">"vCard मधून संपर्क इंपोर्ट करायचे?"</string>
+    <string name="cancel_import_confirmation_message" msgid="3929951040347726757">"<xliff:g id="FILENAME">%s</xliff:g> चे इंपोर्ट रद्द करायचे?"</string>
+    <string name="cancel_export_confirmation_message" msgid="1995462401949262638">"<xliff:g id="FILENAME">%s</xliff:g> चे एक्सपोर्ट रद्द करायचे?"</string>
+    <string name="cancel_vcard_import_or_export_failed" msgid="6139900383366166706">"vCard इंपोर्ट/एक्सपोर्ट रद्द करू शकल नाही"</string>
     <string name="fail_reason_unknown" msgid="1714092345030570863">"अज्ञात एरर."</string>
     <string name="fail_reason_could_not_open_file" msgid="2067725459821997463">"\"<xliff:g id="FILE_NAME">%1$s</xliff:g>\" उघडू शकलो नाही: <xliff:g id="EXACT_REASON">%2$s</xliff:g>."</string>
     <string name="fail_reason_could_not_initialize_exporter" msgid="707260459259688510">"निर्यातकर्ता प्रारंभ करू शकला नाही: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
-    <string name="fail_reason_no_exportable_contact" msgid="8728506011371262065">"कोणताही निर्यात करण्‍यायोग्‍य संपर्क नाही."</string>
+    <string name="fail_reason_no_exportable_contact" msgid="8728506011371262065">"कोणताही एक्सपोर्ट करण्‍यायोग्‍य संपर्क नाही."</string>
     <string name="missing_required_permission" msgid="5865884842972833120">"तुम्ही आवश्‍यक असलेली एक परवानगी अक्षम केली आहे."</string>
-    <string name="fail_reason_error_occurred_during_export" msgid="3018855323913649063">"निर्यात दरम्‍यान एरर आलीt: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
+    <string name="fail_reason_error_occurred_during_export" msgid="3018855323913649063">"एक्सपोर्ट दरम्‍यान एरर आलीt: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
     <string name="fail_reason_io_error" msgid="6748358842976073255">"I/O एरर"</string>
     <string name="fail_reason_low_memory_during_import" msgid="875222757734882898">"पुरेशी मेमरी नाही. फाईल कदाचित खूप मोठी असू शकते."</string>
     <string name="fail_reason_not_supported" msgid="8219562769267148825">"स्वरूपन समर्थित नाही."</string>
-    <string name="exporting_vcard_finished_title" msgid="4767045779458185251">"<xliff:g id="FILENAME">%s</xliff:g> निर्यात करणे समाप्त झाले."</string>
-    <string name="exporting_vcard_finished_title_fallback" msgid="6060472638008218274">"संपर्क आयात करणे समाप्त झाले"</string>
-    <string name="exporting_vcard_finished_toast" msgid="1739055986856453882">"संपर्क निर्यात करणे समाप्त झाले, संपर्क शेअर करण्यासाठी सूचनेवर क्लिक करा."</string>
+    <string name="exporting_vcard_finished_title" msgid="4767045779458185251">"<xliff:g id="FILENAME">%s</xliff:g> एक्सपोर्ट करणे समाप्त झाले."</string>
+    <string name="exporting_vcard_finished_title_fallback" msgid="6060472638008218274">"संपर्क इंपोर्ट करणे समाप्त झाले"</string>
+    <string name="exporting_vcard_finished_toast" msgid="1739055986856453882">"संपर्क एक्सपोर्ट करणे समाप्त झाले, संपर्क शेअर करण्यासाठी सूचनेवर क्लिक करा."</string>
     <string name="touch_to_share_contacts" msgid="4882485525268469736">"संपर्क शेअर करण्यासाठी टॅप करा."</string>
-    <string name="exporting_vcard_canceled_title" msgid="2652222370493306887">"<xliff:g id="FILENAME">%s</xliff:g> निर्यात करणे रद्द केले."</string>
-    <string name="exporting_contact_list_title" msgid="9072240631534457415">"संपर्क डेटा निर्यात करत आहे"</string>
-    <string name="exporting_contact_list_message" msgid="3367949209642931952">"संपर्क डेटा निर्यात केला जात आहे."</string>
+    <string name="exporting_vcard_canceled_title" msgid="2652222370493306887">"<xliff:g id="FILENAME">%s</xliff:g> एक्सपोर्ट करणे रद्द केले."</string>
+    <string name="exporting_contact_list_title" msgid="9072240631534457415">"संपर्क डेटा एक्सपोर्ट करत आहे"</string>
+    <string name="exporting_contact_list_message" msgid="3367949209642931952">"संपर्क डेटा एक्सपोर्ट केला जात आहे."</string>
     <string name="composer_failed_to_get_database_infomation" msgid="1765944280846236723">"डेटाबेस माहिती मिळवू शकलो नाही."</string>
-    <string name="composer_has_no_exportable_contact" msgid="5712531702823346549">"कोणतेही निर्यात करण्यायोग्य संपर्क नाहीत."</string>
+    <string name="composer_has_no_exportable_contact" msgid="5712531702823346549">"कोणतेही एक्सपोर्ट करण्यायोग्य संपर्क नाहीत."</string>
     <string name="composer_not_initialized" msgid="2321648986367005254">"vCard रचनाकाराने योग्‍यरित्‍या प्रारंभ केला नाही."</string>
-    <string name="exporting_contact_failed_title" msgid="4892358112409576342">"निर्यात करू शकलो नाही"</string>
-    <string name="exporting_contact_failed_message" msgid="4938527850142003141">"संपर्क डेटा निर्यात केला नाही.\nकारण: \"<xliff:g id="FAIL_REASON">%s</xliff:g>\""</string>
-    <string name="importing_vcard_description" msgid="4245275224298571351">"<xliff:g id="NAME">%s</xliff:g> आयात करत आहे"</string>
+    <string name="exporting_contact_failed_title" msgid="4892358112409576342">"एक्सपोर्ट करू शकलो नाही"</string>
+    <string name="exporting_contact_failed_message" msgid="4938527850142003141">"संपर्क डेटा एक्सपोर्ट केला नाही.\nकारण: \"<xliff:g id="FAIL_REASON">%s</xliff:g>\""</string>
+    <string name="importing_vcard_description" msgid="4245275224298571351">"<xliff:g id="NAME">%s</xliff:g> इंपोर्ट करत आहे"</string>
     <string name="reading_vcard_failed_title" msgid="4251647443358422855">"vCard डेटा वाचू शकलो नाही"</string>
-    <string name="importing_vcard_finished_title" msgid="3341541727268747967">"vCard <xliff:g id="FILENAME">%s</xliff:g> आयात करणे समाप्त झाले"</string>
-    <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"<xliff:g id="FILENAME">%s</xliff:g> आयात करणे रद्द झाले"</string>
-    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"<xliff:g id="FILENAME">%s</xliff:g> लवकरच आयात केली जाईल."</string>
-    <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"फाईल लवकरच आयात केली जाईल."</string>
-    <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"vCard आयात विनंती नाकारली. नंतर पुन्हा प्रयत्न करा."</string>
-    <string name="contacts_export_will_start_message" msgid="8538705791417534431">"संपर्क लवकरच निर्यात केले जातील."</string>
-    <string name="vcard_export_request_rejected_message" msgid="2844874826431327531">"vCard निर्यात विनंती नाकारली. नंतर पुन्हा प्रयत्न करा."</string>
+    <string name="importing_vcard_finished_title" msgid="3341541727268747967">"vCard <xliff:g id="FILENAME">%s</xliff:g> इंपोर्ट करणे समाप्त झाले"</string>
+    <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"<xliff:g id="FILENAME">%s</xliff:g> इंपोर्ट करणे रद्द झाले"</string>
+    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"<xliff:g id="FILENAME">%s</xliff:g> लवकरच इंपोर्ट केली जाईल."</string>
+    <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"फाईल लवकरच इंपोर्ट केली जाईल."</string>
+    <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"vCard इंपोर्ट विनंती नाकारली. नंतर पुन्हा प्रयत्न करा."</string>
+    <string name="contacts_export_will_start_message" msgid="8538705791417534431">"संपर्क लवकरच एक्सपोर्ट केले जातील."</string>
+    <string name="vcard_export_request_rejected_message" msgid="2844874826431327531">"vCard एक्सपोर्ट विनंती नाकारली. नंतर पुन्हा प्रयत्न करा."</string>
     <string name="vcard_unknown_filename" msgid="7171709890959915954">"संपर्क"</string>
-    <string name="caching_vcard_message" msgid="4926308675041506756">"स्‍थानिक तात्‍पुरत्‍या संचयनावर vCard(s) कॅश   करत आहे. वास्‍तविक आयात लवकरच प्रारंभ होईल."</string>
-    <string name="vcard_import_failed" msgid="5223531255894842406">"vCard आयात करू शकलो नाही."</string>
+    <string name="caching_vcard_message" msgid="4926308675041506756">"स्‍थानिक तात्‍पुरत्‍या संचयनावर vCard(s) कॅश   करत आहे. वास्‍तविक इंपोर्ट लवकरच प्रारंभ होईल."</string>
+    <string name="vcard_import_failed" msgid="5223531255894842406">"vCard इंपोर्ट करू शकलो नाही."</string>
     <string name="nfc_vcard_file_name" msgid="2823095213265993609">"NFC वर संपर्क प्राप्त केला"</string>
     <string name="caching_vcard_title" msgid="1226272312940516605">"कॅश   करत आहे"</string>
-    <string name="progress_notifier_message" msgid="2311011466908220528">"आयात करत आहे <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g>: <xliff:g id="NAME">%3$s</xliff:g>"</string>
-    <string name="export_to_vcf_file" msgid="4407527157056120858">".vcf फाईलवर निर्यात करा"</string>
+    <string name="progress_notifier_message" msgid="2311011466908220528">"इंपोर्ट करत आहे <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g>: <xliff:g id="NAME">%3$s</xliff:g>"</string>
+    <string name="export_to_vcf_file" msgid="4407527157056120858">".vcf फाईलवर एक्सपोर्ट करा"</string>
     <string name="display_options_sort_list_by" msgid="7028809117272018712">"नुसार क्रमवारी लावा"</string>
     <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"ध्वन्यात्मक नाव"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"नेहमी दर्शवा"</string>
@@ -463,8 +463,8 @@
     <string name="share_favorite_contacts" msgid="4280926751003081042">"आवडते संपर्क शेअर करा"</string>
     <string name="share_contacts" msgid="8109287987498711664">"सर्व संपर्क शेअर करा"</string>
     <string name="share_contacts_failure" msgid="1216431977330560559">"संपर्क शेअर करण्यात अयशस्वी झाले."</string>
-    <string name="dialog_export" msgid="1628001095187741417">"संपर्क निर्यात करा"</string>
-    <string name="dialog_import" msgid="2423592905927819672">"यावरून संपर्क आयात करा"</string>
+    <string name="dialog_export" msgid="1628001095187741417">"संपर्क एक्सपोर्ट करा"</string>
+    <string name="dialog_import" msgid="2423592905927819672">"यावरून संपर्क इंपोर्ट करा"</string>
     <string name="share_error" msgid="948429331673358107">"हा संपर्क शेअर केला जाऊ शकत नाही."</string>
     <string name="no_contact_to_share" msgid="1276397530378323033">"शेअर करण्यासाठी कोणतेही संपर्क नाहीत."</string>
     <string name="menu_contacts_filter" msgid="2165153460860262501">"प्रदर्शित करण्यासाठी संपर्क"</string>
@@ -473,8 +473,8 @@
     <string name="menu_custom_filter_save" msgid="2679793632208086460">"सेव्ह करा"</string>
     <string name="hint_findContacts" msgid="7128627979899070325">"संपर्क शोधा"</string>
     <string name="contactsFavoritesLabel" msgid="8417039765586853670">"आवडते"</string>
-    <string name="menu_import" msgid="6107961135813836467">"आयात करा"</string>
-    <string name="menu_export" msgid="2658783911863503902">"निर्यात"</string>
+    <string name="menu_import" msgid="6107961135813836467">"इंपोर्ट करा"</string>
+    <string name="menu_export" msgid="2658783911863503902">"एक्सपोर्ट"</string>
     <string name="menu_blocked_numbers" msgid="5272951629083025995">"अवरोधित केलेले नंबर"</string>
     <string name="contact_status_update_attribution" msgid="752179367353018597">"<xliff:g id="SOURCE">%1$s</xliff:g> द्वारे"</string>
     <string name="contact_status_update_attribution_with_date" msgid="7358045508107825068">"<xliff:g id="SOURCE">%2$s</xliff:g> द्वारे <xliff:g id="DATE">%1$s</xliff:g>"</string>
@@ -504,16 +504,16 @@
     <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> ता. <xliff:g id="MINUTES_1">%2$s</xliff:g> मि. <xliff:g id="SECONDS">%3$s</xliff:g> सेकंद"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"हा शॉर्टकट अक्षम केला गेला आहे"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"संपर्क काढला होता"</string>
-    <string name="sim_import_button_text" msgid="4270841592496619317">"आयात करा"</string>
+    <string name="sim_import_button_text" msgid="4270841592496619317">"इंपोर्ट करा"</string>
     <string name="sim_import_title_none_selected" msgid="6910517331401970693">"संपर्क निवडा"</string>
     <string name="sim_import_empty_message" msgid="7743815244380189651">"आपल्‍या सिम कार्डवर कोणतेही संपर्क नाहीत"</string>
     <string name="sim_import_contact_exists_toast" msgid="1503743663717316732">"संपर्क आधीपासून आपल्या सूचीमध्ये विद्यमान आहे"</string>
     <plurals name="sim_import_success_toast_fmt" formatted="false" msgid="8572156521110906443">
-      <item quantity="one"><xliff:g id="COUNT">%d</xliff:g> सिम संपर्क आयात केला</item>
-      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> सिम संपर्क आयात केले</item>
+      <item quantity="one"><xliff:g id="COUNT">%d</xliff:g> सिम संपर्क इंपोर्ट केला</item>
+      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> सिम संपर्क इंपोर्ट केले</item>
     </plurals>
-    <string name="sim_import_failed_toast" msgid="5559267299793622705">"सिम संपर्क आयात करण्यात अयशस्वी"</string>
-    <string name="sim_import_title" msgid="2511154832820812822">"सिम वरून आयात करा"</string>
+    <string name="sim_import_failed_toast" msgid="5559267299793622705">"सिम संपर्क इंपोर्ट करण्यात अयशस्वी"</string>
+    <string name="sim_import_title" msgid="2511154832820812822">"सिम वरून इंपोर्ट करा"</string>
     <string name="sim_import_cancel_content_description" msgid="1619832410253424452">"रद्द करा"</string>
     <string name="auto_sync_off" msgid="2180147284456026587">"स्वयं-संकालन बंद आहे. चालू करण्यासाठी टॅप करा."</string>
     <string name="dismiss_sync_alert" msgid="8941131776605093596">"डिसमिस करा"</string>
@@ -524,10 +524,10 @@
     <string name="connection_error_message" msgid="7046408921529247089">"कोणतेही कनेक्शन नाही"</string>
     <string name="single_sim_display_label" msgid="6985770499439371497">"सिम"</string>
     <string name="show_more_content_description" msgid="4277410425912984722">"अधिक दर्शवा"</string>
-    <string name="importing_sim_finished_title" msgid="5196369441294050721">"सिम कार्ड आयात करणे समाप्त झाले"</string>
-    <string name="importing_sim_failed_title" msgid="39706901030537985">"आयात अयशस्वी झाले"</string>
-    <string name="importing_sim_failed_message" msgid="3345258302998021066">"सिम कार्ड वरून संपर्क आयात करणेे शक्य झाले नाही"</string>
-    <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"सिम आयात करत आहे"</string>
+    <string name="importing_sim_finished_title" msgid="5196369441294050721">"सिम कार्ड इंपोर्ट करणे समाप्त झाले"</string>
+    <string name="importing_sim_failed_title" msgid="39706901030537985">"इंपोर्ट अयशस्वी झाले"</string>
+    <string name="importing_sim_failed_message" msgid="3345258302998021066">"सिम कार्ड वरून संपर्क इंपोर्ट करणेे शक्य झाले नाही"</string>
+    <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"सिम इंपोर्ट करत आहे"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"सूचना"</string>
     <string name="yes_button" msgid="1268479086848288060">"होय"</string>
     <string name="no_button" msgid="5742815694687835125">"नाही"</string>

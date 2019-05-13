@@ -479,7 +479,7 @@
     <string name="contact_status_update_attribution" msgid="752179367353018597">"<xliff:g id="SOURCE">%1$s</xliff:g> аркылуу"</string>
     <string name="contact_status_update_attribution_with_date" msgid="7358045508107825068">"<xliff:g id="DATE">%1$s</xliff:g> <xliff:g id="SOURCE">%2$s</xliff:g> аркылуу"</string>
     <string name="action_menu_back_from_search" msgid="8793348588949233348">"издөөнү токтотуу"</string>
-    <string name="description_clear_search" msgid="688023606766232904">"Издөөнү тазалоо"</string>
+    <string name="description_clear_search" msgid="688023606766232904">"Изделип жаткан нерсени өчүрүү"</string>
     <string name="select_account_dialog_title" msgid="5478489655696599219">"Каттоо эсеби"</string>
     <string name="set_default_account" msgid="4311613760725609801">"Чалууларда ар дайым бул колдонулсун"</string>
     <string name="call_with_a_note" msgid="8389827628360791676">"Кыска жазуу менен чалуу"</string>

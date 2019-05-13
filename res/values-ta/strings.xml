@@ -35,7 +35,7 @@
     <string name="menu_editContact" msgid="9042415603857662633">"திருத்து"</string>
     <string name="menu_deleteContact" msgid="6788644058868189393">"நீக்கு"</string>
     <string name="menu_change_photo" msgid="7769177631511496210">"படத்தை மாற்று"</string>
-    <string name="menu_create_contact_shortcut" msgid="1663022219127343858">"குறுக்குவழியை உருவாக்கு"</string>
+    <string name="menu_create_contact_shortcut" msgid="1663022219127343858">"ஷார்ட்கட்டை உருவாக்கு"</string>
     <string name="menu_splitAggregate" msgid="2627252205317945563">"தொடர்பைப் பிரி"</string>
     <string name="menu_editGroup" msgid="6696843438454341063">"தொடர்புகளை அகற்று"</string>
     <string name="menu_renameGroup" msgid="7169512355179757182">"லேபிளின் பெயரை மாற்று"</string>
@@ -502,7 +502,7 @@
     <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> வி"</string>
     <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> நி <xliff:g id="SECONDS">%2$s</xliff:g> வி"</string>
     <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> ம <xliff:g id="MINUTES_1">%2$s</xliff:g> நி <xliff:g id="SECONDS">%3$s</xliff:g> வி"</string>
-    <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"இந்தக் குறுக்குவழி முடக்கப்பட்டது"</string>
+    <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"இந்த ஷார்ட்கட் முடக்கப்பட்டது"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"தொடர்பு அகற்றப்பட்டது"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"இறக்கு"</string>
     <string name="sim_import_title_none_selected" msgid="6910517331401970693">"தொடர்புகளைத் தேர்ந்தெடு"</string>
