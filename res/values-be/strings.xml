@@ -116,7 +116,7 @@
     <string name="contactUnlinkErrorToast" msgid="2706297508166952431">"Не ўдалося скасаваць сувязь з кантактам"</string>
     <string name="contactJoinErrorToast" msgid="5735129234573327701">"Не ўдалося звязаць кантакт"</string>
     <string name="contactGenericErrorToast" msgid="3885457515665783976">"Памылка пры захаванні кантакту"</string>
-    <string name="contactPhotoSavedErrorToast" msgid="6860883564984042194">"Не ўдалося захаваць змяненні фота кантакту"</string>
+    <string name="contactPhotoSavedErrorToast" msgid="6860883564984042194">"Не ўдалося захаваць змены ў фота кантакту"</string>
     <string name="groupLoadErrorToast" msgid="7536267148196064554">"Збой загрузкі этыкеткі"</string>
     <string name="groupDeletedToast" msgid="520896687873262027">"Метка выдалена"</string>
     <string name="groupCreatedToast" msgid="1924195126172834870">"Створана метка"</string>
@@ -501,9 +501,9 @@
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="1765533099416999801">"Версія зборкі"</string>
     <string name="about_open_source_licenses" msgid="6479990452352919641">"Ліцэнзіі на ПЗ з адкрытым кодам"</string>
-    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"Звесткі аб ліцэнзіі на праграмнае забеспячэнне з адкрытым зыходным кодам"</string>
+    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"Звесткі аб ліцэнзіях на праграмнае забеспячэнне з адкрытым зыходным кодам"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"Палітыка прыватнасці"</string>
-    <string name="about_terms_of_service" msgid="4642400812150296723">"Умовы абслугоўвання"</string>
+    <string name="about_terms_of_service" msgid="4642400812150296723">"Умовы выкарыстання"</string>
     <string name="activity_title_licenses" msgid="5467767062737708066">"Ліцэнзіі на ПЗ з адкрытым кодам"</string>
     <string name="url_open_error_toast" msgid="452592089815420457">"Збой адкрыцця URL-адраса."</string>
     <string name="account_filter_view_checked" msgid="6696859503887762213">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> - пазначана"</string>

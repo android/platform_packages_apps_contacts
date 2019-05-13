@@ -249,8 +249,8 @@
     <string name="editor_delete_view_description_short" msgid="7335518371270844912">"Izbriši <xliff:g id="DATA_KIND">%s</xliff:g>"</string>
     <string name="menu_assistant" msgid="5760693735722052454">"Prijedlozi"</string>
     <string name="menu_assistant_new_badge" msgid="3132884821616980034">"Novo"</string>
-    <string name="navigation_drawer_open" msgid="1126498472143250642">"Otvori panel za navigaciju"</string>
-    <string name="navigation_drawer_close" msgid="4137416137011817930">"Zatvori panel za navigaciju"</string>
+    <string name="navigation_drawer_open" msgid="1126498472143250642">"Otvori ladicu za navigaciju"</string>
+    <string name="navigation_drawer_close" msgid="4137416137011817930">"Zatvori ladicu za navigaciju"</string>
     <string name="navigation_drawer_label" msgid="4154758025620107419">"Oznaka <xliff:g id="LABEL_NAME">%s</xliff:g>"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"Oznake"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"Računi"</string>

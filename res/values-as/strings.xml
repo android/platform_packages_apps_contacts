@@ -30,8 +30,8 @@
     <string name="searchHint" msgid="8482945356247760701">"সম্পৰ্কসূচীত সন্ধান কৰক"</string>
     <string name="menu_addStar" msgid="2908478235715404876">"প্ৰিয়সমূহত যোগ কৰক"</string>
     <string name="menu_removeStar" msgid="5844227078364227030">"প্ৰিয়সমূহৰ পৰা আঁতৰাওক"</string>
-    <string name="description_action_menu_remove_star" msgid="4699640108012265178">"প্ৰিয়সমূহৰ পৰা আঁতৰোৱা হ\'ল"</string>
-    <string name="description_action_menu_add_star" msgid="3327186327234177456">"প্ৰিয়সমূহত যোগ কৰা হ\'ল"</string>
+    <string name="description_action_menu_remove_star" msgid="4699640108012265178">"প্ৰিয়সমূহৰ পৰা আঁতৰোৱা হ’ল"</string>
+    <string name="description_action_menu_add_star" msgid="3327186327234177456">"প্ৰিয়সমূহত যোগ কৰা হ’ল"</string>
     <string name="menu_editContact" msgid="9042415603857662633">"সম্পাদনা কৰক"</string>
     <string name="menu_deleteContact" msgid="6788644058868189393">"মচক"</string>
     <string name="menu_change_photo" msgid="7769177631511496210">"ফট\' সলনি কৰক"</string>
@@ -47,9 +47,9 @@
     <string name="menu_new_group_action_bar" msgid="3127059073617415221">"লেবেল সৃষ্টি কৰক"</string>
     <string name="splitConfirmation" msgid="7342030840130187290">"একাধিক সম্পৰ্কসূচীৰ পৰা এই সম্পৰ্কটো আনলিংক কৰিবনে?"</string>
     <string name="splitConfirmation_positive_button" msgid="9129409098807939699">"আনলিংক কৰক"</string>
-    <string name="splitConfirmationWithPendingChanges" msgid="7719062163511895696">"আপুনি ইতিমধ্য়ে কৰা সলনিসমূহ ছেভ কৰিব আৰু একাধিক সম্পৰ্কসূচীৰ পৰা এই সম্পৰ্কটো আনলিংক কৰিব বিচাৰেনে?"</string>
+    <string name="splitConfirmationWithPendingChanges" msgid="7719062163511895696">"আপুনি ইতিমধ্যে কৰা সলনিসমূহ ছেভ কৰিব আৰু একাধিক সম্পৰ্কসূচীৰ পৰা এই সম্পৰ্কটো আনলিংক কৰিব বিচাৰেনে?"</string>
     <string name="splitConfirmationWithPendingChanges_positive_button" msgid="9073444264887244032">"ছেভ কৰি আনলিংক কৰক"</string>
-    <string name="joinConfirmation" msgid="8262614843581924365">"আপুনি ইতিমধ্য়ে কৰা সলনিসমূহ ছেভ কৰিব আৰু বাছনি কৰা সম্পৰ্কসমূহলৈ লিংক কৰিব বিচাৰেনে?"</string>
+    <string name="joinConfirmation" msgid="8262614843581924365">"আপুনি ইতিমধ্যে কৰা সলনিসমূহ ছেভ কৰিব আৰু বাছনি কৰা সম্পৰ্কসমূহলৈ লিংক কৰিব বিচাৰেনে?"</string>
     <string name="joinConfirmation_positive_button" msgid="4573092849769149516">"ছেভ আৰু লিংক কৰক"</string>
     <string name="contacts_linking_progress_bar" msgid="2846494347384549277">"লিংক কৰি থকা হৈছে"</string>
     <string name="contacts_unlinking_progress_bar" msgid="5989310198163726929">"আনলিংক কৰিথকা হৈছে"</string>
@@ -60,14 +60,14 @@
     <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"আপুনি <xliff:g id="NAME">%s</xliff:g>ৰ সৈতে লিংক কৰিব বিচৰা সম্পৰ্ক বাছনি কৰক:"</string>
     <string name="separatorJoinAggregateSuggestions" msgid="2831414448851313345">"পৰামৰ্শ দিয়া সম্পৰ্কবোৰ"</string>
     <string name="separatorJoinAggregateAll" msgid="7939932265026181043">"সকলো সম্পৰ্ক"</string>
-    <string name="contactsJoinedNamedMessage" msgid="1299418263439579455">"<xliff:g id="NAME">%s</xliff:g> লিংক কৰা হ\'ল"</string>
-    <string name="contactsJoinedMessage" msgid="3343535986195643136">"সম্পৰ্কবোৰ লিংক কৰা হ\'ল"</string>
-    <string name="contacts_deleted_one_named_toast" msgid="2252551736301363193">"<xliff:g id="NAME">%1$s</xliff:g> মচা হ\'ল"</string>
-    <string name="contacts_deleted_two_named_toast" msgid="3642082931473111791">"<xliff:g id="NAME_0">%1$s</xliff:g> আৰু <xliff:g id="NAME_1">%2$s</xliff:g> মচা হ\'ল"</string>
-    <string name="contacts_deleted_many_named_toast" msgid="7731565342428031249">"<xliff:g id="NAME_0">%1$s</xliff:g>, <xliff:g id="NAME_1">%2$s</xliff:g>, <xliff:g id="NAME_2">%3$s</xliff:g>… মচা হ\'ল"</string>
+    <string name="contactsJoinedNamedMessage" msgid="1299418263439579455">"<xliff:g id="NAME">%s</xliff:g> লিংক কৰা হ’ল"</string>
+    <string name="contactsJoinedMessage" msgid="3343535986195643136">"সম্পৰ্কবোৰ লিংক কৰা হ’ল"</string>
+    <string name="contacts_deleted_one_named_toast" msgid="2252551736301363193">"<xliff:g id="NAME">%1$s</xliff:g> মচা হ’ল"</string>
+    <string name="contacts_deleted_two_named_toast" msgid="3642082931473111791">"<xliff:g id="NAME_0">%1$s</xliff:g> আৰু <xliff:g id="NAME_1">%2$s</xliff:g> মচা হ’ল"</string>
+    <string name="contacts_deleted_many_named_toast" msgid="7731565342428031249">"<xliff:g id="NAME_0">%1$s</xliff:g>, <xliff:g id="NAME_1">%2$s</xliff:g>, <xliff:g id="NAME_2">%3$s</xliff:g>… মচা হ’ল"</string>
     <plurals name="contacts_deleted_toast" formatted="false" msgid="1477708624197262295">
-      <item quantity="one">সম্পৰ্কবোৰ মচা হ\'ল</item>
-      <item quantity="other">সম্পৰ্কবোৰ মচা হ\'ল</item>
+      <item quantity="one">সম্পৰ্কবোৰ মচা হ’ল</item>
+      <item quantity="other">সম্পৰ্কবোৰ মচা হ’ল</item>
     </plurals>
     <plurals name="contacts_count" formatted="false" msgid="8696793457340503668">
       <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g>টা সম্পৰ্ক</item>
@@ -93,8 +93,8 @@
     <string name="deleteConfirmation" msgid="3512271779086656043">"এই সম্পৰ্কটো মচিবনে?"</string>
     <string name="deleteConfirmation_positive_button" msgid="7857888845028586365">"মচক"</string>
     <string name="invalidContactMessage" msgid="8215051456181842274">"এই সম্পৰ্কটো নাই।"</string>
-    <string name="createContactShortcutSuccessful_NoName" msgid="8831303345367275472">"সম্পৰ্কক গৃহ স্ক্ৰীণত যোগ কৰা হ\'ল।"</string>
-    <string name="createContactShortcutSuccessful" msgid="953651153238790069">"<xliff:g id="NAME">%s</xliff:g>ক গৃহ স্ক্ৰীণত যোগ কৰা হ\'ল।"</string>
+    <string name="createContactShortcutSuccessful_NoName" msgid="8831303345367275472">"সম্পৰ্কক গৃহ স্ক্ৰীণত যোগ কৰা হ’ল।"</string>
+    <string name="createContactShortcutSuccessful" msgid="953651153238790069">"<xliff:g id="NAME">%s</xliff:g>ক গৃহ স্ক্ৰীণত যোগ কৰা হ’ল।"</string>
     <string name="photoPickerNotFoundText" msgid="2052542573853433204">"এই ডিভাইচত কোনো চিত্ৰ নাই।"</string>
     <string name="attach_photo_dialog_title" msgid="5599827035558557169">"সম্পৰ্ক ব্য়ক্তিৰ ফট\'"</string>
     <string name="customLabelPickerTitle" msgid="1081475101983255212">"উপযোগিতা অনুসৰি লেবেলৰ নাম"</string>
@@ -103,21 +103,21 @@
     <string name="emptyGroup" msgid="5102411903247859575">"এই লেবেলত কোনো সম্পৰ্ক ব্য়ক্তি নাই"</string>
     <string name="emptyAccount" msgid="6873962901497975964">"এই একাউণ্টত কোনো সম্পৰ্ক ব্য়ক্তি নাই"</string>
     <string name="emptyMainList" msgid="2772242747899664460">"আপোনাৰ সম্পৰ্কসূচী খালী আছে"</string>
-    <string name="contactSavedNamedToast" msgid="895136068894549611">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> ছেভ কৰা হ\'ল"</string>
-    <string name="contactSavedToast" msgid="9171862279493213075">"সম্পৰ্ক ছেভ কৰা হ\'ল"</string>
-    <string name="contactUnlinkedToast" msgid="7122823195786012553">"সম্পৰ্কসমূহ আনলিংক কৰা হ\'ল"</string>
+    <string name="contactSavedNamedToast" msgid="895136068894549611">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> ছেভ কৰা হ’ল"</string>
+    <string name="contactSavedToast" msgid="9171862279493213075">"সম্পৰ্ক ছেভ কৰা হ’ল"</string>
+    <string name="contactUnlinkedToast" msgid="7122823195786012553">"সম্পৰ্কসমূহ আনলিংক কৰা হ’ল"</string>
     <string name="contactSavedErrorToast" msgid="4827033473908688031">"সম্পৰ্কত কৰা সালসলনি ছেভ কৰিব পৰা নগ\'ল"</string>
     <string name="contactUnlinkErrorToast" msgid="2706297508166952431">"সম্পৰ্ক আনলিংক কৰিবপৰা নগ\'ল"</string>
     <string name="contactJoinErrorToast" msgid="5735129234573327701">"সম্পৰ্ক লিংক কৰিব পৰা নগ\'ল"</string>
     <string name="contactGenericErrorToast" msgid="3885457515665783976">"সম্পৰ্ক ছেভ কৰাত আঁসোৱাহ"</string>
     <string name="contactPhotoSavedErrorToast" msgid="6860883564984042194">"সম্পৰ্কসূচীৰ ফট\' সলনি কৰা কাৰ্যটো ছেভ কৰিবপৰা নগ\'ল"</string>
     <string name="groupLoadErrorToast" msgid="7536267148196064554">"লেবেল ল\'ড কৰিবপৰা নগ\'ল"</string>
-    <string name="groupDeletedToast" msgid="520896687873262027">"লেবেল মচা হ\'ল"</string>
-    <string name="groupCreatedToast" msgid="1924195126172834870">"লেবেল সৃষ্টি কৰা হ\'ল"</string>
+    <string name="groupDeletedToast" msgid="520896687873262027">"লেবেল মচা হ’ল"</string>
+    <string name="groupCreatedToast" msgid="1924195126172834870">"লেবেল সৃষ্টি কৰা হ’ল"</string>
     <string name="groupCreateFailedToast" msgid="4359093891863474299">"লেবেল সৃষ্টি কৰিব নোৱাৰি"</string>
-    <string name="groupUpdatedToast" msgid="3667977658676267687">"লেবেল আপডেট কৰা হ\'ল"</string>
-    <string name="groupMembersRemovedToast" msgid="3510563559799376603">"লেবেলৰপৰা আঁতৰোৱা হ\'ল"</string>
-    <string name="groupMembersAddedToast" msgid="4824834898718972768">"লেবেলত যোগ কৰা হ\'ল"</string>
+    <string name="groupUpdatedToast" msgid="3667977658676267687">"লেবেল আপডে’ট কৰা হ’ল"</string>
+    <string name="groupMembersRemovedToast" msgid="3510563559799376603">"লেবেলৰপৰা আঁতৰোৱা হ’ল"</string>
+    <string name="groupMembersAddedToast" msgid="4824834898718972768">"লেবেলত যোগ কৰা হ’ল"</string>
     <string name="groupSavedErrorToast" msgid="2355891714292740162">"লেবেলত কৰা পৰিবৰ্তনবোৰ ছেভ কৰিব পৰা নগ\'ল"</string>
     <string name="groupExistsErrorMessage" msgid="5196811283836946189">"সেই লেবেলটো আগৰে পৰা আছে"</string>
     <string name="groupSomeContactsNoEmailsToast" msgid="8211161470235548732">"কিছুমান সম্পৰ্কৰ ইমেইল ঠিকনা নাই।"</string>
@@ -130,7 +130,7 @@
     <string name="add_contact_dlg_message_fmt" msgid="7986472669444326576">"\"<xliff:g id="EMAIL">%s</xliff:g>\"ক সম্পৰ্কসমূহলৈ যোগ কৰিবনে?"</string>
     <string name="search_settings_description" msgid="2675223022992445813">"আপোনাৰ সম্পৰ্কবোৰৰ নাম"</string>
     <string name="quickcontact_transparent_view_description" msgid="987959416759562455">"পূৰ্বৰ স্ক্ৰীণলৈ উভতি যাবলৈ ক্লিক কৰক"</string>
-    <string name="quickcontact_add_phone_number" msgid="731665835910658965">"ফোন নম্বৰ যোগ কৰক"</string>
+    <string name="quickcontact_add_phone_number" msgid="731665835910658965">"ফ’ন নম্বৰ যোগ কৰক"</string>
     <string name="quickcontact_add_email" msgid="739298028384348482">"ইমেইল যোগ কৰক"</string>
     <string name="missing_app" msgid="1466111003546611387">"এই কাৰ্য কৰিবলৈ কোনো এপ্ বিচাৰি পোৱা নগ\'ল।"</string>
     <string name="menu_share" msgid="943789700636542260">"শ্বেয়াৰ কৰক"</string>
@@ -177,7 +177,7 @@
     <string name="copy_text" msgid="3257145021583508761">"ক্লিপব\'ৰ্ডত প্ৰতিলিপি কৰক"</string>
     <string name="set_default" msgid="4417505153468300351">"ডিফ\'ল্ট ছেট কৰক"</string>
     <string name="clear_default" msgid="7193185801596678067">"ডিফ\'ল্ট মচক"</string>
-    <string name="toast_text_copied" msgid="5143776250008541719">"পাঠৰ প্ৰতিলিপি কৰা হ\'ল"</string>
+    <string name="toast_text_copied" msgid="5143776250008541719">"পাঠৰ প্ৰতিলিপি কৰা হ’ল"</string>
     <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"সলনি কৰা কার্যসমূহ প্ৰত্য়াখ্য়ান কৰিবনে?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"প্ৰত্যাখ্যান কৰক"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"বাতিল কৰক"</string>
@@ -281,7 +281,7 @@
     <string name="call_by_shortcut" msgid="2566802538698913124">"<xliff:g id="CONTACT_NAME">%s</xliff:g>ক (কল কৰক)"</string>
     <string name="sms_custom" msgid="415060214233647603">"বাৰ্তা পঠিয়াওক <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
     <string name="sms_home" msgid="7524332261493162995">"ঘৰৰ নম্বৰলৈ বাৰ্তা পঠিয়াওক"</string>
-    <string name="sms_mobile" msgid="5200107250451030769">"ম\'বাইল নম্বৰলৈ বাৰ্তা পঠিয়াওক"</string>
+    <string name="sms_mobile" msgid="5200107250451030769">"ম’বাইল নম্বৰলৈ বাৰ্তা পঠিয়াওক"</string>
     <string name="sms_work" msgid="2269624156655267740">"কর্মস্থানৰ নম্বৰলৈ বাৰ্তা পঠিয়াওক"</string>
     <string name="sms_fax_work" msgid="8028189067816907075">"কৰ্মস্থানৰ ফেক্স নম্বৰত বাৰ্তা পঠিয়াওক"</string>
     <string name="sms_fax_home" msgid="9204042076306809634">"ঘৰৰ ফেক্স নম্বৰলৈ বাৰ্তা পঠিয়াওক"</string>
@@ -296,7 +296,7 @@
     <string name="sms_radio" msgid="3329166673433967820">"ৰেডিঅ\'ৰ নম্বৰলৈ বাৰ্তা পঠিয়াওক"</string>
     <string name="sms_telex" msgid="9034802430065267848">"টেলেক্স নম্বৰলৈ বাৰ্তা পঠিয়াওক"</string>
     <string name="sms_tty_tdd" msgid="6782284969132531532">"TTY/TDD নম্বৰলৈ বাৰ্তা পঠিয়াওক"</string>
-    <string name="sms_work_mobile" msgid="2459939960512702560">"কৰ্মস্থানৰ ম\'বাইল নম্বৰলৈ বাৰ্তা পঠিয়াওক"</string>
+    <string name="sms_work_mobile" msgid="2459939960512702560">"কৰ্মস্থানৰ ম’বাইল নম্বৰলৈ বাৰ্তা পঠিয়াওক"</string>
     <string name="sms_work_pager" msgid="5566924423316960597">"কৰ্মস্থানৰ পেজাৰ নম্বৰত বাৰ্তা পঠিয়াওক"</string>
     <string name="sms_assistant" msgid="2773424339923116234">"বাৰ্তা পঠিয়াওক <xliff:g id="ASSISTANT">%s</xliff:g>"</string>
     <string name="sms_mms" msgid="4069352461380762677">"এমএমএছ নম্বৰত বাৰ্তা পঠাওক"</string>
@@ -414,15 +414,15 @@
     <string name="fail_reason_could_not_initialize_exporter" msgid="707260459259688510">"ৰপ্তানি কৰা সুবিধা আৰম্ভ কৰিবপৰা নগ\'ল: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"।"</string>
     <string name="fail_reason_no_exportable_contact" msgid="8728506011371262065">"ৰপ্তানি কৰিবপৰা কোনো সম্পৰ্ক নাই।"</string>
     <string name="missing_required_permission" msgid="5865884842972833120">"আপুনি কোনো আৱশ্য়কীয় অনুমতিক অক্ষম কৰিছে।"</string>
-    <string name="fail_reason_error_occurred_during_export" msgid="3018855323913649063">"ৰপ্তানি কৰোঁতে কিবা আঁসোৱাহ হ\'ল: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"।"</string>
+    <string name="fail_reason_error_occurred_during_export" msgid="3018855323913649063">"ৰপ্তানি কৰোঁতে কিবা আঁসোৱাহ হ’ল: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"।"</string>
     <string name="fail_reason_io_error" msgid="6748358842976073255">"I/O আঁসোৱাহ"</string>
     <string name="fail_reason_low_memory_during_import" msgid="875222757734882898">"পৰ্যাপ্ত মেম\'ৰি নাই। হয়তো ফাইলটো অতি ডাঙৰ।"</string>
     <string name="fail_reason_not_supported" msgid="8219562769267148825">"এই ফৰ্মেট ইয়াত ব্যৱহাৰ কৰিব নোৱাৰি।"</string>
-    <string name="exporting_vcard_finished_title" msgid="4767045779458185251">"<xliff:g id="FILENAME">%s</xliff:g> ৰপ্তানি কৰা কাৰ্য সম্পূৰ্ণ হ\'ল।"</string>
-    <string name="exporting_vcard_finished_title_fallback" msgid="6060472638008218274">"সম্পৰ্ক ৰপ্তানি কৰি কাৰ্য সম্পূৰ্ণ হ\'ল।"</string>
-    <string name="exporting_vcard_finished_toast" msgid="1739055986856453882">"সম্পৰ্ক ৰপ্তানি কৰি কাৰ্য সম্পূৰ্ণ হ\'ল, সম্পৰ্কসমূহ শ্বেয়াৰ কৰিবলৈ জাননীত ক্লিক কৰক।"</string>
+    <string name="exporting_vcard_finished_title" msgid="4767045779458185251">"<xliff:g id="FILENAME">%s</xliff:g> ৰপ্তানি কৰা কাৰ্য সম্পূৰ্ণ হ’ল।"</string>
+    <string name="exporting_vcard_finished_title_fallback" msgid="6060472638008218274">"সম্পৰ্ক ৰপ্তানি কৰি কাৰ্য সম্পূৰ্ণ হ’ল।"</string>
+    <string name="exporting_vcard_finished_toast" msgid="1739055986856453882">"সম্পৰ্ক ৰপ্তানি কৰি কাৰ্য সম্পূৰ্ণ হ’ল, সম্পৰ্কসমূহ শ্বেয়াৰ কৰিবলৈ জাননীত ক্লিক কৰক।"</string>
     <string name="touch_to_share_contacts" msgid="4882485525268469736">"সম্পৰ্কবোৰ শ্বেয়াৰ কৰিবলৈ টিপক।"</string>
-    <string name="exporting_vcard_canceled_title" msgid="2652222370493306887">"<xliff:g id="FILENAME">%s</xliff:g>ৰ ৰপ্তানি বাতিল কৰা হ\'ল।"</string>
+    <string name="exporting_vcard_canceled_title" msgid="2652222370493306887">"<xliff:g id="FILENAME">%s</xliff:g>ৰ ৰপ্তানি বাতিল কৰা হ’ল।"</string>
     <string name="exporting_contact_list_title" msgid="9072240631534457415">"সম্পৰ্ক ডেটা ৰপ্তানি কৰি থকা হৈছে"</string>
     <string name="exporting_contact_list_message" msgid="3367949209642931952">"সম্পৰ্কৰ ডেটা ৰপ্তানি কৰিথকা হৈছে।"</string>
     <string name="composer_failed_to_get_database_infomation" msgid="1765944280846236723">"ডেটাবেছৰ তথ্য় পোৱা নগ\'ল।"</string>
@@ -432,13 +432,13 @@
     <string name="exporting_contact_failed_message" msgid="4938527850142003141">"সম্পৰ্কৰ ডেটা ৰপ্তানি কৰা হোৱা নাছিল।\nকাৰণ: <xliff:g id="FAIL_REASON">%s</xliff:g>"</string>
     <string name="importing_vcard_description" msgid="4245275224298571351">"<xliff:g id="NAME">%s</xliff:g> আমদানি কৰি থকা হৈছে"</string>
     <string name="reading_vcard_failed_title" msgid="4251647443358422855">"ভি-কাৰ্ডৰ ডেটা পঢ়িব পৰা নগ\'ল"</string>
-    <string name="importing_vcard_finished_title" msgid="3341541727268747967">"ভি-কাৰ্ড আমদানি কৰা কাৰ্য সম্পূৰ্ণ হ\'ল <xliff:g id="FILENAME">%s</xliff:g>"</string>
-    <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"<xliff:g id="FILENAME">%s</xliff:g>ৰ আমদানি কৰা কাৰ্য বাতিল কৰা হ\'ল"</string>
+    <string name="importing_vcard_finished_title" msgid="3341541727268747967">"ভি-কাৰ্ড আমদানি কৰা কাৰ্য সম্পূৰ্ণ হ’ল <xliff:g id="FILENAME">%s</xliff:g>"</string>
+    <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"<xliff:g id="FILENAME">%s</xliff:g>ৰ আমদানি কৰা কাৰ্য বাতিল কৰা হ’ল"</string>
     <string name="vcard_import_will_start_message" msgid="2804911199145873396">"<xliff:g id="FILENAME">%s</xliff:g> শীঘ্ৰেই আমদানি কৰা হ\'ব।"</string>
     <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"এই ফাইলটো শীঘ্ৰেই আমদানি কৰা হ\'ব।"</string>
-    <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"ভি-কাৰ্ড আমদানি কৰা অনুৰোধ অগ্ৰাহ্য় কৰা হ\'ল। পিছত আকৌ চেষ্টা কৰক।"</string>
+    <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"ভি-কাৰ্ড আমদানি কৰা অনুৰোধ অগ্ৰাহ্য় কৰা হ’ল। পিছত আকৌ চেষ্টা কৰক।"</string>
     <string name="contacts_export_will_start_message" msgid="8538705791417534431">"সম্পৰ্কসমূহক সোনকালে ৰপ্তানি কৰা হ\'ব।"</string>
-    <string name="vcard_export_request_rejected_message" msgid="2844874826431327531">"ভি-কাৰ্ড ৰপ্তানি কৰা অনুৰোধ অগ্ৰাহ্য় কৰা হ\'ল। পিছত আকৌ চেষ্টা কৰক।"</string>
+    <string name="vcard_export_request_rejected_message" msgid="2844874826431327531">"ভি-কাৰ্ড ৰপ্তানি কৰা অনুৰোধ অগ্ৰাহ্য় কৰা হ’ল। পিছত আকৌ চেষ্টা কৰক।"</string>
     <string name="vcard_unknown_filename" msgid="7171709890959915954">"সম্পৰ্ক"</string>
     <string name="caching_vcard_message" msgid="4926308675041506756">"ভি-কাৰ্ড (বোৰ)ক ডিভাইচৰ অস্থায়ী সঞ্চয়াগাৰত কেচ কৰিথকা হৈছে। আচল আমদানি কৰা কাৰ্য সোনকালে আৰম্ভ হ\'ব।"</string>
     <string name="vcard_import_failed" msgid="5223531255894842406">"vCard আমদানি কৰিব পৰা নগ\'ল।"</string>
@@ -494,7 +494,7 @@
     <string name="about_terms_of_service" msgid="4642400812150296723">"সেৱাৰ চৰ্তাৱলী"</string>
     <string name="activity_title_licenses" msgid="5467767062737708066">"মুক্ত উত্‍সৰ অনুজ্ঞাপত্ৰসমূহ"</string>
     <string name="url_open_error_toast" msgid="452592089815420457">"ইউআৰএল খুলিবপৰা নগ\'ল।"</string>
-    <string name="account_filter_view_checked" msgid="6696859503887762213">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> চোৱা হ\'ল"</string>
+    <string name="account_filter_view_checked" msgid="6696859503887762213">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> চোৱা হ’ল"</string>
     <string name="account_filter_view_not_checked" msgid="2248684521205038389">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> চোৱা হোৱা নাই"</string>
     <string name="description_search_video_call" msgid="5841525580339803272">"ভিডিঅ’ কল কৰক"</string>
     <string name="description_delete_contact" msgid="53835657343783663">"মচক"</string>
@@ -503,14 +503,14 @@
     <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> মিনিট <xliff:g id="SECONDS">%2$s</xliff:g> ছেকেণ্ড"</string>
     <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> ঘণ্টা <xliff:g id="MINUTES_1">%2$s</xliff:g> মিনিট <xliff:g id="SECONDS">%3$s</xliff:g> ছেকেণ্ড"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"এই শ্বৰ্টকাট অক্ষম কৰা হৈছে"</string>
-    <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"সম্পৰ্ক আঁতৰোৱা হ\'ল"</string>
+    <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"সম্পৰ্ক আঁতৰোৱা হ’ল"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"আমদানি কৰক"</string>
     <string name="sim_import_title_none_selected" msgid="6910517331401970693">"সম্পৰ্কসমূহ বাছনি কৰক"</string>
     <string name="sim_import_empty_message" msgid="7743815244380189651">"আপোনাৰ ছিম কাৰ্ডত কোনো সম্পৰ্ক সূচী নাই"</string>
     <string name="sim_import_contact_exists_toast" msgid="1503743663717316732">"সম্পৰ্কটো ইতিমধ্যে আপোনাৰ সূচীত আছে"</string>
     <plurals name="sim_import_success_toast_fmt" formatted="false" msgid="8572156521110906443">
-      <item quantity="one"><xliff:g id="COUNT">%d</xliff:g>টা ছিমৰ সম্পৰ্ক আমদানি কৰা হ\'ল</item>
-      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g>টা ছিমৰ সম্পৰ্ক আমদানি কৰা হ\'ল</item>
+      <item quantity="one"><xliff:g id="COUNT">%d</xliff:g>টা ছিমৰ সম্পৰ্ক আমদানি কৰা হ’ল</item>
+      <item quantity="other"><xliff:g id="COUNT">%d</xliff:g>টা ছিমৰ সম্পৰ্ক আমদানি কৰা হ’ল</item>
     </plurals>
     <string name="sim_import_failed_toast" msgid="5559267299793622705">"ছিমৰ সম্পৰ্কবোৰ আমদানি কৰিবপৰা নগ\'ল"</string>
     <string name="sim_import_title" msgid="2511154832820812822">"ছিমৰপৰা আমদানি কৰক"</string>
@@ -524,7 +524,7 @@
     <string name="connection_error_message" msgid="7046408921529247089">"ইণ্টাৰনেট নাই"</string>
     <string name="single_sim_display_label" msgid="6985770499439371497">"ছিম"</string>
     <string name="show_more_content_description" msgid="4277410425912984722">"অধিক দেখুৱাওক"</string>
-    <string name="importing_sim_finished_title" msgid="5196369441294050721">"ছিম কাৰ্ডৰ আমদানি কৰা কাৰ্য সম্পূৰ্ণ হ\'ল"</string>
+    <string name="importing_sim_finished_title" msgid="5196369441294050721">"ছিম কাৰ্ডৰ আমদানি কৰা কাৰ্য সম্পূৰ্ণ হ’ল"</string>
     <string name="importing_sim_failed_title" msgid="39706901030537985">"আমদানি কৰিব পৰা নগ\'ল"</string>
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"ছিম কাৰ্ডৰ পৰা সম্পৰ্কবোৰ আমদানি কৰিবপৰা নগ\'ল"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"ছিম আমদানি কৰি থকা হৈছে"</string>
