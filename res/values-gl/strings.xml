@@ -45,7 +45,7 @@
     <string name="menu_addContactsToGroup" msgid="655196688840626483">"Engadir contactos"</string>
     <string name="menu_removeFromGroup" msgid="6720354305399961978">"Eliminar da etiqueta"</string>
     <string name="menu_new_group_action_bar" msgid="3127059073617415221">"Crear etiqueta"</string>
-    <string name="splitConfirmation" msgid="7342030840130187290">"Queres desvincular este contacto en varios contactos?"</string>
+    <string name="splitConfirmation" msgid="7342030840130187290">"Queres desligar este contacto en varios contactos?"</string>
     <string name="splitConfirmation_positive_button" msgid="9129409098807939699">"Desligar"</string>
     <string name="splitConfirmationWithPendingChanges" msgid="7719062163511895696">"Queres gardar os cambios que xa fixeches e desligar este contacto en varios contactos?"</string>
     <string name="splitConfirmationWithPendingChanges_positive_button" msgid="9073444264887244032">"Gardar e desligar"</string>

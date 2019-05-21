@@ -3,9 +3,10 @@ package com.android.contacts.util.concurrent;
 
 import android.os.Handler;
 
-import com.google.common.util.concurrent.FutureFallback;
+import com.google.common.util.concurrent.AsyncFunction;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.MoreExecutors;
 
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ScheduledExecutorService;
@@ -46,14 +47,14 @@ public class FuturesUtil {
             }
         }, time, unit);
 
-        return Futures.withFallback(future, new FutureFallback<V>() {
+        return Futures.catchingAsync(future, Throwable.class, new AsyncFunction<Throwable, V>() {
             @Override
-            public ListenableFuture<V> create(Throwable t) throws Exception {
+            public ListenableFuture<V> apply(Throwable t) throws Exception {
                 if ((t instanceof CancellationException) && didTimeout.get()) {
                     return Futures.immediateFailedFuture(new TimeoutException("Timeout expired"));
                 }
                 return Futures.immediateFailedFuture(t);
             }
-        });
+        }, MoreExecutors.directExecutor());
     }
 }

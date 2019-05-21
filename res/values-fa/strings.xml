@@ -120,9 +120,9 @@
     <string name="groupMembersAddedToast" msgid="4824834898718972768">"به برچسب اضافه شد"</string>
     <string name="groupSavedErrorToast" msgid="2355891714292740162">"تغییرات برچسب ذخیره نشد"</string>
     <string name="groupExistsErrorMessage" msgid="5196811283836946189">"این برچسب از قبل موجود است"</string>
-    <string name="groupSomeContactsNoEmailsToast" msgid="8211161470235548732">"بعضی از مخاطبین ایمیل ندارند."</string>
+    <string name="groupSomeContactsNoEmailsToast" msgid="8211161470235548732">"بعضی از مخاطبین رایانامه ندارند."</string>
     <string name="groupSomeContactsNoPhonesToast" msgid="5530760834827530509">"بعضی از مخاطبین شماره تلفن ندارند."</string>
-    <string name="menu_sendEmailOption" msgid="5978319931321657780">"ارسال ایمیل"</string>
+    <string name="menu_sendEmailOption" msgid="5978319931321657780">"ارسال رایانامه"</string>
     <string name="menu_sendMessageOption" msgid="8850168125274916426">"ارسال پیام"</string>
     <string name="pickerSelectContactsActivityTitle" msgid="1936544190231136729">"انتخاب مخاطبین"</string>
     <string name="send_to_selection" msgid="2251339182881603540">"ارسال"</string>
@@ -131,7 +131,7 @@
     <string name="search_settings_description" msgid="2675223022992445813">"نام‌های مخاطبین شما"</string>
     <string name="quickcontact_transparent_view_description" msgid="987959416759562455">"برای بازگشت به صفحه قبلی کلیک کنید"</string>
     <string name="quickcontact_add_phone_number" msgid="731665835910658965">"افزودن شماره تلفن"</string>
-    <string name="quickcontact_add_email" msgid="739298028384348482">"افزودن ایمیل"</string>
+    <string name="quickcontact_add_email" msgid="739298028384348482">"افزودن رایانامه"</string>
     <string name="missing_app" msgid="1466111003546611387">"برنامه‌ای برای انجام این عملکرد یافت نشد."</string>
     <string name="menu_share" msgid="943789700636542260">"اشتراک‌گذاری"</string>
     <string name="menu_add_contact" msgid="3198704337220892684">"افزودن به مخاطبین"</string>
@@ -220,7 +220,7 @@
     <string name="header_event_entry" msgid="6738250422744401460">"رویداد"</string>
     <string name="header_relation_entry" msgid="1520292958088146460">"رابطه"</string>
     <string name="header_name_entry" msgid="1592791008096288306">"نام"</string>
-    <string name="header_email_entry" msgid="8666093061171624478">"ایمیل"</string>
+    <string name="header_email_entry" msgid="8666093061171624478">"رایانامه"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"تلفن"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"مسیرها به مکان"</string>
     <string name="content_description_recent_sms" msgid="1666389577263317445">"پیامک اخیر. <xliff:g id="MESSAGE_BODY">%1$s</xliff:g>. ‏<xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. ‏<xliff:g id="DATE">%3$s</xliff:g>. برای پاسخ دادن کلیک کنید"</string>
@@ -303,7 +303,7 @@
     <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (پیام)"</string>
     <string name="description_video_call" msgid="7120921378651700947">"برقراری تماس ویدئویی"</string>
     <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"فهرست تماس مکرر با مخاطب پاک شود؟"</string>
-    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"با این کار فهرست افرادی که بیشتر با آنها تماس گرفته‌اید در برنامه‌های «مخاطبین» و «تلفن» پاک می‌کنید و برنامه‌های ایمیل را وادار می‌کنید تنظیمات برگزیده مخاطبینتان را از اول یاد بگیرند."</string>
+    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"با این کار فهرست افرادی که بیشتر با آنها تماس گرفته‌اید در برنامه‌های «مخاطبین» و «تلفن» پاک می‌کنید و برنامه‌های رایانامه را وادار می‌کنید تنظیمات برگزیده مخاطبینتان را از اول یاد بگیرند."</string>
     <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"در حال پاک کردن فهرست تماس مکرر..."</string>
     <string name="status_available" msgid="5586870015822828392">"در دسترس"</string>
     <string name="status_away" msgid="1838861100379804730">"غایب"</string>
@@ -332,7 +332,7 @@
     <string name="name_phonetic_middle" msgid="8643721493320405200">"تلفظ نام میانی"</string>
     <string name="name_phonetic_family" msgid="2640133663656011626">"تلفظ نام خانوادگی"</string>
     <string name="phoneLabelsGroup" msgid="6468091477851199285">"تلفن"</string>
-    <string name="emailLabelsGroup" msgid="8389931313045344406">"ایمیل"</string>
+    <string name="emailLabelsGroup" msgid="8389931313045344406">"رایانامه"</string>
     <string name="postalLabelsGroup" msgid="3487738141112589324">"آدرس"</string>
     <string name="imLabelsGroup" msgid="3898238486262614027">"IM"</string>
     <string name="organizationLabelsGroup" msgid="2478611760751832035">"سازمان"</string>
@@ -347,12 +347,12 @@
     <string name="label_sip_address" msgid="7252153678613978127">"SIP"</string>
     <string name="websiteLabelsGroup" msgid="4202998982804009261">"وب سایت"</string>
     <string name="groupsLabel" msgid="7000816729542098972">"برچسب‌ها"</string>
-    <string name="email_home" msgid="8573740658148184279">"ایمیل به خانه"</string>
-    <string name="email_mobile" msgid="2042889209787989814">"ایمیل به تلفن همراه"</string>
-    <string name="email_work" msgid="2807430017302722689">"ایمیل به محل کار"</string>
-    <string name="email_other" msgid="3454004077967657109">"ایمیل"</string>
-    <string name="email_custom" msgid="5536404237099078802">"ارسال ایمیل به <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
-    <string name="email" msgid="5668400997660065897">"ایمیل"</string>
+    <string name="email_home" msgid="8573740658148184279">"رایانامه به خانه"</string>
+    <string name="email_mobile" msgid="2042889209787989814">"رایانامه به تلفن همراه"</string>
+    <string name="email_work" msgid="2807430017302722689">"رایانامه به محل کار"</string>
+    <string name="email_other" msgid="3454004077967657109">"رایانامه"</string>
+    <string name="email_custom" msgid="5536404237099078802">"ارسال رایانامه به <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
+    <string name="email" msgid="5668400997660065897">"رایانامه"</string>
     <string name="postal_street" msgid="8133143961580058972">"خیابان"</string>
     <string name="postal_city" msgid="6597491300084895548">"شهر"</string>
     <string name="postal_region" msgid="6045263193478437672">"ایالت"</string>
@@ -523,7 +523,7 @@
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"فعال کردن"</string>
     <string name="connection_error_message" msgid="7046408921529247089">"اتصال برقرار نیست"</string>
     <string name="single_sim_display_label" msgid="6985770499439371497">"سیم کارت"</string>
-    <string name="show_more_content_description" msgid="4277410425912984722">"بیشتر ببینید"</string>
+    <string name="show_more_content_description" msgid="4277410425912984722">"نمایش موارد بیشتر"</string>
     <string name="importing_sim_finished_title" msgid="5196369441294050721">"وارد کردن سیم کارت تمام شد"</string>
     <string name="importing_sim_failed_title" msgid="39706901030537985">"وارد نشد"</string>
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"مخاطبین از سیم کارت وارد نشدند"</string>
