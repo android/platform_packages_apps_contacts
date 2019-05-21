@@ -140,7 +140,7 @@
       <item quantity="other"> байланышты бөлүшүү</item>
       <item quantity="one"> байланышты бөлүшүү</item>
     </plurals>
-    <string name="dialog_new_group_account" msgid="3451312333591556651">"Аккаунт тандоо"</string>
+    <string name="dialog_new_group_account" msgid="3451312333591556651">"Каттоо эсебин тандоо"</string>
     <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"Энбелги түзүү"</string>
     <string name="group_name_dialog_update_title" msgid="6328021162869677383">"Энбелгинин аталышын өзгөртүү"</string>
     <string name="group_name_dialog_hint" msgid="7624523157537700160">"Энбелгинин аталышы"</string>
@@ -169,7 +169,7 @@
     <string name="non_phone_add_to_contacts" msgid="6590985286250471169">"Байланыштарга кошуу"</string>
     <string name="non_phone_close" msgid="7608506439725515667">"Жабуу"</string>
     <string name="date_year_toggle" msgid="7122002148518724139">"Жылы көрсөтүлсүн"</string>
-    <string name="contacts_unavailable_add_account" msgid="4347232421410561500">"Аккаунт кошуу"</string>
+    <string name="contacts_unavailable_add_account" msgid="4347232421410561500">"Каттоо эсебин кошуу"</string>
     <string name="contacts_unavailable_import_contacts" msgid="3182801738595937144">"Импорттоо"</string>
     <string name="create_group_item_label" msgid="3263064599743742865">"Жаңысын түзүү..."</string>
     <string name="delete_group_dialog_message" msgid="335713829185261371">"\"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\" энбелгиси өчүрүлсүнбү? (Байланыштардын өзү өчпөйт)."</string>
@@ -390,7 +390,7 @@
     <string name="dialog_sync_add" msgid="8267045393119375803">"Шайкештирүү тобуна кошуу"</string>
     <string name="display_more_groups" msgid="2682547080423434170">"Дагы топтор…"</string>
     <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"\"<xliff:g id="GROUP">%s</xliff:g>\" тобун шайкештирүүдөн алып салуу топко кирбеген башка байланыштарды дагы шайкештирүүдөн чыгарып салат."</string>
-    <string name="savingDisplayGroups" msgid="2133152192716475939">"Жөндөөлөр сакталууда…"</string>
+    <string name="savingDisplayGroups" msgid="2133152192716475939">"Көрсөтүү параметрлери сакталууда…"</string>
     <string name="listCustomView" msgid="1840624396582117590">"Ылайыкташтырылган көрүнүш"</string>
     <string name="dialog_new_contact_account" msgid="4969619718062454756">"Өткөрүлүп алынган байланыштар төмөнкүгө сакталсын:"</string>
     <string name="import_from_sim" msgid="6912071635295799131">"SIM-карта"</string>
@@ -487,7 +487,7 @@
     <string name="send_and_call_button" msgid="7740295432834590737">"ЖӨНӨТҮҮ ЖАНА ЧАЛУУ"</string>
     <string name="call_subject_limit" msgid="4545212901205397669">"<xliff:g id="COUNT">%1$s</xliff:g> / <xliff:g id="LIMIT">%2$s</xliff:g>"</string>
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
-    <string name="about_build_version" msgid="1765533099416999801">"Курама версиясы"</string>
+    <string name="about_build_version" msgid="1765533099416999801">"Куралма версиясы"</string>
     <string name="about_open_source_licenses" msgid="6479990452352919641">"Баштапкы коду ачык программалардын уруксаттамалары"</string>
     <string name="about_open_source_licenses_summary" msgid="57418386931763994">"Баштапкы коду ачык программалардын уруксаттамаларынын чоо-жайы"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"Купуялык саясаты"</string>

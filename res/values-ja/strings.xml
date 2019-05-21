@@ -100,7 +100,7 @@
     <string name="customLabelPickerTitle" msgid="1081475101983255212">"カスタムラベル名"</string>
     <string name="removePhoto" msgid="4898105274130284565">"写真を削除"</string>
     <string name="noContacts" msgid="2228592924476426108">"連絡先リストが空です"</string>
-    <string name="emptyGroup" msgid="5102411903247859575">"このラベルを適用した連絡先はありません"</string>
+    <string name="emptyGroup" msgid="5102411903247859575">"このラベルを使用している連絡先はいません"</string>
     <string name="emptyAccount" msgid="6873962901497975964">"このアカウントに保存されている連絡先はありません"</string>
     <string name="emptyMainList" msgid="2772242747899664460">"連絡先リストが空です"</string>
     <string name="contactSavedNamedToast" msgid="895136068894549611">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> さんを保存しました"</string>

@@ -300,7 +300,7 @@
     <string name="sms_work_pager" msgid="5566924423316960597">"Հաղորդագրել աշտատանքային փեյջերին"</string>
     <string name="sms_assistant" msgid="2773424339923116234">"Հաղորդագրել <xliff:g id="ASSISTANT">%s</xliff:g>-ին"</string>
     <string name="sms_mms" msgid="4069352461380762677">"Հաղորդագրել MMS համարին"</string>
-    <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Գրել SMS)"</string>
+    <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Գրել ՍՄՍ)"</string>
     <string name="description_video_call" msgid="7120921378651700947">"Տեսազանգ սկսել"</string>
     <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"Մաքրե՞լ հաճախակի հաղորդակցվողները"</string>
     <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Կոնտակտներ և Հեռախոս հավելվածներից կմաքրվի հաճախակի օգտագործվող կոնտակտների ցանկը, և էլփոստի հավելվածները զրոյից են սովորելու ձեր հաճախակի օգտագործվող կոնտակտները։"</string>

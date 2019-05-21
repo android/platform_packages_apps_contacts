@@ -148,7 +148,7 @@
       <item quantity="other">שתף את אנשי הקשר באמצעות</item>
       <item quantity="one">שתף את איש הקשר באמצעות</item>
     </plurals>
-    <string name="dialog_new_group_account" msgid="3451312333591556651">"בחירת חשבון"</string>
+    <string name="dialog_new_group_account" msgid="3451312333591556651">"בחר חשבון"</string>
     <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"יצירת תווית"</string>
     <string name="group_name_dialog_update_title" msgid="6328021162869677383">"שינוי שם התווית"</string>
     <string name="group_name_dialog_hint" msgid="7624523157537700160">"שם התווית"</string>
@@ -177,7 +177,7 @@
     <string name="non_phone_add_to_contacts" msgid="6590985286250471169">"הוסף לאנשי הקשר"</string>
     <string name="non_phone_close" msgid="7608506439725515667">"סגור"</string>
     <string name="date_year_toggle" msgid="7122002148518724139">"ציין שנה"</string>
-    <string name="contacts_unavailable_add_account" msgid="4347232421410561500">"הוספת חשבון"</string>
+    <string name="contacts_unavailable_add_account" msgid="4347232421410561500">"הוסף חשבון"</string>
     <string name="contacts_unavailable_import_contacts" msgid="3182801738595937144">"ייבא"</string>
     <string name="create_group_item_label" msgid="3263064599743742865">"צור חדשה…"</string>
     <string name="delete_group_dialog_message" msgid="335713829185261371">"למחוק את התווית \"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\"? (אנשי הקשר המסומנים בתווית לא יימחקו)."</string>
@@ -204,7 +204,7 @@
     <string name="contact_editor_pick_linked_contact_dialog_title" msgid="4618465940423857694">"אנשי קשר מקושרים"</string>
     <string name="contact_editor_add_linked_contact" msgid="426142748048816297">"הוסף"</string>
     <string name="contact_editor_unlink_contacts" msgid="4525214336177236653">"בטל את הקישור"</string>
-    <string name="add_account" msgid="8201790677994503186">"הוספת חשבון"</string>
+    <string name="add_account" msgid="8201790677994503186">"הוסף חשבון"</string>
     <string name="add_new_account" msgid="5748627740680940264">"הוסף חשבון חדש"</string>
     <string name="menu_export_database" msgid="2659719297530170820">"ייצוא קובצי מסד נתונים"</string>
     <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"איש קשר חדש"</string>
