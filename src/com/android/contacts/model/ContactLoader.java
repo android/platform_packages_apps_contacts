@@ -24,6 +24,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.ResolveInfo;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
 import android.database.Cursor;
@@ -44,6 +45,7 @@ import com.android.contacts.compat.CompatUtils;
 import com.android.contacts.group.GroupMetaData;
 import com.android.contacts.model.account.AccountType;
 import com.android.contacts.model.account.AccountTypeWithDataSet;
+import com.android.contacts.model.account.GoogleAccountType;
 import com.android.contacts.model.dataitem.DataItem;
 import com.android.contacts.model.dataitem.PhoneDataItem;
 import com.android.contacts.model.dataitem.PhotoDataItem;
@@ -895,13 +897,34 @@ public class ContactLoader extends AsyncTaskLoader<Contact> {
             mNotifiedRawContactIds.add(rawContactId);
             final AccountType accountType = rawContact.getAccountType(context);
             final String serviceName = accountType.getViewContactNotifyServiceClassName();
-            final String servicePackageName = accountType.getViewContactNotifyServicePackageName();
+            final String servicePackageName = accountType
+                .getViewContactNotifyServicePackageName();
             if (!TextUtils.isEmpty(serviceName) && !TextUtils.isEmpty(servicePackageName)) {
                 final Uri uri = ContentUris.withAppendedId(RawContacts.CONTENT_URI, rawContactId);
                 final Intent intent = new Intent();
+                intent.setDataAndType(uri, RawContacts.CONTENT_ITEM_TYPE);
+                if (accountType instanceof GoogleAccountType) {
+                    intent.setPackage(servicePackageName);
+                    intent
+                        .setAction("com.google.android.syncadapters.contacts.SYNC_HIGH_RES_PHOTO");
+                    List<ResolveInfo> broadcastReceivers =
+                        context.getPackageManager().queryBroadcastReceivers(intent, 0);
+                    if (!broadcastReceivers.isEmpty()) {
+                        if (Log.isLoggable(TAG, Log.DEBUG)) {
+                            for (ResolveInfo broadcastReceiver : broadcastReceivers) {
+                                Log.d(TAG, broadcastReceiver.activityInfo.toString());
+                            }
+                        }
+                        context.sendBroadcast(intent);
+                        continue;
+                    }
+                }
+                // TODO: Social Stream API is deprecated, and once the opted-in
+                // sync adapters target Android O+, we won't be able to start their services
+                // since they'll likely be in the background, so we'll need to remove the
+                // startService call.
                 intent.setClassName(servicePackageName, serviceName);
                 intent.setAction(Intent.ACTION_VIEW);
-                intent.setDataAndType(uri, RawContacts.CONTENT_ITEM_TYPE);
                 try {
                     context.startService(intent);
                 } catch (Exception e) {
