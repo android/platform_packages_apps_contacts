@@ -307,7 +307,7 @@
     <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"Borrando contactos frecuentes…"</string>
     <string name="status_available" msgid="5586870015822828392">"Disponible"</string>
     <string name="status_away" msgid="1838861100379804730">"Ausente"</string>
-    <string name="status_busy" msgid="9147992455450257136">"Ocupado"</string>
+    <string name="status_busy" msgid="9147992455450257136">"No disponible"</string>
     <string name="local_invisible_directory" msgid="6046691709127661065">"Otro"</string>
     <string name="directory_search_label" msgid="1887759056597975053">"Directorio"</string>
     <string name="directory_search_label_work" msgid="8618292129829443176">"Directorio de trabajo"</string>
