@@ -29,15 +29,12 @@ import android.provider.ContactsContract.CommonDataKinds.StructuredName;
 import android.provider.ContactsContract.CommonDataKinds.StructuredPostal;
 import android.provider.ContactsContract.CommonDataKinds.Website;
 import android.provider.ContactsContract.Contacts.Data;
-import android.provider.ContactsContract.Contacts.Entity;
 import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.SmallTest;
-
 import com.android.contacts.Collapser;
 import com.android.contacts.model.account.AccountType.EditType;
 import com.android.contacts.model.account.BaseAccountType;
 import com.android.contacts.model.account.GoogleAccountType;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,12 +80,6 @@ public class DataItemTests extends AndroidTestCase {
         mValues1.put(Data.IS_SUPER_PRIMARY, 1);
         mValues2.put(Data.IS_PRIMARY, 0);
 
-        mValues1.put(Entity.TIMES_USED, 5);
-        mValues2.put(Entity.TIMES_USED, 4);
-
-        mValues1.put(Entity.LAST_TIME_USED, 555);
-        mValues2.put(Entity.LAST_TIME_USED, 999);
-
         final DataKind kind = new DataKind("test.mimetype", 0, 0, false);
         kind.actionBody = new BaseAccountType.SimpleInflater(0);
         kind.typeList = new ArrayList<>();
@@ -104,8 +95,6 @@ public class DataItemTests extends AndroidTestCase {
         assertEquals(1, dataList.size());
         assertEquals(true, dataList.get(0).isSuperPrimary());
         assertEquals(true, dataList.get(0).isPrimary());
-        assertEquals(9, (int) dataList.get(0).getTimesUsed());
-        assertEquals(999L, (long) dataList.get(0).getLastTimeUsed());
         assertEquals(1, dataList.get(0).getKindTypeColumn(kind));
     }
 

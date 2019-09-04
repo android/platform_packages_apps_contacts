@@ -32,7 +32,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.Contacts;
-import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -47,7 +46,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
+import androidx.core.content.ContextCompat;
 import com.android.contacts.ContactSaveService;
 import com.android.contacts.ContactsUtils;
 import com.android.contacts.GroupMetaDataLoader;
@@ -69,7 +68,6 @@ import com.android.contacts.model.account.AccountWithDataSet;
 import com.android.contacts.util.ImplicitIntentsUtil;
 import com.android.contactsbind.FeedbackHelper;
 import com.google.common.primitives.Longs;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -316,7 +314,6 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
                 ContactsContract.Data.CONTACT_ID,
                 ContactsContract.CommonDataKinds.Email._ID,
                 ContactsContract.Data.IS_SUPER_PRIMARY,
-                ContactsContract.Data.TIMES_USED,
                 ContactsContract.Data.DATA1
         };
 
@@ -324,15 +321,13 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
                 ContactsContract.Data.CONTACT_ID,
                 ContactsContract.CommonDataKinds.Phone._ID,
                 ContactsContract.Data.IS_SUPER_PRIMARY,
-                ContactsContract.Data.TIMES_USED,
                 ContactsContract.Data.DATA1
         };
 
         public static final int CONTACT_ID = 0;
         public static final int ITEM_ID = 1;
         public static final int PRIMARY = 2;
-        public static final int TIMES_USED = 3;
-        public static final int DATA1 = 4;
+        public static final int DATA1 = 3;
     }
 
     /**
@@ -341,14 +336,12 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
     private class ContactDataHelperClass {
 
         private List<String> items = new ArrayList<>();
-        private String mostUsedItemId = null;
-        private int mostUsedTimes;
+        private String firstItemId = null;
         private String primaryItemId = null;
 
-        public void addItem(String item, int timesUsed, boolean primaryFlag) {
-            if (mostUsedItemId == null || timesUsed > mostUsedTimes) {
-                mostUsedItemId = item;
-                mostUsedTimes = timesUsed;
+        public void addItem(String item, boolean primaryFlag) {
+            if (firstItemId == null) {
+                firstItemId = item;
             }
             if (primaryFlag) {
                 primaryItemId = item;
@@ -363,7 +356,7 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
         public String getDefaultSelectionItemId() {
             return primaryItemId != null
                     ? primaryItemId
-                    : mostUsedItemId;
+                    : firstItemId;
         }
     }
 
@@ -397,7 +390,6 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
                 final String contactId = cursor.getString(Query.CONTACT_ID);
                 final String itemId = cursor.getString(Query.ITEM_ID);
                 final boolean isPrimary = cursor.getInt(Query.PRIMARY) != 0;
-                final int timesUsed = cursor.getInt(Query.TIMES_USED);
                 final String data = cursor.getString(Query.DATA1);
 
                 if (!TextUtils.isEmpty(data)) {
@@ -408,7 +400,7 @@ public class GroupMembersFragment extends MultiSelectContactsListFragment<GroupM
                     } else {
                         contact = contactMap.get(contactId);
                     }
-                    contact.addItem(itemId, timesUsed, isPrimary);
+                    contact.addItem(itemId, isPrimary);
                     itemList.add(data);
                 }
             }

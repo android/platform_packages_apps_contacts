@@ -57,40 +57,6 @@ public class ContactDisplayUtilTests extends AndroidTestCase {
         assertFalse(ContactDisplayUtils.isCustomPhoneType(Phone.TYPE_OTHER));
     }
 
-    public void testGetLabelForCallOrSmsReturnsCustomLabel() {
-        final CharSequence smsResult = ContactDisplayUtils.getLabelForCallOrSms(Phone.TYPE_CUSTOM,
-                "expected sms label", ContactDisplayUtils.INTERACTION_SMS, getContext());
-        assertEquals("expected sms label", smsResult);
-
-        final CharSequence callResult = ContactDisplayUtils.getLabelForCallOrSms(Phone.TYPE_CUSTOM,
-                "expected call label", ContactDisplayUtils.INTERACTION_CALL, getContext());
-        assertEquals("expected call label", callResult);
-    }
-
-    public void testGetLabelForCallOrSmsReturnsCallLabels() {
-        CharSequence result = ContactDisplayUtils.getLabelForCallOrSms(Phone.TYPE_HOME, "",
-                ContactDisplayUtils.INTERACTION_CALL, getContext());
-        CharSequence expected = getContext().getResources().getText(R.string.call_home);
-        assertEquals(expected, result);
-
-        result = ContactDisplayUtils.getLabelForCallOrSms(Phone.TYPE_MOBILE, "",
-                ContactDisplayUtils.INTERACTION_CALL, getContext());
-        expected = getContext().getResources().getText(R.string.call_mobile);
-        assertEquals(expected, result);
-    }
-
-    public void testGetLabelForCallOrSmsReturnsSmsLabels() {
-        CharSequence result = ContactDisplayUtils.getLabelForCallOrSms(Phone.TYPE_HOME, "",
-                ContactDisplayUtils.INTERACTION_SMS, getContext());
-        CharSequence expected = getContext().getResources().getText(R.string.sms_home);
-        assertEquals(expected, result);
-
-        result = ContactDisplayUtils.getLabelForCallOrSms(Phone.TYPE_MOBILE, "",
-                ContactDisplayUtils.INTERACTION_SMS, getContext());
-        expected = getContext().getResources().getText(R.string.sms_mobile);
-        assertEquals(expected, result);
-    }
-
     public void testGetPhoneLabelResourceIdReturnsOther() {
         assertEquals(R.string.call_other, ContactDisplayUtils.getPhoneLabelResourceId(null));
     }

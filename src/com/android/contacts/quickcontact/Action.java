@@ -19,7 +19,6 @@ package com.android.contacts.quickcontact;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-
 import com.android.contacts.Collapser;
 
 /**
@@ -64,14 +63,4 @@ public interface Action extends Collapser.Collapsible<Action> {
 
     /** Returns the presence of this item or -1 if it was never set */
     public int getPresence();
-
-    /**
-     * Returns the number of times this action has been used.
-     */
-    public Integer getTimesUsed();
-
-    /**
-     * Returns the last time this action was used.
-     */
-    public Long getLastTimeUsed();
 }

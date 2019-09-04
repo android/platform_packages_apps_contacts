@@ -17,7 +17,6 @@
 
 package com.android.contacts.quickcontact;
 
-import android.Manifest;
 import android.accounts.Account;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
@@ -68,17 +67,11 @@ import android.provider.ContactsContract.CommonDataKinds.StructuredPostal;
 import android.provider.ContactsContract.CommonDataKinds.Website;
 import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.Data;
-import android.provider.ContactsContract.DataUsageFeedback;
 import android.provider.ContactsContract.Directory;
 import android.provider.ContactsContract.DisplayNameSources;
 import android.provider.ContactsContract.Intents;
 import android.provider.ContactsContract.QuickContact;
 import android.provider.ContactsContract.RawContacts;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.LocalBroadcastManager;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v4.os.BuildCompat;
-import android.support.v7.graphics.Palette;
 import android.telecom.PhoneAccount;
 import android.telecom.TelecomManager;
 import android.text.BidiFormatter;
@@ -99,7 +92,10 @@ import android.view.View.OnCreateContextMenuListener;
 import android.view.WindowManager;
 import android.widget.Toast;
 import android.widget.Toolbar;
-
+import androidx.core.content.res.ResourcesCompat;
+import androidx.core.os.BuildCompat;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.palette.graphics.Palette;
 import com.android.contacts.CallUtil;
 import com.android.contacts.ClipboardUtils;
 import com.android.contacts.Collapser;
@@ -113,7 +109,6 @@ import com.android.contacts.ShortcutIntentBuilder;
 import com.android.contacts.ShortcutIntentBuilder.OnShortcutIntentCreatedListener;
 import com.android.contacts.activities.ContactEditorActivity;
 import com.android.contacts.activities.ContactSelectionActivity;
-import com.android.contacts.activities.RequestDesiredPermissionsActivity;
 import com.android.contacts.activities.RequestPermissionsActivity;
 import com.android.contacts.compat.CompatUtils;
 import com.android.contacts.compat.EventCompat;
@@ -123,11 +118,7 @@ import com.android.contacts.dialog.CallSubjectDialog;
 import com.android.contacts.editor.ContactEditorFragment;
 import com.android.contacts.editor.EditorIntents;
 import com.android.contacts.editor.EditorUiUtils;
-import com.android.contacts.interactions.CalendarInteractionsLoader;
-import com.android.contacts.interactions.CallLogInteractionsLoader;
 import com.android.contacts.interactions.ContactDeletionInteraction;
-import com.android.contacts.interactions.ContactInteraction;
-import com.android.contacts.interactions.SmsInteractionsLoader;
 import com.android.contacts.interactions.TouchPointManager;
 import com.android.contacts.lettertiles.LetterTileDrawable;
 import com.android.contacts.list.UiIntentActions;
@@ -166,7 +157,6 @@ import com.android.contacts.util.ImageViewDrawableSetter;
 import com.android.contacts.util.ImplicitIntentsUtil;
 import com.android.contacts.util.MaterialColorMapUtils;
 import com.android.contacts.util.MaterialColorMapUtils.MaterialPalette;
-import com.android.contacts.util.PermissionsUtil;
 import com.android.contacts.util.PhoneCapabilityTester;
 import com.android.contacts.util.SchedulingUtils;
 import com.android.contacts.util.SharedPreferenceUtil;
@@ -177,11 +167,8 @@ import com.android.contacts.widget.MultiShrinkScroller;
 import com.android.contacts.widget.MultiShrinkScroller.MultiShrinkScrollerListener;
 import com.android.contacts.widget.QuickContactImageView;
 import com.android.contactsbind.HelpUtils;
-
 import com.google.common.collect.Lists;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
@@ -189,7 +176,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Mostly translucent {@link Activity} that shows QuickContact dialog. It loads
@@ -231,6 +217,8 @@ public class QuickContactActivity extends ContactsActivity {
     private static final String MIMETYPE_SMS = "vnd.android-dir/mms-sms";
     private static final int REQUEST_CODE_JOIN = 3;
     private static final int REQUEST_CODE_PICK_RINGTONE = 4;
+    private static final int CARD_ENTRY_ID_EDIT_CONTACT = -2;
+    private static final int MIN_NUM_CONTACT_ENTRIES_SHOWN = 3;
 
     private static final int CURRENT_API_VERSION = android.os.Build.VERSION.SDK_INT;
 
@@ -261,6 +249,8 @@ public class QuickContactActivity extends ContactsActivity {
     private static final String HANGOUTS_DATA_5_MESSAGE = "conversation";
     private static final String CALL_ORIGIN_QUICK_CONTACTS_ACTIVITY =
             "com.android.contacts.quickcontact.QuickContactActivity";
+    private static final String KEY_LOADER_EXTRA_EMAILS =
+        QuickContactActivity.class.getCanonicalName() + ".KEY_LOADER_EXTRA_EMAILS";
 
     // Set true in {@link #onCreate} after orientation change for later use in processIntent().
     private boolean mIsRecreatedInstance;
@@ -290,18 +280,12 @@ public class QuickContactActivity extends ContactsActivity {
     private QuickContactImageView mPhotoView;
     private ExpandingEntryCardView mContactCard;
     private ExpandingEntryCardView mNoContactDetailsCard;
-    private ExpandingEntryCardView mRecentCard;
     private ExpandingEntryCardView mAboutCard;
-    private ExpandingEntryCardView mPermissionExplanationCard;
 
     private long mPreviousContactId = 0;
-    // Permission explanation card.
-    private boolean mShouldShowPermissionExplanation = false;
-    private String mPermissionExplanationCardSubHeader = "";
 
     private MultiShrinkScroller mScroller;
     private AsyncTask<Void, Void, Cp2DataCardModel> mEntriesAndActionsTask;
-    private AsyncTask<Void, Void, Void> mRecentDataTask;
 
     /**
      * The last copy of Cp2DataCardModel that was passed to {@link #populateContactAndAboutCard}.
@@ -361,44 +345,10 @@ public class QuickContactActivity extends ContactsActivity {
     /** Id for the background contact loader */
     private static final int LOADER_CONTACT_ID = 0;
 
-    /** Id for the background Sms Loader */
-    private static final int LOADER_SMS_ID = 1;
-    private static final int MAX_SMS_RETRIEVE = 3;
-
-    /** Id for the back Calendar Loader */
-    private static final int LOADER_CALENDAR_ID = 2;
-    private static final String KEY_LOADER_EXTRA_EMAILS =
-            QuickContactActivity.class.getCanonicalName() + ".KEY_LOADER_EXTRA_EMAILS";
-    private static final int MAX_PAST_CALENDAR_RETRIEVE = 3;
-    private static final int MAX_FUTURE_CALENDAR_RETRIEVE = 3;
-    private static final long PAST_MILLISECOND_TO_SEARCH_LOCAL_CALENDAR =
-            1L * 24L * 60L * 60L * 1000L /* 1 day */;
-    private static final long FUTURE_MILLISECOND_TO_SEARCH_LOCAL_CALENDAR =
-            7L * 24L * 60L * 60L * 1000L /* 7 days */;
-
-    /** Id for the background Call Log Loader */
-    private static final int LOADER_CALL_LOG_ID = 3;
-    private static final int MAX_CALL_LOG_RETRIEVE = 3;
-    private static final int MIN_NUM_CONTACT_ENTRIES_SHOWN = 3;
-    private static final int MIN_NUM_COLLAPSED_RECENT_ENTRIES_SHOWN = 3;
-    private static final int CARD_ENTRY_ID_EDIT_CONTACT = -2;
-    private static final int CARD_ENTRY_ID_REQUEST_PERMISSION = -3;
     private static final String KEY_LOADER_EXTRA_PHONES =
             QuickContactActivity.class.getCanonicalName() + ".KEY_LOADER_EXTRA_PHONES";
     private static final String KEY_LOADER_EXTRA_SIP_NUMBERS =
             QuickContactActivity.class.getCanonicalName() + ".KEY_LOADER_EXTRA_SIP_NUMBERS";
-
-    private static final int[] mRecentLoaderIds = new int[]{
-        LOADER_SMS_ID,
-        LOADER_CALENDAR_ID,
-        LOADER_CALL_LOG_ID};
-    /**
-     * ConcurrentHashMap constructor params: 4 is initial table size, 0.9f is
-     * load factor before resizing, 1 means we only expect a single thread to
-     * write to the map so make only a single shard
-     */
-    private Map<Integer, List<ContactInteraction>> mRecentLoaderResults =
-        new ConcurrentHashMap<>(4, 0.9f, 1);
 
     private static final String FRAGMENT_TAG_SELECT_ACCOUNT = "select_account_fragment";
 
@@ -416,13 +366,6 @@ public class QuickContactActivity extends ContactsActivity {
 
             if (dataId == CARD_ENTRY_ID_EDIT_CONTACT) {
                 editContact();
-                return;
-            }
-
-            if (dataId == CARD_ENTRY_ID_REQUEST_PERMISSION) {
-                finish();
-                RequestDesiredPermissionsActivity.startPermissionActivity(
-                        QuickContactActivity.this);
                 return;
             }
 
@@ -460,36 +403,6 @@ public class QuickContactActivity extends ContactsActivity {
             } catch (ActivityNotFoundException ex) {
                 Toast.makeText(QuickContactActivity.this, R.string.missing_app,
                         Toast.LENGTH_SHORT).show();
-            }
-
-            // Default to USAGE_TYPE_CALL. Usage is summed among all types for sorting each data id
-            // so the exact usage type is not necessary in all cases
-            String usageType = DataUsageFeedback.USAGE_TYPE_CALL;
-
-            final Uri intentUri = intent.getData();
-            if ((intentUri != null && intentUri.getScheme() != null &&
-                    intentUri.getScheme().equals(ContactsUtils.SCHEME_SMSTO)) ||
-                    (intent.getType() != null && intent.getType().equals(MIMETYPE_SMS))) {
-                usageType = DataUsageFeedback.USAGE_TYPE_SHORT_TEXT;
-            }
-
-            // Data IDs start at 1 so anything less is invalid
-            if (dataId > 0) {
-                final Uri dataUsageUri = DataUsageFeedback.FEEDBACK_URI.buildUpon()
-                        .appendPath(String.valueOf(dataId))
-                        .appendQueryParameter(DataUsageFeedback.USAGE_TYPE, usageType)
-                        .build();
-                try {
-                    final boolean successful = getContentResolver().update(
-                            dataUsageUri, new ContentValues(), null, null) > 0;
-                    if (!successful) {
-                        Log.w(TAG, "DataUsageFeedback increment failed");
-                    }
-                } catch (SecurityException ex) {
-                    Log.w(TAG, "DataUsageFeedback increment failed", ex);
-                }
-            } else {
-                Log.w(TAG, "Invalid Data ID");
             }
         }
     };
@@ -628,7 +541,6 @@ public class QuickContactActivity extends ContactsActivity {
      * Data items are compared to the same mimetype based off of three qualities:
      * 1. Super primary
      * 2. Primary
-     * 3. Times used
      */
     private final Comparator<DataItem> mWithinMimeTypeDataItemComparator =
             new Comparator<DataItem>() {
@@ -648,23 +560,15 @@ public class QuickContactActivity extends ContactsActivity {
                 return -1;
             } else if (!lhs.isPrimary() && rhs.isPrimary()) {
                 return 1;
-            } else {
-                final int lhsTimesUsed =
-                        lhs.getTimesUsed() == null ? 0 : lhs.getTimesUsed();
-                final int rhsTimesUsed =
-                        rhs.getTimesUsed() == null ? 0 : rhs.getTimesUsed();
-
-                return rhsTimesUsed - lhsTimesUsed;
             }
+            return 0;
         }
     };
 
     /**
      * Sorts among different mimetypes based off:
      * 1. Whether one of the mimetypes is the prioritized mimetype
-     * 2. Number of times used
-     * 3. Last time used
-     * 4. Statically defined
+     * 2. Statically defined
      */
     private final Comparator<List<DataItem>> mAmongstMimeTypeDataItemComparator =
             new Comparator<List<DataItem>> () {
@@ -685,27 +589,7 @@ public class QuickContactActivity extends ContactsActivity {
                 }
             }
 
-            // 2. Number of times used
-            final int lhsTimesUsed = lhs.getTimesUsed() == null ? 0 : lhs.getTimesUsed();
-            final int rhsTimesUsed = rhs.getTimesUsed() == null ? 0 : rhs.getTimesUsed();
-            final int timesUsedDifference = rhsTimesUsed - lhsTimesUsed;
-            if (timesUsedDifference != 0) {
-                return timesUsedDifference;
-            }
-
-            // 3. Last time used
-            final long lhsLastTimeUsed =
-                    lhs.getLastTimeUsed() == null ? 0 : lhs.getLastTimeUsed();
-            final long rhsLastTimeUsed =
-                    rhs.getLastTimeUsed() == null ? 0 : rhs.getLastTimeUsed();
-            final long lastTimeUsedDifference = rhsLastTimeUsed - lhsLastTimeUsed;
-            if (lastTimeUsedDifference > 0) {
-                return 1;
-            } else if (lastTimeUsedDifference < 0) {
-                return -1;
-            }
-
-            // 4. Resort to a statically defined mimetype order.
+            // 2. Resort to a statically defined mimetype order.
             if (!lhsMimeType.equals(rhsMimeType)) {
                 for (String mimeType : LEADING_MIMETYPES) {
                     if (lhsMimeType.equals(mimeType)) {
@@ -760,43 +644,6 @@ public class QuickContactActivity extends ContactsActivity {
 
         mShouldLog = true;
 
-        // There're 3 states for each permission:
-        // 1. App doesn't have permission, not asked user yet.
-        // 2. App doesn't have permission, user denied it previously.
-        // 3. App has permission.
-        // Permission explanation card is displayed only for case 1.
-        final boolean hasTelephonyFeature =
-                getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
-
-        final boolean hasCalendarPermission = PermissionsUtil.hasPermission(
-                this, Manifest.permission.READ_CALENDAR);
-        final boolean hasSMSPermission = hasTelephonyFeature
-                && PermissionsUtil.hasPermission(this, Manifest.permission.READ_SMS);
-
-        final boolean wasCalendarPermissionDenied =
-                ActivityCompat.shouldShowRequestPermissionRationale(
-                        this, Manifest.permission.READ_CALENDAR);
-        final boolean wasSMSPermissionDenied =
-                hasTelephonyFeature && ActivityCompat.shouldShowRequestPermissionRationale(
-                        this, Manifest.permission.READ_SMS);
-
-        final boolean shouldDisplayCalendarMessage =
-                !hasCalendarPermission && !wasCalendarPermissionDenied;
-        final boolean shouldDisplaySMSMessage =
-                hasTelephonyFeature && !hasSMSPermission && !wasSMSPermissionDenied;
-        mShouldShowPermissionExplanation = shouldDisplayCalendarMessage || shouldDisplaySMSMessage;
-
-        if (shouldDisplayCalendarMessage && shouldDisplaySMSMessage) {
-            mPermissionExplanationCardSubHeader =
-                    getString(R.string.permission_explanation_subheader_calendar_and_SMS);
-        } else if (shouldDisplayCalendarMessage) {
-            mPermissionExplanationCardSubHeader =
-                    getString(R.string.permission_explanation_subheader_calendar);
-        } else if (shouldDisplaySMSMessage) {
-            mPermissionExplanationCardSubHeader =
-                    getString(R.string.permission_explanation_subheader_SMS);
-        }
-
         final int previousScreenType = getIntent().getIntExtra
                 (EXTRA_PREVIOUS_SCREEN_TYPE, ScreenType.UNKNOWN);
         Logger.logScreenView(this, ScreenType.QUICK_CONTACT, previousScreenType);
@@ -825,18 +672,11 @@ public class QuickContactActivity extends ContactsActivity {
 
         mContactCard = (ExpandingEntryCardView) findViewById(R.id.communication_card);
         mNoContactDetailsCard = (ExpandingEntryCardView) findViewById(R.id.no_contact_data_card);
-        mRecentCard = (ExpandingEntryCardView) findViewById(R.id.recent_card);
         mAboutCard = (ExpandingEntryCardView) findViewById(R.id.about_card);
-        mPermissionExplanationCard =
-                (ExpandingEntryCardView) findViewById(R.id.permission_explanation_card);
 
-        mPermissionExplanationCard.setOnClickListener(mEntryClickHandler);
         mNoContactDetailsCard.setOnClickListener(mEntryClickHandler);
         mContactCard.setOnClickListener(mEntryClickHandler);
         mContactCard.setOnCreateContextMenuListener(mEntryContextMenuListener);
-
-        mRecentCard.setOnClickListener(mEntryClickHandler);
-        mRecentCard.setTitle(getResources().getString(R.string.recent_card_title));
 
         mAboutCard.setOnClickListener(mEntryClickHandler);
         mAboutCard.setOnCreateContextMenuListener(mEntryContextMenuListener);
@@ -1026,19 +866,12 @@ public class QuickContactActivity extends ContactsActivity {
             mShouldLog = true;
             // After copying a directory contact, the contact URI changes. Therefore,
             // we need to reload the new contact.
-            destroyInteractionLoaders();
             mContactLoader = (ContactLoader) (Loader<?>) getLoaderManager().getLoader(
                     LOADER_CONTACT_ID);
             mContactLoader.setNewLookup(mLookupUri);
             mCachedCp2DataCardModel = null;
         }
         mContactLoader.forceLoad();
-    }
-
-    private void destroyInteractionLoaders() {
-        for (int interactionLoaderId : mRecentLoaderIds) {
-            getLoaderManager().destroyLoader(interactionLoaderId);
-        }
     }
 
     private void runEntranceAnimation() {
@@ -1159,73 +992,15 @@ public class QuickContactActivity extends ContactsActivity {
     }
 
     private void bindDataToCards(Cp2DataCardModel cp2DataCardModel) {
-        startInteractionLoaders(cp2DataCardModel);
-        populateContactAndAboutCard(cp2DataCardModel, /* shouldAddPhoneticName */ true);
-    }
-
-    private void startInteractionLoaders(Cp2DataCardModel cp2DataCardModel) {
         final Map<String, List<DataItem>> dataItemsMap = cp2DataCardModel.dataItemsMap;
+
         final List<DataItem> phoneDataItems = dataItemsMap.get(Phone.CONTENT_ITEM_TYPE);
-        final List<DataItem> sipCallDataItems = dataItemsMap.get(SipAddress.CONTENT_ITEM_TYPE);
-        if (phoneDataItems != null && phoneDataItems.size() == 1) {
-            mOnlyOnePhoneNumber = true;
-        } else {
-            mOnlyOnePhoneNumber = false;
-        }
-        String[] phoneNumbers = null;
-        if (phoneDataItems != null) {
-            phoneNumbers = new String[phoneDataItems.size()];
-            for (int i = 0; i < phoneDataItems.size(); ++i) {
-                phoneNumbers[i] = ((PhoneDataItem) phoneDataItems.get(i)).getNumber();
-            }
-        }
-        String[] sipNumbers = null;
-        if (sipCallDataItems != null) {
-            sipNumbers = new String[sipCallDataItems.size()];
-            for (int i = 0; i < sipCallDataItems.size(); ++i) {
-                sipNumbers[i] = ((SipAddressDataItem) sipCallDataItems.get(i)).getSipAddress();
-            }
-        }
-        final Bundle phonesExtraBundle = new Bundle();
-        phonesExtraBundle.putStringArray(KEY_LOADER_EXTRA_PHONES, phoneNumbers);
-        phonesExtraBundle.putStringArray(KEY_LOADER_EXTRA_SIP_NUMBERS, sipNumbers);
+        mOnlyOnePhoneNumber = phoneDataItems != null && phoneDataItems.size() == 1;
 
-        Trace.beginSection("start sms loader");
-        getLoaderManager().initLoader(
-                LOADER_SMS_ID,
-                phonesExtraBundle,
-                mLoaderInteractionsCallbacks);
-        Trace.endSection();
-
-        Trace.beginSection("start call log loader");
-        getLoaderManager().initLoader(
-                LOADER_CALL_LOG_ID,
-                phonesExtraBundle,
-                mLoaderInteractionsCallbacks);
-        Trace.endSection();
-
-
-        Trace.beginSection("start calendar loader");
         final List<DataItem> emailDataItems = dataItemsMap.get(Email.CONTENT_ITEM_TYPE);
-        if (emailDataItems != null && emailDataItems.size() == 1) {
-            mOnlyOneEmail = true;
-        } else {
-            mOnlyOneEmail = false;
-        }
-        String[] emailAddresses = null;
-        if (emailDataItems != null) {
-            emailAddresses = new String[emailDataItems.size()];
-            for (int i = 0; i < emailDataItems.size(); ++i) {
-                emailAddresses[i] = ((EmailDataItem) emailDataItems.get(i)).getAddress();
-            }
-        }
-        final Bundle emailsExtraBundle = new Bundle();
-        emailsExtraBundle.putStringArray(KEY_LOADER_EXTRA_EMAILS, emailAddresses);
-        getLoaderManager().initLoader(
-                LOADER_CALENDAR_ID,
-                emailsExtraBundle,
-                mLoaderInteractionsCallbacks);
-        Trace.endSection();
+        mOnlyOneEmail = emailDataItems != null && emailDataItems.size() == 1;
+
+        populateContactAndAboutCard(cp2DataCardModel, /* shouldAddPhoneticName */ true);
     }
 
     private void showActivity() {
@@ -1268,13 +1043,6 @@ public class QuickContactActivity extends ContactsActivity {
             populateContactAndAboutCard(mCachedCp2DataCardModel, /* shouldAddPhoneticName */ false);
         }
 
-        // When exiting the activity and resuming, we want to force a full reload of all the
-        // interaction data in case something changed in the background. On screen rotation,
-        // we don't need to do this. And, mCachedCp2DataCardModel will be null, so we won't.
-        if (mCachedCp2DataCardModel != null) {
-            destroyInteractionLoaders();
-            startInteractionLoaders(mCachedCp2DataCardModel);
-        }
         maybeShowProgressDialog();
     }
 
@@ -1373,16 +1141,13 @@ public class QuickContactActivity extends ContactsActivity {
             mNoContactDetailsCard.setVisibility(View.GONE);
         }
 
-        // If the Recent card is already initialized (all recent data is loaded), show the About
-        // card if it has entries. Otherwise About card visibility will be set in bindRecentData()
+        // Show the About card if it has entries
         if (aboutCardEntries.size() > 0) {
             if (mAboutCard.getVisibility() == View.GONE && mShouldLog) {
                 Logger.logQuickContactEvent(mReferrer, mContactType, CardType.ABOUT,
                         ActionType.UNKNOWN_ACTION, /* thirdPartyAction */ null);
             }
-            if (isAllRecentDataLoaded()) {
-                mAboutCard.setVisibility(View.VISIBLE);
-            }
+            mAboutCard.setVisibility(View.VISIBLE);
         }
         Trace.endSection();
     }
@@ -2263,7 +2028,6 @@ public class QuickContactActivity extends ContactsActivity {
         mColorFilter =
                 new PorterDuffColorFilter(mColorFilterColor, PorterDuff.Mode.SRC_ATOP);
         mContactCard.setColorAndFilter(mColorFilterColor, mColorFilter);
-        mRecentCard.setColorAndFilter(mColorFilterColor, mColorFilter);
         mAboutCard.setColorAndFilter(mColorFilterColor, mColorFilter);
     }
 
@@ -2294,38 +2058,6 @@ public class QuickContactActivity extends ContactsActivity {
             return palette.getVibrantSwatch().getRgb();
         }
         return 0;
-    }
-
-    private List<Entry> contactInteractionsToEntries(List<ContactInteraction> interactions) {
-        final List<Entry> entries = new ArrayList<>();
-        for (ContactInteraction interaction : interactions) {
-            if (interaction == null) {
-                continue;
-            }
-            entries.add(new Entry(/* id = */ -1,
-                    interaction.getIcon(this),
-                    interaction.getViewHeader(this),
-                    interaction.getViewBody(this),
-                    interaction.getBodyIcon(this),
-                    interaction.getViewFooter(this),
-                    interaction.getFooterIcon(this),
-                    interaction.getContentDescription(this),
-                    interaction.getIntent(),
-                    /* alternateIcon = */ null,
-                    /* alternateIntent = */ null,
-                    /* alternateContentDescription = */ null,
-                    /* shouldApplyColor = */ true,
-                    /* isEditable = */ false,
-                    /* EntryContextMenuInfo = */ null,
-                    /* thirdIcon = */ null,
-                    /* thirdIntent = */ null,
-                    /* thirdContentDescription = */ null,
-                    /* thirdAction = */ Entry.ACTION_NONE,
-                    /* thirdActionExtras = */ null,
-                    /* shouldApplyThirdIconColor = */ true,
-                    interaction.getIconResourceId()));
-        }
-        return entries;
     }
 
     private final LoaderCallbacks<Contact> mLoaderContactCallbacks =
@@ -2411,201 +2143,6 @@ public class QuickContactActivity extends ContactsActivity {
         overridePendingTransition(0, 0);
     }
 
-    private final LoaderCallbacks<List<ContactInteraction>> mLoaderInteractionsCallbacks =
-            new LoaderCallbacks<List<ContactInteraction>>() {
-
-        @Override
-        public Loader<List<ContactInteraction>> onCreateLoader(int id, Bundle args) {
-            Loader<List<ContactInteraction>> loader = null;
-            switch (id) {
-                case LOADER_SMS_ID:
-                    loader = new SmsInteractionsLoader(
-                            QuickContactActivity.this,
-                            args.getStringArray(KEY_LOADER_EXTRA_PHONES),
-                            MAX_SMS_RETRIEVE);
-                    break;
-                case LOADER_CALENDAR_ID:
-                    final String[] emailsArray = args.getStringArray(KEY_LOADER_EXTRA_EMAILS);
-                    List<String> emailsList = null;
-                    if (emailsArray != null) {
-                        emailsList = Arrays.asList(args.getStringArray(KEY_LOADER_EXTRA_EMAILS));
-                    }
-                    loader = new CalendarInteractionsLoader(
-                            QuickContactActivity.this,
-                            emailsList,
-                            MAX_FUTURE_CALENDAR_RETRIEVE,
-                            MAX_PAST_CALENDAR_RETRIEVE,
-                            FUTURE_MILLISECOND_TO_SEARCH_LOCAL_CALENDAR,
-                            PAST_MILLISECOND_TO_SEARCH_LOCAL_CALENDAR);
-                    break;
-                case LOADER_CALL_LOG_ID:
-                    loader = new CallLogInteractionsLoader(
-                            QuickContactActivity.this,
-                            args.getStringArray(KEY_LOADER_EXTRA_PHONES),
-                            args.getStringArray(KEY_LOADER_EXTRA_SIP_NUMBERS),
-                            MAX_CALL_LOG_RETRIEVE);
-            }
-            return loader;
-        }
-
-        @Override
-        public void onLoadFinished(Loader<List<ContactInteraction>> loader,
-                List<ContactInteraction> data) {
-            mRecentLoaderResults.put(loader.getId(), data);
-
-            if (isAllRecentDataLoaded()) {
-                bindRecentData();
-            }
-        }
-
-        @Override
-        public void onLoaderReset(Loader<List<ContactInteraction>> loader) {
-            mRecentLoaderResults.remove(loader.getId());
-        }
-    };
-
-    private boolean isAllRecentDataLoaded() {
-        return mRecentLoaderResults.size() == mRecentLoaderIds.length;
-    }
-
-    private void bindRecentData() {
-        final List<ContactInteraction> allInteractions = new ArrayList<>();
-        final List<List<Entry>> interactionsWrapper = new ArrayList<>();
-
-        // Serialize mRecentLoaderResults into a single list. This should be done on the main
-        // thread to avoid races against mRecentLoaderResults edits.
-        for (List<ContactInteraction> loaderInteractions : mRecentLoaderResults.values()) {
-            allInteractions.addAll(loaderInteractions);
-        }
-
-        mRecentDataTask = new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... params) {
-                Trace.beginSection("sort recent loader results");
-
-                // Sort the interactions by most recent
-                Collections.sort(allInteractions, new Comparator<ContactInteraction>() {
-                    @Override
-                    public int compare(ContactInteraction a, ContactInteraction b) {
-                        if (a == null && b == null) {
-                            return 0;
-                        }
-                        if (a == null) {
-                            return 1;
-                        }
-                        if (b == null) {
-                            return -1;
-                        }
-                        if (a.getInteractionDate() > b.getInteractionDate()) {
-                            return -1;
-                        }
-                        if (a.getInteractionDate() == b.getInteractionDate()) {
-                            return 0;
-                        }
-                        return 1;
-                    }
-                });
-
-                Trace.endSection();
-                Trace.beginSection("contactInteractionsToEntries");
-
-                // Wrap each interaction in its own list so that an icon is displayed for each entry
-                for (Entry contactInteraction : contactInteractionsToEntries(allInteractions)) {
-                    List<Entry> entryListWrapper = new ArrayList<>(1);
-                    entryListWrapper.add(contactInteraction);
-                    interactionsWrapper.add(entryListWrapper);
-                }
-
-                Trace.endSection();
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(Void aVoid) {
-                super.onPostExecute(aVoid);
-                Trace.beginSection("initialize recents card");
-
-                if (allInteractions.size() > 0) {
-                    mRecentCard.initialize(interactionsWrapper,
-                    /* numInitialVisibleEntries = */ MIN_NUM_COLLAPSED_RECENT_ENTRIES_SHOWN,
-                    /* isExpanded = */ mRecentCard.isExpanded(), /* isAlwaysExpanded = */ false,
-                            mExpandingEntryCardViewListener, mScroller);
-                    if (mRecentCard.getVisibility() == View.GONE && mShouldLog) {
-                        Logger.logQuickContactEvent(mReferrer, mContactType, CardType.RECENT,
-                                ActionType.UNKNOWN_ACTION, /* thirdPartyAction */ null);
-                    }
-                    mRecentCard.setVisibility(View.VISIBLE);
-                } else {
-                    mRecentCard.setVisibility(View.GONE);
-                }
-
-                Trace.endSection();
-                Trace.beginSection("initialize permission explanation card");
-
-                final Drawable historyIcon = ResourcesCompat.getDrawable(getResources(),
-                        R.drawable.quantum_ic_history_vd_theme_24, null);
-
-                final Entry permissionExplanationEntry = new Entry(CARD_ENTRY_ID_REQUEST_PERMISSION,
-                        historyIcon, getString(R.string.permission_explanation_header),
-                        mPermissionExplanationCardSubHeader, /* subHeaderIcon = */ null,
-                        /* text = */ null, /* textIcon = */ null,
-                        /* primaryContentDescription = */ null, getIntent(),
-                        /* alternateIcon = */ null, /* alternateIntent = */ null,
-                        /* alternateContentDescription = */ null, /* shouldApplyColor = */ true,
-                        /* isEditable = */ false, /* EntryContextMenuInfo = */ null,
-                        /* thirdIcon = */ null, /* thirdIntent = */ null,
-                        /* thirdContentDescription = */ null, /* thirdAction = */ Entry.ACTION_NONE,
-                        /* thirdExtras = */ null,
-                        /* shouldApplyThirdIconColor = */ true,
-                        R.drawable.quantum_ic_history_vd_theme_24);
-
-                final List<List<Entry>> permissionExplanationEntries = new ArrayList<>();
-                permissionExplanationEntries.add(new ArrayList<Entry>());
-                permissionExplanationEntries.get(0).add(permissionExplanationEntry);
-
-                final int subHeaderTextColor = getResources().getColor(android.R.color.white);
-                final PorterDuffColorFilter whiteColorFilter =
-                        new PorterDuffColorFilter(subHeaderTextColor, PorterDuff.Mode.SRC_ATOP);
-
-                mPermissionExplanationCard.initialize(permissionExplanationEntries,
-                        /* numInitialVisibleEntries = */ 1,
-                        /* isExpanded = */ true,
-                        /* isAlwaysExpanded = */ true,
-                        /* listener = */ null,
-                        mScroller);
-
-                mPermissionExplanationCard.setColorAndFilter(subHeaderTextColor, whiteColorFilter);
-                mPermissionExplanationCard.setBackgroundColor(mColorFilterColor);
-                mPermissionExplanationCard.setEntryHeaderColor(subHeaderTextColor);
-                mPermissionExplanationCard.setEntrySubHeaderColor(subHeaderTextColor);
-
-                if (mShouldShowPermissionExplanation) {
-                    if (mPermissionExplanationCard.getVisibility() == View.GONE
-                            && mShouldLog) {
-                        Logger.logQuickContactEvent(mReferrer, mContactType, CardType.PERMISSION,
-                                ActionType.UNKNOWN_ACTION, /* thirdPartyAction */ null);
-                    }
-                    mPermissionExplanationCard.setVisibility(View.VISIBLE);
-                } else {
-                    mPermissionExplanationCard.setVisibility(View.GONE);
-                }
-
-                Trace.endSection();
-
-                // About card is initialized along with the contact card, but since it appears after
-                // the recent card in the UI, we hold off until making it visible until the recent
-                // card is also ready to avoid stuttering.
-                if (mAboutCard.shouldShow()) {
-                    mAboutCard.setVisibility(View.VISIBLE);
-                } else {
-                    mAboutCard.setVisibility(View.GONE);
-                }
-                mRecentDataTask = null;
-            }
-        };
-        mRecentDataTask.execute();
-    }
-
     @Override
     protected void onStop() {
         super.onStop();
@@ -2616,9 +2153,6 @@ public class QuickContactActivity extends ContactsActivity {
             // onStop() being called. This is not a problem, because in these circumstances
             // the entire process will be killed.
             mEntriesAndActionsTask.cancel(/* mayInterruptIfRunning = */ false);
-        }
-        if (mRecentDataTask != null) {
-            mRecentDataTask.cancel(/* mayInterruptIfRunning = */ false);
         }
     }
 
@@ -2886,13 +2420,6 @@ public class QuickContactActivity extends ContactsActivity {
                     values.add(organization);
                 }
 
-                // Last time used and times used are aggregated values from the usage stat
-                // table. They need to be removed from data values so the SQL table can insert
-                // properly
-                for (ContentValues value : values) {
-                    value.remove(Data.LAST_TIME_USED);
-                    value.remove(Data.TIMES_USED);
-                }
                 intent.putExtra(Intents.Insert.DATA, values);
 
                 // If the contact can only export to the same account, add it to the intent.

@@ -202,15 +202,8 @@
     <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"Gumawa ng bagong contact"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"Tumingin pa"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"Tumingin nang mas kaunti"</string>
-    <string name="recent_card_title" msgid="8982782042698001695">"Kamakailan"</string>
     <string name="about_card_title" msgid="2920942314212825637">"Tungkol dito"</string>
     <string name="toast_making_personal_copy" msgid="288549957278065542">"Lumilikha ng personal na kopya…"</string>
-    <string name="tomorrow" msgid="6241969467795308581">"Bukas"</string>
-    <string name="today" msgid="8041090779381781781">"Ngayon"</string>
-    <string name="today_at_time_fmt" msgid="605665249491030460">"Ngayong <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="tomorrow_at_time_fmt" msgid="4856497969617819421">"Bukas nang <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%1$s</xliff:g>, <xliff:g id="TIME_INTERVAL">%2$s</xliff:g>"</string>
-    <string name="untitled_event" msgid="3484859385405939366">"(Kaganapang walang pamagat)"</string>
     <string name="date_time_set" msgid="4761419824439606690">"Itakda"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"IM"</string>
     <string name="header_organization_entry" msgid="8515394955666265406">"Organisasyon"</string>
@@ -223,12 +216,6 @@
     <string name="header_email_entry" msgid="8666093061171624478">"Email"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"Telepono"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"mga direksyon sa lokasyon"</string>
-    <string name="content_description_recent_sms" msgid="1666389577263317445">"kamakailang sms. <xliff:g id="MESSAGE_BODY">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. mag-click upang tumugon"</string>
-    <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"incoming"</string>
-    <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"papalabas"</string>
-    <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"hindi nasagot"</string>
-    <string name="content_description_recent_call" msgid="5183800406316723676">"kamakailang tawag. <xliff:g id="CALL_TYPE">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. mag-click upang tumawag"</string>
-    <string name="message_from_you_prefix" msgid="7180706529908434482">"Ikaw: <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"Higit pang field"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"Baguhin ang larawan ng contact"</string>
     <string name="editor_add_photo_content_description" msgid="4194479313465418120">"Magdagdag ng larawan ng contact"</string>
@@ -250,10 +237,6 @@
     <string name="navigation_drawer_label" msgid="4154758025620107419">"Label na <xliff:g id="LABEL_NAME">%s</xliff:g>"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"Mga Label"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"Mga Account"</string>
-    <string name="permission_explanation_header" msgid="5739405825039695327">"Magkasamang makita ang inyong history"</string>
-    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"Mga event at mensahe"</string>
-    <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"Mga Event"</string>
-    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"Mga Mensahe"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"Mga Suhestyon"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"Panatilihing maayos at kapaki-pakinabang ang iyong mga contact"</string>
     <string name="undo" msgid="1425165101664071422">"I-undo"</string>
@@ -499,9 +482,6 @@
     <string name="description_search_video_call" msgid="5841525580339803272">"Magsimula ng video call"</string>
     <string name="description_delete_contact" msgid="53835657343783663">"I-delete"</string>
     <string name="description_no_name_header" msgid="8884991311595943271">"Ellipsis"</string>
-    <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> (na) seg"</string>
-    <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> (na) min <xliff:g id="SECONDS">%2$s</xliff:g> (na) seg"</string>
-    <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> (na) oras <xliff:g id="MINUTES_1">%2$s</xliff:g> (na) min <xliff:g id="SECONDS">%3$s</xliff:g> (na) seg"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"Na-disable ang shortcut na ito"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"Inalis ang contact"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"I-import"</string>

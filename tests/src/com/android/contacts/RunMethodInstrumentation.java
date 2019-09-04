@@ -20,8 +20,9 @@ import android.app.Instrumentation;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Debug;
-import android.support.test.InstrumentationRegistry;
 import android.util.Log;
+
+import androidx.test.InstrumentationRegistry;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

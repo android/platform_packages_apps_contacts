@@ -23,7 +23,7 @@ import android.net.Uri;
 import android.os.CancellationSignal;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.RawContacts;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.test.AndroidTestCase;
 import android.test.mock.MockContentResolver;
 import android.test.suitebuilder.annotation.SmallTest;

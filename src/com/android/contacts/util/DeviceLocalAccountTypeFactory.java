@@ -16,7 +16,7 @@
 package com.android.contacts.util;
 
 import android.content.Context;
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 
 import com.android.contacts.model.account.AccountType;
 import com.android.contacts.model.account.DeviceLocalAccountType;

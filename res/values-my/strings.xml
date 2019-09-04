@@ -55,7 +55,7 @@
     <string name="contacts_unlinking_progress_bar" msgid="5989310198163726929">"လင့်ခ်ဖြုတ်နေသည်"</string>
     <string name="menu_joinAggregate" msgid="3599512127797513606">"လင့်ခ်"</string>
     <string name="menu_linkedContacts" msgid="400444389718855621">"လင့်ခ်အဆက်အသွယ်များ ကြည့်ရန်"</string>
-    <string name="menu_save" msgid="1727844363591825909">"သိမ်းဆည်းရန်"</string>
+    <string name="menu_save" msgid="1727844363591825909">"သိမ်းရန်"</string>
     <string name="titleJoinContactDataWith" msgid="6825255752748313944">"အဆက်အသွယ်များ ချိတ်ဆက်ရန်"</string>
     <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"<xliff:g id="NAME">%s</xliff:g> နှင့်ချိတ်လိုသည့် အဆက်အသွယ်ကို ရွေးပါ −"</string>
     <string name="separatorJoinAggregateSuggestions" msgid="2831414448851313345">"အကြုံပြုလိုသော အဆက်အသွယ်များ"</string>
@@ -202,15 +202,8 @@
     <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"လိပ်စာသစ် ထည့်ရန်"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"ပိုပြီး ကြည့်ရန်"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"လျှော့ပြီး ကြည့်ရန်"</string>
-    <string name="recent_card_title" msgid="8982782042698001695">"မကြာမီက"</string>
     <string name="about_card_title" msgid="2920942314212825637">"အကြောင်း"</string>
     <string name="toast_making_personal_copy" msgid="288549957278065542">"မိမိအတွက် ကိုယ်ပိုင်ကော်ပီ ပြုလုပ်နေစဉ်…"</string>
-    <string name="tomorrow" msgid="6241969467795308581">"နက်ဖြန်"</string>
-    <string name="today" msgid="8041090779381781781">"ယနေ့"</string>
-    <string name="today_at_time_fmt" msgid="605665249491030460">"ယနေ့ <xliff:g id="TIME_INTERVAL">%s</xliff:g> တွင်"</string>
-    <string name="tomorrow_at_time_fmt" msgid="4856497969617819421">"နက်ဖြန်<xliff:g id="TIME_INTERVAL">%s</xliff:g>တွင်"</string>
-    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%1$s</xliff:g>, <xliff:g id="TIME_INTERVAL">%2$s</xliff:g>"</string>
-    <string name="untitled_event" msgid="3484859385405939366">"(ခေါင်းစဉ်မဲ့ ဖြစ်ရပ်)"</string>
     <string name="date_time_set" msgid="4761419824439606690">"လက်ခံရန်"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"IM"</string>
     <string name="header_organization_entry" msgid="8515394955666265406">"အဖွဲ့အစည်း"</string>
@@ -223,12 +216,6 @@
     <string name="header_email_entry" msgid="8666093061171624478">"အီးမေးလ်"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"ဖုန်း"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"တည်နေရာများသို့ လမ်းညွှန်ချက်"</string>
-    <string name="content_description_recent_sms" msgid="1666389577263317445">"မကြာမီက စာတို။ <xliff:g id="MESSAGE_BODY">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. တုံ့ပြန်ရန် ကလစ်ပါ"</string>
-    <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"အဝင်"</string>
-    <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"အထွက်"</string>
-    <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"လွတ်သွား"</string>
-    <string name="content_description_recent_call" msgid="5183800406316723676">"မကြာမီက ခေါ်ဆိုမှု။ <xliff:g id="CALL_TYPE">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. ပြန်ခေါ်ရန် ကလစ်ပါ"</string>
-    <string name="message_from_you_prefix" msgid="7180706529908434482">"သင်: <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"နောက်ထပ်အကွက်များ"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"အဆက်အသွယ်ဓာတ်ပုံ ပြောင်းရန်"</string>
     <string name="editor_add_photo_content_description" msgid="4194479313465418120">"အဆက်အသွယ်ဓာတ်ပုံ ထည့်ရန်"</string>
@@ -250,10 +237,6 @@
     <string name="navigation_drawer_label" msgid="4154758025620107419">"<xliff:g id="LABEL_NAME">%s</xliff:g> လေဘယ်လ်"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"အညွှန်းများ"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"အကောင့်များ"</string>
-    <string name="permission_explanation_header" msgid="5739405825039695327">"သင့်မှတ်တမ်းကို တစ်ပြိုင်တည်း ကြည့်လိုက်ပါ"</string>
-    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"အစီအစဉ်များနှင့် မက်ဆေ့ဂျ်များ"</string>
-    <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"အစီအစဥ်များ"</string>
-    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"မက်ဆေ့ဂျ်များ"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"အကြံပြုချက်များ"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"သင်၏အဆက်အသွယ်များကို စနစ်တကျနှင့် အသုံးဝင်စွာ ထားလိုက်ပါ"</string>
     <string name="undo" msgid="1425165101664071422">"တစ်ဆင့်နောက်ပြန်ရန်"</string>
@@ -499,9 +482,6 @@
     <string name="description_search_video_call" msgid="5841525580339803272">"ဗီဒီယိုခေါ်ဆိုမှု ပြုလုပ်ရန်"</string>
     <string name="description_delete_contact" msgid="53835657343783663">"ဖျက်ရန်"</string>
     <string name="description_no_name_header" msgid="8884991311595943271">"အစက်သုံးစက်"</string>
-    <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> စက္ကန့်"</string>
-    <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> မိနစ် <xliff:g id="SECONDS">%2$s</xliff:g> စက္ကန့်"</string>
-    <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> နာရီ <xliff:g id="MINUTES_1">%2$s</xliff:g> မိနစ် <xliff:g id="SECONDS">%3$s</xliff:g> စက္ကန့်"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"ဤဖြတ်လမ်းလင့်ခ်ကို ပိတ်ထားပါသည်"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"အဆက်အသွယ်ကို ဖယ်ရှားခဲ့ပါသည်"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"တင်သွင်းရန်"</string>

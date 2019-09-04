@@ -90,7 +90,7 @@
         <service android:name=".PhoneNumberTestService" />
     </application>
 
-    <instrumentation android:name="android.support.test.runner.AndroidJUnitRunner"
+    <instrumentation android:name="androidx.test.runner.AndroidJUnitRunner"
         android:targetPackage="com.android.contacts"
         android:label="Contacts app tests">
     </instrumentation>

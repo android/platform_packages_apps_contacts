@@ -140,7 +140,7 @@
       <item quantity="other"> байланышты бөлүшүү</item>
       <item quantity="one"> байланышты бөлүшүү</item>
     </plurals>
-    <string name="dialog_new_group_account" msgid="3451312333591556651">"Каттоо эсебин тандоо"</string>
+    <string name="dialog_new_group_account" msgid="3451312333591556651">"Аккаунт тандоо"</string>
     <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"Энбелги түзүү"</string>
     <string name="group_name_dialog_update_title" msgid="6328021162869677383">"Энбелгинин аталышын өзгөртүү"</string>
     <string name="group_name_dialog_hint" msgid="7624523157537700160">"Энбелгинин аталышы"</string>
@@ -169,7 +169,7 @@
     <string name="non_phone_add_to_contacts" msgid="6590985286250471169">"Байланыштарга кошуу"</string>
     <string name="non_phone_close" msgid="7608506439725515667">"Жабуу"</string>
     <string name="date_year_toggle" msgid="7122002148518724139">"Жылы көрсөтүлсүн"</string>
-    <string name="contacts_unavailable_add_account" msgid="4347232421410561500">"Каттоо эсебин кошуу"</string>
+    <string name="contacts_unavailable_add_account" msgid="4347232421410561500">"Аккаунт кошуу"</string>
     <string name="contacts_unavailable_import_contacts" msgid="3182801738595937144">"Импорттоо"</string>
     <string name="create_group_item_label" msgid="3263064599743742865">"Жаңысын түзүү..."</string>
     <string name="delete_group_dialog_message" msgid="335713829185261371">"\"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\" энбелгиси өчүрүлсүнбү? (Байланыштардын өзү өчпөйт)."</string>
@@ -202,15 +202,8 @@
     <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"Жаңы байланыш түзүү"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"Дагы көрүү"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"Азыраак көрүү"</string>
-    <string name="recent_card_title" msgid="8982782042698001695">"Акыркы"</string>
     <string name="about_card_title" msgid="2920942314212825637">"Байланыш жөнүндө"</string>
     <string name="toast_making_personal_copy" msgid="288549957278065542">"Жеке көчүрмөсүн түзүү…"</string>
-    <string name="tomorrow" msgid="6241969467795308581">"Эртең"</string>
-    <string name="today" msgid="8041090779381781781">"Бүгүн"</string>
-    <string name="today_at_time_fmt" msgid="605665249491030460">"Бүгүн саат <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="tomorrow_at_time_fmt" msgid="4856497969617819421">"Эртең саат <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%1$s</xliff:g>, <xliff:g id="TIME_INTERVAL">%2$s</xliff:g>"</string>
-    <string name="untitled_event" msgid="3484859385405939366">"(Аталышы жок окуя)"</string>
     <string name="date_time_set" msgid="4761419824439606690">"Коюу"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"IM"</string>
     <string name="header_organization_entry" msgid="8515394955666265406">"Иштеген жери"</string>
@@ -223,12 +216,6 @@
     <string name="header_email_entry" msgid="8666093061171624478">"Электрондук почта"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"Телефон"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"жайгашуу ордуна багыттоолор"</string>
-    <string name="content_description_recent_sms" msgid="1666389577263317445">"акыркы sms. <xliff:g id="MESSAGE_BODY">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. жооп берүү үчүн чыкылдатыңыз"</string>
-    <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"келүүчү"</string>
-    <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"чыгуучу"</string>
-    <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"жооп берилбей калган"</string>
-    <string name="content_description_recent_call" msgid="5183800406316723676">"акыркы чалуу. <xliff:g id="CALL_TYPE">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. кайра чалуу үчүн чыкылдатыңыз"</string>
-    <string name="message_from_you_prefix" msgid="7180706529908434482">"Сиз: <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"Калган талааларды көрсөтүү"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"Байланыштын сүрөтүн өзгөртүү"</string>
     <string name="editor_add_photo_content_description" msgid="4194479313465418120">"Байланыштын сүрөтүн кошуу"</string>
@@ -250,10 +237,6 @@
     <string name="navigation_drawer_label" msgid="4154758025620107419">"<xliff:g id="LABEL_NAME">%s</xliff:g> энбелгиси"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"Энбелгилер"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"Каттоо эсептери"</string>
-    <string name="permission_explanation_header" msgid="5739405825039695327">"Бириктирилген таржымалды көрүү"</string>
-    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"Иш-чаралар жана билдирүүлөр"</string>
-    <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"Иш-чаралар"</string>
-    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"Билдирүүлөр"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"Сунуштар"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"Байланыштар менен иштөө ыңгайлуу болушу үчүн аларды иреттеңиз"</string>
     <string name="undo" msgid="1425165101664071422">"Кайтаруу"</string>
@@ -390,7 +373,7 @@
     <string name="dialog_sync_add" msgid="8267045393119375803">"Шайкештирүү тобуна кошуу"</string>
     <string name="display_more_groups" msgid="2682547080423434170">"Дагы топтор…"</string>
     <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"\"<xliff:g id="GROUP">%s</xliff:g>\" тобун шайкештирүүдөн алып салуу топко кирбеген башка байланыштарды дагы шайкештирүүдөн чыгарып салат."</string>
-    <string name="savingDisplayGroups" msgid="2133152192716475939">"Көрсөтүү параметрлери сакталууда…"</string>
+    <string name="savingDisplayGroups" msgid="2133152192716475939">"Жөндөөлөр сакталууда…"</string>
     <string name="listCustomView" msgid="1840624396582117590">"Ылайыкташтырылган көрүнүш"</string>
     <string name="dialog_new_contact_account" msgid="4969619718062454756">"Өткөрүлүп алынган байланыштар төмөнкүгө сакталсын:"</string>
     <string name="import_from_sim" msgid="6912071635295799131">"SIM-карта"</string>
@@ -479,7 +462,7 @@
     <string name="contact_status_update_attribution" msgid="752179367353018597">"<xliff:g id="SOURCE">%1$s</xliff:g> аркылуу"</string>
     <string name="contact_status_update_attribution_with_date" msgid="7358045508107825068">"<xliff:g id="DATE">%1$s</xliff:g> <xliff:g id="SOURCE">%2$s</xliff:g> аркылуу"</string>
     <string name="action_menu_back_from_search" msgid="8793348588949233348">"издөөнү токтотуу"</string>
-    <string name="description_clear_search" msgid="688023606766232904">"Издөөнү тазалоо"</string>
+    <string name="description_clear_search" msgid="688023606766232904">"Изделип жаткан нерсени өчүрүү"</string>
     <string name="select_account_dialog_title" msgid="5478489655696599219">"Каттоо эсеби"</string>
     <string name="set_default_account" msgid="4311613760725609801">"Чалууларда ар дайым бул колдонулсун"</string>
     <string name="call_with_a_note" msgid="8389827628360791676">"Кыска жазуу менен чалуу"</string>
@@ -487,7 +470,7 @@
     <string name="send_and_call_button" msgid="7740295432834590737">"ЖӨНӨТҮҮ ЖАНА ЧАЛУУ"</string>
     <string name="call_subject_limit" msgid="4545212901205397669">"<xliff:g id="COUNT">%1$s</xliff:g> / <xliff:g id="LIMIT">%2$s</xliff:g>"</string>
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
-    <string name="about_build_version" msgid="1765533099416999801">"Куралма версиясы"</string>
+    <string name="about_build_version" msgid="1765533099416999801">"Курама версиясы"</string>
     <string name="about_open_source_licenses" msgid="6479990452352919641">"Баштапкы коду ачык программалардын уруксаттамалары"</string>
     <string name="about_open_source_licenses_summary" msgid="57418386931763994">"Баштапкы коду ачык программалардын уруксаттамаларынын чоо-жайы"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"Купуялык саясаты"</string>
@@ -499,9 +482,6 @@
     <string name="description_search_video_call" msgid="5841525580339803272">"Видео чалуу"</string>
     <string name="description_delete_contact" msgid="53835657343783663">"Жок кылуу"</string>
     <string name="description_no_name_header" msgid="8884991311595943271">"Эллипс"</string>
-    <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> сек"</string>
-    <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> мүн. <xliff:g id="SECONDS">%2$s</xliff:g> сек"</string>
-    <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> с <xliff:g id="MINUTES_1">%2$s</xliff:g> мүн <xliff:g id="SECONDS">%3$s</xliff:g> сек"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"Кыска жол өчүрүлдү"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"Байланыш алынып салынган"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"Өткөрүп алуу"</string>

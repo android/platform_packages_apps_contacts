@@ -28,7 +28,6 @@ import android.provider.ContactsContract.Data;
 import android.telecom.PhoneAccount;
 import android.text.TextUtils;
 import android.util.Log;
-
 import com.android.contacts.CallUtil;
 import com.android.contacts.ContactsUtils;
 import com.android.contacts.MoreContactUtils;
@@ -56,8 +55,6 @@ public class DataAction implements Action {
     private final Context mContext;
     private final DataKind mKind;
     private final String mMimeType;
-    private final Integer mTimesUsed;
-    private final Long mLastTimeUsed;
 
     private CharSequence mBody;
     private CharSequence mSubtitle;
@@ -79,8 +76,6 @@ public class DataAction implements Action {
         mContext = context;
         mKind = kind;
         mMimeType = item.getMimeType();
-        mTimesUsed = item.getTimesUsed();
-        mLastTimeUsed = item.getLastTimeUsed();
 
         // Determine type for subtitle
         mSubtitle = "";
@@ -337,15 +332,5 @@ public class DataAction implements Action {
             return false;
         }
         return true;
-    }
-
-    @Override
-    public Integer getTimesUsed() {
-        return mTimesUsed;
-    }
-
-    @Override
-    public Long getLastTimeUsed() {
-        return mLastTimeUsed;
     }
 }

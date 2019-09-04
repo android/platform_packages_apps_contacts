@@ -17,7 +17,7 @@ package com.android.contacts.compat.telecom;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.telecom.TelecomManager;
 
 import com.android.contacts.compat.CompatUtils;

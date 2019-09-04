@@ -210,15 +210,8 @@
     <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"Vytvořit nový kontakt"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"Zobrazit více"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"Zobrazit méně"</string>
-    <string name="recent_card_title" msgid="8982782042698001695">"Nedávné"</string>
     <string name="about_card_title" msgid="2920942314212825637">"O kartě"</string>
     <string name="toast_making_personal_copy" msgid="288549957278065542">"Vytváření osobní kopie..."</string>
-    <string name="tomorrow" msgid="6241969467795308581">"Zítra"</string>
-    <string name="today" msgid="8041090779381781781">"Dnes"</string>
-    <string name="today_at_time_fmt" msgid="605665249491030460">"Dnes v <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="tomorrow_at_time_fmt" msgid="4856497969617819421">"Zítra v <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%1$s</xliff:g>, <xliff:g id="TIME_INTERVAL">%2$s</xliff:g>"</string>
-    <string name="untitled_event" msgid="3484859385405939366">"(Událost bez názvu)"</string>
     <string name="date_time_set" msgid="4761419824439606690">"Nastavit"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"Chat"</string>
     <string name="header_organization_entry" msgid="8515394955666265406">"Organizace"</string>
@@ -231,12 +224,6 @@
     <string name="header_email_entry" msgid="8666093061171624478">"E-mail"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"Telefon"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"trasy k místům"</string>
-    <string name="content_description_recent_sms" msgid="1666389577263317445">"nedávná sms. <xliff:g id="MESSAGE_BODY">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. kliknutím odpovíte"</string>
-    <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"příchozí"</string>
-    <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"odchozí"</string>
-    <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"zmeškaný"</string>
-    <string name="content_description_recent_call" msgid="5183800406316723676">"nedávný hovor. <xliff:g id="CALL_TYPE">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. kliknutím zavoláte zpět"</string>
-    <string name="message_from_you_prefix" msgid="7180706529908434482">"Vy: <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"Další pole"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"Změnit fotku kontaktu"</string>
     <string name="editor_add_photo_content_description" msgid="4194479313465418120">"Přidat fotku kontaktu"</string>
@@ -258,10 +245,6 @@
     <string name="navigation_drawer_label" msgid="4154758025620107419">"Štítek <xliff:g id="LABEL_NAME">%s</xliff:g>"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"Štítky"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"Účty"</string>
-    <string name="permission_explanation_header" msgid="5739405825039695327">"Mějte svou historii pohromadě"</string>
-    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"Události a zprávy"</string>
-    <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"Události"</string>
-    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"Zprávy"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"Návrhy"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"Udržujte si v kontaktech pořádek, ať vám dobře slouží"</string>
     <string name="undo" msgid="1425165101664071422">"Vrátit zpět"</string>
@@ -511,9 +494,6 @@
     <string name="description_search_video_call" msgid="5841525580339803272">"Zahájit videohovor"</string>
     <string name="description_delete_contact" msgid="53835657343783663">"Smazat"</string>
     <string name="description_no_name_header" msgid="8884991311595943271">"Tři tečky"</string>
-    <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> s"</string>
-    <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> min <xliff:g id="SECONDS">%2$s</xliff:g> s"</string>
-    <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> h <xliff:g id="MINUTES_1">%2$s</xliff:g> min <xliff:g id="SECONDS">%3$s</xliff:g> s"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"Tato zkratka byla deaktivována"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"Kontakt byl odebrán"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"Importovat"</string>

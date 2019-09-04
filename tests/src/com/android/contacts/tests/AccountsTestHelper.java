@@ -15,7 +15,6 @@
  */
 package com.android.contacts.tests;
 
-import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertTrue;
 
 import android.accounts.Account;
@@ -24,9 +23,10 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Build;
 import android.provider.ContactsContract.RawContacts;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.test.InstrumentationRegistry;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.test.InstrumentationRegistry;
 
 import com.android.contacts.model.account.AccountWithDataSet;
 

@@ -15,8 +15,8 @@ import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.GradientDrawable;
 import android.hardware.display.DisplayManager;
 import android.os.Trace;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.animation.PathInterpolatorCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.animation.PathInterpolatorCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Display;
@@ -219,7 +219,7 @@ public class MultiShrinkScroller extends FrameLayout {
     };
 
     /**
-     * Interpolator from android.support.v4.view.ViewPager. Snappier and more elastic feeling
+     * Interpolator from androidx.viewpager.widget.ViewPager. Snappier and more elastic feeling
      * than the default interpolator.
      */
     private static final Interpolator sInterpolator = new Interpolator() {

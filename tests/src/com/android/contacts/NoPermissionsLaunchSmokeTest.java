@@ -8,14 +8,15 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.MediumTest;
-import android.support.test.filters.Suppress;
-import android.support.test.runner.AndroidJUnit4;
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.Until;
+
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.MediumTest;
+import androidx.test.filters.Suppress;
+import androidx.test.runner.AndroidJUnit4;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -31,10 +32,9 @@ import org.junit.runner.RunWith;
  * $ adb shell pm revoke com.android.contacts android.permission.WRITE_CONTACTS
  * $ adb shell pm revoke com.android.contacts android.permission.GET_ACCOUNTS
  * $ adb shell pm revoke com.android.contacts android.permission.READ_PHONE_STATE
- * $ adb shell pm revoke com.android.contacts android.permission.READ_CALL_LOG
  * $ adb shell pm revoke com.android.contacts android.permission.CALL_PHONE
  * $ adb shell am instrument -w \
- *     com.google.android.contacts.tests/android.support.test.runner.AndroidJUnitRunner \
+ *     com.google.android.contacts.tests/androidx.test.runner.AndroidJUnitRunner \
  *     -e class com.android.contacts.NoPermissionsLaunchSmokeTest
  */
 @MediumTest
@@ -53,7 +53,6 @@ public class NoPermissionsLaunchSmokeTest {
         assumeTrue(!hasPermission(mTargetContext, Manifest.permission.WRITE_CONTACTS));
         assumeTrue(!hasPermission(mTargetContext, Manifest.permission.GET_ACCOUNTS));
         assumeTrue(!hasPermission(mTargetContext, Manifest.permission.READ_PHONE_STATE));
-        assumeTrue(!hasPermission(mTargetContext, Manifest.permission.READ_CALL_LOG));
         assumeTrue(!hasPermission(mTargetContext, Manifest.permission.CALL_PHONE));
 
         // remove state that might exist outside of the app

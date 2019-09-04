@@ -28,9 +28,10 @@ import android.content.OperationApplicationException;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.RemoteException;
-import android.support.annotation.NonNull;
-import android.support.test.InstrumentationRegistry;
 import android.telephony.TelephonyManager;
+
+import androidx.annotation.NonNull;
+import androidx.test.InstrumentationRegistry;
 
 import com.android.contacts.database.SimContactDao;
 import com.android.contacts.database.SimContactDaoImpl;
