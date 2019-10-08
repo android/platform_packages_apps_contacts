@@ -20,9 +20,10 @@ import android.content.OperationApplicationException;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.RemoteException;
-import android.support.annotation.RequiresApi;
-import android.support.test.InstrumentationRegistry;
 import android.util.Log;
+
+import androidx.annotation.RequiresApi;
+import androidx.test.InstrumentationRegistry;
 
 import com.android.contacts.model.account.AccountWithDataSet;
 import com.android.contacts.preference.ContactsPreferences;

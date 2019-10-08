@@ -202,15 +202,8 @@
     <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"ಹೊಸ ಸಂಪರ್ಕ ರಚಿಸಿ"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"ಇನ್ನಷ್ಟು ನೋಡಿ"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"ಕಡಿಮೆ ನೋಡಿ"</string>
-    <string name="recent_card_title" msgid="8982782042698001695">"ಇತ್ತೀಚಿನದು"</string>
     <string name="about_card_title" msgid="2920942314212825637">"ಕುರಿತು"</string>
     <string name="toast_making_personal_copy" msgid="288549957278065542">"ವೈಯಕ್ತಿಕ ಪ್ರತಿಯನ್ನು ರಚಿಸಲಾಗುತ್ತಿದೆ…"</string>
-    <string name="tomorrow" msgid="6241969467795308581">"ನಾಳೆ"</string>
-    <string name="today" msgid="8041090779381781781">"ಇಂದು"</string>
-    <string name="today_at_time_fmt" msgid="605665249491030460">"<xliff:g id="TIME_INTERVAL">%s</xliff:g> ಕ್ಕೆ ಇಂದು"</string>
-    <string name="tomorrow_at_time_fmt" msgid="4856497969617819421">"<xliff:g id="TIME_INTERVAL">%s</xliff:g> ಕ್ಕೆ ನಾಳೆ"</string>
-    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%1$s</xliff:g>, <xliff:g id="TIME_INTERVAL">%2$s</xliff:g>"</string>
-    <string name="untitled_event" msgid="3484859385405939366">"(ಶೀರ್ಷಿಕೆರಹಿತ ಈವೆಂಟ್)"</string>
     <string name="date_time_set" msgid="4761419824439606690">"ಹೊಂದಿಸಿ"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"IM"</string>
     <string name="header_organization_entry" msgid="8515394955666265406">"ಸಂಸ್ಥೆ"</string>
@@ -223,12 +216,6 @@
     <string name="header_email_entry" msgid="8666093061171624478">"ಇಮೇಲ್"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"ಫೋನ್"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"ಸ್ಥಳಕ್ಕಾಗಿ ದಿಕ್ಕುಗಳು"</string>
-    <string name="content_description_recent_sms" msgid="1666389577263317445">"ಇತ್ತೀಚಿನ sms. <xliff:g id="MESSAGE_BODY">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. ಪ್ರತಿಕ್ರಿಯಿಸಲು ಕ್ಲಿಕ್ ಮಾಡಿ"</string>
-    <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"ಒಳಬರುವ"</string>
-    <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"ಹೊರಹೋಗುವ"</string>
-    <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"ತಪ್ಪಿಸಿಕೊಂಡ"</string>
-    <string name="content_description_recent_call" msgid="5183800406316723676">"ಇತ್ತೀಚಿನ ಕರೆ. <xliff:g id="CALL_TYPE">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. ಪುನಃ ಕರೆ ಮಾಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ"</string>
-    <string name="message_from_you_prefix" msgid="7180706529908434482">"ನೀವು: <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"ಇನ್ನಷ್ಟು ಫೀಲ್ಡ್‌ಗಳು"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"ಸಂಪರ್ಕ ಫೋಟೋವನ್ನು ಬದಲಿಸಿ"</string>
     <string name="editor_add_photo_content_description" msgid="4194479313465418120">"ಸಂಪರ್ಕ ಫೋಟೋವನ್ನು ಸೇರಿಸಿ"</string>
@@ -250,10 +237,6 @@
     <string name="navigation_drawer_label" msgid="4154758025620107419">"<xliff:g id="LABEL_NAME">%s</xliff:g> ಲೇಬಲ್"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"ಲೇಬಲ್‌ಗಳು"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"ಖಾತೆಗಳು"</string>
-    <string name="permission_explanation_header" msgid="5739405825039695327">"ನಿಮ್ಮ ಇತಿಹಾಸವನ್ನು ಒಟ್ಟಿಗೆ ವೀಕ್ಷಿಸಿ"</string>
-    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"ಈವೆಂಟ್‌ಗಳು ಮತ್ತು ಸಂದೇಶಗಳು"</string>
-    <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"ಈವೆಂಟ್‌ಗಳು"</string>
-    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"ಸಂದೇಶಗಳು"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"ಸಲಹೆಗಳು"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"ನಿಮ್ಮ ಸಂರ್ಪಕಗಳನ್ನು ಸಂಘಟಿತವಾಗಿ ಮತ್ತು ಉಪಯುಕ್ತವಾಗಿ ಇರಿಸಿಕೊಳ್ಳಿ"</string>
     <string name="undo" msgid="1425165101664071422">"ರದ್ದುಗೊಳಿಸಿ"</string>
@@ -489,7 +472,7 @@
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="1765533099416999801">"ಬಿಲ್ಡ್ ಆವೃತ್ತಿ"</string>
     <string name="about_open_source_licenses" msgid="6479990452352919641">"ತೆರೆದ ಮೂಲ ಪರವಾನಗಿಗಳು"</string>
-    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"ಮುಕ್ತ ಮೂಲ ಸಾಫ್ಟ್‌ವೇರ್‌ಗಾಗಿ ಪರವಾನಗಿ ವಿವರಗಳು"</string>
+    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"ಓಪನ್ ಸೋರ್ಸ್ ಸಾಫ್ಟ್‌ವೇರ್‌ಗಾಗಿ ಪರವಾನಗಿ ವಿವರಗಳು"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"ಗೌಪ್ಯತೆ ನೀತಿ"</string>
     <string name="about_terms_of_service" msgid="4642400812150296723">"ಸೇವಾ ನಿಯಮಗಳು"</string>
     <string name="activity_title_licenses" msgid="5467767062737708066">"ತೆರೆದ ಮೂಲ ಪರವಾನಗಿಗಳು"</string>
@@ -499,9 +482,6 @@
     <string name="description_search_video_call" msgid="5841525580339803272">"ವೀಡಿಯೊ ಕರೆ ಮಾಡಿ"</string>
     <string name="description_delete_contact" msgid="53835657343783663">"ಅಳಿಸಿ"</string>
     <string name="description_no_name_header" msgid="8884991311595943271">"ಎಲಿಪ್ಸಿಸ್"</string>
-    <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> ಸೆ"</string>
-    <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> ನಿಮಿ <xliff:g id="SECONDS">%2$s</xliff:g> ಸೆ"</string>
-    <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> ಗಂ <xliff:g id="MINUTES_1">%2$s</xliff:g> ನಿಮಿಷ <xliff:g id="SECONDS">%3$s</xliff:g> ಸೆ"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"ಈ ಶಾರ್ಟ್‌ಕಟ್ ಅನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"ಸಂಪರ್ಕವನ್ನು ತೆಗೆದುಹಾಕಲಾಗಿದೆ"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"ಆಮದು"</string>

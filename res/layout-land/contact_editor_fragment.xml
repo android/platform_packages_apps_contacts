@@ -15,41 +15,49 @@
      limitations under the License.
 -->
 
-<com.android.contacts.editor.RawContactEditorView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contact_editor_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary" >
+
+    <com.android.contacts.editor.RawContactEditorView
         android:id="@+id/raw_contacts_editor_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_primary"
         android:orientation="horizontal"
         android:visibility="invisible">
 
-    <include layout="@layout/photo_editor_view" />
+        <include layout="@layout/photo_editor_view" />
 
-    <!-- Dummy view so the first input field is not initially focused. b/21644158 -->
-    <View
+        <!-- Dummy view so the first input field is not initially focused. b/21644158 -->
+        <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:focusable="true"
             android:focusableInTouchMode="true"/>
 
-    <ScrollView
+        <ScrollView
+            android:id="@+id/contact_editor_scroller"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fadingEdge="none"
             android:fillViewport="true">
 
-        <LinearLayout
+            <LinearLayout
+                android:id="@+id/editor_fields_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <include layout="@layout/editor_account_header" />
+                <include layout="@layout/editor_account_header" />
 
-            <include layout="@layout/contact_editor_fields" />
+                <include layout="@layout/contact_editor_fields" />
 
-        </LinearLayout>
+            </LinearLayout>
 
-    </ScrollView>
+        </ScrollView>
 
-</com.android.contacts.editor.RawContactEditorView>
+    </com.android.contacts.editor.RawContactEditorView>
+</FrameLayout>

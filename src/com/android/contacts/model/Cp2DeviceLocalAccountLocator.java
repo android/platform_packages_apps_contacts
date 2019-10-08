@@ -20,7 +20,7 @@ import android.content.ContentResolver;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
-import android.support.annotation.VisibleForTesting;
+import androidx.annotation.VisibleForTesting;
 
 import com.android.contacts.model.account.AccountWithDataSet;
 import com.android.contacts.util.DeviceLocalAccountTypeFactory;

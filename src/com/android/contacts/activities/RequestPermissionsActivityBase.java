@@ -22,7 +22,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Trace;
-import android.support.v4.app.ActivityCompat;
+import androidx.core.app.ActivityCompat;
 
 import com.android.contacts.model.AccountTypeManager;
 import com.android.contacts.util.PermissionsUtil;

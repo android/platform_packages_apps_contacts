@@ -23,7 +23,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.ContactsContract.CommonDataKinds.Im;
 import android.provider.ContactsContract.DisplayPhoto;
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 import android.text.TextUtils;
 import android.util.Pair;
 

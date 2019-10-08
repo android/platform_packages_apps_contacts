@@ -45,9 +45,9 @@ import android.os.Build;
 import android.os.PersistableBundle;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.Contacts;
-import android.support.annotation.VisibleForTesting;
-import android.support.v4.content.LocalBroadcastManager;
-import android.support.v4.os.BuildCompat;
+import androidx.annotation.VisibleForTesting;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.core.os.BuildCompat;
 import android.util.Log;
 
 import com.android.contacts.activities.RequestPermissionsActivity;

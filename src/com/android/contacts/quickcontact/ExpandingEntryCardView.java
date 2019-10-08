@@ -27,7 +27,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
+import androidx.cardview.widget.CardView;
 import android.text.Spannable;
 import android.text.TextUtils;
 import android.transition.ChangeBounds;

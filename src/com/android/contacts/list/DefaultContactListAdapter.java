@@ -30,11 +30,9 @@ import android.provider.ContactsContract.Directory;
 import android.provider.ContactsContract.SearchSnippets;
 import android.text.TextUtils;
 import android.view.View;
-
 import com.android.contacts.compat.ContactsCompat;
 import com.android.contacts.model.account.AccountWithDataSet;
 import com.android.contacts.preference.ContactsPreferences;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,33 +44,6 @@ public class DefaultContactListAdapter extends ContactListAdapter {
     public static final char SNIPPET_START_MATCH = '[';
     public static final char SNIPPET_END_MATCH = ']';
 
-    // Contacts contacted within the last 3 days (in seconds)
-    private static final long LAST_TIME_USED_3_DAYS_SEC = 3L * 24 * 60 * 60;
-
-    // Contacts contacted within the last 7 days (in seconds)
-    private static final long LAST_TIME_USED_7_DAYS_SEC = 7L * 24 * 60 * 60;
-
-    // Contacts contacted within the last 14 days (in seconds)
-    private static final long LAST_TIME_USED_14_DAYS_SEC = 14L * 24 * 60 * 60;
-
-    // Contacts contacted within the last 30 days (in seconds)
-    private static final long LAST_TIME_USED_30_DAYS_SEC = 30L * 24 * 60 * 60;
-
-    private static final String TIME_SINCE_LAST_USED_SEC =
-            "(strftime('%s', 'now') - " + Contacts.LAST_TIME_CONTACTED + "/1000)";
-
-    private static final String STREQUENT_SORT =
-            "(CASE WHEN " + TIME_SINCE_LAST_USED_SEC + " < " + LAST_TIME_USED_3_DAYS_SEC +
-                    " THEN 0 " +
-                    " WHEN " + TIME_SINCE_LAST_USED_SEC + " < " + LAST_TIME_USED_7_DAYS_SEC +
-                    " THEN 1 " +
-                    " WHEN " + TIME_SINCE_LAST_USED_SEC + " < " + LAST_TIME_USED_14_DAYS_SEC +
-                    " THEN 2 " +
-                    " WHEN " + TIME_SINCE_LAST_USED_SEC + " < " + LAST_TIME_USED_30_DAYS_SEC +
-                    " THEN 3 " +
-                    " ELSE 4 END), " +
-                    Contacts.TIMES_CONTACTED + " DESC, " +
-                    Contacts.STARRED + " DESC";
 
     public DefaultContactListAdapter(Context context) {
         super(context);
@@ -113,7 +84,7 @@ public class DefaultContactListAdapter extends ContactListAdapter {
                 appendSearchParameters(builder, query, directoryId);
                 loader.setUri(builder.build());
                 loader.setProjection(getProjection(true));
-                sortOrder = STREQUENT_SORT;
+                sortOrder = Contacts.SORT_KEY_PRIMARY;
             }
         } else {
             final ContactListFilter filter = getFilter();

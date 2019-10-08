@@ -45,15 +45,16 @@ import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.CommonDataKinds.StructuredName;
 import android.provider.ContactsContract.Data;
-import android.support.annotation.RequiresApi;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.LargeTest;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.filters.SmallTest;
-import android.support.test.filters.Suppress;
-import android.support.test.runner.AndroidJUnit4;
 import android.test.mock.MockContentResolver;
 import android.test.mock.MockContext;
+
+import androidx.annotation.RequiresApi;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.LargeTest;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.filters.SmallTest;
+import androidx.test.filters.Suppress;
+import androidx.test.runner.AndroidJUnit4;
 
 import com.android.contacts.model.SimCard;
 import com.android.contacts.model.SimContact;

@@ -28,7 +28,6 @@ import android.provider.ContactsContract.RawContacts;
 import android.provider.ContactsContract.StatusUpdates;
 import android.test.LoaderTestCase;
 import android.test.suitebuilder.annotation.LargeTest;
-
 import com.android.contacts.compat.CompatUtils;
 import com.android.contacts.model.account.AccountType;
 import com.android.contacts.model.account.AccountWithDataSet;
@@ -38,13 +37,10 @@ import com.android.contacts.test.mocks.MockAccountTypeManager;
 import com.android.contacts.test.mocks.MockContentProvider;
 import com.android.contacts.testing.InjectedServices;
 import com.android.contacts.util.Constants;
-
 import com.google.common.collect.Lists;
-
+import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.List;
 
 /**
  * Runs ContactLoader tests for the the contact-detail and editor view.
@@ -346,9 +342,6 @@ public class ContactLoaderTest extends LoaderTestCase {
                     Contacts.SEND_TO_VOICEMAIL,
                     Contacts.CUSTOM_RINGTONE,
                     Contacts.IS_USER_PROFILE,
-
-                    Data.TIMES_USED,
-                    Data.LAST_TIME_USED
             };
 
             List<String> projectionList = Lists.newArrayList(COLUMNS_INTERNAL);
@@ -393,9 +386,6 @@ public class ContactLoaderTest extends LoaderTestCase {
                     0,
                     null,
                     0,
-
-                    0,
-                    0
             };
 
             List<Object> rowsList = Lists.newArrayList(ROWS_INTERNAL);

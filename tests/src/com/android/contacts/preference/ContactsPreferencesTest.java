@@ -19,9 +19,10 @@ package com.android.contacts.preference;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.support.test.InstrumentationRegistry;
 import android.test.InstrumentationTestCase;
 import android.test.suitebuilder.annotation.SmallTest;
+
+import androidx.test.InstrumentationRegistry;
 
 import com.android.contacts.model.account.AccountWithDataSet;
 

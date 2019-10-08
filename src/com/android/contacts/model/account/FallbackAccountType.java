@@ -20,8 +20,8 @@ import android.accounts.AuthenticatorDescription;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.android.contacts.R;
 import com.android.contacts.model.dataitem.DataKind;

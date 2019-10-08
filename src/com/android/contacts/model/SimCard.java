@@ -16,7 +16,7 @@
 package com.android.contacts.model;
 
 import android.os.Build;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.SubscriptionInfo;
 import android.telephony.TelephonyManager;

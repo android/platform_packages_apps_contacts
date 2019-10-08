@@ -198,8 +198,7 @@ public class PhotoEditorView extends RelativeLayout implements View.OnClickListe
      * Binds a full size photo loaded from the given Uri.
      */
     public void setFullSizedPhoto(Uri photoUri) {
-        EditorUiUtils.loadPhoto(ContactPhotoManager.getInstance(getContext()),
-                mPhotoImageView, photoUri);
+        mPhotoImageView.setImageURI(photoUri);
         mIsNonDefaultPhotoBound = true;
         updatePhotoDescription();
     }

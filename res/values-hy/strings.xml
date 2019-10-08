@@ -202,15 +202,8 @@
     <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"Ստեղծել նոր կոնտակտ"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"Տեսնել ավելին"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"Կոծկել"</string>
-    <string name="recent_card_title" msgid="8982782042698001695">"Վերջին գործողությունները"</string>
     <string name="about_card_title" msgid="2920942314212825637">"Տեղեկատվություն"</string>
     <string name="toast_making_personal_copy" msgid="288549957278065542">"Ստեղծվում է անձնական պատճենը..."</string>
-    <string name="tomorrow" msgid="6241969467795308581">"Վաղը"</string>
-    <string name="today" msgid="8041090779381781781">"Այսօր"</string>
-    <string name="today_at_time_fmt" msgid="605665249491030460">"Այսօր՝ <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="tomorrow_at_time_fmt" msgid="4856497969617819421">"Վաղը՝ <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%1$s</xliff:g>, <xliff:g id="TIME_INTERVAL">%2$s</xliff:g>"</string>
-    <string name="untitled_event" msgid="3484859385405939366">"(Անվերնագիր միջոցառում)"</string>
     <string name="date_time_set" msgid="4761419824439606690">"Հաստատել"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"IM"</string>
     <string name="header_organization_entry" msgid="8515394955666265406">"Կազմակերպություն"</string>
@@ -223,12 +216,6 @@
     <string name="header_email_entry" msgid="8666093061171624478">"Էլփոստի հասցե"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"Հեռախոս"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"Երթուղիներ"</string>
-    <string name="content_description_recent_sms" msgid="1666389577263317445">"վերջին SMS-ը՝ <xliff:g id="MESSAGE_BODY">%1$s</xliff:g>, <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>, <xliff:g id="DATE">%3$s</xliff:g>, սեղմեք՝ պատասխանելու համար"</string>
-    <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"մուտքային"</string>
-    <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"ելքային"</string>
-    <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"բաց թողնված"</string>
-    <string name="content_description_recent_call" msgid="5183800406316723676">"վերջին զանգը՝ <xliff:g id="CALL_TYPE">%1$s</xliff:g>, <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>, <xliff:g id="DATE">%3$s</xliff:g>, սեղմեք՝ հետ զանգելու համար"</string>
-    <string name="message_from_you_prefix" msgid="7180706529908434482">"Դուք՝ <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"Լրացուցիչ դաշտեր"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"Փոխել կոնտակտի լուսանկարը"</string>
     <string name="editor_add_photo_content_description" msgid="4194479313465418120">"Ավելացնել կոնտակտի լուսանկարը"</string>
@@ -250,10 +237,6 @@
     <string name="navigation_drawer_label" msgid="4154758025620107419">"<xliff:g id="LABEL_NAME">%s</xliff:g> պիտակ"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"Պիտակներ"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"Հաշիվներ"</string>
-    <string name="permission_explanation_header" msgid="5739405825039695327">"Ցուցադրել միավորված պատմությունը"</string>
-    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"Միջոցառումներն ու SMS հաղորդագրությունները"</string>
-    <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"Իրադարձություններ"</string>
-    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"Հաղորդագրություններ"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"Առաջարկներ"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"Կոնտակտները պահեք տեսակավորված և ցանկացած պահի հեշտությամբ գտեք ձեր ուզած կոնտակտը"</string>
     <string name="undo" msgid="1425165101664071422">"Հետարկել"</string>
@@ -300,7 +283,7 @@
     <string name="sms_work_pager" msgid="5566924423316960597">"Հաղորդագրել աշտատանքային փեյջերին"</string>
     <string name="sms_assistant" msgid="2773424339923116234">"Հաղորդագրել <xliff:g id="ASSISTANT">%s</xliff:g>-ին"</string>
     <string name="sms_mms" msgid="4069352461380762677">"Հաղորդագրել MMS համարին"</string>
-    <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Գրել ՍՄՍ)"</string>
+    <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Գրել SMS)"</string>
     <string name="description_video_call" msgid="7120921378651700947">"Տեսազանգ սկսել"</string>
     <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"Մաքրե՞լ հաճախակի հաղորդակցվողները"</string>
     <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Կոնտակտներ և Հեռախոս հավելվածներից կմաքրվի հաճախակի օգտագործվող կոնտակտների ցանկը, և էլփոստի հավելվածները զրոյից են սովորելու ձեր հաճախակի օգտագործվող կոնտակտները։"</string>
@@ -499,9 +482,6 @@
     <string name="description_search_video_call" msgid="5841525580339803272">"Տեսազանգ սկսել"</string>
     <string name="description_delete_contact" msgid="53835657343783663">"Ջնջել"</string>
     <string name="description_no_name_header" msgid="8884991311595943271">"Բազմակետ"</string>
-    <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> վ"</string>
-    <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> ր <xliff:g id="SECONDS">%2$s</xliff:g> վ"</string>
-    <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> ժ <xliff:g id="MINUTES_1">%2$s</xliff:g> ր <xliff:g id="SECONDS">%3$s</xliff:g> վ"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"Այս դյուրանցումն անջատվել է"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"Կոնտակտը հեռացվել է"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"Ներմուծել"</string>

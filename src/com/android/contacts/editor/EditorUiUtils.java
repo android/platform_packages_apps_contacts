@@ -40,7 +40,7 @@ import android.provider.ContactsContract.CommonDataKinds.Relation;
 import android.provider.ContactsContract.CommonDataKinds.SipAddress;
 import android.provider.ContactsContract.CommonDataKinds.StructuredPostal;
 import android.provider.ContactsContract.CommonDataKinds.Website;
-import android.support.v4.content.res.ResourcesCompat;
+import androidx.core.content.res.ResourcesCompat;
 import android.text.TextUtils;
 import android.widget.ImageView;
 

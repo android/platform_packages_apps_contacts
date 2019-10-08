@@ -17,7 +17,7 @@ package com.android.contacts.model.account;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.StringRes;
+import androidx.annotation.StringRes;
 import android.text.TextUtils;
 
 /**

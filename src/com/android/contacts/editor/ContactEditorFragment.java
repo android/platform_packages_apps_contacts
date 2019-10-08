@@ -31,6 +31,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemClock;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Email;
@@ -41,7 +42,7 @@ import android.provider.ContactsContract.CommonDataKinds.StructuredName;
 import android.provider.ContactsContract.CommonDataKinds.StructuredPostal;
 import android.provider.ContactsContract.Intents;
 import android.provider.ContactsContract.RawContacts;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -50,6 +51,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
@@ -103,6 +105,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+import javax.annotation.Nullable;
 
 /**
  * Contact editor with only the most important fields displayed initially.
@@ -120,6 +123,11 @@ public class ContactEditorFragment extends Fragment implements
     private static final int LOADER_CONTACT = 1;
     private static final int LOADER_GROUPS = 2;
     private static final int LOADER_ACCOUNTS = 3;
+
+    // How long to delay before attempting to restore focus and keyboard
+    // visibility after view state has been restored (e.g. after rotation)
+    // See b/77246197
+    private static final long RESTORE_FOCUS_DELAY_MILLIS = 100L;
 
     private static final String KEY_PHOTO_RAW_CONTACT_ID = "photo_raw_contact_id";
     private static final String KEY_UPDATED_PHOTOS = "updated_photos";
@@ -163,6 +171,10 @@ public class ContactEditorFragment extends Fragment implements
 
     private static final String KEY_READ_ONLY_DISPLAY_NAME_ID = "readOnlyDisplayNameId";
     private static final String KEY_COPY_READ_ONLY_DISPLAY_NAME = "copyReadOnlyDisplayName";
+
+    private static final String KEY_FOCUSED_VIEW_ID = "focusedViewId";
+
+    private static final String KEY_RESTORE_SOFT_INPUT = "restoreSoftInput";
 
     protected static final int REQUEST_CODE_JOIN = 0;
     protected static final int REQUEST_CODE_ACCOUNTS_CHANGED = 1;
@@ -445,6 +457,8 @@ public class ContactEditorFragment extends Fragment implements
     private long mPhotoRawContactId;
     private Bundle mUpdatedPhotos = new Bundle();
 
+    private InputMethodManager inputMethodManager;
+
     @Override
     public Context getContext() {
         return getActivity();
@@ -468,6 +482,9 @@ public class ContactEditorFragment extends Fragment implements
         }
 
         super.onCreate(savedState);
+
+        inputMethodManager =
+            (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
 
         if (savedState == null) {
             mViewIdGenerator = new ViewIdGenerator();
@@ -576,6 +593,15 @@ public class ContactEditorFragment extends Fragment implements
         }
     }
 
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+        if (savedInstanceState == null) {
+            return;
+        }
+        maybeRestoreFocus(savedInstanceState);
+    }
+
     /**
      * Checks if the requested action is valid.
      *
@@ -629,6 +655,14 @@ public class ContactEditorFragment extends Fragment implements
 
         outState.putLong(KEY_PHOTO_RAW_CONTACT_ID, mPhotoRawContactId);
         outState.putParcelable(KEY_UPDATED_PHOTOS, mUpdatedPhotos);
+
+        // For b/77246197
+        View focusedView = getView() == null ? null : getView().findFocus();
+        if (focusedView != null) {
+            outState.putInt(KEY_FOCUSED_VIEW_ID, focusedView.getId());
+            outState.putBoolean(KEY_RESTORE_SOFT_INPUT, inputMethodManager.isActive(focusedView));
+        }
+
         super.onSaveInstanceState(outState);
     }
 
@@ -894,7 +928,7 @@ public class ContactEditorFragment extends Fragment implements
         }
 
         setEnabled(false);
-
+        hideSoftKeyboard();
         return doSaveAction(saveMode, /* joinContactId */ null);
     }
 
@@ -1760,5 +1794,55 @@ public class ContactEditorFragment extends Fragment implements
 
     private RawContactEditorView getContent() {
         return (RawContactEditorView) mContent;
+    }
+
+    // TODO(b/77246197): figure out a better way to address focus being lost on rotation.
+    private void maybeRestoreFocus(Bundle savedInstanceState) {
+        int focusedViewId = savedInstanceState.getInt(KEY_FOCUSED_VIEW_ID, View.NO_ID);
+        if (focusedViewId == View.NO_ID) {
+            return;
+        }
+        boolean shouldRestoreSoftInput = savedInstanceState.getBoolean(KEY_RESTORE_SOFT_INPUT);
+        new Handler()
+            .postDelayed(
+                    () -> {
+                        if (!isResumed()) {
+                            return;
+                        }
+                        View root = getView();
+                        if (root == null) {
+                            return;
+                        }
+                        View focusedView = root.findFocus();
+                        if (focusedView != null) {
+                            return;
+                        }
+                        focusedView = getView().findViewById(focusedViewId);
+                        if (focusedView == null) {
+                            return;
+                        }
+                        boolean didFocus = focusedView.requestFocus();
+                        if (!didFocus) {
+                            Log.i(TAG, "requestFocus failed");
+                            return;
+                        }
+                        if (shouldRestoreSoftInput) {
+                            boolean didShow = inputMethodManager
+                                .showSoftInput(focusedView, InputMethodManager.SHOW_IMPLICIT);
+                            if (Log.isLoggable(TAG, Log.DEBUG)) {
+                                Log.d(TAG, "showSoftInput -> " + didShow);
+                            }
+                        }
+                    },
+            RESTORE_FOCUS_DELAY_MILLIS);
+    }
+
+    private void hideSoftKeyboard() {
+        InputMethodManager imm = (InputMethodManager) mContext.getSystemService(
+            Context.INPUT_METHOD_SERVICE);
+        if (imm != null && mContent != null) {
+            imm.hideSoftInputFromWindow(
+                mContent.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+        }
     }
 }

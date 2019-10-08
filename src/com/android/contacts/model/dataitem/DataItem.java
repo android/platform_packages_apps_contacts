@@ -34,8 +34,6 @@ import android.provider.ContactsContract.CommonDataKinds.StructuredName;
 import android.provider.ContactsContract.CommonDataKinds.StructuredPostal;
 import android.provider.ContactsContract.CommonDataKinds.Website;
 import android.provider.ContactsContract.Contacts.Data;
-import android.provider.ContactsContract.Contacts.Entity;
-
 import com.android.contacts.Collapser;
 import com.android.contacts.MoreContactUtils;
 import com.android.contacts.model.RawContactModifier;
@@ -189,14 +187,6 @@ public class DataItem implements Collapser.Collapsible<DataItem> {
         return mKind;
     }
 
-    public Integer getTimesUsed() {
-        return mContentValues.getAsInteger(Entity.TIMES_USED);
-    }
-
-    public Long getLastTimeUsed() {
-        return mContentValues.getAsLong(Entity.LAST_TIME_USED);
-    }
-
     @Override
     public void collapseWith(DataItem that) {
         DataKind thisKind = getDataKind();
@@ -226,15 +216,6 @@ public class DataItem implements Collapser.Collapsible<DataItem> {
         if (isPrimary() || that.isPrimary()) {
             mContentValues.put(Data.IS_PRIMARY, 1);
         }
-
-        // Add up the times used
-        mContentValues.put(Entity.TIMES_USED, (getTimesUsed() == null ? 0 : getTimesUsed()) +
-                (that.getTimesUsed() == null ? 0 : that.getTimesUsed()));
-
-        // Use the most recent time
-        mContentValues.put(Entity.LAST_TIME_USED,
-                Math.max(getLastTimeUsed() == null ? 0 : getLastTimeUsed(),
-                        that.getLastTimeUsed() == null ? 0 : that.getLastTimeUsed()));
     }
 
     @Override

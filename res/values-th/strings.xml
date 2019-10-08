@@ -181,7 +181,7 @@
     <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"ยกเลิกการเปลี่ยนแปลงหรือไม่"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"ทิ้ง"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"ยกเลิก"</string>
-    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"ยกเลิกการปรับแต่งหรือไม่"</string>
+    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"ทิ้งการปรับแต่งหรือไม่"</string>
     <string name="enter_contact_name" msgid="4594274696120278368">"ค้นหารายชื่อติดต่อ"</string>
     <string name="title_edit_group" msgid="8602752287270586734">"นำรายชื่อติดต่อออก"</string>
     <string name="local_profile_title" msgid="2021416826991393684">"โปรไฟล์ในอุปกรณ์ของฉัน"</string>
@@ -202,15 +202,8 @@
     <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"สร้างรายชื่อติดต่อใหม่"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"ดูเพิ่มเติม"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"ดูน้อยลง"</string>
-    <string name="recent_card_title" msgid="8982782042698001695">"ล่าสุด"</string>
     <string name="about_card_title" msgid="2920942314212825637">"เกี่ยวกับ"</string>
     <string name="toast_making_personal_copy" msgid="288549957278065542">"กำลังสร้างสำเนาส่วนบุคคล..."</string>
-    <string name="tomorrow" msgid="6241969467795308581">"พรุ่งนี้"</string>
-    <string name="today" msgid="8041090779381781781">"วันนี้"</string>
-    <string name="today_at_time_fmt" msgid="605665249491030460">"วันนี้เวลา <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="tomorrow_at_time_fmt" msgid="4856497969617819421">"พรุ่งนี้เวลา <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%1$s</xliff:g> <xliff:g id="TIME_INTERVAL">%2$s</xliff:g>"</string>
-    <string name="untitled_event" msgid="3484859385405939366">"(กิจกรรมไม่มีชื่อ)"</string>
     <string name="date_time_set" msgid="4761419824439606690">"ตั้งค่า"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"IM"</string>
     <string name="header_organization_entry" msgid="8515394955666265406">"องค์กร"</string>
@@ -223,12 +216,6 @@
     <string name="header_email_entry" msgid="8666093061171624478">"อีเมล"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"โทรศัพท์"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"เส้นทางไปยังสถานที่"</string>
-    <string name="content_description_recent_sms" msgid="1666389577263317445">"SMS ล่าสุด <xliff:g id="MESSAGE_BODY">%1$s</xliff:g> <xliff:g id="PHONE_NUMBER">%2$s</xliff:g> <xliff:g id="DATE">%3$s</xliff:g> คลิกเพื่อตอบกลับ"</string>
-    <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"สายโทรเข้า"</string>
-    <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"สายโทรออก"</string>
-    <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"ไม่ได้รับ"</string>
-    <string name="content_description_recent_call" msgid="5183800406316723676">"โทรล่าสุด <xliff:g id="CALL_TYPE">%1$s</xliff:g> <xliff:g id="PHONE_NUMBER">%2$s</xliff:g> <xliff:g id="DATE">%3$s</xliff:g> คลิกเพื่อโทรกลับ"</string>
-    <string name="message_from_you_prefix" msgid="7180706529908434482">"คุณ: <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"ช่องอื่นๆ"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"เปลี่ยนรูปภาพรายชื่อติดต่อ"</string>
     <string name="editor_add_photo_content_description" msgid="4194479313465418120">"เพิ่มรูปภาพรายชื่อติดต่อ"</string>
@@ -250,10 +237,6 @@
     <string name="navigation_drawer_label" msgid="4154758025620107419">"ป้ายกำกับ<xliff:g id="LABEL_NAME">%s</xliff:g>"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"ป้ายกำกับ"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"บัญชี"</string>
-    <string name="permission_explanation_header" msgid="5739405825039695327">"ดูประวัติพร้อมกัน"</string>
-    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"กิจกรรมและข้อความ"</string>
-    <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"กิจกรรม"</string>
-    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"ข้อความ"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"คำแนะนำ"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"จัดรายชื่อติดต่อให้เป็นระเบียบและใช้ประโยชน์ได้ง่าย"</string>
     <string name="undo" msgid="1425165101664071422">"เลิกทำ"</string>
@@ -434,7 +417,7 @@
     <string name="reading_vcard_failed_title" msgid="4251647443358422855">"ไม่สามารถอ่านข้อมูล vCard"</string>
     <string name="importing_vcard_finished_title" msgid="3341541727268747967">"นำเข้า vCard <xliff:g id="FILENAME">%s</xliff:g> เรียบร้อยแล้ว"</string>
     <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"ยกเลิกการนำเข้า <xliff:g id="FILENAME">%s</xliff:g> แล้ว"</string>
-    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"การนำเข้า <xliff:g id="FILENAME">%s</xliff:g> จะเกิดขึ้นในไม่ช้า"</string>
+    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"ระบบจะนำเข้า <xliff:g id="FILENAME">%s</xliff:g> เร็วๆ นี้"</string>
     <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"ไฟล์จะถููกนำเข้าในไม่ช้า"</string>
     <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"คำขอนำเข้า vCard ถูกปฏิเสธ ลองใหม่ภายหลัง"</string>
     <string name="contacts_export_will_start_message" msgid="8538705791417534431">"ระบบจะส่งออกรายชื่อติดต่อในไม่ช้า"</string>
@@ -499,9 +482,6 @@
     <string name="description_search_video_call" msgid="5841525580339803272">"เริ่ม Hangouts วิดีโอ"</string>
     <string name="description_delete_contact" msgid="53835657343783663">"ลบ"</string>
     <string name="description_no_name_header" msgid="8884991311595943271">"จุดไข่ปลา"</string>
-    <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> วินาที"</string>
-    <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> นาที <xliff:g id="SECONDS">%2$s</xliff:g> วินาที"</string>
-    <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> ชั่วโมง <xliff:g id="MINUTES_1">%2$s</xliff:g> นาที <xliff:g id="SECONDS">%3$s</xliff:g> วินาที"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"ทางลัดนี้ถูกปิดใช้งาน"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"รายชื่อติดต่อถูกนำออก"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"นำเข้า"</string>

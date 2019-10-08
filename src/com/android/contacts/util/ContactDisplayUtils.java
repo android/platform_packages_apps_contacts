@@ -18,21 +18,16 @@ package com.android.contacts.util;
 
 import static android.provider.ContactsContract.CommonDataKinds.Phone;
 
-import android.content.Context;
 import android.content.res.Resources;
-import android.support.annotation.Nullable;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.TtsSpan;
-import android.util.Log;
 import android.util.Patterns;
-
+import androidx.annotation.Nullable;
 import com.android.contacts.R;
 import com.android.contacts.compat.PhoneNumberUtilsCompat;
 import com.android.contacts.preference.ContactsPreferences;
-
-import com.google.common.base.Preconditions;
 
 /**
  * Methods for handling various contact data labels.
@@ -40,9 +35,6 @@ import com.google.common.base.Preconditions;
 public class ContactDisplayUtils {
 
     private static final String TAG = ContactDisplayUtils.class.getSimpleName();
-
-    public static final int INTERACTION_CALL = 1;
-    public static final int INTERACTION_SMS = 2;
 
     /**
      * Checks if the given data type is a custom type.
@@ -52,39 +44,6 @@ public class ContactDisplayUtils {
      */
     public static boolean isCustomPhoneType(Integer type) {
         return type == Phone.TYPE_CUSTOM || type == Phone.TYPE_ASSISTANT;
-    }
-
-    /**
-     * Gets a display label for a given phone type.
-     *
-     * @param type The type of number.
-     * @param customLabel A custom label to use if the phone is determined to be of custom type
-     * determined by {@link #isCustomPhoneType(Integer))}
-     * @param interactionType whether this is a call or sms.  Either {@link #INTERACTION_CALL} or
-     * {@link #INTERACTION_SMS}.
-     * @param context The application context.
-     * @return An appropriate string label
-     */
-    public static CharSequence getLabelForCallOrSms(Integer type, CharSequence customLabel,
-            int interactionType, Context context) {
-        Preconditions.checkNotNull(context);
-
-        if (isCustomPhoneType(type)) {
-            return (customLabel == null) ? "" : customLabel;
-        } else {
-            int resId;
-            if (interactionType == INTERACTION_SMS) {
-                resId = getSmsLabelResourceId(type);
-            } else {
-                resId = getPhoneLabelResourceId(type);
-                if (interactionType != INTERACTION_CALL) {
-                    Log.e(TAG, "Un-recognized interaction type: " + interactionType +
-                            ". Defaulting to ContactDisplayUtils.INTERACTION_CALL.");
-                }
-            }
-
-            return context.getResources().getText(resId);
-        }
     }
 
     /**

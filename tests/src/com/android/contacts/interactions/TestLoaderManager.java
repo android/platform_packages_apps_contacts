@@ -111,7 +111,7 @@ public class TestLoaderManager extends TestLoaderManagerBase {
                 @Override
                 public void run() {
                     try {
-                        AsyncTaskLoader.class.getMethod("waitForLoader").invoke(loader, null);
+                        AsyncTaskLoader.class.getMethod("waitForLoader").invoke(loader);
                     } catch (Throwable e) {
                         Log.e(TAG, "Exception while waiting for loader: " + loader.getId(), e);
                         Assert.fail("Exception while waiting for loader: " + loader.getId());

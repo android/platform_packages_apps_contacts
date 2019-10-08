@@ -584,29 +584,11 @@
     <!-- Button Label to see less on an ExpandingEntryCardView [CHAR LIMIT=40] -->
     <string name="expanding_entry_card_view_see_less">See less</string>
 
-    <!-- Title of recent card. [CHAR LIMIT=60] -->
-    <string name="recent_card_title">Recent</string>
-
-    <!-- Title of recent card. [CHAR LIMIT=40] -->
+    <!-- Title of about card. [CHAR LIMIT=40] -->
     <string name="about_card_title">About</string>
 
     <!-- Toast that appears when you are copying a directory contact into your personal contacts -->
     <string name="toast_making_personal_copy">Creating a personal copy&#8230;</string>
-    <!-- Timestamp string for interactions from tomorrow. [CHAR LIMIT=40] -->
-    <string name="tomorrow">Tomorrow</string>
-    <!-- Timestamp string for interactions from today. [CHAR LIMIT=40] -->
-    <string name="today">Today</string>
-    <!-- Text for an event starting on the current day with a start and end time.
-         For ex, "Today at 5:00pm-6:00pm" [CHAR LIMIT=NONE] -->
-    <string name="today_at_time_fmt">"Today at <xliff:g id="time_interval">%s</xliff:g>"</string>
-    <!-- Text for an event starting on the next day with a start and end time.
-         For ex, "Tomorrow at 5:00pm-6:00pm" [CHAR LIMIT=NONE] -->
-    <string name="tomorrow_at_time_fmt">"Tomorrow at <xliff:g id="time_interval">%s</xliff:g>"</string>
-    <!-- Format string for a date and time description.  For ex:
-         "April 19, 2012, 3:00pm - 4:00pm" [CHAR LIMIT=NONE] -->
-    <string name="date_time_fmt">"<xliff:g id="date">%1$s</xliff:g>, <xliff:g id="time_interval">%2$s</xliff:g>"</string>
-    <!-- Title for untitled calendar interactions [CHAR LIMIT=40] -->
-    <string name="untitled_event">(Untitled event)</string>
 
     <!-- Name of the button in the date/time picker to accept the date/time change [CHAR LIMIT=15] -->
     <string name="date_time_set">Set</string>
@@ -634,22 +616,6 @@
 
     <!-- Content description for directions secondary button [CHAR LIMIT=NONE] -->
     <string name="content_description_directions">directions to location</string>
-
-    <!-- Content description for recent sms interaction [CHAR LIMIT=NONE] -->
-    <string name="content_description_recent_sms">recent sms. <xliff:g id="message_body">%1$s</xliff:g>. <xliff:g id="phone_number">%2$s</xliff:g>. <xliff:g id="date">%3$s</xliff:g>. click to respond</string>
-
-    <!-- Header for the Relation entry [CHAR LIMIT=NONE] -->
-    <string name="content_description_recent_call_type_incoming">incoming</string>
-    <!-- Header for the Relation entry [CHAR LIMIT=NONE] -->
-    <string name="content_description_recent_call_type_outgoing">outgoing</string>
-    <!-- Header for the Relation entry [CHAR LIMIT=NONE] -->
-    <string name="content_description_recent_call_type_missed">missed</string>
-
-    <!-- Content description for recent sms interaction [CHAR LIMIT=NONE] -->
-    <string name="content_description_recent_call">recent call. <xliff:g id="call_type">%1$s</xliff:g>. <xliff:g id="phone_number">%2$s</xliff:g>. <xliff:g id="date">%3$s</xliff:g>. click to call back</string>
-
-    <!-- Prefix for messages that you sent [CHAR LIMIT=40] -->
-    <string name="message_from_you_prefix">You: <xliff:g id="sms_body">%s</xliff:g></string>
 
     <!-- Button to expand the contact editor to show all available input fields. [CHAR LIMIT=60] -->
     <string name="editor_more_fields">More fields</string>
@@ -715,22 +681,6 @@
 
     <!-- Menu section title of "accounts" [CHAR LIMIT=20] -->
     <string name="menu_title_filters">Accounts</string>
-
-    <!-- Contacts app asking for permissions in QuickContact activity,
-         in order to display calendar and SMS history [CHAR LIMIT=60] -->
-    <string name="permission_explanation_header">See your history together</string>
-
-    <!-- Content displayed in QuickContact activity after Contacts app receiving
-         Calendar and SMS permissions [CHAR LIMIT=60] -->
-    <string name="permission_explanation_subheader_calendar_and_SMS">Events and messages</string>
-
-    <!-- Content displayed in QuickContact activity after Contacts app receiving
-         Calendar permission [CHAR LIMIT=40] -->
-    <string name="permission_explanation_subheader_calendar">Events</string>
-
-    <!-- Content displayed in QuickContact activity after Contacts app receiving
-         SMS permission [CHAR LIMIT=40] -->
-    <string name="permission_explanation_subheader_SMS">Messages</string>
 
     <!-- The header text for hamburger promo [CHAR LIMIT=60]-->
     <string name="hamburger_feature_highlight_header">Suggestions</string>
@@ -1494,15 +1444,6 @@
 
     <!-- Content description for (...) in no name header [CHAR LIMIT=30]-->
     <string name="description_no_name_header">Ellipsis</string>
-
-    <!-- Formatted call duration displayed in recent card in QuickContact, for duration less than 1 minute -->
-    <string name="callDurationSecondFormat"><xliff:g id="seconds">%s</xliff:g> sec</string>
-
-    <!-- Formatted call duration displayed in recent card in QuickContact, for duration less than 1 hour -->
-    <string name="callDurationMinuteFormat"><xliff:g id="minutes">%1$s</xliff:g> min <xliff:g id="seconds">%2$s</xliff:g> sec</string>
-
-    <!-- Formatted call duration displayed in recent card in QuickContact, for duration more than 1 hour -->
-    <string name="callDurationHourFormat"><xliff:g id="minutes">%1$s</xliff:g> hr <xliff:g id="minutes">%2$s</xliff:g> min <xliff:g id="seconds">%3$s</xliff:g> sec</string>
 
     <!-- Toast shown when a dynamic shortcut is tapped after being disabled because the experiment was turned off on the device -->
     <string name="dynamic_shortcut_disabled_message">This shortcut has been disabled</string>

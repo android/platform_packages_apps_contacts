@@ -4,7 +4,7 @@ package com.android.contacts.util.concurrent;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.google.common.util.concurrent.ForwardingFuture;
 import com.google.common.util.concurrent.Futures;

@@ -32,8 +32,6 @@
 -keep class com.android.contacts.format.FormatUtils { *; }
 -keep class com.android.contacts.format.TextHighlighter { *; }
 -keep class com.android.contacts.group.GroupUtil { *; }
--keep class com.android.contacts.interactions.CallLogInteraction { *; }
--keep class com.android.contacts.interactions.CallLogInteractionsLoader { *; }
 -keep class com.android.contacts.interactions.ContactDeletionInteraction { *; }
 -keep class com.android.contacts.interactions.ContactInteractionUtil { *; }
 -keep class com.android.contacts.list.ContactListItemView { *; }

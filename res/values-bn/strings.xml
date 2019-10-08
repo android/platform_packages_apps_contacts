@@ -153,7 +153,7 @@
     <string name="take_new_photo" msgid="7341354729436576304">"নতুন ফটো তুলুন"</string>
     <string name="pick_photo" msgid="2129509985223564942">"ফটো বেছে নিন"</string>
     <string name="pick_new_photo" msgid="9122450996263688237">"নতুন ফটো বেছে নিন"</string>
-    <string name="search_results_searching" msgid="3984833028938569930">"অনুসন্ধান করছে..."</string>
+    <string name="search_results_searching" msgid="3984833028938569930">"সার্চ করছে..."</string>
     <string name="event_edit_field_hint_text" msgid="5794424930242630477">"তারিখ"</string>
     <string name="group_edit_field_hint_text" msgid="8038224059926963133">"লেবেল"</string>
     <string name="cancel_button_content_description" msgid="1288652456274531846">"বাতিল করুন"</string>
@@ -202,15 +202,8 @@
     <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"নতুন পরিচিতি বানান"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"আরও দেখুন"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"আরও কম"</string>
-    <string name="recent_card_title" msgid="8982782042698001695">"সাম্প্রতিক"</string>
     <string name="about_card_title" msgid="2920942314212825637">"সম্পর্কে"</string>
     <string name="toast_making_personal_copy" msgid="288549957278065542">"একটি ব্যক্তিগত অনুলিপি তৈরি করা হচ্ছে…"</string>
-    <string name="tomorrow" msgid="6241969467795308581">"আগামীকাল"</string>
-    <string name="today" msgid="8041090779381781781">"আজ"</string>
-    <string name="today_at_time_fmt" msgid="605665249491030460">"আজ <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="tomorrow_at_time_fmt" msgid="4856497969617819421">"আগামীকাল <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%1$s</xliff:g>, <xliff:g id="TIME_INTERVAL">%2$s</xliff:g>"</string>
-    <string name="untitled_event" msgid="3484859385405939366">"(শিরোনামহীন ইভেন্ট)"</string>
     <string name="date_time_set" msgid="4761419824439606690">"সেট করুন"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"IM"</string>
     <string name="header_organization_entry" msgid="8515394955666265406">"সংগঠন"</string>
@@ -222,13 +215,7 @@
     <string name="header_name_entry" msgid="1592791008096288306">"নাম"</string>
     <string name="header_email_entry" msgid="8666093061171624478">"ইমেল"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"ফোন"</string>
-    <string name="content_description_directions" msgid="2686791825798189335">"অবস্থান জানার দিকনির্দেশ"</string>
-    <string name="content_description_recent_sms" msgid="1666389577263317445">"সাম্প্রতিক sms৷ <xliff:g id="MESSAGE_BODY">%1$s</xliff:g>৷ <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>৷ <xliff:g id="DATE">%3$s</xliff:g>৷ প্রতিক্রিয়া জানাতে ক্লিক করুন"</string>
-    <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"আগত"</string>
-    <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"আউটগোয়িং"</string>
-    <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"মিস করা"</string>
-    <string name="content_description_recent_call" msgid="5183800406316723676">"সাম্প্রতিক কল৷ <xliff:g id="CALL_TYPE">%1$s</xliff:g>৷ <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>৷ <xliff:g id="DATE">%3$s</xliff:g>৷ ঘুরিয়ে কল করতে ক্লিক করুন"</string>
-    <string name="message_from_you_prefix" msgid="7180706529908434482">"আপনি: <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
+    <string name="content_description_directions" msgid="2686791825798189335">"লোকেশন জানার দিকনির্দেশ"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"আরও ফিল্ড"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"পরিচিতির ফটো পরিবর্তন করুন"</string>
     <string name="editor_add_photo_content_description" msgid="4194479313465418120">"পরিচিতির ফটো যোগ করুন"</string>
@@ -250,10 +237,6 @@
     <string name="navigation_drawer_label" msgid="4154758025620107419">"<xliff:g id="LABEL_NAME">%s</xliff:g> লেবেল"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"লেবেলগুলি"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"অ্যাকাউন্টগুলি"</string>
-    <string name="permission_explanation_header" msgid="5739405825039695327">"আপনার ইতিহাস একসাথে দেখুন"</string>
-    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"ইভেন্ট এবং বার্তাগুলি"</string>
-    <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"ইভেন্টগুলি"</string>
-    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"বার্তাগুলি"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"প্রস্তাবনা"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"আপনার পরিচিতিগুলিকে সংগঠিত এবং উপযোগী করে রাখুন"</string>
     <string name="undo" msgid="1425165101664071422">"পূর্বাবস্থায় ফিরুন"</string>
@@ -478,8 +461,8 @@
     <string name="menu_blocked_numbers" msgid="5272951629083025995">"অবরোধ করা নম্বরগুলি"</string>
     <string name="contact_status_update_attribution" msgid="752179367353018597">"<xliff:g id="SOURCE">%1$s</xliff:g> এর মাধ্যমে"</string>
     <string name="contact_status_update_attribution_with_date" msgid="7358045508107825068">"<xliff:g id="SOURCE">%2$s</xliff:g> এর মাধ্যমে <xliff:g id="DATE">%1$s</xliff:g>"</string>
-    <string name="action_menu_back_from_search" msgid="8793348588949233348">"অনুসন্ধান বন্ধ করুন"</string>
-    <string name="description_clear_search" msgid="688023606766232904">"অনুসন্ধান সাফ করুন"</string>
+    <string name="action_menu_back_from_search" msgid="8793348588949233348">"সার্চ বন্ধ করুন"</string>
+    <string name="description_clear_search" msgid="688023606766232904">"সার্চ সাফ করুন"</string>
     <string name="select_account_dialog_title" msgid="5478489655696599219">"অ্যাকাউন্ট"</string>
     <string name="set_default_account" msgid="4311613760725609801">"কলের জন্য সবসময় এটি ব্যবহার করুন"</string>
     <string name="call_with_a_note" msgid="8389827628360791676">"একটি নোট সহ কল করুন"</string>
@@ -488,20 +471,17 @@
     <string name="call_subject_limit" msgid="4545212901205397669">"<xliff:g id="COUNT">%1$s</xliff:g> / <xliff:g id="LIMIT">%2$s</xliff:g>"</string>
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="1765533099416999801">"বিল্ডের সংস্করণ"</string>
-    <string name="about_open_source_licenses" msgid="6479990452352919641">"মুক্ত উৎস লাইসেন্স"</string>
-    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"মুক্ত উৎস সফ্টওয়্যারের লাইসেন্স বিবরণ"</string>
+    <string name="about_open_source_licenses" msgid="6479990452352919641">"ওপেন সোর্স লাইসেন্স"</string>
+    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"ওপেন সোর্স সফ্টওয়্যারের লাইসেন্স বিবরণ"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"গোপনীয়তা নীতি"</string>
     <string name="about_terms_of_service" msgid="4642400812150296723">"পরিষেবার শর্তাবলী"</string>
-    <string name="activity_title_licenses" msgid="5467767062737708066">"মুক্ত উৎস লাইসেন্সগুলি"</string>
+    <string name="activity_title_licenses" msgid="5467767062737708066">"ওপেন সোর্স লাইসেন্স"</string>
     <string name="url_open_error_toast" msgid="452592089815420457">"url খুলতে ব্যর্থ হয়েছে৷"</string>
     <string name="account_filter_view_checked" msgid="6696859503887762213">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> এ টিক চিহ্ন দেওয়া হয়েছে"</string>
     <string name="account_filter_view_not_checked" msgid="2248684521205038389">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> এ টিক চিহ্ন দেওয়া হয়নি"</string>
     <string name="description_search_video_call" msgid="5841525580339803272">"ভিডিও কল করুন"</string>
     <string name="description_delete_contact" msgid="53835657343783663">"মুছুন"</string>
     <string name="description_no_name_header" msgid="8884991311595943271">"এলিপসিস"</string>
-    <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> সেকেন্ড"</string>
-    <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> মিনিট <xliff:g id="SECONDS">%2$s</xliff:g> সেকেন্ড"</string>
-    <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> ঘণ্টা <xliff:g id="MINUTES_1">%2$s</xliff:g> মিনিট <xliff:g id="SECONDS">%3$s</xliff:g> সেকেন্ড"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"এই শর্টকাটটি অক্ষম করা হয়েছে"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"পরিচিতিটি সরানো হয়েছে"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"আমদানি করুন"</string>

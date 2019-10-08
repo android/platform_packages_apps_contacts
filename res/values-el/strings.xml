@@ -202,15 +202,8 @@
     <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"Δημιουργία νέας επαφής"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"Δείτε περισσότερα"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"Δείτε λιγότερα"</string>
-    <string name="recent_card_title" msgid="8982782042698001695">"Πρόσφατα"</string>
     <string name="about_card_title" msgid="2920942314212825637">"Σχετικά με"</string>
     <string name="toast_making_personal_copy" msgid="288549957278065542">"Δημιουργία προσωπικού αντιγράφου..."</string>
-    <string name="tomorrow" msgid="6241969467795308581">"Αύριο"</string>
-    <string name="today" msgid="8041090779381781781">"Σήμερα"</string>
-    <string name="today_at_time_fmt" msgid="605665249491030460">"Σήμερα στις <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="tomorrow_at_time_fmt" msgid="4856497969617819421">"Αύριο στις <xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%1$s</xliff:g>, <xliff:g id="TIME_INTERVAL">%2$s</xliff:g>"</string>
-    <string name="untitled_event" msgid="3484859385405939366">"(Εκδήλωση χωρίς τίτλο)"</string>
     <string name="date_time_set" msgid="4761419824439606690">"Ορισμός"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"Ανταλλαγή άμεσων μηνυμάτων (IM)"</string>
     <string name="header_organization_entry" msgid="8515394955666265406">"Οργανισμός"</string>
@@ -223,12 +216,6 @@
     <string name="header_email_entry" msgid="8666093061171624478">"Διεύθυνση ηλεκτρονικού ταχυδρομείου"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"Τηλέφωνο"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"οδηγίες προς την τοποθεσία"</string>
-    <string name="content_description_recent_sms" msgid="1666389577263317445">"πρόσφατο sms. <xliff:g id="MESSAGE_BODY">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. κάντε κλικ για απάντηση"</string>
-    <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"εισερχόμενες"</string>
-    <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"εξερχόμενες"</string>
-    <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"αναπάντητες"</string>
-    <string name="content_description_recent_call" msgid="5183800406316723676">"πρόσφατη κλήση. <xliff:g id="CALL_TYPE">%1$s</xliff:g>. <xliff:g id="PHONE_NUMBER">%2$s</xliff:g>. <xliff:g id="DATE">%3$s</xliff:g>. κάντε κλικ για επιστροφή της κλήσης"</string>
-    <string name="message_from_you_prefix" msgid="7180706529908434482">"Εσείς: <xliff:g id="SMS_BODY">%s</xliff:g>"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"Περισσότερα πεδία"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"Αλλαγή φωτογραφίας επαφής"</string>
     <string name="editor_add_photo_content_description" msgid="4194479313465418120">"Προσθήκη φωτογραφίας επαφής"</string>
@@ -250,10 +237,6 @@
     <string name="navigation_drawer_label" msgid="4154758025620107419">"Ετικέτα \"<xliff:g id="LABEL_NAME">%s</xliff:g>\""</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"Ετικέτες"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"Λογαριασμοί"</string>
-    <string name="permission_explanation_header" msgid="5739405825039695327">"Δείτε το ιστορικό σας μαζί"</string>
-    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"Συμβάντα και μηνύματα"</string>
-    <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"Συμβάντα"</string>
-    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"Μηνύματα"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"Προτάσεις"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"Διατηρήστε τις επαφές σας οργανωμένες και χρήσιμες"</string>
     <string name="undo" msgid="1425165101664071422">"Αναίρεση"</string>
@@ -499,9 +482,6 @@
     <string name="description_search_video_call" msgid="5841525580339803272">"Πραγματοποίηση βιντεοκλήσης"</string>
     <string name="description_delete_contact" msgid="53835657343783663">"Πλήκτρο Delete"</string>
     <string name="description_no_name_header" msgid="8884991311595943271">"Αποσιωπητικά"</string>
-    <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> δ."</string>
-    <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> λ <xliff:g id="SECONDS">%2$s</xliff:g> δ."</string>
-    <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> ώ. <xliff:g id="MINUTES_1">%2$s</xliff:g> λ. <xliff:g id="SECONDS">%3$s</xliff:g> δ."</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"Η συντόμευση απενεργοποιήθηκε"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"Η επαφή καταργήθηκε"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"Εισαγωγή"</string>
