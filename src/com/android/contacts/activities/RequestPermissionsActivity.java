@@ -21,11 +21,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.v4.content.LocalBroadcastManager;
 import android.widget.Toast;
-
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.android.contacts.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,7 +68,6 @@ public class RequestPermissionsActivity extends RequestPermissionsActivityBase {
                 // ImportExportDialogFragment.  We work around missing this permission when
                 // telephony is not available on the device (i.e. on tablets).
                 permissions.add(permission.CALL_PHONE);
-                permissions.add(permission.READ_CALL_LOG);
                 permissions.add(permission.READ_PHONE_STATE);
             }
             sRequiredPermissions = permissions.toArray(new String[0]);

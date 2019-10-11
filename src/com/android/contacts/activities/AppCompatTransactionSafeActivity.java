@@ -17,7 +17,7 @@
 package com.android.contacts.activities;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * A common superclass that keeps track of whether an {@link AppCompatActivity} has saved its state

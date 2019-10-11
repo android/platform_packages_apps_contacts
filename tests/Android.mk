@@ -18,7 +18,7 @@ LOCAL_SDK_VERSION := current
 LOCAL_MIN_SDK_VERSION := 21
 
 LOCAL_STATIC_JAVA_LIBRARIES += \
-    android-support-test \
+    androidx.test.rules \
     hamcrest-library \
     mockito-target-minus-junit4 \
     ub-uiautomator

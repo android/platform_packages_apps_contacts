@@ -17,7 +17,7 @@
 <!--
   Layout for the expand suggestion card in QuickContact.
 -->
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     style="@style/ExpandingEntryCardStyle"
     android:layout_height="wrap_content"
@@ -160,4 +160,4 @@
                 android:text="@string/quickcontact_suggestion_link_button"/>
         </LinearLayout>
     </LinearLayout>
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

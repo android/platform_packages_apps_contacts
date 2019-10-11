@@ -202,15 +202,8 @@
     <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"建立新聯絡人"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"顯示更多"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"顯示較少"</string>
-    <string name="recent_card_title" msgid="8982782042698001695">"近期活動"</string>
     <string name="about_card_title" msgid="2920942314212825637">"關於"</string>
     <string name="toast_making_personal_copy" msgid="288549957278065542">"正在建立個人副本…"</string>
-    <string name="tomorrow" msgid="6241969467795308581">"明天"</string>
-    <string name="today" msgid="8041090779381781781">"今天"</string>
-    <string name="today_at_time_fmt" msgid="605665249491030460">"今天<xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="tomorrow_at_time_fmt" msgid="4856497969617819421">"明天<xliff:g id="TIME_INTERVAL">%s</xliff:g>"</string>
-    <string name="date_time_fmt" msgid="5053178726906863812">"<xliff:g id="DATE">%1$s</xliff:g><xliff:g id="TIME_INTERVAL">%2$s</xliff:g>"</string>
-    <string name="untitled_event" msgid="3484859385405939366">"(未命名活動)"</string>
     <string name="date_time_set" msgid="4761419824439606690">"設定"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"即時通訊"</string>
     <string name="header_organization_entry" msgid="8515394955666265406">"組織"</string>
@@ -223,12 +216,6 @@
     <string name="header_email_entry" msgid="8666093061171624478">"電郵"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"電話"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"規劃前往特定地點的路線"</string>
-    <string name="content_description_recent_sms" msgid="1666389577263317445">"最近短訊 (<xliff:g id="MESSAGE_BODY">%1$s</xliff:g>、<xliff:g id="PHONE_NUMBER">%2$s</xliff:g>、<xliff:g id="DATE">%3$s</xliff:g>)。按一下即可回覆"</string>
-    <string name="content_description_recent_call_type_incoming" msgid="5210739096863511410">"來電"</string>
-    <string name="content_description_recent_call_type_outgoing" msgid="5156553338985232744">"致電"</string>
-    <string name="content_description_recent_call_type_missed" msgid="7371810920196048204">"未接來電"</string>
-    <string name="content_description_recent_call" msgid="5183800406316723676">"最近通話 (<xliff:g id="CALL_TYPE">%1$s</xliff:g>、<xliff:g id="PHONE_NUMBER">%2$s</xliff:g>、<xliff:g id="DATE">%3$s</xliff:g>)。按一下即可回電"</string>
-    <string name="message_from_you_prefix" msgid="7180706529908434482">"您：<xliff:g id="SMS_BODY">%s</xliff:g>"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"更多欄位"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"變更聯絡人相片"</string>
     <string name="editor_add_photo_content_description" msgid="4194479313465418120">"新增聯絡人相片"</string>
@@ -250,10 +237,6 @@
     <string name="navigation_drawer_label" msgid="4154758025620107419">"<xliff:g id="LABEL_NAME">%s</xliff:g>標籤"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"標籤"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"帳戶"</string>
-    <string name="permission_explanation_header" msgid="5739405825039695327">"顯示您們的記錄"</string>
-    <string name="permission_explanation_subheader_calendar_and_SMS" msgid="5411144298889835768">"活動和訊息"</string>
-    <string name="permission_explanation_subheader_calendar" msgid="8785323496211704613">"活動"</string>
-    <string name="permission_explanation_subheader_SMS" msgid="1904552086449525567">"訊息"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"建議"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"讓您的聯絡人有條不紊並更加實用"</string>
     <string name="undo" msgid="1425165101664071422">"復原"</string>
@@ -434,7 +417,7 @@
     <string name="reading_vcard_failed_title" msgid="4251647443358422855">"無法讀取 vCard 資料"</string>
     <string name="importing_vcard_finished_title" msgid="3341541727268747967">"已完成匯入 vCard <xliff:g id="FILENAME">%s</xliff:g>"</string>
     <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"已取消匯入「<xliff:g id="FILENAME">%s</xliff:g>」的操作"</string>
-    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"<xliff:g id="FILENAME">%s</xliff:g> 將在稍後匯入。"</string>
+    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"<xliff:g id="FILENAME">%s</xliff:g>將在稍後匯入。"</string>
     <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"稍後即將匯入檔案。"</string>
     <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"vCard 匯入要求已被拒，請稍後再試。"</string>
     <string name="contacts_export_will_start_message" msgid="8538705791417534431">"系統即將匯出聯絡人。"</string>
@@ -499,9 +482,6 @@
     <string name="description_search_video_call" msgid="5841525580339803272">"開始視像通話"</string>
     <string name="description_delete_contact" msgid="53835657343783663">"刪除"</string>
     <string name="description_no_name_header" msgid="8884991311595943271">"省略號"</string>
-    <string name="callDurationSecondFormat" msgid="7067644915903528776">"<xliff:g id="SECONDS">%s</xliff:g> 秒"</string>
-    <string name="callDurationMinuteFormat" msgid="4647095486747447674">"<xliff:g id="MINUTES">%1$s</xliff:g> 分鐘 <xliff:g id="SECONDS">%2$s</xliff:g> 秒"</string>
-    <string name="callDurationHourFormat" msgid="7392254193808506640">"<xliff:g id="MINUTES_0">%1$s</xliff:g> 小時 <xliff:g id="MINUTES_1">%2$s</xliff:g> 分 <xliff:g id="SECONDS">%3$s</xliff:g> 秒"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"已停用此捷徑"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"聯絡人已移除"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"匯入"</string>

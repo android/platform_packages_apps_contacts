@@ -15,6 +15,14 @@
  */
 package com.android.contacts;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import android.annotation.TargetApi;
 import android.app.job.JobScheduler;
 import android.content.ContentProvider;
@@ -28,10 +36,11 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.Contacts;
-import android.support.test.filters.SdkSuppress;
 import android.test.AndroidTestCase;
 import android.test.mock.MockContentResolver;
 import android.test.suitebuilder.annotation.SmallTest;
+
+import androidx.test.filters.SdkSuppress;
 
 import com.android.contacts.test.mocks.MockContentProvider;
 
@@ -45,14 +54,6 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Matchers.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @TargetApi(Build.VERSION_CODES.N_MR1)
 @SdkSuppress(minSdkVersion = Build.VERSION_CODES.N_MR1)

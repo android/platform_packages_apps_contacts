@@ -24,7 +24,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract.QuickContact;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -355,23 +355,15 @@ public class ContactEditorActivity extends AppCompatContactsActivity implements
         // Set activity title for Talkback
         setTitle(mActionBarTitleResId);
 
-        if (savedState == null) {
-            // Create the editor and photo selection fragments
-            mFragment = new ContactEditorFragment();
-            getFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container, getEditorFragment(), TAG_EDITOR_FRAGMENT)
-                    .commit();
-        } else {
+        mFragment =
+            (ContactEditor) getFragmentManager().findFragmentById(R.id.contact_editor_fragment);
+
+        if (savedState != null) {
             // Restore state
             mPhotoMode = savedState.getInt(STATE_PHOTO_MODE);
             mActionBarTitleResId = savedState.getInt(STATE_ACTION_BAR_TITLE);
             mPhotoUri = Uri.parse(savedState.getString(STATE_PHOTO_URI));
 
-            // Show/hide the editor and photo selection fragments (w/o animations)
-            mFragment = (ContactEditorFragment) getFragmentManager()
-                    .findFragmentByTag(TAG_EDITOR_FRAGMENT);
-            final FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-            fragmentTransaction.show(getEditorFragment()).commit();
             mToolbar.setTitle(mActionBarTitleResId);
         }
 
@@ -384,16 +376,6 @@ public class ContactEditorActivity extends AppCompatContactsActivity implements
 
         if (Intent.ACTION_INSERT.equals(action)) {
             DynamicShortcuts.reportShortcutUsed(this, DynamicShortcuts.SHORTCUT_ADD_CONTACT);
-        }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        final InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        final View currentFocus = getCurrentFocus();
-        if (imm != null && currentFocus != null) {
-            imm.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
         }
     }
 

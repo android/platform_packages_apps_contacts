@@ -19,7 +19,7 @@ import android.content.ContentProviderResult;
 import android.content.Context;
 import android.content.OperationApplicationException;
 import android.os.RemoteException;
-import android.support.annotation.VisibleForTesting;
+import androidx.annotation.VisibleForTesting;
 
 import com.android.contacts.model.SimCard;
 import com.android.contacts.model.SimContact;

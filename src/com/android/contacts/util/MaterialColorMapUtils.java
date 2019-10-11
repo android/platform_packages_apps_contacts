@@ -22,7 +22,7 @@ import android.content.res.TypedArray;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.Trace;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 
 import com.android.contacts.R;
 import com.android.contacts.activities.PeopleActivity;

@@ -18,6 +18,7 @@ package com.android.contacts.activities;
 import static com.android.contacts.tests.ContactsMatchers.DataCursor.hasMimeType;
 import static com.android.contacts.tests.ContactsMatchers.hasRowMatching;
 import static com.android.contacts.tests.ContactsMatchers.hasValueForColumn;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.allOf;
 import static org.junit.Assert.assertTrue;
@@ -39,16 +40,17 @@ import android.os.Build;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.Data;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.LargeTest;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.runner.AndroidJUnit4;
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.Until;
-import android.support.v4.content.LocalBroadcastManager;
 import android.telephony.TelephonyManager;
 import android.test.mock.MockContentResolver;
+
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.filters.LargeTest;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.runner.AndroidJUnit4;
 
 import com.android.contacts.SimImportService;
 import com.android.contacts.database.SimContactDao;
@@ -62,6 +64,7 @@ import com.android.contacts.tests.AccountsTestHelper;
 import com.android.contacts.tests.ContactsMatchers;
 import com.android.contacts.tests.FakeSimContactDao;
 import com.android.contacts.tests.StringableCursor;
+
 import com.google.common.base.Function;
 import com.google.common.base.Functions;
 import com.google.common.util.concurrent.ListenableFuture;

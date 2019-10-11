@@ -20,7 +20,7 @@ import android.widget.EdgeEffect;
 
 /**
  * Compatibility class for {@link android.widget.EdgeEffect}
- * The android.support.v4.widget.EdgeEffectCompat doesn't support customized color, so we write
+ * The androidx.core.widget.EdgeEffectCompat doesn't support customized color, so we write
  * our own and keep using EdgeEffect to customize color.
  */
 public class EdgeEffectCompat {

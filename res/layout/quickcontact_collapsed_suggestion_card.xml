@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     style="@style/ExpandingEntryCardStyle"
     android:layout_height="@dimen/quickcontact_collapse_view_height"
@@ -61,4 +61,4 @@
                 android:paddingBottom="@dimen/editor_round_button_padding_bottom"/>
     </LinearLayout>>
 
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>
