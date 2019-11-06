@@ -21,7 +21,7 @@
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="28"/>
+        android:targetSdkVersion="29"/>
 
     <original-package android:name="com.android.contacts"/>
 

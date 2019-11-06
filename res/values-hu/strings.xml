@@ -177,7 +177,7 @@
     <string name="copy_text" msgid="3257145021583508761">"Másolás vágólapra"</string>
     <string name="set_default" msgid="4417505153468300351">"Beállítás alapértelmezettként"</string>
     <string name="clear_default" msgid="7193185801596678067">"Alapértelmezés törlése"</string>
-    <string name="toast_text_copied" msgid="5143776250008541719">"Másolt szöveg"</string>
+    <string name="toast_text_copied" msgid="5143776250008541719">"Szöveg lemásolva"</string>
     <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"Elveti a módosításokat?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"Elvetés"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"Mégse"</string>
