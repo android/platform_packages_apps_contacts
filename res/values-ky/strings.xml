@@ -24,7 +24,7 @@
     <string name="shortcutMessageContact" msgid="2460337253595976198">"Түз SMS"</string>
     <string name="shortcutActivityTitle" msgid="1504383567778497348">"Байланышты тандоо"</string>
     <string name="contactInsertOrEditActivityTitle" msgid="6527505405325862674">"Байланышка кошуу"</string>
-    <string name="contactPickerActivityTitle" msgid="4301062192337417640">"Байланыш тандаңыз"</string>
+    <string name="contactPickerActivityTitle" msgid="4301062192337417640">"Байланыш тандоо"</string>
     <string name="groupMemberPickerActivityTitle" msgid="1431750793695262522">"Тандоо"</string>
     <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"Жаңы байланыш түзүү"</string>
     <string name="searchHint" msgid="8482945356247760701">"Байланыштарды издөө"</string>
@@ -216,7 +216,7 @@
     <string name="header_email_entry" msgid="8666093061171624478">"Электрондук почта"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"Телефон"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"жайгашуу ордуна багыттоолор"</string>
-    <string name="editor_more_fields" msgid="3630987771304393421">"Калганын көрсөтүү"</string>
+    <string name="editor_more_fields" msgid="3630987771304393421">"Калган талааларды көрсөтүү"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"Байланыштын сүрөтүн өзгөртүү"</string>
     <string name="editor_add_photo_content_description" msgid="4194479313465418120">"Байланыштын сүрөтүн кошуу"</string>
     <string name="editor_contact_photo_content_description" msgid="8571975622926162369">"Байланыштын сүрөтү"</string>
@@ -438,8 +438,8 @@
     <string name="display_options_view_names_as" msgid="6514632499276563482">"Ысым форматы"</string>
     <string name="display_options_view_given_name_first" msgid="3616004640258761473">"Аты биринчи жазылсын"</string>
     <string name="display_options_view_family_name_first" msgid="956445100777296467">"Фамилиясы биринчи жазылсын"</string>
-    <string name="settings_accounts" msgid="350219740670774576">"Аккаунттар"</string>
-    <string name="default_editor_account" msgid="699591683362420991">"Жаңы байланыштар үчүн демейки аккаунт"</string>
+    <string name="settings_accounts" msgid="350219740670774576">"Каттоо эсептер"</string>
+    <string name="default_editor_account" msgid="699591683362420991">"Жаңы байланыштар үчүн демейки каттоо эсеби"</string>
     <string name="settings_my_info_title" msgid="1534272456405343119">"Өзүм жөнүндө маалымат"</string>
     <string name="set_up_profile" msgid="7370213843590143771">"Профилди жөндөө"</string>
     <string name="setting_about" msgid="7014388749752042863">"Байланыштар жөнүндө"</string>
@@ -508,7 +508,7 @@
     <string name="importing_sim_failed_title" msgid="39706901030537985">"Импорттолбой калды"</string>
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"SIM-картадан байланыштар импорттолбой койду"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"SIM-картадан өткөрүлүп алынууда"</string>
-    <string name="contacts_default_notification_channel" msgid="4754058700611188581">"Билдирмелер"</string>
+    <string name="contacts_default_notification_channel" msgid="4754058700611188581">"Эскертмелер"</string>
     <string name="yes_button" msgid="1268479086848288060">"Ооба"</string>
     <string name="no_button" msgid="5742815694687835125">"Жок"</string>
 </resources>

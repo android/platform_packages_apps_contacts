@@ -160,7 +160,7 @@
     <string name="back_arrow_content_description" msgid="4355362760545735065">"뒤로"</string>
     <string name="action_menu_back_from_edit_select" msgid="6435476408621731420">"닫기"</string>
     <string name="aggregation_suggestion_edit_dialog_message" msgid="6549585283910518095">"선택한 연락처를 수정하시겠습니까? 지금까지 입력하신 정보는 복사됩니다."</string>
-    <string name="contact_directory_description" msgid="683398073603909119">"디렉터리 <xliff:g id="TYPE">%1$s</xliff:g>"</string>
+    <string name="contact_directory_description" msgid="683398073603909119">"디렉토리 <xliff:g id="TYPE">%1$s</xliff:g>"</string>
     <string name="activity_title_settings" msgid="5464130076132770781">"설정"</string>
     <string name="menu_settings" msgid="377929915873428211">"설정"</string>
     <string name="menu_help" msgid="1680178646764069976">"고객센터"</string>
@@ -292,8 +292,8 @@
     <string name="status_away" msgid="1838861100379804730">"자리 비움"</string>
     <string name="status_busy" msgid="9147992455450257136">"다른 용무 중"</string>
     <string name="local_invisible_directory" msgid="6046691709127661065">"기타"</string>
-    <string name="directory_search_label" msgid="1887759056597975053">"디렉터리"</string>
-    <string name="directory_search_label_work" msgid="8618292129829443176">"직장 디렉터리"</string>
+    <string name="directory_search_label" msgid="1887759056597975053">"디렉토리"</string>
+    <string name="directory_search_label_work" msgid="8618292129829443176">"직장 디렉토리"</string>
     <string name="local_search_label" msgid="2551177578246113614">"모든 연락처"</string>
     <string name="description_quick_contact_for" msgid="6737516415168327789">"<xliff:g id="NAME">%1$s</xliff:g>님의 빠른 주소록"</string>
     <string name="missing_name" msgid="8745511583852904385">"(이름 없음)"</string>

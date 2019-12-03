@@ -16,8 +16,8 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="applicationLabel" msgid="3906689777043645443">"കോണ്‍ടാക്റ്റുകള്‍"</string>
-    <string name="contactsList" msgid="8661624236494819731">"കോണ്‍‌ടാക്റ്റുകള്‍"</string>
+    <string name="applicationLabel" msgid="3906689777043645443">"വിലാസങ്ങൾ"</string>
+    <string name="contactsList" msgid="8661624236494819731">"വിലാസങ്ങൾ"</string>
     <string name="shortcut_add_contact" msgid="7476283631356909204">"കോൺടാക്റ്റ് ചേർക്കുക"</string>
     <string name="shortcutContact" msgid="749243779392912958">"കോൺടാക്റ്റ്"</string>
     <string name="shortcutDialContact" msgid="746622101599186779">"നേരിട്ടുള്ള ഡയൽ"</string>
@@ -269,7 +269,7 @@
     <string name="sms_fax_work" msgid="8028189067816907075">"ഔദ്യോഗിക ഫാക്‌സിലേക്ക് വാചകസന്ദേശമയയ്‌ക്കുക"</string>
     <string name="sms_fax_home" msgid="9204042076306809634">"വീട്ടിലെ ഫാക്‌സിലേക്ക് വാചകസന്ദേശമയയ്‌ക്കുക"</string>
     <string name="sms_pager" msgid="7730404569637015192">"പേജറിലേക്ക് വാചകസന്ദേശമയയ്‌ക്കുക"</string>
-    <string name="sms_other" msgid="806127844607642331">"ടെക്‌സ്റ്റ്"</string>
+    <string name="sms_other" msgid="806127844607642331">"വാചകസന്ദേശം"</string>
     <string name="sms_callback" msgid="5004824430094288752">"കോൾബാക്ക് ഫോണിലേക്ക് വാചകസന്ദേശമയയ്‌ക്കുക"</string>
     <string name="sms_car" msgid="7444227058437359641">"കാർ ഫോണിലേക്ക് വാചകസന്ദേശമയയ്‌ക്കുക"</string>
     <string name="sms_company_main" msgid="118970873419678087">"കമ്പനി പ്രധാന ഫോണിലേക്ക് വാചകസന്ദേശമയയ്‌ക്കുക"</string>

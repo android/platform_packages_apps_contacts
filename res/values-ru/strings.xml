@@ -62,7 +62,7 @@
     <string name="separatorJoinAggregateAll" msgid="7939932265026181043">"Все контакты"</string>
     <string name="contactsJoinedNamedMessage" msgid="1299418263439579455">"Контакт <xliff:g id="NAME">%s</xliff:g> связан"</string>
     <string name="contactsJoinedMessage" msgid="3343535986195643136">"Контакты связаны"</string>
-    <string name="contacts_deleted_one_named_toast" msgid="2252551736301363193">"<xliff:g id="NAME">%1$s</xliff:g>: контакт удален."</string>
+    <string name="contacts_deleted_one_named_toast" msgid="2252551736301363193">"Контакт <xliff:g id="NAME">%1$s</xliff:g> удален"</string>
     <string name="contacts_deleted_two_named_toast" msgid="3642082931473111791">"Контакты <xliff:g id="NAME_0">%1$s</xliff:g> и <xliff:g id="NAME_1">%2$s</xliff:g> удалены"</string>
     <string name="contacts_deleted_many_named_toast" msgid="7731565342428031249">"Контакты <xliff:g id="NAME_0">%1$s</xliff:g>, <xliff:g id="NAME_1">%2$s</xliff:g>, <xliff:g id="NAME_2">%3$s</xliff:g>… удалены"</string>
     <plurals name="contacts_deleted_toast" formatted="false" msgid="1477708624197262295">
@@ -109,8 +109,8 @@
     <string name="emptyGroup" msgid="5102411903247859575">"Нет контактов с таким ярлыком"</string>
     <string name="emptyAccount" msgid="6873962901497975964">"В этом аккаунте нет контактов"</string>
     <string name="emptyMainList" msgid="2772242747899664460">"Контактов нет"</string>
-    <string name="contactSavedNamedToast" msgid="895136068894549611">"<xliff:g id="DISPLAY_NAME">%s</xliff:g>: контакт сохранен."</string>
-    <string name="contactSavedToast" msgid="9171862279493213075">"Контакт сохранен."</string>
+    <string name="contactSavedNamedToast" msgid="895136068894549611">"<xliff:g id="DISPLAY_NAME">%s</xliff:g>: контакт сохранен"</string>
+    <string name="contactSavedToast" msgid="9171862279493213075">"Контакт сохранен"</string>
     <string name="contactUnlinkedToast" msgid="7122823195786012553">"Контакты разделены"</string>
     <string name="contactSavedErrorToast" msgid="4827033473908688031">"Не удалось сохранить изменения"</string>
     <string name="contactUnlinkErrorToast" msgid="2706297508166952431">"Не удалось разделить контакты"</string>
@@ -495,7 +495,7 @@
     <string name="description_delete_contact" msgid="53835657343783663">"Удалить"</string>
     <string name="description_no_name_header" msgid="8884991311595943271">"Многоточие"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"Этот ярлык неактивен"</string>
-    <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"Контакт удален."</string>
+    <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"Контакт удален"</string>
     <string name="sim_import_button_text" msgid="4270841592496619317">"Импортировать"</string>
     <string name="sim_import_title_none_selected" msgid="6910517331401970693">"Выбор контактов"</string>
     <string name="sim_import_empty_message" msgid="7743815244380189651">"На SIM-карте нет контактов"</string>

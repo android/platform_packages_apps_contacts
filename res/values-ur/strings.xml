@@ -79,7 +79,7 @@
     </plurals>
     <string name="title_from_google" msgid="4664084747121207202">"‏Google سے"</string>
     <string name="title_from_other_accounts" msgid="8307885412426754288">"<xliff:g id="ACCOUNT">%s</xliff:g> سے"</string>
-    <string name="menu_set_ring_tone" msgid="8728345772068064946">"رنگ ٹون سیٹ کریں"</string>
+    <string name="menu_set_ring_tone" msgid="8728345772068064946">"رنگ ٹون طے کریں"</string>
     <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"صوتی میل پر منتقل کریں"</string>
     <string name="menu_unredirect_calls_to_vm" msgid="8725542534701811737">"صوتی میل سے ہٹائیں"</string>
     <string name="readOnlyContactWarning" msgid="7514475664695089411">"یہ رابطہ صرف پڑھنے والا ہے۔ آپ اسے چھپا سکتے ہیں، لیکن اسے حذف نہیں کیا جا سکتا۔"</string>

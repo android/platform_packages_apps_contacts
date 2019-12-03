@@ -143,7 +143,7 @@
     <string name="dialog_new_group_account" msgid="3451312333591556651">"Zgjidh llogarinë"</string>
     <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"Krijo etiketë"</string>
     <string name="group_name_dialog_update_title" msgid="6328021162869677383">"Riemërto etiketën"</string>
-    <string name="group_name_dialog_hint" msgid="7624523157537700160">"Emri i etiketës"</string>
+    <string name="group_name_dialog_hint" msgid="7624523157537700160">"Etiketo emrin"</string>
     <string name="label_name_dialog_hint" msgid="1276051790427638142">"Emri i etiketës"</string>
     <string name="audio_chat" msgid="2535716629358298691">"Biseda me zë"</string>
     <string name="video_chat" msgid="1872255818640336072">"Biseda me video"</string>
@@ -181,7 +181,7 @@
     <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"Të injorohen ndryshimet?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"Hiq"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"Anulo"</string>
-    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"Të hiqen personalizimet?"</string>
+    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"Të injorohen personalizimet?"</string>
     <string name="enter_contact_name" msgid="4594274696120278368">"Kërko kontaktet"</string>
     <string name="title_edit_group" msgid="8602752287270586734">"Hiq kontaktet"</string>
     <string name="local_profile_title" msgid="2021416826991393684">"Profili im lokal"</string>
@@ -213,7 +213,7 @@
     <string name="header_event_entry" msgid="6738250422744401460">"Ngjarje"</string>
     <string name="header_relation_entry" msgid="1520292958088146460">"Lidhja"</string>
     <string name="header_name_entry" msgid="1592791008096288306">"Emri"</string>
-    <string name="header_email_entry" msgid="8666093061171624478">"Email"</string>
+    <string name="header_email_entry" msgid="8666093061171624478">"Mail-i"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"Telefoni"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"drejtime për te vendndodhja"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"Fusha të tjera"</string>
@@ -286,7 +286,7 @@
     <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Mesazh)"</string>
     <string name="description_video_call" msgid="7120921378651700947">"Bëj një telefonatë me video"</string>
     <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"Të pastrohen kontaktet e shpeshta?"</string>
-    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Do ta pastrosh listën e kontakteve të shpeshta në aplikacionet \"Kontaktet\" dhe \"Telefoni\" dhe do t\'i detyrosh aplikacionet e email-it të mësojnë preferencat e tua të adresimit nga e para."</string>
+    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Do ta pastrosh listën e kontakteve të shpeshta në aplikacionet \"Kontaktet\" dhe \"Telefoni\" dhe do t\'i detyrosh aplikacionet e mail-it të mësojnë preferencat e tua të adresimit nga e para."</string>
     <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"Po pastron kontaktet e shpeshta…"</string>
     <string name="status_available" msgid="5586870015822828392">"I gatshëm"</string>
     <string name="status_away" msgid="1838861100379804730">"I larguar"</string>
@@ -315,7 +315,7 @@
     <string name="name_phonetic_middle" msgid="8643721493320405200">"Emri i dytë fonetik"</string>
     <string name="name_phonetic_family" msgid="2640133663656011626">"Mbiemri fonetik"</string>
     <string name="phoneLabelsGroup" msgid="6468091477851199285">"Telefon"</string>
-    <string name="emailLabelsGroup" msgid="8389931313045344406">"Email"</string>
+    <string name="emailLabelsGroup" msgid="8389931313045344406">"Mail-i"</string>
     <string name="postalLabelsGroup" msgid="3487738141112589324">"Adresa"</string>
     <string name="imLabelsGroup" msgid="3898238486262614027">"Mesazh i çastit"</string>
     <string name="organizationLabelsGroup" msgid="2478611760751832035">"Organizata"</string>
@@ -333,9 +333,9 @@
     <string name="email_home" msgid="8573740658148184279">"Dërgoji mail shtëpisë"</string>
     <string name="email_mobile" msgid="2042889209787989814">"Dërgoji mail celularit"</string>
     <string name="email_work" msgid="2807430017302722689">"Dërgoji mail punës"</string>
-    <string name="email_other" msgid="3454004077967657109">"Dërgo email"</string>
+    <string name="email_other" msgid="3454004077967657109">"Mail-i"</string>
     <string name="email_custom" msgid="5536404237099078802">"Mail <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
-    <string name="email" msgid="5668400997660065897">"Email"</string>
+    <string name="email" msgid="5668400997660065897">"Mail-i"</string>
     <string name="postal_street" msgid="8133143961580058972">"Rruga"</string>
     <string name="postal_city" msgid="6597491300084895548">"Qyteti"</string>
     <string name="postal_region" msgid="6045263193478437672">"Shteti"</string>

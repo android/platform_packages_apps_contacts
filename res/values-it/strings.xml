@@ -80,7 +80,7 @@
     <string name="title_from_google" msgid="4664084747121207202">"Di Google"</string>
     <string name="title_from_other_accounts" msgid="8307885412426754288">"Da <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
     <string name="menu_set_ring_tone" msgid="8728345772068064946">"Imposta suoneria"</string>
-    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"Invia a segreteria"</string>
+    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"Indirizza a segreteria"</string>
     <string name="menu_unredirect_calls_to_vm" msgid="8725542534701811737">"Non indirizzare a segreteria"</string>
     <string name="readOnlyContactWarning" msgid="7514475664695089411">"Il contatto è di solo lettura. Non puoi eliminarlo, ma puoi nasconderlo."</string>
     <string name="readOnlyContactWarning_positive_button" msgid="8914797212167683673">"Nascondi contatto"</string>
@@ -103,7 +103,7 @@
     <string name="emptyGroup" msgid="5102411903247859575">"Nessun contatto con questa etichetta"</string>
     <string name="emptyAccount" msgid="6873962901497975964">"Nessun contatto in questo account"</string>
     <string name="emptyMainList" msgid="2772242747899664460">"L\'elenco dei contatti è vuoto"</string>
-    <string name="contactSavedNamedToast" msgid="895136068894549611">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> salvato"</string>
+    <string name="contactSavedNamedToast" msgid="895136068894549611">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> - salvato"</string>
     <string name="contactSavedToast" msgid="9171862279493213075">"Contatto salvato"</string>
     <string name="contactUnlinkedToast" msgid="7122823195786012553">"Contatti scollegati"</string>
     <string name="contactSavedErrorToast" msgid="4827033473908688031">"Impossibile salvare le modifiche al contatto"</string>

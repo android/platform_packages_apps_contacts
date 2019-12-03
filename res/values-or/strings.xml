@@ -133,12 +133,12 @@
     <string name="quickcontact_add_phone_number" msgid="731665835910658965">"ଫୋନ୍‌ ନମ୍ବର୍‌ ଯୋଡ଼ନ୍ତୁ"</string>
     <string name="quickcontact_add_email" msgid="739298028384348482">"ଇମେଲ୍ ଯୋଡ଼ନ୍ତୁ"</string>
     <string name="missing_app" msgid="1466111003546611387">"ଏହି କାର୍ଯ୍ୟକୁ ନିୟନ୍ତ୍ରଣ କରିବା ପାଇଁ କୌଣସି ଆପ୍‍ ମିଳିଲା ନାହିଁ"</string>
-    <string name="menu_share" msgid="943789700636542260">"ସେୟାର୍‍ କରନ୍ତୁ"</string>
+    <string name="menu_share" msgid="943789700636542260">"ଶେୟାର୍‍ କରନ୍ତୁ"</string>
     <string name="menu_add_contact" msgid="3198704337220892684">"ଯୋଗାଯୋଗରେ ଯୋଡ଼ନ୍ତୁ"</string>
     <string name="menu_add_contacts" msgid="4465646512002163011">"ଯୋଡ଼ନ୍ତୁ"</string>
     <plurals name="title_share_via" formatted="false" msgid="5886112726191455415">
-      <item quantity="other">ମାଧ୍ୟମରେ ଯୋଗାଯୋଗ ସେୟାର୍ କରନ୍ତୁ</item>
-      <item quantity="one">ମାଧ୍ୟମରେ ଯୋଗାଯୋଗ ସେୟାର୍ କରନ୍ତୁ</item>
+      <item quantity="other">ମାଧ୍ୟମରେ ଯୋଗାଯୋଗ ଶେୟାର୍ କରନ୍ତୁ</item>
+      <item quantity="one">ମାଧ୍ୟମରେ ଯୋଗାଯୋଗ ଶେୟାର୍ କରନ୍ତୁ</item>
     </plurals>
     <string name="dialog_new_group_account" msgid="3451312333591556651">"ଆକାଉଣ୍ଟ ଚୟନ କରନ୍ତୁ"</string>
     <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"ଲେବଲ୍ ତିଆରି କରନ୍ତୁ"</string>
@@ -215,7 +215,7 @@
     <string name="header_name_entry" msgid="1592791008096288306">"ନାମ"</string>
     <string name="header_email_entry" msgid="8666093061171624478">"ଇମେଲ୍"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"ଫୋନ୍"</string>
-    <string name="content_description_directions" msgid="2686791825798189335">"ଲୋକେସନ୍ ପାଇଁ ଦିଗନିର୍ଦ୍ଦେଶ"</string>
+    <string name="content_description_directions" msgid="2686791825798189335">"ଲୋକେଶନ୍ ପାଇଁ ଦିଗନିର୍ଦ୍ଦେଶ"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"ଅଧିକ କ୍ଷେତ୍ର"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"ଯୋଗାଯୋଗ ଫଟୋ ବଦଳାନ୍ତୁ"</string>
     <string name="editor_add_photo_content_description" msgid="4194479313465418120">"ଯୋଗାଯୋଗ ଫଟୋ ଯୋଡ଼ନ୍ତୁ"</string>
@@ -403,8 +403,8 @@
     <string name="fail_reason_not_supported" msgid="8219562769267148825">"ଫର୍ମାଟ୍‍ ସପୋର୍ଟ କରୁନାହିଁ।"</string>
     <string name="exporting_vcard_finished_title" msgid="4767045779458185251">"<xliff:g id="FILENAME">%s</xliff:g>ରଏକ୍ସପୋର୍ଟ ଶେଷ ହୋଇଛି।"</string>
     <string name="exporting_vcard_finished_title_fallback" msgid="6060472638008218274">"ଯୋଗାଯୋଗଗୁଡ଼ିକର ଏକ୍ସପୋର୍ଟ ଶେଷ ହୋଇଛି।"</string>
-    <string name="exporting_vcard_finished_toast" msgid="1739055986856453882">"ଯୋଗାଯୋଗ ଏକ୍ସପୋର୍ଟ ଶେଷ ହୋଇଛି, ଯୋଗାଯୋଗଗୁଡ଼ିକୁ ସେୟାର୍‍ କରିବାକୁ ବିଜ୍ଞପ୍ତି କ୍ଲିକ୍‍ କରନ୍ତୁ।"</string>
-    <string name="touch_to_share_contacts" msgid="4882485525268469736">"ଯୋଗାଯୋଗୁଡ଼ିକୁ ସେୟାର୍‍ କରିବା ପାଇଁ ଟାପ୍‍ କରନ୍ତୁ।"</string>
+    <string name="exporting_vcard_finished_toast" msgid="1739055986856453882">"ଯୋଗାଯୋଗ ଏକ୍ସପୋର୍ଟ ଶେଷ ହୋଇଛି, ଯୋଗାଯୋଗଗୁଡ଼ିକୁ ଶେୟାର୍‍ କରିବାକୁ ବିଜ୍ଞପ୍ତି କ୍ଲିକ୍‍ କରନ୍ତୁ।"</string>
+    <string name="touch_to_share_contacts" msgid="4882485525268469736">"ଯୋଗାଯୋଗୁଡ଼ିକୁ ଶେୟାର୍‍ କରିବା ପାଇଁ ଟାପ୍‍ କରନ୍ତୁ।"</string>
     <string name="exporting_vcard_canceled_title" msgid="2652222370493306887">"<xliff:g id="FILENAME">%s</xliff:g>ର ଏକ୍ସପୋର୍ଟକୁ କ୍ୟାନ୍ସଲ୍ କରାଯାଇଛି।"</string>
     <string name="exporting_contact_list_title" msgid="9072240631534457415">"ଯୋଗାଯୋଗ ଡାଟା ଏକ୍ସପୋର୍ଟ କରାଯାଉଛି"</string>
     <string name="exporting_contact_list_message" msgid="3367949209642931952">"ଯୋଗାଯୋଗ ଡାଟା ଏକ୍ସପୋର୍ଟ କରାଯାଉଛି।"</string>
@@ -443,13 +443,13 @@
     <string name="settings_my_info_title" msgid="1534272456405343119">"ମୋ ସୂଚନା"</string>
     <string name="set_up_profile" msgid="7370213843590143771">"ନିଜ ପ୍ରୋଫାଇଲ୍‍ ସେଟ୍‍ କରନ୍ତୁ"</string>
     <string name="setting_about" msgid="7014388749752042863">"ଯୋଗାଯୋଗ ବିଷୟରେ"</string>
-    <string name="share_favorite_contacts" msgid="4280926751003081042">"ପସନ୍ଦଦାର୍ ଯୋଗାଯୋଗ ସେୟାର୍‍ କରନ୍ତୁ"</string>
-    <string name="share_contacts" msgid="8109287987498711664">"ସମସ୍ତ ଯୋଗାଯୋଗ ସେୟାର୍‍ କରନ୍ତୁ"</string>
-    <string name="share_contacts_failure" msgid="1216431977330560559">"ଯୋଗଯୋଗ ସେୟାର୍‍ କରିହେଲା ନାହିଁ"</string>
+    <string name="share_favorite_contacts" msgid="4280926751003081042">"ପସନ୍ଦଦାର୍ ଯୋଗାଯୋଗ ଶେୟାର୍‍ କରନ୍ତୁ"</string>
+    <string name="share_contacts" msgid="8109287987498711664">"ସମସ୍ତ ଯୋଗାଯୋଗ ଶେୟାର୍‍ କରନ୍ତୁ"</string>
+    <string name="share_contacts_failure" msgid="1216431977330560559">"ଯୋଗଯୋଗ ଶେୟାର୍‍ କରିହେଲା ନାହିଁ"</string>
     <string name="dialog_export" msgid="1628001095187741417">"ଯୋଗାଯୋଗ ଏକ୍ସପୋର୍ଟ କରନ୍ତୁ"</string>
     <string name="dialog_import" msgid="2423592905927819672">"ଏଠାରୁ ଯୋଗାଯୋଗ ଇମ୍ପୋର୍ଟ କରନ୍ତୁ"</string>
-    <string name="share_error" msgid="948429331673358107">"ଏହି ଯୋଗାଯୋଗ ସେୟାର୍‍ କରିହେବ ନାହିଁ।"</string>
-    <string name="no_contact_to_share" msgid="1276397530378323033">"ସେୟାର୍‌ କରିବା ପାଇଁ କୌଣସି ଯୋଗାଯୋଗ ନାହାନ୍ତି"</string>
+    <string name="share_error" msgid="948429331673358107">"ଏହି ଯୋଗାଯୋଗ ଶେୟାର୍‍ କରିହେବ ନାହିଁ।"</string>
+    <string name="no_contact_to_share" msgid="1276397530378323033">"ଶେୟାର୍‌ କରିବା ପାଇଁ କୌଣସି ଯୋଗାଯୋଗ ନାହାନ୍ତି"</string>
     <string name="menu_contacts_filter" msgid="2165153460860262501">"ଡିସ୍‌ପ୍ଲେ ପାଇଁ ଯୋଗାଯୋଗ"</string>
     <string name="activity_title_contacts_filter" msgid="8275542497615516969">"ଡିସ୍‌ପ୍ଲେ କରିବା ପାଇଁ ଯୋଗାଯୋଗ"</string>
     <string name="custom_list_filter" msgid="9048525797111024204">"ଦୃଶ୍ୟ କୁ ଷ୍ଟମାଇଜ୍ କରନ୍ତୁ"</string>

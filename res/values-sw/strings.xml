@@ -269,7 +269,7 @@
     <string name="sms_fax_work" msgid="8028189067816907075">"Tuma maandishi kwa faksi ya kazini"</string>
     <string name="sms_fax_home" msgid="9204042076306809634">"Tuma ujumbe kwa pepesi ya nyumbani"</string>
     <string name="sms_pager" msgid="7730404569637015192">"Tuma ujumbe kwa peja"</string>
-    <string name="sms_other" msgid="806127844607642331">"SMS"</string>
+    <string name="sms_other" msgid="806127844607642331">"Matini"</string>
     <string name="sms_callback" msgid="5004824430094288752">"Piga simu tena kwa kutumia maandishi"</string>
     <string name="sms_car" msgid="7444227058437359641">"Tuma ujumbe kwa gari"</string>
     <string name="sms_company_main" msgid="118970873419678087">"Kampuni kuu ya maandishi"</string>
@@ -325,7 +325,7 @@
     <string name="postal_address" msgid="8765560217149624536">"Anwani"</string>
     <string name="ghostData_company" msgid="5414421120553765775">"Kampuni"</string>
     <string name="ghostData_title" msgid="7496735200318496110">"Jina la heshima"</string>
-    <string name="label_notes" msgid="8337354953278341042">"Kidokezo"</string>
+    <string name="label_notes" msgid="8337354953278341042">"Hati"</string>
     <string name="label_custom_field" msgid="1994056912242214426">"Maalum"</string>
     <string name="label_sip_address" msgid="7252153678613978127">"SIP"</string>
     <string name="websiteLabelsGroup" msgid="4202998982804009261">"Tovuti"</string>

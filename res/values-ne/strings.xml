@@ -239,7 +239,7 @@
     <string name="menu_title_filters" msgid="8210922220185114527">"खाताहरू"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"सुझावहरू"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"अाफ्ना सम्पर्कहरूलाई व्यवस्थित र उपयोगी बनाइराख्नुहोस्"</string>
-    <string name="undo" msgid="1425165101664071422">"अन्डू गर्नुहोस्"</string>
+    <string name="undo" msgid="1425165101664071422">"अनडू गर्नुहोस्"</string>
     <string name="call_custom" msgid="6385303130912713318">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g> मा कल गर्नुहोस्"</string>
     <string name="call_home" msgid="1990519474420545392">"घरमा कल गर्नुहोस्"</string>
     <string name="call_mobile" msgid="7502236805487609178">"मोबाइलमा कल गर्नुहोस्"</string>

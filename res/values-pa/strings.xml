@@ -154,7 +154,7 @@
     <string name="pick_photo" msgid="2129509985223564942">"ਫ਼ੋਟੋ ਚੁਣੋ"</string>
     <string name="pick_new_photo" msgid="9122450996263688237">"ਨਵੀਂ ਫ਼ੋਟੋ ਚੁਣੋ"</string>
     <string name="search_results_searching" msgid="3984833028938569930">"ਖੋਜ ਰਿਹਾ ਹੈ..."</string>
-    <string name="event_edit_field_hint_text" msgid="5794424930242630477">"ਤਾਰੀਖ"</string>
+    <string name="event_edit_field_hint_text" msgid="5794424930242630477">"ਮਿਤੀ"</string>
     <string name="group_edit_field_hint_text" msgid="8038224059926963133">"ਲੇਬਲ ਲਗਾਓ"</string>
     <string name="cancel_button_content_description" msgid="1288652456274531846">"ਰੱਦ ਕਰੋ"</string>
     <string name="back_arrow_content_description" msgid="4355362760545735065">"ਪਿੱਛੇ"</string>
@@ -181,7 +181,7 @@
     <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"ਕੀ ਤਬਦੀਲੀਆਂ ਖਾਰਜ ਕਰਨੀਆਂ ਹਨ?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"ਛੱਡੋ"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"ਰੱਦ ਕਰੋ"</string>
-    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"ਕੀ ਵਿਉਂਤਬੱਧਕਰਨ ਨੂੰ ਖਾਰਜ ਕਰਨਾ ਹੈ?"</string>
+    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"ਕੀ ਵਿਸ਼ੇਸ਼-ਵਿਉਂਤਬੱਧਾਂ ਨੂੰ ਖਾਰਜ ਕਰਨਾ ਹੈ?"</string>
     <string name="enter_contact_name" msgid="4594274696120278368">"ਸੰਪਰਕ ਖੋਜੋ"</string>
     <string name="title_edit_group" msgid="8602752287270586734">"ਸੰਪਰਕ ਹਟਾਓ"</string>
     <string name="local_profile_title" msgid="2021416826991393684">"ਮੇਰੀ ਸਥਾਨਕ ਪ੍ਰੋਫਾਈਲ"</string>
@@ -315,7 +315,7 @@
     <string name="name_phonetic_middle" msgid="8643721493320405200">"ਫੋਨੈਟਿਕ ਨਾਮ ਦਾ ਵਿਚਾਰਕਲਾ ਭਾਗ"</string>
     <string name="name_phonetic_family" msgid="2640133663656011626">"ਫੋਨੈਟਿਕ ਨਾਮ ਦਾ ਆਖਰੀ ਭਾਗ"</string>
     <string name="phoneLabelsGroup" msgid="6468091477851199285">"ਫ਼ੋਨ ਨੰਬਰ"</string>
-    <string name="emailLabelsGroup" msgid="8389931313045344406">"ਈਮੇਲ"</string>
+    <string name="emailLabelsGroup" msgid="8389931313045344406">"ਈਮੇਲ ਕਰੋ"</string>
     <string name="postalLabelsGroup" msgid="3487738141112589324">"ਪਤਾ"</string>
     <string name="imLabelsGroup" msgid="3898238486262614027">"IM"</string>
     <string name="organizationLabelsGroup" msgid="2478611760751832035">"ਸੰਗਠਨ"</string>
@@ -326,7 +326,7 @@
     <string name="ghostData_company" msgid="5414421120553765775">"ਕੰਪਨੀ"</string>
     <string name="ghostData_title" msgid="7496735200318496110">"ਸਿਰਲੇਖ"</string>
     <string name="label_notes" msgid="8337354953278341042">"ਨੋਟ-ਕਥਨ"</string>
-    <string name="label_custom_field" msgid="1994056912242214426">"ਵਿਉਂਤਬੱਧ"</string>
+    <string name="label_custom_field" msgid="1994056912242214426">"ਵਿਸ਼ੇਸ਼-ਵਿਉਂਤਬੱਧ"</string>
     <string name="label_sip_address" msgid="7252153678613978127">"SIP"</string>
     <string name="websiteLabelsGroup" msgid="4202998982804009261">"ਵੈੱਬਸਾਈਟ"</string>
     <string name="groupsLabel" msgid="7000816729542098972">"ਲੇਬਲ"</string>
@@ -429,13 +429,13 @@
     <string name="caching_vcard_title" msgid="1226272312940516605">"ਕੈਸ਼ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"</string>
     <string name="progress_notifier_message" msgid="2311011466908220528">"<xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g> ਆਯਾਤ ਹੋ ਰਿਹਾ ਹੈ: <xliff:g id="NAME">%3$s</xliff:g>"</string>
     <string name="export_to_vcf_file" msgid="4407527157056120858">".vcf ਫ਼ਾਈਲ ਵਿੱਚ ਨਿਰਯਾਤ ਕਰੋ"</string>
-    <string name="display_options_sort_list_by" msgid="7028809117272018712">"ਇਸ ਮੁਤਾਬਕ ਕ੍ਰਮ-ਬੱਧ ਕਰੋ"</string>
+    <string name="display_options_sort_list_by" msgid="7028809117272018712">"ਇਸ ਮੁਤਾਬਕ ਛਾਂਟੋ"</string>
     <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"ਧੁਨੀਆਤਮਿਕ ਨਾਮ"</string>
-    <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"ਹਮੇਸਾਂ ਦਿਖਾਓ"</string>
-    <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"ਖਾਲੀ ਹੋਣ \'ਤੇ ਲੁਕਾਓ"</string>
+    <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"ਹਮੇਸ਼ਾ  ਦਿਖਾਓ"</string>
+    <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"ਲੁਕਾਓ ਜੇਕਰ ਖਾਲੀ ਹੈ"</string>
     <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"ਨਾਮ ਦਾ ਪਹਿਲਾ ਭਾਗ"</string>
     <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"ਨਾਮ ਦਾ ਆਖਰੀ ਭਾਗ"</string>
-    <string name="display_options_view_names_as" msgid="6514632499276563482">"ਨਾਮ ਦਾ ਫਾਰਮੈਟ"</string>
+    <string name="display_options_view_names_as" msgid="6514632499276563482">"ਨਾਮ ਦੀ ਵੰਨਗੀ"</string>
     <string name="display_options_view_given_name_first" msgid="3616004640258761473">"ਨਾਮ ਦਾ ਪਹਿਲਾ ਭਾਗ ਪਹਿਲਾਂ"</string>
     <string name="display_options_view_family_name_first" msgid="956445100777296467">"ਨਾਮ ਦਾ ਆਖਰੀ ਭਾਗ ਪਹਿਲਾਂ"</string>
     <string name="settings_accounts" msgid="350219740670774576">"ਖਾਤੇ"</string>
@@ -452,13 +452,13 @@
     <string name="no_contact_to_share" msgid="1276397530378323033">"ਸਾਂਝਾ ਕਰਨ ਲਈ ਕੋਈ ਸੰਪਰਕ ਨਹੀਂ ਹਨ।"</string>
     <string name="menu_contacts_filter" msgid="2165153460860262501">"ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਲਈ ਸੰਪਰਕ"</string>
     <string name="activity_title_contacts_filter" msgid="8275542497615516969">"ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਨ ਲਈ ਸੰਪਰਕ"</string>
-    <string name="custom_list_filter" msgid="9048525797111024204">"ਦ੍ਰਿਸ਼ ਨੂੰ ਵਿਉਂਤਬੱਧ ਕਰੋ"</string>
+    <string name="custom_list_filter" msgid="9048525797111024204">"ਦ੍ਰਿਸ਼ ਨੂੰ ਵਿਸ਼ੇਸ਼-ਵਿਉਂਤਬੱਧ ਕਰੋ"</string>
     <string name="menu_custom_filter_save" msgid="2679793632208086460">"ਰੱਖਿਅਤ ਕਰੋ"</string>
     <string name="hint_findContacts" msgid="7128627979899070325">"ਸੰਪਰਕ ਖੋਜੋ"</string>
     <string name="contactsFavoritesLabel" msgid="8417039765586853670">"ਮਨਪਸੰਦ"</string>
     <string name="menu_import" msgid="6107961135813836467">"ਆਯਾਤ ਕਰੋ"</string>
     <string name="menu_export" msgid="2658783911863503902">"ਨਿਰਯਾਤ ਕਰੋ"</string>
-    <string name="menu_blocked_numbers" msgid="5272951629083025995">"ਬਲਾਕ ਕੀਤੇ ਨੰਬਰ"</string>
+    <string name="menu_blocked_numbers" msgid="5272951629083025995">"ਬਲੌਕ ਕੀਤੇ ਨੰਬਰ"</string>
     <string name="contact_status_update_attribution" msgid="752179367353018597">"<xliff:g id="SOURCE">%1$s</xliff:g> ਦੇ ਰਾਹੀਂ"</string>
     <string name="contact_status_update_attribution_with_date" msgid="7358045508107825068">"<xliff:g id="SOURCE">%2$s</xliff:g> ਦੇ ਰਾਹੀਂ <xliff:g id="DATE">%1$s</xliff:g>"</string>
     <string name="action_menu_back_from_search" msgid="8793348588949233348">"ਖੋਜ ਕਰਨਾ ਬੰਦ ਕਰੋ"</string>

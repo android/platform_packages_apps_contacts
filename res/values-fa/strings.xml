@@ -471,11 +471,11 @@
     <string name="call_subject_limit" msgid="4545212901205397669">"<xliff:g id="COUNT">%1$s</xliff:g> / ‏<xliff:g id="LIMIT">%2$s</xliff:g>"</string>
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="1765533099416999801">"نسخه ساخت"</string>
-    <string name="about_open_source_licenses" msgid="6479990452352919641">"مجوزهای متن‌باز"</string>
+    <string name="about_open_source_licenses" msgid="6479990452352919641">"مجوزهای منبع آزاد"</string>
     <string name="about_open_source_licenses_summary" msgid="57418386931763994">"جزئیات مجوز برای نرم‌افزار منبع آزاد"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"خط‌مشی رازداری"</string>
     <string name="about_terms_of_service" msgid="4642400812150296723">"شرایط و ضوابط"</string>
-    <string name="activity_title_licenses" msgid="5467767062737708066">"مجوزهای متن‌باز"</string>
+    <string name="activity_title_licenses" msgid="5467767062737708066">"مجوزهای منبع آزاد"</string>
     <string name="url_open_error_toast" msgid="452592089815420457">"نشانی وب باز نشد."</string>
     <string name="account_filter_view_checked" msgid="6696859503887762213">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> علامت‌گذاری شد"</string>
     <string name="account_filter_view_not_checked" msgid="2248684521205038389">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> بدون علامت"</string>
@@ -499,7 +499,7 @@
     <string name="dismiss_sync_alert" msgid="8941131776605093596">"نپذیرفتن"</string>
     <string name="account_sync_off" msgid="7646143254066243924">"همگام‌سازی خودکار غیرفعال است. برای فعال کردن ضربه بزنید."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"همگام‌سازی خودکار را فعال می‌کنید؟"</string>
-    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"‏تغییراتی که در همه برنامه‌ها و حساب‌ها، نه فقط در «مخاطبین Google»، ایجاد می‌کنید، بین وب و دستگاه‌هایتان به‌روز نگه داشته می‌شوند."</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"‏تغییراتی که در همه برنامه‌ها و حساب‌ها، نه فقط در Google Contacts، ایجاد می‌کنید، بین وب و دستگاه‌هایتان به‌روز نگه داشته می‌شوند."</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"فعال کردن"</string>
     <string name="connection_error_message" msgid="7046408921529247089">"اتصال برقرار نیست"</string>
     <string name="single_sim_display_label" msgid="6985770499439371497">"سیم کارت"</string>

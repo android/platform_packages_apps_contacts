@@ -331,7 +331,7 @@
     <string name="eventLabelsGroup" msgid="7960408705307831289">"Špeciálny dátum"</string>
     <string name="sms" msgid="1756857139634224222">"Textová správa"</string>
     <string name="postal_address" msgid="8765560217149624536">"Adresa"</string>
-    <string name="ghostData_company" msgid="5414421120553765775">"Firma"</string>
+    <string name="ghostData_company" msgid="5414421120553765775">"Spoločnosť"</string>
     <string name="ghostData_title" msgid="7496735200318496110">"Titul"</string>
     <string name="label_notes" msgid="8337354953278341042">"Poznámky"</string>
     <string name="label_custom_field" msgid="1994056912242214426">"Vlastný"</string>

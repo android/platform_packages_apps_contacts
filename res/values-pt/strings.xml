@@ -435,7 +435,7 @@
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"Ocultar se vazio"</string>
     <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"Nome"</string>
     <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"Sobrenome"</string>
-    <string name="display_options_view_names_as" msgid="6514632499276563482">"Formato do nome"</string>
+    <string name="display_options_view_names_as" msgid="6514632499276563482">"Formato de nome"</string>
     <string name="display_options_view_given_name_first" msgid="3616004640258761473">"Primeiro o nome"</string>
     <string name="display_options_view_family_name_first" msgid="956445100777296467">"Primeiro o sobrenome"</string>
     <string name="settings_accounts" msgid="350219740670774576">"Contas"</string>

@@ -17,7 +17,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="applicationLabel" msgid="3906689777043645443">"ລາຍຊື່ຜູ້ຕິດຕໍ່"</string>
-    <string name="contactsList" msgid="8661624236494819731">"ລາຍຊື່ຜູ້ຕິດຕໍ່"</string>
+    <string name="contactsList" msgid="8661624236494819731">"ລາຍຊື່ຜູ່ຕິດຕໍ່"</string>
     <string name="shortcut_add_contact" msgid="7476283631356909204">"ເພີ່ມລາຍຊື່ຜູ້ຕິດຕໍ່"</string>
     <string name="shortcutContact" msgid="749243779392912958">"ລາຍຊື່ຜູ່ຕິດຕໍ່"</string>
     <string name="shortcutDialContact" msgid="746622101599186779">"ໂທຫາໂດຍກົງ"</string>
@@ -85,12 +85,12 @@
     <string name="readOnlyContactWarning" msgid="7514475664695089411">"This contact is read-only. It can\'t be deleted, but you can hide it."</string>
     <string name="readOnlyContactWarning_positive_button" msgid="8914797212167683673">"ເຊື່ອງລາຍຊື່ຜູ່ຕິດຕໍ່"</string>
     <string name="readOnlyContactDeleteConfirmation" msgid="4717023505914239809">"Read-only accounts in this contact will be hidden, not deleted."</string>
-    <string name="single_delete_confirmation" msgid="3106905986948679720">"ລຶບລາຍ​ຊື່​ຜູ້ຕິດ​ຕໍ່​ນີ້ບໍ?"</string>
+    <string name="single_delete_confirmation" msgid="3106905986948679720">"ລຶບລາຍ​ຊື່​ຕິດ​ຕໍ່​ນີ້ບໍ?"</string>
     <string name="batch_delete_confirmation" msgid="3984346060324014108">"ລຶບ​ລາຍ​ຊື່​ຕິດ​ຕໍ່​ທີ່​ເລືອກ​ໄວ້?"</string>
     <string name="batch_delete_read_only_contact_confirmation" msgid="8411117621035639964">"ລາຍ​ຊື່​ຕິດ​ຕໍ່​ຈາກ​ບັນ​ຊີ​ອ່ານ​ເທົ່າ​ນັ້ນ​ບໍ່​ສາ​ມາດ​ລຶບ​ໄດ້, ແຕ່​ພວກ​ມັນ​ຖືກ​ເຊື່ອງ​ໄດ້."</string>
     <string name="batch_delete_multiple_accounts_confirmation" msgid="8207205649127030030">"ລາຍຊື່ຕິດ​ຕໍ່ທີ່​ຈະ​ຖືກ​ລຶບ​ມີ​ລາຍ​ລ​ະ​ອຽດຈາກຫຼາຍບັນຊີ. ລາຍ​ລະ​ອຽດຈາກບັນຊີອ່ານເທົ່ານັ້ນ ຈະຖືກເຊື່ອງໄວ້, ບໍ່ຖືກລຶບອອກ."</string>
     <string name="multipleContactDeleteConfirmation" msgid="5235324124905653550">"ການລຶບລາຍຊື່ຕິດຕໍ່ນີ້ຈະລຶບຂໍ້ມູນຈາກຫຼາຍບັນຊີ."</string>
-    <string name="deleteConfirmation" msgid="3512271779086656043">"ລຶບລາຍ​ຊື່ຜູ້​ຕິດ​ຕໍ່​ນີ້ບໍ?"</string>
+    <string name="deleteConfirmation" msgid="3512271779086656043">"ລຶບລາຍ​ຊື່​ຕິດ​ຕໍ່​ນີ້ບໍ?"</string>
     <string name="deleteConfirmation_positive_button" msgid="7857888845028586365">"​ລຶບ"</string>
     <string name="invalidContactMessage" msgid="8215051456181842274">"ບໍ່ມີລາຍຊື່ຜູ້ຕິດຕໍ່."</string>
     <string name="createContactShortcutSuccessful_NoName" msgid="8831303345367275472">"ເພີ່ມລາຍຊື່ຕິດຕໍ່ໃສ່ໜ້າຈໍຫຼັກແລ້ວ."</string>
@@ -190,7 +190,7 @@
     <string name="contact_editor_prompt_one_account" msgid="3087691056345099310">"ລາຍ​ຊື່​ຕິດ​ຕໍ່​ໃໝ່​ຈະ​ຖືກ​ບັນ​ທຶກ​ໃສ່ <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>."</string>
     <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"ເລືອກ​ບັນ​ຊີ​ເລີ່ມຕົ້ນ​ສຳ​ລັບ​ລາຍ​ຊື່​ຕິດ​ຕໍ່​ໃໝ່:"</string>
     <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"ສ້າງລາຍຊື່ຜູ້ຕິດຕໍ່ໃໝ່"</string>
-    <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"ແກ້ໄຂລາຍຊື່ຜູ້ຕິດຕໍ່"</string>
+    <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"ແກ້ໄຂລາຍຊື່ຜູ່ຕິດຕໍ່"</string>
     <string name="contact_editor_title_read_only_contact" msgid="2443496574528842237">"ເບິ່ງຢ່າງດຽວ"</string>
     <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4186699385645902152">"ເລືອກລາຍຊື່ຜູ້ຕິດຕໍ່ເພື່ອແກ້ໄຂ"</string>
     <string name="contact_editor_pick_linked_contact_dialog_title" msgid="4618465940423857694">"ລາຍຊື່ຕິດຕໍ່ທີ່ລິ້ງແລ້ວ"</string>
@@ -314,7 +314,7 @@
     <string name="name_phonetic_given" msgid="8723179018384187631">"ການອອກສຽງຊື່"</string>
     <string name="name_phonetic_middle" msgid="8643721493320405200">"ການອອກສຽງຊື່ກາງ"</string>
     <string name="name_phonetic_family" msgid="2640133663656011626">"ການອອກສຽງນາມສະກຸນ"</string>
-    <string name="phoneLabelsGroup" msgid="6468091477851199285">"ໂທລະສັບ"</string>
+    <string name="phoneLabelsGroup" msgid="6468091477851199285">"Phone"</string>
     <string name="emailLabelsGroup" msgid="8389931313045344406">"ອີເມວ"</string>
     <string name="postalLabelsGroup" msgid="3487738141112589324">"ທີ່ຢູ່"</string>
     <string name="imLabelsGroup" msgid="3898238486262614027">"IM"</string>
@@ -367,7 +367,7 @@
     <string name="list_filter_all_starred" msgid="5031734941601931356">"ຕິດດາວແລ້ວ"</string>
     <string name="list_filter_customize" msgid="4789963356004169321">"ປັບແຕ່ງ"</string>
     <string name="list_filter_single" msgid="5871400283515893087">"ລາຍຊື່ຜູ່ຕິດຕໍ່"</string>
-    <string name="display_ungrouped" msgid="6885954210243119591">"ລາຍຊື່ຜູ້ຕິດຕໍ່ອື່ນໆທັງໝົດ"</string>
+    <string name="display_ungrouped" msgid="6885954210243119591">"ລາຍຊື່ຜູ່ຕິດຕໍ່ອື່ນໆທັງໝົດ"</string>
     <string name="display_all_contacts" msgid="2031647544742889505">"ລາຍຊື່ຜູ້ຕິດຕໍ່ທັງໝົດ"</string>
     <string name="menu_sync_remove" msgid="3266725887008450161">"ລຶບກຸ່ມຊິ້ງຂໍ້ມູນ"</string>
     <string name="dialog_sync_add" msgid="8267045393119375803">"ເພີ່ມກຸ່ມຊິ້ງຂໍ້ມູນ"</string>
@@ -432,14 +432,14 @@
     <string name="display_options_sort_list_by" msgid="7028809117272018712">"ຮຽງລຳດັບຕາມ"</string>
     <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"ການອ່ານອອກສຽງຊື່"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"ສະແດງທຸກເທື່ອ"</string>
-    <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"ເຊື່ອງ​ໄວ້​ຖ້າ​ບໍ່​ມີ"</string>
+    <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"Hide if empty"</string>
     <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"ຊື່"</string>
     <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"ນາມສະກຸນ"</string>
     <string name="display_options_view_names_as" msgid="6514632499276563482">"ຮູບແບບຊື່"</string>
     <string name="display_options_view_given_name_first" msgid="3616004640258761473">"ຊື່ກ່ອນ"</string>
     <string name="display_options_view_family_name_first" msgid="956445100777296467">"ນາມສະກຸນກ່ອນ"</string>
     <string name="settings_accounts" msgid="350219740670774576">"ບັນຊີ"</string>
-    <string name="default_editor_account" msgid="699591683362420991">"ບັນຊີເລີ່ມຕົ້ນສຳລັບລາຍຊື່ຜູ້ຕິດຕໍ່ໃໝ່"</string>
+    <string name="default_editor_account" msgid="699591683362420991">"ບັນຊີເລີ່ມຕົ້ນສຳລັບລາຍຊື່ຕິດຕໍ່ໃໝ່"</string>
     <string name="settings_my_info_title" msgid="1534272456405343119">"ຂໍ້ມູນຂອງຂ້ອຍ"</string>
     <string name="set_up_profile" msgid="7370213843590143771">"ຕັ້ງຄ່າໂປຣໄຟລ໌ຂອງທ່ານ"</string>
     <string name="setting_about" msgid="7014388749752042863">"ກ່ຽວກັບລາຍຊື່ຜູ້ຕິດຕໍ່"</string>
@@ -451,7 +451,7 @@
     <string name="share_error" msgid="948429331673358107">"ບໍ່ສາມາດແບ່ງປັນລາຍຊື່ຜູ່ຕິດຕໍ່ນີ້ໄດ້"</string>
     <string name="no_contact_to_share" msgid="1276397530378323033">"ບໍ່ມີລາຍຊື່ຜູ້ຕິດຕໍ່ທີ່ຈະແບ່ງປັນ."</string>
     <string name="menu_contacts_filter" msgid="2165153460860262501">"ລາຍຊື່ຜູ້ຕິດຕໍ່ເພື່ອສະແດງ"</string>
-    <string name="activity_title_contacts_filter" msgid="8275542497615516969">"ລາຍຊື່ຜູ້ຕິດຕໍ່ທີ່ຈະສະແດງ"</string>
+    <string name="activity_title_contacts_filter" msgid="8275542497615516969">"ລາຍຊື່ຜູ່ຕິດຕໍ່ທີ່ຈະສະແດງ"</string>
     <string name="custom_list_filter" msgid="9048525797111024204">"ປັບແຕ່ງມຸມມອງ"</string>
     <string name="menu_custom_filter_save" msgid="2679793632208086460">"ບັນທຶກ"</string>
     <string name="hint_findContacts" msgid="7128627979899070325">"ຊອກຫາລາຍຊື່ຜູ້ຕິດຕໍ່"</string>
