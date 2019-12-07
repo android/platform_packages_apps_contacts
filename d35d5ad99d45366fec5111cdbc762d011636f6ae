@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2fbc9ba0_7b827cc6",
+        "filename": "Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1453040
+      },
+      "writtenOn": "2019-12-07T21:42:22Z",
+      "side": 1,
+      "message": "The only thing I am wondering is the phone common lib is included. Does it also automatically include the resources? In the makefile version, I see the following: \"res_dirs :\u003d res $(phone_common_dir)/res\"",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 11
+      },
+      "revId": "d35d5ad99d45366fec5111cdbc762d011636f6ae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
