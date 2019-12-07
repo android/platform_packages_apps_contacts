@@ -22,6 +22,30 @@
       "revId": "d35d5ad99d45366fec5111cdbc762d011636f6ae",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8c9add3_78f8e1fe",
+        "filename": "Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2019-12-07T22:07:57Z",
+      "side": 1,
+      "message": "Yes, the defaults for resource_dirs is [\"res\"], so both this module and the phone common lib will pick up the appropriate resources.",
+      "parentUuid": "2fbc9ba0_7b827cc6",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 11
+      },
+      "revId": "d35d5ad99d45366fec5111cdbc762d011636f6ae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
