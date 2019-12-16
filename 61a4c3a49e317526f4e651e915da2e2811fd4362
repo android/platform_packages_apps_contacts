@@ -22,6 +22,30 @@
       "revId": "61a4c3a49e317526f4e651e915da2e2811fd4362",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6114da25_d87c96c8",
+        "filename": "tests/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2019-12-16T20:11:53Z",
+      "side": 0,
+      "message": "Yes, these were needed for aapt1 but are not needed for aapt2.",
+      "parentUuid": "d320c303_8dd5381d",
+      "range": {
+        "startLine": 34,
+        "startChar": 24,
+        "endLine": 34,
+        "endChar": 25
+      },
+      "revId": "61a4c3a49e317526f4e651e915da2e2811fd4362",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
