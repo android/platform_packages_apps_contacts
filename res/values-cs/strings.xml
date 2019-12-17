@@ -466,7 +466,7 @@
     <string name="activity_title_contacts_filter" msgid="8275542497615516969">"Zobrazit kontakty"</string>
     <string name="custom_list_filter" msgid="9048525797111024204">"Přizpůsobit zobrazení"</string>
     <string name="menu_custom_filter_save" msgid="2679793632208086460">"Uložit"</string>
-    <string name="hint_findContacts" msgid="7128627979899070325">"Prohledat kontakty"</string>
+    <string name="hint_findContacts" msgid="7128627979899070325">"Vyhledejte kontakty"</string>
     <string name="contactsFavoritesLabel" msgid="8417039765586853670">"Oblíbené"</string>
     <string name="menu_import" msgid="6107961135813836467">"Importovat"</string>
     <string name="menu_export" msgid="2658783911863503902">"Exportovat"</string>

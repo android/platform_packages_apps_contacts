@@ -310,9 +310,9 @@
     <string name="name_prefix" msgid="59756378548779822">"Нэрийн урьдитгал"</string>
     <string name="name_middle" msgid="8467433655992690326">"Дундах нэр"</string>
     <string name="name_suffix" msgid="3855278445375651441">"Нэрийн дагавар"</string>
-    <string name="name_phonetic" msgid="4259595234312430484">"Галигласан нэр"</string>
+    <string name="name_phonetic" msgid="4259595234312430484">"Авианы нэр"</string>
     <string name="name_phonetic_given" msgid="8723179018384187631">"Өөрийн нэрийн дуудлага"</string>
-    <string name="name_phonetic_middle" msgid="8643721493320405200">"Дунд нэр (галиг)"</string>
+    <string name="name_phonetic_middle" msgid="8643721493320405200">"Дундах авианы нэр"</string>
     <string name="name_phonetic_family" msgid="2640133663656011626">"Овгийн дуудлага"</string>
     <string name="phoneLabelsGroup" msgid="6468091477851199285">"Утас"</string>
     <string name="emailLabelsGroup" msgid="8389931313045344406">"Имэйл"</string>

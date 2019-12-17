@@ -79,7 +79,7 @@
     </plurals>
     <string name="title_from_google" msgid="4664084747121207202">"Van Google"</string>
     <string name="title_from_other_accounts" msgid="8307885412426754288">"Van <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
-    <string name="menu_set_ring_tone" msgid="8728345772068064946">"Ringtone instellen"</string>
+    <string name="menu_set_ring_tone" msgid="8728345772068064946">"Beltoon instellen"</string>
     <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"Doorsturen naar voicemail"</string>
     <string name="menu_unredirect_calls_to_vm" msgid="8725542534701811737">"Niet doorsturen naar voicemail"</string>
     <string name="readOnlyContactWarning" msgid="7514475664695089411">"Dit contact is alleen-lezen. Het kan niet worden verwijderd, maar je kunt het wel verbergen."</string>

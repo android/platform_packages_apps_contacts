@@ -24,7 +24,7 @@
     <string name="shortcutMessageContact" msgid="2460337253595976198">"Директна порака"</string>
     <string name="shortcutActivityTitle" msgid="1504383567778497348">"Избирање контакт"</string>
     <string name="contactInsertOrEditActivityTitle" msgid="6527505405325862674">"Додајте на контакт"</string>
-    <string name="contactPickerActivityTitle" msgid="4301062192337417640">"Изберете контакт"</string>
+    <string name="contactPickerActivityTitle" msgid="4301062192337417640">"Одбери контакт"</string>
     <string name="groupMemberPickerActivityTitle" msgid="1431750793695262522">"Изберете"</string>
     <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"Создај нов контакт"</string>
     <string name="searchHint" msgid="8482945356247760701">"Пребарај контакти"</string>
@@ -308,7 +308,7 @@
     <string name="name_given" msgid="4280790853455320619">"Име"</string>
     <string name="name_family" msgid="7466985689626017037">"Презиме"</string>
     <string name="name_prefix" msgid="59756378548779822">"Претставка на име"</string>
-    <string name="name_middle" msgid="8467433655992690326">"Средно име"</string>
+    <string name="name_middle" msgid="8467433655992690326">"Татково име"</string>
     <string name="name_suffix" msgid="3855278445375651441">"Наставка на име"</string>
     <string name="name_phonetic" msgid="4259595234312430484">"Фонетско име"</string>
     <string name="name_phonetic_given" msgid="8723179018384187631">"Фонетско име"</string>
@@ -429,7 +429,7 @@
     <string name="caching_vcard_title" msgid="1226272312940516605">"Кеширање"</string>
     <string name="progress_notifier_message" msgid="2311011466908220528">"Се врши увоз на <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g>: <xliff:g id="NAME">%3$s</xliff:g>"</string>
     <string name="export_to_vcf_file" msgid="4407527157056120858">"Извези во датотеката .vcf"</string>
-    <string name="display_options_sort_list_by" msgid="7028809117272018712">"Подреди по"</string>
+    <string name="display_options_sort_list_by" msgid="7028809117272018712">"Подредете по"</string>
     <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"Фонетско име"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"Секогаш прикажувај"</string>
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"Сокриј ако е празно"</string>

@@ -339,12 +339,12 @@
     <string name="eventLabelsGroup" msgid="7960408705307831289">"تاريخ مميز"</string>
     <string name="sms" msgid="1756857139634224222">"رسالة نصية"</string>
     <string name="postal_address" msgid="8765560217149624536">"العنوان"</string>
-    <string name="ghostData_company" msgid="5414421120553765775">"الشركة"</string>
+    <string name="ghostData_company" msgid="5414421120553765775">"شركة"</string>
     <string name="ghostData_title" msgid="7496735200318496110">"المسمى الوظيفي"</string>
     <string name="label_notes" msgid="8337354953278341042">"ملاحظات"</string>
     <string name="label_custom_field" msgid="1994056912242214426">"مخصص"</string>
     <string name="label_sip_address" msgid="7252153678613978127">"SIP"</string>
-    <string name="websiteLabelsGroup" msgid="4202998982804009261">"موقع الويب"</string>
+    <string name="websiteLabelsGroup" msgid="4202998982804009261">"موقع ويب"</string>
     <string name="groupsLabel" msgid="7000816729542098972">"التصنيفات"</string>
     <string name="email_home" msgid="8573740658148184279">"البريد الإلكتروني للمنزل"</string>
     <string name="email_mobile" msgid="2042889209787989814">"إرسال رسالة إلكترونية إلى عنوان بريد إلكتروني على الجوال"</string>

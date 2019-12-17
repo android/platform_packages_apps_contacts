@@ -95,7 +95,7 @@
     <string name="invalidContactMessage" msgid="8215051456181842274">"連絡先が存在しません。"</string>
     <string name="createContactShortcutSuccessful_NoName" msgid="8831303345367275472">"連絡先をホーム画面に追加しました。"</string>
     <string name="createContactShortcutSuccessful" msgid="953651153238790069">"<xliff:g id="NAME">%s</xliff:g>をホーム画面に追加しました。"</string>
-    <string name="photoPickerNotFoundText" msgid="2052542573853433204">"使用できる写真がデバイス上にありません。"</string>
+    <string name="photoPickerNotFoundText" msgid="2052542573853433204">"使用できる写真が端末上にありません。"</string>
     <string name="attach_photo_dialog_title" msgid="5599827035558557169">"連絡先の写真"</string>
     <string name="customLabelPickerTitle" msgid="1081475101983255212">"カスタムラベル名"</string>
     <string name="removePhoto" msgid="4898105274130284565">"写真を削除"</string>
@@ -301,7 +301,7 @@
     <string name="list_filter_phones" msgid="735313795643493365">"電話番号のあるすべての連絡先"</string>
     <string name="list_filter_phones_work" msgid="1470173699551475015">"仕事用プロファイルの連絡先"</string>
     <string name="view_updates_from_group" msgid="1782685984905600034">"更新情報を表示"</string>
-    <string name="account_phone" msgid="7128032778471187553">"デバイス"</string>
+    <string name="account_phone" msgid="7128032778471187553">"端末"</string>
     <string name="account_sim" msgid="6519016427905087952">"SIM"</string>
     <string name="nameLabelsGroup" msgid="2034640839640477827">"名前"</string>
     <string name="nicknameLabelsGroup" msgid="2891682101053358010">"ニックネーム"</string>
@@ -499,7 +499,7 @@
     <string name="dismiss_sync_alert" msgid="8941131776605093596">"閉じる"</string>
     <string name="account_sync_off" msgid="7646143254066243924">"アカウントの同期が OFF になっています。タップすると ON になります。"</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"自動同期を ON にしますか？"</string>
-    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"Google コンタクトだけでなく、あらゆるアプリとアカウントに変更を加えるたびに、ウェブとご利用のデバイス間で同期されるようになります。"</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"Google コンタクトだけでなく、あらゆるアプリとアカウントに変更を加えるたびに、ウェブとご利用の端末間で同期されるようになります。"</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"ON にする"</string>
     <string name="connection_error_message" msgid="7046408921529247089">"ネットワークに接続されていません"</string>
     <string name="single_sim_display_label" msgid="6985770499439371497">"SIM"</string>

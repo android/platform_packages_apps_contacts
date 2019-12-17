@@ -324,7 +324,7 @@
     <string name="sms" msgid="1756857139634224222">"Kısa mesaj"</string>
     <string name="postal_address" msgid="8765560217149624536">"Adres"</string>
     <string name="ghostData_company" msgid="5414421120553765775">"Şirket"</string>
-    <string name="ghostData_title" msgid="7496735200318496110">"Unvan"</string>
+    <string name="ghostData_title" msgid="7496735200318496110">"Başlık"</string>
     <string name="label_notes" msgid="8337354953278341042">"Notlar"</string>
     <string name="label_custom_field" msgid="1994056912242214426">"Özel"</string>
     <string name="label_sip_address" msgid="7252153678613978127">"SIP"</string>

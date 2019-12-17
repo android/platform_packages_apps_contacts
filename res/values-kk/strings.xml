@@ -190,7 +190,7 @@
     <string name="contact_editor_prompt_one_account" msgid="3087691056345099310">"Жаңа контактілер <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g> есептік жазбасында сақталады."</string>
     <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"Жаңа контактілерге арналған әдепкі есептік жазбаны таңдаңыз:"</string>
     <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"Жаңа контакт қосу"</string>
-    <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"Контактіні өзгерту"</string>
+    <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"Контактіні өңдеу"</string>
     <string name="contact_editor_title_read_only_contact" msgid="2443496574528842237">"Көру мүмкіндігі ғана бар"</string>
     <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4186699385645902152">"Өзгертілетін контактіні таңдаңыз"</string>
     <string name="contact_editor_pick_linked_contact_dialog_title" msgid="4618465940423857694">"Байланысты контактілер"</string>
@@ -471,11 +471,11 @@
     <string name="call_subject_limit" msgid="4545212901205397669">"<xliff:g id="COUNT">%1$s</xliff:g> / <xliff:g id="LIMIT">%2$s</xliff:g>"</string>
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="1765533099416999801">"Жинақ нұсқасы"</string>
-    <string name="about_open_source_licenses" msgid="6479990452352919641">"Ашық кодты бағдарлама лицензиялары"</string>
+    <string name="about_open_source_licenses" msgid="6479990452352919641">"Ашық бастапқы код лицензиялары"</string>
     <string name="about_open_source_licenses_summary" msgid="57418386931763994">"Ашық бастапқы код бағдарламасына арналған лицензия туралы мәліметтер"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"Құпиялылық саясаты"</string>
     <string name="about_terms_of_service" msgid="4642400812150296723">"Қызмет көрсету шарттары"</string>
-    <string name="activity_title_licenses" msgid="5467767062737708066">"Ашық кодты бағдарлама лицензиялары"</string>
+    <string name="activity_title_licenses" msgid="5467767062737708066">"Ашық бастапқы код лицензиялары"</string>
     <string name="url_open_error_toast" msgid="452592089815420457">"Url ашылған жоқ."</string>
     <string name="account_filter_view_checked" msgid="6696859503887762213">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> белгіленген"</string>
     <string name="account_filter_view_not_checked" msgid="2248684521205038389">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> белгіленбеген"</string>

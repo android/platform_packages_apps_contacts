@@ -80,7 +80,7 @@
     <string name="title_from_google" msgid="4664084747121207202">"Fra Google"</string>
     <string name="title_from_other_accounts" msgid="8307885412426754288">"Fra <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
     <string name="menu_set_ring_tone" msgid="8728345772068064946">"Angiv ringetone"</string>
-    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"Viderestil til telefonsvarer"</string>
+    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"Omdiriger til telefonsvarer"</string>
     <string name="menu_unredirect_calls_to_vm" msgid="8725542534701811737">"Træk tilbage fra telefonsvarer"</string>
     <string name="readOnlyContactWarning" msgid="7514475664695089411">"Denne kontakt er skrivebeskyttet. Vedkommende kan ikke slettes, men kun skjules."</string>
     <string name="readOnlyContactWarning_positive_button" msgid="8914797212167683673">"Skjul kontakt"</string>
@@ -286,7 +286,7 @@
     <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (send besked)"</string>
     <string name="description_video_call" msgid="7120921378651700947">"Foretag videoopkald"</string>
     <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"Vil du rydde de ofte kontaktede?"</string>
-    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Hvis du gør dette, rydder du listen over personer, som du ofte kontakter, i dine apps Kontakter og Telefon. Du vil samtidig tvinge mailapps til at lære dine adressepræferencer fra bunden."</string>
+    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Hvis du gør dette, rydder du listen over personer, som du ofte kontakter, i dine apps Kontakter og Telefon. Du vil samtidig tvinge e-mailapps til at lære dine adressepræferencer fra bunden."</string>
     <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"Rydder ofte kontaktede personer…"</string>
     <string name="status_available" msgid="5586870015822828392">"Tilgængelig"</string>
     <string name="status_away" msgid="1838861100379804730">"Ikke til stede"</string>

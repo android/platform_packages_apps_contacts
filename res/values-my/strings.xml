@@ -44,7 +44,7 @@
     <string name="menu_selectForGroup" msgid="3999234528229376098">"အဆက်အသွယ်များရွေးရန်"</string>
     <string name="menu_addContactsToGroup" msgid="655196688840626483">"အဆက်အသွယ်များထည့်ရန်"</string>
     <string name="menu_removeFromGroup" msgid="6720354305399961978">"အညွှန်းမှဖယ်ရှားပါ"</string>
-    <string name="menu_new_group_action_bar" msgid="3127059073617415221">"အညွှန်း ပြုလုပ်ရန်"</string>
+    <string name="menu_new_group_action_bar" msgid="3127059073617415221">"အညွှန်း ဖန်တီးရန်"</string>
     <string name="splitConfirmation" msgid="7342030840130187290">"ဤအဆက်အသွယ်အား ချိတ်ဆက်ထားမှုကို ဖျက်လျက် အဆက်အသွယ် အများအပြားအဖြစ် ခွဲပစ်ရမလား။"</string>
     <string name="splitConfirmation_positive_button" msgid="9129409098807939699">"ချိတ်ဆက်မှုဖြုတ်ပါ"</string>
     <string name="splitConfirmationWithPendingChanges" msgid="7719062163511895696">"သင် ပြုလုပ်ခဲ့သည့် အပြောင်းအလဲများကို သိမ်းဆည်းလျက် ဤအဆက်အသွယ်အား ချိတ်ဆက်ထားမှုကို ဖျက်လိုက်ကာ အဆက်အသွယ် အများအပြားအဖြစ် ခွဲပစ်ရမလား။"</string>
@@ -133,7 +133,7 @@
     <string name="quickcontact_add_phone_number" msgid="731665835910658965">"ဖုန်းနံပါတ် ထည့်ရန်"</string>
     <string name="quickcontact_add_email" msgid="739298028384348482">"အီးမေးလ် ထည့်ရန်"</string>
     <string name="missing_app" msgid="1466111003546611387">"ဤလုပ်ဆောင်ချက်ကို ပြုလုပ်မည့် အက်ပ်မရှိပါ။"</string>
-    <string name="menu_share" msgid="943789700636542260">"မျှဝေရန်"</string>
+    <string name="menu_share" msgid="943789700636542260">"မျှဝေခြင်း"</string>
     <string name="menu_add_contact" msgid="3198704337220892684">"အဆက်အသွယ်များ ထဲသို့ ထည့်ရန်"</string>
     <string name="menu_add_contacts" msgid="4465646512002163011">"ထည့်ရန်"</string>
     <plurals name="title_share_via" formatted="false" msgid="5886112726191455415">
@@ -141,7 +141,7 @@
       <item quantity="one">ဤအက်ပ်မှတစ်ဆင့် အဆက်အသွယ်ကို မျှဝေပါ</item>
     </plurals>
     <string name="dialog_new_group_account" msgid="3451312333591556651">"အကောင့်ရွေးပါ"</string>
-    <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"အညွှန်း ပြုလုပ်ခြင်း"</string>
+    <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"အညွှန်းဖန်တီးပါ"</string>
     <string name="group_name_dialog_update_title" msgid="6328021162869677383">"အညွှန်းအမည်ပြောင်းပါ"</string>
     <string name="group_name_dialog_hint" msgid="7624523157537700160">"အညွှန်းအမည်"</string>
     <string name="label_name_dialog_hint" msgid="1276051790427638142">"အညွှန်းအမည်"</string>
@@ -170,7 +170,7 @@
     <string name="non_phone_close" msgid="7608506439725515667">"ပိတ်ရန်"</string>
     <string name="date_year_toggle" msgid="7122002148518724139">"နှစ်ကို ထည့်ရန်"</string>
     <string name="contacts_unavailable_add_account" msgid="4347232421410561500">"အကောင့်ထည့်ရန်"</string>
-    <string name="contacts_unavailable_import_contacts" msgid="3182801738595937144">"ထည့်သွင်းရန်"</string>
+    <string name="contacts_unavailable_import_contacts" msgid="3182801738595937144">"တင်သွင်းရန်"</string>
     <string name="create_group_item_label" msgid="3263064599743742865">"အသစ်ဖန်တီးပါ…"</string>
     <string name="delete_group_dialog_message" msgid="335713829185261371">"\"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\" အညွှန်းကို ဖျက်ပစ်မလား။ (အဆက်အသွယ်များအနေဖြင့် ပျက်သွားမည်မဟုတ်ပါ။)"</string>
     <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"အခြားတစ်ခုနှင့် ကွင်းဆက်မချိတ်မီ အဆက်အသွယ်အမည်ကိုရိုက်ပါ။"</string>
@@ -207,7 +207,7 @@
     <string name="date_time_set" msgid="4761419824439606690">"လက်ခံရန်"</string>
     <string name="header_im_entry" msgid="3581720979640225615">"IM"</string>
     <string name="header_organization_entry" msgid="8515394955666265406">"အဖွဲ့အစည်း"</string>
-    <string name="header_nickname_entry" msgid="6743561883967451485">"နာမည်အတို"</string>
+    <string name="header_nickname_entry" msgid="6743561883967451485">"နာမည်ပြောင်"</string>
     <string name="header_note_entry" msgid="4320190426480612344">"မှတ်ချက်"</string>
     <string name="header_website_entry" msgid="1411467850000824745">"ဝဘ်ဆိုက်"</string>
     <string name="header_event_entry" msgid="6738250422744401460">"ဖြစ်ရပ်"</string>
@@ -304,7 +304,7 @@
     <string name="account_phone" msgid="7128032778471187553">"ကိရိယာ"</string>
     <string name="account_sim" msgid="6519016427905087952">"SIM"</string>
     <string name="nameLabelsGroup" msgid="2034640839640477827">"အမည်"</string>
-    <string name="nicknameLabelsGroup" msgid="2891682101053358010">"နာမည်အတို"</string>
+    <string name="nicknameLabelsGroup" msgid="2891682101053358010">"အမည်ပြောင်"</string>
     <string name="name_given" msgid="4280790853455320619">"ရှေ့အမည်"</string>
     <string name="name_family" msgid="7466985689626017037">"နောက်အမည်"</string>
     <string name="name_prefix" msgid="59756378548779822">"အမည်ရှေ့ဆက်"</string>
@@ -428,7 +428,7 @@
     <string name="nfc_vcard_file_name" msgid="2823095213265993609">"NFC မှ အဆက်အသွယ်ရရှိပါသည်။"</string>
     <string name="caching_vcard_title" msgid="1226272312940516605">"ယာယီသိမ်းနေသည်"</string>
     <string name="progress_notifier_message" msgid="2311011466908220528">"တင်သွင်းနေသည် <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g> - <xliff:g id="NAME">%3$s</xliff:g>"</string>
-    <string name="export_to_vcf_file" msgid="4407527157056120858">".vcf ဖိုင်သို့ ထုတ်ယူရန်"</string>
+    <string name="export_to_vcf_file" msgid="4407527157056120858">".vcf ဖိုင်သို့ တင်ပို့ရန်"</string>
     <string name="display_options_sort_list_by" msgid="7028809117272018712">"အောက်ပါအတိုင်းစီရန်"</string>
     <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"အမည် အသံထွက်"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"အမြဲပြရန်"</string>
@@ -439,14 +439,14 @@
     <string name="display_options_view_given_name_first" msgid="3616004640258761473">"ရှေ့အမည်ဖြင့်စ၍"</string>
     <string name="display_options_view_family_name_first" msgid="956445100777296467">"နောက်အမည်ဖြင့်စ၍"</string>
     <string name="settings_accounts" msgid="350219740670774576">"အကောင့်များ"</string>
-    <string name="default_editor_account" msgid="699591683362420991">"အဆက်အသွယ်သစ်အတွက် မူရင်းအကောင့်"</string>
+    <string name="default_editor_account" msgid="699591683362420991">"အဆက်အသွယ်အသစ်များအတွက် မူရင်းအကောင့်"</string>
     <string name="settings_my_info_title" msgid="1534272456405343119">"ကျွန်ုပ်၏အချက်အလက်"</string>
     <string name="set_up_profile" msgid="7370213843590143771">"သင့်ပရိုဖိုင်ကို သတ်မှတ်ရန်"</string>
     <string name="setting_about" msgid="7014388749752042863">"အဆက်အသွယ်များအကြောင်း"</string>
     <string name="share_favorite_contacts" msgid="4280926751003081042">"အကြိုက်ဆုံးအဆက်အသွယ်များကို မျှဝေရန်"</string>
     <string name="share_contacts" msgid="8109287987498711664">"အဆက်အသွယ်အားလုံးမျှဝေရန်"</string>
     <string name="share_contacts_failure" msgid="1216431977330560559">"အဆက်အသွယ်များ မျှဝေ၍မရပါ။"</string>
-    <string name="dialog_export" msgid="1628001095187741417">"အဆက်အသွယ်များ ထုတ်ယူပါ"</string>
+    <string name="dialog_export" msgid="1628001095187741417">"အဆက်အသွယ်များ တင်ပို့ပါ"</string>
     <string name="dialog_import" msgid="2423592905927819672">"အောက်ပါထံမှ အဆက်အသွယ်များ တင်သွင်းပါ"</string>
     <string name="share_error" msgid="948429331673358107">"ဤအဆက်အသွယ်ကို မျှဝေ၍မရပါ။"</string>
     <string name="no_contact_to_share" msgid="1276397530378323033">"မျှဝေရန်အဆက်အသွယ် မရှိပါ။"</string>
@@ -456,9 +456,9 @@
     <string name="menu_custom_filter_save" msgid="2679793632208086460">"သိမ်းရန်"</string>
     <string name="hint_findContacts" msgid="7128627979899070325">"အဆက်အသွယ်များရှာပါ"</string>
     <string name="contactsFavoritesLabel" msgid="8417039765586853670">"အသုံးအများဆုံး"</string>
-    <string name="menu_import" msgid="6107961135813836467">"ထည့်သွင်းရန်"</string>
-    <string name="menu_export" msgid="2658783911863503902">"ထုတ်ယူရန်"</string>
-    <string name="menu_blocked_numbers" msgid="5272951629083025995">"ပိတ်ဆို့နံပါတ်များ"</string>
+    <string name="menu_import" msgid="6107961135813836467">"တင်သွင်းရန်"</string>
+    <string name="menu_export" msgid="2658783911863503902">"တင်ပို့ရန်"</string>
+    <string name="menu_blocked_numbers" msgid="5272951629083025995">"ပိတ်ထားသည့် နံပါတ်များ"</string>
     <string name="contact_status_update_attribution" msgid="752179367353018597">"<xliff:g id="SOURCE">%1$s</xliff:g> မှတဆင့်"</string>
     <string name="contact_status_update_attribution_with_date" msgid="7358045508107825068">"<xliff:g id="DATE">%1$s</xliff:g> <xliff:g id="SOURCE">%2$s</xliff:g> မှတဆင့်"</string>
     <string name="action_menu_back_from_search" msgid="8793348588949233348">"ရှာဖွေမှုရပ်ရန်"</string>
@@ -484,7 +484,7 @@
     <string name="description_no_name_header" msgid="8884991311595943271">"အစက်သုံးစက်"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"ဤဖြတ်လမ်းလင့်ခ်ကို ပိတ်ထားပါသည်"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"အဆက်အသွယ်ကို ဖယ်ရှားခဲ့ပါသည်"</string>
-    <string name="sim_import_button_text" msgid="4270841592496619317">"ထည့်သွင်းရန်"</string>
+    <string name="sim_import_button_text" msgid="4270841592496619317">"တင်သွင်းရန်"</string>
     <string name="sim_import_title_none_selected" msgid="6910517331401970693">"အဆက်အသွယ်များကို ရွေးပါ"</string>
     <string name="sim_import_empty_message" msgid="7743815244380189651">"ဆင်းမ်ကဒ်ထဲတွင် လိပ်စာ မရှိပါ"</string>
     <string name="sim_import_contact_exists_toast" msgid="1503743663717316732">"အဆက်အသွယ်က သင့်စာရင်းတွင် ရှိနှင့်နေပါပြီ"</string>

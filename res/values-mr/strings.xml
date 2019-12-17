@@ -66,16 +66,16 @@
     <string name="contacts_deleted_two_named_toast" msgid="3642082931473111791">"<xliff:g id="NAME_0">%1$s</xliff:g> आणि <xliff:g id="NAME_1">%2$s</xliff:g> हटविले"</string>
     <string name="contacts_deleted_many_named_toast" msgid="7731565342428031249">"<xliff:g id="NAME_0">%1$s</xliff:g>, <xliff:g id="NAME_1">%2$s</xliff:g>, <xliff:g id="NAME_2">%3$s</xliff:g>... हटविले"</string>
     <plurals name="contacts_deleted_toast" formatted="false" msgid="1477708624197262295">
-      <item quantity="other">संपर्क हटविले</item>
       <item quantity="one">संपर्क हटविला</item>
+      <item quantity="other">संपर्क हटविले</item>
     </plurals>
     <plurals name="contacts_count" formatted="false" msgid="8696793457340503668">
+      <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g> संपर्क</item>
       <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> संपर्क</item>
-      <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> संपर्क</item>
     </plurals>
     <plurals name="contacts_count_with_account" formatted="false" msgid="7402583111980220575">
+      <item quantity="one"><xliff:g id="COUNT_2">%1$d</xliff:g> संपर्क · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
       <item quantity="other"><xliff:g id="COUNT_2">%1$d</xliff:g> संपर्क · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> संपर्क · <xliff:g id="ACCOUNT_1">%2$s</xliff:g></item>
     </plurals>
     <string name="title_from_google" msgid="4664084747121207202">"Google वरील"</string>
     <string name="title_from_other_accounts" msgid="8307885412426754288">"<xliff:g id="ACCOUNT">%s</xliff:g> मधील"</string>
@@ -137,8 +137,8 @@
     <string name="menu_add_contact" msgid="3198704337220892684">"संपर्कांमध्ये जोडा"</string>
     <string name="menu_add_contacts" msgid="4465646512002163011">"जोडा"</string>
     <plurals name="title_share_via" formatted="false" msgid="5886112726191455415">
-      <item quantity="other">संपर्क याद्वारे शेअर करा</item>
       <item quantity="one">संपर्क याद्वारे शेअर करा</item>
+      <item quantity="other">संपर्क याद्वारे शेअर करा</item>
     </plurals>
     <string name="dialog_new_group_account" msgid="3451312333591556651">"खाते निवडा"</string>
     <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"लेबल बनवा"</string>
@@ -181,7 +181,7 @@
     <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"बदल टाकून द्यायचे?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"टाकून द्या"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"रद्द करा"</string>
-    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"कस्टमायझेशन काढून टाकायचे?"</string>
+    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"सानुकूलीकरणेे टाकूून द्यायची?"</string>
     <string name="enter_contact_name" msgid="4594274696120278368">"संपर्क शोधा"</string>
     <string name="title_edit_group" msgid="8602752287270586734">"संपर्क काढा"</string>
     <string name="local_profile_title" msgid="2021416826991393684">"माझे स्थानिक प्रोफाइल"</string>
@@ -379,12 +379,12 @@
     <string name="import_from_sim" msgid="6912071635295799131">"सिम कार्ड"</string>
     <string name="import_from_sim_summary_fmt" msgid="5169032449686348118">"सिम <xliff:g id="SIM_NAME">%1$s</xliff:g>"</string>
     <plurals name="import_from_sim_secondary_contact_count_fmt" formatted="false" msgid="5821095773211149295">
+      <item quantity="one">%1$d संपर्क</item>
       <item quantity="other">%1$d संपर्क</item>
-      <item quantity="one">1 संपर्क</item>
     </plurals>
     <plurals name="import_from_sim_secondary_template" formatted="false" msgid="2484832025802907060">
+      <item quantity="one"><xliff:g id="COUNT_2">^1</xliff:g> संपर्क • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
       <item quantity="other"><xliff:g id="COUNT_2">^1</xliff:g> संपर्क • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
-      <item quantity="one"><xliff:g id="COUNT_0">^1</xliff:g> संपर्क • <xliff:g id="PHONE_NUMBER_1">^2</xliff:g></item>
     </plurals>
     <string name="import_from_vcf_file" msgid="8662528435646418203">".vcf फाईल"</string>
     <string name="nothing_to_import_message" msgid="1651921906873335656">"इंपोर्ट करण्यासाठी काहीही नाही"</string>
@@ -472,7 +472,7 @@
     <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="1765533099416999801">"बिल्ड आवृत्ती"</string>
     <string name="about_open_source_licenses" msgid="6479990452352919641">"मुक्त स्रोत परवाने"</string>
-    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"मुक्त स्रोत सॉफ्टवेअरसाठी परवाना तपशील"</string>
+    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"मुक्त स्त्रोत सॉफ्टवेअरसाठी परवाना तपशील"</string>
     <string name="about_privacy_policy" msgid="3705518622499152626">"गोपनीयता धोरण"</string>
     <string name="about_terms_of_service" msgid="4642400812150296723">"सेवा अटी"</string>
     <string name="activity_title_licenses" msgid="5467767062737708066">"मुक्त स्रोत परवाने"</string>
@@ -489,8 +489,8 @@
     <string name="sim_import_empty_message" msgid="7743815244380189651">"आपल्‍या सिम कार्डवर कोणतेही संपर्क नाहीत"</string>
     <string name="sim_import_contact_exists_toast" msgid="1503743663717316732">"संपर्क आधीपासून आपल्या सूचीमध्ये विद्यमान आहे"</string>
     <plurals name="sim_import_success_toast_fmt" formatted="false" msgid="8572156521110906443">
+      <item quantity="one"><xliff:g id="COUNT">%d</xliff:g> सिम संपर्क इंपोर्ट केला</item>
       <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> सिम संपर्क इंपोर्ट केले</item>
-      <item quantity="one">1 सिम संपर्क इंपोर्ट केला</item>
     </plurals>
     <string name="sim_import_failed_toast" msgid="5559267299793622705">"सिम संपर्क इंपोर्ट करण्यात अयशस्वी"</string>
     <string name="sim_import_title" msgid="2511154832820812822">"सिम वरून इंपोर्ट करा"</string>

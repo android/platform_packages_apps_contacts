@@ -85,8 +85,8 @@
     </plurals>
     <string name="title_from_google" msgid="4664084747121207202">"Iz Google računa"</string>
     <string name="title_from_other_accounts" msgid="8307885412426754288">"Iz računa za <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
-    <string name="menu_set_ring_tone" msgid="8728345772068064946">"Nastavi zvonjenje"</string>
-    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"Preusmeri v odzivnik"</string>
+    <string name="menu_set_ring_tone" msgid="8728345772068064946">"Nastavi zvonj."</string>
+    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"Preusmeri v sporočila v odziv."</string>
     <string name="menu_unredirect_calls_to_vm" msgid="8725542534701811737">"Prekliči preusmeritev v odziv."</string>
     <string name="readOnlyContactWarning" msgid="7514475664695089411">"Ta stik je samo za branje. Stika ni mogoče izbrisati, mogoče pa ga je skriti."</string>
     <string name="readOnlyContactWarning_positive_button" msgid="8914797212167683673">"Skrij stik"</string>
@@ -315,7 +315,7 @@
     <string name="nicknameLabelsGroup" msgid="2891682101053358010">"Vzdevek"</string>
     <string name="name_given" msgid="4280790853455320619">"Ime"</string>
     <string name="name_family" msgid="7466985689626017037">"Priimek"</string>
-    <string name="name_prefix" msgid="59756378548779822">"Naziv (pred imenom)"</string>
+    <string name="name_prefix" msgid="59756378548779822">"Naziv"</string>
     <string name="name_middle" msgid="8467433655992690326">"Drugo ime"</string>
     <string name="name_suffix" msgid="3855278445375651441">"Naziv (za imenom)"</string>
     <string name="name_phonetic" msgid="4259595234312430484">"Ime – fonetično"</string>

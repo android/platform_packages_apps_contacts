@@ -132,7 +132,7 @@
     <string name="quickcontact_transparent_view_description" msgid="987959416759562455">"முந்தைய திரைக்குச் செல்ல கிளிக் செய்க"</string>
     <string name="quickcontact_add_phone_number" msgid="731665835910658965">"மொபைல் எண்ணைச் சேர்க்கவும்"</string>
     <string name="quickcontact_add_email" msgid="739298028384348482">"மின்னஞ்சலைச் சேர்க்கவும்"</string>
-    <string name="missing_app" msgid="1466111003546611387">"இந்தச் செயலைச் செய்ய ஆப்ஸ் எதுவுமில்லை."</string>
+    <string name="missing_app" msgid="1466111003546611387">"இந்தச் செயலைச் செய்ய பயன்பாடு எதுவுமில்லை."</string>
     <string name="menu_share" msgid="943789700636542260">"பகிர்"</string>
     <string name="menu_add_contact" msgid="3198704337220892684">"தொடர்புகளில் சேர்"</string>
     <string name="menu_add_contacts" msgid="4465646512002163011">"சேர்"</string>
@@ -156,8 +156,8 @@
     <string name="search_results_searching" msgid="3984833028938569930">"தேடுகிறது..."</string>
     <string name="event_edit_field_hint_text" msgid="5794424930242630477">"தேதி"</string>
     <string name="group_edit_field_hint_text" msgid="8038224059926963133">"லேபிளைச் சேர்"</string>
-    <string name="cancel_button_content_description" msgid="1288652456274531846">"ரத்துசெய்யும் பட்டன்"</string>
-    <string name="back_arrow_content_description" msgid="4355362760545735065">"முந்தையதற்குச் செல்லும் பட்டன்"</string>
+    <string name="cancel_button_content_description" msgid="1288652456274531846">"ரத்துசெய்யும் பொத்தான்"</string>
+    <string name="back_arrow_content_description" msgid="4355362760545735065">"முந்தையதற்குச் செல்லும் பொத்தான்"</string>
     <string name="action_menu_back_from_edit_select" msgid="6435476408621731420">"மூடும்"</string>
     <string name="aggregation_suggestion_edit_dialog_message" msgid="6549585283910518095">"தேர்ந்தெடுத்த தொடர்பைத் திருத்துதலுக்கு மாறவா? இதுவரை உள்ளிட்ட தகவல் நகலெடுக்கப்படும்."</string>
     <string name="contact_directory_description" msgid="683398073603909119">"கோப்பகம் <xliff:g id="TYPE">%1$s</xliff:g>"</string>
@@ -181,7 +181,7 @@
     <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"மாற்றங்களை நிராகரிக்கவா?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"நிராகரி"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"ரத்துசெய்"</string>
-    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"பிரத்தியேகப்படுத்தலை நிராகரிக்கவா?"</string>
+    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"தனிப்பயனாக்கங்களை நிராகரிக்கவா?"</string>
     <string name="enter_contact_name" msgid="4594274696120278368">"தொடர்புகளில் தேடுக"</string>
     <string name="title_edit_group" msgid="8602752287270586734">"தொடர்புகளை அகற்று"</string>
     <string name="local_profile_title" msgid="2021416826991393684">"எனது சுயவிவரம்"</string>
@@ -452,7 +452,7 @@
     <string name="no_contact_to_share" msgid="1276397530378323033">"பகிர, தொடர்புகள் இல்லை."</string>
     <string name="menu_contacts_filter" msgid="2165153460860262501">"காட்ட வேண்டிய தொடர்புகள்"</string>
     <string name="activity_title_contacts_filter" msgid="8275542497615516969">"காட்ட வேண்டிய தொடர்புகள்"</string>
-    <string name="custom_list_filter" msgid="9048525797111024204">"காட்சியைப் பிரத்தியேகமானதாக்கு"</string>
+    <string name="custom_list_filter" msgid="9048525797111024204">"காட்சியைத் தனிப்பயனாக்குக"</string>
     <string name="menu_custom_filter_save" msgid="2679793632208086460">"சேமி"</string>
     <string name="hint_findContacts" msgid="7128627979899070325">"தொடர்புகளில் தேடுக"</string>
     <string name="contactsFavoritesLabel" msgid="8417039765586853670">"விருப்பமானவை"</string>

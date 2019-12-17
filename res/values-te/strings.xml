@@ -27,7 +27,7 @@
     <string name="contactPickerActivityTitle" msgid="4301062192337417640">"పరిచయాన్ని ఎంచుకోండి"</string>
     <string name="groupMemberPickerActivityTitle" msgid="1431750793695262522">"ఎంచుకోండి"</string>
     <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"కొత్త పరిచయాన్ని సృష్టించండి"</string>
-    <string name="searchHint" msgid="8482945356247760701">"పరిచయాలను వెతుకు"</string>
+    <string name="searchHint" msgid="8482945356247760701">"పరిచయాలను శోధించు"</string>
     <string name="menu_addStar" msgid="2908478235715404876">"ఇష్టమైనవాటికి జోడించు"</string>
     <string name="menu_removeStar" msgid="5844227078364227030">"ఇష్టమైనవాటి నుండి తీసివేయి"</string>
     <string name="description_action_menu_remove_star" msgid="4699640108012265178">"ఇష్టమైనవి నుండి తీసివేయబడింది"</string>
@@ -133,7 +133,7 @@
     <string name="quickcontact_add_phone_number" msgid="731665835910658965">"ఫోన్ నంబర్‌ను జోడించండి"</string>
     <string name="quickcontact_add_email" msgid="739298028384348482">"ఇమెయిల్ జోడించండి"</string>
     <string name="missing_app" msgid="1466111003546611387">"ఈ చర్యను నిర్వహించడానికి అనువర్తనం ఏదీ కనుగొనబడలేదు."</string>
-    <string name="menu_share" msgid="943789700636542260">"షేర్ చేయి"</string>
+    <string name="menu_share" msgid="943789700636542260">"భాగస్వామ్యం చేయి"</string>
     <string name="menu_add_contact" msgid="3198704337220892684">"పరిచయాలకు జోడించు"</string>
     <string name="menu_add_contacts" msgid="4465646512002163011">"జోడించు"</string>
     <plurals name="title_share_via" formatted="false" msgid="5886112726191455415">
@@ -182,7 +182,7 @@
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"విస్మరించు"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"రద్దు చేయి"</string>
     <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"అనుకూలీకరణలను విస్మరించాలా?"</string>
-    <string name="enter_contact_name" msgid="4594274696120278368">"పరిచయాలను వెతకండి"</string>
+    <string name="enter_contact_name" msgid="4594274696120278368">"పరిచయాలను శోధించండి"</string>
     <string name="title_edit_group" msgid="8602752287270586734">"పరిచయాలను తీసివేయండి"</string>
     <string name="local_profile_title" msgid="2021416826991393684">"నా స్థానిక ప్రొఫైల్"</string>
     <string name="external_profile_title" msgid="8034998767621359438">"నా <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g> ప్రొఫైల్"</string>
@@ -190,7 +190,7 @@
     <string name="contact_editor_prompt_one_account" msgid="3087691056345099310">"కొత్త పరిచయాలు <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>కి సేవ్ చేయబడతాయి."</string>
     <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"కొత్త పరిచయాల కోసం డిఫాల్ట్ ఖాతాను ఎంచుకోండి:"</string>
     <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"కొత్త పరి. సృష్టించు"</string>
-    <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"పరిచయాన్ని సవరించండి"</string>
+    <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"సవరించండి"</string>
     <string name="contact_editor_title_read_only_contact" msgid="2443496574528842237">"వీక్షణ మాత్రమే"</string>
     <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4186699385645902152">"సవరించాల్సిన పరిచయాన్ని ఎంచుకోండి"</string>
     <string name="contact_editor_pick_linked_contact_dialog_title" msgid="4618465940423857694">"లింక్ చేసిన పరిచయాలు"</string>
@@ -429,13 +429,13 @@
     <string name="caching_vcard_title" msgid="1226272312940516605">"కాష్ చేస్తోంది"</string>
     <string name="progress_notifier_message" msgid="2311011466908220528">"<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g>లో <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g> దిగుమతి చేయబడుతోంది: <xliff:g id="NAME">%3$s</xliff:g>"</string>
     <string name="export_to_vcf_file" msgid="4407527157056120858">".vcf ఫైల్‌కు ఎగుమతి చేయి"</string>
-    <string name="display_options_sort_list_by" msgid="7028809117272018712">"ఇలా వ‌ర్గీక‌రించు"</string>
+    <string name="display_options_sort_list_by" msgid="7028809117272018712">"ఇలా క్రమబద్ధీకరించు"</string>
     <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"ఫొనెటిక్ పేరు"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"ఎల్లప్పుడూ చూపు"</string>
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"ఖాళీగా ఉంటే దాచు"</string>
     <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"మొదటి పేరు"</string>
     <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"చివరి పేరు"</string>
-    <string name="display_options_view_names_as" msgid="6514632499276563482">"పేరు యొక్క ఫార్మాట్‌"</string>
+    <string name="display_options_view_names_as" msgid="6514632499276563482">"పేరు ఆకృతి"</string>
     <string name="display_options_view_given_name_first" msgid="3616004640258761473">"ముందుగా మొదటి పేరు"</string>
     <string name="display_options_view_family_name_first" msgid="956445100777296467">"ముందుగా చివరి పేరు"</string>
     <string name="settings_accounts" msgid="350219740670774576">"ఖాతాలు"</string>
@@ -454,7 +454,7 @@
     <string name="activity_title_contacts_filter" msgid="8275542497615516969">"ప్రదర్శించాల్సిన పరిచయాలు"</string>
     <string name="custom_list_filter" msgid="9048525797111024204">"అనుకూలీకరించిన వీక్షణ"</string>
     <string name="menu_custom_filter_save" msgid="2679793632208086460">"సేవ్ చేయి"</string>
-    <string name="hint_findContacts" msgid="7128627979899070325">"పరిచయాలను వెతకండి"</string>
+    <string name="hint_findContacts" msgid="7128627979899070325">"పరిచయాలను శోధించండి"</string>
     <string name="contactsFavoritesLabel" msgid="8417039765586853670">"ఇష్టమైనవి"</string>
     <string name="menu_import" msgid="6107961135813836467">"దిగుమతి చేయి"</string>
     <string name="menu_export" msgid="2658783911863503902">"ఎగుమతి చేయి"</string>

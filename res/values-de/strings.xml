@@ -174,7 +174,7 @@
     <string name="create_group_item_label" msgid="3263064599743742865">"Neu erstellen…"</string>
     <string name="delete_group_dialog_message" msgid="335713829185261371">"Soll das Label \"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\" gelöscht werden? (Die Kontakte selbst werden nicht gelöscht.)"</string>
     <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"Gib einen Namen für den Kontakt ein, bevor du ihn mit einem anderen Kontakt verknüpfst."</string>
-    <string name="copy_text" msgid="3257145021583508761">"In die Zwischenablage kopieren"</string>
+    <string name="copy_text" msgid="3257145021583508761">"In Zwischenablage kopieren"</string>
     <string name="set_default" msgid="4417505153468300351">"Als Standard festlegen"</string>
     <string name="clear_default" msgid="7193185801596678067">"Als Standard löschen"</string>
     <string name="toast_text_copied" msgid="5143776250008541719">"Text kopiert"</string>
@@ -182,7 +182,7 @@
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"Verwerfen"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"Abbrechen"</string>
     <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"Änderungen verwerfen?"</string>
-    <string name="enter_contact_name" msgid="4594274696120278368">"In Kontakten suchen"</string>
+    <string name="enter_contact_name" msgid="4594274696120278368">"Kontakte suchen"</string>
     <string name="title_edit_group" msgid="8602752287270586734">"Kontakte entfernen"</string>
     <string name="local_profile_title" msgid="2021416826991393684">"Mein lokales Profil"</string>
     <string name="external_profile_title" msgid="8034998767621359438">"Mein <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g>-Profil"</string>
@@ -454,7 +454,7 @@
     <string name="activity_title_contacts_filter" msgid="8275542497615516969">"Angezeigte Kontakte"</string>
     <string name="custom_list_filter" msgid="9048525797111024204">"Ansicht anpassen"</string>
     <string name="menu_custom_filter_save" msgid="2679793632208086460">"Speichern"</string>
-    <string name="hint_findContacts" msgid="7128627979899070325">"In Kontakten suchen"</string>
+    <string name="hint_findContacts" msgid="7128627979899070325">"Kontakte suchen"</string>
     <string name="contactsFavoritesLabel" msgid="8417039765586853670">"Favoriten"</string>
     <string name="menu_import" msgid="6107961135813836467">"Importieren"</string>
     <string name="menu_export" msgid="2658783911863503902">"Exportieren"</string>

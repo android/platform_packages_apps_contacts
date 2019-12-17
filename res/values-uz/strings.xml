@@ -131,7 +131,7 @@
     <string name="search_settings_description" msgid="2675223022992445813">"Kontaktlaringiz ismi"</string>
     <string name="quickcontact_transparent_view_description" msgid="987959416759562455">"Avvalgi ekranga qaytish uchun bosing"</string>
     <string name="quickcontact_add_phone_number" msgid="731665835910658965">"Telefon raqamini kiritish"</string>
-    <string name="quickcontact_add_email" msgid="739298028384348482">"Email manzilini kiritish"</string>
+    <string name="quickcontact_add_email" msgid="739298028384348482">"E-pochta manzilini kiritish"</string>
     <string name="missing_app" msgid="1466111003546611387">"Ushbu amalni bajarish uchun ilova topilmadi."</string>
     <string name="menu_share" msgid="943789700636542260">"Yuborish"</string>
     <string name="menu_add_contact" msgid="3198704337220892684">"Kontaktlarga saqlash"</string>
@@ -213,7 +213,7 @@
     <string name="header_event_entry" msgid="6738250422744401460">"Tadbir"</string>
     <string name="header_relation_entry" msgid="1520292958088146460">"Aloqadorligi"</string>
     <string name="header_name_entry" msgid="1592791008096288306">"Ism"</string>
-    <string name="header_email_entry" msgid="8666093061171624478">"Email"</string>
+    <string name="header_email_entry" msgid="8666093061171624478">"E-pochta"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"Telefon"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"manzilga yo\'nalishlar"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"Boshqa maydonlar"</string>
@@ -286,7 +286,7 @@
     <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (SMS)"</string>
     <string name="description_video_call" msgid="7120921378651700947">"Video qo‘ng‘iroq qilish"</string>
     <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"Bu ro‘yxat tozalansinmi?"</string>
-    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Kontaktlar va Telefon ilovalaridagi tez-tez aloqa qilingan kontaktlar ro‘yxati tozalanadi. Email ilovalari esa e-pochta manzillarini yangidan eslay boshlaydi."</string>
+    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"Kontaktlar va Telefon ilovalaridagi tez-tez aloqa qilingan kontaktlar ro‘yxati tozalanadi. E-pochta ilovalari esa e-pochta manzillarini yangidan eslay boshlaydi."</string>
     <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"Ro‘yxat tozalanmoqda…"</string>
     <string name="status_available" msgid="5586870015822828392">"Aloqada"</string>
     <string name="status_away" msgid="1838861100379804730">"Tashqarida"</string>
@@ -315,7 +315,7 @@
     <string name="name_phonetic_middle" msgid="8643721493320405200">"Otasining ismi talaffuzi"</string>
     <string name="name_phonetic_family" msgid="2640133663656011626">"Familiya talaffuzi"</string>
     <string name="phoneLabelsGroup" msgid="6468091477851199285">"Telefon"</string>
-    <string name="emailLabelsGroup" msgid="8389931313045344406">"Email"</string>
+    <string name="emailLabelsGroup" msgid="8389931313045344406">"E-pochta"</string>
     <string name="postalLabelsGroup" msgid="3487738141112589324">"Manzil"</string>
     <string name="imLabelsGroup" msgid="3898238486262614027">"Chat"</string>
     <string name="organizationLabelsGroup" msgid="2478611760751832035">"Tashkilot"</string>
@@ -333,9 +333,9 @@
     <string name="email_home" msgid="8573740658148184279">"Shaxsiy e-pochta"</string>
     <string name="email_mobile" msgid="2042889209787989814">"Mobil e-pochta"</string>
     <string name="email_work" msgid="2807430017302722689">"Ish e-pochtasi"</string>
-    <string name="email_other" msgid="3454004077967657109">"Email xat yuborish"</string>
-    <string name="email_custom" msgid="5536404237099078802">"Email xat yozish (<xliff:g id="CUSTOM_LABEL">%s</xliff:g>)"</string>
-    <string name="email" msgid="5668400997660065897">"Email"</string>
+    <string name="email_other" msgid="3454004077967657109">"E-pochta xat yuborish"</string>
+    <string name="email_custom" msgid="5536404237099078802">"E-pochta xat yozish (<xliff:g id="CUSTOM_LABEL">%s</xliff:g>)"</string>
+    <string name="email" msgid="5668400997660065897">"E-pochta"</string>
     <string name="postal_street" msgid="8133143961580058972">"Ko‘cha"</string>
     <string name="postal_city" msgid="6597491300084895548">"Shahar"</string>
     <string name="postal_region" msgid="6045263193478437672">"Viloyat"</string>

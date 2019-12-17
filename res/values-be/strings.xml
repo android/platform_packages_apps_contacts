@@ -186,7 +186,7 @@
     <string name="set_default" msgid="4417505153468300351">"Задаць у якасці стандартнага"</string>
     <string name="clear_default" msgid="7193185801596678067">"Скінуць стандартныя налады"</string>
     <string name="toast_text_copied" msgid="5143776250008541719">"Тэкст скапіяваны"</string>
-    <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"Адхіліць змены?"</string>
+    <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"Скасаваць змены?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"Скасаваць"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"Скасаваць"</string>
     <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"Скінуць налады?"</string>
@@ -208,7 +208,7 @@
     <string name="add_new_account" msgid="5748627740680940264">"Дадаць новы ўліковы запіс"</string>
     <string name="menu_export_database" msgid="2659719297530170820">"Экспарт базы дадзеных файлаў"</string>
     <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"Новы кантакт"</string>
-    <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"Яшчэ"</string>
+    <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"Болей"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"Паказаць менш"</string>
     <string name="about_card_title" msgid="2920942314212825637">"Інфармацыя"</string>
     <string name="toast_making_personal_copy" msgid="288549957278065542">"Стварэнне асабістай копіі..."</string>
@@ -316,11 +316,11 @@
     <string name="name_given" msgid="4280790853455320619">"Імя"</string>
     <string name="name_family" msgid="7466985689626017037">"Прозвішча"</string>
     <string name="name_prefix" msgid="59756378548779822">"Прэфікс імені"</string>
-    <string name="name_middle" msgid="8467433655992690326">"Другое імя"</string>
+    <string name="name_middle" msgid="8467433655992690326">"Імя па бацьку"</string>
     <string name="name_suffix" msgid="3855278445375651441">"Суфікс да імені"</string>
     <string name="name_phonetic" msgid="4259595234312430484">"Фанетычнае імя"</string>
     <string name="name_phonetic_given" msgid="8723179018384187631">"Фанетычнае імя"</string>
-    <string name="name_phonetic_middle" msgid="8643721493320405200">"Фанетычнае другое імя"</string>
+    <string name="name_phonetic_middle" msgid="8643721493320405200">"Фанетычнае імя па бацьку"</string>
     <string name="name_phonetic_family" msgid="2640133663656011626">"Фанетычнае прозвішча"</string>
     <string name="phoneLabelsGroup" msgid="6468091477851199285">"Тэлефон"</string>
     <string name="emailLabelsGroup" msgid="8389931313045344406">"Электронная пошта"</string>
@@ -441,10 +441,10 @@
     <string name="caching_vcard_title" msgid="1226272312940516605">"Кэшаванне..."</string>
     <string name="progress_notifier_message" msgid="2311011466908220528">"Імпарт <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g>: <xliff:g id="NAME">%3$s</xliff:g>"</string>
     <string name="export_to_vcf_file" msgid="4407527157056120858">"Экспартаваць у файл .vcf"</string>
-    <string name="display_options_sort_list_by" msgid="7028809117272018712">"Сартаваць:"</string>
+    <string name="display_options_sort_list_by" msgid="7028809117272018712">"Сартаваць па"</string>
     <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"Фанетычнае імя"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"Заўсёды паказваць"</string>
-    <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"Схаваць, калі поле пустое"</string>
+    <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"Схаваць, калі пустое"</string>
     <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"Імя"</string>
     <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"Прозвішча"</string>
     <string name="display_options_view_names_as" msgid="6514632499276563482">"Фармат імя"</string>
@@ -455,7 +455,7 @@
     <string name="settings_my_info_title" msgid="1534272456405343119">"Мая інфармацыя"</string>
     <string name="set_up_profile" msgid="7370213843590143771">"Наладзьце ваш профіль"</string>
     <string name="setting_about" msgid="7014388749752042863">"Інфармацыя аб Кантактах"</string>
-    <string name="share_favorite_contacts" msgid="4280926751003081042">"Абагуліць выбраныя кантакты"</string>
+    <string name="share_favorite_contacts" msgid="4280926751003081042">"Абагуліць улюбёныя кантакты"</string>
     <string name="share_contacts" msgid="8109287987498711664">"Абагуліць усе кантакты"</string>
     <string name="share_contacts_failure" msgid="1216431977330560559">"Збой абагульвання кантактаў."</string>
     <string name="dialog_export" msgid="1628001095187741417">"Экспартаваць кантакты"</string>
@@ -474,7 +474,7 @@
     <string name="contact_status_update_attribution" msgid="752179367353018597">"праз <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
     <string name="contact_status_update_attribution_with_date" msgid="7358045508107825068">"<xliff:g id="DATE">%1$s</xliff:g> праз <xliff:g id="SOURCE">%2$s</xliff:g>"</string>
     <string name="action_menu_back_from_search" msgid="8793348588949233348">"спыніць пошук"</string>
-    <string name="description_clear_search" msgid="688023606766232904">"Ачысціць поле пошуку"</string>
+    <string name="description_clear_search" msgid="688023606766232904">"Ачысціць пошук"</string>
     <string name="select_account_dialog_title" msgid="5478489655696599219">"Уліковы запіс"</string>
     <string name="set_default_account" msgid="4311613760725609801">"Заўсёды ўжываць гэта для выклікаў"</string>
     <string name="call_with_a_note" msgid="8389827628360791676">"Выклікаць з нататкай"</string>
@@ -517,7 +517,7 @@
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"Уключыць"</string>
     <string name="connection_error_message" msgid="7046408921529247089">"Няма падключэння"</string>
     <string name="single_sim_display_label" msgid="6985770499439371497">"SIM-карта"</string>
-    <string name="show_more_content_description" msgid="4277410425912984722">"Яшчэ"</string>
+    <string name="show_more_content_description" msgid="4277410425912984722">"Паказаць больш"</string>
     <string name="importing_sim_finished_title" msgid="5196369441294050721">"Імпартаванне SIM-карты скончана"</string>
     <string name="importing_sim_failed_title" msgid="39706901030537985">"Не ўдалося імпартаваць"</string>
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"Не ўдалося імпартаваць кантакты з SIM-карты"</string>

@@ -269,7 +269,7 @@
     <string name="sms_fax_work" msgid="8028189067816907075">"អត្ថបទ​ទូរសារ​ការងារ"</string>
     <string name="sms_fax_home" msgid="9204042076306809634">"អត្ថបទ​ទូរសារ​ផ្ទះ"</string>
     <string name="sms_pager" msgid="7730404569637015192">"អត្ថបទ​ភេយ័រ"</string>
-    <string name="sms_other" msgid="806127844607642331">"ផ្ញើសារជាអក្សរ"</string>
+    <string name="sms_other" msgid="806127844607642331">"អត្ថបទ"</string>
     <string name="sms_callback" msgid="5004824430094288752">"អត្ថបទ​ហៅ​ទៅវិញ"</string>
     <string name="sms_car" msgid="7444227058437359641">"អត្ថបទ​ទៅ​រថយន្ត"</string>
     <string name="sms_company_main" msgid="118970873419678087">"អត្ថបទ​ចម្បង​របស់​ក្រុមហ៊ុន"</string>
@@ -365,7 +365,7 @@
     <string name="announce_collapsed_fields" msgid="6414231530177338704">"បានលាក់"</string>
     <string name="list_filter_all_accounts" msgid="8908683398914322369">"ទំនាក់ទំនង​ទាំងអស់"</string>
     <string name="list_filter_all_starred" msgid="5031734941601931356">"បាន​ដាក់​ផ្កាយ"</string>
-    <string name="list_filter_customize" msgid="4789963356004169321">"ប្តូរតាមបំណង"</string>
+    <string name="list_filter_customize" msgid="4789963356004169321">"កំណត់តាម​តម្រូវ​ការ"</string>
     <string name="list_filter_single" msgid="5871400283515893087">"ទំនាក់ទំនង"</string>
     <string name="display_ungrouped" msgid="6885954210243119591">"ទំនាក់ទំនង​ទាំងអស់​ផ្សេងទៀត"</string>
     <string name="display_all_contacts" msgid="2031647544742889505">"ទំនាក់ទំនង​ទាំងអស់"</string>

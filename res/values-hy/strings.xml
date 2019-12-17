@@ -56,7 +56,7 @@
     <string name="menu_joinAggregate" msgid="3599512127797513606">"Միավորել"</string>
     <string name="menu_linkedContacts" msgid="400444389718855621">"Դիտել միակցված կոնտակտները"</string>
     <string name="menu_save" msgid="1727844363591825909">"Պահել"</string>
-    <string name="titleJoinContactDataWith" msgid="6825255752748313944">"Կապել կոնտակտները"</string>
+    <string name="titleJoinContactDataWith" msgid="6825255752748313944">"Միավորել կոնտակտները"</string>
     <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"Ընտրեք կոնտակտը, որը ցանկանում եք միակցել <xliff:g id="NAME">%s</xliff:g>-ի հետ՝"</string>
     <string name="separatorJoinAggregateSuggestions" msgid="2831414448851313345">"Առաջարկվող կոնտակները"</string>
     <string name="separatorJoinAggregateAll" msgid="7939932265026181043">"Բոլոր կոնտակտները"</string>
@@ -85,7 +85,7 @@
     <string name="readOnlyContactWarning" msgid="7514475664695089411">"Սա միայն կարդալու կոնտակտ է: Այն չեք կարող ջնջել, սակայն կարող եք թաքցնել:"</string>
     <string name="readOnlyContactWarning_positive_button" msgid="8914797212167683673">"Թաքցնել կոնտակտը"</string>
     <string name="readOnlyContactDeleteConfirmation" msgid="4717023505914239809">"Այս հաշվի միայն կարդալու թույլտվությամբ կոնտակտները կթաքցվեն (չեն ջնջվի):"</string>
-    <string name="single_delete_confirmation" msgid="3106905986948679720">"Ջնջե՞լ այս կոնտակտը"</string>
+    <string name="single_delete_confirmation" msgid="3106905986948679720">"Ջնջե՞լ այս կոնտակտը:"</string>
     <string name="batch_delete_confirmation" msgid="3984346060324014108">"Ջնջե՞լ ընտրված կոնտակտները:"</string>
     <string name="batch_delete_read_only_contact_confirmation" msgid="8411117621035639964">"Ձեր միայն կարդալու հաշիվների կոնտակտները չեն կարող ջնջվել, սակայն կարող են թաքցվել:"</string>
     <string name="batch_delete_multiple_accounts_confirmation" msgid="8207205649127030030">"Ջնջվող կոնտակտները պարունակում են տվյալներ մի քանի հաշիվներից: Միայն կարդալու հաշիվների տվյալները կթաքցվեն, սակայն չեն ջնջվի:"</string>
@@ -107,7 +107,7 @@
     <string name="contactSavedToast" msgid="9171862279493213075">"Կոնտակտը պահվեց"</string>
     <string name="contactUnlinkedToast" msgid="7122823195786012553">"Կոնտակտները ապակցվեցին"</string>
     <string name="contactSavedErrorToast" msgid="4827033473908688031">"Չհաջողվեց պահել կոնտակտի տվյալների փոփոխությունները"</string>
-    <string name="contactUnlinkErrorToast" msgid="2706297508166952431">"Չհաջողվեց առանձնացնել կոնտակտները"</string>
+    <string name="contactUnlinkErrorToast" msgid="2706297508166952431">"Չհաջողվեց անջատել կոնտակտը"</string>
     <string name="contactJoinErrorToast" msgid="5735129234573327701">"Չհաջողվեց կապել կոնտակտը"</string>
     <string name="contactGenericErrorToast" msgid="3885457515665783976">"Չհաջողվեց պահել կոնտակտը"</string>
     <string name="contactPhotoSavedErrorToast" msgid="6860883564984042194">"Չհաջողվեց պահել կոնտակտի լուսանկարի փոփոխությունները"</string>
@@ -120,7 +120,7 @@
     <string name="groupMembersAddedToast" msgid="4824834898718972768">"Ավելացվեց պիտակին"</string>
     <string name="groupSavedErrorToast" msgid="2355891714292740162">"Չհաջողվեց պահել պիտակի փոփոխությունները"</string>
     <string name="groupExistsErrorMessage" msgid="5196811283836946189">"Այս անունով խումբ արդեն կա"</string>
-    <string name="groupSomeContactsNoEmailsToast" msgid="8211161470235548732">"Որոշ կոնտակտներ էլ․ հասցե չունեն:"</string>
+    <string name="groupSomeContactsNoEmailsToast" msgid="8211161470235548732">"Որոշ կոնտակտներ էլփոստի հասցե չունեն:"</string>
     <string name="groupSomeContactsNoPhonesToast" msgid="5530760834827530509">"Որոշ կոնտակտներ հեռախոսահամար չունեն:"</string>
     <string name="menu_sendEmailOption" msgid="5978319931321657780">"Ուղարկել նամակ"</string>
     <string name="menu_sendMessageOption" msgid="8850168125274916426">"Ուղարկել հաղորդագրություն"</string>
@@ -131,7 +131,7 @@
     <string name="search_settings_description" msgid="2675223022992445813">"Ձեր կոնտակտների անունները"</string>
     <string name="quickcontact_transparent_view_description" msgid="987959416759562455">"Սեղմեք՝ նախորդ էկրանին վերադառնալու համար"</string>
     <string name="quickcontact_add_phone_number" msgid="731665835910658965">"Ավելացնել հեռախոսահամար"</string>
-    <string name="quickcontact_add_email" msgid="739298028384348482">"Ավելացնել էլ․ հասցե"</string>
+    <string name="quickcontact_add_email" msgid="739298028384348482">"Ավելացնել էլփոստի հասցե"</string>
     <string name="missing_app" msgid="1466111003546611387">"Այս գործողությունը կատարելու համար ոչ մի ծրագիր չի գտնվել:"</string>
     <string name="menu_share" msgid="943789700636542260">"Կիսվել"</string>
     <string name="menu_add_contact" msgid="3198704337220892684">"Ավելացնել կոնտակտներում"</string>
@@ -173,7 +173,7 @@
     <string name="contacts_unavailable_import_contacts" msgid="3182801738595937144">"Ներմուծել"</string>
     <string name="create_group_item_label" msgid="3263064599743742865">"Ստեղծել նոր…"</string>
     <string name="delete_group_dialog_message" msgid="335713829185261371">"Ջնջե՞լ «<xliff:g id="GROUP_LABEL">%1$s</xliff:g>» պիտակը (կոնտակտները չեն ջնջվի):"</string>
-    <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"Նշեք կոնտակտի անունը"</string>
+    <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"Մուտքագրեք կոնտակտի անունը՝ մեկ ուրիշի հետ միավերլուց առաջ:"</string>
     <string name="copy_text" msgid="3257145021583508761">"Պատճենել սեղմատախտակին"</string>
     <string name="set_default" msgid="4417505153468300351">"Սահմանել ըստ կանխադրման"</string>
     <string name="clear_default" msgid="7193185801596678067">"Մաքրել լռելյայն"</string>
@@ -213,7 +213,7 @@
     <string name="header_event_entry" msgid="6738250422744401460">"Միջոցառում"</string>
     <string name="header_relation_entry" msgid="1520292958088146460">"Հարաբերություն"</string>
     <string name="header_name_entry" msgid="1592791008096288306">"Անուն"</string>
-    <string name="header_email_entry" msgid="8666093061171624478">"Էլ․ հասցե"</string>
+    <string name="header_email_entry" msgid="8666093061171624478">"Էլփոստի հասցե"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"Հեռախոս"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"Երթուղիներ"</string>
     <string name="editor_more_fields" msgid="3630987771304393421">"Լրացուցիչ դաշտեր"</string>
@@ -230,14 +230,14 @@
     <string name="suggestion_card_help_message" msgid="4474061044387181093">"Այս կոնտակտները հնարավոր է միևնույն մարդու կոնտակտներ են։ Կարող եք դրանք միակցել և ստեղծել մեկ կոնտակտ։"</string>
     <string name="editor_delete_view_description" msgid="8583095381562991959">"Ջնջել <xliff:g id="DATA_TYPE">%1$s </xliff:g><xliff:g id="DATA_KIND">%2$s</xliff:g>"</string>
     <string name="editor_delete_view_description_short" msgid="7335518371270844912">"Ջնջել <xliff:g id="DATA_KIND">%s</xliff:g>"</string>
-    <string name="menu_assistant" msgid="5760693735722052454">"Հուշումներ"</string>
+    <string name="menu_assistant" msgid="5760693735722052454">"Առաջարկներ"</string>
     <string name="menu_assistant_new_badge" msgid="3132884821616980034">"Նոր"</string>
     <string name="navigation_drawer_open" msgid="1126498472143250642">"Բացել նավարկման դարակը"</string>
     <string name="navigation_drawer_close" msgid="4137416137011817930">"Փակել նավարկման դարակը"</string>
     <string name="navigation_drawer_label" msgid="4154758025620107419">"<xliff:g id="LABEL_NAME">%s</xliff:g> պիտակ"</string>
     <string name="menu_title_groups" msgid="8356921831150278868">"Պիտակներ"</string>
     <string name="menu_title_filters" msgid="8210922220185114527">"Հաշիվներ"</string>
-    <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"Հուշումներ"</string>
+    <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"Առաջարկներ"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"Կոնտակտները պահեք տեսակավորված և ցանկացած պահի հեշտությամբ գտեք ձեր ուզած կոնտակտը"</string>
     <string name="undo" msgid="1425165101664071422">"Հետարկել"</string>
     <string name="call_custom" msgid="6385303130912713318">"Զանգել <xliff:g id="CUSTOM_LABEL">%s</xliff:g>-ին"</string>
@@ -369,10 +369,10 @@
     <string name="list_filter_single" msgid="5871400283515893087">"Կոնտակտ"</string>
     <string name="display_ungrouped" msgid="6885954210243119591">"Բոլոր կոնտակտները"</string>
     <string name="display_all_contacts" msgid="2031647544742889505">"Բոլոր կոնտակտները"</string>
-    <string name="menu_sync_remove" msgid="3266725887008450161">"Հեռացնել համաժամացված խումբը"</string>
-    <string name="dialog_sync_add" msgid="8267045393119375803">"Ավելացնել համաժամացված խումբ"</string>
+    <string name="menu_sync_remove" msgid="3266725887008450161">"Հեռացնել համաժամեցված խումբը"</string>
+    <string name="dialog_sync_add" msgid="8267045393119375803">"Ավելացնել համաժամեցված խումբ"</string>
     <string name="display_more_groups" msgid="2682547080423434170">"Այլ խմբեր..."</string>
-    <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"«<xliff:g id="GROUP">%s</xliff:g>»-ի հեռացումը համաժամացումից նաև կհեռացնի ցանկացած չխմբավորված կոնտակտ համաժամացումից:"</string>
+    <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"«<xliff:g id="GROUP">%s</xliff:g>»-ի հեռացումը համաժամեցումից նաև կհեռացնի ցանկացած չխմբավորված կոնտակտ համաժամեցումից:"</string>
     <string name="savingDisplayGroups" msgid="2133152192716475939">"Ցուցադրման ընտրանքները պահվում են..."</string>
     <string name="listCustomView" msgid="1840624396582117590">"Անհատականացված դիտակերպ"</string>
     <string name="dialog_new_contact_account" msgid="4969619718062454756">"Պահել ներմուծված կոնտակտներն այստեղ՝"</string>
@@ -495,11 +495,11 @@
     <string name="sim_import_failed_toast" msgid="5559267299793622705">"SIM քարտից չհաջողվեց ներմուծել կոնտակտները"</string>
     <string name="sim_import_title" msgid="2511154832820812822">"Ներմուծել SIM քարտից"</string>
     <string name="sim_import_cancel_content_description" msgid="1619832410253424452">"Չեղարկել"</string>
-    <string name="auto_sync_off" msgid="2180147284456026587">"Հպեք՝ հաշվի ինքնահամաժամացումը միացնելու համար:"</string>
+    <string name="auto_sync_off" msgid="2180147284456026587">"Հպեք՝ հաշվի ինքնահամաժամեցումը միացնելու համար:"</string>
     <string name="dismiss_sync_alert" msgid="8941131776605093596">"Անտեսել"</string>
-    <string name="account_sync_off" msgid="7646143254066243924">"Հպեք՝ հաշվի համաժամացումը միացնելու համար:"</string>
-    <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"Միացնե՞լ ինքնահամաժամացումը:"</string>
-    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"Ինչպես Google Կոնտակտներում, այնպես էլ մյուս բոլոր հավելվածներում և հաշիվներում կատարած փոփոխությունները կհամաժամացվեն վեբ միջերեսի և ձեր սարքերի միջև:"</string>
+    <string name="account_sync_off" msgid="7646143254066243924">"Հպեք՝ հաշվի համաժամեցումը միացնելու համար:"</string>
+    <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"Միացնե՞լ ինքնահամաժամեցումը:"</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"Ինչպես Google Կոնտակտներում, այնպես էլ մյուս բոլոր հավելվածներում և հաշիվներում կատարած փոփոխությունները կհամաժամեցվեն վեբ միջերեսի և ձեր սարքերի միջև:"</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"Միացնել"</string>
     <string name="connection_error_message" msgid="7046408921529247089">"Կապ չկա"</string>
     <string name="single_sim_display_label" msgid="6985770499439371497">"SIM քարտ"</string>

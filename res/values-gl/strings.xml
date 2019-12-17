@@ -62,9 +62,9 @@
     <string name="separatorJoinAggregateAll" msgid="7939932265026181043">"Todos os contactos"</string>
     <string name="contactsJoinedNamedMessage" msgid="1299418263439579455">"<xliff:g id="NAME">%s</xliff:g> ligou os contactos"</string>
     <string name="contactsJoinedMessage" msgid="3343535986195643136">"Ligáronse os contactos"</string>
-    <string name="contacts_deleted_one_named_toast" msgid="2252551736301363193">"Eliminouse o contacto (<xliff:g id="NAME">%1$s</xliff:g>)"</string>
-    <string name="contacts_deleted_two_named_toast" msgid="3642082931473111791">"Elimináronse os contactos (<xliff:g id="NAME_0">%1$s</xliff:g> e <xliff:g id="NAME_1">%2$s</xliff:g>)"</string>
-    <string name="contacts_deleted_many_named_toast" msgid="7731565342428031249">"Elimináronse os contactos (<xliff:g id="NAME_0">%1$s</xliff:g>, <xliff:g id="NAME_1">%2$s</xliff:g>, <xliff:g id="NAME_2">%3$s</xliff:g>…)"</string>
+    <string name="contacts_deleted_one_named_toast" msgid="2252551736301363193">"Eliminouse a <xliff:g id="NAME">%1$s</xliff:g>"</string>
+    <string name="contacts_deleted_two_named_toast" msgid="3642082931473111791">"Eliminouse a <xliff:g id="NAME_0">%1$s</xliff:g> e <xliff:g id="NAME_1">%2$s</xliff:g>"</string>
+    <string name="contacts_deleted_many_named_toast" msgid="7731565342428031249">"Eliminouse a <xliff:g id="NAME_0">%1$s</xliff:g>, <xliff:g id="NAME_1">%2$s</xliff:g>, <xliff:g id="NAME_2">%3$s</xliff:g>…"</string>
     <plurals name="contacts_deleted_toast" formatted="false" msgid="1477708624197262295">
       <item quantity="other">Elimináronse os contactos</item>
       <item quantity="one">Eliminouse o contacto</item>
@@ -103,7 +103,7 @@
     <string name="emptyGroup" msgid="5102411903247859575">"Non hai ningún contacto con esta etiqueta"</string>
     <string name="emptyAccount" msgid="6873962901497975964">"Non hai ningún contacto nesta conta"</string>
     <string name="emptyMainList" msgid="2772242747899664460">"A túa lista de contactos está baleira"</string>
-    <string name="contactSavedNamedToast" msgid="895136068894549611">"Gardouse o contacto (<xliff:g id="DISPLAY_NAME">%s</xliff:g>)"</string>
+    <string name="contactSavedNamedToast" msgid="895136068894549611">"Gardouse a <xliff:g id="DISPLAY_NAME">%s</xliff:g>"</string>
     <string name="contactSavedToast" msgid="9171862279493213075">"Gardouse o contacto"</string>
     <string name="contactUnlinkedToast" msgid="7122823195786012553">"Desligáronse os contactos"</string>
     <string name="contactSavedErrorToast" msgid="4827033473908688031">"Non se puideron gardar os cambios no contacto"</string>
@@ -241,11 +241,11 @@
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"Mantén os teus contactos organizados e de modo que sexan útiles"</string>
     <string name="undo" msgid="1425165101664071422">"Desfacer"</string>
     <string name="call_custom" msgid="6385303130912713318">"Chamar a: <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
-    <string name="call_home" msgid="1990519474420545392">"Chamar ao teléfono particular"</string>
+    <string name="call_home" msgid="1990519474420545392">"Chamar á casa"</string>
     <string name="call_mobile" msgid="7502236805487609178">"Chamar ao móbil"</string>
     <string name="call_work" msgid="5328785911463744028">"Chamar ao traballo"</string>
     <string name="call_fax_work" msgid="7467763592359059243">"Chamar ao número de fax do traballo"</string>
-    <string name="call_fax_home" msgid="8342175628887571876">"Chamar ao número de fax particular"</string>
+    <string name="call_fax_home" msgid="8342175628887571876">"Chamar ao número de fax da casa"</string>
     <string name="call_pager" msgid="9003902812293983281">"Chamar ao buscapersoas"</string>
     <string name="call_other" msgid="8563753966926932052">"Chamar"</string>
     <string name="call_callback" msgid="1910165691349426858">"Chamar ao número de devolución de chamada"</string>
@@ -263,11 +263,11 @@
     <string name="call_mms" msgid="6274041545876221437">"Chamar ao número de teléfono de MMS"</string>
     <string name="call_by_shortcut" msgid="2566802538698913124">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (chamar)"</string>
     <string name="sms_custom" msgid="415060214233647603">"Enviar unha mensaxe a: <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
-    <string name="sms_home" msgid="7524332261493162995">"Enviar unha mensaxe ao teléfono particular"</string>
+    <string name="sms_home" msgid="7524332261493162995">"Enviar unha mensaxe á casa"</string>
     <string name="sms_mobile" msgid="5200107250451030769">"Enviar unha mensaxe ao teléfono móbil"</string>
     <string name="sms_work" msgid="2269624156655267740">"Enviar unha mensaxe ao traballo"</string>
     <string name="sms_fax_work" msgid="8028189067816907075">"Enviar unha mensaxe ao fax do traballo"</string>
-    <string name="sms_fax_home" msgid="9204042076306809634">"Enviar unha mensaxe ao fax particular"</string>
+    <string name="sms_fax_home" msgid="9204042076306809634">"Enviar unha mensaxe ao fax da casa"</string>
     <string name="sms_pager" msgid="7730404569637015192">"Enviar unha mensaxe ao buscapersoas"</string>
     <string name="sms_other" msgid="806127844607642331">"Enviar unha mensaxe"</string>
     <string name="sms_callback" msgid="5004824430094288752">"Enviar unha mensaxe ao número de devolución da chamada"</string>
@@ -330,7 +330,7 @@
     <string name="label_sip_address" msgid="7252153678613978127">"SIP"</string>
     <string name="websiteLabelsGroup" msgid="4202998982804009261">"Sitio web"</string>
     <string name="groupsLabel" msgid="7000816729542098972">"Etiquetas"</string>
-    <string name="email_home" msgid="8573740658148184279">"Enviar correo electrónico ao enderezo particular"</string>
+    <string name="email_home" msgid="8573740658148184279">"Enviar correo electrónico á casa"</string>
     <string name="email_mobile" msgid="2042889209787989814">"Enviar correo electrónico ao móbil"</string>
     <string name="email_work" msgid="2807430017302722689">"Enviar correo electrónico ao traballo"</string>
     <string name="email_other" msgid="3454004077967657109">"Correo electrónico"</string>
@@ -341,7 +341,7 @@
     <string name="postal_region" msgid="6045263193478437672">"Estado"</string>
     <string name="postal_postcode" msgid="572136414136673751">"Código postal"</string>
     <string name="postal_country" msgid="7638264508416368690">"País"</string>
-    <string name="map_home" msgid="1243547733423343982">"Ver enderezo particular"</string>
+    <string name="map_home" msgid="1243547733423343982">"Ver enderezo da casa"</string>
     <string name="map_work" msgid="1360474076921878088">"Ver enderezo do traballo"</string>
     <string name="map_other" msgid="3817820803587012641">"Ver enderezo"</string>
     <string name="map_custom" msgid="8761800628069473526">"Ver enderezo de: <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>

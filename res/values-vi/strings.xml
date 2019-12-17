@@ -26,7 +26,7 @@
     <string name="contactInsertOrEditActivityTitle" msgid="6527505405325862674">"Thêm vào liên hệ"</string>
     <string name="contactPickerActivityTitle" msgid="4301062192337417640">"Chọn người liên hệ"</string>
     <string name="groupMemberPickerActivityTitle" msgid="1431750793695262522">"Chọn"</string>
-    <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"Tạo người liên hệ mới"</string>
+    <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"Tạo liên hệ mới"</string>
     <string name="searchHint" msgid="8482945356247760701">"Tìm kiếm trong danh bạ"</string>
     <string name="menu_addStar" msgid="2908478235715404876">"Thêm vào liên hệ ưa thích"</string>
     <string name="menu_removeStar" msgid="5844227078364227030">"Xóa khỏi mục ưa thích"</string>
@@ -59,7 +59,7 @@
     <string name="titleJoinContactDataWith" msgid="6825255752748313944">"Liên kết liên hệ"</string>
     <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"Chọn liên hệ bạn muốn liên kết với <xliff:g id="NAME">%s</xliff:g>:"</string>
     <string name="separatorJoinAggregateSuggestions" msgid="2831414448851313345">"Liên hệ được đề xuất"</string>
-    <string name="separatorJoinAggregateAll" msgid="7939932265026181043">"Tất cả người liên hệ"</string>
+    <string name="separatorJoinAggregateAll" msgid="7939932265026181043">"Tất cả liên hệ"</string>
     <string name="contactsJoinedNamedMessage" msgid="1299418263439579455">"Đã liên kết <xliff:g id="NAME">%s</xliff:g>"</string>
     <string name="contactsJoinedMessage" msgid="3343535986195643136">"Đã liên kết liên hệ"</string>
     <string name="contacts_deleted_one_named_toast" msgid="2252551736301363193">"Đã xóa <xliff:g id="NAME">%1$s</xliff:g>"</string>
@@ -80,17 +80,17 @@
     <string name="title_from_google" msgid="4664084747121207202">"Từ Google"</string>
     <string name="title_from_other_accounts" msgid="8307885412426754288">"Từ <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
     <string name="menu_set_ring_tone" msgid="8728345772068064946">"Đặt nhạc chuông"</string>
-    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"Chuyển tới thư thoại"</string>
+    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"Định tuyến đến thư thoại"</string>
     <string name="menu_unredirect_calls_to_vm" msgid="8725542534701811737">"Bỏ định tuyến đến thư thoại"</string>
     <string name="readOnlyContactWarning" msgid="7514475664695089411">"Liên hệ này ở trạng thái chỉ đọc. Bạn không thể xóa nhưng có thể ẩn liên hệ này."</string>
     <string name="readOnlyContactWarning_positive_button" msgid="8914797212167683673">"Ẩn liên hệ"</string>
     <string name="readOnlyContactDeleteConfirmation" msgid="4717023505914239809">"Các tài khoản chỉ đọc trong liên hệ này sẽ bị ẩn chứ không bị xóa."</string>
-    <string name="single_delete_confirmation" msgid="3106905986948679720">"Xóa người liên hệ này?"</string>
+    <string name="single_delete_confirmation" msgid="3106905986948679720">"Bạn muốn xóa liên hệ này?"</string>
     <string name="batch_delete_confirmation" msgid="3984346060324014108">"Bạn muốn xóa các liên hệ đã chọn?"</string>
     <string name="batch_delete_read_only_contact_confirmation" msgid="8411117621035639964">"Bạn có thể ẩn chứ không thể xóa liên hệ khỏi các tài khoản chỉ đọc của mình."</string>
     <string name="batch_delete_multiple_accounts_confirmation" msgid="8207205649127030030">"Các liên hệ cần xóa có thông tin chi tiết từ nhiều tài khoản. Thông tin chi tiết từ các tài khoản chỉ đọc sẽ bị ẩn chứ không bị xóa."</string>
     <string name="multipleContactDeleteConfirmation" msgid="5235324124905653550">"Xóa liên hệ này sẽ xóa thông tin chi tiết khỏi nhiều tài khoản."</string>
-    <string name="deleteConfirmation" msgid="3512271779086656043">"Xóa người liên hệ này?"</string>
+    <string name="deleteConfirmation" msgid="3512271779086656043">"Bạn muốn xóa liên hệ này?"</string>
     <string name="deleteConfirmation_positive_button" msgid="7857888845028586365">"Xóa"</string>
     <string name="invalidContactMessage" msgid="8215051456181842274">"Địa chỉ liên hệ không tồn tại."</string>
     <string name="createContactShortcutSuccessful_NoName" msgid="8831303345367275472">"Đã thêm liên hệ vào Màn hình chính."</string>
@@ -181,16 +181,16 @@
     <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"Loại bỏ thay đổi?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"Loại bỏ"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"Hủy"</string>
-    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"Loại bỏ các mục tùy chỉnh?"</string>
+    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"Loại bỏ tùy chỉnh?"</string>
     <string name="enter_contact_name" msgid="4594274696120278368">"Tìm kiếm trong danh bạ"</string>
     <string name="title_edit_group" msgid="8602752287270586734">"Xóa liên hệ"</string>
     <string name="local_profile_title" msgid="2021416826991393684">"T.sử cục bộ của tôi"</string>
     <string name="external_profile_title" msgid="8034998767621359438">"Tiểu sử <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g> của tôi"</string>
     <string name="contact_editor_prompt_zero_accounts" msgid="6648376557574360096">"Dành chút thời gian để thêm tài khoản mà sẽ sao lưu danh bạ của bạn vào Google."</string>
     <string name="contact_editor_prompt_one_account" msgid="3087691056345099310">"Liên hệ mới sẽ được lưu vào <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>."</string>
-    <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"Chọn tài khoản mặc định cho người liên hệ mới:"</string>
-    <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"Tạo người liên hệ mới"</string>
-    <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"Chỉnh sửa người liên hệ"</string>
+    <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"Chọn tài khoản mặc định cho các liên hệ mới:"</string>
+    <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"Tạo liên hệ mới"</string>
+    <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"Chỉnh sửa liên hệ"</string>
     <string name="contact_editor_title_read_only_contact" msgid="2443496574528842237">"Chỉ xem"</string>
     <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4186699385645902152">"Chọn liên hệ cần chỉnh sửa"</string>
     <string name="contact_editor_pick_linked_contact_dialog_title" msgid="4618465940423857694">"Liên hệ đã liên kết"</string>
@@ -199,7 +199,7 @@
     <string name="add_account" msgid="8201790677994503186">"Thêm tài khoản"</string>
     <string name="add_new_account" msgid="5748627740680940264">"Thêm tài khoản mới"</string>
     <string name="menu_export_database" msgid="2659719297530170820">"Xuất các tệp cơ sở dữ liệu"</string>
-    <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"Tạo người liên hệ mới"</string>
+    <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"Tạo liên hệ mới"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"Xem thêm"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"Xem bớt"</string>
     <string name="about_card_title" msgid="2920942314212825637">"Giới thiệu"</string>
@@ -216,7 +216,7 @@
     <string name="header_email_entry" msgid="8666093061171624478">"Email"</string>
     <string name="header_phone_entry" msgid="8450980572274173570">"Điện thoại"</string>
     <string name="content_description_directions" msgid="2686791825798189335">"chỉ đường tới địa điểm"</string>
-    <string name="editor_more_fields" msgid="3630987771304393421">"Thông tin khác"</string>
+    <string name="editor_more_fields" msgid="3630987771304393421">"Trường khác"</string>
     <string name="editor_change_photo_content_description" msgid="820879708069864340">"Thay đổi ảnh của liên hệ"</string>
     <string name="editor_add_photo_content_description" msgid="4194479313465418120">"Thêm ảnh của liên hệ"</string>
     <string name="editor_contact_photo_content_description" msgid="8571975622926162369">"Ảnh của liên hệ"</string>
@@ -294,11 +294,11 @@
     <string name="local_invisible_directory" msgid="6046691709127661065">"Khác"</string>
     <string name="directory_search_label" msgid="1887759056597975053">"Thư mục"</string>
     <string name="directory_search_label_work" msgid="8618292129829443176">"Thư mục công việc"</string>
-    <string name="local_search_label" msgid="2551177578246113614">"Tất cả người liên hệ"</string>
+    <string name="local_search_label" msgid="2551177578246113614">"Tất cả địa chỉ liên hệ"</string>
     <string name="description_quick_contact_for" msgid="6737516415168327789">"Liên hệ nhanh cho <xliff:g id="NAME">%1$s</xliff:g>"</string>
     <string name="missing_name" msgid="8745511583852904385">"(Không có tên)"</string>
     <string name="favoritesFrequentContacted" msgid="6184232487472425690">"Thường xuyên được liên hệ"</string>
-    <string name="list_filter_phones" msgid="735313795643493365">"Tất cả người liên hệ có số điện thoại"</string>
+    <string name="list_filter_phones" msgid="735313795643493365">"Tất cả địa chỉ liên hệ có số điện thoại"</string>
     <string name="list_filter_phones_work" msgid="1470173699551475015">"Liên hệ trên hồ sơ công việc"</string>
     <string name="view_updates_from_group" msgid="1782685984905600034">"Xem thông tin c.nhật"</string>
     <string name="account_phone" msgid="7128032778471187553">"Thiết bị"</string>
@@ -363,12 +363,12 @@
     <string name="collapse_fields_description" msgid="1884143625854637874">"Thu gọn"</string>
     <string name="announce_expanded_fields" msgid="1075947220478530622">"Đã mở rộng"</string>
     <string name="announce_collapsed_fields" msgid="6414231530177338704">"Đã thu gọn"</string>
-    <string name="list_filter_all_accounts" msgid="8908683398914322369">"Tất cả người liên hệ"</string>
+    <string name="list_filter_all_accounts" msgid="8908683398914322369">"Tất cả địa chỉ liên hệ"</string>
     <string name="list_filter_all_starred" msgid="5031734941601931356">"Được gắn dấu sao"</string>
     <string name="list_filter_customize" msgid="4789963356004169321">"Tùy chỉnh"</string>
     <string name="list_filter_single" msgid="5871400283515893087">"Địa chỉ liên hệ"</string>
-    <string name="display_ungrouped" msgid="6885954210243119591">"Tất cả người liên hệ khác"</string>
-    <string name="display_all_contacts" msgid="2031647544742889505">"Tất cả người liên hệ"</string>
+    <string name="display_ungrouped" msgid="6885954210243119591">"Tất cả địa chỉ l.hệ khác"</string>
+    <string name="display_all_contacts" msgid="2031647544742889505">"Tất cả địa chỉ liên hệ"</string>
     <string name="menu_sync_remove" msgid="3266725887008450161">"Xóa nhóm đồng bộ hóa"</string>
     <string name="dialog_sync_add" msgid="8267045393119375803">"Thêm nhóm đồng bộ hóa"</string>
     <string name="display_more_groups" msgid="2682547080423434170">"Nhóm khác…"</string>
@@ -388,7 +388,7 @@
     </plurals>
     <string name="import_from_vcf_file" msgid="8662528435646418203">"Tệp .vcf"</string>
     <string name="nothing_to_import_message" msgid="1651921906873335656">"Không còn gì để nhập"</string>
-    <string name="import_from_vcf_file_confirmation_message" msgid="967723361108008345">"Nhập danh bạ từ vCard?"</string>
+    <string name="import_from_vcf_file_confirmation_message" msgid="967723361108008345">"Nhập liên hệ từ vCard?"</string>
     <string name="cancel_import_confirmation_message" msgid="3929951040347726757">"Hủy yêu cầu nhập <xliff:g id="FILENAME">%s</xliff:g>?"</string>
     <string name="cancel_export_confirmation_message" msgid="1995462401949262638">"Hủy yêu cầu xuất <xliff:g id="FILENAME">%s</xliff:g>?"</string>
     <string name="cancel_vcard_import_or_export_failed" msgid="6139900383366166706">"Không thể nhập/xuất vCard"</string>
@@ -439,7 +439,7 @@
     <string name="display_options_view_given_name_first" msgid="3616004640258761473">"Tên trước"</string>
     <string name="display_options_view_family_name_first" msgid="956445100777296467">"Họ trước"</string>
     <string name="settings_accounts" msgid="350219740670774576">"Tài khoản"</string>
-    <string name="default_editor_account" msgid="699591683362420991">"Tài khoản mặc định cho người liên hệ mới"</string>
+    <string name="default_editor_account" msgid="699591683362420991">"Tài khoản mặc định cho các liên hệ mới"</string>
     <string name="settings_my_info_title" msgid="1534272456405343119">"Thông tin của tôi"</string>
     <string name="set_up_profile" msgid="7370213843590143771">"Thiết lập hồ sơ của bạn"</string>
     <string name="setting_about" msgid="7014388749752042863">"Giới thiệu về Danh bạ"</string>
@@ -447,14 +447,14 @@
     <string name="share_contacts" msgid="8109287987498711664">"Chia sẻ tất cả các liên hệ"</string>
     <string name="share_contacts_failure" msgid="1216431977330560559">"Không chia sẻ được liên hệ."</string>
     <string name="dialog_export" msgid="1628001095187741417">"Xuất danh bạ"</string>
-    <string name="dialog_import" msgid="2423592905927819672">"Nhập danh bạ từ"</string>
+    <string name="dialog_import" msgid="2423592905927819672">"Nhập liên hệ từ"</string>
     <string name="share_error" msgid="948429331673358107">"Không thể chia sẻ địa chỉ liên hệ này."</string>
     <string name="no_contact_to_share" msgid="1276397530378323033">"Không có liên hệ nào để chia sẻ."</string>
     <string name="menu_contacts_filter" msgid="2165153460860262501">"Danh bạ để hiển thị"</string>
-    <string name="activity_title_contacts_filter" msgid="8275542497615516969">"Hiển thị danh bạ"</string>
+    <string name="activity_title_contacts_filter" msgid="8275542497615516969">"DS liên hệ để hiển thị"</string>
     <string name="custom_list_filter" msgid="9048525797111024204">"Tùy chỉnh chế độ xem"</string>
     <string name="menu_custom_filter_save" msgid="2679793632208086460">"Lưu"</string>
-    <string name="hint_findContacts" msgid="7128627979899070325">"Tìm kiếm trong danh bạ"</string>
+    <string name="hint_findContacts" msgid="7128627979899070325">"Tìm kiếm liên hệ"</string>
     <string name="contactsFavoritesLabel" msgid="8417039765586853670">"Mục ưa thích"</string>
     <string name="menu_import" msgid="6107961135813836467">"Nhập"</string>
     <string name="menu_export" msgid="2658783911863503902">"Xuất"</string>
@@ -506,7 +506,7 @@
     <string name="show_more_content_description" msgid="4277410425912984722">"Hiển thị thêm"</string>
     <string name="importing_sim_finished_title" msgid="5196369441294050721">"Đã nhập xong thẻ SIM"</string>
     <string name="importing_sim_failed_title" msgid="39706901030537985">"Nhập không thành công"</string>
-    <string name="importing_sim_failed_message" msgid="3345258302998021066">"Không thể nhập danh bạ từ thẻ SIM"</string>
+    <string name="importing_sim_failed_message" msgid="3345258302998021066">"Không thể nhập liên hệ từ thẻ SIM"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"Đang nhập SIM"</string>
     <string name="contacts_default_notification_channel" msgid="4754058700611188581">"Thông báo"</string>
     <string name="yes_button" msgid="1268479086848288060">"Có"</string>
