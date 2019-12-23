@@ -448,8 +448,8 @@
     <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"Ім’я"</string>
     <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"Прізвище"</string>
     <string name="display_options_view_names_as" msgid="6514632499276563482">"Формат імені"</string>
-    <string name="display_options_view_given_name_first" msgid="3616004640258761473">"Ім’я спочатку"</string>
-    <string name="display_options_view_family_name_first" msgid="956445100777296467">"Прізвище спочатку"</string>
+    <string name="display_options_view_given_name_first" msgid="3616004640258761473">"Спочатку ім’я"</string>
+    <string name="display_options_view_family_name_first" msgid="956445100777296467">"Cпочатку прізвище"</string>
     <string name="settings_accounts" msgid="350219740670774576">"Облікові записи"</string>
     <string name="default_editor_account" msgid="699591683362420991">"Обл. запис за умовчанням для нових контактів"</string>
     <string name="settings_my_info_title" msgid="1534272456405343119">"Мої дані"</string>

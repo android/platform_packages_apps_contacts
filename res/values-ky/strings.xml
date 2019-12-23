@@ -508,7 +508,7 @@
     <string name="importing_sim_failed_title" msgid="39706901030537985">"Импорттолбой калды"</string>
     <string name="importing_sim_failed_message" msgid="3345258302998021066">"SIM-картадан байланыштар импорттолбой койду"</string>
     <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"SIM-картадан өткөрүлүп алынууда"</string>
-    <string name="contacts_default_notification_channel" msgid="4754058700611188581">"Эскертмелер"</string>
+    <string name="contacts_default_notification_channel" msgid="4754058700611188581">"Билдирмелер"</string>
     <string name="yes_button" msgid="1268479086848288060">"Ооба"</string>
     <string name="no_button" msgid="5742815694687835125">"Жок"</string>
 </resources>

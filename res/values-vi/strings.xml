@@ -26,7 +26,7 @@
     <string name="contactInsertOrEditActivityTitle" msgid="6527505405325862674">"Thêm vào liên hệ"</string>
     <string name="contactPickerActivityTitle" msgid="4301062192337417640">"Chọn người liên hệ"</string>
     <string name="groupMemberPickerActivityTitle" msgid="1431750793695262522">"Chọn"</string>
-    <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"Tạo liên hệ mới"</string>
+    <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"Tạo người liên hệ mới"</string>
     <string name="searchHint" msgid="8482945356247760701">"Tìm kiếm trong danh bạ"</string>
     <string name="menu_addStar" msgid="2908478235715404876">"Thêm vào liên hệ ưa thích"</string>
     <string name="menu_removeStar" msgid="5844227078364227030">"Xóa khỏi mục ưa thích"</string>
@@ -189,7 +189,7 @@
     <string name="contact_editor_prompt_zero_accounts" msgid="6648376557574360096">"Dành chút thời gian để thêm tài khoản mà sẽ sao lưu danh bạ của bạn vào Google."</string>
     <string name="contact_editor_prompt_one_account" msgid="3087691056345099310">"Liên hệ mới sẽ được lưu vào <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>."</string>
     <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"Chọn tài khoản mặc định cho người liên hệ mới:"</string>
-    <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"Tạo liên hệ mới"</string>
+    <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"Tạo người liên hệ mới"</string>
     <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"Chỉnh sửa người liên hệ"</string>
     <string name="contact_editor_title_read_only_contact" msgid="2443496574528842237">"Chỉ xem"</string>
     <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4186699385645902152">"Chọn liên hệ cần chỉnh sửa"</string>
@@ -199,7 +199,7 @@
     <string name="add_account" msgid="8201790677994503186">"Thêm tài khoản"</string>
     <string name="add_new_account" msgid="5748627740680940264">"Thêm tài khoản mới"</string>
     <string name="menu_export_database" msgid="2659719297530170820">"Xuất các tệp cơ sở dữ liệu"</string>
-    <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"Tạo liên hệ mới"</string>
+    <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"Tạo người liên hệ mới"</string>
     <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"Xem thêm"</string>
     <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"Xem bớt"</string>
     <string name="about_card_title" msgid="2920942314212825637">"Giới thiệu"</string>

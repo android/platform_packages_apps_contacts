@@ -32,8 +32,8 @@
     <string name="menu_removeStar" msgid="5844227078364227030">"पसंदीदा से निकालें"</string>
     <string name="description_action_menu_remove_star" msgid="4699640108012265178">"पसंदीदा से निकाल दिया गया"</string>
     <string name="description_action_menu_add_star" msgid="3327186327234177456">"पसंदीदा में जोड़ा गया"</string>
-    <string name="menu_editContact" msgid="9042415603857662633">"संपादित करें"</string>
-    <string name="menu_deleteContact" msgid="6788644058868189393">"हटाएं"</string>
+    <string name="menu_editContact" msgid="9042415603857662633">"बदलाव करें"</string>
+    <string name="menu_deleteContact" msgid="6788644058868189393">"मिटाएं"</string>
     <string name="menu_change_photo" msgid="7769177631511496210">"फ़ोटो बदलें"</string>
     <string name="menu_create_contact_shortcut" msgid="1663022219127343858">"शॉर्टकट बनाएं"</string>
     <string name="menu_splitAggregate" msgid="2627252205317945563">"अनलिंक करें"</string>
@@ -91,7 +91,7 @@
     <string name="batch_delete_multiple_accounts_confirmation" msgid="8207205649127030030">"जिन खातों को हटाया जाना है उनमें एकाधिक खातों के विवरण हैं. केवल पढ़ने के लिए खातों के विवरण छिपाए जाएंगे, उन्हें हटाया नहीं जाएगा."</string>
     <string name="multipleContactDeleteConfirmation" msgid="5235324124905653550">"इस संपर्क को हटाने से एकाधिक खातों से विवरण हट जाएंगे."</string>
     <string name="deleteConfirmation" msgid="3512271779086656043">"यह संपर्क मिटाएं?"</string>
-    <string name="deleteConfirmation_positive_button" msgid="7857888845028586365">"हटाएं"</string>
+    <string name="deleteConfirmation_positive_button" msgid="7857888845028586365">"मिटाएं"</string>
     <string name="invalidContactMessage" msgid="8215051456181842274">"संपर्क मौजूद नहीं है."</string>
     <string name="createContactShortcutSuccessful_NoName" msgid="8831303345367275472">"संपर्कों को होम स्क्रीन में जोड़ा गया."</string>
     <string name="createContactShortcutSuccessful" msgid="953651153238790069">"<xliff:g id="NAME">%s</xliff:g> को होम स्क्रीन में जोड़ा गया."</string>
@@ -123,7 +123,7 @@
     <string name="groupSomeContactsNoEmailsToast" msgid="8211161470235548732">"कुछ संपर्कों में ईमेल नहीं हैं."</string>
     <string name="groupSomeContactsNoPhonesToast" msgid="5530760834827530509">"कुछ संपर्कों में फ़ोन नंबर नहीं हैं."</string>
     <string name="menu_sendEmailOption" msgid="5978319931321657780">"ईमेल भेजें"</string>
-    <string name="menu_sendMessageOption" msgid="8850168125274916426">"संदेश भेजें"</string>
+    <string name="menu_sendMessageOption" msgid="8850168125274916426">"मैसेज भेजें"</string>
     <string name="pickerSelectContactsActivityTitle" msgid="1936544190231136729">"संपर्क चुनें"</string>
     <string name="send_to_selection" msgid="2251339182881603540">"भेजें"</string>
     <string name="listFoundAllContactsZero" msgid="922980883593159444">"कोई संपर्क नहीं"</string>
@@ -190,9 +190,9 @@
     <string name="contact_editor_prompt_one_account" msgid="3087691056345099310">"नए संपर्कों को <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g> में सहेजा जाएगा."</string>
     <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"नए संपर्कों के लिए डिफ़ॉल्ट खाता चुनें:"</string>
     <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"नया संपर्क बनाएं"</string>
-    <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"संपर्क संपादित करें"</string>
+    <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"संपर्क में बदलाव करें"</string>
     <string name="contact_editor_title_read_only_contact" msgid="2443496574528842237">"केवल देखने के लिए"</string>
-    <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4186699385645902152">"संपादित करने के लिए संपर्क चुनें"</string>
+    <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4186699385645902152">"बदलाव करने के लिए संपर्क चुनें"</string>
     <string name="contact_editor_pick_linked_contact_dialog_title" msgid="4618465940423857694">"लिंक किए गए संपर्क"</string>
     <string name="contact_editor_add_linked_contact" msgid="426142748048816297">"जोड़ें"</string>
     <string name="contact_editor_unlink_contacts" msgid="4525214336177236653">"अनलिंक करें"</string>
@@ -222,7 +222,7 @@
     <string name="editor_contact_photo_content_description" msgid="8571975622926162369">"संपर्क की फ़ोटो"</string>
     <string name="editor_failed_to_load" msgid="1623639078580475818">"संपादक को खोलने में विफल रहा."</string>
     <string name="editor_account_selector_title" msgid="4426337993307015833">"इसमें सहेजा जा रहा है"</string>
-    <string name="editor_account_selector_read_only_title" msgid="4137969650184457126">"<xliff:g id="ACCOUNT">%s</xliff:g> की संपर्क जानकारी संपादित नहीं की जा सकती है"</string>
+    <string name="editor_account_selector_read_only_title" msgid="4137969650184457126">"<xliff:g id="ACCOUNT">%s</xliff:g> की संपर्क जानकारी में बदलाव नहीं किया जा सकता है"</string>
     <string name="quickcontact_suggestion_link_button" msgid="3244619714781727946">"संपर्क लिंक करें"</string>
     <string name="quickcontact_suggestion_cancel_button" msgid="8236954313106630862">"अभी नहीं"</string>
     <string name="suggestion_card_this_contact_title" msgid="3039457405374454914">"यह संपर्क"</string>
@@ -309,7 +309,7 @@
     <string name="name_family" msgid="7466985689626017037">"उपनाम"</string>
     <string name="name_prefix" msgid="59756378548779822">"नाम के पहले का टाइटल"</string>
     <string name="name_middle" msgid="8467433655992690326">"मध्य नाम"</string>
-    <string name="name_suffix" msgid="3855278445375651441">"नाम का अंतिम भाग"</string>
+    <string name="name_suffix" msgid="3855278445375651441">"नाम का आखिरी भाग"</string>
     <string name="name_phonetic" msgid="4259595234312430484">"फ़ोनेटिक नाम"</string>
     <string name="name_phonetic_given" msgid="8723179018384187631">"फ़ोनेटिक नाम"</string>
     <string name="name_phonetic_middle" msgid="8643721493320405200">"फ़ोनेटिक मध्य नाम"</string>
@@ -354,7 +354,7 @@
     <string name="chat_icq" msgid="8438405386153745775">"ICQ का उपयोग करके बातचीत करें"</string>
     <string name="chat_jabber" msgid="7561444230307829609">"Jabber का उपयोग करके बातचीत करें"</string>
     <string name="chat" msgid="9025361898797412245">"बातचीत करें"</string>
-    <string name="description_minus_button" msgid="6908099247930477551">"हटाएं"</string>
+    <string name="description_minus_button" msgid="6908099247930477551">"मिटाएं"</string>
     <string name="expand_name_fields_description" msgid="6948274252874552543">"ज़्यादा नाम फ़ील्ड दिखाएं"</string>
     <string name="collapse_name_fields_description" msgid="4757877385895561556">"नाम फ़ील्ड संक्षिप्त करें"</string>
     <string name="expand_phonetic_name_fields_description" msgid="9133052674087187927">"ज़्यादा फ़ोनेटिक नाम फ़ील्ड दिखाएं"</string>
@@ -480,7 +480,7 @@
     <string name="account_filter_view_checked" msgid="6696859503887762213">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> चेक किया गया"</string>
     <string name="account_filter_view_not_checked" msgid="2248684521205038389">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> चेक नहीं किया गया"</string>
     <string name="description_search_video_call" msgid="5841525580339803272">"वीडियो कॉल करें"</string>
-    <string name="description_delete_contact" msgid="53835657343783663">"हटाएं"</string>
+    <string name="description_delete_contact" msgid="53835657343783663">"मिटाएं\\"</string>
     <string name="description_no_name_header" msgid="8884991311595943271">"पदलोप चिह्न"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"इस शॉर्टकट को अक्षम कर दिया गया है"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"संपर्क निकाल दिया गया था"</string>

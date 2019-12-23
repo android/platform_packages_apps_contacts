@@ -369,10 +369,10 @@
     <string name="list_filter_single" msgid="5871400283515893087">"Կոնտակտ"</string>
     <string name="display_ungrouped" msgid="6885954210243119591">"Բոլոր կոնտակտները"</string>
     <string name="display_all_contacts" msgid="2031647544742889505">"Բոլոր կոնտակտները"</string>
-    <string name="menu_sync_remove" msgid="3266725887008450161">"Հեռացնել համաժամեցված խումբը"</string>
-    <string name="dialog_sync_add" msgid="8267045393119375803">"Ավելացնել համաժամեցված խումբ"</string>
+    <string name="menu_sync_remove" msgid="3266725887008450161">"Հեռացնել համաժամացված խումբը"</string>
+    <string name="dialog_sync_add" msgid="8267045393119375803">"Ավելացնել համաժամացված խումբ"</string>
     <string name="display_more_groups" msgid="2682547080423434170">"Այլ խմբեր..."</string>
-    <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"«<xliff:g id="GROUP">%s</xliff:g>»-ի հեռացումը համաժամեցումից նաև կհեռացնի ցանկացած չխմբավորված կոնտակտ համաժամեցումից:"</string>
+    <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"«<xliff:g id="GROUP">%s</xliff:g>»-ի հեռացումը համաժամացումից նաև կհեռացնի ցանկացած չխմբավորված կոնտակտ համաժամացումից:"</string>
     <string name="savingDisplayGroups" msgid="2133152192716475939">"Ցուցադրման ընտրանքները պահվում են..."</string>
     <string name="listCustomView" msgid="1840624396582117590">"Անհատականացված դիտակերպ"</string>
     <string name="dialog_new_contact_account" msgid="4969619718062454756">"Պահել ներմուծված կոնտակտներն այստեղ՝"</string>
@@ -495,11 +495,11 @@
     <string name="sim_import_failed_toast" msgid="5559267299793622705">"SIM քարտից չհաջողվեց ներմուծել կոնտակտները"</string>
     <string name="sim_import_title" msgid="2511154832820812822">"Ներմուծել SIM քարտից"</string>
     <string name="sim_import_cancel_content_description" msgid="1619832410253424452">"Չեղարկել"</string>
-    <string name="auto_sync_off" msgid="2180147284456026587">"Հպեք՝ հաշվի ինքնահամաժամեցումը միացնելու համար:"</string>
+    <string name="auto_sync_off" msgid="2180147284456026587">"Հպեք՝ հաշվի ինքնահամաժամացումը միացնելու համար:"</string>
     <string name="dismiss_sync_alert" msgid="8941131776605093596">"Անտեսել"</string>
-    <string name="account_sync_off" msgid="7646143254066243924">"Հպեք՝ հաշվի համաժամեցումը միացնելու համար:"</string>
-    <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"Միացնե՞լ ինքնահամաժամեցումը:"</string>
-    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"Ինչպես Google Կոնտակտներում, այնպես էլ մյուս բոլոր հավելվածներում և հաշիվներում կատարած փոփոխությունները կհամաժամեցվեն վեբ միջերեսի և ձեր սարքերի միջև:"</string>
+    <string name="account_sync_off" msgid="7646143254066243924">"Հպեք՝ հաշվի համաժամացումը միացնելու համար:"</string>
+    <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"Միացնե՞լ ինքնահամաժամացումը:"</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"Ինչպես Google Կոնտակտներում, այնպես էլ մյուս բոլոր հավելվածներում և հաշիվներում կատարած փոփոխությունները կհամաժամացվեն վեբ միջերեսի և ձեր սարքերի միջև:"</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"Միացնել"</string>
     <string name="connection_error_message" msgid="7046408921529247089">"Կապ չկա"</string>
     <string name="single_sim_display_label" msgid="6985770499439371497">"SIM քարտ"</string>

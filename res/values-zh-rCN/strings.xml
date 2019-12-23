@@ -28,10 +28,10 @@
     <string name="groupMemberPickerActivityTitle" msgid="1431750793695262522">"选择"</string>
     <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"创建新联系人"</string>
     <string name="searchHint" msgid="8482945356247760701">"搜索联系人"</string>
-    <string name="menu_addStar" msgid="2908478235715404876">"添加到收藏"</string>
-    <string name="menu_removeStar" msgid="5844227078364227030">"从收藏中移除"</string>
-    <string name="description_action_menu_remove_star" msgid="4699640108012265178">"已从收藏中移除"</string>
-    <string name="description_action_menu_add_star" msgid="3327186327234177456">"已添加到收藏"</string>
+    <string name="menu_addStar" msgid="2908478235715404876">"添加到常用联系人"</string>
+    <string name="menu_removeStar" msgid="5844227078364227030">"从常用联系人中移除"</string>
+    <string name="description_action_menu_remove_star" msgid="4699640108012265178">"已从常用联系人中移除"</string>
+    <string name="description_action_menu_add_star" msgid="3327186327234177456">"已添加到常用联系人"</string>
     <string name="menu_editContact" msgid="9042415603857662633">"修改"</string>
     <string name="menu_deleteContact" msgid="6788644058868189393">"删除"</string>
     <string name="menu_change_photo" msgid="7769177631511496210">"更换照片"</string>
@@ -443,7 +443,7 @@
     <string name="settings_my_info_title" msgid="1534272456405343119">"我的信息"</string>
     <string name="set_up_profile" msgid="7370213843590143771">"设置您的个人资料"</string>
     <string name="setting_about" msgid="7014388749752042863">"关于通讯录"</string>
-    <string name="share_favorite_contacts" msgid="4280926751003081042">"分享收藏的联系人"</string>
+    <string name="share_favorite_contacts" msgid="4280926751003081042">"分享常用联系人"</string>
     <string name="share_contacts" msgid="8109287987498711664">"分享所有联系人"</string>
     <string name="share_contacts_failure" msgid="1216431977330560559">"无法分享联系人。"</string>
     <string name="dialog_export" msgid="1628001095187741417">"导出联系人"</string>
@@ -455,7 +455,7 @@
     <string name="custom_list_filter" msgid="9048525797111024204">"自定义视图"</string>
     <string name="menu_custom_filter_save" msgid="2679793632208086460">"保存"</string>
     <string name="hint_findContacts" msgid="7128627979899070325">"搜索联系人"</string>
-    <string name="contactsFavoritesLabel" msgid="8417039765586853670">"收藏"</string>
+    <string name="contactsFavoritesLabel" msgid="8417039765586853670">"常用联系人"</string>
     <string name="menu_import" msgid="6107961135813836467">"导入"</string>
     <string name="menu_export" msgid="2658783911863503902">"导出"</string>
     <string name="menu_blocked_numbers" msgid="5272951629083025995">"已屏蔽的号码"</string>

@@ -123,7 +123,7 @@
     <string name="groupSomeContactsNoEmailsToast" msgid="8211161470235548732">"কিছু পরিচিতির ইমেল ঠিকানা নেই৷"</string>
     <string name="groupSomeContactsNoPhonesToast" msgid="5530760834827530509">"কিছু পরিচিতির ফোন নম্বর নেই৷"</string>
     <string name="menu_sendEmailOption" msgid="5978319931321657780">"ইমেল পাঠান"</string>
-    <string name="menu_sendMessageOption" msgid="8850168125274916426">"বার্তা পাঠান"</string>
+    <string name="menu_sendMessageOption" msgid="8850168125274916426">"মেসেজ পাঠান"</string>
     <string name="pickerSelectContactsActivityTitle" msgid="1936544190231136729">"পরিচিতিগুলি বেছে নিন"</string>
     <string name="send_to_selection" msgid="2251339182881603540">"পাঠান"</string>
     <string name="listFoundAllContactsZero" msgid="922980883593159444">"কোনো পরিচিতি নেই"</string>
@@ -305,7 +305,7 @@
     <string name="account_sim" msgid="6519016427905087952">"সিম"</string>
     <string name="nameLabelsGroup" msgid="2034640839640477827">"নাম"</string>
     <string name="nicknameLabelsGroup" msgid="2891682101053358010">"ডাকনাম"</string>
-    <string name="name_given" msgid="4280790853455320619">"প্রথম নাম"</string>
+    <string name="name_given" msgid="4280790853455320619">"নাম"</string>
     <string name="name_family" msgid="7466985689626017037">"পদবি"</string>
     <string name="name_prefix" msgid="59756378548779822">"নামের আগের অংশ"</string>
     <string name="name_middle" msgid="8467433655992690326">"মাঝের নাম"</string>
@@ -433,11 +433,11 @@
     <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"উচ্চারণগত নাম"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"সবসময় দেখান"</string>
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"খালি থাকলে লুকান"</string>
-    <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"প্রথম নাম"</string>
+    <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"নাম"</string>
     <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"পদবি"</string>
-    <string name="display_options_view_names_as" msgid="6514632499276563482">"নামের বিন্যাস"</string>
-    <string name="display_options_view_given_name_first" msgid="3616004640258761473">"প্রথমে প্রথম নামটি"</string>
-    <string name="display_options_view_family_name_first" msgid="956445100777296467">"প্রথমে উপাধি"</string>
+    <string name="display_options_view_names_as" msgid="6514632499276563482">"নামের ফর্ম্যাট"</string>
+    <string name="display_options_view_given_name_first" msgid="3616004640258761473">"প্রথমে নামটি"</string>
+    <string name="display_options_view_family_name_first" msgid="956445100777296467">"প্রথমে পদবি"</string>
     <string name="settings_accounts" msgid="350219740670774576">"অ্যাকাউন্টগুলি"</string>
     <string name="default_editor_account" msgid="699591683362420991">"নতুন পরিচিতিগুলির জন্য ডিফল্ট অ্যাকাউন্ট"</string>
     <string name="settings_my_info_title" msgid="1534272456405343119">"আমার তথ্য"</string>

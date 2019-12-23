@@ -174,7 +174,7 @@
     <string name="create_group_item_label" msgid="3263064599743742865">"Neu erstellen…"</string>
     <string name="delete_group_dialog_message" msgid="335713829185261371">"Soll das Label \"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\" gelöscht werden? (Die Kontakte selbst werden nicht gelöscht.)"</string>
     <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"Gib einen Namen für den Kontakt ein, bevor du ihn mit einem anderen Kontakt verknüpfst."</string>
-    <string name="copy_text" msgid="3257145021583508761">"In Zwischenablage kopieren"</string>
+    <string name="copy_text" msgid="3257145021583508761">"In die Zwischenablage kopieren"</string>
     <string name="set_default" msgid="4417505153468300351">"Als Standard festlegen"</string>
     <string name="clear_default" msgid="7193185801596678067">"Als Standard löschen"</string>
     <string name="toast_text_copied" msgid="5143776250008541719">"Text kopiert"</string>

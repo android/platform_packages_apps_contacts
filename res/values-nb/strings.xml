@@ -205,7 +205,7 @@
     <string name="about_card_title" msgid="2920942314212825637">"Info"</string>
     <string name="toast_making_personal_copy" msgid="288549957278065542">"Oppretter personlig kopi …"</string>
     <string name="date_time_set" msgid="4761419824439606690">"Angi"</string>
-    <string name="header_im_entry" msgid="3581720979640225615">"Nettprat"</string>
+    <string name="header_im_entry" msgid="3581720979640225615">"Chat"</string>
     <string name="header_organization_entry" msgid="8515394955666265406">"Organisasjon"</string>
     <string name="header_nickname_entry" msgid="6743561883967451485">"Kallenavn"</string>
     <string name="header_note_entry" msgid="4320190426480612344">"Notat"</string>
@@ -345,15 +345,15 @@
     <string name="map_work" msgid="1360474076921878088">"Vis jobbadresse"</string>
     <string name="map_other" msgid="3817820803587012641">"Vis adresse"</string>
     <string name="map_custom" msgid="8761800628069473526">"Se <xliff:g id="CUSTOM_LABEL">%s</xliff:g>-adressen"</string>
-    <string name="chat_aim" msgid="2588492205291249142">"Nettprat med AIM"</string>
-    <string name="chat_msn" msgid="8041633440091073484">"Nettprat med Windows Live"</string>
-    <string name="chat_yahoo" msgid="6629211142719943666">"Nettprat med Yahoo"</string>
-    <string name="chat_skype" msgid="1210045020427480566">"Nettprat med Skype"</string>
-    <string name="chat_qq" msgid="4294637812847719693">"Nettprat med QQ"</string>
-    <string name="chat_gtalk" msgid="981575737258117697">"Nettprat med Google Talk"</string>
-    <string name="chat_icq" msgid="8438405386153745775">"Nettprat med ICQ"</string>
-    <string name="chat_jabber" msgid="7561444230307829609">"Nettprat med Jabber"</string>
-    <string name="chat" msgid="9025361898797412245">"Nettprat"</string>
+    <string name="chat_aim" msgid="2588492205291249142">"Chat med AIM"</string>
+    <string name="chat_msn" msgid="8041633440091073484">"Chat med Windows Live"</string>
+    <string name="chat_yahoo" msgid="6629211142719943666">"Chat med Yahoo"</string>
+    <string name="chat_skype" msgid="1210045020427480566">"Chat med Skype"</string>
+    <string name="chat_qq" msgid="4294637812847719693">"Chat med QQ"</string>
+    <string name="chat_gtalk" msgid="981575737258117697">"Chat med Google Talk"</string>
+    <string name="chat_icq" msgid="8438405386153745775">"Chat med ICQ"</string>
+    <string name="chat_jabber" msgid="7561444230307829609">"Chat med Jabber"</string>
+    <string name="chat" msgid="9025361898797412245">"Chat"</string>
     <string name="description_minus_button" msgid="6908099247930477551">"slett"</string>
     <string name="expand_name_fields_description" msgid="6948274252874552543">"Vis flere navnefelt"</string>
     <string name="collapse_name_fields_description" msgid="4757877385895561556">"Skjul navnefelt"</string>

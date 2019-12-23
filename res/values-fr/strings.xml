@@ -145,7 +145,7 @@
     <string name="group_name_dialog_update_title" msgid="6328021162869677383">"Renommer un libellé"</string>
     <string name="group_name_dialog_hint" msgid="7624523157537700160">"Nom du libellé"</string>
     <string name="label_name_dialog_hint" msgid="1276051790427638142">"Nom du libellé"</string>
-    <string name="audio_chat" msgid="2535716629358298691">"Chat audio"</string>
+    <string name="audio_chat" msgid="2535716629358298691">"Chat vocal"</string>
     <string name="video_chat" msgid="1872255818640336072">"Chat vidéo"</string>
     <string name="account_type_format" msgid="718948015590343010">"Contact <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
     <string name="google_account_type_format" msgid="5283997303922067997">"Compte <xliff:g id="SOURCE">%1$s</xliff:g>"</string>

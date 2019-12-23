@@ -232,7 +232,7 @@
     <string name="editor_account_selector_title" msgid="4426337993307015833">"לשמירה ב-"</string>
     <string name="editor_account_selector_read_only_title" msgid="4137969650184457126">"לא ניתן לערוך את פרטי איש הקשר מהחשבון <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
     <string name="quickcontact_suggestion_link_button" msgid="3244619714781727946">"קשר אנשי קשר"</string>
-    <string name="quickcontact_suggestion_cancel_button" msgid="8236954313106630862">"בטל"</string>
+    <string name="quickcontact_suggestion_cancel_button" msgid="8236954313106630862">"ביטול"</string>
     <string name="suggestion_card_this_contact_title" msgid="3039457405374454914">"איש קשר זה"</string>
     <string name="suggestion_card_duplicates_title" msgid="9107788743178980902">"כפילויות אפשריות"</string>
     <string name="suggestion_card_help_message" msgid="4474061044387181093">"ייתכן שאנשי הקשר האלו הם אותו אדם. תוכל לקשר אותם ביחד כאיש קשר יחיד."</string>
@@ -247,7 +247,7 @@
     <string name="menu_title_filters" msgid="8210922220185114527">"חשבונות"</string>
     <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"הצעות"</string>
     <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"שמור על סדר וארגון באנשי הקשר"</string>
-    <string name="undo" msgid="1425165101664071422">"בטל"</string>
+    <string name="undo" msgid="1425165101664071422">"ביטול"</string>
     <string name="call_custom" msgid="6385303130912713318">"התקשר אל <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
     <string name="call_home" msgid="1990519474420545392">"התקשר לבית"</string>
     <string name="call_mobile" msgid="7502236805487609178">"התקשר לנייד"</string>

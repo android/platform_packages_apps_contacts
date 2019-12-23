@@ -286,7 +286,7 @@
     <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (செய்தி அனுப்பு)"</string>
     <string name="description_video_call" msgid="7120921378651700947">"வீடியோ அழைப்பைத் தொடங்கும்"</string>
     <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"அடிக்கடி தொடர்புகொண்ட தொடர்பை அழிக்கவா?"</string>
-    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"தொடர்புகள் மற்றும் ஃபோன் பயன்பாடுகளில் உள்ள அடிக்கடி தொடர்பு கொண்டவர்களின் பட்டியல் அழிக்கப்பட்டு, தொடக்கத்திலிருந்து மீண்டும் உங்கள் முகவரி விருப்பத்தேர்வுகளை மின்னஞ்சல் பயன்பாடுகள் அறியும்படி செய்யப்படும்."</string>
+    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"தொடர்புகள் மற்றும் ஃபோன் பயன்பாடுகளில் உள்ள அடிக்கடி தொடர்பு கொண்டவர்களின் பட்டியல் அழிக்கப்பட்டு, தொடக்கத்திலிருந்து மீண்டும் உங்கள் முகவரி விருப்பத்தேர்வுகளை மின்னஞ்சல் ஆப்ஸ் அறியும்படி செய்யப்படும்."</string>
     <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"அடிக்கடித் தொடர்புகொண்ட தொடர்பை அழிக்கிறது…"</string>
     <string name="status_available" msgid="5586870015822828392">"இருக்கிறார்"</string>
     <string name="status_away" msgid="1838861100379804730">"வெளியே"</string>
