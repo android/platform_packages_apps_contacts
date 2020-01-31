@@ -1,0 +1,9 @@
+Autosubmit+1: Bill Yi <byi@google.com>
+Build-Cop-Override+1: Bill Yi <byi@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Lint+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Fri, 31 Jan 2020 08:18:26 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/packages/apps/Contacts/+/1223717
+Project: platform/packages/apps/Contacts
+Branch: refs/heads/master
