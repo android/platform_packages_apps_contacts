@@ -127,7 +127,7 @@
     <string name="groupDeletedToast" msgid="7774363940327847515">"تم حذف التصنيف"</string>
     <string name="groupCreatedToast" msgid="1685148819468403239">"تم إنشاء التصنيف"</string>
     <string name="groupCreateFailedToast" msgid="1836425392831964024">"يتعذر إنشاء تصنيف"</string>
-    <string name="groupUpdatedToast" msgid="3381549467345607379">"تم تحديث التصنيف"</string>
+    <string name="groupUpdatedToast" msgid="3381549467345607379">"تم إعادة تحميل التصنيف"</string>
     <string name="groupMembersRemovedToast" msgid="8019566066934628011">"تمت الإزالة من التصنيف"</string>
     <string name="groupMembersAddedToast" msgid="1939782548900157287">"تمت الإضافة إلى التصنيف"</string>
     <string name="groupSavedErrorToast" msgid="8456912862816145318">"لا يمكن حفظ التغييرات على التصنيف"</string>
@@ -302,7 +302,7 @@
     <string name="sms_by_shortcut" msgid="4682340916268521006">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (رسالة)"</string>
     <string name="description_video_call" msgid="4956825008907720371">"إجراء مكالمة فيديو"</string>
     <string name="clearFrequentsConfirmation_title" msgid="9194415661170740437">"هل تريد محو قائمة من يُتصل بهم كثيرًا؟"</string>
-    <string name="clearFrequentsConfirmation" msgid="2120741757522063938">"ستمحو قائمة من يتم الاتصال بهم كثيرًا في تطبيقي جهات الاتصال والهاتف، وستفرض على تطبيقات البريد الإلكتروني التعرف على تفضيلات توجيه الرسائل من البداية."</string>
+    <string name="clearFrequentsConfirmation" msgid="2120741757522063938">"ستمحو قائمة الأشخاص الذين يتم التواصل معهم كثيرًا في تطبيقي \"جهات الاتصال\" و\"الهاتف\"، وستفرض بالتالي على تطبيقات البريد الإلكتروني التعرف مجدّدًا على جهات الاتصال المفضّلة لديك."</string>
     <string name="clearFrequentsProgress_title" msgid="8271935295080659743">"جارٍ محو قائمة المُتصل بهم كثيرًا…"</string>
     <string name="status_available" msgid="8081626460682959098">"متوفر"</string>
     <string name="status_away" msgid="2677693194455091315">"بعيد"</string>
@@ -527,7 +527,7 @@
     <string name="dismiss_sync_alert" msgid="4057176963960104786">"تجاهل"</string>
     <string name="account_sync_off" msgid="6187683798342006021">"مزامنة الحساب متوقفة. انقر للتشغيل."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="3812155064863594938">"تشغيل المزامنة التلقائية؟"</string>
-    <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"‏سيتم تحديث التغييرات التي أجريتها على كل التطبيقات والحسابات، وليس فقط جهات اتصال Google، بين الويب وأجهزتك."</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"‏سيتم إعادة تحميل التغييرات التي أجريتها على كل التطبيقات والحسابات، وليس فقط جهات اتصال Google، بين الويب وأجهزتك."</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"تشغيل"</string>
     <string name="connection_error_message" msgid="7446131881946138093">"لا اتصال"</string>
     <string name="single_sim_display_label" msgid="264062966309455515">"‏شريحة SIM"</string>
