@@ -299,7 +299,7 @@
     <string name="missing_name" msgid="7970183292521946492">"(Sense nom)"</string>
     <string name="favoritesFrequentContacted" msgid="2885862854079966676">"Contactats sovint"</string>
     <string name="list_filter_phones" msgid="6839133198968393843">"Tots els contactes amb números de telèfon"</string>
-    <string name="list_filter_phones_work" msgid="5583425697781385616">"Contactes del perfil professional"</string>
+    <string name="list_filter_phones_work" msgid="5583425697781385616">"Contactes del perfil de treball"</string>
     <string name="view_updates_from_group" msgid="6233444629074835594">"Mostra actualitzac."</string>
     <string name="account_phone" msgid="8044426231251817556">"Dispositiu"</string>
     <string name="account_sim" msgid="3200457113308694663">"SIM"</string>
@@ -342,7 +342,7 @@
     <string name="postal_postcode" msgid="33077708757232659">"Codi postal"</string>
     <string name="postal_country" msgid="6642804283917549861">"País"</string>
     <string name="map_home" msgid="2169053372466501148">"Visualitza l\'adreça particular"</string>
-    <string name="map_work" msgid="8296916987749726461">"Visualitza l\'adreça de la feina"</string>
+    <string name="map_work" msgid="8296916987749726461">"Visualitza l\'adreça de treball"</string>
     <string name="map_other" msgid="4009931029322619674">"Visualitza l\'adreça"</string>
     <string name="map_custom" msgid="7797812861927817335">"Mostra l\'adreça de: <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
     <string name="chat_aim" msgid="2044861410748519265">"Xateja amb AIM"</string>
