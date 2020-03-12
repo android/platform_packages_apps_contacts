@@ -77,7 +77,7 @@
       <item quantity="other"><xliff:g id="COUNT_2">%1$d</xliff:g> байланыш · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
       <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> байланыш · <xliff:g id="ACCOUNT_1">%2$s</xliff:g></item>
     </plurals>
-    <string name="title_from_google" msgid="2554633992366572820">"Google каттоо эсебинен"</string>
+    <string name="title_from_google" msgid="2554633992366572820">"Google аккаунтунан"</string>
     <string name="title_from_other_accounts" msgid="7813596336566711843">"<xliff:g id="ACCOUNT">%s</xliff:g> каттоо эсбнен"</string>
     <string name="menu_set_ring_tone" msgid="8876328286439724181">"Шыңгыр коюу"</string>
     <string name="menu_redirect_calls_to_vm" msgid="3027178444991878913">"Үн почтасына которуу"</string>
@@ -419,9 +419,9 @@
     <string name="importing_vcard_canceled_title" msgid="8165471996631186776">"<xliff:g id="FILENAME">%s</xliff:g> файлын импорттоо токтотулду"</string>
     <string name="vcard_import_will_start_message" msgid="4514702035621833178">"<xliff:g id="FILENAME">%s</xliff:g> бир аздан кийин өткөрүлүп алынат."</string>
     <string name="vcard_import_will_start_message_with_default_name" msgid="8205422202924103470">"Файл бир аздан кийин өткөрүлүп алынат."</string>
-    <string name="vcard_import_request_rejected_message" msgid="4754292694777189540">"vCard файлдарынын өткөрүп берүү талабы четке кагылды. Кийинчерээк кайра аракет кылып көрүңүз."</string>
+    <string name="vcard_import_request_rejected_message" msgid="4754292694777189540">"vCard файлдарынын өткөрүп берүү талабы четке кагылды. Бир аздан кийин кайталап көрүңүз."</string>
     <string name="contacts_export_will_start_message" msgid="6428126265599715944">"Байланыштар жакында өткөрүлүп берилет."</string>
-    <string name="vcard_export_request_rejected_message" msgid="6455336845734884740">"vCard файлдарын өткөрүп берүү талабы четке кагылды. Кийинчерээк кайра аракет кылып көрүңүз."</string>
+    <string name="vcard_export_request_rejected_message" msgid="6455336845734884740">"vCard файлдарын өткөрүп берүү талабы четке кагылды. Бир аздан кийин кайталап көрүңүз."</string>
     <string name="vcard_unknown_filename" msgid="8320954544777782497">"байланыш"</string>
     <string name="caching_vcard_message" msgid="1879339732783666517">"vCard файл(дар)ы жергиликтүү убактылуу сактагычка кэштелип жатат. Андан соң, өткөрүп алуу башталат."</string>
     <string name="vcard_import_failed" msgid="37313715326741013">"vCard файлдары өткөрүлүп алынган жок."</string>
