@@ -15,95 +15,96 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.contacts.tests">
+     package="com.android.contacts.tests">
 
-    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29" />
+    <uses-sdk android:minSdkVersion="21"
+         android:targetSdkVersion="29"/>
 
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
 
-    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
-    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
-    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
-    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
-    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_STATS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
 
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_SOCIAL_STREAM" />
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_SOCIAL_STREAM"/>
 
-    <application
-        android:icon="@mipmap/ic_contacts_launcher"
-        android:label="@string/applicationLabel">
+    <application android:icon="@mipmap/ic_contacts_launcher"
+         android:label="@string/applicationLabel">
 
-        <uses-library android:name="android.test.runner" />
-        <meta-data android:name="com.android.contacts.iconset" android:resource="@xml/iconset" />
+        <uses-library android:name="android.test.runner"/>
+        <meta-data android:name="com.android.contacts.iconset"
+             android:resource="@xml/iconset"/>
 
-        <activity android:name=".allintents.AllIntentsActivity">
+        <activity android:name=".allintents.AllIntentsActivity"
+             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".allintents.ResultActivity">
+        <activity android:name=".allintents.ResultActivity"
+             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/vnd.contactstest.profile" />
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.contactstest.profile"/>
             </intent-filter>
         </activity>
 
         <activity android:name=".quickcontact.QuickContactTestsActivity"/>
 
         <!--
-          Test authenticators/sync adapters.
+                      Test authenticators/sync adapters.
 
-          The idea is to have multiple account types with various edit schemas.  We use subclasses
-          so we could easily add multiple pairs of authenticators and sync adapters.
-          Unfortunately there's an issue with the contacts app which prevents a single apk from
-          having multiple contacts.xml files, so for now we only declare one account type here.
-        -->
-        <service android:name=".testauth.TestAuthenticationService$Basic" android:exported="true">
+                      The idea is to have multiple account types with various edit schemas.  We use subclasses
+                      so we could easily add multiple pairs of authenticators and sync adapters.
+                      Unfortunately there's an issue with the contacts app which prevents a single apk from
+                      having multiple contacts.xml files, so for now we only declare one account type here.
+                    -->
+        <service android:name=".testauth.TestAuthenticationService$Basic"
+             android:exported="true">
             <intent-filter>
-                <action android:name="android.accounts.AccountAuthenticator" />
+                <action android:name="android.accounts.AccountAuthenticator"/>
             </intent-filter>
-            <meta-data
-                android:name="android.accounts.AccountAuthenticator"
-                android:resource="@xml/test_basic_authenticator" />
+            <meta-data android:name="android.accounts.AccountAuthenticator"
+                 android:resource="@xml/test_basic_authenticator"/>
         </service>
-        <service android:name=".testauth.TestSyncService$Basic" android:exported="true" >
+        <service android:name=".testauth.TestSyncService$Basic"
+             android:exported="true">
             <intent-filter>
                 <action android:name="android.content.SyncAdapter"/>
             </intent-filter>
-            <meta-data
-                android:name="android.content.SyncAdapter"
-                android:resource="@xml/test_basic_syncadapter" />
-            <meta-data
-                android:name="android.provider.CONTACTS_STRUCTURE"
-                android:resource="@xml/contacts_contactsdatakind" />
+            <meta-data android:name="android.content.SyncAdapter"
+                 android:resource="@xml/test_basic_syncadapter"/>
+            <meta-data android:name="android.provider.CONTACTS_STRUCTURE"
+                 android:resource="@xml/contacts_contactsdatakind"/>
         </service>
 
-        <service android:name=".QueryService" />
-        <service android:name=".PhoneNumberTestService" />
+        <service android:name=".QueryService"/>
+        <service android:name=".PhoneNumberTestService"/>
     </application>
 
     <instrumentation android:name="androidx.test.runner.AndroidJUnitRunner"
-        android:targetPackage="com.android.contacts"
-        android:label="Contacts app tests">
+         android:targetPackage="com.android.contacts"
+         android:label="Contacts app tests">
     </instrumentation>
 
     <instrumentation android:name="com.android.contacts.ContactsLaunchPerformance"
-        android:targetPackage="com.android.contacts"
-        android:label="Contacts launch performance">
+         android:targetPackage="com.android.contacts"
+         android:label="Contacts launch performance">
     </instrumentation>
 
-    <instrumentation
-        android:name="com.android.contacts.RunMethodInstrumentation"
-        android:targetPackage="com.android.contacts"
-        android:label="Run Contacts Method">
+    <instrumentation android:name="com.android.contacts.RunMethodInstrumentation"
+         android:targetPackage="com.android.contacts"
+         android:label="Run Contacts Method">
     </instrumentation>
 
 </manifest>

@@ -15,18 +15,17 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.android.contacts"
-          android:versionCode="10731"
-          android:versionName="1.7.31">
+     package="com.android.contacts"
+     android:versionCode="10731"
+     android:versionName="1.7.31">
 
-    <uses-sdk
-        android:minSdkVersion="21"
-        android:targetSdkVersion="29"/>
+    <uses-sdk android:minSdkVersion="21"
+         android:targetSdkVersion="29"/>
 
     <original-package android:name="com.android.contacts"/>
 
     <!-- Contacts permission listed first because order determines
-         order that permissions are requested with some OEMs -->
+                 order that permissions are requested with some OEMs -->
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
@@ -54,27 +53,24 @@
     <!-- Required in P to run Service.startForeground() -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
-    <uses-feature
-        android:name="android.hardware.telephony"
-        android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony"
+         android:required="false"/>
 
-    <application
-        android:name="com.android.contacts.ContactsApplication"
-        android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_contacts_launcher"
-        android:label="@string/applicationLabel"
-        android:supportsRtl="true"
-        android:taskAffinity="android.task.contacts"
-        android:usesCleartextTraffic="false">
+    <application android:name="com.android.contacts.ContactsApplication"
+         android:hardwareAccelerated="true"
+         android:icon="@mipmap/ic_contacts_launcher"
+         android:label="@string/applicationLabel"
+         android:supportsRtl="true"
+         android:taskAffinity="android.task.contacts"
+         android:usesCleartextTraffic="false">
         <!-- The main Contacts activity with the contact list, favorites, and groups. -->
-        <activity
-            android:name=".activities.PeopleActivity"
-            android:alwaysRetainTaskState="true"
-            android:launchMode="singleTop"
-            android:resizeableActivity="true"
-            android:theme="@style/LaunchScreenTheme"
-            android:visibleToInstantApps="true"
-            >
+        <activity android:name=".activities.PeopleActivity"
+             android:alwaysRetainTaskState="true"
+             android:launchMode="singleTop"
+             android:resizeableActivity="true"
+             android:theme="@style/LaunchScreenTheme"
+             android:visibleToInstantApps="true"
+             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -164,28 +160,24 @@
                 <data android:mimeType="vnd.android.cursor.dir/group"/>
             </intent-filter>
 
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable"
-                />
+            <meta-data android:name="android.app.searchable"
+                 android:resource="@xml/searchable"/>
 
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts"
-                />
+            <meta-data android:name="android.app.shortcuts"
+                 android:resource="@xml/shortcuts"/>
 
         </activity>
 
-        <activity
-            android:name=".activities.ContactSelectionActivity"
-            android:clearTaskOnLaunch="true"
-            android:launchMode="singleTop"
-            android:theme="@style/ContactPickerTheme"
-            android:uiOptions="splitActionBarWhenNarrow"
-            android:windowSoftInputMode="adjustResize"
-            android:visibleToInstantApps="true">
+        <activity android:name=".activities.ContactSelectionActivity"
+             android:clearTaskOnLaunch="true"
+             android:launchMode="singleTop"
+             android:theme="@style/ContactPickerTheme"
+             android:uiOptions="splitActionBarWhenNarrow"
+             android:windowSoftInputMode="adjustResize"
+             android:visibleToInstantApps="true"
+             android:exported="true">
             <meta-data android:name="android.app.shortcuts.new_config"
-                android:value="true" />
+                 android:value="true"/>
             <intent-filter>
                 <action android:name="android.intent.action.INSERT_OR_EDIT"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -228,64 +220,54 @@
         </activity>
 
         <!-- Backwards compatibility: somebody may have hard coded this activity name -->
-        <activity-alias
-            android:name="ContactsListActivity"
-            android:targetActivity=".activities.PeopleActivity"
-            />
+        <activity-alias android:name="ContactsListActivity"
+             android:targetActivity=".activities.PeopleActivity"/>
 
-        <!-- Backwards compatibility: "Contacts" from Honeycomb -->
-        <activity-alias
-            android:name=".activities.ContactsFrontDoor"
-            android:exported="true"
-            android:targetActivity=".activities.PeopleActivity"
-            />
+        <!-- Backwards compatibility: "Contacts"
+             from Honeycomb -->
+        <activity-alias android:name=".activities.ContactsFrontDoor"
+             android:exported="true"
+             android:targetActivity=".activities.PeopleActivity"/>
 
-        <!-- Backwards compatibility: "Contacts" from Gingerbread and earlier -->
-        <activity-alias
-            android:name="DialtactsContactsEntryActivity"
-            android:exported="true"
-            android:targetActivity=".activities.PeopleActivity"
-            />
+        <!-- Backwards compatibility: "Contacts"
+             from Gingerbread and earlier -->
+        <activity-alias android:name="DialtactsContactsEntryActivity"
+             android:exported="true"
+             android:targetActivity=".activities.PeopleActivity"/>
 
         <!-- Used to set options -->
-        <activity
-            android:name=".preference.ContactsPreferenceActivity"
-            android:exported="false"
-            android:label="@string/activity_title_settings"
-            android:launchMode="singleTop"
-            android:theme="@style/ContactsPreferencesTheme"/>
+        <activity android:name=".preference.ContactsPreferenceActivity"
+             android:exported="false"
+             android:label="@string/activity_title_settings"
+             android:launchMode="singleTop"
+             android:theme="@style/ContactsPreferencesTheme"/>
 
-        <activity
-            android:name=".activities.LicenseActivity"
-            android:exported="true"
-            android:label="@string/activity_title_licenses"
-            android:theme="@style/ContactsPreferencesTheme"/>
+        <activity android:name=".activities.LicenseActivity"
+             android:exported="true"
+             android:label="@string/activity_title_licenses"
+             android:theme="@style/ContactsPreferencesTheme"/>
 
         <!-- Used to filter contacts list by account -->
-        <activity
-            android:name=".list.AccountFilterActivity"
-            android:label="@string/activity_title_contacts_filter"
-            android:theme="@style/ContactListFilterTheme"/>
+        <activity android:name=".list.AccountFilterActivity"
+             android:label="@string/activity_title_contacts_filter"
+             android:theme="@style/ContactListFilterTheme"/>
 
         <!-- Used to select display and sync groups -->
-        <activity
-            android:name=".list.CustomContactListFilterActivity"
-            android:label="@string/custom_list_filter"
-            android:theme="@style/ContactListFilterTheme"/>
+        <activity android:name=".list.CustomContactListFilterActivity"
+             android:label="@string/custom_list_filter"
+             android:theme="@style/ContactListFilterTheme"/>
 
-        <activity
-            android:name=".activities.RequestPermissionsActivity"
-            android:exported="false"
-            android:theme="@style/PeopleTheme"/>
+        <activity android:name=".activities.RequestPermissionsActivity"
+             android:exported="false"
+             android:theme="@style/PeopleTheme"/>
 
-        <activity
-            android:name=".activities.RequestImportVCardPermissionsActivity"
-            android:exported="false"
-            android:theme="@style/PeopleTheme"/>
+        <activity android:name=".activities.RequestImportVCardPermissionsActivity"
+             android:exported="false"
+             android:theme="@style/PeopleTheme"/>
 
-        <activity
-            android:name=".activities.ShowOrCreateActivity"
-            android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar">
+        <activity android:name=".activities.ShowOrCreateActivity"
+             android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar"
+             android:exported="true">
 
             <intent-filter>
                 <action android:name="com.android.contacts.action.SHOW_OR_CREATE_CONTACT"/>
@@ -296,13 +278,13 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".quickcontact.QuickContactActivity"
-            android:excludeFromRecents="true"
-            android:launchMode="singleTop"
-            android:taskAffinity=""
-            android:theme="@style/Theme.QuickContact"
-            android:windowSoftInputMode="stateUnchanged">
+        <activity android:name=".quickcontact.QuickContactActivity"
+             android:excludeFromRecents="true"
+             android:launchMode="singleTop"
+             android:taskAffinity=""
+             android:theme="@style/Theme.QuickContact"
+             android:windowSoftInputMode="stateUnchanged"
+             android:exported="true">
 
             <intent-filter>
                 <action android:name="com.android.contacts.action.QUICK_CONTACT"/>
@@ -324,24 +306,23 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name=".quickcontact.QuickContactBroadcastReceiver"
-            android:exported="false"/>
+        <receiver android:name=".quickcontact.QuickContactBroadcastReceiver"
+             android:exported="false"/>
 
         <!-- Responsible for creating notification channels when boot is completed or when app is
-        re-installed -->
-        <receiver android:name=".interactions.OnBootOrUpgradeReceiver">
+                    re-installed -->
+        <receiver android:name=".interactions.OnBootOrUpgradeReceiver"
+             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
             </intent-filter>
         </receiver>
 
-        <activity-alias
-            android:name="ContactShortcut"
-            android:icon="@drawable/logo_quick_contacts_color_44in48dp"
-            android:label="@string/shortcutContact"
-            android:targetActivity=".activities.ContactSelectionActivity">
+        <activity-alias android:name="ContactShortcut"
+             android:icon="@drawable/logo_quick_contacts_color_44in48dp"
+             android:label="@string/shortcutContact"
+             android:targetActivity=".activities.ContactSelectionActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT"/>
@@ -350,11 +331,10 @@
 
         </activity-alias>
 
-        <activity-alias
-            android:name="alias.DialShortcut"
-            android:icon="@drawable/logo_quick_contacts_dialer_color_44in48dp"
-            android:label="@string/shortcutDialContact"
-            android:targetActivity=".activities.ContactSelectionActivity">
+        <activity-alias android:name="alias.DialShortcut"
+             android:icon="@drawable/logo_quick_contacts_dialer_color_44in48dp"
+             android:label="@string/shortcutDialContact"
+             android:targetActivity=".activities.ContactSelectionActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT"/>
@@ -365,11 +345,10 @@
 
         </activity-alias>
 
-        <activity-alias
-            android:name="alias.MessageShortcut"
-            android:icon="@drawable/logo_quick_contacts_mail_color_44in48dp"
-            android:label="@string/shortcutMessageContact"
-            android:targetActivity=".activities.ContactSelectionActivity">
+        <activity-alias android:name="alias.MessageShortcut"
+             android:icon="@drawable/logo_quick_contacts_mail_color_44in48dp"
+             android:label="@string/shortcutMessageContact"
+             android:targetActivity=".activities.ContactSelectionActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT"/>
@@ -379,16 +358,15 @@
         </activity-alias>
 
         <!-- Accounts changed prompt that can appear when creating a new contact. -->
-        <activity
-            android:name=".activities.ContactEditorAccountsChangedActivity"
-            android:exported="false"
-            android:theme="@style/ContactEditorAccountsChangedActivityTheme"
-            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".activities.ContactEditorAccountsChangedActivity"
+             android:exported="false"
+             android:theme="@style/ContactEditorAccountsChangedActivityTheme"
+             android:windowSoftInputMode="adjustResize"/>
 
         <!-- Edit or create a contact with only the most important fields displayed initially. -->
-        <activity
-            android:name=".activities.ContactEditorActivity"
-            android:theme="@style/EditorActivityTheme">
+        <activity android:name=".activities.ContactEditorActivity"
+             android:theme="@style/EditorActivityTheme"
+             android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.INSERT"/>
@@ -401,10 +379,9 @@
         </activity>
 
         <!-- Keep support for apps that expect the Compact editor -->
-        <activity-alias
-            android:name="com.android.contacts.activities.CompactContactEditorActivity"
-            android:exported="true"
-            android:targetActivity=".activities.ContactEditorActivity">
+        <activity-alias android:name="com.android.contacts.activities.CompactContactEditorActivity"
+             android:exported="true"
+             android:targetActivity=".activities.ContactEditorActivity">
             <intent-filter android:priority="-1">
                 <action android:name="android.intent.action.INSERT"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -415,9 +392,9 @@
             </intent-filter>
         </activity-alias>
 
-        <activity
-            android:name=".activities.ContactEditorSpringBoardActivity"
-            android:theme="@style/TransparentThemeAppCompat">
+        <activity android:name=".activities.ContactEditorSpringBoardActivity"
+             android:theme="@style/TransparentThemeAppCompat"
+             android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.EDIT"/>
@@ -429,33 +406,31 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".test.FragmentTestActivity">
+        <activity android:name=".test.FragmentTestActivity"
+             android:exported="true">
             <intent-filter>
                 <category android:name="android.intent.category.TEST"/>
             </intent-filter>
         </activity>
 
         <!-- Stub service used to keep our process alive long enough for
-             background threads to finish their operations. -->
-        <service
-            android:name=".util.EmptyService"
-            android:exported="false"/>
+                         background threads to finish their operations. -->
+        <service android:name=".util.EmptyService"
+             android:exported="false"/>
 
         <!-- Service to save a contact -->
-        <service
-            android:name=".ContactSaveService"
-            android:exported="false"/>
+        <service android:name=".ContactSaveService"
+             android:exported="false"/>
 
         <!-- Service to import contacts from the SIM card -->
-        <service
-            android:name=".SimImportService"
-            android:exported="false"/>
+        <service android:name=".SimImportService"
+             android:exported="false"/>
 
         <!-- Attaches a photo to a contact. Started from external applications -->
-        <activity
-            android:name=".activities.AttachPhotoActivity"
-            android:label="@string/attach_photo_dialog_title"
-            android:taskAffinity="">
+        <activity android:name=".activities.AttachPhotoActivity"
+             android:label="@string/attach_photo_dialog_title"
+             android:taskAffinity=""
+             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.ATTACH_DATA"/>
                 <data android:mimeType="image/*"/>
@@ -464,10 +439,10 @@
         </activity>
 
         <!-- vCard related -->
-        <activity
-            android:name=".vcard.ImportVCardActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            android:theme="@style/BackgroundOnlyTheme">
+        <activity android:name=".vcard.ImportVCardActivity"
+             android:configChanges="orientation|screenSize|keyboardHidden"
+             android:theme="@style/BackgroundOnlyTheme"
+             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
 
@@ -479,10 +454,10 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".vcard.NfcImportVCardActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            android:theme="@style/BackgroundOnlyTheme">
+        <activity android:name=".vcard.NfcImportVCardActivity"
+             android:configChanges="orientation|screenSize|keyboardHidden"
+             android:theme="@style/BackgroundOnlyTheme"
+             android:exported="true">
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
 
@@ -493,41 +468,35 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".vcard.CancelActivity"
-            android:theme="@style/BackgroundOnlyTheme"/>
+        <activity android:name=".vcard.CancelActivity"
+             android:theme="@style/BackgroundOnlyTheme"/>
 
-        <activity
-            android:name=".vcard.SelectAccountActivity"
-            android:theme="@style/BackgroundOnlyTheme"/>
+        <activity android:name=".vcard.SelectAccountActivity"
+             android:theme="@style/BackgroundOnlyTheme"/>
 
-        <activity
-            android:name=".vcard.ExportVCardActivity"
-            android:theme="@style/BackgroundOnlyTheme"/>
+        <activity android:name=".vcard.ExportVCardActivity"
+             android:theme="@style/BackgroundOnlyTheme"/>
 
-        <activity
-            android:name=".vcard.ShareVCardActivity"
-            android:theme="@style/BackgroundOnlyTheme"/>
+        <activity android:name=".vcard.ShareVCardActivity"
+             android:theme="@style/BackgroundOnlyTheme"/>
 
-        <activity
-            android:name=".activities.SimImportActivity"
-            android:label="@string/sim_import_title"
-            android:theme="@style/PeopleThemeAppCompat.FullScreenDialog.SimImportActivity"/>
+        <activity android:name=".activities.SimImportActivity"
+             android:label="@string/sim_import_title"
+             android:theme="@style/PeopleThemeAppCompat.FullScreenDialog.SimImportActivity"/>
 
 
-        <service
-            android:name=".vcard.VCardService"
-            android:exported="false"/>
+        <service android:name=".vcard.VCardService"
+             android:exported="false"/>
         <!-- end vCard related -->
 
         <!-- Intercept Dialer Intents for devices without a phone.
-             This activity should have the same intent filters as the DialtactsActivity,
-             so that its capturing the same events. Omit android.intent.category.LAUNCHER, because
-             we don't want this to show up in the Launcher. The priorities of the intent-filters
-             are set lower, so that the user does not see a disambig dialog -->
-        <activity
-            android:name="com.android.contacts.NonPhoneActivity"
-            android:theme="@style/NonPhoneActivityTheme">
+                         This activity should have the same intent filters as the DialtactsActivity,
+                         so that its capturing the same events. Omit android.intent.category.LAUNCHER, because
+                         we don't want this to show up in the Launcher. The priorities of the intent-filters
+                         are set lower, so that the user does not see a disambig dialog -->
+        <activity android:name="com.android.contacts.NonPhoneActivity"
+             android:theme="@style/NonPhoneActivityTheme"
+             android:exported="true">
             <intent-filter android:priority="-1">
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -552,26 +521,25 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="com.android.contacts.dialog.CallSubjectDialog"
-            android:theme="@style/Theme.CallSubjectDialogTheme"
-            android:windowSoftInputMode="stateVisible|adjustResize">
+        <activity android:name="com.android.contacts.dialog.CallSubjectDialog"
+             android:theme="@style/Theme.CallSubjectDialogTheme"
+             android:windowSoftInputMode="stateVisible|adjustResize"
+             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
 
         <!-- Service that is exclusively for the Phone application that sends out a view
-             notification. This service might be removed in future versions of the app.
+                         notification. This service might be removed in future versions of the app.
 
-             This is called explicitly by the phone app via package name and class.
-             (PhoneUtils.sendViewNotificationAsync()).  If this service moves, then phone
-             needs to be changed as well.
-        -->
-        <service
-            android:name=".ViewNotificationService"
-            android:exported="true"
-            android:permission="android.permission.WRITE_CONTACTS">
+                         This is called explicitly by the phone app via package name and class.
+                         (PhoneUtils.sendViewNotificationAsync()).  If this service moves, then phone
+                         needs to be changed as well.
+                    -->
+        <service android:name=".ViewNotificationService"
+             android:exported="true"
+             android:permission="android.permission.WRITE_CONTACTS">
             <intent-filter>
                 <action android:name="com.android.contacts.VIEW_NOTIFICATION"/>
                 <data android:mimeType="vnd.android.cursor.item/contact"/>
@@ -579,23 +547,19 @@
         </service>
 
         <!-- Service used to run JobScheduler jobs -->
-        <service
-            android:name="com.android.contacts.ContactsJobService"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name="com.android.contacts.ContactsJobService"
+             android:permission="android.permission.BIND_JOB_SERVICE"/>
 
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="@string/contacts_file_provider_authority"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
+        <provider android:name="androidx.core.content.FileProvider"
+             android:authorities="@string/contacts_file_provider_authority"
+             android:exported="false"
+             android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                 android:resource="@xml/file_paths"/>
         </provider>
 
-        <meta-data
-            android:name="android.nfc.disable_beam_default"
-            android:value="true"/>
+        <meta-data android:name="android.nfc.disable_beam_default"
+             android:value="true"/>
 
     </application>
 </manifest>
