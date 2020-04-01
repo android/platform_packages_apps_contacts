@@ -16,499 +16,499 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="applicationLabel" msgid="3906689777043645443">"સંપર્કો"</string>
-    <string name="contactsList" msgid="8661624236494819731">"સંપર્કો"</string>
-    <string name="shortcut_add_contact" msgid="7476283631356909204">"સંપર્ક ઉમેરો"</string>
-    <string name="shortcutContact" msgid="749243779392912958">"સંપર્ક"</string>
-    <string name="shortcutDialContact" msgid="746622101599186779">"સીધું જ ડાયલ"</string>
-    <string name="shortcutMessageContact" msgid="2460337253595976198">"સીધો જ સંદેશ"</string>
-    <string name="shortcutActivityTitle" msgid="1504383567778497348">"સંપર્ક પસંદ કરો"</string>
-    <string name="contactInsertOrEditActivityTitle" msgid="6527505405325862674">"સંપર્કમાં ઉમેરો"</string>
-    <string name="contactPickerActivityTitle" msgid="4301062192337417640">"સંપર્ક પસંદ કરો"</string>
-    <string name="groupMemberPickerActivityTitle" msgid="1431750793695262522">"પસંદ કરો"</string>
-    <string name="header_entry_contact_list_adapter_header_title" msgid="2436981165830115659">"નવો સંપર્ક બનાવો"</string>
-    <string name="searchHint" msgid="8482945356247760701">"સંપર્કો શોધો"</string>
-    <string name="menu_addStar" msgid="2908478235715404876">"મનપસંદમાં ઉમેરો"</string>
-    <string name="menu_removeStar" msgid="5844227078364227030">"મનપસંદમાંથી દૂર કરો"</string>
-    <string name="description_action_menu_remove_star" msgid="4699640108012265178">"મનપસંદમાંથી દૂર કર્યું"</string>
-    <string name="description_action_menu_add_star" msgid="3327186327234177456">"મનપસંદમાં ઉમેર્યું"</string>
-    <string name="menu_editContact" msgid="9042415603857662633">"સંપાદન"</string>
-    <string name="menu_deleteContact" msgid="6788644058868189393">"કાઢી નાખો"</string>
-    <string name="menu_change_photo" msgid="7769177631511496210">"ફોટો બદલો"</string>
-    <string name="menu_create_contact_shortcut" msgid="1663022219127343858">"શૉર્ટકટ બનાવો"</string>
-    <string name="menu_splitAggregate" msgid="2627252205317945563">"અનલિંક કરો"</string>
-    <string name="menu_editGroup" msgid="6696843438454341063">"સંપર્કો દૂર કરો"</string>
-    <string name="menu_renameGroup" msgid="7169512355179757182">"લેબલનું નામ બદલો"</string>
-    <string name="menu_deleteGroup" msgid="1126469629233412249">"લેબલ કાઢી નાખો"</string>
-    <string name="menu_addToGroup" msgid="3267409983764370041">"સંપર્ક ઉમેરો"</string>
-    <string name="menu_selectForGroup" msgid="3999234528229376098">"સંપર્કો પસંદ કરો"</string>
-    <string name="menu_addContactsToGroup" msgid="655196688840626483">"સંપર્કો ઉમેરો"</string>
-    <string name="menu_removeFromGroup" msgid="6720354305399961978">"લેબલમાંથી દૂર કરો"</string>
-    <string name="menu_new_group_action_bar" msgid="3127059073617415221">"લેબલ બનાવો"</string>
-    <string name="splitConfirmation" msgid="7342030840130187290">"આ સંપર્કને બહુવિધ સંપર્કોમાં અનલિંક કરીએ?"</string>
-    <string name="splitConfirmation_positive_button" msgid="9129409098807939699">"અનલિંક કરો"</string>
-    <string name="splitConfirmationWithPendingChanges" msgid="7719062163511895696">"તમે પહેલેથી કરેલા ફેરફારોને સાચવવા અને આ સંપર્કને બહુવિધ સંપર્કોમાં અનલિંક કરવા ઈચ્છો છો?"</string>
-    <string name="splitConfirmationWithPendingChanges_positive_button" msgid="9073444264887244032">"સાચવો અને અનલિંક કરો"</string>
-    <string name="joinConfirmation" msgid="8262614843581924365">"તમે પહેલેથી કરેલા ફેરફારોને સાચવવા અને પસંદ કરેલાં સંપર્ક સાથે લિંક કરવા ઈચ્છો છો?"</string>
-    <string name="joinConfirmation_positive_button" msgid="4573092849769149516">"સાચવો અને લિંક કરો"</string>
-    <string name="contacts_linking_progress_bar" msgid="2846494347384549277">"લિંક કરી રહ્યું છે"</string>
-    <string name="contacts_unlinking_progress_bar" msgid="5989310198163726929">"અનલિંક કરી રહ્યું છે"</string>
-    <string name="menu_joinAggregate" msgid="3599512127797513606">"લિંક કરો"</string>
-    <string name="menu_linkedContacts" msgid="400444389718855621">"લિંક કરેલ સંપર્કો જુઓ"</string>
-    <string name="menu_save" msgid="1727844363591825909">"સાચવો"</string>
-    <string name="titleJoinContactDataWith" msgid="6825255752748313944">"સંપર્કો લિંક કરો"</string>
-    <string name="blurbJoinContactDataWith" msgid="5864256698061641841">"તમે <xliff:g id="NAME">%s</xliff:g> સાથે લિંક કરવા માંગતા હોય તે સંપર્ક પસંદ કરો:"</string>
-    <string name="separatorJoinAggregateSuggestions" msgid="2831414448851313345">"સૂચવેલા સંપર્કો"</string>
-    <string name="separatorJoinAggregateAll" msgid="7939932265026181043">"તમામ સંપર્કો"</string>
-    <string name="contactsJoinedNamedMessage" msgid="1299418263439579455">"<xliff:g id="NAME">%s</xliff:g> ને લિંક કર્યાં"</string>
-    <string name="contactsJoinedMessage" msgid="3343535986195643136">"સંપર્કો લિંક કર્યાં"</string>
-    <string name="contacts_deleted_one_named_toast" msgid="2252551736301363193">"<xliff:g id="NAME">%1$s</xliff:g> ને કાઢી નાખ્યાં"</string>
-    <string name="contacts_deleted_two_named_toast" msgid="3642082931473111791">"<xliff:g id="NAME_0">%1$s</xliff:g> અને <xliff:g id="NAME_1">%2$s</xliff:g> ને કાઢી નાખ્યાં"</string>
-    <string name="contacts_deleted_many_named_toast" msgid="7731565342428031249">"<xliff:g id="NAME_0">%1$s</xliff:g>, <xliff:g id="NAME_1">%2$s</xliff:g>, <xliff:g id="NAME_2">%3$s</xliff:g>… ને કાઢી નાખ્યાં"</string>
-    <plurals name="contacts_deleted_toast" formatted="false" msgid="1477708624197262295">
+    <string name="applicationLabel" msgid="8908212014470937609">"સંપર્કો"</string>
+    <string name="contactsList" msgid="4456188358262700898">"સંપર્કો"</string>
+    <string name="shortcut_add_contact" msgid="7949342235528657981">"સંપર્ક ઉમેરો"</string>
+    <string name="shortcutContact" msgid="8009736387364461511">"સંપર્ક"</string>
+    <string name="shortcutDialContact" msgid="155367248069127153">"સીધું જ ડાયલ"</string>
+    <string name="shortcutMessageContact" msgid="9123517151981679277">"સીધો જ સંદેશ"</string>
+    <string name="shortcutActivityTitle" msgid="5407832911005090417">"સંપર્ક પસંદ કરો"</string>
+    <string name="contactInsertOrEditActivityTitle" msgid="1788154962629911262">"સંપર્કમાં ઉમેરો"</string>
+    <string name="contactPickerActivityTitle" msgid="1842634991247618890">"સંપર્ક પસંદ કરો"</string>
+    <string name="groupMemberPickerActivityTitle" msgid="8745419913947478380">"પસંદ કરો"</string>
+    <string name="header_entry_contact_list_adapter_header_title" msgid="4098233078586958762">"નવો સંપર્ક બનાવો"</string>
+    <string name="searchHint" msgid="1487501532610025473">"સંપર્કો શોધો"</string>
+    <string name="menu_addStar" msgid="4903812703386825130">"મનપસંદમાં ઉમેરો"</string>
+    <string name="menu_removeStar" msgid="3707373931808303701">"મનપસંદમાંથી દૂર કરો"</string>
+    <string name="description_action_menu_remove_star" msgid="4044390281910122890">"મનપસંદમાંથી દૂર કર્યું"</string>
+    <string name="description_action_menu_add_star" msgid="7316521132809388851">"મનપસંદમાં ઉમેર્યું"</string>
+    <string name="menu_editContact" msgid="5039663761025630208">"સંપાદન"</string>
+    <string name="menu_deleteContact" msgid="15161764025276217">"કાઢી નાખો"</string>
+    <string name="menu_change_photo" msgid="4911246106907208055">"ફોટો બદલો"</string>
+    <string name="menu_create_contact_shortcut" msgid="8983436328557825860">"શૉર્ટકટ બનાવો"</string>
+    <string name="menu_splitAggregate" msgid="2062290275288905833">"અનલિંક કરો"</string>
+    <string name="menu_editGroup" msgid="8706562583754054622">"સંપર્કો દૂર કરો"</string>
+    <string name="menu_renameGroup" msgid="2685886609399776475">"લેબલનું નામ બદલો"</string>
+    <string name="menu_deleteGroup" msgid="1180215594530228294">"લેબલ કાઢી નાખો"</string>
+    <string name="menu_addToGroup" msgid="5034813446697655310">"સંપર્ક ઉમેરો"</string>
+    <string name="menu_selectForGroup" msgid="6386553337569514850">"સંપર્કો પસંદ કરો"</string>
+    <string name="menu_addContactsToGroup" msgid="4549318978482280577">"સંપર્કો ઉમેરો"</string>
+    <string name="menu_removeFromGroup" msgid="8753799091967887958">"લેબલમાંથી દૂર કરો"</string>
+    <string name="menu_new_group_action_bar" msgid="1670312283925872483">"લેબલ બનાવો"</string>
+    <string name="splitConfirmation" msgid="4750158900636307469">"આ સંપર્કને બહુવિધ સંપર્કોમાં અનલિંક કરીએ?"</string>
+    <string name="splitConfirmation_positive_button" msgid="3109235536045409854">"અનલિંક કરો"</string>
+    <string name="splitConfirmationWithPendingChanges" msgid="8617395780141069527">"તમે પહેલેથી કરેલા ફેરફારોને સાચવવા અને આ સંપર્કને બહુવિધ સંપર્કોમાં અનલિંક કરવા ઈચ્છો છો?"</string>
+    <string name="splitConfirmationWithPendingChanges_positive_button" msgid="131293000921403021">"સાચવો અને અનલિંક કરો"</string>
+    <string name="joinConfirmation" msgid="1245184431169363397">"તમે પહેલેથી કરેલા ફેરફારોને સાચવવા અને પસંદ કરેલાં સંપર્ક સાથે લિંક કરવા ઈચ્છો છો?"</string>
+    <string name="joinConfirmation_positive_button" msgid="8300713422725610480">"સાચવો અને લિંક કરો"</string>
+    <string name="contacts_linking_progress_bar" msgid="7922930766022513619">"લિંક કરી રહ્યું છે"</string>
+    <string name="contacts_unlinking_progress_bar" msgid="5696679068872394167">"અનલિંક કરી રહ્યું છે"</string>
+    <string name="menu_joinAggregate" msgid="3116395302755287038">"લિંક કરો"</string>
+    <string name="menu_linkedContacts" msgid="6363718333551613063">"લિંક કરેલ સંપર્કો જુઓ"</string>
+    <string name="menu_save" msgid="7204524700499687371">"સાચવો"</string>
+    <string name="titleJoinContactDataWith" msgid="7342386037654890242">"સંપર્કો લિંક કરો"</string>
+    <string name="blurbJoinContactDataWith" msgid="132105056919797709">"તમે <xliff:g id="NAME">%s</xliff:g> સાથે લિંક કરવા માંગતા હોય તે સંપર્ક પસંદ કરો:"</string>
+    <string name="separatorJoinAggregateSuggestions" msgid="8347769365870796983">"સૂચવેલા સંપર્કો"</string>
+    <string name="separatorJoinAggregateAll" msgid="5378346138684490784">"તમામ સંપર્કો"</string>
+    <string name="contactsJoinedNamedMessage" msgid="8732933595873458166">"<xliff:g id="NAME">%s</xliff:g> ને લિંક કર્યાં"</string>
+    <string name="contactsJoinedMessage" msgid="7605856897709458707">"સંપર્કો લિંક કર્યાં"</string>
+    <string name="contacts_deleted_one_named_toast" msgid="2707266264779781309">"<xliff:g id="NAME">%1$s</xliff:g> ને કાઢી નાખ્યાં"</string>
+    <string name="contacts_deleted_two_named_toast" msgid="6908761620236434380">"<xliff:g id="NAME_0">%1$s</xliff:g> અને <xliff:g id="NAME_1">%2$s</xliff:g> ને કાઢી નાખ્યાં"</string>
+    <string name="contacts_deleted_many_named_toast" msgid="4879197068250337298">"<xliff:g id="NAME_0">%1$s</xliff:g>, <xliff:g id="NAME_1">%2$s</xliff:g>, <xliff:g id="NAME_2">%3$s</xliff:g>… ને કાઢી નાખ્યાં"</string>
+    <plurals name="contacts_deleted_toast" formatted="false" msgid="198534700386623765">
       <item quantity="one">સંપર્કો કાઢી નાખ્યા</item>
       <item quantity="other">સંપર્કો કાઢી નાખ્યા</item>
     </plurals>
-    <plurals name="contacts_count" formatted="false" msgid="8696793457340503668">
+    <plurals name="contacts_count" formatted="false" msgid="8804860300387044572">
       <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g> સંપર્ક</item>
       <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> સંપર્ક</item>
     </plurals>
-    <plurals name="contacts_count_with_account" formatted="false" msgid="7402583111980220575">
+    <plurals name="contacts_count_with_account" formatted="false" msgid="1025146902085751375">
       <item quantity="one"><xliff:g id="COUNT_2">%1$d</xliff:g> સંપર્ક · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
       <item quantity="other"><xliff:g id="COUNT_2">%1$d</xliff:g> સંપર્ક · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
     </plurals>
-    <string name="title_from_google" msgid="4664084747121207202">"Google થી"</string>
-    <string name="title_from_other_accounts" msgid="8307885412426754288">"<xliff:g id="ACCOUNT">%s</xliff:g> થી"</string>
-    <string name="menu_set_ring_tone" msgid="8728345772068064946">"રિંગટોન સેટ કરો"</string>
-    <string name="menu_redirect_calls_to_vm" msgid="83331924006712755">"વૉઇસમેઇલ પર રૂટ કરો"</string>
-    <string name="menu_unredirect_calls_to_vm" msgid="8725542534701811737">"વૉઇસમેઇલથી અનરૂટ કરો"</string>
-    <string name="readOnlyContactWarning" msgid="7514475664695089411">"આ સંપર્ક ફક્ત-વાંચવા માટે છે. તેને કાઢી નાખી શકતાં નથી, પરંતુ તમે તેને છુપાવી શકો છો."</string>
-    <string name="readOnlyContactWarning_positive_button" msgid="8914797212167683673">"સંપર્ક છુપાવો"</string>
-    <string name="readOnlyContactDeleteConfirmation" msgid="4717023505914239809">"આ સંપર્કમાંના ફક્ત-વાંચવા માટેના એકાઉન્ટ્સ છુપાવવામાં આવશે, કાઢી નાખવામાં નહીં."</string>
-    <string name="single_delete_confirmation" msgid="3106905986948679720">"આ સંપર્કને કાઢી નાખીએ?"</string>
-    <string name="batch_delete_confirmation" msgid="3984346060324014108">"પસંદ કરેલા સંપર્કોને કાઢી નાખીએ?"</string>
-    <string name="batch_delete_read_only_contact_confirmation" msgid="8411117621035639964">"તમારા માત્ર-વાંચવા માટેનાં એકાઉન્ટ્સ પરના સંપર્કોને કાઢી નાખી શકાતાં નથી, પરંતુ તેઓને છુપાવી શકાય છે."</string>
-    <string name="batch_delete_multiple_accounts_confirmation" msgid="8207205649127030030">"કાઢી નાખવાના સંપર્કો બહુવિધ એકાઉન્ટ્સ પરની વિગતો ધરાવે છે. માત્ર-વાંચવા માટેનાં એકાઉન્ટ્સ પરની વિગતો છુપાવવામાં આવશે, કાઢી નાખવામાં આવશે નહિ."</string>
-    <string name="multipleContactDeleteConfirmation" msgid="5235324124905653550">"આ સંપર્કને કાઢી નાખવું બહુવિધ એકાઉન્ટ્સમાંથી વિગતો કાઢી નાખશે."</string>
-    <string name="deleteConfirmation" msgid="3512271779086656043">"આ સંપર્કને કાઢી નાખીએ?"</string>
-    <string name="deleteConfirmation_positive_button" msgid="7857888845028586365">"કાઢી નાખો"</string>
-    <string name="invalidContactMessage" msgid="8215051456181842274">"સંપર્ક અસ્તિત્વમાં નથી."</string>
-    <string name="createContactShortcutSuccessful_NoName" msgid="8831303345367275472">"સંપર્કને હોમ સ્ક્રીન પર ઉમેરવામાં આવ્યો."</string>
-    <string name="createContactShortcutSuccessful" msgid="953651153238790069">"<xliff:g id="NAME">%s</xliff:g> ને હોમ સ્ક્રીન પર ઉમેરવામાં આવ્યું."</string>
-    <string name="photoPickerNotFoundText" msgid="2052542573853433204">"ઉપકરણ પર કોઈ ચિત્રો ઉપલબ્ધ નથી."</string>
-    <string name="attach_photo_dialog_title" msgid="5599827035558557169">"સંપર્ક ફોટો"</string>
-    <string name="customLabelPickerTitle" msgid="1081475101983255212">"કસ્ટમ લેબલ નામ"</string>
-    <string name="removePhoto" msgid="4898105274130284565">"ફોટો દૂર કરો"</string>
-    <string name="noContacts" msgid="2228592924476426108">"તમારી સંપર્કોની સૂચિ ખાલી છે"</string>
-    <string name="emptyGroup" msgid="5102411903247859575">"આ લેબલ સાથે કોઈ સંપર્કો નથી"</string>
-    <string name="emptyAccount" msgid="6873962901497975964">"આ એકાઉન્ટમાંં કોઈ સંંપર્કો નથી"</string>
-    <string name="emptyMainList" msgid="2772242747899664460">"તમારી સંપર્કોની સૂચિ ખાલી છે"</string>
-    <string name="contactSavedNamedToast" msgid="895136068894549611">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> સાચવ્યો"</string>
-    <string name="contactSavedToast" msgid="9171862279493213075">"સંપર્ક સાચવ્યો"</string>
-    <string name="contactUnlinkedToast" msgid="7122823195786012553">"સંપર્કો અનલિંક કર્યા"</string>
-    <string name="contactSavedErrorToast" msgid="4827033473908688031">"ફેરફારો સાચવી શક્યાં નથી"</string>
-    <string name="contactUnlinkErrorToast" msgid="2706297508166952431">"સંપર્કને અનલિંક કરી શક્યા નથી"</string>
-    <string name="contactJoinErrorToast" msgid="5735129234573327701">"સંપર્ક લિંક કરી શક્યાં નથી"</string>
-    <string name="contactGenericErrorToast" msgid="3885457515665783976">"સંપર્ક સાચવવામાં ભૂલ"</string>
-    <string name="contactPhotoSavedErrorToast" msgid="6860883564984042194">"સંપર્ક ફોટોનાં ફેરફારો સાચવી શક્યાં નથી"</string>
-    <string name="groupLoadErrorToast" msgid="7536267148196064554">"લેબલ લોડ કરવામાં નિષ્ફળ થયાં"</string>
-    <string name="groupDeletedToast" msgid="520896687873262027">"લેબલ કાઢી નાખ્યું"</string>
-    <string name="groupCreatedToast" msgid="1924195126172834870">"લેબલ બનાવ્યું"</string>
-    <string name="groupCreateFailedToast" msgid="4359093891863474299">"લેબલ બનાવી શકતાં નથી"</string>
-    <string name="groupUpdatedToast" msgid="3667977658676267687">"લેબલ અપડેટ કર્યું"</string>
-    <string name="groupMembersRemovedToast" msgid="3510563559799376603">"લેબલમાંથી દૂર કર્યાં"</string>
-    <string name="groupMembersAddedToast" msgid="4824834898718972768">"લેબલમાં ઉમેર્યા"</string>
-    <string name="groupSavedErrorToast" msgid="2355891714292740162">"લેબલ ફેરફારો સાચવી શક્યાં નથી"</string>
-    <string name="groupExistsErrorMessage" msgid="5196811283836946189">"તે લેબલ પહેલાંથી અસ્તિત્વમાં છે"</string>
-    <string name="groupSomeContactsNoEmailsToast" msgid="8211161470235548732">"કેટલાક સંપર્કોની પાસે ઇમેઇલ્સ નથી."</string>
-    <string name="groupSomeContactsNoPhonesToast" msgid="5530760834827530509">"કેટલાક સંપર્કોની પાસે ફોન નંબર્સ નથી."</string>
-    <string name="menu_sendEmailOption" msgid="5978319931321657780">"ઇમેઇલ મોકલો"</string>
-    <string name="menu_sendMessageOption" msgid="8850168125274916426">"સંદેશ મોકલો"</string>
-    <string name="pickerSelectContactsActivityTitle" msgid="1936544190231136729">"સંપર્કો પસંદ કરો"</string>
-    <string name="send_to_selection" msgid="2251339182881603540">"મોકલો"</string>
-    <string name="listFoundAllContactsZero" msgid="922980883593159444">"સંપર્કો નથી"</string>
-    <string name="add_contact_dlg_message_fmt" msgid="7986472669444326576">"\"<xliff:g id="EMAIL">%s</xliff:g>\" ને સંપર્કોમાં ઉમેરીએ?"</string>
-    <string name="search_settings_description" msgid="2675223022992445813">"તમારા સંપર્કોના નામ"</string>
-    <string name="quickcontact_transparent_view_description" msgid="987959416759562455">"પાછલી સ્ક્રીન પર પાછા આવવા માટે ક્લિક કરો"</string>
-    <string name="quickcontact_add_phone_number" msgid="731665835910658965">"ફોન નંબર ઉમેરો"</string>
-    <string name="quickcontact_add_email" msgid="739298028384348482">"ઇમેઇલ ઉમેરો"</string>
-    <string name="missing_app" msgid="1466111003546611387">"આ ક્રિયાને હેન્ડલ કરવા માટે કોઈ ઍપ્લિકેશન મળી નહીં."</string>
-    <string name="menu_share" msgid="943789700636542260">"શેર કરો"</string>
-    <string name="menu_add_contact" msgid="3198704337220892684">"સંપર્કોમાં ઉમેરો"</string>
-    <string name="menu_add_contacts" msgid="4465646512002163011">"ઉમેરો"</string>
-    <plurals name="title_share_via" formatted="false" msgid="5886112726191455415">
+    <string name="title_from_google" msgid="2554633992366572820">"Google થી"</string>
+    <string name="title_from_other_accounts" msgid="7813596336566711843">"<xliff:g id="ACCOUNT">%s</xliff:g> થી"</string>
+    <string name="menu_set_ring_tone" msgid="8876328286439724181">"રિંગટોન સેટ કરો"</string>
+    <string name="menu_redirect_calls_to_vm" msgid="3027178444991878913">"વૉઇસમેઇલ પર રૂટ કરો"</string>
+    <string name="menu_unredirect_calls_to_vm" msgid="2294919685954790892">"વૉઇસમેઇલથી અનરૂટ કરો"</string>
+    <string name="readOnlyContactWarning" msgid="4158660823025751201">"આ સંપર્ક ફક્ત-વાંચવા માટે છે. તેને કાઢી નાખી શકતાં નથી, પરંતુ તમે તેને છુપાવી શકો છો."</string>
+    <string name="readOnlyContactWarning_positive_button" msgid="2602676689104338036">"સંપર્ક છુપાવો"</string>
+    <string name="readOnlyContactDeleteConfirmation" msgid="2759786078454970110">"આ સંપર્કમાંના ફક્ત-વાંચવા માટેના એકાઉન્ટ્સ છુપાવવામાં આવશે, કાઢી નાખવામાં નહીં."</string>
+    <string name="single_delete_confirmation" msgid="8260949300855537648">"આ સંપર્કને કાઢી નાખીએ?"</string>
+    <string name="batch_delete_confirmation" msgid="4149615167210863403">"પસંદ કરેલા સંપર્કોને કાઢી નાખીએ?"</string>
+    <string name="batch_delete_read_only_contact_confirmation" msgid="381691735715182700">"તમારા માત્ર-વાંચવા માટેનાં એકાઉન્ટ્સ પરના સંપર્કોને કાઢી નાખી શકાતાં નથી, પરંતુ તેઓને છુપાવી શકાય છે."</string>
+    <string name="batch_delete_multiple_accounts_confirmation" msgid="4547718538924570984">"કાઢી નાખવાના સંપર્કો બહુવિધ એકાઉન્ટ્સ પરની વિગતો ધરાવે છે. માત્ર-વાંચવા માટેનાં એકાઉન્ટ્સ પરની વિગતો છુપાવવામાં આવશે, કાઢી નાખવામાં આવશે નહિ."</string>
+    <string name="multipleContactDeleteConfirmation" msgid="2970218685653877287">"આ સંપર્કને કાઢી નાખવું બહુવિધ એકાઉન્ટ્સમાંથી વિગતો કાઢી નાખશે."</string>
+    <string name="deleteConfirmation" msgid="3727809366015979585">"આ સંપર્કને કાઢી નાખીએ?"</string>
+    <string name="deleteConfirmation_positive_button" msgid="1604511403421785160">"કાઢી નાખો"</string>
+    <string name="invalidContactMessage" msgid="6204402264821083362">"સંપર્ક અસ્તિત્વમાં નથી."</string>
+    <string name="createContactShortcutSuccessful_NoName" msgid="532242135930208299">"સંપર્કને હોમ સ્ક્રીન પર ઉમેરવામાં આવ્યો."</string>
+    <string name="createContactShortcutSuccessful" msgid="6980032407920515698">"<xliff:g id="NAME">%s</xliff:g> ને હોમ સ્ક્રીન પર ઉમેરવામાં આવ્યું."</string>
+    <string name="photoPickerNotFoundText" msgid="6535222297923110991">"ઉપકરણ પર કોઈ ચિત્રો ઉપલબ્ધ નથી."</string>
+    <string name="attach_photo_dialog_title" msgid="7948754072673745235">"સંપર્ક ફોટો"</string>
+    <string name="customLabelPickerTitle" msgid="816694850254307154">"કસ્ટમ લેબલ નામ"</string>
+    <string name="removePhoto" msgid="1190099414600730001">"ફોટો દૂર કરો"</string>
+    <string name="noContacts" msgid="3030512741779213810">"તમારી સંપર્કોની સૂચિ ખાલી છે"</string>
+    <string name="emptyGroup" msgid="8598261660865081152">"આ લેબલ સાથે કોઈ સંપર્કો નથી"</string>
+    <string name="emptyAccount" msgid="7450843210977018582">"આ એકાઉન્ટમાંં કોઈ સંંપર્કો નથી"</string>
+    <string name="emptyMainList" msgid="3266182207039677163">"તમારી સંપર્કોની સૂચિ ખાલી છે"</string>
+    <string name="contactSavedNamedToast" msgid="3067050290584834386">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> સાચવ્યો"</string>
+    <string name="contactSavedToast" msgid="4370392215196995301">"સંપર્ક સાચવ્યો"</string>
+    <string name="contactUnlinkedToast" msgid="6791720274141804377">"સંપર્કો અનલિંક કર્યા"</string>
+    <string name="contactSavedErrorToast" msgid="3213619905154956918">"ફેરફારો સાચવી શક્યાં નથી"</string>
+    <string name="contactUnlinkErrorToast" msgid="7289356996668886841">"સંપર્કને અનલિંક કરી શક્યા નથી"</string>
+    <string name="contactJoinErrorToast" msgid="1222155997933362787">"સંપર્ક લિંક કરી શક્યાં નથી"</string>
+    <string name="contactGenericErrorToast" msgid="5689457475864876100">"સંપર્ક સાચવવામાં ભૂલ"</string>
+    <string name="contactPhotoSavedErrorToast" msgid="8568460180541397272">"સંપર્ક ફોટોનાં ફેરફારો સાચવી શક્યાં નથી"</string>
+    <string name="groupLoadErrorToast" msgid="4141488223976370583">"લેબલ લોડ કરવામાં નિષ્ફળ થયાં"</string>
+    <string name="groupDeletedToast" msgid="7774363940327847515">"લેબલ કાઢી નાખ્યું"</string>
+    <string name="groupCreatedToast" msgid="1685148819468403239">"લેબલ બનાવ્યું"</string>
+    <string name="groupCreateFailedToast" msgid="1836425392831964024">"લેબલ બનાવી શકતાં નથી"</string>
+    <string name="groupUpdatedToast" msgid="3381549467345607379">"લેબલ અપડેટ કર્યું"</string>
+    <string name="groupMembersRemovedToast" msgid="8019566066934628011">"લેબલમાંથી દૂર કર્યાં"</string>
+    <string name="groupMembersAddedToast" msgid="1939782548900157287">"લેબલમાં ઉમેર્યા"</string>
+    <string name="groupSavedErrorToast" msgid="8456912862816145318">"લેબલ ફેરફારો સાચવી શક્યાં નથી"</string>
+    <string name="groupExistsErrorMessage" msgid="912222525098791136">"તે લેબલ પહેલાંથી અસ્તિત્વમાં છે"</string>
+    <string name="groupSomeContactsNoEmailsToast" msgid="2142963883699535155">"કેટલાક સંપર્કોની પાસે ઇમેઇલ્સ નથી."</string>
+    <string name="groupSomeContactsNoPhonesToast" msgid="2454029254458875746">"કેટલાક સંપર્કોની પાસે ફોન નંબર્સ નથી."</string>
+    <string name="menu_sendEmailOption" msgid="8600335923636486825">"ઇમેઇલ મોકલો"</string>
+    <string name="menu_sendMessageOption" msgid="8051852013078110910">"સંદેશ મોકલો"</string>
+    <string name="pickerSelectContactsActivityTitle" msgid="8265907544009447967">"સંપર્કો પસંદ કરો"</string>
+    <string name="send_to_selection" msgid="3655197947726443720">"મોકલો"</string>
+    <string name="listFoundAllContactsZero" msgid="1933842282916988563">"સંપર્કો નથી"</string>
+    <string name="add_contact_dlg_message_fmt" msgid="7498024710169591375">"\"<xliff:g id="EMAIL">%s</xliff:g>\" ને સંપર્કોમાં ઉમેરીએ?"</string>
+    <string name="search_settings_description" msgid="5630675648560839920">"તમારા સંપર્કોના નામ"</string>
+    <string name="quickcontact_transparent_view_description" msgid="7783027850792852265">"પાછલી સ્ક્રીન પર પાછા આવવા માટે ક્લિક કરો"</string>
+    <string name="quickcontact_add_phone_number" msgid="1683577288080727862">"ફોન નંબર ઉમેરો"</string>
+    <string name="quickcontact_add_email" msgid="1442894568471116797">"ઇમેઇલ ઉમેરો"</string>
+    <string name="missing_app" msgid="5674389915738964148">"આ ક્રિયાને હેન્ડલ કરવા માટે કોઈ ઍપ્લિકેશન મળી નહીં."</string>
+    <string name="menu_share" msgid="6343022811796001773">"શેર કરો"</string>
+    <string name="menu_add_contact" msgid="5822356185421997656">"સંપર્કોમાં ઉમેરો"</string>
+    <string name="menu_add_contacts" msgid="7114262784903366463">"ઉમેરો"</string>
+    <plurals name="title_share_via" formatted="false" msgid="3868648642107664607">
       <item quantity="one">આના દ્વારા સંપર્કો શેર કરો</item>
       <item quantity="other">આના દ્વારા સંપર્કો શેર કરો</item>
     </plurals>
-    <string name="dialog_new_group_account" msgid="3451312333591556651">"એકાઉન્ટ પસંદ કરો"</string>
-    <string name="group_name_dialog_insert_title" msgid="2668452090427027941">"લેબલ બનાવો"</string>
-    <string name="group_name_dialog_update_title" msgid="6328021162869677383">"લેબલનું નામ બદલો"</string>
-    <string name="group_name_dialog_hint" msgid="7624523157537700160">"લેબલનું નામ"</string>
-    <string name="label_name_dialog_hint" msgid="1276051790427638142">"લેબલનું નામ"</string>
-    <string name="audio_chat" msgid="2535716629358298691">"વોઇસ ચેટ"</string>
-    <string name="video_chat" msgid="1872255818640336072">"વિડિઓ ચેટ"</string>
-    <string name="account_type_format" msgid="718948015590343010">"<xliff:g id="SOURCE">%1$s</xliff:g> સંપર્ક"</string>
-    <string name="google_account_type_format" msgid="5283997303922067997">"<xliff:g id="SOURCE">%1$s</xliff:g> એકાઉન્ટ"</string>
-    <string name="take_photo" msgid="7496128293167402354">"ફોટો લો"</string>
-    <string name="take_new_photo" msgid="7341354729436576304">"નવો ફોટો લો"</string>
-    <string name="pick_photo" msgid="2129509985223564942">"ફોટો પસંદ કરો"</string>
-    <string name="pick_new_photo" msgid="9122450996263688237">"નવો ફોટો પસંદ કરો"</string>
-    <string name="search_results_searching" msgid="3984833028938569930">"શોધી રહ્યું છે..."</string>
-    <string name="event_edit_field_hint_text" msgid="5794424930242630477">"તારીખ"</string>
-    <string name="group_edit_field_hint_text" msgid="8038224059926963133">"લેબલ"</string>
-    <string name="cancel_button_content_description" msgid="1288652456274531846">"રદ કરો"</string>
-    <string name="back_arrow_content_description" msgid="4355362760545735065">"પાછળ"</string>
-    <string name="action_menu_back_from_edit_select" msgid="6435476408621731420">"બંધ કરો"</string>
-    <string name="aggregation_suggestion_edit_dialog_message" msgid="6549585283910518095">"પસંદ કરેલ સંપર્કોને સંપાદિત કરવા પર સ્વિચ કરીએ? તમે અત્યાર સુધીમાં દાખલ કરેલી માહિતીને કૉપિ કરાશે."</string>
-    <string name="contact_directory_description" msgid="683398073603909119">"નિર્દેશિકા <xliff:g id="TYPE">%1$s</xliff:g>"</string>
-    <string name="activity_title_settings" msgid="5464130076132770781">"સેટિંગ્સ"</string>
-    <string name="menu_settings" msgid="377929915873428211">"સેટિંગ્સ"</string>
-    <string name="menu_help" msgid="1680178646764069976">"સહાય અને પ્રતિસાદ"</string>
-    <string name="organization_company_and_title" msgid="6718207751363732025">"<xliff:g id="COMPANY_0">%2$s</xliff:g>, <xliff:g id="COMPANY_1">%1$s</xliff:g>"</string>
-    <string name="non_phone_caption" msgid="1541655052330027380">"ફોન નંબર"</string>
-    <string name="non_phone_add_to_contacts" msgid="6590985286250471169">"સંપર્કોમાં ઉમેરો"</string>
-    <string name="non_phone_close" msgid="7608506439725515667">"બંધ કરો"</string>
-    <string name="date_year_toggle" msgid="7122002148518724139">"વર્ષ શામેલ કરો"</string>
-    <string name="contacts_unavailable_add_account" msgid="4347232421410561500">"એકાઉન્ટ ઉમેરો"</string>
-    <string name="contacts_unavailable_import_contacts" msgid="3182801738595937144">"આયાત કરો"</string>
-    <string name="create_group_item_label" msgid="3263064599743742865">"નવું બનાવો…"</string>
-    <string name="delete_group_dialog_message" msgid="335713829185261371">"\"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\" લેબલ કાઢી નાખીએ? (સંપર્કો સ્વયં કાઢી નાખવામાં આવશે નહીં.)"</string>
-    <string name="toast_join_with_empty_contact" msgid="1215465657839085613">"બીજા સાથે લિંક કરતાં પહેલાં સંપર્કનું નામ લખો."</string>
-    <string name="copy_text" msgid="3257145021583508761">"ક્લિપબોર્ડ પર કૉપિ કરો"</string>
-    <string name="set_default" msgid="4417505153468300351">"ડિફોલ્ટ સેટ કરો"</string>
-    <string name="clear_default" msgid="7193185801596678067">"ડિફોલ્ટ સાફ કરો"</string>
-    <string name="toast_text_copied" msgid="5143776250008541719">"ટેક્સ્ટ કૉપિ કર્યો"</string>
-    <string name="cancel_confirmation_dialog_message" msgid="9008214737653278989">"ફેરફારો નિકાળીએ?"</string>
-    <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="3057023972074640671">"નિકાળો"</string>
-    <string name="cancel_confirmation_dialog_keep_editing_button" msgid="3316573928085916146">"રદ કરો"</string>
-    <string name="leave_customize_confirmation_dialog_message" msgid="4277114551206032979">"કસ્ટમાઇઝેશન્સ નિકાળીએ?"</string>
-    <string name="enter_contact_name" msgid="4594274696120278368">"સંપર્કો શોધો"</string>
-    <string name="title_edit_group" msgid="8602752287270586734">"સંપર્કો દૂર કરો"</string>
-    <string name="local_profile_title" msgid="2021416826991393684">"મારી સ્થાનિક પ્રોફાઇલ"</string>
-    <string name="external_profile_title" msgid="8034998767621359438">"મારી <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g> પ્રોફાઇલ"</string>
-    <string name="contact_editor_prompt_zero_accounts" msgid="6648376557574360096">"તે એકાઉન્ટ ઉમેરવા માટે થોડો સમય આપો કે જે Google પર તમારા સંપર્કોનું બેક અપ લેશે."</string>
-    <string name="contact_editor_prompt_one_account" msgid="3087691056345099310">"નવા સંપર્કોને <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g> પર સાચવવામાં આવશે."</string>
-    <string name="contact_editor_prompt_multiple_accounts" msgid="8565761674283473549">"નવા સંપર્કો માટે એક ડીફોલ્ટ એકાઉન્ટ પસંદ કરો:"</string>
-    <string name="contact_editor_title_new_contact" msgid="3042788718983070111">"નવો સંપર્ક બનાવો"</string>
-    <string name="contact_editor_title_existing_contact" msgid="4898475703683187798">"સંપર્ક સંપાદિત કરો"</string>
-    <string name="contact_editor_title_read_only_contact" msgid="2443496574528842237">"ફક્ત જુઓ"</string>
-    <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4186699385645902152">"સંપાદિત કરવા માટે સંપર્ક પસંદ કરો"</string>
-    <string name="contact_editor_pick_linked_contact_dialog_title" msgid="4618465940423857694">"લિંક કરેલ સંપર્કો"</string>
-    <string name="contact_editor_add_linked_contact" msgid="426142748048816297">"ઉમેરો"</string>
-    <string name="contact_editor_unlink_contacts" msgid="4525214336177236653">"અનલિંક કરો"</string>
-    <string name="add_account" msgid="8201790677994503186">"એકાઉન્ટ ઉમેરો"</string>
-    <string name="add_new_account" msgid="5748627740680940264">"નવું એકાઉન્ટ ઉમેરો"</string>
-    <string name="menu_export_database" msgid="2659719297530170820">"ડેટાબેસ ફાઇલોનો નિકાસ કરો"</string>
-    <string name="action_menu_add_new_contact_button" msgid="5506832825256203208">"નવો સંપર્ક બનાવો"</string>
-    <string name="expanding_entry_card_view_see_more" msgid="3779194067124758079">"વધુ જુઓ"</string>
-    <string name="expanding_entry_card_view_see_less" msgid="5344160551629714168">"ઓછું જુઓ"</string>
-    <string name="about_card_title" msgid="2920942314212825637">"વિશે"</string>
-    <string name="toast_making_personal_copy" msgid="288549957278065542">"વ્યક્તિગત કૉપિ બનાવી રહ્યાં છે…"</string>
-    <string name="date_time_set" msgid="4761419824439606690">"સેટ કરો"</string>
-    <string name="header_im_entry" msgid="3581720979640225615">"IM"</string>
-    <string name="header_organization_entry" msgid="8515394955666265406">"સંગઠન"</string>
-    <string name="header_nickname_entry" msgid="6743561883967451485">"ઉપનામ"</string>
-    <string name="header_note_entry" msgid="4320190426480612344">"નોંધ"</string>
-    <string name="header_website_entry" msgid="1411467850000824745">"વેબસાઇટ"</string>
-    <string name="header_event_entry" msgid="6738250422744401460">"ઇવેન્ટ"</string>
-    <string name="header_relation_entry" msgid="1520292958088146460">"સંબંધ"</string>
-    <string name="header_name_entry" msgid="1592791008096288306">"નામ"</string>
-    <string name="header_email_entry" msgid="8666093061171624478">"ઇમેઇલ"</string>
-    <string name="header_phone_entry" msgid="8450980572274173570">"ફોન"</string>
-    <string name="content_description_directions" msgid="2686791825798189335">"સ્થાન માટેનાં દિશા નિર્દેશો"</string>
-    <string name="editor_more_fields" msgid="3630987771304393421">"વધુ ફીલ્ડ્સ"</string>
-    <string name="editor_change_photo_content_description" msgid="820879708069864340">"સંપર્ક ફોટો બદલો"</string>
-    <string name="editor_add_photo_content_description" msgid="4194479313465418120">"સંપર્ક ફોટો ઉમેરો"</string>
-    <string name="editor_contact_photo_content_description" msgid="8571975622926162369">"સંપર્ક ફોટો"</string>
-    <string name="editor_failed_to_load" msgid="1623639078580475818">"સંપાદક ખોલવામાં નિષ્ફળ થયાં."</string>
-    <string name="editor_account_selector_title" msgid="4426337993307015833">"આમાં સાચવી રહ્યાં છે"</string>
-    <string name="editor_account_selector_read_only_title" msgid="4137969650184457126">"<xliff:g id="ACCOUNT">%s</xliff:g> તરફથી સંપર્ક માહિતી સંપાદનક્ષમ નથી"</string>
-    <string name="quickcontact_suggestion_link_button" msgid="3244619714781727946">"સંપર્કો લિંક કરો"</string>
-    <string name="quickcontact_suggestion_cancel_button" msgid="8236954313106630862">"રદ કરો"</string>
-    <string name="suggestion_card_this_contact_title" msgid="3039457405374454914">"આ સંપર્ક"</string>
-    <string name="suggestion_card_duplicates_title" msgid="9107788743178980902">"સંભવિત ડુપ્લિકેટ્સ"</string>
-    <string name="suggestion_card_help_message" msgid="4474061044387181093">"આ સંપર્કો એક જ વ્યક્તિ હોઈ શકે છે. તમે તેઓને એકલ સંપર્ક તરીકે એકસાથે લિંક કરી શકો છો."</string>
-    <string name="editor_delete_view_description" msgid="8583095381562991959">"<xliff:g id="DATA_TYPE">%1$s </xliff:g><xliff:g id="DATA_KIND">%2$s</xliff:g> કાઢી નાખો"</string>
-    <string name="editor_delete_view_description_short" msgid="7335518371270844912">"<xliff:g id="DATA_KIND">%s</xliff:g> કાઢી નાખો"</string>
-    <string name="menu_assistant" msgid="5760693735722052454">"સૂચનો"</string>
-    <string name="menu_assistant_new_badge" msgid="3132884821616980034">"નવું"</string>
-    <string name="navigation_drawer_open" msgid="1126498472143250642">"નેવિગેશન ડ્રોઅર ખોલો"</string>
-    <string name="navigation_drawer_close" msgid="4137416137011817930">"નેવિગેશન ડ્રોઅર બંધ કરો"</string>
-    <string name="navigation_drawer_label" msgid="4154758025620107419">"<xliff:g id="LABEL_NAME">%s</xliff:g> લેબલ"</string>
-    <string name="menu_title_groups" msgid="8356921831150278868">"લેબલ્સ"</string>
-    <string name="menu_title_filters" msgid="8210922220185114527">"એકાઉન્ટ્સ"</string>
-    <string name="hamburger_feature_highlight_header" msgid="5762679188565585072">"સૂચનો"</string>
-    <string name="hamburger_feature_highlight_body" msgid="4403398269286898733">"તમારા સંપર્કો ગોઠવાયેલ અને ઉપયોગી રાખો"</string>
-    <string name="undo" msgid="1425165101664071422">"પૂર્વવત્ કરો"</string>
-    <string name="call_custom" msgid="6385303130912713318">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g> પર કૉલ કરો"</string>
-    <string name="call_home" msgid="1990519474420545392">"ઘરે કૉલ કરો"</string>
-    <string name="call_mobile" msgid="7502236805487609178">"મોબાઇલ પર કૉલ કરો"</string>
-    <string name="call_work" msgid="5328785911463744028">"કાર્યાલય પર કૉલ કરો"</string>
-    <string name="call_fax_work" msgid="7467763592359059243">"કાર્યાલયના ફૅક્સ પર કૉલ કરો"</string>
-    <string name="call_fax_home" msgid="8342175628887571876">"ઘરના ફૅક્સ પર કૉલ કરો"</string>
-    <string name="call_pager" msgid="9003902812293983281">"પેજર પર કૉલ કરો"</string>
-    <string name="call_other" msgid="8563753966926932052">"કૉલ કરો"</string>
-    <string name="call_callback" msgid="1910165691349426858">"કૉલબેક પર કૉલ કરો"</string>
-    <string name="call_car" msgid="3280537320306436445">"કાર પર કૉલ કરો"</string>
-    <string name="call_company_main" msgid="6105120947138711257">"કંપની મુખ્ય પર કૉલ કરો"</string>
-    <string name="call_isdn" msgid="1541590690193403411">"ISDN પર કૉલ કરો"</string>
-    <string name="call_main" msgid="6082900571803441339">"મુખ્ય પર કૉલ કરો"</string>
-    <string name="call_other_fax" msgid="5745314124619636674">"ફૅક્સ પર કૉલ કરો"</string>
-    <string name="call_radio" msgid="8296755876398357063">"રેડિઓ પર કૉલ કરો"</string>
-    <string name="call_telex" msgid="2223170774548648114">"ટેલેક્સ પર કૉલ કરો"</string>
-    <string name="call_tty_tdd" msgid="8951266948204379604">"TTY/TDD પર કૉલ કરો"</string>
-    <string name="call_work_mobile" msgid="8707874281430105394">"કાર્યાલયના મોબાઇલ પર કૉલ કરો"</string>
-    <string name="call_work_pager" msgid="3419348514157949008">"કાર્યાલયના પેજર પર કૉલ કરો"</string>
-    <string name="call_assistant" msgid="670941612175068337">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g> પર કૉલ કરો"</string>
-    <string name="call_mms" msgid="6274041545876221437">"MMS પર કૉલ કરો"</string>
-    <string name="call_by_shortcut" msgid="2566802538698913124">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (કૉલ કરો)"</string>
-    <string name="sms_custom" msgid="415060214233647603">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g> પર ટેક્સ્ટ મોકલો"</string>
-    <string name="sms_home" msgid="7524332261493162995">"ઘરે ટેક્સ્ટ કરો"</string>
-    <string name="sms_mobile" msgid="5200107250451030769">"મોબાઇલ પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_work" msgid="2269624156655267740">"કાર્યાલય પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_fax_work" msgid="8028189067816907075">"કાર્યાલયના ફૅક્સ પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_fax_home" msgid="9204042076306809634">"ઘરના ફૅક્સ પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_pager" msgid="7730404569637015192">"પેજર પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_other" msgid="806127844607642331">"ટેક્સ્ટ કરો"</string>
-    <string name="sms_callback" msgid="5004824430094288752">"કૉલબેક પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_car" msgid="7444227058437359641">"કાર પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_company_main" msgid="118970873419678087">"કંપની મુખ્ય પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_isdn" msgid="8153785037515047845">"ISDN પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_main" msgid="8621625784504541679">"મુખ્ય પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_other_fax" msgid="3888842199855843152">"ફૅક્સ પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_radio" msgid="3329166673433967820">"રેડિઓ પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_telex" msgid="9034802430065267848">"ટેલેક્સ પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_tty_tdd" msgid="6782284969132531532">"TTY/TDD પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_work_mobile" msgid="2459939960512702560">"કાર્યાલયના મોબાઇલ પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_work_pager" msgid="5566924423316960597">"કાર્યાલયના પેજર પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_assistant" msgid="2773424339923116234">"<xliff:g id="ASSISTANT">%s</xliff:g> ને ટેક્સ્ટ કરો"</string>
-    <string name="sms_mms" msgid="4069352461380762677">"MMS પર ટેક્સ્ટ કરો"</string>
-    <string name="sms_by_shortcut" msgid="7741770672976099517">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (સંદેશ મોકલો)"</string>
-    <string name="description_video_call" msgid="7120921378651700947">"વિડિઓ કૉલ કરો"</string>
-    <string name="clearFrequentsConfirmation_title" msgid="766292372438450432">"વારંવાર સંપર્ક કરેલા સાફ કરીએ?"</string>
-    <string name="clearFrequentsConfirmation" msgid="2270554975938265734">"તમે સંપર્કો અને ફોન ઍપ્લિકેશનોમાં વારંવાર સંપર્ક કરેલ સૂચિને સાફ કરશો અને ઇમેઇલ ઍપ્લિકેશનોને તમારી સંબોધન પસંદગીઓને શરૂઆતથી જાણવા માટે ફરજ પાડશો."</string>
-    <string name="clearFrequentsProgress_title" msgid="5157001637482794212">"વારંવાર સંપર્ક કરેલા સાફ કરે છે…"</string>
-    <string name="status_available" msgid="5586870015822828392">"ઉપલબ્ધ"</string>
-    <string name="status_away" msgid="1838861100379804730">"દૂર"</string>
-    <string name="status_busy" msgid="9147992455450257136">"વ્યસ્ત"</string>
-    <string name="local_invisible_directory" msgid="6046691709127661065">"અન્ય"</string>
-    <string name="directory_search_label" msgid="1887759056597975053">"નિર્દેશિકા"</string>
-    <string name="directory_search_label_work" msgid="8618292129829443176">"કાર્ય નિર્દેશિકા"</string>
-    <string name="local_search_label" msgid="2551177578246113614">"તમામ સંપર્કો"</string>
-    <string name="description_quick_contact_for" msgid="6737516415168327789">"<xliff:g id="NAME">%1$s</xliff:g> માટે ઝડપી સંપર્ક"</string>
-    <string name="missing_name" msgid="8745511583852904385">"(નામ નથી)"</string>
-    <string name="favoritesFrequentContacted" msgid="6184232487472425690">"વારંવાર સંપર્ક કરેલા લોકો"</string>
-    <string name="list_filter_phones" msgid="735313795643493365">"ફોન નંબર્સ સાથેના તમામ સંપર્કો"</string>
-    <string name="list_filter_phones_work" msgid="1470173699551475015">"કાર્ય પ્રોફાઇલના સંપર્કો"</string>
-    <string name="view_updates_from_group" msgid="1782685984905600034">"અપડેટ્સ જુઓ"</string>
-    <string name="account_phone" msgid="7128032778471187553">"ઉપકરણ"</string>
-    <string name="account_sim" msgid="6519016427905087952">"SIM"</string>
-    <string name="nameLabelsGroup" msgid="2034640839640477827">"નામ"</string>
-    <string name="nicknameLabelsGroup" msgid="2891682101053358010">"ઉપનામ"</string>
-    <string name="name_given" msgid="4280790853455320619">"નામ"</string>
-    <string name="name_family" msgid="7466985689626017037">"અટક"</string>
-    <string name="name_prefix" msgid="59756378548779822">"નામ ઉપસર્ગ"</string>
-    <string name="name_middle" msgid="8467433655992690326">"પિતા/પતિનું નામ"</string>
-    <string name="name_suffix" msgid="3855278445375651441">"નામ પ્રત્યય"</string>
-    <string name="name_phonetic" msgid="4259595234312430484">"ધ્વન્યાત્મક નામ"</string>
-    <string name="name_phonetic_given" msgid="8723179018384187631">"ધ્વન્યાત્મક નામ"</string>
-    <string name="name_phonetic_middle" msgid="8643721493320405200">"ધ્વન્યાત્મક પિતા/પતિનું નામ"</string>
-    <string name="name_phonetic_family" msgid="2640133663656011626">"ધ્વન્યાત્મક અટક"</string>
-    <string name="phoneLabelsGroup" msgid="6468091477851199285">"ફોન"</string>
-    <string name="emailLabelsGroup" msgid="8389931313045344406">"ઇમેઇલ"</string>
-    <string name="postalLabelsGroup" msgid="3487738141112589324">"સરનામું"</string>
-    <string name="imLabelsGroup" msgid="3898238486262614027">"IM"</string>
-    <string name="organizationLabelsGroup" msgid="2478611760751832035">"સંસ્થા"</string>
-    <string name="relationLabelsGroup" msgid="1854373894284572781">"સંબંધ"</string>
-    <string name="eventLabelsGroup" msgid="7960408705307831289">"વિશિષ્ટ તારીખ"</string>
-    <string name="sms" msgid="1756857139634224222">"ટેક્સ્ટ સંદેશ"</string>
-    <string name="postal_address" msgid="8765560217149624536">"સરનામું"</string>
-    <string name="ghostData_company" msgid="5414421120553765775">"કંપની"</string>
-    <string name="ghostData_title" msgid="7496735200318496110">"શીર્ષક"</string>
-    <string name="label_notes" msgid="8337354953278341042">"નોંધ"</string>
-    <string name="label_custom_field" msgid="1994056912242214426">"કસ્ટમ"</string>
-    <string name="label_sip_address" msgid="7252153678613978127">"SIP"</string>
-    <string name="websiteLabelsGroup" msgid="4202998982804009261">"વેબસાઇટ"</string>
-    <string name="groupsLabel" msgid="7000816729542098972">"લેબલ્સ"</string>
-    <string name="email_home" msgid="8573740658148184279">"ઘરે ઇમેઇલ કરો"</string>
-    <string name="email_mobile" msgid="2042889209787989814">"મોબાઇલ પર ઇમેઇલ કરો"</string>
-    <string name="email_work" msgid="2807430017302722689">"કાર્યાલય પર ઇમેઇલ કરો"</string>
-    <string name="email_other" msgid="3454004077967657109">"ઇમેઇલ"</string>
-    <string name="email_custom" msgid="5536404237099078802">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g> પર ઇમેઇલ મોકલો"</string>
-    <string name="email" msgid="5668400997660065897">"ઇમેઇલ"</string>
-    <string name="postal_street" msgid="8133143961580058972">"શેરી"</string>
-    <string name="postal_city" msgid="6597491300084895548">"શહેર"</string>
-    <string name="postal_region" msgid="6045263193478437672">"રાજ્ય"</string>
-    <string name="postal_postcode" msgid="572136414136673751">"પિન કોડ"</string>
-    <string name="postal_country" msgid="7638264508416368690">"દેશ"</string>
-    <string name="map_home" msgid="1243547733423343982">"ઘરનું સરનામું જુઓ"</string>
-    <string name="map_work" msgid="1360474076921878088">"કાર્યાલયનું સરનામું જુઓ"</string>
-    <string name="map_other" msgid="3817820803587012641">"સરનામું જુઓ"</string>
-    <string name="map_custom" msgid="8761800628069473526">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g> સરનામું જુઓ"</string>
-    <string name="chat_aim" msgid="2588492205291249142">"AIM નો ઉપયોગ કરીને ચેટ કરો"</string>
-    <string name="chat_msn" msgid="8041633440091073484">"Windows Live નો ઉપયોગ કરીને ચેટ કરો"</string>
-    <string name="chat_yahoo" msgid="6629211142719943666">"Yahoo નો ઉપયોગ કરીને ચેટ કરો"</string>
-    <string name="chat_skype" msgid="1210045020427480566">"Skype નો ઉપયોગ કરીને ચેટ કરો"</string>
-    <string name="chat_qq" msgid="4294637812847719693">"QQ નો ઉપયોગ કરીને ચેટ કરો"</string>
-    <string name="chat_gtalk" msgid="981575737258117697">"Google Talk નો ઉપયોગ કરીને ચેટ કરો"</string>
-    <string name="chat_icq" msgid="8438405386153745775">"ICQ નો ઉપયોગ કરીને ચેટ કરો"</string>
-    <string name="chat_jabber" msgid="7561444230307829609">"Jabber નો ઉપયોગ કરીને ચેટ કરો"</string>
-    <string name="chat" msgid="9025361898797412245">"ચેટ"</string>
-    <string name="description_minus_button" msgid="6908099247930477551">"કાઢી નાખો"</string>
-    <string name="expand_name_fields_description" msgid="6948274252874552543">"વધુ નામ ફીલ્ડ્સ બતાવો"</string>
-    <string name="collapse_name_fields_description" msgid="4757877385895561556">"નામ ફીલ્ડ્સ સંકુચિત કરો"</string>
-    <string name="expand_phonetic_name_fields_description" msgid="9133052674087187927">"વધુ ધ્વન્યાત્મક નામ ફીલ્ડ્સ બતાવો"</string>
-    <string name="collapse_phonetic_name_fields_description" msgid="9102249481855019452">"ધ્વન્યાત્મક નામ ફીલ્ડ્સ સંકુચિત કરો"</string>
-    <string name="expand_fields_description" msgid="8129294181216760037">"વિસ્તૃત કરો"</string>
-    <string name="collapse_fields_description" msgid="1884143625854637874">"સંકુચિત કરો"</string>
-    <string name="announce_expanded_fields" msgid="1075947220478530622">"વિસ્તૃત કર્યું"</string>
-    <string name="announce_collapsed_fields" msgid="6414231530177338704">"સંકુચિત કર્યું"</string>
-    <string name="list_filter_all_accounts" msgid="8908683398914322369">"તમામ સંપર્કો"</string>
-    <string name="list_filter_all_starred" msgid="5031734941601931356">"તારાંકિત કરેલ"</string>
-    <string name="list_filter_customize" msgid="4789963356004169321">"કસ્ટમાઇઝ કરો"</string>
-    <string name="list_filter_single" msgid="5871400283515893087">"સંપર્ક"</string>
-    <string name="display_ungrouped" msgid="6885954210243119591">"તમામ અન્ય સંપર્કો"</string>
-    <string name="display_all_contacts" msgid="2031647544742889505">"તમામ સંપર્કો"</string>
-    <string name="menu_sync_remove" msgid="3266725887008450161">"સમન્વયન જૂથ દૂર કરો"</string>
-    <string name="dialog_sync_add" msgid="8267045393119375803">"સમન્વયન જૂથ ઉમેરો"</string>
-    <string name="display_more_groups" msgid="2682547080423434170">"વધુ જૂથો…"</string>
-    <string name="display_warn_remove_ungrouped" msgid="8872290721676651414">"સમન્વયનમાંથી \"<xliff:g id="GROUP">%s</xliff:g>\" ને દૂર કરવું, સમન્વયનમાંથી કોઇપણ જૂથ વિનાના સંપર્કોને પણ દૂર કરશે."</string>
-    <string name="savingDisplayGroups" msgid="2133152192716475939">"પ્રદર્શન વિકલ્પો સાચવી રહ્યું છે…"</string>
-    <string name="listCustomView" msgid="1840624396582117590">"કસ્ટમાઇઝ કરેલ દૃશ્ય"</string>
-    <string name="dialog_new_contact_account" msgid="4969619718062454756">"આયાત કરેલ સંપર્કોને આની પર સાચવો:"</string>
-    <string name="import_from_sim" msgid="6912071635295799131">"SIM કાર્ડ"</string>
-    <string name="import_from_sim_summary_fmt" msgid="5169032449686348118">"SIM <xliff:g id="SIM_NAME">%1$s</xliff:g>"</string>
-    <plurals name="import_from_sim_secondary_contact_count_fmt" formatted="false" msgid="5821095773211149295">
+    <string name="dialog_new_group_account" msgid="4326402875327788728">"એકાઉન્ટ પસંદ કરો"</string>
+    <string name="group_name_dialog_insert_title" msgid="5495572488613178283">"લેબલ બનાવો"</string>
+    <string name="group_name_dialog_update_title" msgid="3955919589366745101">"લેબલનું નામ બદલો"</string>
+    <string name="group_name_dialog_hint" msgid="6023999218213062973">"લેબલનું નામ"</string>
+    <string name="label_name_dialog_hint" msgid="7027635439255596191">"લેબલનું નામ"</string>
+    <string name="audio_chat" msgid="5921525823973697372">"વોઇસ ચેટ"</string>
+    <string name="video_chat" msgid="2477295971622477433">"વિડિઓ ચેટ"</string>
+    <string name="account_type_format" msgid="4926968760755013450">"<xliff:g id="SOURCE">%1$s</xliff:g> સંપર્ક"</string>
+    <string name="google_account_type_format" msgid="4046692740262396811">"<xliff:g id="SOURCE">%1$s</xliff:g> એકાઉન્ટ"</string>
+    <string name="take_photo" msgid="820071555236547516">"ફોટો લો"</string>
+    <string name="take_new_photo" msgid="4383091978116875778">"નવો ફોટો લો"</string>
+    <string name="pick_photo" msgid="2050859661654812588">"ફોટો પસંદ કરો"</string>
+    <string name="pick_new_photo" msgid="4218112182908240970">"નવો ફોટો પસંદ કરો"</string>
+    <string name="search_results_searching" msgid="1373859095361975648">"શોધી રહ્યું છે..."</string>
+    <string name="event_edit_field_hint_text" msgid="1720286136507504896">"તારીખ"</string>
+    <string name="group_edit_field_hint_text" msgid="1159504474053684478">"લેબલ"</string>
+    <string name="cancel_button_content_description" msgid="7407595608883650004">"રદ કરો"</string>
+    <string name="back_arrow_content_description" msgid="6727142616775523605">"પાછળ"</string>
+    <string name="action_menu_back_from_edit_select" msgid="7911226757462657242">"બંધ કરો"</string>
+    <string name="aggregation_suggestion_edit_dialog_message" msgid="4339333746086996062">"પસંદ કરેલ સંપર્કોને સંપાદિત કરવા પર સ્વિચ કરીએ? તમે અત્યાર સુધીમાં દાખલ કરેલી માહિતીને કૉપિ કરાશે."</string>
+    <string name="contact_directory_description" msgid="1773630547110881835">"નિર્દેશિકા <xliff:g id="TYPE">%1$s</xliff:g>"</string>
+    <string name="activity_title_settings" msgid="4004290638426915162">"સેટિંગ્સ"</string>
+    <string name="menu_settings" msgid="3524924670246877187">"સેટિંગ્સ"</string>
+    <string name="menu_help" msgid="287801702920372292">"સહાય અને પ્રતિસાદ"</string>
+    <string name="organization_company_and_title" msgid="7197631449041284518">"<xliff:g id="COMPANY_0">%2$s</xliff:g>, <xliff:g id="COMPANY_1">%1$s</xliff:g>"</string>
+    <string name="non_phone_caption" msgid="7343449684187013327">"ફોન નંબર"</string>
+    <string name="non_phone_add_to_contacts" msgid="5472784294274676663">"સંપર્કોમાં ઉમેરો"</string>
+    <string name="non_phone_close" msgid="2792373584950696532">"બંધ કરો"</string>
+    <string name="date_year_toggle" msgid="8930759990426623823">"વર્ષ શામેલ કરો"</string>
+    <string name="contacts_unavailable_add_account" msgid="5196453892411710750">"એકાઉન્ટ ઉમેરો"</string>
+    <string name="contacts_unavailable_import_contacts" msgid="4914180876114104054">"આયાત કરો"</string>
+    <string name="create_group_item_label" msgid="921929508079162463">"નવું બનાવો…"</string>
+    <string name="delete_group_dialog_message" msgid="754082019928025404">"\"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\" લેબલ કાઢી નાખીએ? (સંપર્કો સ્વયં કાઢી નાખવામાં આવશે નહીં.)"</string>
+    <string name="toast_join_with_empty_contact" msgid="3886468280665325350">"બીજા સાથે લિંક કરતાં પહેલાં સંપર્કનું નામ લખો."</string>
+    <string name="copy_text" msgid="6835250673373028909">"ક્લિપબોર્ડ પર કૉપિ કરો"</string>
+    <string name="set_default" msgid="3704074175618702225">"ડિફોલ્ટ સેટ કરો"</string>
+    <string name="clear_default" msgid="2055883863621491533">"ડિફોલ્ટ સાફ કરો"</string>
+    <string name="toast_text_copied" msgid="845906090076228771">"ટેક્સ્ટ કૉપિ કર્યો"</string>
+    <string name="cancel_confirmation_dialog_message" msgid="7486892574762212762">"ફેરફારો નિકાળીએ?"</string>
+    <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="8280294641821133477">"નિકાળો"</string>
+    <string name="cancel_confirmation_dialog_keep_editing_button" msgid="7117943783437253341">"રદ કરો"</string>
+    <string name="leave_customize_confirmation_dialog_message" msgid="5330853530872707231">"કસ્ટમાઇઝેશન્સ નિકાળીએ?"</string>
+    <string name="enter_contact_name" msgid="521859148893732679">"સંપર્કો શોધો"</string>
+    <string name="title_edit_group" msgid="4246193439931854759">"સંપર્કો દૂર કરો"</string>
+    <string name="local_profile_title" msgid="1613784248702623410">"મારી સ્થાનિક પ્રોફાઇલ"</string>
+    <string name="external_profile_title" msgid="2706282819025406927">"મારી <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g> પ્રોફાઇલ"</string>
+    <string name="contact_editor_prompt_zero_accounts" msgid="4468363031413457746">"તે એકાઉન્ટ ઉમેરવા માટે થોડો સમય આપો કે જે Google પર તમારા સંપર્કોનું બેક અપ લેશે."</string>
+    <string name="contact_editor_prompt_one_account" msgid="765343809177951169">"નવા સંપર્કોને <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g> પર સાચવવામાં આવશે."</string>
+    <string name="contact_editor_prompt_multiple_accounts" msgid="1543322760761168351">"નવા સંપર્કો માટે એક ડીફોલ્ટ એકાઉન્ટ પસંદ કરો:"</string>
+    <string name="contact_editor_title_new_contact" msgid="7534775011591770343">"નવો સંપર્ક બનાવો"</string>
+    <string name="contact_editor_title_existing_contact" msgid="3647774955741654029">"સંપર્ક સંપાદિત કરો"</string>
+    <string name="contact_editor_title_read_only_contact" msgid="5494810291515292596">"ફક્ત જુઓ"</string>
+    <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4478782370280424187">"સંપાદિત કરવા માટે સંપર્ક પસંદ કરો"</string>
+    <string name="contact_editor_pick_linked_contact_dialog_title" msgid="3332134735168016293">"લિંક કરેલ સંપર્કો"</string>
+    <string name="contact_editor_add_linked_contact" msgid="2895453741206196138">"ઉમેરો"</string>
+    <string name="contact_editor_unlink_contacts" msgid="8399419729744305687">"અનલિંક કરો"</string>
+    <string name="add_account" msgid="3071396624500839020">"એકાઉન્ટ ઉમેરો"</string>
+    <string name="add_new_account" msgid="573368229646104110">"નવું એકાઉન્ટ ઉમેરો"</string>
+    <string name="menu_export_database" msgid="1658249125751926885">"ડેટાબેસ ફાઇલોનો નિકાસ કરો"</string>
+    <string name="action_menu_add_new_contact_button" msgid="1201339383074001291">"નવો સંપર્ક બનાવો"</string>
+    <string name="expanding_entry_card_view_see_more" msgid="6636033205952561590">"વધુ જુઓ"</string>
+    <string name="expanding_entry_card_view_see_less" msgid="6399603072579278030">"ઓછું જુઓ"</string>
+    <string name="about_card_title" msgid="6635849009952435700">"વિશે"</string>
+    <string name="toast_making_personal_copy" msgid="9053129410039312386">"વ્યક્તિગત કૉપિ બનાવી રહ્યાં છે…"</string>
+    <string name="date_time_set" msgid="8526160894146496334">"સેટ કરો"</string>
+    <string name="header_im_entry" msgid="3581797653862294826">"IM"</string>
+    <string name="header_organization_entry" msgid="7428066442988227441">"સંગઠન"</string>
+    <string name="header_nickname_entry" msgid="1110276804512795150">"ઉપનામ"</string>
+    <string name="header_note_entry" msgid="339680292368016788">"નોંધ"</string>
+    <string name="header_website_entry" msgid="3618691707215428785">"વેબસાઇટ"</string>
+    <string name="header_event_entry" msgid="70962228694476731">"ઇવેન્ટ"</string>
+    <string name="header_relation_entry" msgid="993618132732521944">"સંબંધ"</string>
+    <string name="header_name_entry" msgid="2516776099121101578">"નામ"</string>
+    <string name="header_email_entry" msgid="8653569770962542178">"ઇમેઇલ"</string>
+    <string name="header_phone_entry" msgid="7092868248113091293">"ફોન"</string>
+    <string name="content_description_directions" msgid="860179347986211929">"સ્થાન માટેનાં દિશા નિર્દેશો"</string>
+    <string name="editor_more_fields" msgid="6158558083947445518">"વધુ ફીલ્ડ્સ"</string>
+    <string name="editor_change_photo_content_description" msgid="8146896029044539032">"સંપર્ક ફોટો બદલો"</string>
+    <string name="editor_add_photo_content_description" msgid="8457486801272200575">"સંપર્ક ફોટો ઉમેરો"</string>
+    <string name="editor_contact_photo_content_description" msgid="8699261934352739">"સંપર્ક ફોટો"</string>
+    <string name="editor_failed_to_load" msgid="2328074829787373644">"સંપાદક ખોલવામાં નિષ્ફળ થયાં."</string>
+    <string name="editor_account_selector_title" msgid="3190515989740696043">"આમાં સાચવી રહ્યાં છે"</string>
+    <string name="editor_account_selector_read_only_title" msgid="4870485850053962114">"<xliff:g id="ACCOUNT">%s</xliff:g> તરફથી સંપર્ક માહિતી સંપાદનક્ષમ નથી"</string>
+    <string name="quickcontact_suggestion_link_button" msgid="3485212664301802371">"સંપર્કો લિંક કરો"</string>
+    <string name="quickcontact_suggestion_cancel_button" msgid="8851156850681440055">"રદ કરો"</string>
+    <string name="suggestion_card_this_contact_title" msgid="8851257599121989253">"આ સંપર્ક"</string>
+    <string name="suggestion_card_duplicates_title" msgid="2623890874933696454">"સંભવિત ડુપ્લિકેટ્સ"</string>
+    <string name="suggestion_card_help_message" msgid="8367379652312412794">"આ સંપર્કો એક જ વ્યક્તિ હોઈ શકે છે. તમે તેઓને એકલ સંપર્ક તરીકે એકસાથે લિંક કરી શકો છો."</string>
+    <string name="editor_delete_view_description" msgid="4549610631864383156">"<xliff:g id="DATA_TYPE">%1$s </xliff:g><xliff:g id="DATA_KIND">%2$s</xliff:g> કાઢી નાખો"</string>
+    <string name="editor_delete_view_description_short" msgid="6471032197042328181">"<xliff:g id="DATA_KIND">%s</xliff:g> કાઢી નાખો"</string>
+    <string name="menu_assistant" msgid="3980364519724237934">"સૂચનો"</string>
+    <string name="menu_assistant_new_badge" msgid="1992049406019853898">"નવું"</string>
+    <string name="navigation_drawer_open" msgid="3428713515765555712">"નેવિગેશન ડ્રોઅર ખોલો"</string>
+    <string name="navigation_drawer_close" msgid="3052989100471689722">"નેવિગેશન ડ્રોઅર બંધ કરો"</string>
+    <string name="navigation_drawer_label" msgid="8391863484838783638">"<xliff:g id="LABEL_NAME">%s</xliff:g> લેબલ"</string>
+    <string name="menu_title_groups" msgid="3722199658759568221">"લેબલ્સ"</string>
+    <string name="menu_title_filters" msgid="349866121417914494">"એકાઉન્ટ્સ"</string>
+    <string name="hamburger_feature_highlight_header" msgid="1786641424099282909">"સૂચનો"</string>
+    <string name="hamburger_feature_highlight_body" msgid="782935036630531528">"તમારા સંપર્કો ગોઠવાયેલ અને ઉપયોગી રાખો"</string>
+    <string name="undo" msgid="2446931036220975026">"પૂર્વવત્ કરો"</string>
+    <string name="call_custom" msgid="2844900154492073207">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g> પર કૉલ કરો"</string>
+    <string name="call_home" msgid="2443904771140750492">"ઘરે કૉલ કરો"</string>
+    <string name="call_mobile" msgid="6504312789160309832">"મોબાઇલ પર કૉલ કરો"</string>
+    <string name="call_work" msgid="2414313348547560346">"કાર્યાલય પર કૉલ કરો"</string>
+    <string name="call_fax_work" msgid="5026843006300760797">"કાર્યાલયના ફૅક્સ પર કૉલ કરો"</string>
+    <string name="call_fax_home" msgid="4421886641585565445">"ઘરના ફૅક્સ પર કૉલ કરો"</string>
+    <string name="call_pager" msgid="7988386598814899644">"પેજર પર કૉલ કરો"</string>
+    <string name="call_other" msgid="2264440725373659661">"કૉલ કરો"</string>
+    <string name="call_callback" msgid="1226584395279365027">"કૉલબેક પર કૉલ કરો"</string>
+    <string name="call_car" msgid="4102050357690774180">"કાર પર કૉલ કરો"</string>
+    <string name="call_company_main" msgid="7922526725703041965">"કંપની મુખ્ય પર કૉલ કરો"</string>
+    <string name="call_isdn" msgid="6313441227468730170">"ISDN પર કૉલ કરો"</string>
+    <string name="call_main" msgid="3732801640247896775">"મુખ્ય પર કૉલ કરો"</string>
+    <string name="call_other_fax" msgid="4273636173311108108">"ફૅક્સ પર કૉલ કરો"</string>
+    <string name="call_radio" msgid="3318901573184211663">"રેડિઓ પર કૉલ કરો"</string>
+    <string name="call_telex" msgid="3466562461116135644">"ટેલેક્સ પર કૉલ કરો"</string>
+    <string name="call_tty_tdd" msgid="3647586527611369559">"TTY/TDD પર કૉલ કરો"</string>
+    <string name="call_work_mobile" msgid="2507794786733587181">"કાર્યાલયના મોબાઇલ પર કૉલ કરો"</string>
+    <string name="call_work_pager" msgid="615335008331933747">"કાર્યાલયના પેજર પર કૉલ કરો"</string>
+    <string name="call_assistant" msgid="8556909944379826616">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g> પર કૉલ કરો"</string>
+    <string name="call_mms" msgid="1760746475672950386">"MMS પર કૉલ કરો"</string>
+    <string name="call_by_shortcut" msgid="5707329943368933423">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (કૉલ કરો)"</string>
+    <string name="sms_custom" msgid="3684453744622817362">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g> પર ટેક્સ્ટ મોકલો"</string>
+    <string name="sms_home" msgid="6132392861245316613">"ઘરે ટેક્સ્ટ કરો"</string>
+    <string name="sms_mobile" msgid="433949735070334192">"મોબાઇલ પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_work" msgid="7784676780449153911">"કાર્યાલય પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_fax_work" msgid="8239716828120939345">"કાર્યાલયના ફૅક્સ પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_fax_home" msgid="6887675360794775735">"ઘરના ફૅક્સ પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_pager" msgid="1052540072760129272">"પેજર પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_other" msgid="3584200156296349098">"ટેક્સ્ટ કરો"</string>
+    <string name="sms_callback" msgid="6932315941997609031">"કૉલબેક પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_car" msgid="6051606941547979352">"કાર પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_company_main" msgid="4801585186677340070">"કંપની મુખ્ય પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_isdn" msgid="8093269429091061478">"ISDN પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_main" msgid="624730854551629076">"મુખ્ય પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_other_fax" msgid="8272996838482574564">"ફૅક્સ પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_radio" msgid="3703466526430351408">"રેડિઓ પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_telex" msgid="5926595248188984691">"ટેલેક્સ પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_tty_tdd" msgid="5517202384458721064">"TTY/TDD પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_work_mobile" msgid="1170012557483816931">"કાર્યાલયના મોબાઇલ પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_work_pager" msgid="8827367747655005608">"કાર્યાલયના પેજર પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_assistant" msgid="245045451580096547">"<xliff:g id="ASSISTANT">%s</xliff:g> ને ટેક્સ્ટ કરો"</string>
+    <string name="sms_mms" msgid="7395133080765833725">"MMS પર ટેક્સ્ટ કરો"</string>
+    <string name="sms_by_shortcut" msgid="4682340916268521006">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (સંદેશ મોકલો)"</string>
+    <string name="description_video_call" msgid="4956825008907720371">"વિડિઓ કૉલ કરો"</string>
+    <string name="clearFrequentsConfirmation_title" msgid="9194415661170740437">"વારંવાર સંપર્ક કરેલા સાફ કરીએ?"</string>
+    <string name="clearFrequentsConfirmation" msgid="2120741757522063938">"તમે સંપર્કો અને ફોન ઍપ્લિકેશનોમાં વારંવાર સંપર્ક કરેલ સૂચિને સાફ કરશો અને ઇમેઇલ ઍપ્લિકેશનોને તમારી સંબોધન પસંદગીઓને શરૂઆતથી જાણવા માટે ફરજ પાડશો."</string>
+    <string name="clearFrequentsProgress_title" msgid="8271935295080659743">"વારંવાર સંપર્ક કરેલા સાફ કરે છે…"</string>
+    <string name="status_available" msgid="8081626460682959098">"ઉપલબ્ધ"</string>
+    <string name="status_away" msgid="2677693194455091315">"દૂર"</string>
+    <string name="status_busy" msgid="2759339190187696727">"વ્યસ્ત"</string>
+    <string name="local_invisible_directory" msgid="5936234374879813300">"અન્ય"</string>
+    <string name="directory_search_label" msgid="2602118204885565153">"નિર્દેશિકા"</string>
+    <string name="directory_search_label_work" msgid="2392128956332931231">"કાર્ય નિર્દેશિકા"</string>
+    <string name="local_search_label" msgid="6692495405531144805">"તમામ સંપર્કો"</string>
+    <string name="description_quick_contact_for" msgid="6364906818231956042">"<xliff:g id="NAME">%1$s</xliff:g> માટે ઝડપી સંપર્ક"</string>
+    <string name="missing_name" msgid="7970183292521946492">"(નામ નથી)"</string>
+    <string name="favoritesFrequentContacted" msgid="2885862854079966676">"વારંવાર સંપર્ક કરેલા લોકો"</string>
+    <string name="list_filter_phones" msgid="6839133198968393843">"ફોન નંબર્સ સાથેના તમામ સંપર્કો"</string>
+    <string name="list_filter_phones_work" msgid="5583425697781385616">"કાર્ય પ્રોફાઇલના સંપર્કો"</string>
+    <string name="view_updates_from_group" msgid="6233444629074835594">"અપડેટ્સ જુઓ"</string>
+    <string name="account_phone" msgid="8044426231251817556">"ઉપકરણ"</string>
+    <string name="account_sim" msgid="3200457113308694663">"SIM"</string>
+    <string name="nameLabelsGroup" msgid="513809148312046843">"નામ"</string>
+    <string name="nicknameLabelsGroup" msgid="794390116782033956">"ઉપનામ"</string>
+    <string name="name_given" msgid="3883661251894628431">"નામ"</string>
+    <string name="name_family" msgid="2907432135923624482">"અટક"</string>
+    <string name="name_prefix" msgid="8857117624713905211">"નામ ઉપસર્ગ"</string>
+    <string name="name_middle" msgid="7330498948136181042">"પિતા/પતિનું નામ"</string>
+    <string name="name_suffix" msgid="4502958221763936999">"નામ પ્રત્યય"</string>
+    <string name="name_phonetic" msgid="4746541275769990740">"ધ્વન્યાત્મક નામ"</string>
+    <string name="name_phonetic_given" msgid="425534279190047812">"ધ્વન્યાત્મક નામ"</string>
+    <string name="name_phonetic_middle" msgid="6528822054594516485">"ધ્વન્યાત્મક પિતા/પતિનું નામ"</string>
+    <string name="name_phonetic_family" msgid="1690852801039809448">"ધ્વન્યાત્મક અટક"</string>
+    <string name="phoneLabelsGroup" msgid="2746758650001801885">"ફોન"</string>
+    <string name="emailLabelsGroup" msgid="3360719560200449554">"ઇમેઇલ"</string>
+    <string name="postalLabelsGroup" msgid="7534317297587527570">"સરનામું"</string>
+    <string name="imLabelsGroup" msgid="2113398976789806432">"IM"</string>
+    <string name="organizationLabelsGroup" msgid="2342482097897299099">"સંસ્થા"</string>
+    <string name="relationLabelsGroup" msgid="8931615792208307291">"સંબંધ"</string>
+    <string name="eventLabelsGroup" msgid="8625868552164376823">"વિશિષ્ટ તારીખ"</string>
+    <string name="sms" msgid="4246338112764847384">"ટેક્સ્ટ સંદેશ"</string>
+    <string name="postal_address" msgid="5031809899673855074">"સરનામું"</string>
+    <string name="ghostData_company" msgid="3873500610390675876">"કંપની"</string>
+    <string name="ghostData_title" msgid="8584897460662904533">"શીર્ષક"</string>
+    <string name="label_notes" msgid="7134226125644463585">"નોંધ"</string>
+    <string name="label_custom_field" msgid="4160584225306364924">"કસ્ટમ"</string>
+    <string name="label_sip_address" msgid="8876347942587537552">"SIP"</string>
+    <string name="websiteLabelsGroup" msgid="114754928100220315">"વેબસાઇટ"</string>
+    <string name="groupsLabel" msgid="5622154133880646122">"લેબલ્સ"</string>
+    <string name="email_home" msgid="1102791500866910269">"ઘરે ઇમેઇલ કરો"</string>
+    <string name="email_mobile" msgid="6461172430397598705">"મોબાઇલ પર ઇમેઇલ કરો"</string>
+    <string name="email_work" msgid="24992619164533704">"કાર્યાલય પર ઇમેઇલ કરો"</string>
+    <string name="email_other" msgid="9200478615023952240">"ઇમેઇલ"</string>
+    <string name="email_custom" msgid="4614140345586842953">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g> પર ઇમેઇલ મોકલો"</string>
+    <string name="email" msgid="7367975425670798827">"ઇમેઇલ"</string>
+    <string name="postal_street" msgid="43809570436400749">"શેરી"</string>
+    <string name="postal_city" msgid="3571927981675393150">"શહેર"</string>
+    <string name="postal_region" msgid="6130239447563491435">"રાજ્ય"</string>
+    <string name="postal_postcode" msgid="33077708757232659">"પિન કોડ"</string>
+    <string name="postal_country" msgid="6642804283917549861">"દેશ"</string>
+    <string name="map_home" msgid="2169053372466501148">"ઘરનું સરનામું જુઓ"</string>
+    <string name="map_work" msgid="8296916987749726461">"કાર્યાલયનું સરનામું જુઓ"</string>
+    <string name="map_other" msgid="4009931029322619674">"સરનામું જુઓ"</string>
+    <string name="map_custom" msgid="7797812861927817335">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g> સરનામું જુઓ"</string>
+    <string name="chat_aim" msgid="2044861410748519265">"AIM નો ઉપયોગ કરીને ચેટ કરો"</string>
+    <string name="chat_msn" msgid="4733206223124506247">"Windows Live નો ઉપયોગ કરીને ચેટ કરો"</string>
+    <string name="chat_yahoo" msgid="3807571878191282528">"Yahoo નો ઉપયોગ કરીને ચેટ કરો"</string>
+    <string name="chat_skype" msgid="5130564346825936093">"Skype નો ઉપયોગ કરીને ચેટ કરો"</string>
+    <string name="chat_qq" msgid="2971335421266098608">"QQ નો ઉપયોગ કરીને ચેટ કરો"</string>
+    <string name="chat_gtalk" msgid="2927882858741904064">"Google Talk નો ઉપયોગ કરીને ચેટ કરો"</string>
+    <string name="chat_icq" msgid="4289041376069626281">"ICQ નો ઉપયોગ કરીને ચેટ કરો"</string>
+    <string name="chat_jabber" msgid="1097960594943864847">"Jabber નો ઉપયોગ કરીને ચેટ કરો"</string>
+    <string name="chat" msgid="8390862712584830532">"ચેટ"</string>
+    <string name="description_minus_button" msgid="1305985971158054217">"કાઢી નાખો"</string>
+    <string name="expand_name_fields_description" msgid="6059558159338959487">"વધુ નામ ફીલ્ડ્સ બતાવો"</string>
+    <string name="collapse_name_fields_description" msgid="7950435675716414477">"નામ ફીલ્ડ્સ સંકુચિત કરો"</string>
+    <string name="expand_phonetic_name_fields_description" msgid="7414340689396399173">"વધુ ધ્વન્યાત્મક નામ ફીલ્ડ્સ બતાવો"</string>
+    <string name="collapse_phonetic_name_fields_description" msgid="4614902922362144094">"ધ્વન્યાત્મક નામ ફીલ્ડ્સ સંકુચિત કરો"</string>
+    <string name="expand_fields_description" msgid="8604448646798943909">"વિસ્તૃત કરો"</string>
+    <string name="collapse_fields_description" msgid="3213872920491992960">"સંકુચિત કરો"</string>
+    <string name="announce_expanded_fields" msgid="8410808184164186871">"વિસ્તૃત કર્યું"</string>
+    <string name="announce_collapsed_fields" msgid="7611318715383228182">"સંકુચિત કર્યું"</string>
+    <string name="list_filter_all_accounts" msgid="6173785387972096770">"તમામ સંપર્કો"</string>
+    <string name="list_filter_all_starred" msgid="2582865760150432568">"તારાંકિત કરેલ"</string>
+    <string name="list_filter_customize" msgid="2368900508906139537">"કસ્ટમાઇઝ કરો"</string>
+    <string name="list_filter_single" msgid="6003845379327432129">"સંપર્ક"</string>
+    <string name="display_ungrouped" msgid="4823012484407759332">"તમામ અન્ય સંપર્કો"</string>
+    <string name="display_all_contacts" msgid="1281067776483704512">"તમામ સંપર્કો"</string>
+    <string name="menu_sync_remove" msgid="7523335046562082188">"સમન્વયન જૂથ દૂર કરો"</string>
+    <string name="dialog_sync_add" msgid="8012361965908515959">"સમન્વયન જૂથ ઉમેરો"</string>
+    <string name="display_more_groups" msgid="8398232980355188133">"વધુ જૂથો…"</string>
+    <string name="display_warn_remove_ungrouped" msgid="522866344738506017">"સમન્વયનમાંથી \"<xliff:g id="GROUP">%s</xliff:g>\" ને દૂર કરવું, સમન્વયનમાંથી કોઇપણ જૂથ વિનાના સંપર્કોને પણ દૂર કરશે."</string>
+    <string name="savingDisplayGroups" msgid="6779839417901711381">"પ્રદર્શન વિકલ્પો સાચવી રહ્યું છે…"</string>
+    <string name="listCustomView" msgid="5782275477737032610">"કસ્ટમાઇઝ કરેલ દૃશ્ય"</string>
+    <string name="dialog_new_contact_account" msgid="5652018124788855057">"આયાત કરેલ સંપર્કોને આની પર સાચવો:"</string>
+    <string name="import_from_sim" msgid="7825280799813847991">"SIM કાર્ડ"</string>
+    <string name="import_from_sim_summary_fmt" msgid="4234771828377985321">"SIM <xliff:g id="SIM_NAME">%1$s</xliff:g>"</string>
+    <plurals name="import_from_sim_secondary_contact_count_fmt" formatted="false" msgid="8737770002554878728">
       <item quantity="one">%1$d સંપર્ક</item>
       <item quantity="other">%1$d સંપર્ક</item>
     </plurals>
-    <plurals name="import_from_sim_secondary_template" formatted="false" msgid="2484832025802907060">
+    <plurals name="import_from_sim_secondary_template" formatted="false" msgid="6698670511061586532">
       <item quantity="one"><xliff:g id="COUNT_2">^1</xliff:g> સંપર્ક • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
       <item quantity="other"><xliff:g id="COUNT_2">^1</xliff:g> સંપર્ક • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
     </plurals>
-    <string name="import_from_vcf_file" msgid="8662528435646418203">".vcf ફાઇલ"</string>
-    <string name="nothing_to_import_message" msgid="1651921906873335656">"આયાત કરવા માટે કંઇ નથી"</string>
-    <string name="import_from_vcf_file_confirmation_message" msgid="967723361108008345">"vCard માંથી સંપર્કો આયાત કરીએ?"</string>
-    <string name="cancel_import_confirmation_message" msgid="3929951040347726757">"<xliff:g id="FILENAME">%s</xliff:g> ની આયાત રદ કરીએ?"</string>
-    <string name="cancel_export_confirmation_message" msgid="1995462401949262638">"<xliff:g id="FILENAME">%s</xliff:g> ની નિકાસ રદ કરીએ?"</string>
-    <string name="cancel_vcard_import_or_export_failed" msgid="6139900383366166706">"vCard આયાત/નિકાસને રદ કરી શક્યાં નહીં"</string>
-    <string name="fail_reason_unknown" msgid="1714092345030570863">"અજાણી ભૂલ."</string>
-    <string name="fail_reason_could_not_open_file" msgid="2067725459821997463">"\"<xliff:g id="FILE_NAME">%1$s</xliff:g>\" ખોલી શક્યાં નથી: <xliff:g id="EXACT_REASON">%2$s</xliff:g>."</string>
-    <string name="fail_reason_could_not_initialize_exporter" msgid="707260459259688510">"નિકાસકર્તા શરૂ કરી શક્યાં નહીં: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
-    <string name="fail_reason_no_exportable_contact" msgid="8728506011371262065">"કોઈ નિકાસયોગ્ય સંપર્ક નથી."</string>
-    <string name="missing_required_permission" msgid="5865884842972833120">"તમે આવશ્યક પરવાનગી અક્ષમ કરી છે."</string>
-    <string name="fail_reason_error_occurred_during_export" msgid="3018855323913649063">"નિકાસ દરમિયાન ભૂલ આવી: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
-    <string name="fail_reason_io_error" msgid="6748358842976073255">"I/O ભૂલ"</string>
-    <string name="fail_reason_low_memory_during_import" msgid="875222757734882898">"પર્યાપ્ત મેમરી નથી. આ ફાઇલ ખૂબ મોટી હોઈ શકે છે."</string>
-    <string name="fail_reason_not_supported" msgid="8219562769267148825">"ફોર્મેટ સમર્થિત નથી."</string>
-    <string name="exporting_vcard_finished_title" msgid="4767045779458185251">"<xliff:g id="FILENAME">%s</xliff:g> ને નિકાસ કરવું સમાપ્ત થયું."</string>
-    <string name="exporting_vcard_finished_title_fallback" msgid="6060472638008218274">"સંપર્કોને નિકાસ કરવાનું સમાપ્ત થયું."</string>
-    <string name="exporting_vcard_finished_toast" msgid="1739055986856453882">"નિકાસ કરવાનું સમાપ્ત થયું, સંપર્કો શેર કરવા માટે સૂચના ક્લિક કરો."</string>
-    <string name="touch_to_share_contacts" msgid="4882485525268469736">"સંપર્કો શેર કરવા માટે ટૅપ કરો."</string>
-    <string name="exporting_vcard_canceled_title" msgid="2652222370493306887">"<xliff:g id="FILENAME">%s</xliff:g> ને નિકાસ કરવું રદ કર્યું."</string>
-    <string name="exporting_contact_list_title" msgid="9072240631534457415">"સંપર્ક ડેટા નિકાસ કરી રહ્યાં છે"</string>
-    <string name="exporting_contact_list_message" msgid="3367949209642931952">"સંપર્ક ડેટાનો નિકાસ કરવામાં આવી રહ્યો છે."</string>
-    <string name="composer_failed_to_get_database_infomation" msgid="1765944280846236723">"ડેટાબેઝ માહિતી મેળવી શક્યાં નથી."</string>
-    <string name="composer_has_no_exportable_contact" msgid="5712531702823346549">"કોઇ નિકાસયોગ્ય સંપર્કો નથી."</string>
-    <string name="composer_not_initialized" msgid="2321648986367005254">"vCard કમ્પોઝર ઠીકથી પ્રારંભ થયું નથી."</string>
-    <string name="exporting_contact_failed_title" msgid="4892358112409576342">"નિકાસ કરી શક્યાં નથી"</string>
-    <string name="exporting_contact_failed_message" msgid="4938527850142003141">"સંપર્ક ડેટા નિકાસ કર્યો નહોતો.\nકારણ: \"<xliff:g id="FAIL_REASON">%s</xliff:g>\""</string>
-    <string name="importing_vcard_description" msgid="4245275224298571351">"<xliff:g id="NAME">%s</xliff:g> ને આયાત કરે છે"</string>
-    <string name="reading_vcard_failed_title" msgid="4251647443358422855">"vCard ડેટા વાંચી શકાયો નથી"</string>
-    <string name="importing_vcard_finished_title" msgid="3341541727268747967">"vCard <xliff:g id="FILENAME">%s</xliff:g> ને આયાત કરવું સમાપ્ત થયું"</string>
-    <string name="importing_vcard_canceled_title" msgid="2147475978165599336">"<xliff:g id="FILENAME">%s</xliff:g> ને આયાત કરવું રદ કર્યું"</string>
-    <string name="vcard_import_will_start_message" msgid="2804911199145873396">"<xliff:g id="FILENAME">%s</xliff:g> ને ટૂંક સમયમાં આયાત કરવામાં આવશે."</string>
-    <string name="vcard_import_will_start_message_with_default_name" msgid="1022969530654129470">"ફાઇલ ટૂંક સમયમાં આયાત કરવામાં આવશે."</string>
-    <string name="vcard_import_request_rejected_message" msgid="2890471184508516011">"vCard આયાતની વિનંતી નકારી હતી. પછીથી ફરી પ્રયાસ કરો."</string>
-    <string name="contacts_export_will_start_message" msgid="8538705791417534431">"સંપર્કોનો ટૂંક સમયમાં નિકાસ કરવામાં આવશે."</string>
-    <string name="vcard_export_request_rejected_message" msgid="2844874826431327531">"vCard નિકાસની વિનંતી નકારી હતી. પછીથી ફરી પ્રયાસ કરો."</string>
-    <string name="vcard_unknown_filename" msgid="7171709890959915954">"સંપર્ક"</string>
-    <string name="caching_vcard_message" msgid="4926308675041506756">"સ્થાનિક અસ્થાયી સ્ટોરેજ પર vCard કેશ કરી રહ્યાં છે. વાસ્તવિક આયાત ટૂંક સમયમાં શરૂ થશે."</string>
-    <string name="vcard_import_failed" msgid="5223531255894842406">"vCard આયાત કરી શકાયો નથી."</string>
-    <string name="nfc_vcard_file_name" msgid="2823095213265993609">"NFC પર સંપર્ક પ્રાપ્ત"</string>
-    <string name="caching_vcard_title" msgid="1226272312940516605">"કેશ કરી રહ્યાં છે"</string>
-    <string name="progress_notifier_message" msgid="2311011466908220528">"<xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g> આયાત કરે છે: <xliff:g id="NAME">%3$s</xliff:g>"</string>
-    <string name="export_to_vcf_file" msgid="4407527157056120858">".vcf ફાઇલ પર નિકાસ કરો"</string>
-    <string name="display_options_sort_list_by" msgid="7028809117272018712">"આ પ્રમાણે સૉર્ટ કરો"</string>
-    <string name="display_options_phonetic_name_fields" msgid="3771577099236534776">"ધ્વન્યાત્મક નામ"</string>
-    <string name="editor_options_always_show_phonetic_names" msgid="7253911385818398903">"હંમેશા બતાવો"</string>
-    <string name="editor_options_hide_phonetic_names_if_empty" msgid="2672008764795671104">"જો ખાલી હોય તો છુપાવો"</string>
-    <string name="display_options_sort_by_given_name" msgid="2778421332815687873">"નામ"</string>
-    <string name="display_options_sort_by_family_name" msgid="2684905041926954793">"અટક"</string>
-    <string name="display_options_view_names_as" msgid="6514632499276563482">"નામ ફોર્મેટ"</string>
-    <string name="display_options_view_given_name_first" msgid="3616004640258761473">"પ્રથમ નામ પહેલા"</string>
-    <string name="display_options_view_family_name_first" msgid="956445100777296467">"છેલ્લું નામ પહેલા"</string>
-    <string name="settings_accounts" msgid="350219740670774576">"એકાઉન્ટ્સ"</string>
-    <string name="default_editor_account" msgid="699591683362420991">"નવા સંપર્કો માટે ડિફોલ્ટ એકાઉન્ટ"</string>
-    <string name="settings_my_info_title" msgid="1534272456405343119">"મારી માહિતી"</string>
-    <string name="set_up_profile" msgid="7370213843590143771">"તમારી પ્રોફાઇલ સેટ કરો"</string>
-    <string name="setting_about" msgid="7014388749752042863">"સંપર્કો વિશે"</string>
-    <string name="share_favorite_contacts" msgid="4280926751003081042">"મનપસંદ સંપર્કોને શેર કરો"</string>
-    <string name="share_contacts" msgid="8109287987498711664">"તમામ સંપર્કોને શેર કરો"</string>
-    <string name="share_contacts_failure" msgid="1216431977330560559">"સંપર્કોને શેર કરવામાં નિષ્ફળ થયાં."</string>
-    <string name="dialog_export" msgid="1628001095187741417">"સંપર્કો નિકાસ કરો"</string>
-    <string name="dialog_import" msgid="2423592905927819672">"આમાંથી સંપર્કો આયાત કરો"</string>
-    <string name="share_error" msgid="948429331673358107">"આ સંપર્ક શેર કરી શકાતો નથી."</string>
-    <string name="no_contact_to_share" msgid="1276397530378323033">"શેર કરવા માટે કોઇ સંપર્કો નથી"</string>
-    <string name="menu_contacts_filter" msgid="2165153460860262501">"પ્રદર્શિત કરવાના સંપર્કો"</string>
-    <string name="activity_title_contacts_filter" msgid="8275542497615516969">"પ્રદર્શિત કરવાના સંપર્કો"</string>
-    <string name="custom_list_filter" msgid="9048525797111024204">"કસ્ટમાઇઝ દૃશ્ય"</string>
-    <string name="menu_custom_filter_save" msgid="2679793632208086460">"સાચવો"</string>
-    <string name="hint_findContacts" msgid="7128627979899070325">"સંપર્કો શોધો"</string>
-    <string name="contactsFavoritesLabel" msgid="8417039765586853670">"મનપસંદ"</string>
-    <string name="menu_import" msgid="6107961135813836467">"આયાત કરો"</string>
-    <string name="menu_export" msgid="2658783911863503902">"નિકાસ કરો"</string>
-    <string name="menu_blocked_numbers" msgid="5272951629083025995">"અવરોધિત નંબરો"</string>
-    <string name="contact_status_update_attribution" msgid="752179367353018597">"<xliff:g id="SOURCE">%1$s</xliff:g> મારફતે"</string>
-    <string name="contact_status_update_attribution_with_date" msgid="7358045508107825068">"<xliff:g id="SOURCE">%2$s</xliff:g> મારફતે <xliff:g id="DATE">%1$s</xliff:g> ના રોજ"</string>
-    <string name="action_menu_back_from_search" msgid="8793348588949233348">"શોધવાનું રોકો"</string>
-    <string name="description_clear_search" msgid="688023606766232904">"શોધ સાફ કરો"</string>
-    <string name="select_account_dialog_title" msgid="5478489655696599219">"એકાઉન્ટ"</string>
-    <string name="set_default_account" msgid="4311613760725609801">"કૉલ્સ માટે આનો ઉપયોગ હંમેશાં કરો"</string>
-    <string name="call_with_a_note" msgid="8389827628360791676">"નોંધ સાથે કૉલ કરો"</string>
-    <string name="call_subject_hint" msgid="3043028982108363572">"કૉલ સાથે મોકલવા માટે એક નોંધ લખો…"</string>
-    <string name="send_and_call_button" msgid="7740295432834590737">"મોકલો અને કૉલ કરો"</string>
-    <string name="call_subject_limit" msgid="4545212901205397669">"<xliff:g id="COUNT">%1$s</xliff:g> / <xliff:g id="LIMIT">%2$s</xliff:g>"</string>
-    <string name="call_subject_type_and_number" msgid="7667188212129152558">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
-    <string name="about_build_version" msgid="1765533099416999801">"બિલ્ડ સંસ્કરણ"</string>
-    <string name="about_open_source_licenses" msgid="6479990452352919641">"ઓપન સોર્સ લાઇસન્સીસ"</string>
-    <string name="about_open_source_licenses_summary" msgid="57418386931763994">"ખુલ્લા સ્ત્રોતના સોફ્ટવેર માટે લાઇસન્સની વિગતો"</string>
-    <string name="about_privacy_policy" msgid="3705518622499152626">"ગોપનીયતા નીતિ"</string>
-    <string name="about_terms_of_service" msgid="4642400812150296723">"સેવાની શરતો"</string>
-    <string name="activity_title_licenses" msgid="5467767062737708066">"ઓપન સોર્સ લાઇસન્સીસ"</string>
-    <string name="url_open_error_toast" msgid="452592089815420457">"url ખોલવામાં નિષ્ફળ થયાં."</string>
-    <string name="account_filter_view_checked" msgid="6696859503887762213">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> ચેક કર્યું"</string>
-    <string name="account_filter_view_not_checked" msgid="2248684521205038389">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> ચેક કરેલ નથી"</string>
-    <string name="description_search_video_call" msgid="5841525580339803272">"વિડિઓ કૉલ કરો"</string>
-    <string name="description_delete_contact" msgid="53835657343783663">"કાઢી નાખો"</string>
-    <string name="description_no_name_header" msgid="8884991311595943271">"અધ્યાહાર"</string>
-    <string name="dynamic_shortcut_disabled_message" msgid="249939425761315252">"આ શૉર્ટકટ અક્ષમ કરવામાંં આવેલ છે"</string>
-    <string name="dynamic_shortcut_contact_removed_message" msgid="6845645831837615899">"સંપર્ક દૂર કર્યો હતો"</string>
-    <string name="sim_import_button_text" msgid="4270841592496619317">"આયાત કરો"</string>
-    <string name="sim_import_title_none_selected" msgid="6910517331401970693">"સંપર્કો પસંદ કરો"</string>
-    <string name="sim_import_empty_message" msgid="7743815244380189651">"તમારા SIM કાર્ડ પર કોઈ સંપર્કો નથી"</string>
-    <string name="sim_import_contact_exists_toast" msgid="1503743663717316732">"સંપર્ક પહેલાંથી જ તમારી સૂચિમાં અસ્તિત્વમાં છે"</string>
-    <plurals name="sim_import_success_toast_fmt" formatted="false" msgid="8572156521110906443">
+    <string name="import_from_vcf_file" msgid="6776403212804361301">".vcf ફાઇલ"</string>
+    <string name="nothing_to_import_message" msgid="2594519620375509783">"આયાત કરવા માટે કંઇ નથી"</string>
+    <string name="import_from_vcf_file_confirmation_message" msgid="8579284961401472204">"vCard માંથી સંપર્કો આયાત કરીએ?"</string>
+    <string name="cancel_import_confirmation_message" msgid="1007412828398265611">"<xliff:g id="FILENAME">%s</xliff:g> ની આયાત રદ કરીએ?"</string>
+    <string name="cancel_export_confirmation_message" msgid="370693160959236239">"<xliff:g id="FILENAME">%s</xliff:g> ની નિકાસ રદ કરીએ?"</string>
+    <string name="cancel_vcard_import_or_export_failed" msgid="3041814872516288484">"vCard આયાત/નિકાસને રદ કરી શક્યાં નહીં"</string>
+    <string name="fail_reason_unknown" msgid="3721044979355043778">"અજાણી ભૂલ."</string>
+    <string name="fail_reason_could_not_open_file" msgid="6015509564074145162">"\"<xliff:g id="FILE_NAME">%1$s</xliff:g>\" ખોલી શક્યાં નથી: <xliff:g id="EXACT_REASON">%2$s</xliff:g>."</string>
+    <string name="fail_reason_could_not_initialize_exporter" msgid="4145819808407973981">"નિકાસકર્તા શરૂ કરી શક્યાં નહીં: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
+    <string name="fail_reason_no_exportable_contact" msgid="487925011719622851">"કોઈ નિકાસયોગ્ય સંપર્ક નથી."</string>
+    <string name="missing_required_permission" msgid="1308037728470791436">"તમે આવશ્યક પરવાનગી અક્ષમ કરી છે."</string>
+    <string name="fail_reason_error_occurred_during_export" msgid="6179270404825288837">"નિકાસ દરમિયાન ભૂલ આવી: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
+    <string name="fail_reason_io_error" msgid="6364839914349999408">"I/O ભૂલ"</string>
+    <string name="fail_reason_low_memory_during_import" msgid="4525361860523306991">"પર્યાપ્ત મેમરી નથી. આ ફાઇલ ખૂબ મોટી હોઈ શકે છે."</string>
+    <string name="fail_reason_not_supported" msgid="6449916670421646290">"ફોર્મેટ સમર્થિત નથી."</string>
+    <string name="exporting_vcard_finished_title" msgid="1984393609140969504">"<xliff:g id="FILENAME">%s</xliff:g> ને નિકાસ કરવું સમાપ્ત થયું."</string>
+    <string name="exporting_vcard_finished_title_fallback" msgid="9029067439586573959">"સંપર્કોને નિકાસ કરવાનું સમાપ્ત થયું."</string>
+    <string name="exporting_vcard_finished_toast" msgid="5463125514187187782">"નિકાસ કરવાનું સમાપ્ત થયું, સંપર્કો શેર કરવા માટે સૂચના ક્લિક કરો."</string>
+    <string name="touch_to_share_contacts" msgid="7678194978416052577">"સંપર્કો શેર કરવા માટે ટૅપ કરો."</string>
+    <string name="exporting_vcard_canceled_title" msgid="1287529222628052526">"<xliff:g id="FILENAME">%s</xliff:g> ને નિકાસ કરવું રદ કર્યું."</string>
+    <string name="exporting_contact_list_title" msgid="6599904516394311592">"સંપર્ક ડેટા નિકાસ કરી રહ્યાં છે"</string>
+    <string name="exporting_contact_list_message" msgid="6253904938452184387">"સંપર્ક ડેટાનો નિકાસ કરવામાં આવી રહ્યો છે."</string>
+    <string name="composer_failed_to_get_database_infomation" msgid="4394169679142311379">"ડેટાબેઝ માહિતી મેળવી શક્યાં નથી."</string>
+    <string name="composer_has_no_exportable_contact" msgid="473911071832548562">"કોઇ નિકાસયોગ્ય સંપર્કો નથી."</string>
+    <string name="composer_not_initialized" msgid="3861391548605450184">"vCard કમ્પોઝર ઠીકથી પ્રારંભ થયું નથી."</string>
+    <string name="exporting_contact_failed_title" msgid="9003659313161289860">"નિકાસ કરી શક્યાં નથી"</string>
+    <string name="exporting_contact_failed_message" msgid="9198720310560773485">"સંપર્ક ડેટા નિકાસ કર્યો નહોતો.\nકારણ: \"<xliff:g id="FAIL_REASON">%s</xliff:g>\""</string>
+    <string name="importing_vcard_description" msgid="6982207216746936735">"<xliff:g id="NAME">%s</xliff:g> ને આયાત કરે છે"</string>
+    <string name="reading_vcard_failed_title" msgid="1230432142768184978">"vCard ડેટા વાંચી શકાયો નથી"</string>
+    <string name="importing_vcard_finished_title" msgid="2274644947000264322">"vCard <xliff:g id="FILENAME">%s</xliff:g> ને આયાત કરવું સમાપ્ત થયું"</string>
+    <string name="importing_vcard_canceled_title" msgid="8165471996631186776">"<xliff:g id="FILENAME">%s</xliff:g> ને આયાત કરવું રદ કર્યું"</string>
+    <string name="vcard_import_will_start_message" msgid="4514702035621833178">"<xliff:g id="FILENAME">%s</xliff:g> ને ટૂંક સમયમાં આયાત કરવામાં આવશે."</string>
+    <string name="vcard_import_will_start_message_with_default_name" msgid="8205422202924103470">"ફાઇલ ટૂંક સમયમાં આયાત કરવામાં આવશે."</string>
+    <string name="vcard_import_request_rejected_message" msgid="4754292694777189540">"vCard આયાતની વિનંતી નકારી હતી. પછીથી ફરી પ્રયાસ કરો."</string>
+    <string name="contacts_export_will_start_message" msgid="6428126265599715944">"સંપર્કોનો ટૂંક સમયમાં નિકાસ કરવામાં આવશે."</string>
+    <string name="vcard_export_request_rejected_message" msgid="6455336845734884740">"vCard નિકાસની વિનંતી નકારી હતી. પછીથી ફરી પ્રયાસ કરો."</string>
+    <string name="vcard_unknown_filename" msgid="8320954544777782497">"સંપર્ક"</string>
+    <string name="caching_vcard_message" msgid="1879339732783666517">"સ્થાનિક અસ્થાયી સ્ટોરેજ પર vCard કેશ કરી રહ્યાં છે. વાસ્તવિક આયાત ટૂંક સમયમાં શરૂ થશે."</string>
+    <string name="vcard_import_failed" msgid="37313715326741013">"vCard આયાત કરી શકાયો નથી."</string>
+    <string name="nfc_vcard_file_name" msgid="2113518216329123152">"NFC પર સંપર્ક પ્રાપ્ત"</string>
+    <string name="caching_vcard_title" msgid="6333926052524937628">"કેશ કરી રહ્યાં છે"</string>
+    <string name="progress_notifier_message" msgid="8522060892889599746">"<xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g> આયાત કરે છે: <xliff:g id="NAME">%3$s</xliff:g>"</string>
+    <string name="export_to_vcf_file" msgid="3096479544575798192">".vcf ફાઇલ પર નિકાસ કરો"</string>
+    <string name="display_options_sort_list_by" msgid="4333658089057400431">"આ પ્રમાણે સૉર્ટ કરો"</string>
+    <string name="display_options_phonetic_name_fields" msgid="1857564544755287298">"ધ્વન્યાત્મક નામ"</string>
+    <string name="editor_options_always_show_phonetic_names" msgid="3612488836474257715">"હંમેશા બતાવો"</string>
+    <string name="editor_options_hide_phonetic_names_if_empty" msgid="2693314301550366143">"જો ખાલી હોય તો છુપાવો"</string>
+    <string name="display_options_sort_by_given_name" msgid="893781924536349248">"નામ"</string>
+    <string name="display_options_sort_by_family_name" msgid="1282763552330910876">"અટક"</string>
+    <string name="display_options_view_names_as" msgid="4060686468465916565">"નામ ફોર્મેટ"</string>
+    <string name="display_options_view_given_name_first" msgid="383885125505521383">"પ્રથમ નામ પહેલા"</string>
+    <string name="display_options_view_family_name_first" msgid="6597077054231296007">"છેલ્લું નામ પહેલા"</string>
+    <string name="settings_accounts" msgid="119582613811929994">"એકાઉન્ટ્સ"</string>
+    <string name="default_editor_account" msgid="4810392921888877149">"નવા સંપર્કો માટે ડિફોલ્ટ એકાઉન્ટ"</string>
+    <string name="settings_my_info_title" msgid="6236848378653551341">"મારી માહિતી"</string>
+    <string name="set_up_profile" msgid="3554999219868611431">"તમારી પ્રોફાઇલ સેટ કરો"</string>
+    <string name="setting_about" msgid="2941859292287597555">"સંપર્કો વિશે"</string>
+    <string name="share_favorite_contacts" msgid="8208444020721686178">"મનપસંદ સંપર્કોને શેર કરો"</string>
+    <string name="share_contacts" msgid="2377773269568609796">"તમામ સંપર્કોને શેર કરો"</string>
+    <string name="share_contacts_failure" msgid="1348777470180064086">"સંપર્કોને શેર કરવામાં નિષ્ફળ થયાં."</string>
+    <string name="dialog_export" msgid="3497435010655060068">"સંપર્કો નિકાસ કરો"</string>
+    <string name="dialog_import" msgid="4590232235052756593">"આમાંથી સંપર્કો આયાત કરો"</string>
+    <string name="share_error" msgid="4854612167186185739">"આ સંપર્ક શેર કરી શકાતો નથી."</string>
+    <string name="no_contact_to_share" msgid="6285287228557175749">"શેર કરવા માટે કોઇ સંપર્કો નથી"</string>
+    <string name="menu_contacts_filter" msgid="5854584270038139275">"પ્રદર્શિત કરવાના સંપર્કો"</string>
+    <string name="activity_title_contacts_filter" msgid="6340531582631006680">"પ્રદર્શિત કરવાના સંપર્કો"</string>
+    <string name="custom_list_filter" msgid="2544327670202891979">"કસ્ટમાઇઝ દૃશ્ય"</string>
+    <string name="menu_custom_filter_save" msgid="2412959737200856930">"સાચવો"</string>
+    <string name="hint_findContacts" msgid="5554298639062659655">"સંપર્કો શોધો"</string>
+    <string name="contactsFavoritesLabel" msgid="8339645684721732714">"મનપસંદ"</string>
+    <string name="menu_import" msgid="2206768098740726906">"આયાત કરો"</string>
+    <string name="menu_export" msgid="1217402092617629429">"નિકાસ કરો"</string>
+    <string name="menu_blocked_numbers" msgid="7064680515202657609">"અવરોધિત નંબરો"</string>
+    <string name="contact_status_update_attribution" msgid="5051874518046969847">"<xliff:g id="SOURCE">%1$s</xliff:g> મારફતે"</string>
+    <string name="contact_status_update_attribution_with_date" msgid="2195847657702455703">"<xliff:g id="SOURCE">%2$s</xliff:g> મારફતે <xliff:g id="DATE">%1$s</xliff:g> ના રોજ"</string>
+    <string name="action_menu_back_from_search" msgid="683765774264585732">"શોધવાનું રોકો"</string>
+    <string name="description_clear_search" msgid="1852934085825794095">"શોધ સાફ કરો"</string>
+    <string name="select_account_dialog_title" msgid="5047523441152129207">"એકાઉન્ટ"</string>
+    <string name="set_default_account" msgid="9194321110211682396">"કૉલ્સ માટે આનો ઉપયોગ હંમેશાં કરો"</string>
+    <string name="call_with_a_note" msgid="2463785820399287281">"નોંધ સાથે કૉલ કરો"</string>
+    <string name="call_subject_hint" msgid="7056652101889538157">"કૉલ સાથે મોકલવા માટે એક નોંધ લખો…"</string>
+    <string name="send_and_call_button" msgid="4851257959568592699">"મોકલો અને કૉલ કરો"</string>
+    <string name="call_subject_limit" msgid="5679166729627777474">"<xliff:g id="COUNT">%1$s</xliff:g> / <xliff:g id="LIMIT">%2$s</xliff:g>"</string>
+    <string name="call_subject_type_and_number" msgid="134754147019287616">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
+    <string name="about_build_version" msgid="5870642814752351712">"બિલ્ડ સંસ્કરણ"</string>
+    <string name="about_open_source_licenses" msgid="1617836621315557445">"ઓપન સોર્સ લાઇસન્સીસ"</string>
+    <string name="about_open_source_licenses_summary" msgid="4843627659117423491">"ખુલ્લા સ્ત્રોતના સોફ્ટવેર માટે લાઇસન્સની વિગતો"</string>
+    <string name="about_privacy_policy" msgid="4581488375200402678">"ગોપનીયતા નીતિ"</string>
+    <string name="about_terms_of_service" msgid="7419670771785057738">"સેવાની શરતો"</string>
+    <string name="activity_title_licenses" msgid="6434398894019119709">"ઓપન સોર્સ લાઇસન્સીસ"</string>
+    <string name="url_open_error_toast" msgid="4885855620824048385">"url ખોલવામાં નિષ્ફળ થયાં."</string>
+    <string name="account_filter_view_checked" msgid="4740544238806346376">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> ચેક કર્યું"</string>
+    <string name="account_filter_view_not_checked" msgid="5782705545786455847">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> ચેક કરેલ નથી"</string>
+    <string name="description_search_video_call" msgid="1768558141309418755">"વિડિઓ કૉલ કરો"</string>
+    <string name="description_delete_contact" msgid="8110643050235441400">"કાઢી નાખો"</string>
+    <string name="description_no_name_header" msgid="8596201864512339003">"અધ્યાહાર"</string>
+    <string name="dynamic_shortcut_disabled_message" msgid="8770462908102469878">"આ શૉર્ટકટ અક્ષમ કરવામાંં આવેલ છે"</string>
+    <string name="dynamic_shortcut_contact_removed_message" msgid="8331735243566193974">"સંપર્ક દૂર કર્યો હતો"</string>
+    <string name="sim_import_button_text" msgid="2845608246304396009">"આયાત કરો"</string>
+    <string name="sim_import_title_none_selected" msgid="3527680774575468781">"સંપર્કો પસંદ કરો"</string>
+    <string name="sim_import_empty_message" msgid="7238368542566545854">"તમારા SIM કાર્ડ પર કોઈ સંપર્કો નથી"</string>
+    <string name="sim_import_contact_exists_toast" msgid="8423212007841229749">"સંપર્ક પહેલાંથી જ તમારી સૂચિમાં અસ્તિત્વમાં છે"</string>
+    <plurals name="sim_import_success_toast_fmt" formatted="false" msgid="422539156156042210">
       <item quantity="one"><xliff:g id="COUNT">%d</xliff:g> SIM સંપર્કો આયાત કર્યાં</item>
       <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> SIM સંપર્કો આયાત કર્યાં</item>
     </plurals>
-    <string name="sim_import_failed_toast" msgid="5559267299793622705">"SIM સંપર્કો આયાત કરવામાં નિષ્ફળ થયાં"</string>
-    <string name="sim_import_title" msgid="2511154832820812822">"SIM માંથી આયાત કરો"</string>
-    <string name="sim_import_cancel_content_description" msgid="1619832410253424452">"રદ કરો"</string>
-    <string name="auto_sync_off" msgid="2180147284456026587">"સ્વતઃ સમન્વયન બંધ છે. ચાલુ કરવા માટે ટૅપ કરો."</string>
-    <string name="dismiss_sync_alert" msgid="8941131776605093596">"છોડી દો"</string>
-    <string name="account_sync_off" msgid="7646143254066243924">"એકાઉન્ટ સમન્વયન બંધ છે. ચાલુ કરવા માટે ટૅપ કરો."</string>
-    <string name="turn_auto_sync_on_dialog_title" msgid="333965456829670541">"સ્વતઃસમન્વયન ચાલુ કરીએ?"</string>
-    <string name="turn_auto_sync_on_dialog_body" msgid="5025336917533693997">"તમે બધી ઍપ્લિકેશનો અને એકાઉન્ટ્સમાં જે ફેરફારો કરો છો, માત્ર Google સંપર્કોમાં નહીં, તે વેબ અને તમારા ઉપકરણો વચ્ચે અપ ટુ ડેટ રાખવામાં આવશે."</string>
-    <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="1070332014838295599">"ચાલુ કરો"</string>
-    <string name="connection_error_message" msgid="7046408921529247089">"કોઈ કનેક્શન નથી"</string>
-    <string name="single_sim_display_label" msgid="6985770499439371497">"SIM"</string>
-    <string name="show_more_content_description" msgid="4277410425912984722">"વધુ બતાવો"</string>
-    <string name="importing_sim_finished_title" msgid="5196369441294050721">"SIM કાર્ડ આયાત કરવાનું સમાપ્ત થયું"</string>
-    <string name="importing_sim_failed_title" msgid="39706901030537985">"આયાત કરવું નિષ્ફળ થયું"</string>
-    <string name="importing_sim_failed_message" msgid="3345258302998021066">"SIM કાર્ડમાંથી સંપર્કો આયાત કરી શક્યાં નથી"</string>
-    <string name="importing_sim_in_progress_title" msgid="3638299581276676109">"SIM આયાત કરી રહ્યાં છે"</string>
-    <string name="contacts_default_notification_channel" msgid="4754058700611188581">"સૂચનાઓ"</string>
-    <string name="yes_button" msgid="1268479086848288060">"હા"</string>
-    <string name="no_button" msgid="5742815694687835125">"ના"</string>
+    <string name="sim_import_failed_toast" msgid="358117391138073786">"SIM સંપર્કો આયાત કરવામાં નિષ્ફળ થયાં"</string>
+    <string name="sim_import_title" msgid="8202961146093040684">"SIM માંથી આયાત કરો"</string>
+    <string name="sim_import_cancel_content_description" msgid="4746065462808862682">"રદ કરો"</string>
+    <string name="auto_sync_off" msgid="7039314601316227882">"સ્વતઃ સમન્વયન બંધ છે. ચાલુ કરવા માટે ટૅપ કરો."</string>
+    <string name="dismiss_sync_alert" msgid="4057176963960104786">"છોડી દો"</string>
+    <string name="account_sync_off" msgid="6187683798342006021">"એકાઉન્ટ સમન્વયન બંધ છે. ચાલુ કરવા માટે ટૅપ કરો."</string>
+    <string name="turn_auto_sync_on_dialog_title" msgid="3812155064863594938">"સ્વતઃસમન્વયન ચાલુ કરીએ?"</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"તમે બધી ઍપ્લિકેશનો અને એકાઉન્ટ્સમાં જે ફેરફારો કરો છો, માત્ર Google સંપર્કોમાં નહીં, તે વેબ અને તમારા ઉપકરણો વચ્ચે અપ ટુ ડેટ રાખવામાં આવશે."</string>
+    <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"ચાલુ કરો"</string>
+    <string name="connection_error_message" msgid="7446131881946138093">"કોઈ કનેક્શન નથી"</string>
+    <string name="single_sim_display_label" msgid="264062966309455515">"SIM"</string>
+    <string name="show_more_content_description" msgid="6298277298495491712">"વધુ બતાવો"</string>
+    <string name="importing_sim_finished_title" msgid="6436721150882268416">"SIM કાર્ડ આયાત કરવાનું સમાપ્ત થયું"</string>
+    <string name="importing_sim_failed_title" msgid="1046154274170241788">"આયાત કરવું નિષ્ફળ થયું"</string>
+    <string name="importing_sim_failed_message" msgid="55568522164349044">"SIM કાર્ડમાંથી સંપર્કો આયાત કરી શક્યાં નથી"</string>
+    <string name="importing_sim_in_progress_title" msgid="7647907413920018595">"SIM આયાત કરી રહ્યાં છે"</string>
+    <string name="contacts_default_notification_channel" msgid="5116916969874075866">"સૂચનાઓ"</string>
+    <string name="yes_button" msgid="1120514817091581293">"હા"</string>
+    <string name="no_button" msgid="8965841385742548947">"ના"</string>
 </resources>
