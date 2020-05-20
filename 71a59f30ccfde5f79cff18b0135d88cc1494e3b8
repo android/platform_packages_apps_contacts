@@ -1,0 +1,9 @@
+Autosubmit+1: Ashwini Oruganti <ashfall@google.com>
+Open-Source-Licensing+1: Lint 🤖 <android-build-prod-ayeaye@system.gserviceaccount.com>
+Code-Review+2: Chad Brubaker <cbrubaker@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Wed, 20 May 2020 19:17:21 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/packages/apps/Contacts/+/1266567
+Project: platform/packages/apps/Contacts
+Branch: refs/heads/master
