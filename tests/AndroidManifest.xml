@@ -40,7 +40,8 @@
         <uses-library android:name="android.test.runner" />
         <meta-data android:name="com.android.contacts.iconset" android:resource="@xml/iconset" />
 
-        <activity android:name=".allintents.AllIntentsActivity">
+        <activity android:name=".allintents.AllIntentsActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -48,7 +49,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".allintents.ResultActivity">
+        <activity android:name=".allintents.ResultActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
