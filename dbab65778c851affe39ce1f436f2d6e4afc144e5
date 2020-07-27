@@ -1,0 +1,58 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000004045222",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1341995?revision\u003d2",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "2ac07612_a48698b8",
+        "filename": "src/com/android/contacts/vcard/VCardService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1550585
+      },
+      "writtenOn": "2020-07-27T17:50:50Z",
+      "side": 1,
+      "message": "Prefer to use getSystemService(NotificationManager.class) instead to avoid the cast.",
+      "range": {
+        "startLine": 142,
+        "startChar": 41,
+        "endLine": 142,
+        "endChar": 80
+      },
+      "revId": "dbab65778c851affe39ce1f436f2d6e4afc144e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000004045222",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1341995?revision\u003d2",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "15007bb7_5f45e999",
+        "filename": "src/com/android/contacts/vcard/VCardService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1550585
+      },
+      "writtenOn": "2020-07-27T17:50:50Z",
+      "side": 1,
+      "message": "Prefer to use getSystemService(NotificationManager.class) instead to avoid the cast.",
+      "range": {
+        "startLine": 276,
+        "startChar": 37,
+        "endLine": 276,
+        "endChar": 76
+      },
+      "revId": "dbab65778c851affe39ce1f436f2d6e4afc144e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
