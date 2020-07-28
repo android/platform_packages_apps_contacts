@@ -84,7 +84,7 @@ public class StopWatch {
     }
 
     /**
-     * Return a dummy instance that does no operations.
+     * Return a no-op StopWatch instance that does no operations.
      */
     public static StopWatch getNullStopWatch() {
         return NullStopWatch.INSTANCE;

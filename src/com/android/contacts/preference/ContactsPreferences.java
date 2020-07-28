@@ -246,7 +246,7 @@ public class ContactsPreferences implements OnSharedPreferenceChangeListener {
      *         true if the contact editor should show the "accounts changed" notification, that is:
      *              - If it's the first launch.
      *              - Or, if the default account has been removed.
-     *              (And some extra sanity check)
+     *              (And some extra soundness check)
      *
      * Note if this method returns {@code false}, the caller can safely assume that
      * {@link #getDefaultAccount} will return a valid account.  (Either an account which still
