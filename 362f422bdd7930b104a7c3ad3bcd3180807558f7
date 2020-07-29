@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f4ca113f_eded8c97",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1338311
+      },
+      "writtenOn": "2020-07-29T02:26:02Z",
+      "side": 1,
+      "message": "\u003e Prefer to use inclusive terms like \u0027primary/secondary\u0027 or \u0027manager/worker\u0027; see https://source.android.com/setup/contribute/respectful-code for more details.\n\nPlease fix.",
+      "parentUuid": "470e765b_8a1fcc69",
+      "range": {
+        "startLine": 1,
+        "startChar": 56,
+        "endLine": 1,
+        "endChar": 62
+      },
+      "revId": "362f422bdd7930b104a7c3ad3bcd3180807558f7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2b9dbc_a6c6559d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1338311
+      },
+      "writtenOn": "2020-07-29T02:26:02Z",
+      "side": 1,
+      "message": "Hi Bob,\n  The setMasterSyncAutomatically API call is in the framework and thus wasn\u0027t able to change it. Changed sanity to initial. PTAL. \n\nhttps://source.corp.google.com/android/frameworks/base/core/java/android/content/ContentResolver.java;l\u003d3422",
+      "revId": "362f422bdd7930b104a7c3ad3bcd3180807558f7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
