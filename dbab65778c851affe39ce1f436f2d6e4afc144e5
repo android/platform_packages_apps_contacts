@@ -1,0 +1,52 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "69ebf25f_80717e14",
+        "filename": "src/com/android/contacts/vcard/VCardService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1221112
+      },
+      "writtenOn": "2020-08-12T16:30:53Z",
+      "side": 1,
+      "message": "\u003e Prefer to use getSystemService(NotificationManager.class) instead to avoid the cast.\n\nPlease fix.",
+      "parentUuid": "2ac07612_a48698b8",
+      "range": {
+        "startLine": 142,
+        "startChar": 41,
+        "endLine": 142,
+        "endChar": 80
+      },
+      "revId": "dbab65778c851affe39ce1f436f2d6e4afc144e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a40ba545_7a27b99a",
+        "filename": "src/com/android/contacts/vcard/VCardService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1221112
+      },
+      "writtenOn": "2020-08-12T16:30:53Z",
+      "side": 1,
+      "message": "\u003e Prefer to use getSystemService(NotificationManager.class) instead to avoid the cast.\n\nPlease fix.",
+      "parentUuid": "15007bb7_5f45e999",
+      "range": {
+        "startLine": 276,
+        "startChar": 37,
+        "endLine": 276,
+        "endChar": 76
+      },
+      "revId": "dbab65778c851affe39ce1f436f2d6e4afc144e5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    }
+  ]
+}
