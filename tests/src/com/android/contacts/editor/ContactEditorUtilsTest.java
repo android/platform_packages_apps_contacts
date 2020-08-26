@@ -197,7 +197,7 @@ public class ContactEditorUtilsTest {
     }
 
     @Test
-    public void testShouldShowAccountChangedNotification_sanity_check() {
+    public void testShouldShowAccountChangedNotification_initial_check() {
         // Prepare 1 account and save it as the default.
         mTarget.saveDefaultAccount(ACCOUNT_1_A);
 

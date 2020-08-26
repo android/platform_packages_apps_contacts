@@ -602,8 +602,8 @@ class ContactPhotoManagerImpl extends ContactPhotoManager implements Callback {
     private static final String[] COLUMNS = new String[] { Photo._ID, Photo.PHOTO };
 
     /**
-     * Dummy object used to indicate that a bitmap for a given key could not be stored in the
-     * cache.
+     * Placeholder object used to indicate that a bitmap for a given key could not
+     * be stored in the cache.
      */
     private static final BitmapHolder BITMAP_UNAVAILABLE;
 
