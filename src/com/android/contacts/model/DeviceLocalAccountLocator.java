@@ -18,6 +18,8 @@ package com.android.contacts.model;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.Context;
+import android.database.Cursor;
+import android.provider.ContactsContract;
 
 import com.android.contacts.Experiments;
 import com.android.contacts.model.account.AccountWithDataSet;
@@ -69,23 +71,25 @@ public abstract class DeviceLocalAccountLocator {
             return new Cp2DeviceLocalAccountLocator(context.getContentResolver(),
                     ObjectFactory.getDeviceLocalAccountTypeFactory(context), knownTypes);
         } else {
-            return new NexusDeviceAccountLocator(accountManager);
+            return new NexusDeviceAccountLocator(context, accountManager);
         }
     }
 
     /**
      * On Nexus the "device" account uses "null" values for the account name and type columns
      *
-     * <p>However, the focus sync adapter automatically migrates contacts from this null
-     * account to a Google account if one exists. Hence, the device account should be returned
-     * only when there is no Google Account added
+     * <p>However, the focus sync adapter migrates contacts from this null account to a Google
+     * account if one exists. Hence, the device account should be returned only when there is no
+     * Google Account added or when there already exists contacts in the null account.
      * </p>
      */
     public static class NexusDeviceAccountLocator extends DeviceLocalAccountLocator {
-
+        private final Context mContext;
         private final AccountManager mAccountManager;
 
-        public NexusDeviceAccountLocator(AccountManager accountManager) {
+
+        public NexusDeviceAccountLocator(Context context, AccountManager accountManager) {
+            mContext = context;
             mAccountManager = accountManager;
         }
 
@@ -95,7 +99,7 @@ public abstract class DeviceLocalAccountLocator {
             final Account[] accounts = mAccountManager
                     .getAccountsByType(GoogleAccountType.ACCOUNT_TYPE);
 
-            if (accounts.length > 0) {
+            if (accounts.length > 0 && !AccountWithDataSet.getNullAccount().hasData(mContext)) {
                 return Collections.emptyList();
             } else {
                 return Collections.singletonList(AccountWithDataSet.getNullAccount());
