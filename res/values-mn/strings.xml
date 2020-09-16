@@ -289,7 +289,7 @@
     <string name="clearFrequentsConfirmation" msgid="2120741757522063938">"Та Харилцагч болон Утас апп-ууд дахь байнга холбоо барьсан харилцагчдын жагсаалтыг устгаж, ингэснээрээ имэйл апп-уудыг таны имэйл хаяглах хандлагыг бүр эхнээс нь суралцахад хүргэнэ."</string>
     <string name="clearFrequentsProgress_title" msgid="8271935295080659743">"Байнга холбоо барьдаг харилцагчдын жагсаалтыг устгаж байна…"</string>
     <string name="status_available" msgid="8081626460682959098">"Холбогдсон"</string>
-    <string name="status_away" msgid="2677693194455091315">"Эзгүй"</string>
+    <string name="status_away" msgid="2677693194455091315">"Холдсон"</string>
     <string name="status_busy" msgid="2759339190187696727">"Завгүй"</string>
     <string name="local_invisible_directory" msgid="5936234374879813300">"Бусад"</string>
     <string name="directory_search_label" msgid="2602118204885565153">"Директор"</string>
@@ -472,7 +472,7 @@
     <string name="call_subject_type_and_number" msgid="134754147019287616">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="5870642814752351712">"Боловсруулсан хувилбар"</string>
     <string name="about_open_source_licenses" msgid="1617836621315557445">"Нээлттэй эхийн лиценз"</string>
-    <string name="about_open_source_licenses_summary" msgid="4843627659117423491">"Нээлттэй эхийн программ хангамжийн лицензийн мэдээлэл"</string>
+    <string name="about_open_source_licenses_summary" msgid="4843627659117423491">"Нээлттэй эхийн програм хангамжийн лицензийн мэдээлэл"</string>
     <string name="about_privacy_policy" msgid="4581488375200402678">"Нууцлалын бодлого"</string>
     <string name="about_terms_of_service" msgid="7419670771785057738">"Үйлчилгээний нөхцөл"</string>
     <string name="activity_title_licenses" msgid="6434398894019119709">"Нээлттэй эхийн лиценз"</string>
