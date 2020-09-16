@@ -297,13 +297,13 @@
     <string name="status_busy" msgid="2759339190187696727">"Заузет/а"</string>
     <string name="local_invisible_directory" msgid="5936234374879813300">"Друго"</string>
     <string name="directory_search_label" msgid="2602118204885565153">"Каталог"</string>
-    <string name="directory_search_label_work" msgid="2392128956332931231">"Пословни каталог"</string>
+    <string name="directory_search_label_work" msgid="2392128956332931231">"Каталог за Work"</string>
     <string name="local_search_label" msgid="6692495405531144805">"Сви контакти"</string>
     <string name="description_quick_contact_for" msgid="6364906818231956042">"Брзи контакт за корисника <xliff:g id="NAME">%1$s</xliff:g>"</string>
     <string name="missing_name" msgid="7970183292521946492">"(Без имена)"</string>
     <string name="favoritesFrequentContacted" msgid="2885862854079966676">"Често контактирани"</string>
     <string name="list_filter_phones" msgid="6839133198968393843">"Сви контакти са бројевима телефона"</string>
-    <string name="list_filter_phones_work" msgid="5583425697781385616">"Контакти са пословног профила"</string>
+    <string name="list_filter_phones_work" msgid="5583425697781385616">"Контакти са профила за Work"</string>
     <string name="view_updates_from_group" msgid="6233444629074835594">"Прикажи ажурирања"</string>
     <string name="account_phone" msgid="8044426231251817556">"Уређај"</string>
     <string name="account_sim" msgid="3200457113308694663">"SIM"</string>
