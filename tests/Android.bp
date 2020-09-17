@@ -22,4 +22,6 @@ android_test {
         "android.test.base.stubs",
         "android.test.mock.stubs",
     ],
+
+    test_suites: ["general-tests"],
 }

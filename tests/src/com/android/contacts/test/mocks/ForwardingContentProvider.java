@@ -23,8 +23,10 @@ import android.content.OperationApplicationException;
 import android.content.res.AssetFileDescriptor;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Binder;
 import android.os.Bundle;
 import android.os.CancellationSignal;
+import android.os.IBinder;
 import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 import androidx.annotation.Nullable;
@@ -202,5 +204,9 @@ public class ForwardingContentProvider extends android.test.mock.MockContentProv
         } catch (RemoteException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public IBinder getIContentProviderBinder() {
+        return new Binder();
     }
 }

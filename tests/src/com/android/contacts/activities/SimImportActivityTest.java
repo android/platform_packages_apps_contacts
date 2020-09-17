@@ -327,9 +327,9 @@ public class SimImportActivityTest {
         mDevice.findObject(By.textContains(targetAccount.name)).click();
         mDevice.waitForIdle();
 
-        assertTrue(mDevice.wait(Until.hasObject(By.text("Import One").checked(false).enabled(false)), TIMEOUT));
-        assertTrue(mDevice.hasObject(By.text("Import Three").checked(false).enabled(false)));
-        assertTrue(mDevice.hasObject(By.text("Import Six").checked(false).enabled(false)));
+        assertTrue(mDevice.wait(Until.hasObject(By.text("Import One").checked(false)), TIMEOUT));
+        assertTrue(mDevice.hasObject(By.text("Import Three").checked(false)));
+        assertTrue(mDevice.hasObject(By.text("Import Six").checked(false)));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             contactsProviderClient.close();
