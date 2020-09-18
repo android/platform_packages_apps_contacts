@@ -134,7 +134,7 @@
     <string name="quickcontact_add_email" msgid="1442894568471116797">"Ավելացնել էլ․ հասցե"</string>
     <string name="missing_app" msgid="5674389915738964148">"Այս գործողությունը կատարելու համար ոչ մի ծրագիր չի գտնվել:"</string>
     <string name="menu_share" msgid="6343022811796001773">"Կիսվել"</string>
-    <string name="menu_add_contact" msgid="5822356185421997656">"Ավելացնել կոնտակտներին"</string>
+    <string name="menu_add_contact" msgid="5822356185421997656">"Ավելացնել կոնտակտներում"</string>
     <string name="menu_add_contacts" msgid="7114262784903366463">"Ավելացնել"</string>
     <plurals name="title_share_via" formatted="false" msgid="3868648642107664607">
       <item quantity="one">Share contacts via</item>
@@ -436,8 +436,8 @@
     <string name="display_options_sort_by_given_name" msgid="893781924536349248">"Անվան"</string>
     <string name="display_options_sort_by_family_name" msgid="1282763552330910876">"Ազգանվան"</string>
     <string name="display_options_view_names_as" msgid="4060686468465916565">"Անվան ձևաչափ"</string>
-    <string name="display_options_view_given_name_first" msgid="383885125505521383">"Սկզբում անունը"</string>
-    <string name="display_options_view_family_name_first" msgid="6597077054231296007">"Սկզբում ազգանունը"</string>
+    <string name="display_options_view_given_name_first" msgid="383885125505521383">"Սկզբում՝ անունը"</string>
+    <string name="display_options_view_family_name_first" msgid="6597077054231296007">"Սկզբում՝ ազգանունը"</string>
     <string name="settings_accounts" msgid="119582613811929994">"Հաշիվներ"</string>
     <string name="default_editor_account" msgid="4810392921888877149">"Կանխադրված հաշիվ նոր կոնտակտների համար"</string>
     <string name="settings_my_info_title" msgid="6236848378653551341">"Իմ մասին"</string>

@@ -353,7 +353,7 @@
     <string name="chat_gtalk" msgid="2927882858741904064">"Google Talk चा वापर करून चॅट करा"</string>
     <string name="chat_icq" msgid="4289041376069626281">"ICQ चा वापर करून चॅट करा"</string>
     <string name="chat_jabber" msgid="1097960594943864847">"Jabber चा वापर करून चॅट करा"</string>
-    <string name="chat" msgid="8390862712584830532">"Chat"</string>
+    <string name="chat" msgid="8390862712584830532">"चॅट करा"</string>
     <string name="description_minus_button" msgid="1305985971158054217">"हटवा"</string>
     <string name="expand_name_fields_description" msgid="6059558159338959487">"अधिक नाव फील्ड दर्शवा"</string>
     <string name="collapse_name_fields_description" msgid="7950435675716414477">"नाव फील्ड संकुचित करा"</string>
@@ -435,7 +435,7 @@
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2693314301550366143">"रिक्त असल्यास लपवा"</string>
     <string name="display_options_sort_by_given_name" msgid="893781924536349248">"नाव"</string>
     <string name="display_options_sort_by_family_name" msgid="1282763552330910876">"आडनाव"</string>
-    <string name="display_options_view_names_as" msgid="4060686468465916565">"नाव फॉरमॅट"</string>
+    <string name="display_options_view_names_as" msgid="4060686468465916565">"नाव स्वरूपन"</string>
     <string name="display_options_view_given_name_first" msgid="383885125505521383">"नाव प्रथम"</string>
     <string name="display_options_view_family_name_first" msgid="6597077054231296007">"आडनाव प्रथम"</string>
     <string name="settings_accounts" msgid="119582613811929994">"खाती"</string>
@@ -495,12 +495,12 @@
     <string name="sim_import_failed_toast" msgid="358117391138073786">"सिम संपर्क इंपोर्ट करण्यात अयशस्वी"</string>
     <string name="sim_import_title" msgid="8202961146093040684">"सिम वरून इंपोर्ट करा"</string>
     <string name="sim_import_cancel_content_description" msgid="4746065462808862682">"रद्द करा"</string>
-    <string name="auto_sync_off" msgid="7039314601316227882">"स्वयं-संकालन बंद आहे. सुरू करण्यासाठी टॅप करा."</string>
+    <string name="auto_sync_off" msgid="7039314601316227882">"स्वयं-संकालन बंद आहे. चालू करण्यासाठी टॅप करा."</string>
     <string name="dismiss_sync_alert" msgid="4057176963960104786">"डिसमिस करा"</string>
-    <string name="account_sync_off" msgid="6187683798342006021">"स्वयं-संकालन बंद आहे. सुरू करण्यासाठी टॅप करा."</string>
-    <string name="turn_auto_sync_on_dialog_title" msgid="3812155064863594938">"स्वयं-संकालन सुरू करायचे?"</string>
+    <string name="account_sync_off" msgid="6187683798342006021">"स्वयं-संकालन बंद आहे. चालू करण्यासाठी टॅप करा."</string>
+    <string name="turn_auto_sync_on_dialog_title" msgid="3812155064863594938">"स्वयं-संकालन चालू करायचे?"</string>
     <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"फक्त संपर्कांमध्ये नाही, तर तुम्ही सर्व अ‍ॅप्स आणि खात्यांमध्ये करता ते बदल, वेब आणि आपल्या अन्य डिव्हाइसेस दरम्यान अपडेट ठेवले जातील."</string>
-    <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"सुरू करा"</string>
+    <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"चालू करा"</string>
     <string name="connection_error_message" msgid="7446131881946138093">"कोणतेही कनेक्शन नाही"</string>
     <string name="single_sim_display_label" msgid="264062966309455515">"सिम"</string>
     <string name="show_more_content_description" msgid="6298277298495491712">"अधिक दर्शवा"</string>

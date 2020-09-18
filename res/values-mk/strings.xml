@@ -103,7 +103,7 @@
     <string name="emptyGroup" msgid="8598261660865081152">"Нема контакти со етикетава"</string>
     <string name="emptyAccount" msgid="7450843210977018582">"Нема контакти во сметкава"</string>
     <string name="emptyMainList" msgid="3266182207039677163">"Списокот со контакти е празен"</string>
-    <string name="contactSavedNamedToast" msgid="3067050290584834386">"Контактот <xliff:g id="DISPLAY_NAME">%s</xliff:g> е зачуван"</string>
+    <string name="contactSavedNamedToast" msgid="3067050290584834386">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> е зачуван"</string>
     <string name="contactSavedToast" msgid="4370392215196995301">"Контактот е зачуван"</string>
     <string name="contactUnlinkedToast" msgid="6791720274141804377">"Контактите се раздвоени"</string>
     <string name="contactSavedErrorToast" msgid="3213619905154956918">"Не можеше да се зачуваат промените на контактот"</string>
