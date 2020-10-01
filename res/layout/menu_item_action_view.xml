@@ -15,7 +15,8 @@
   limitations under the License.
   -->
 
-<!-- A dummy action view to attach extra hidden content description to menuItem for Talkback. -->
+<!-- A placeholder action view to attach extra hidden content description to
+     menuItem for Talkback. -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"

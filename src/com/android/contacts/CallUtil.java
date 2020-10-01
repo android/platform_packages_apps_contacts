@@ -109,7 +109,7 @@ public class CallUtil {
 
     /**
      * Return an Intent for making a phone call. A given Uri will be used as is (without any
-     * sanity check).
+     * quick check).
      */
     public static Intent getCallIntent(Uri uri) {
         return new Intent(Intent.ACTION_CALL, uri);

@@ -96,7 +96,7 @@ public class AccountTypeManagerTest extends AndroidTestCase {
     }
 
     public void testGetDefaultAccount_NoAccounts_DefaultPreferenceSet() {
-        when(mPrefs.getString(Mockito.anyString(), Mockito.anyString())).thenReturn(
+        when(mPrefs.getString(Mockito.anyString(), Mockito.any())).thenReturn(
                 getDefaultAccountPreference("name1", GoogleAccountType.ACCOUNT_TYPE));
         assertNull(getDefaultGoogleAccountName());
     }
@@ -108,21 +108,21 @@ public class AccountTypeManagerTest extends AndroidTestCase {
 
     public void testGetDefaultAccount_DefaultAccountPreferenceSet() {
         when(mAccountManager.getAccountsByType(Mockito.anyString())).thenReturn(ACCOUNTS);
-        when(mPrefs.getString(Mockito.anyString(), Mockito.anyString())).thenReturn(
+        when(mPrefs.getString(Mockito.anyString(), Mockito.any())).thenReturn(
                 getDefaultAccountPreference("name2", GoogleAccountType.ACCOUNT_TYPE));
         assertEquals("name2", getDefaultGoogleAccountName());
     }
 
     public void testGetDefaultAccount_DefaultAccountPreferenceSet_NonGoogleAccountType() {
         when(mAccountManager.getAccountsByType(Mockito.anyString())).thenReturn(ACCOUNTS);
-        when(mPrefs.getString(Mockito.anyString(), Mockito.anyString())).thenReturn(
+        when(mPrefs.getString(Mockito.anyString(), Mockito.any())).thenReturn(
                 getDefaultAccountPreference("name3", "type3"));
         assertEquals("name1", getDefaultGoogleAccountName());
     }
 
     public void testGetDefaultAccount_DefaultAccountPreferenceSet_UnknownName() {
         when(mAccountManager.getAccountsByType(Mockito.anyString())).thenReturn(ACCOUNTS);
-        when(mPrefs.getString(Mockito.anyString(), Mockito.anyString())).thenReturn(
+        when(mPrefs.getString(Mockito.anyString(), Mockito.any())).thenReturn(
                 getDefaultAccountPreference("name4",GoogleAccountType.ACCOUNT_TYPE));
         assertEquals("name1", getDefaultGoogleAccountName());
     }

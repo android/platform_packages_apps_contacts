@@ -405,28 +405,26 @@ class AccountTypeManagerImpl extends AccountTypeManager
 
         ContentResolver.addStatusChangeListener(ContentResolver.SYNC_OBSERVER_TYPE_SETTINGS, this);
 
-        if (Flags.getInstance().getBoolean(Experiments.CP2_DEVICE_ACCOUNT_DETECTION_ENABLED)) {
-            // Observe changes to RAW_CONTACTS so that we will update the list of "Device" accounts
-            // if a new device contact is added.
-            mContext.getContentResolver().registerContentObserver(
-                    ContactsContract.RawContacts.CONTENT_URI, /* notifyDescendents */ true,
-                    new ContentObserver(mMainThreadHandler) {
-                        @Override
-                        public boolean deliverSelfNotifications() {
-                            return true;
-                        }
+        // Observe changes to RAW_CONTACTS so that we will update the list of "Device" accounts
+        // if a new device contact is added or removed.
+        mContext.getContentResolver().registerContentObserver(
+                ContactsContract.RawContacts.CONTENT_URI, /* notifyDescendents */ true,
+                new ContentObserver(mMainThreadHandler) {
+                    @Override
+                    public boolean deliverSelfNotifications() {
+                        return true;
+                    }
 
-                        @Override
-                        public void onChange(boolean selfChange) {
-                            reloadLocalAccounts();
-                        }
+                    @Override
+                    public void onChange(boolean selfChange) {
+                        reloadLocalAccounts();
+                    }
 
-                        @Override
-                        public void onChange(boolean selfChange, Uri uri) {
-                            reloadLocalAccounts();
-                        }
-                    });
-        }
+                    @Override
+                    public void onChange(boolean selfChange, Uri uri) {
+                        reloadLocalAccounts();
+                    }
+                });
         loadAccountTypes();
     }
 

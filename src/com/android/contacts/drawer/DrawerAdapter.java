@@ -271,16 +271,16 @@ public class DrawerAdapter extends BaseAdapter {
             result.setId(item.id);
         }
         final ContactListFilter account = item.account;
+        final AccountDisplayInfo displayableAccount =
+                mAccountDisplayFactory.getAccountDisplayInfoFor(item.account);
         final TextView textView = ((TextView) result.findViewById(R.id.title));
-        textView.setText(account.accountName);
+        textView.setText(displayableAccount.getNameLabel());
         final boolean activated = account.equals(mSelectedAccount)
                 && mSelectedView == ContactsView.ACCOUNT_VIEW;
         textView.setTextAppearance(mActivity, activated
                 ? TYPEFACE_STYLE_ACTIVATE : TYPEFACE_STYLE_INACTIVE);
 
         final ImageView icon = (ImageView) result.findViewById(R.id.icon);
-        final AccountDisplayInfo displayableAccount =
-                mAccountDisplayFactory.getAccountDisplayInfoFor(item.account);
         icon.setScaleType(ImageView.ScaleType.FIT_CENTER);
         icon.setImageDrawable(displayableAccount.getIcon());
 

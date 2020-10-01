@@ -38,7 +38,7 @@
 
             <include layout="@layout/photo_editor_view" />
 
-            <!-- Dummy view so the first input field is not initially focused. b/21644158 -->
+            <!-- Placeholder view so the first input field is not initially focused. b/21644158 -->
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
