@@ -1,0 +1,6 @@
+Code-Review+2: android-build-prod (mdb) <android-build-team-robot@google.com>
+Submitted-by: android-build-prod (mdb) <android-build-team-robot@google.com>
+Submitted-at: Tue, 06 Oct 2020 20:11:46 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/packages/apps/Contacts/+/1451535
+Project: platform/packages/apps/Contacts
+Branch: refs/heads/android11-tests-release
