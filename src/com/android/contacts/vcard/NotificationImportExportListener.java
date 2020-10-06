@@ -16,6 +16,8 @@
 
 package com.android.contacts.vcard;
 
+import static android.app.PendingIntent.FLAG_IMMUTABLE;
+
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -229,7 +231,7 @@ public class NotificationImportExportListener implements VCardImportExportListen
                 .setSmallIcon(type == VCardService.TYPE_IMPORT
                         ? android.R.drawable.stat_sys_download
                         : android.R.drawable.stat_sys_upload)
-                .setContentIntent(PendingIntent.getActivity(context, 0, intent, 0));
+                .setContentIntent(PendingIntent.getActivity(context, 0, intent, FLAG_IMMUTABLE));
         if (totalCount > 0) {
             String percentage =
                     NumberFormat.getPercentInstance().format((double) currentCount / totalCount);
@@ -254,10 +256,6 @@ public class NotificationImportExportListener implements VCardImportExportListen
                 .setColor(context.getResources().getColor(R.color.dialtacts_theme_color))
                 .setContentTitle(description)
                 .setContentText(description)
-                // Launch an intent that won't resolve to anything. Restrict the intent to this
-                // app to make sure that no other app can steal this pending-intent b/19296918.
-                .setContentIntent(PendingIntent
-                        .getActivity(context, 0, new Intent(context.getPackageName(), null), 0))
                 .build();
     }
 
@@ -270,29 +268,16 @@ public class NotificationImportExportListener implements VCardImportExportListen
      */
     /* package */ static Notification constructFinishNotification(
             Context context, String title, String description, Intent intent) {
-        return constructFinishNotificationWithFlags(context, title, description, intent, 0);
-    }
-
-    /**
-     * @param flags use FLAG_ACTIVITY_NEW_TASK to set it as new task, to get rid of cached files.
-     */
-    /* package */ static Notification constructFinishNotificationWithFlags(
-            Context context, String title, String description, Intent intent, int flags) {
         ContactsNotificationChannelsUtil.createDefaultChannel(context);
         return new NotificationCompat.Builder(context,
-                ContactsNotificationChannelsUtil.DEFAULT_CHANNEL)
-                .setAutoCancel(true)
-                .setColor(context.getResources().getColor(R.color.dialtacts_theme_color))
-                .setSmallIcon(R.drawable.quantum_ic_done_vd_theme_24)
-                .setContentTitle(title)
-                .setContentText(description)
-                // If no intent provided, include an intent that won't resolve to anything.
-                // Restrict the intent to this app to make sure that no other app can steal this
-                // pending-intent b/19296918.
-                .setContentIntent(PendingIntent.getActivity(context, 0,
-                        (intent != null ? intent : new Intent(context.getPackageName(), null)),
-                        flags))
-                .build();
+            ContactsNotificationChannelsUtil.DEFAULT_CHANNEL)
+            .setAutoCancel(true)
+            .setColor(context.getResources().getColor(R.color.dialtacts_theme_color))
+            .setSmallIcon(R.drawable.quantum_ic_done_vd_theme_24)
+            .setContentTitle(title)
+            .setContentText(description)
+            .setContentIntent(PendingIntent.getActivity(context, 0, intent, FLAG_IMMUTABLE))
+            .build();
     }
 
     /**
@@ -311,10 +296,6 @@ public class NotificationImportExportListener implements VCardImportExportListen
                 .setSmallIcon(android.R.drawable.stat_notify_error)
                 .setContentTitle(context.getString(R.string.vcard_import_failed))
                 .setContentText(reason)
-                // Launch an intent that won't resolve to anything. Restrict the intent to this
-                // app to make sure that no other app can steal this pending-intent b/19296918.
-                .setContentIntent(PendingIntent
-                        .getActivity(context, 0, new Intent(context.getPackageName(), null), 0))
                 .build();
     }
 }
