@@ -304,11 +304,12 @@ public class ExportProcessor extends ProcessorBase {
         intent.setType(Contacts.CONTENT_VCARD_TYPE);
         intent.putExtra(Intent.EXTRA_STREAM, uri);
         // Securely grant access using temporary access permissions
-        intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        // Use FLAG_ACTIVITY_NEW_TASK to set it as new task, to get rid of cached files.
+        intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_ACTIVITY_NEW_TASK);
         // Build notification
         final Notification notification =
-                NotificationImportExportListener.constructFinishNotificationWithFlags(
-                        mService, title, description, intent, Intent.FLAG_ACTIVITY_NEW_TASK);
+                NotificationImportExportListener.constructFinishNotification(
+                        mService, title, description, intent);
         mNotificationManager.notify(NotificationImportExportListener.DEFAULT_NOTIFICATION_TAG,
                 mJobId, notification);
     }
