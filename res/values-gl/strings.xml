@@ -134,7 +134,7 @@
     <string name="quickcontact_add_email" msgid="1442894568471116797">"Engadir correo electrónico"</string>
     <string name="missing_app" msgid="5674389915738964148">"Non se encontrou ningunha aplicación para procesar esta acción."</string>
     <string name="menu_share" msgid="6343022811796001773">"Compartir"</string>
-    <string name="menu_add_contact" msgid="5822356185421997656">"Engadir a contactos"</string>
+    <string name="menu_add_contact" msgid="5822356185421997656">"Engadir aos contactos"</string>
     <string name="menu_add_contacts" msgid="7114262784903366463">"Engadir"</string>
     <plurals name="title_share_via" formatted="false" msgid="3868648642107664607">
       <item quantity="other">Compartir contactos mediante</item>

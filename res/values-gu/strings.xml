@@ -32,7 +32,7 @@
     <string name="menu_removeStar" msgid="3707373931808303701">"મનપસંદમાંથી દૂર કરો"</string>
     <string name="description_action_menu_remove_star" msgid="4044390281910122890">"મનપસંદમાંથી દૂર કર્યું"</string>
     <string name="description_action_menu_add_star" msgid="7316521132809388851">"મનપસંદમાં ઉમેર્યું"</string>
-    <string name="menu_editContact" msgid="5039663761025630208">"સંપાદન"</string>
+    <string name="menu_editContact" msgid="5039663761025630208">"ફેરફાર કરો"</string>
     <string name="menu_deleteContact" msgid="15161764025276217">"કાઢી નાખો"</string>
     <string name="menu_change_photo" msgid="4911246106907208055">"ફોટો બદલો"</string>
     <string name="menu_create_contact_shortcut" msgid="8983436328557825860">"શૉર્ટકટ બનાવો"</string>
@@ -353,7 +353,7 @@
     <string name="chat_gtalk" msgid="2927882858741904064">"Google Talk નો ઉપયોગ કરીને ચેટ કરો"</string>
     <string name="chat_icq" msgid="4289041376069626281">"ICQ નો ઉપયોગ કરીને ચેટ કરો"</string>
     <string name="chat_jabber" msgid="1097960594943864847">"Jabber નો ઉપયોગ કરીને ચેટ કરો"</string>
-    <string name="chat" msgid="8390862712584830532">"ચેટ"</string>
+    <string name="chat" msgid="8390862712584830532">"Chat"</string>
     <string name="description_minus_button" msgid="1305985971158054217">"કાઢી નાખો"</string>
     <string name="expand_name_fields_description" msgid="6059558159338959487">"વધુ નામ ફીલ્ડ્સ બતાવો"</string>
     <string name="collapse_name_fields_description" msgid="7950435675716414477">"નામ ફીલ્ડ્સ સંકુચિત કરો"</string>

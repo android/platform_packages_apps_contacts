@@ -134,7 +134,7 @@
     <string name="quickcontact_add_email" msgid="1442894568471116797">"Aggiungi email"</string>
     <string name="missing_app" msgid="5674389915738964148">"Nessuna applicazione trovata per gestire questa azione."</string>
     <string name="menu_share" msgid="6343022811796001773">"Condividi"</string>
-    <string name="menu_add_contact" msgid="5822356185421997656">"Aggiungi a contatti"</string>
+    <string name="menu_add_contact" msgid="5822356185421997656">"Aggiungi ai contatti"</string>
     <string name="menu_add_contacts" msgid="7114262784903366463">"Aggiungi"</string>
     <plurals name="title_share_via" formatted="false" msgid="3868648642107664607">
       <item quantity="other">Condividi contatti tramite</item>

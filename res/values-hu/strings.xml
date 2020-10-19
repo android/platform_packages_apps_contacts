@@ -103,7 +103,7 @@
     <string name="emptyGroup" msgid="8598261660865081152">"Nincs ilyen címkéjű névjegy"</string>
     <string name="emptyAccount" msgid="7450843210977018582">"A fiókban nincsenek névjegyek"</string>
     <string name="emptyMainList" msgid="3266182207039677163">"A névjegylista üres"</string>
-    <string name="contactSavedNamedToast" msgid="3067050290584834386">"Mentette a következőt: <xliff:g id="DISPLAY_NAME">%s</xliff:g>"</string>
+    <string name="contactSavedNamedToast" msgid="3067050290584834386">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> mentve"</string>
     <string name="contactSavedToast" msgid="4370392215196995301">"Névjegy elmentve"</string>
     <string name="contactUnlinkedToast" msgid="6791720274141804377">"Névjegyek szétválasztva"</string>
     <string name="contactSavedErrorToast" msgid="3213619905154956918">"Nem sikerült menteni a névjegymódosításokat"</string>
