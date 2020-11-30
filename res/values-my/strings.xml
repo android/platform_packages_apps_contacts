@@ -103,7 +103,7 @@
     <string name="emptyGroup" msgid="8598261660865081152">"ဤအညွှန်းဖြင့်အဆက်အသွယ်များ မရှိပါ"</string>
     <string name="emptyAccount" msgid="7450843210977018582">"ဤအကောင့်တွင် အဆက်အသွယ်များ မရှိပါ"</string>
     <string name="emptyMainList" msgid="3266182207039677163">"သင့်အဆက်အသွယ်များစာရင်းတွင် မည်သူမျှမရှိပါ"</string>
-    <string name="contactSavedNamedToast" msgid="3067050290584834386">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> ကို သိမ်းဆည်းလိုက်ပါပြီ"</string>
+    <string name="contactSavedNamedToast" msgid="3067050290584834386">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> ကို သိမ်းလိုက်သည်"</string>
     <string name="contactSavedToast" msgid="4370392215196995301">"အဆက်အသွယ်အား သိမ်းဆည်းပြီးပါပြီ"</string>
     <string name="contactUnlinkedToast" msgid="6791720274141804377">"အဆက်အသွယ်များကို လင့်ခ်ဖြုတ်လိုက်ပြီ"</string>
     <string name="contactSavedErrorToast" msgid="3213619905154956918">"အဆက်အသွယ်ပြောင်းလဲမှုများကို သိမ်းဆည်း၍မရပါ"</string>
@@ -364,7 +364,7 @@
     <string name="announce_expanded_fields" msgid="8410808184164186871">"ချဲ့ထားသည်"</string>
     <string name="announce_collapsed_fields" msgid="7611318715383228182">"ချုံ့ထားသည်"</string>
     <string name="list_filter_all_accounts" msgid="6173785387972096770">"အဆက်အသွယ်အားလုံး"</string>
-    <string name="list_filter_all_starred" msgid="2582865760150432568">"ကြယ်ပွင့်ပြထားသော"</string>
+    <string name="list_filter_all_starred" msgid="2582865760150432568">"ကြယ်ပွင့်ပြ"</string>
     <string name="list_filter_customize" msgid="2368900508906139537">"စိတ်ကြိုက်ကြည့်ရန်"</string>
     <string name="list_filter_single" msgid="6003845379327432129">"အဆက်အသွယ်"</string>
     <string name="display_ungrouped" msgid="4823012484407759332">"အခြားအဆက်အသွယ်အားလုံး"</string>

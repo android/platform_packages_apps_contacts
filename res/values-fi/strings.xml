@@ -217,7 +217,7 @@
     <string name="header_phone_entry" msgid="7092868248113091293">"Puhelin"</string>
     <string name="content_description_directions" msgid="860179347986211929">"reittiohjeet sijaintiin"</string>
     <string name="editor_more_fields" msgid="6158558083947445518">"Lisää kenttiä"</string>
-    <string name="editor_change_photo_content_description" msgid="8146896029044539032">"Vaihda yhteystiedon valokuvaa"</string>
+    <string name="editor_change_photo_content_description" msgid="8146896029044539032">"Vaihda yhteystiedon kuvaa"</string>
     <string name="editor_add_photo_content_description" msgid="8457486801272200575">"Lisää yhteystiedon valokuva"</string>
     <string name="editor_contact_photo_content_description" msgid="8699261934352739">"Yhteystiedon valokuva"</string>
     <string name="editor_failed_to_load" msgid="2328074829787373644">"Muokkausnäkymän avaaminen epäonnistui."</string>
@@ -474,7 +474,7 @@
     <string name="about_open_source_licenses" msgid="1617836621315557445">"Avoimen lähdekoodin käyttöluvat"</string>
     <string name="about_open_source_licenses_summary" msgid="4843627659117423491">"Avoimen lähdekoodin ohjelmiston käyttöluvan tiedot"</string>
     <string name="about_privacy_policy" msgid="4581488375200402678">"Tietosuojakäytäntö"</string>
-    <string name="about_terms_of_service" msgid="7419670771785057738">"Käyttöehdot"</string>
+    <string name="about_terms_of_service" msgid="7419670771785057738">"Palveluehdot"</string>
     <string name="activity_title_licenses" msgid="6434398894019119709">"Avoimen lähdekoodin käyttöluvat"</string>
     <string name="url_open_error_toast" msgid="4885855620824048385">"URL-osoitteen avaus epäonnistui."</string>
     <string name="account_filter_view_checked" msgid="4740544238806346376">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g>, valittu"</string>

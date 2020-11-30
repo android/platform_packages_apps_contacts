@@ -25,7 +25,7 @@
     <string name="shortcutActivityTitle" msgid="5407832911005090417">"اختيار جهة اتصال"</string>
     <string name="contactInsertOrEditActivityTitle" msgid="1788154962629911262">"إضافة إلى جهة اتصال"</string>
     <string name="contactPickerActivityTitle" msgid="1842634991247618890">"اختيار جهة اتصال"</string>
-    <string name="groupMemberPickerActivityTitle" msgid="8745419913947478380">"تحديد"</string>
+    <string name="groupMemberPickerActivityTitle" msgid="8745419913947478380">"اختيار"</string>
     <string name="header_entry_contact_list_adapter_header_title" msgid="4098233078586958762">"إنشاء جهة اتصال جديدة"</string>
     <string name="searchHint" msgid="1487501532610025473">"البحث في جهات الاتصال"</string>
     <string name="menu_addStar" msgid="4903812703386825130">"إضافة إلى المفضلة"</string>
@@ -41,7 +41,7 @@
     <string name="menu_renameGroup" msgid="2685886609399776475">"إعادة تسمية التصنيف"</string>
     <string name="menu_deleteGroup" msgid="1180215594530228294">"حذف التصنيف"</string>
     <string name="menu_addToGroup" msgid="5034813446697655310">"إضافة جهة اتصال"</string>
-    <string name="menu_selectForGroup" msgid="6386553337569514850">"تحديد جهات الاتصال"</string>
+    <string name="menu_selectForGroup" msgid="6386553337569514850">"اختيار جهات الاتصال"</string>
     <string name="menu_addContactsToGroup" msgid="4549318978482280577">"إضافة جهات اتصال"</string>
     <string name="menu_removeFromGroup" msgid="8753799091967887958">"الإزالة من تصنيف"</string>
     <string name="menu_new_group_action_bar" msgid="1670312283925872483">"إنشاء تصنيف"</string>
@@ -509,7 +509,7 @@
     <string name="dynamic_shortcut_disabled_message" msgid="8770462908102469878">"تم إيقاف هذا الاختصار"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="8331735243566193974">"تمت إزالة جهة الاتصال"</string>
     <string name="sim_import_button_text" msgid="2845608246304396009">"استيراد"</string>
-    <string name="sim_import_title_none_selected" msgid="3527680774575468781">"تحديد جهات الاتصال"</string>
+    <string name="sim_import_title_none_selected" msgid="3527680774575468781">"اختيار جهات الاتصال"</string>
     <string name="sim_import_empty_message" msgid="7238368542566545854">"‏ليس هناك جهات اتصال على شريحة SIM"</string>
     <string name="sim_import_contact_exists_toast" msgid="8423212007841229749">"جهة الاتصال موجودة فعلاً في قائمتك"</string>
     <plurals name="sim_import_success_toast_fmt" formatted="false" msgid="422539156156042210">
