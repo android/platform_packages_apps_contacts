@@ -393,13 +393,13 @@
     <string name="cancel_export_confirmation_message" msgid="370693160959236239">"Չեղարկե՞լ <xliff:g id="FILENAME">%s</xliff:g>-ի արտահանումը"</string>
     <string name="cancel_vcard_import_or_export_failed" msgid="3041814872516288484">"Հնարավոր չէ չեղարկել vCard-ի ներմուծումը/արտահանումը"</string>
     <string name="fail_reason_unknown" msgid="3721044979355043778">"Անհայտ սխալ:"</string>
-    <string name="fail_reason_could_not_open_file" msgid="6015509564074145162">"Հնարավոր չէ բացել \"<xliff:g id="FILE_NAME">%1$s</xliff:g>\"-ը. պատճառը` <xliff:g id="EXACT_REASON">%2$s</xliff:g>:"</string>
+    <string name="fail_reason_could_not_open_file" msgid="6015509564074145162">"Հնարավոր չէ բացել \"<xliff:g id="FILE_NAME">%1$s</xliff:g>\"-ը. պատճառը՝ <xliff:g id="EXACT_REASON">%2$s</xliff:g>:"</string>
     <string name="fail_reason_could_not_initialize_exporter" msgid="4145819808407973981">"Հնարավոր չէ մեկնարկել արտահանողը. պատճառը` «<xliff:g id="EXACT_REASON">%s</xliff:g>»:"</string>
     <string name="fail_reason_no_exportable_contact" msgid="487925011719622851">"Արտահանելի կոնտակտ չկա:"</string>
     <string name="missing_required_permission" msgid="1308037728470791436">"Դուք անջատել եք անհրաժեշտ թույլտվությունը:"</string>
     <string name="fail_reason_error_occurred_during_export" msgid="6179270404825288837">"Արտահանման ընթացքում տեղի է ունեցել սխալ. պատճառը` «<xliff:g id="EXACT_REASON">%s</xliff:g>»:"</string>
     <string name="fail_reason_io_error" msgid="6364839914349999408">"I/O սխալ"</string>
-    <string name="fail_reason_low_memory_during_import" msgid="4525361860523306991">"Հիշողությունը բավարար չէ: Հնարավոր է` ֆայլը չափազանց մեծ է:"</string>
+    <string name="fail_reason_low_memory_during_import" msgid="4525361860523306991">"Հիշողությունը բավարար չէ: Հնարավոր է՝ ֆայլը չափազանց մեծ է:"</string>
     <string name="fail_reason_not_supported" msgid="6449916670421646290">"Ձևաչափը չի աջակցվում:"</string>
     <string name="exporting_vcard_finished_title" msgid="1984393609140969504">"<xliff:g id="FILENAME">%s</xliff:g>-ի արտահանումն ավարտվեց"</string>
     <string name="exporting_vcard_finished_title_fallback" msgid="9029067439586573959">"Կոնտակտների արտահանումն ավարտվեց:"</string>
@@ -503,7 +503,7 @@
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"Միացնել"</string>
     <string name="connection_error_message" msgid="7446131881946138093">"Կապ չկա"</string>
     <string name="single_sim_display_label" msgid="264062966309455515">"SIM քարտ"</string>
-    <string name="show_more_content_description" msgid="6298277298495491712">"Ցուցադրել ավելի շատ"</string>
+    <string name="show_more_content_description" msgid="6298277298495491712">"Ցույց տալ ավելի շատ"</string>
     <string name="importing_sim_finished_title" msgid="6436721150882268416">"SIM քարտի ներմուծումն ավարտվեց"</string>
     <string name="importing_sim_failed_title" msgid="1046154274170241788">"Ներմուծման սխալ"</string>
     <string name="importing_sim_failed_message" msgid="55568522164349044">"Չհաջողվեց կոնտակտներ ներմուծել SIM քարտից"</string>

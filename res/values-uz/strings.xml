@@ -310,10 +310,10 @@
     <string name="name_prefix" msgid="8857117624713905211">"Murojaat shakli"</string>
     <string name="name_middle" msgid="7330498948136181042">"Otasining ismi"</string>
     <string name="name_suffix" msgid="4502958221763936999">"Martabasi/unvoni"</string>
-    <string name="name_phonetic" msgid="4746541275769990740">"Ism talaffuzi"</string>
-    <string name="name_phonetic_given" msgid="425534279190047812">"Ism talaffuzi"</string>
-    <string name="name_phonetic_middle" msgid="6528822054594516485">"Otasining ismi talaffuzi"</string>
-    <string name="name_phonetic_family" msgid="1690852801039809448">"Familiya talaffuzi"</string>
+    <string name="name_phonetic" msgid="4746541275769990740">"Ism transkripsiyasi"</string>
+    <string name="name_phonetic_given" msgid="425534279190047812">"Ism transkripsiyasi"</string>
+    <string name="name_phonetic_middle" msgid="6528822054594516485">"Otasining ismi transkripsiyasi"</string>
+    <string name="name_phonetic_family" msgid="1690852801039809448">"Familiya transkripsiyasi"</string>
     <string name="phoneLabelsGroup" msgid="2746758650001801885">"Telefon"</string>
     <string name="emailLabelsGroup" msgid="3360719560200449554">"Email"</string>
     <string name="postalLabelsGroup" msgid="7534317297587527570">"Manzil"</string>
@@ -430,7 +430,7 @@
     <string name="progress_notifier_message" msgid="8522060892889599746">"Import qilinmoqda: <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g> – <xliff:g id="NAME">%3$s</xliff:g>"</string>
     <string name="export_to_vcf_file" msgid="3096479544575798192">"VCF faylga eksport qilish"</string>
     <string name="display_options_sort_list_by" msgid="4333658089057400431">"Saralash"</string>
-    <string name="display_options_phonetic_name_fields" msgid="1857564544755287298">"Ism talaffuzi"</string>
+    <string name="display_options_phonetic_name_fields" msgid="1857564544755287298">"Ism transkripsiyasi"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="3612488836474257715">"Har doim ko‘rsatish"</string>
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2693314301550366143">"Bo‘sh maydonni berkitish"</string>
     <string name="display_options_sort_by_given_name" msgid="893781924536349248">"Ismi"</string>

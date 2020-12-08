@@ -312,7 +312,7 @@
     <string name="name_suffix" msgid="4502958221763936999">"姓名後稱謂"</string>
     <string name="name_phonetic" msgid="4746541275769990740">"姓名拼音"</string>
     <string name="name_phonetic_given" msgid="425534279190047812">"名字拼音"</string>
-    <string name="name_phonetic_middle" msgid="6528822054594516485">"中間名 (拼音)"</string>
+    <string name="name_phonetic_middle" msgid="6528822054594516485">"中間名拼音"</string>
     <string name="name_phonetic_family" msgid="1690852801039809448">"姓氏拼音"</string>
     <string name="phoneLabelsGroup" msgid="2746758650001801885">"電話"</string>
     <string name="emailLabelsGroup" msgid="3360719560200449554">"電子郵件"</string>

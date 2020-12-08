@@ -327,7 +327,7 @@
     <string name="postalLabelsGroup" msgid="7534317297587527570">"Адрас"</string>
     <string name="imLabelsGroup" msgid="2113398976789806432">"ІМ"</string>
     <string name="organizationLabelsGroup" msgid="2342482097897299099">"Арганізацыя"</string>
-    <string name="relationLabelsGroup" msgid="8931615792208307291">"Сувязі"</string>
+    <string name="relationLabelsGroup" msgid="8931615792208307291">"Адносіны"</string>
     <string name="eventLabelsGroup" msgid="8625868552164376823">"Асаблівая дата"</string>
     <string name="sms" msgid="4246338112764847384">"Тэкставае паведамленне"</string>
     <string name="postal_address" msgid="5031809899673855074">"Адрас"</string>
@@ -466,7 +466,7 @@
     <string name="activity_title_contacts_filter" msgid="6340531582631006680">"Адлюстроўваць кантакты"</string>
     <string name="custom_list_filter" msgid="2544327670202891979">"Наладзіць прагляд"</string>
     <string name="menu_custom_filter_save" msgid="2412959737200856930">"Захаваць"</string>
-    <string name="hint_findContacts" msgid="5554298639062659655">"Шукаць у кантактах"</string>
+    <string name="hint_findContacts" msgid="5554298639062659655">"Пошук кантактаў"</string>
     <string name="contactsFavoritesLabel" msgid="8339645684721732714">"Выбранае"</string>
     <string name="menu_import" msgid="2206768098740726906">"Імпартаваць"</string>
     <string name="menu_export" msgid="1217402092617629429">"Экспартаваць"</string>

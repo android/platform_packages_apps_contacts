@@ -29,7 +29,7 @@
     <string name="header_entry_contact_list_adapter_header_title" msgid="4098233078586958762">"Créer un contact"</string>
     <string name="searchHint" msgid="1487501532610025473">"Rech. des contacts"</string>
     <string name="menu_addStar" msgid="4903812703386825130">"Ajouter aux favoris"</string>
-    <string name="menu_removeStar" msgid="3707373931808303701">"Supprimer des favoris"</string>
+    <string name="menu_removeStar" msgid="3707373931808303701">"Retirer des favoris"</string>
     <string name="description_action_menu_remove_star" msgid="4044390281910122890">"Supprimé des favoris"</string>
     <string name="description_action_menu_add_star" msgid="7316521132809388851">"Ajouté aux favoris"</string>
     <string name="menu_editContact" msgid="5039663761025630208">"Modifier"</string>
@@ -37,7 +37,7 @@
     <string name="menu_change_photo" msgid="4911246106907208055">"Changer de photo"</string>
     <string name="menu_create_contact_shortcut" msgid="8983436328557825860">"Créer un raccourci"</string>
     <string name="menu_splitAggregate" msgid="2062290275288905833">"Annuler la fusion"</string>
-    <string name="menu_editGroup" msgid="8706562583754054622">"Supprimer les contacts"</string>
+    <string name="menu_editGroup" msgid="8706562583754054622">"Retirer les contacts"</string>
     <string name="menu_renameGroup" msgid="2685886609399776475">"Renommer l\'étiquette"</string>
     <string name="menu_deleteGroup" msgid="1180215594530228294">"Supprimer l\'étiquette"</string>
     <string name="menu_addToGroup" msgid="5034813446697655310">"Ajouter un contact"</string>
@@ -183,7 +183,7 @@
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="7117943783437253341">"Annuler"</string>
     <string name="leave_customize_confirmation_dialog_message" msgid="5330853530872707231">"Supprimer les personnalisations?"</string>
     <string name="enter_contact_name" msgid="521859148893732679">"Rechercher dans les contacts"</string>
-    <string name="title_edit_group" msgid="4246193439931854759">"Supprimer les contacts"</string>
+    <string name="title_edit_group" msgid="4246193439931854759">"Retirer les contacts"</string>
     <string name="local_profile_title" msgid="1613784248702623410">"Mon profil local"</string>
     <string name="external_profile_title" msgid="2706282819025406927">"Mon profil <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g>"</string>
     <string name="contact_editor_prompt_zero_accounts" msgid="4468363031413457746">"Prenez une minute pour ajouter un compte qui sauvegardera vos contacts sur Google."</string>
@@ -369,7 +369,7 @@
     <string name="list_filter_single" msgid="6003845379327432129">"contact"</string>
     <string name="display_ungrouped" msgid="4823012484407759332">"Tous les autres contacts"</string>
     <string name="display_all_contacts" msgid="1281067776483704512">"Tous les contacts"</string>
-    <string name="menu_sync_remove" msgid="7523335046562082188">"Supprimer le groupe de synchronisation"</string>
+    <string name="menu_sync_remove" msgid="7523335046562082188">"Retirer le groupe de synchronisation"</string>
     <string name="dialog_sync_add" msgid="8012361965908515959">"Ajouter groupe de synchronisation"</string>
     <string name="display_more_groups" msgid="8398232980355188133">"Autres groupes…"</string>
     <string name="display_warn_remove_ungrouped" msgid="522866344738506017">"Le retrait du groupe \"<xliff:g id="GROUP">%s</xliff:g>\" de la synchronisation entraîne également le retrait des contacts n\'appartenant à aucun groupe."</string>

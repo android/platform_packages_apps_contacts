@@ -241,7 +241,7 @@
     <string name="hamburger_feature_highlight_body" msgid="782935036630531528">"Organiseer je contacten op een overzichtelijke en nuttige manier"</string>
     <string name="undo" msgid="2446931036220975026">"Ongedaan maken"</string>
     <string name="call_custom" msgid="2844900154492073207">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g> bellen"</string>
-    <string name="call_home" msgid="2443904771140750492">"Bellen naar huis"</string>
+    <string name="call_home" msgid="2443904771140750492">"Thuis bellen"</string>
     <string name="call_mobile" msgid="6504312789160309832">"Bellen naar mobiel"</string>
     <string name="call_work" msgid="2414313348547560346">"Bellen naar werk"</string>
     <string name="call_fax_work" msgid="5026843006300760797">"Bellen naar fax werk"</string>
@@ -341,7 +341,7 @@
     <string name="postal_region" msgid="6130239447563491435">"Staat"</string>
     <string name="postal_postcode" msgid="33077708757232659">"Postcode"</string>
     <string name="postal_country" msgid="6642804283917549861">"Land"</string>
-    <string name="map_home" msgid="2169053372466501148">"Thuisadres weergeven"</string>
+    <string name="map_home" msgid="2169053372466501148">"Woonadres weergeven"</string>
     <string name="map_work" msgid="8296916987749726461">"Werkadres weergeven"</string>
     <string name="map_other" msgid="4009931029322619674">"Adres weergeven"</string>
     <string name="map_custom" msgid="7797812861927817335">"Adres voor <xliff:g id="CUSTOM_LABEL">%s</xliff:g> bekijken"</string>

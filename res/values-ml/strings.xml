@@ -311,9 +311,9 @@
     <string name="name_middle" msgid="7330498948136181042">"മിഡിൽ നെയിം"</string>
     <string name="name_suffix" msgid="4502958221763936999">"പേരിന്റെ സഫിക്‌സ്"</string>
     <string name="name_phonetic" msgid="4746541275769990740">"ഉച്ചാരണപ്രകാരമുള്ള പേര്"</string>
-    <string name="name_phonetic_given" msgid="425534279190047812">"ഫസ്റ്റ് നെയിം"</string>
+    <string name="name_phonetic_given" msgid="425534279190047812">"ഉച്ചാരണപ്രകാരമുള്ള ഫസ്റ്റ് നെയിം"</string>
     <string name="name_phonetic_middle" msgid="6528822054594516485">"ഉച്ചാരണപ്രകാരമുള്ള മിഡിൽ നെയിം"</string>
-    <string name="name_phonetic_family" msgid="1690852801039809448">"പേരിന്റെ അവസാന ഭാഗം"</string>
+    <string name="name_phonetic_family" msgid="1690852801039809448">"ഉച്ചാരണപ്രകാരമുള്ള ലാസ്റ്റ് നെയിം"</string>
     <string name="phoneLabelsGroup" msgid="2746758650001801885">"ഫോണ്‍"</string>
     <string name="emailLabelsGroup" msgid="3360719560200449554">"ഇമെയില്‍"</string>
     <string name="postalLabelsGroup" msgid="7534317297587527570">"വിലാസം"</string>

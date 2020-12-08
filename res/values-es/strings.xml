@@ -471,11 +471,11 @@
     <string name="call_subject_limit" msgid="5679166729627777474">"<xliff:g id="COUNT">%1$s</xliff:g>/<xliff:g id="LIMIT">%2$s</xliff:g>"</string>
     <string name="call_subject_type_and_number" msgid="134754147019287616">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="5870642814752351712">"Versión de la compilación"</string>
-    <string name="about_open_source_licenses" msgid="1617836621315557445">"Licencias de código abierto"</string>
+    <string name="about_open_source_licenses" msgid="1617836621315557445">"Licencias de software libre"</string>
     <string name="about_open_source_licenses_summary" msgid="4843627659117423491">"Detalles de las licencias de software libre"</string>
     <string name="about_privacy_policy" msgid="4581488375200402678">"Política de Privacidad"</string>
-    <string name="about_terms_of_service" msgid="7419670771785057738">"Condiciones de Servicio"</string>
-    <string name="activity_title_licenses" msgid="6434398894019119709">"Licencias de código abierto"</string>
+    <string name="about_terms_of_service" msgid="7419670771785057738">"Términos del Servicio"</string>
+    <string name="activity_title_licenses" msgid="6434398894019119709">"Licencias de software libre"</string>
     <string name="url_open_error_toast" msgid="4885855620824048385">"No se ha podido abrir la URL."</string>
     <string name="account_filter_view_checked" msgid="4740544238806346376">"Se ha seleccionado <xliff:g id="ACCOUNT_INFO">%s</xliff:g>"</string>
     <string name="account_filter_view_not_checked" msgid="5782705545786455847">"No se ha seleccionado <xliff:g id="ACCOUNT_INFO">%s</xliff:g>"</string>

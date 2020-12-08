@@ -92,7 +92,7 @@
     <string name="multipleContactDeleteConfirmation" msgid="2970218685653877287">"Kufuta anwani hii kutafuta maelezo kwenye akaunti nyingi."</string>
     <string name="deleteConfirmation" msgid="3727809366015979585">"Je, ungependa kufuta anwani hii?"</string>
     <string name="deleteConfirmation_positive_button" msgid="1604511403421785160">"Futa"</string>
-    <string name="invalidContactMessage" msgid="6204402264821083362">"Mwasiliani hayupo."</string>
+    <string name="invalidContactMessage" msgid="6204402264821083362">"Anwani haipo."</string>
     <string name="createContactShortcutSuccessful_NoName" msgid="532242135930208299">"Anwani imeongezwa kwenye Skrini ya kwanza."</string>
     <string name="createContactShortcutSuccessful" msgid="6980032407920515698">"<xliff:g id="NAME">%s</xliff:g> imeongezwa kwenye Skrini ya kwanza."</string>
     <string name="photoPickerNotFoundText" msgid="6535222297923110991">"Hakuna picha inayopatikana kwenye kifaa."</string>
@@ -448,7 +448,7 @@
     <string name="share_contacts_failure" msgid="1348777470180064086">"Imeshindwa kushiriki anwani."</string>
     <string name="dialog_export" msgid="3497435010655060068">"Hamisha anwani"</string>
     <string name="dialog_import" msgid="4590232235052756593">"Leta anwani kutoka kwenye"</string>
-    <string name="share_error" msgid="4854612167186185739">"Mwasiliani huyu hawezi kushirikishwa."</string>
+    <string name="share_error" msgid="4854612167186185739">"Anwani hii haiwezi kushirikiwa."</string>
     <string name="no_contact_to_share" msgid="6285287228557175749">"Hakuna anwani za kushiriki."</string>
     <string name="menu_contacts_filter" msgid="5854584270038139275">"Anwani za kuonyesha"</string>
     <string name="activity_title_contacts_filter" msgid="6340531582631006680">"Anwani za kuonyesha"</string>

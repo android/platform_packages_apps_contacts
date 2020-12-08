@@ -310,10 +310,10 @@
     <string name="name_prefix" msgid="8857117624713905211">"Forma de tratamento"</string>
     <string name="name_middle" msgid="7330498948136181042">"Segundo nome"</string>
     <string name="name_suffix" msgid="4502958221763936999">"Título académico ou profesional"</string>
-    <string name="name_phonetic" msgid="4746541275769990740">"Nome (pronuncia)"</string>
-    <string name="name_phonetic_given" msgid="425534279190047812">"Nome (pronuncia)"</string>
-    <string name="name_phonetic_middle" msgid="6528822054594516485">"Segundo nome (pronuncia)"</string>
-    <string name="name_phonetic_family" msgid="1690852801039809448">"Apelidos (pronuncia)"</string>
+    <string name="name_phonetic" msgid="4746541275769990740">"Nome (pronunciación)"</string>
+    <string name="name_phonetic_given" msgid="425534279190047812">"Nome (pronunciación)"</string>
+    <string name="name_phonetic_middle" msgid="6528822054594516485">"Segundo nome (pronunciación)"</string>
+    <string name="name_phonetic_family" msgid="1690852801039809448">"Apelidos (pronunciación)"</string>
     <string name="phoneLabelsGroup" msgid="2746758650001801885">"Teléfono"</string>
     <string name="emailLabelsGroup" msgid="3360719560200449554">"Correo electrónico"</string>
     <string name="postalLabelsGroup" msgid="7534317297587527570">"Enderezo"</string>
@@ -430,7 +430,7 @@
     <string name="progress_notifier_message" msgid="8522060892889599746">"Importando <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g>: <xliff:g id="NAME">%3$s</xliff:g>"</string>
     <string name="export_to_vcf_file" msgid="3096479544575798192">"Exportar a ficheiro .vcf"</string>
     <string name="display_options_sort_list_by" msgid="4333658089057400431">"Ordenar por"</string>
-    <string name="display_options_phonetic_name_fields" msgid="1857564544755287298">"Nome (pronuncia)"</string>
+    <string name="display_options_phonetic_name_fields" msgid="1857564544755287298">"Nome (pronunciación)"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="3612488836474257715">"Mostrar sempre"</string>
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2693314301550366143">"Ocultar se está baleiro"</string>
     <string name="display_options_sort_by_given_name" msgid="893781924536349248">"Nome"</string>
