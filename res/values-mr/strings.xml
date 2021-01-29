@@ -198,7 +198,7 @@
     <string name="contact_editor_unlink_contacts" msgid="8399419729744305687">"दुवा रद्द करा"</string>
     <string name="add_account" msgid="3071396624500839020">"खाते जोडा"</string>
     <string name="add_new_account" msgid="573368229646104110">"नवीन खाते जोडा"</string>
-    <string name="menu_export_database" msgid="1658249125751926885">"डेटाबेस फाईल एक्सपोर्ट करा"</string>
+    <string name="menu_export_database" msgid="1658249125751926885">"डेटाबेस फाइल एक्सपोर्ट करा"</string>
     <string name="action_menu_add_new_contact_button" msgid="1201339383074001291">"नवीन संपर्क तयार करा"</string>
     <string name="expanding_entry_card_view_see_more" msgid="6636033205952561590">"अधिक पहा"</string>
     <string name="expanding_entry_card_view_see_less" msgid="6399603072579278030">"कमी पहा"</string>
@@ -353,7 +353,7 @@
     <string name="chat_gtalk" msgid="2927882858741904064">"Google Talk चा वापर करून चॅट करा"</string>
     <string name="chat_icq" msgid="4289041376069626281">"ICQ चा वापर करून चॅट करा"</string>
     <string name="chat_jabber" msgid="1097960594943864847">"Jabber चा वापर करून चॅट करा"</string>
-    <string name="chat" msgid="8390862712584830532">"चॅट करा"</string>
+    <string name="chat" msgid="8390862712584830532">"Chat"</string>
     <string name="description_minus_button" msgid="1305985971158054217">"हटवा"</string>
     <string name="expand_name_fields_description" msgid="6059558159338959487">"अधिक नाव फील्ड दर्शवा"</string>
     <string name="collapse_name_fields_description" msgid="7950435675716414477">"नाव फील्ड संकुचित करा"</string>
@@ -369,10 +369,10 @@
     <string name="list_filter_single" msgid="6003845379327432129">"संपर्क"</string>
     <string name="display_ungrouped" msgid="4823012484407759332">"इतर सर्व संपर्क"</string>
     <string name="display_all_contacts" msgid="1281067776483704512">"सर्व संपर्क"</string>
-    <string name="menu_sync_remove" msgid="7523335046562082188">"संकालन समूह काढून टाका"</string>
-    <string name="dialog_sync_add" msgid="8012361965908515959">"संकालन गट जोडा"</string>
+    <string name="menu_sync_remove" msgid="7523335046562082188">"सिंक समूह काढून टाका"</string>
+    <string name="dialog_sync_add" msgid="8012361965908515959">"सिंक गट जोडा"</string>
     <string name="display_more_groups" msgid="8398232980355188133">"अधिक गट..."</string>
-    <string name="display_warn_remove_ungrouped" msgid="522866344738506017">"संकालन करा मधून \"<xliff:g id="GROUP">%s</xliff:g>\" हटविल्‍याने संकालन करा मधून कोणत्‍याही गटबद्ध न केलेल्‍या संपर्कांना देखील हटवेल."</string>
+    <string name="display_warn_remove_ungrouped" msgid="522866344738506017">"सिंक करा मधून \"<xliff:g id="GROUP">%s</xliff:g>\" हटविल्‍याने सिंक करा मधून कोणत्‍याही गटबद्ध न केलेल्‍या संपर्कांना देखील हटवेल."</string>
     <string name="savingDisplayGroups" msgid="6779839417901711381">"प्रदर्शन पर्याय सेव्ह करत आहे…"</string>
     <string name="listCustomView" msgid="5782275477737032610">"सानुकूलित दृश्य"</string>
     <string name="dialog_new_contact_account" msgid="5652018124788855057">"इंपोर्ट केलेले संपर्क यावर सेव्ह करा:"</string>
@@ -386,7 +386,7 @@
       <item quantity="other"><xliff:g id="COUNT_2">^1</xliff:g> संपर्क • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
       <item quantity="one"><xliff:g id="COUNT_0">^1</xliff:g> संपर्क • <xliff:g id="PHONE_NUMBER_1">^2</xliff:g></item>
     </plurals>
-    <string name="import_from_vcf_file" msgid="6776403212804361301">".vcf फाईल"</string>
+    <string name="import_from_vcf_file" msgid="6776403212804361301">".vcf फाइल"</string>
     <string name="nothing_to_import_message" msgid="2594519620375509783">"इंपोर्ट करण्यासाठी काहीही नाही"</string>
     <string name="import_from_vcf_file_confirmation_message" msgid="8579284961401472204">"vCard मधून संपर्क इंपोर्ट करायचे?"</string>
     <string name="cancel_import_confirmation_message" msgid="1007412828398265611">"<xliff:g id="FILENAME">%s</xliff:g> चे इंपोर्ट रद्द करायचे?"</string>
@@ -399,7 +399,7 @@
     <string name="missing_required_permission" msgid="1308037728470791436">"तुम्ही आवश्‍यक असलेली एक परवानगी अक्षम केली आहे."</string>
     <string name="fail_reason_error_occurred_during_export" msgid="6179270404825288837">"एक्सपोर्ट दरम्‍यान एरर आलीt: \"<xliff:g id="EXACT_REASON">%s</xliff:g>\"."</string>
     <string name="fail_reason_io_error" msgid="6364839914349999408">"I/O एरर"</string>
-    <string name="fail_reason_low_memory_during_import" msgid="4525361860523306991">"पुरेशी मेमरी नाही. फाईल कदाचित खूप मोठी असू शकते."</string>
+    <string name="fail_reason_low_memory_during_import" msgid="4525361860523306991">"पुरेशी मेमरी नाही. फाइल कदाचित खूप मोठी असू शकते."</string>
     <string name="fail_reason_not_supported" msgid="6449916670421646290">"स्वरूपन समर्थित नाही."</string>
     <string name="exporting_vcard_finished_title" msgid="1984393609140969504">"<xliff:g id="FILENAME">%s</xliff:g> एक्सपोर्ट करणे समाप्त झाले."</string>
     <string name="exporting_vcard_finished_title_fallback" msgid="9029067439586573959">"संपर्क इंपोर्ट करणे समाप्त झाले"</string>
@@ -418,7 +418,7 @@
     <string name="importing_vcard_finished_title" msgid="2274644947000264322">"vCard <xliff:g id="FILENAME">%s</xliff:g> इंपोर्ट करणे समाप्त झाले"</string>
     <string name="importing_vcard_canceled_title" msgid="8165471996631186776">"<xliff:g id="FILENAME">%s</xliff:g> इंपोर्ट करणे रद्द झाले"</string>
     <string name="vcard_import_will_start_message" msgid="4514702035621833178">"<xliff:g id="FILENAME">%s</xliff:g> लवकरच इंपोर्ट केली जाईल."</string>
-    <string name="vcard_import_will_start_message_with_default_name" msgid="8205422202924103470">"फाईल लवकरच इंपोर्ट केली जाईल."</string>
+    <string name="vcard_import_will_start_message_with_default_name" msgid="8205422202924103470">"फाइल लवकरच इंपोर्ट केली जाईल."</string>
     <string name="vcard_import_request_rejected_message" msgid="4754292694777189540">"vCard इंपोर्ट विनंती नाकारली. नंतर पुन्हा प्रयत्न करा."</string>
     <string name="contacts_export_will_start_message" msgid="6428126265599715944">"संपर्क लवकरच एक्सपोर्ट केले जातील."</string>
     <string name="vcard_export_request_rejected_message" msgid="6455336845734884740">"vCard एक्सपोर्ट विनंती नाकारली. नंतर पुन्हा प्रयत्न करा."</string>
@@ -435,7 +435,7 @@
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2693314301550366143">"रिक्त असल्यास लपवा"</string>
     <string name="display_options_sort_by_given_name" msgid="893781924536349248">"नाव"</string>
     <string name="display_options_sort_by_family_name" msgid="1282763552330910876">"आडनाव"</string>
-    <string name="display_options_view_names_as" msgid="4060686468465916565">"नाव स्वरूपन"</string>
+    <string name="display_options_view_names_as" msgid="4060686468465916565">"नाव फॉरमॅट"</string>
     <string name="display_options_view_given_name_first" msgid="383885125505521383">"नाव प्रथम"</string>
     <string name="display_options_view_family_name_first" msgid="6597077054231296007">"आडनाव प्रथम"</string>
     <string name="settings_accounts" msgid="119582613811929994">"खाती"</string>
@@ -495,12 +495,12 @@
     <string name="sim_import_failed_toast" msgid="358117391138073786">"सिम संपर्क इंपोर्ट करण्यात अयशस्वी"</string>
     <string name="sim_import_title" msgid="8202961146093040684">"सिम वरून इंपोर्ट करा"</string>
     <string name="sim_import_cancel_content_description" msgid="4746065462808862682">"रद्द करा"</string>
-    <string name="auto_sync_off" msgid="7039314601316227882">"स्वयं-संकालन बंद आहे. चालू करण्यासाठी टॅप करा."</string>
+    <string name="auto_sync_off" msgid="7039314601316227882">"स्वयं-सिंक बंद आहे. सुरू करण्यासाठी टॅप करा."</string>
     <string name="dismiss_sync_alert" msgid="4057176963960104786">"डिसमिस करा"</string>
-    <string name="account_sync_off" msgid="6187683798342006021">"स्वयं-संकालन बंद आहे. चालू करण्यासाठी टॅप करा."</string>
-    <string name="turn_auto_sync_on_dialog_title" msgid="3812155064863594938">"स्वयं-संकालन चालू करायचे?"</string>
+    <string name="account_sync_off" msgid="6187683798342006021">"स्वयं-सिंक बंद आहे. सुरू करण्यासाठी टॅप करा."</string>
+    <string name="turn_auto_sync_on_dialog_title" msgid="3812155064863594938">"स्वयं-सिंक सुरू करायचे?"</string>
     <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"फक्त संपर्कांमध्ये नाही, तर तुम्ही सर्व अ‍ॅप्स आणि खात्यांमध्ये करता ते बदल, वेब आणि आपल्या अन्य डिव्हाइसेस दरम्यान अपडेट ठेवले जातील."</string>
-    <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"चालू करा"</string>
+    <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"सुरू करा"</string>
     <string name="connection_error_message" msgid="7446131881946138093">"कोणतेही कनेक्शन नाही"</string>
     <string name="single_sim_display_label" msgid="264062966309455515">"सिम"</string>
     <string name="show_more_content_description" msgid="6298277298495491712">"अधिक दर्शवा"</string>

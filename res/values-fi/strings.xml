@@ -96,7 +96,7 @@
     <string name="createContactShortcutSuccessful_NoName" msgid="532242135930208299">"Yhteystieto lisättiin aloitusnäytölle."</string>
     <string name="createContactShortcutSuccessful" msgid="6980032407920515698">"<xliff:g id="NAME">%s</xliff:g> lisättiin aloitusnäytölle."</string>
     <string name="photoPickerNotFoundText" msgid="6535222297923110991">"Laitteella ei ole kuvia."</string>
-    <string name="attach_photo_dialog_title" msgid="7948754072673745235">"Yhteyshenkilön valokuva"</string>
+    <string name="attach_photo_dialog_title" msgid="7948754072673745235">"Yhteyshenkilön kuva"</string>
     <string name="customLabelPickerTitle" msgid="816694850254307154">"Oman luokituksen nimi"</string>
     <string name="removePhoto" msgid="1190099414600730001">"Poista kuva"</string>
     <string name="noContacts" msgid="3030512741779213810">"Yhteystietoluettelo on tyhjä."</string>
@@ -149,10 +149,10 @@
     <string name="video_chat" msgid="2477295971622477433">"Videokeskustelu"</string>
     <string name="account_type_format" msgid="4926968760755013450">"<xliff:g id="SOURCE">%1$s</xliff:g>-osoite"</string>
     <string name="google_account_type_format" msgid="4046692740262396811">"<xliff:g id="SOURCE">%1$s</xliff:g>-tili"</string>
-    <string name="take_photo" msgid="820071555236547516">"Ota valokuva"</string>
+    <string name="take_photo" msgid="820071555236547516">"Ota kuva"</string>
     <string name="take_new_photo" msgid="4383091978116875778">"Ota uusi kuva"</string>
-    <string name="pick_photo" msgid="2050859661654812588">"Valitse valokuva"</string>
-    <string name="pick_new_photo" msgid="4218112182908240970">"Valitse uusi valokuva"</string>
+    <string name="pick_photo" msgid="2050859661654812588">"Valitse kuva"</string>
+    <string name="pick_new_photo" msgid="4218112182908240970">"Valitse uusi kuva"</string>
     <string name="search_results_searching" msgid="1373859095361975648">"Haetaan..."</string>
     <string name="event_edit_field_hint_text" msgid="1720286136507504896">"Päivämäärä"</string>
     <string name="group_edit_field_hint_text" msgid="1159504474053684478">"Tunniste"</string>
@@ -217,9 +217,9 @@
     <string name="header_phone_entry" msgid="7092868248113091293">"Puhelin"</string>
     <string name="content_description_directions" msgid="860179347986211929">"reittiohjeet sijaintiin"</string>
     <string name="editor_more_fields" msgid="6158558083947445518">"Lisää kenttiä"</string>
-    <string name="editor_change_photo_content_description" msgid="8146896029044539032">"Vaihda yhteystiedon valokuvaa"</string>
-    <string name="editor_add_photo_content_description" msgid="8457486801272200575">"Lisää yhteystiedon valokuva"</string>
-    <string name="editor_contact_photo_content_description" msgid="8699261934352739">"Yhteystiedon valokuva"</string>
+    <string name="editor_change_photo_content_description" msgid="8146896029044539032">"Vaihda yhteystiedon kuvaa"</string>
+    <string name="editor_add_photo_content_description" msgid="8457486801272200575">"Lisää yhteystiedon kuva"</string>
+    <string name="editor_contact_photo_content_description" msgid="8699261934352739">"Yhteystiedon kuva"</string>
     <string name="editor_failed_to_load" msgid="2328074829787373644">"Muokkausnäkymän avaaminen epäonnistui."</string>
     <string name="editor_account_selector_title" msgid="3190515989740696043">"Tallennetaan tilille"</string>
     <string name="editor_account_selector_read_only_title" msgid="4870485850053962114">"Tilin <xliff:g id="ACCOUNT">%s</xliff:g> yhteystietoja ei voi muokata."</string>
@@ -474,7 +474,7 @@
     <string name="about_open_source_licenses" msgid="1617836621315557445">"Avoimen lähdekoodin käyttöluvat"</string>
     <string name="about_open_source_licenses_summary" msgid="4843627659117423491">"Avoimen lähdekoodin ohjelmiston käyttöluvan tiedot"</string>
     <string name="about_privacy_policy" msgid="4581488375200402678">"Tietosuojakäytäntö"</string>
-    <string name="about_terms_of_service" msgid="7419670771785057738">"Käyttöehdot"</string>
+    <string name="about_terms_of_service" msgid="7419670771785057738">"Palveluehdot"</string>
     <string name="activity_title_licenses" msgid="6434398894019119709">"Avoimen lähdekoodin käyttöluvat"</string>
     <string name="url_open_error_toast" msgid="4885855620824048385">"URL-osoitteen avaus epäonnistui."</string>
     <string name="account_filter_view_checked" msgid="4740544238806346376">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g>, valittu"</string>

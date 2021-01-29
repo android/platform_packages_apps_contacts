@@ -103,7 +103,7 @@
     <string name="emptyGroup" msgid="8598261660865081152">"এই লেবেলে কোনো পরিচিতি নেই"</string>
     <string name="emptyAccount" msgid="7450843210977018582">"এই অ্যাকাউন্টে কোনো পরিচিতি নেই"</string>
     <string name="emptyMainList" msgid="3266182207039677163">"আপনার পরিচিতির তালিকা খালি"</string>
-    <string name="contactSavedNamedToast" msgid="3067050290584834386">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> সংরক্ষণ করা হয়েছে"</string>
+    <string name="contactSavedNamedToast" msgid="3067050290584834386">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> সেভ করা হয়েছে"</string>
     <string name="contactSavedToast" msgid="4370392215196995301">"পরিচিতি সংরক্ষণ করা হয়েছে"</string>
     <string name="contactUnlinkedToast" msgid="6791720274141804377">"পরিচিতিগুলি লিঙ্কমুক্ত করা হয়েছে"</string>
     <string name="contactSavedErrorToast" msgid="3213619905154956918">"পরিচিতিতে করা পরিবর্তনগুলি সংরক্ষণ করা গেল না"</string>
@@ -353,7 +353,7 @@
     <string name="chat_gtalk" msgid="2927882858741904064">"Google Talk ব্যবহার করে চ্যাট করুন"</string>
     <string name="chat_icq" msgid="4289041376069626281">"ICQ ব্যবহার করে চ্যাট করুন"</string>
     <string name="chat_jabber" msgid="1097960594943864847">"Jabber ব্যবহার করে চ্যাট করুন"</string>
-    <string name="chat" msgid="8390862712584830532">"চ্যাট"</string>
+    <string name="chat" msgid="8390862712584830532">"Chat"</string>
     <string name="description_minus_button" msgid="1305985971158054217">"মুছুন"</string>
     <string name="expand_name_fields_description" msgid="6059558159338959487">"আরও নামের ক্ষেত্রগুলি দেখান"</string>
     <string name="collapse_name_fields_description" msgid="7950435675716414477">"নামের ক্ষেত্রটিকে সঙ্কুচিত করুন"</string>

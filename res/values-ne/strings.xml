@@ -286,7 +286,7 @@
     <string name="sms_by_shortcut" msgid="4682340916268521006">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (सन्देश पठाउनुहोस्)"</string>
     <string name="description_video_call" msgid="4956825008907720371">"भिडियो कल बनाउनुहोस्"</string>
     <string name="clearFrequentsConfirmation_title" msgid="9194415661170740437">"प्रायः सम्पर्क गरिएकाहरूलाई हटाउने हो?"</string>
-    <string name="clearFrequentsConfirmation" msgid="2120741757522063938">"तपाईंले सम्पर्कहरू र फोन अनुप्रयोगहरूमा बारम्बार सम्पर्क गरेको सूची खाली गर्नुहुनेछ र स्क्रयाचबाट तपाईंको ठेगाना प्राथमिकताहरू सिक्नको लागि इमेल अनुप्रयोगहरूलाई दबाब दिनुहुनेछ।"</string>
+    <string name="clearFrequentsConfirmation" msgid="2120741757522063938">"तपाईंले सम्पर्कहरू र फोन एपहरूमा बारम्बार सम्पर्क गरेको सूची खाली गर्नुहुनेछ र स्क्रयाचबाट तपाईंको ठेगाना प्राथमिकताहरू सिक्नको लागि इमेल एपहरूलाई दबाब दिनुहुनेछ।"</string>
     <string name="clearFrequentsProgress_title" msgid="8271935295080659743">"प्रायः सम्पर्क गरिएकाहरूलाई हटाउँदै...."</string>
     <string name="status_available" msgid="8081626460682959098">"उपलब्ध"</string>
     <string name="status_away" msgid="2677693194455091315">"टाढा"</string>

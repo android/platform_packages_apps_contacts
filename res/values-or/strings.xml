@@ -134,7 +134,7 @@
     <string name="quickcontact_add_email" msgid="1442894568471116797">"ଇମେଲ୍ ଯୋଡ଼ନ୍ତୁ"</string>
     <string name="missing_app" msgid="5674389915738964148">"ଏହି କାର୍ଯ୍ୟକୁ ନିୟନ୍ତ୍ରଣ କରିବା ପାଇଁ କୌଣସି ଆପ୍‍ ମିଳିଲା ନାହିଁ"</string>
     <string name="menu_share" msgid="6343022811796001773">"ସେୟାର୍‍ କରନ୍ତୁ"</string>
-    <string name="menu_add_contact" msgid="5822356185421997656">"ଯୋଗାଯୋଗରେ ଯୋଡ଼ନ୍ତୁ"</string>
+    <string name="menu_add_contact" msgid="5822356185421997656">"ଯୋଗାଯୋଗଗୁଡ଼ିକରେ ଯୋଗ କରନ୍ତୁ"</string>
     <string name="menu_add_contacts" msgid="7114262784903366463">"ଯୋଡ଼ନ୍ତୁ"</string>
     <plurals name="title_share_via" formatted="false" msgid="3868648642107664607">
       <item quantity="other">ମାଧ୍ୟମରେ ଯୋଗାଯୋଗ ସେୟାର୍ କରନ୍ତୁ</item>
@@ -174,7 +174,7 @@
     <string name="create_group_item_label" msgid="921929508079162463">"ନୂଆ ତିଆରି କରନ୍ତୁ…"</string>
     <string name="delete_group_dialog_message" msgid="754082019928025404">"\"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\" ଲେବଲକୁ ଡିଲିଟ୍ କରିବେ?(ଯୋଗାଯୋଗ ଆପେଆପେ ଡିଲିଟ୍ ହେବନାହିଁ।)"</string>
     <string name="toast_join_with_empty_contact" msgid="3886468280665325350">"ଅନ୍ୟ ଯୋଗାଯୋଗ ସହ ଲିଙ୍କ କରିବା ପୂର୍ବରୁ ଯୋଗାଯୋଗାଙ୍କ ନାମ ଲେଖନ୍ତୁ।"</string>
-    <string name="copy_text" msgid="6835250673373028909">"କପୀ କରି କ୍ଲିପ୍‌ବୋର୍ଡକୁ ନିଅନ୍ତୁ"</string>
+    <string name="copy_text" msgid="6835250673373028909">"କ୍ଲିପ୍‌ବୋର୍ଡକୁ କପି କରନ୍ତୁ"</string>
     <string name="set_default" msgid="3704074175618702225">"ଡିଫଲ୍ଟ ସେଟ୍‍ କରନ୍ତୁ"</string>
     <string name="clear_default" msgid="2055883863621491533">"ଡିଫଲ୍ଟକୁ ଖାଲି କରନ୍ତୁ"</string>
     <string name="toast_text_copied" msgid="845906090076228771">"ଟେକ୍ସଟ୍ କପୀ କରାଗଲା"</string>
@@ -353,7 +353,7 @@
     <string name="chat_gtalk" msgid="2927882858741904064">"Google Talk ବ୍ୟବହାର କରି ଚାଟ୍‍ କରନ୍ତୁ"</string>
     <string name="chat_icq" msgid="4289041376069626281">"ICQ ବ୍ୟବହାର କରି ଚା‍ଟ୍‍ କରନ୍ତୁ"</string>
     <string name="chat_jabber" msgid="1097960594943864847">"Jabber ବ୍ୟବହାର କରି ଚାଟ୍‍ କରନ୍ତୁ"</string>
-    <string name="chat" msgid="8390862712584830532">"ଚାଟ୍ କରନ୍ତୁ"</string>
+    <string name="chat" msgid="8390862712584830532">"Chat"</string>
     <string name="description_minus_button" msgid="1305985971158054217">"ଡିଲିଟ୍ କରନ୍ତୁ"</string>
     <string name="expand_name_fields_description" msgid="6059558159338959487">"ଅଧିକ ନାମ କ୍ଷେତ୍ର ଦର୍ଶାନ୍ତୁ"</string>
     <string name="collapse_name_fields_description" msgid="7950435675716414477">"ନାମ କ୍ଷେତ୍ରକୁ ସଙ୍କୁଚିତ କରନ୍ତୁ"</string>
