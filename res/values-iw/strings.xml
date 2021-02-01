@@ -514,7 +514,7 @@
     <string name="account_sync_off" msgid="6187683798342006021">"סנכרון החשבון מושבת. הקש כדי להפעיל אותו."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="3812155064863594938">"האם להשבית את הסנכרון האוטומטי?"</string>
     <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"‏השינויים שתבצע בכל האפליקציות והחשבונות, לא רק באנשי הקשר מחשבון Google, יסונכרנו בין האינטרנט לבין המכשירים שלך."</string>
-    <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"הפעל"</string>
+    <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"הפעלה"</string>
     <string name="connection_error_message" msgid="7446131881946138093">"אין חיבור"</string>
     <string name="single_sim_display_label" msgid="264062966309455515">"‏כרטיס SIM"</string>
     <string name="show_more_content_description" msgid="6298277298495491712">"הצג עוד"</string>

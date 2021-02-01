@@ -178,7 +178,7 @@
     <string name="set_default" msgid="3704074175618702225">"Setel sebagai default"</string>
     <string name="clear_default" msgid="2055883863621491533">"Hapus default"</string>
     <string name="toast_text_copied" msgid="845906090076228771">"Teks disalin"</string>
-    <string name="cancel_confirmation_dialog_message" msgid="7486892574762212762">"Buang perubahan?"</string>
+    <string name="cancel_confirmation_dialog_message" msgid="7486892574762212762">"Hapus perubahan?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="8280294641821133477">"Buang"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="7117943783437253341">"Batal"</string>
     <string name="leave_customize_confirmation_dialog_message" msgid="5330853530872707231">"Hapus penyesuaian?"</string>

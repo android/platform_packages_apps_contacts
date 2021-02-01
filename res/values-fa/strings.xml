@@ -129,7 +129,7 @@
     <string name="listFoundAllContactsZero" msgid="1933842282916988563">"مخاطبی موجود نیست"</string>
     <string name="add_contact_dlg_message_fmt" msgid="7498024710169591375">"\"<xliff:g id="EMAIL">%s</xliff:g>\" به مخاطبین افزوده شود؟"</string>
     <string name="search_settings_description" msgid="5630675648560839920">"نام‌های مخاطبین شما"</string>
-    <string name="quickcontact_transparent_view_description" msgid="7783027850792852265">"برای بازگشت به صفحه قبلی کلیک کنید"</string>
+    <string name="quickcontact_transparent_view_description" msgid="7783027850792852265">"برای بازگشت به صفحه قبل کلیک کنید"</string>
     <string name="quickcontact_add_phone_number" msgid="1683577288080727862">"افزودن شماره تلفن"</string>
     <string name="quickcontact_add_email" msgid="1442894568471116797">"افزودن ایمیل"</string>
     <string name="missing_app" msgid="5674389915738964148">"برنامه‌ای برای انجام این عملکرد یافت نشد."</string>

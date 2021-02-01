@@ -163,7 +163,7 @@
     <string name="contact_directory_description" msgid="1773630547110881835">"Direktoriya <xliff:g id="TYPE">%1$s</xliff:g>"</string>
     <string name="activity_title_settings" msgid="4004290638426915162">"Sozlamalar"</string>
     <string name="menu_settings" msgid="3524924670246877187">"Sozlamalar"</string>
-    <string name="menu_help" msgid="287801702920372292">"Yordam va fikr-mulohaza"</string>
+    <string name="menu_help" msgid="287801702920372292">"Yordam/fikr-mulohaza"</string>
     <string name="organization_company_and_title" msgid="7197631449041284518">"<xliff:g id="COMPANY_0">%2$s</xliff:g>, <xliff:g id="COMPANY_1">%1$s</xliff:g>"</string>
     <string name="non_phone_caption" msgid="7343449684187013327">"Telefon raqami"</string>
     <string name="non_phone_add_to_contacts" msgid="5472784294274676663">"Kontaktlarga saqlash"</string>

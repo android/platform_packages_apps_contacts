@@ -106,11 +106,11 @@
     <string name="contactSavedNamedToast" msgid="3067050290584834386">"Контактот <xliff:g id="DISPLAY_NAME">%s</xliff:g> е зачуван"</string>
     <string name="contactSavedToast" msgid="4370392215196995301">"Контактот е зачуван"</string>
     <string name="contactUnlinkedToast" msgid="6791720274141804377">"Контактите се раздвоени"</string>
-    <string name="contactSavedErrorToast" msgid="3213619905154956918">"Не можеше да се зачуваат промените на контактот"</string>
-    <string name="contactUnlinkErrorToast" msgid="7289356996668886841">"Не можеше да се прекине врската со контактот"</string>
-    <string name="contactJoinErrorToast" msgid="1222155997933362787">"Не можеше да се поврзе контактот"</string>
+    <string name="contactSavedErrorToast" msgid="3213619905154956918">"Не може да се зачуваат промените на контактот"</string>
+    <string name="contactUnlinkErrorToast" msgid="7289356996668886841">"Не може да се прекине врската со контактот"</string>
+    <string name="contactJoinErrorToast" msgid="1222155997933362787">"Не може да се поврзе контактот"</string>
     <string name="contactGenericErrorToast" msgid="5689457475864876100">"Грешка при зачувување на контактот"</string>
-    <string name="contactPhotoSavedErrorToast" msgid="8568460180541397272">"Не можеше да се зачуваат промените на фотографијата на контактот"</string>
+    <string name="contactPhotoSavedErrorToast" msgid="8568460180541397272">"Не може да се зачуваат промените на фотографијата на контактот"</string>
     <string name="groupLoadErrorToast" msgid="4141488223976370583">"Етикетата не успеа да се вчита"</string>
     <string name="groupDeletedToast" msgid="7774363940327847515">"Етикетата е избришана"</string>
     <string name="groupCreatedToast" msgid="1685148819468403239">"Етикетата е создадена"</string>
@@ -118,7 +118,7 @@
     <string name="groupUpdatedToast" msgid="3381549467345607379">"Етикетата е ажурирана"</string>
     <string name="groupMembersRemovedToast" msgid="8019566066934628011">"Отстрането од етикетата"</string>
     <string name="groupMembersAddedToast" msgid="1939782548900157287">"Додадено на етикетата"</string>
-    <string name="groupSavedErrorToast" msgid="8456912862816145318">"Не можеше да се зачуваат промените на етикетата"</string>
+    <string name="groupSavedErrorToast" msgid="8456912862816145318">"Не може да се зачуваат промените на етикетата"</string>
     <string name="groupExistsErrorMessage" msgid="912222525098791136">"Етикетата веќе постои"</string>
     <string name="groupSomeContactsNoEmailsToast" msgid="2142963883699535155">"Некои од контактите немаат е-пошта."</string>
     <string name="groupSomeContactsNoPhonesToast" msgid="2454029254458875746">"Некои од контактите немаат телефонски број."</string>
@@ -393,8 +393,8 @@
     <string name="cancel_export_confirmation_message" msgid="370693160959236239">"Да се откаже извозот на <xliff:g id="FILENAME">%s</xliff:g>?"</string>
     <string name="cancel_vcard_import_or_export_failed" msgid="3041814872516288484">"Не може да се откаже увоз/извоз на vCard"</string>
     <string name="fail_reason_unknown" msgid="3721044979355043778">"Непозната грешка."</string>
-    <string name="fail_reason_could_not_open_file" msgid="6015509564074145162">"„<xliff:g id="FILE_NAME">%1$s</xliff:g>“ не можеше да се отвори: <xliff:g id="EXACT_REASON">%2$s</xliff:g>."</string>
-    <string name="fail_reason_could_not_initialize_exporter" msgid="4145819808407973981">"Не можеше да се вклучи извозникот: „<xliff:g id="EXACT_REASON">%s</xliff:g>“."</string>
+    <string name="fail_reason_could_not_open_file" msgid="6015509564074145162">"„<xliff:g id="FILE_NAME">%1$s</xliff:g>“ не може да се отвори: <xliff:g id="EXACT_REASON">%2$s</xliff:g>."</string>
+    <string name="fail_reason_could_not_initialize_exporter" msgid="4145819808407973981">"Не може да се вклучи извозникот: „<xliff:g id="EXACT_REASON">%s</xliff:g>“."</string>
     <string name="fail_reason_no_exportable_contact" msgid="487925011719622851">"Нема контакт на кој може да се изврши извоз."</string>
     <string name="missing_required_permission" msgid="1308037728470791436">"Оневозможивте потребна дозвола."</string>
     <string name="fail_reason_error_occurred_during_export" msgid="6179270404825288837">"Настанаи грешка при извоз: „<xliff:g id="EXACT_REASON">%s</xliff:g>“."</string>
@@ -408,13 +408,13 @@
     <string name="exporting_vcard_canceled_title" msgid="1287529222628052526">"Извозот на <xliff:g id="FILENAME">%s</xliff:g> е откажан."</string>
     <string name="exporting_contact_list_title" msgid="6599904516394311592">"Се врши извоз на податоци за контакт"</string>
     <string name="exporting_contact_list_message" msgid="6253904938452184387">"Во моментов се врши извоз на податоците за контакт."</string>
-    <string name="composer_failed_to_get_database_infomation" msgid="4394169679142311379">"Не можеше да добие информации за базата на податоци."</string>
+    <string name="composer_failed_to_get_database_infomation" msgid="4394169679142311379">"Не може да добие информации за базата на податоци."</string>
     <string name="composer_has_no_exportable_contact" msgid="473911071832548562">"Нема контакти за извезување."</string>
     <string name="composer_not_initialized" msgid="3861391548605450184">"Композиторот на vCard не започна правилно."</string>
     <string name="exporting_contact_failed_title" msgid="9003659313161289860">"Не е можен извоз"</string>
     <string name="exporting_contact_failed_message" msgid="9198720310560773485">"Извозот на податоците за контакт не се изврши.\nПричина: „<xliff:g id="FAIL_REASON">%s</xliff:g>“"</string>
     <string name="importing_vcard_description" msgid="6982207216746936735">"Се врши увоз на <xliff:g id="NAME">%s</xliff:g>"</string>
-    <string name="reading_vcard_failed_title" msgid="1230432142768184978">"Не можеше да прочита податоци од vCard"</string>
+    <string name="reading_vcard_failed_title" msgid="1230432142768184978">"Не може да прочита податоци од vCard"</string>
     <string name="importing_vcard_finished_title" msgid="2274644947000264322">"Заврши увозот на vCard <xliff:g id="FILENAME">%s</xliff:g>"</string>
     <string name="importing_vcard_canceled_title" msgid="8165471996631186776">"Увезувањето на <xliff:g id="FILENAME">%s</xliff:g> е откажано"</string>
     <string name="vcard_import_will_start_message" msgid="4514702035621833178">"Ќе се изврши увоз на <xliff:g id="FILENAME">%s</xliff:g> наскоро."</string>
@@ -424,7 +424,7 @@
     <string name="vcard_export_request_rejected_message" msgid="6455336845734884740">"Барањето за извоз на vCard беше одбиено. Обидете се повторно подоцна."</string>
     <string name="vcard_unknown_filename" msgid="8320954544777782497">"контакт"</string>
     <string name="caching_vcard_message" msgid="1879339732783666517">"Се кешираат vCard(s) во локалната привремена меморија. Реалниот увоз ќе започне наскоро."</string>
-    <string name="vcard_import_failed" msgid="37313715326741013">"Не можеше да се изврши увоз на vCard."</string>
+    <string name="vcard_import_failed" msgid="37313715326741013">"Не може да се изврши увоз на vCard."</string>
     <string name="nfc_vcard_file_name" msgid="2113518216329123152">"Контакт од NFC"</string>
     <string name="caching_vcard_title" msgid="6333926052524937628">"Кеширање"</string>
     <string name="progress_notifier_message" msgid="8522060892889599746">"Се врши увоз на <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g>: <xliff:g id="NAME">%3$s</xliff:g>"</string>
@@ -506,7 +506,7 @@
     <string name="show_more_content_description" msgid="6298277298495491712">"Прикажи повеќе"</string>
     <string name="importing_sim_finished_title" msgid="6436721150882268416">"Увезувањето на SIM-картичката заврши"</string>
     <string name="importing_sim_failed_title" msgid="1046154274170241788">"Увезувањето не успеа"</string>
-    <string name="importing_sim_failed_message" msgid="55568522164349044">"Не можеше да се увезат контакти од SIM-картичката"</string>
+    <string name="importing_sim_failed_message" msgid="55568522164349044">"Не може да се увезат контакти од SIM-картичката"</string>
     <string name="importing_sim_in_progress_title" msgid="7647907413920018595">"Се увезува SIM"</string>
     <string name="contacts_default_notification_channel" msgid="5116916969874075866">"Известувања"</string>
     <string name="yes_button" msgid="1120514817091581293">"Да"</string>

@@ -129,7 +129,7 @@
     <string name="listFoundAllContactsZero" msgid="1933842282916988563">"အဆက်အသွယ်များမရှိ"</string>
     <string name="add_contact_dlg_message_fmt" msgid="7498024710169591375">"\"<xliff:g id="EMAIL">%s</xliff:g>\" ကို လိပ်စာထဲ ထည့်မလား?"</string>
     <string name="search_settings_description" msgid="5630675648560839920">"အဆက်အသွယ်များ၏နာမည်များ"</string>
-    <string name="quickcontact_transparent_view_description" msgid="7783027850792852265">"ယခင် မျက်နှာပြင်သို့ ပြန်ရန် ကလစ်ပါ"</string>
+    <string name="quickcontact_transparent_view_description" msgid="7783027850792852265">"ယခင် မျက်နှာပြင်သို့ ပြန်ရန် န"</string>
     <string name="quickcontact_add_phone_number" msgid="1683577288080727862">"ဖုန်းနံပါတ် ထည့်ရန်"</string>
     <string name="quickcontact_add_email" msgid="1442894568471116797">"အီးမေးလ် ထည့်ရန်"</string>
     <string name="missing_app" msgid="5674389915738964148">"ဤလုပ်ဆောင်ချက်ကို ပြုလုပ်မည့် အက်ပ်မရှိပါ။"</string>
