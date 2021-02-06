@@ -15,19 +15,19 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.android.contacts"
-          android:versionCode="10731"
-          android:versionName="1.7.31">
+    package="com.android.contacts"
+    android:versionCode="10732"
+    android:versionName="1.7.32">
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="29"/>
+        android:targetSdkVersion="29" />
 
-    <original-package android:name="com.android.contacts"/>
+    <original-package android:name="com.android.contacts" />
 
     <!-- Contacts permission listed first because order determines
          order that permissions are requested with some OEMs -->
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
