@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58be2785_67adbd97",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237773
+      },
+      "writtenOn": "2021-02-08T23:58:45Z",
+      "side": 1,
+      "message": "This is the same fix as for aosp/1580803. Apparently this was already fixed on internal master so I\u0027m just cherry-picking the change here to avoid the merge conflict.",
+      "revId": "4d36a0106c6378c1564bf3026dfd0377902a632c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
