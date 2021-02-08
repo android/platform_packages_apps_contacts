@@ -17,6 +17,7 @@ android_test {
         "hamcrest-library",
         "mockito-target-minus-junit4",
         "ub-uiautomator",
+        "truth-prebuilt",
     ],
 
     libs: [

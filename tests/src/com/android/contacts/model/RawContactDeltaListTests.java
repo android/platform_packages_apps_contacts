@@ -16,7 +16,11 @@
 
 package com.android.contacts.model;
 
+import static com.google.common.truth.Truth.assertWithMessage;
+
 import android.content.ContentProviderOperation;
+import android.content.ContentProviderResult;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.net.Uri;
@@ -27,14 +31,14 @@ import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.Data;
 import android.provider.ContactsContract.RawContacts;
 import android.test.AndroidTestCase;
-import android.test.suitebuilder.annotation.LargeTest;
+
+import androidx.test.filters.LargeTest;
 
 import com.android.contacts.compat.CompatUtils;
 import com.android.contacts.model.account.AccountType;
 
 import com.google.common.collect.Lists;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -52,6 +56,8 @@ public class RawContactDeltaListTests extends AndroidTestCase {
 
     private static final long CONTACT_FIRST = 1;
     private static final long CONTACT_SECOND = 2;
+
+    public static final long INSERTED_CONTACT_ID = 3;
 
     public static final long CONTACT_BOB = 10;
     public static final long CONTACT_MARY = 11;
@@ -73,7 +79,8 @@ public class RawContactDeltaListTests extends AndroidTestCase {
     }
 
     @Override
-    public void setUp() {
+    public void setUp() throws Exception {
+        super.setUp();
         mContext = getContext();
     }
 
@@ -83,13 +90,6 @@ public class RawContactDeltaListTests extends AndroidTestCase {
      */
     protected AccountType getAccountType() {
         return new RawContactModifierTests.MockContactsSource();
-    }
-
-    static ContentValues getValues(ContentProviderOperation operation)
-            throws NoSuchFieldException, IllegalAccessException {
-        final Field field = ContentProviderOperation.class.getDeclaredField("mValues");
-        field.setAccessible(true);
-        return (ContentValues) field.get(operation);
     }
 
     static RawContactDelta getUpdate(Context context, long rawContactId) {
@@ -181,44 +181,65 @@ public class RawContactDeltaListTests extends AndroidTestCase {
     }
 
     static void assertDiffPattern(ArrayList<CPOWrapper> diff, CPOWrapper... pattern) {
-        assertEquals("Unexpected operations", pattern.length, diff.size());
+        ArrayList<ContentProviderOperation> diffOperations = new ArrayList<>(diff.size());
+        for (CPOWrapper wrapper : diff) {
+            diffOperations.add(wrapper.getOperation());
+        }
+        ContentProviderOperation[] operationPattern = new ContentProviderOperation[pattern.length];
         for (int i = 0; i < pattern.length; i++) {
-            final CPOWrapper expected = pattern[i];
-            final CPOWrapper found = diff.get(i);
+            operationPattern[i] = pattern[i].getOperation();
+        }
+        assertDiffPattern(diffOperations, operationPattern);
+    }
 
-            assertEquals("Unexpected uri",
-                    expected.getOperation().getUri(), found.getOperation().getUri());
+    private static void assertDiffPattern(
+            ArrayList<ContentProviderOperation> diff, ContentProviderOperation... pattern) {
+        assertWithMessage("Unexpected operations").that(diff.size()).isEqualTo(pattern.length);
 
-            final String expectedType = getTypeString(expected);
-            final String foundType = getTypeString(found);
-            assertEquals("Unexpected type", expectedType, foundType);
+        ContentProviderResult[] fakeBackReferences = new ContentProviderResult[diff.size()];
+        for (int i = 0; i < pattern.length; i++) {
+            ContentProviderOperation expected = pattern[i];
+            ContentProviderOperation found = diff.get(i);
 
-            if (CompatUtils.isDeleteCompat(expected)) continue;
+            assertWithMessage("Unexpected uri").that(found.getUri()).isEqualTo(expected.getUri());
 
-            try {
-                final ContentValues expectedValues = getValues(expected.getOperation());
-                final ContentValues foundValues = getValues(found.getOperation());
+            String expectedType = getTypeString(expected);
+            String foundType = getTypeString(found);
+            assertWithMessage("Unexpected type").that(foundType).isEqualTo(expectedType);
 
-                expectedValues.remove(BaseColumns._ID);
-                foundValues.remove(BaseColumns._ID);
-
-                assertEquals("Unexpected values", expectedValues, foundValues);
-            } catch (NoSuchFieldException e) {
-                fail(e.toString());
-            } catch (IllegalAccessException e) {
-                fail(e.toString());
+            if (expected.isDelete()) {
+                continue;
             }
+
+            if (found.isInsert()) {
+                fakeBackReferences[i] =
+                        new ContentProviderResult(
+                                ContentUris.withAppendedId(RawContacts.CONTENT_URI,
+                                        INSERTED_CONTACT_ID));
+            } else if (found.isUpdate()) {
+                fakeBackReferences[i] = new ContentProviderResult(1);
+            }
+
+            ContentValues expectedValues =
+                    expected.resolveValueBackReferences(new ContentProviderResult[0], 0);
+            ContentValues foundValues =
+                    found.resolveValueBackReferences(fakeBackReferences, fakeBackReferences.length);
+
+            expectedValues.remove(BaseColumns._ID);
+            foundValues.remove(BaseColumns._ID);
+
+            assertWithMessage("Unexpected values").that(foundValues).isEqualTo(expectedValues);
         }
     }
 
-    static String getTypeString(CPOWrapper cpoWrapper) {
-        if (CompatUtils.isAssertQueryCompat(cpoWrapper)) {
+    static String getTypeString(ContentProviderOperation operation) {
+        if (operation.isAssertQuery()) {
             return "TYPE_ASSERT";
-        } else if (CompatUtils.isInsertCompat(cpoWrapper)) {
+        } else if (operation.isInsert()) {
             return "TYPE_INSERT";
-        } else if (CompatUtils.isUpdateCompat(cpoWrapper)) {
+        } else if (operation.isUpdate()) {
             return "TYPE_UPDATE";
-        } else if (CompatUtils.isDeleteCompat(cpoWrapper)) {
+        } else if (operation.isDelete()) {
             return "TYPE_DELETE";
         }
         return "TYPE_UNKNOWN";
@@ -247,6 +268,14 @@ public class RawContactDeltaListTests extends AndroidTestCase {
     static CPOWrapper buildUpdateAggregationKeepTogether(long rawContactId) {
         final ContentValues values = new ContentValues();
         values.put(AggregationExceptions.RAW_CONTACT_ID1, rawContactId);
+        values.put(AggregationExceptions.TYPE, AggregationExceptions.TYPE_KEEP_TOGETHER);
+        return buildCPOWrapper(AggregationExceptions.CONTENT_URI, TYPE_UPDATE, values);
+    }
+
+    static CPOWrapper buildUpdateAggregationKeepTogether(long rawContactId1, long rawContactId2) {
+        final ContentValues values = new ContentValues();
+        values.put(AggregationExceptions.RAW_CONTACT_ID1, rawContactId1);
+        values.put(AggregationExceptions.RAW_CONTACT_ID2, rawContactId2);
         values.put(AggregationExceptions.TYPE, AggregationExceptions.TYPE_KEEP_TOGETHER);
         return buildCPOWrapper(AggregationExceptions.CONTENT_URI, TYPE_UPDATE, values);
     }
@@ -483,6 +512,7 @@ public class RawContactDeltaListTests extends AndroidTestCase {
 
         // Add new contact locally, should remain insert
         final ContentValues joePhoneInsert = buildPhone(PHONE_BLUE);
+        joePhoneInsert.put(Data.RAW_CONTACT_ID, INSERTED_CONTACT_ID);
         final RawContactDelta joeContact = buildAfterEntity(joePhoneInsert);
         final ContentValues joeContactInsert = joeContact.getValues().getCompleteValues();
         joeContactInsert.put(RawContacts.AGGREGATION_MODE, RawContacts.AGGREGATION_MODE_SUSPENDED);
@@ -492,7 +522,7 @@ public class RawContactDeltaListTests extends AndroidTestCase {
                 buildCPOWrapper(RawContacts.CONTENT_URI, TYPE_INSERT, joeContactInsert),
                 buildCPOWrapper(Data.CONTENT_URI, TYPE_INSERT, joePhoneInsert),
                 buildAggregationModeUpdate(RawContacts.AGGREGATION_MODE_DEFAULT),
-                buildUpdateAggregationKeepTogether(CONTACT_BOB));
+                buildUpdateAggregationKeepTogether(CONTACT_BOB, INSERTED_CONTACT_ID));
 
         // Merge in the second version, verify that our insert remains
         final RawContactDeltaList merged = RawContactDeltaList.mergeAfter(second, first);
@@ -502,7 +532,7 @@ public class RawContactDeltaListTests extends AndroidTestCase {
                 buildCPOWrapper(RawContacts.CONTENT_URI, TYPE_INSERT, joeContactInsert),
                 buildCPOWrapper(Data.CONTENT_URI, TYPE_INSERT, joePhoneInsert),
                 buildAggregationModeUpdate(RawContacts.AGGREGATION_MODE_DEFAULT),
-                buildUpdateAggregationKeepTogether(CONTACT_BOB));
+                buildUpdateAggregationKeepTogether(CONTACT_BOB, INSERTED_CONTACT_ID));
     }
 
     public void testMergeRawContactLocalDeleteRemoteDelete() {
@@ -542,6 +572,7 @@ public class RawContactDeltaListTests extends AndroidTestCase {
                 buildUpdateAggregationDefault());
 
         final ContentValues phoneInsert = phone.getCompleteValues();
+        phoneInsert.put(Data.RAW_CONTACT_ID, INSERTED_CONTACT_ID);
         final ContentValues contactInsert = first.getByRawContactId(CONTACT_MARY).getValues()
                 .getCompleteValues();
         contactInsert.put(RawContacts.AGGREGATION_MODE, RawContacts.AGGREGATION_MODE_SUSPENDED);
@@ -553,7 +584,7 @@ public class RawContactDeltaListTests extends AndroidTestCase {
                 buildCPOWrapper(RawContacts.CONTENT_URI, TYPE_INSERT, contactInsert),
                 buildCPOWrapper(Data.CONTENT_URI, TYPE_INSERT, phoneInsert),
                 buildAggregationModeUpdate(RawContacts.AGGREGATION_MODE_DEFAULT),
-                buildUpdateAggregationKeepTogether(CONTACT_BOB));
+                buildUpdateAggregationKeepTogether(CONTACT_BOB, INSERTED_CONTACT_ID));
     }
 
     public void testMergeUsesNewVersion() {
