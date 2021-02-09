@@ -1,0 +1,9 @@
+Open-Source-Licensing+1: Lint 🤖 <ayeaye-gerrit@google.com>
+Presubmit-Verified+2: Treehugger Robot <treehugger-gerrit@google.com>
+Lint+1: Lint 🤖 <ayeaye-gerrit@google.com>
+Code-Review+2: Gary Mai <garymai@google.com>
+Submitted-by: Marcus Hagerott <mhagerott@google.com>
+Submitted-at: Tue, 09 Feb 2021 00:07:32 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/packages/apps/Contacts/+/1580984
+Project: platform/packages/apps/Contacts
+Branch: refs/heads/master
