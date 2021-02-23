@@ -18,7 +18,6 @@ package com.android.contacts;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.LoaderManager;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.content.Loader;
@@ -26,7 +25,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.google.android.material.snackbar.Snackbar;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
 import androidx.collection.ArrayMap;
 import androidx.core.view.ViewCompat;
 import androidx.core.widget.ContentLoadingProgressBar;
@@ -372,7 +371,7 @@ public class SimImportFragment extends Fragment
             if (position < 0 || position >= getCount()) {
                 return View.NO_ID;
             }
-            return getItem(position).getId();
+            return getItem(position).getRecordNumber();
         }
 
         @Override
