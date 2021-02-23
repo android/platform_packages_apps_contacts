@@ -26,19 +26,19 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.RemoteException;
-import android.provider.BaseColumns;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.CommonDataKinds.StructuredName;
 import android.provider.ContactsContract.Data;
 import android.provider.ContactsContract.RawContacts;
-import androidx.annotation.VisibleForTesting;
-import androidx.collection.ArrayMap;
+import android.provider.SimPhonebookContract;
+import android.provider.SimPhonebookContract.SimRecords;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
 import android.util.SparseArray;
+
+import androidx.collection.ArrayMap;
 
 import com.android.contacts.R;
 import com.android.contacts.compat.CompatUtils;
@@ -47,6 +47,7 @@ import com.android.contacts.model.SimContact;
 import com.android.contacts.model.account.AccountWithDataSet;
 import com.android.contacts.util.PermissionsUtil;
 import com.android.contacts.util.SharedPreferenceUtil;
+
 import com.google.common.base.Joiner;
 
 import java.util.ArrayList;
@@ -74,14 +75,6 @@ public class SimContactDaoImpl extends SimContactDao {
     // How many SIM contacts to consider in a single query. This prevents hitting the SQLite
     // query parameter limit.
     static final int QUERY_MAX_BATCH_SIZE = 100;
-
-    @VisibleForTesting
-    public static final Uri ICC_CONTENT_URI = Uri.parse("content://icc/adn");
-
-    public static String _ID = BaseColumns._ID;
-    public static String NAME = "name";
-    public static String NUMBER = "number";
-    public static String EMAILS = "emails";
 
     private final Context mContext;
     private final ContentResolver mResolver;
@@ -128,18 +121,14 @@ public class SimContactDaoImpl extends SimContactDao {
         if (sim.hasValidSubscriptionId()) {
             return loadSimContacts(sim.getSubscriptionId());
         }
-        return loadSimContacts();
+        // Return an empty list.
+        return new ArrayList<>(0);
     }
 
     public ArrayList<SimContact> loadSimContacts(int subscriptionId) {
-        return loadFrom(ICC_CONTENT_URI.buildUpon()
-                .appendPath("subId")
-                .appendPath(String.valueOf(subscriptionId))
-                .build());
-    }
-
-    public ArrayList<SimContact> loadSimContacts() {
-        return loadFrom(ICC_CONTENT_URI);
+        return loadFrom(
+                SimRecords.getContentUri(
+                        subscriptionId, SimPhonebookContract.ElementaryFiles.EF_ADN));
     }
 
     @Override
@@ -273,7 +262,12 @@ public class SimContactDaoImpl extends SimContactDao {
     private static final Object SIM_READ_LOCK = new Object();
     private ArrayList<SimContact> loadFrom(Uri uri) {
         synchronized (SIM_READ_LOCK) {
-            final Cursor cursor = mResolver.query(uri, null, null, null, null);
+            final Cursor cursor = mResolver.query(uri,
+                    new String[]{
+                            SimRecords.RECORD_NUMBER,
+                            SimRecords.NAME,
+                            SimRecords.PHONE_NUMBER
+                    }, null, null);
             if (cursor == null) {
                 // Assume null means there are no SIM contacts.
                 return new ArrayList<>(0);
@@ -288,22 +282,20 @@ public class SimContactDaoImpl extends SimContactDao {
     }
 
     private ArrayList<SimContact> loadFromCursor(Cursor cursor) {
-        final int colId = cursor.getColumnIndex(_ID);
-        final int colName = cursor.getColumnIndex(NAME);
-        final int colNumber = cursor.getColumnIndex(NUMBER);
-        final int colEmails = cursor.getColumnIndex(EMAILS);
+        final int colRecordNumber = cursor.getColumnIndex(SimRecords.RECORD_NUMBER);
+        final int colName = cursor.getColumnIndex(SimRecords.NAME);
+        final int colNumber = cursor.getColumnIndex(SimRecords.PHONE_NUMBER);
 
         final ArrayList<SimContact> result = new ArrayList<>();
 
         while (cursor.moveToNext()) {
-            final long id = cursor.getLong(colId);
+            final int recordNumber = cursor.getInt(colRecordNumber);
             final String name = cursor.getString(colName);
             final String number = cursor.getString(colNumber);
-            final String emails = cursor.getString(colEmails);
 
-            final SimContact contact = new SimContact(id, name, number, parseEmails(emails));
+            final SimContact contact = new SimContact(recordNumber, name, number, null);
             // Only include contact if it has some useful data
-            if (contact.hasName() || contact.hasPhone() || contact.hasEmails()) {
+            if (contact.hasName() || contact.hasPhone()) {
                 result.add(contact);
             }
         }
@@ -390,10 +382,6 @@ public class SimContactDaoImpl extends SimContactDao {
             contact.appendCreateContactOperations(ops, targetAccount);
         }
         return ops;
-    }
-
-    private String[] parseEmails(String emails) {
-        return !TextUtils.isEmpty(emails) ? emails.split(",") : null;
     }
 
     private boolean hasTelephony() {
