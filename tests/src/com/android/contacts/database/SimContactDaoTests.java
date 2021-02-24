@@ -45,16 +45,18 @@ import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.CommonDataKinds.StructuredName;
 import android.provider.ContactsContract.Data;
+import android.provider.SimPhonebookContract;
+import android.provider.SimPhonebookContract.SimRecords;
 import android.test.mock.MockContentResolver;
 import android.test.mock.MockContext;
 
 import androidx.annotation.RequiresApi;
 import androidx.test.InstrumentationRegistry;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import androidx.test.filters.SdkSuppress;
 import androidx.test.filters.SmallTest;
 import androidx.test.filters.Suppress;
-import androidx.test.runner.AndroidJUnit4;
 
 import com.android.contacts.model.SimCard;
 import com.android.contacts.model.SimContact;
@@ -578,92 +580,78 @@ public class SimContactDaoTests {
     @RunWith(AndroidJUnit4.class)
     public static class LoadContactsUnitTests {
 
-        private MockContentProvider mMockIccProvider;
+        private MockContentProvider mMockSimPhonebookProvider;
         private Context mContext;
 
         @Before
         public void setUp() {
             mContext = mock(MockContext.class);
             final MockContentResolver mockResolver = new MockContentResolver();
-            mMockIccProvider = new MockContentProvider();
-            mockResolver.addProvider("icc", mMockIccProvider);
+            mMockSimPhonebookProvider = new MockContentProvider();
+            mockResolver.addProvider(SimPhonebookContract.AUTHORITY, mMockSimPhonebookProvider);
             when(mContext.getContentResolver()).thenReturn(mockResolver);
         }
 
 
         @Test
         public void createsContactsFromCursor() {
-            mMockIccProvider.expect(MockContentProvider.Query.forAnyUri())
+            mMockSimPhonebookProvider.expect(MockContentProvider.Query.forAnyUri())
                     .withDefaultProjection(
-                            SimContactDaoImpl._ID, SimContactDaoImpl.NAME,
-                            SimContactDaoImpl.NUMBER, SimContactDaoImpl.EMAILS)
+                            SimRecords.RECORD_NUMBER, SimRecords.NAME, SimRecords.PHONE_NUMBER)
                     .withAnyProjection()
                     .withAnySelection()
                     .withAnySortOrder()
-                    .returnRow(1, "Name One", "5550101", null)
-                    .returnRow(2, "Name Two", "5550102", null)
-                    .returnRow(3, "Name Three", null, null)
-                    .returnRow(4, null, "5550104", null)
-                    .returnRow(5, "Name Five", "5550105",
-                            "five@example.com,nf@example.com,name.five@example.com")
-                    .returnRow(6, "Name Six", "5550106", "thesix@example.com");
+                    .returnRow(1, "Name One", "5550101")
+                    .returnRow(2, "Name Two", "5550102")
+                    .returnRow(3, "Name Three", null)
+                    .returnRow(4, null, "5550104");
 
             final SimContactDao sut = SimContactDao.create(mContext);
             final List<SimContact> contacts = sut
-                    .loadContactsForSim(new SimCard("123", "carrier", "sim", null, "us"));
+                    .loadContactsForSim(new SimCard("123", 1, "carrier", "sim", null, "us"));
 
             assertThat(contacts, equalTo(
                     Arrays.asList(
                             new SimContact(1, "Name One", "5550101", null),
                             new SimContact(2, "Name Two", "5550102", null),
                             new SimContact(3, "Name Three", null, null),
-                            new SimContact(4, null, "5550104", null),
-                            new SimContact(5, "Name Five", "5550105", new String[] {
-                                    "five@example.com", "nf@example.com", "name.five@example.com"
-                            }),
-                            new SimContact(6, "Name Six", "5550106", new String[] {
-                                    "thesix@example.com"
-                            })
+                            new SimContact(4, null, "5550104", null)
                     )));
         }
 
         @Test
         public void excludesEmptyContactsFromResult() {
-            mMockIccProvider.expect(MockContentProvider.Query.forAnyUri())
+            mMockSimPhonebookProvider.expect(MockContentProvider.Query.forAnyUri())
                     .withDefaultProjection(
-                            SimContactDaoImpl._ID, SimContactDaoImpl.NAME,
-                            SimContactDaoImpl.NUMBER, SimContactDaoImpl.EMAILS)
+                            SimRecords.RECORD_NUMBER, SimRecords.NAME, SimRecords.PHONE_NUMBER)
                     .withAnyProjection()
                     .withAnySelection()
                     .withAnySortOrder()
-                    .returnRow(1, "Non Empty1", "5550101", null)
-                    .returnRow(2, "", "", "")
-                    .returnRow(3, "Non Empty2", null, null)
-                    .returnRow(4, null, null, null)
-                    .returnRow(5, "", null, null)
-                    .returnRow(6, null, "5550102", null)
-                    .returnRow(7, null, null, "user@example.com");
+                    .returnRow(1, "Non Empty1", "5550101")
+                    .returnRow(2, "", "")
+                    .returnRow(3, "Non Empty2", null)
+                    .returnRow(4, null, null)
+                    .returnRow(5, "", null)
+                    .returnRow(6, null, "5550102");
 
             final SimContactDao sut = SimContactDao.create(mContext);
             final List<SimContact> contacts = sut
-                    .loadContactsForSim(new SimCard("123", "carrier", "sim", null, "us"));
+                    .loadContactsForSim(new SimCard("123", 1, "carrier", "sim", null, "us"));
 
             assertThat(contacts, equalTo(
                     Arrays.asList(
                             new SimContact(1, "Non Empty1", "5550101", null),
                             new SimContact(3, "Non Empty2", null, null),
-                            new SimContact(6, null, "5550102", null),
-                            new SimContact(7, null, null, new String[] { "user@example.com" })
+                            new SimContact(6, null, "5550102", null)
                     )));
         }
 
         @Test
         public void usesSimCardSubscriptionIdIfAvailable() {
-            mMockIccProvider.expectQuery(SimContactDaoImpl.ICC_CONTENT_URI.buildUpon()
-                    .appendPath("subId").appendPath("2").build())
+            mMockSimPhonebookProvider.expectQuery(SimRecords.getContentUri(2,
+                    SimPhonebookContract.ElementaryFiles.EF_ADN))
                     .withDefaultProjection(
-                            SimContactDaoImpl._ID, SimContactDaoImpl.NAME,
-                            SimContactDaoImpl.NUMBER, SimContactDaoImpl.EMAILS)
+                            SimRecords.RECORD_NUMBER, SimRecords.NAME, SimRecords.PHONE_NUMBER)
                     .withAnyProjection()
                     .withAnySelection()
                     .withAnySortOrder()
@@ -671,32 +659,14 @@ public class SimContactDaoTests {
 
             final SimContactDao sut = SimContactDao.create(mContext);
             sut.loadContactsForSim(new SimCard("123", 2, "carrier", "sim", null, "us"));
-            mMockIccProvider.verify();
-        }
-
-        @Test
-        public void omitsSimCardSubscriptionIdIfUnavailable() {
-            mMockIccProvider.expectQuery(SimContactDaoImpl.ICC_CONTENT_URI)
-                    .withDefaultProjection(
-                            SimContactDaoImpl._ID, SimContactDaoImpl.NAME,
-                            SimContactDaoImpl.NUMBER, SimContactDaoImpl.EMAILS)
-                    .withAnyProjection()
-                    .withAnySelection()
-                    .withAnySortOrder()
-                    .returnEmptyCursor();
-
-            final SimContactDao sut = SimContactDao.create(mContext);
-            sut.loadContactsForSim(new SimCard("123", SimCard.NO_SUBSCRIPTION_ID,
-                    "carrier", "sim", null, "us"));
-            mMockIccProvider.verify();
+            mMockSimPhonebookProvider.verify();
         }
 
         @Test
         public void returnsEmptyListForEmptyCursor() {
-            mMockIccProvider.expect(MockContentProvider.Query.forAnyUri())
+            mMockSimPhonebookProvider.expect(MockContentProvider.Query.forAnyUri())
                     .withDefaultProjection(
-                            SimContactDaoImpl._ID, SimContactDaoImpl.NAME,
-                            SimContactDaoImpl.NUMBER, SimContactDaoImpl.EMAILS)
+                            SimRecords.RECORD_NUMBER, SimRecords.NAME, SimRecords.PHONE_NUMBER)
                     .withAnyProjection()
                     .withAnySelection()
                     .withAnySortOrder()
@@ -704,7 +674,7 @@ public class SimContactDaoTests {
 
             final SimContactDao sut = SimContactDao.create(mContext);
             List<SimContact> result = sut
-                    .loadContactsForSim(new SimCard("123", "carrier", "sim", null, "us"));
+                    .loadContactsForSim(new SimCard("123", 1, "carrier", "sim", null, "us"));
             assertTrue(result.isEmpty());
         }
 
@@ -725,7 +695,7 @@ public class SimContactDaoTests {
 
             final SimContactDao sut = SimContactDao.create(mContext);
             final List<SimContact> result = sut
-                    .loadContactsForSim(new SimCard("123", "carrier", "sim", null, "us"));
+                    .loadContactsForSim(new SimCard("123", 1, "carrier", "sim", null, "us"));
             assertTrue(result.isEmpty());
         }
     }
