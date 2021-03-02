@@ -96,7 +96,7 @@
     <string name="createContactShortcutSuccessful_NoName" msgid="532242135930208299">"संपर्कों को होम स्क्रीन में जोड़ा गया."</string>
     <string name="createContactShortcutSuccessful" msgid="6980032407920515698">"<xliff:g id="NAME">%s</xliff:g> को होम स्क्रीन में जोड़ा गया."</string>
     <string name="photoPickerNotFoundText" msgid="6535222297923110991">"डिवाइस पर कोई चित्र उपलब्ध नहीं है."</string>
-    <string name="attach_photo_dialog_title" msgid="7948754072673745235">"संपर्क की फ़ोटो"</string>
+    <string name="attach_photo_dialog_title" msgid="7948754072673745235">"संपर्क का फ़ोटो"</string>
     <string name="customLabelPickerTitle" msgid="816694850254307154">"कस्टम लेबल नाम"</string>
     <string name="removePhoto" msgid="1190099414600730001">"फ़ोटो निकालें"</string>
     <string name="noContacts" msgid="3030512741779213810">"आपकी संपर्क सूची खाली है"</string>
@@ -353,7 +353,7 @@
     <string name="chat_gtalk" msgid="2927882858741904064">"Google टॉक का उपयोग करके बातचीत करें"</string>
     <string name="chat_icq" msgid="4289041376069626281">"ICQ का उपयोग करके बातचीत करें"</string>
     <string name="chat_jabber" msgid="1097960594943864847">"Jabber का उपयोग करके बातचीत करें"</string>
-    <string name="chat" msgid="8390862712584830532">"चैट करें"</string>
+    <string name="chat" msgid="8390862712584830532">"बातचीत करें"</string>
     <string name="description_minus_button" msgid="1305985971158054217">"मिटाएं"</string>
     <string name="expand_name_fields_description" msgid="6059558159338959487">"ज़्यादा नाम फ़ील्ड दिखाएं"</string>
     <string name="collapse_name_fields_description" msgid="7950435675716414477">"नाम फ़ील्ड संक्षिप्त करें"</string>
