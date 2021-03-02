@@ -190,7 +190,7 @@
     <string name="title_edit_group" msgid="4246193439931854759">"Uklonite kontakte"</string>
     <string name="local_profile_title" msgid="1613784248702623410">"Moj lokalni profil"</string>
     <string name="external_profile_title" msgid="2706282819025406927">"Moj <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g> profil"</string>
-    <string name="contact_editor_prompt_zero_accounts" msgid="4468363031413457746">"Odvojite malo vremena da biste dodali nalog pomoću kog ćete napraviti rezervnu kopiju kontakata na Google-u."</string>
+    <string name="contact_editor_prompt_zero_accounts" msgid="4468363031413457746">"Odvojte malo vremena da biste dodali nalog pomoću kog ćete napraviti rezervnu kopiju kontakata na Google-u."</string>
     <string name="contact_editor_prompt_one_account" msgid="765343809177951169">"Novi kontakti će biti sačuvani na nalogu <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>."</string>
     <string name="contact_editor_prompt_multiple_accounts" msgid="1543322760761168351">"Izaberite podrazumevani nalog za nove kontakte:"</string>
     <string name="contact_editor_title_new_contact" msgid="7534775011591770343">"Novi kontakt"</string>
@@ -297,13 +297,13 @@
     <string name="status_busy" msgid="2759339190187696727">"Zauzet/a"</string>
     <string name="local_invisible_directory" msgid="5936234374879813300">"Drugo"</string>
     <string name="directory_search_label" msgid="2602118204885565153">"Katalog"</string>
-    <string name="directory_search_label_work" msgid="2392128956332931231">"Poslovni katalog"</string>
+    <string name="directory_search_label_work" msgid="2392128956332931231">"Katalog za Work"</string>
     <string name="local_search_label" msgid="6692495405531144805">"Svi kontakti"</string>
     <string name="description_quick_contact_for" msgid="6364906818231956042">"Brzi kontakt za korisnika <xliff:g id="NAME">%1$s</xliff:g>"</string>
     <string name="missing_name" msgid="7970183292521946492">"(Bez imena)"</string>
     <string name="favoritesFrequentContacted" msgid="2885862854079966676">"Često kontaktirani"</string>
     <string name="list_filter_phones" msgid="6839133198968393843">"Svi kontakti sa brojevima telefona"</string>
-    <string name="list_filter_phones_work" msgid="5583425697781385616">"Kontakti sa poslovnog profila"</string>
+    <string name="list_filter_phones_work" msgid="5583425697781385616">"Kontakti sa profila za Work"</string>
     <string name="view_updates_from_group" msgid="6233444629074835594">"Prikaži ažuriranja"</string>
     <string name="account_phone" msgid="8044426231251817556">"Uređaj"</string>
     <string name="account_sim" msgid="3200457113308694663">"SIM"</string>
