@@ -129,7 +129,7 @@
     <string name="listFoundAllContactsZero" msgid="1933842282916988563">"مخاطبی موجود نیست"</string>
     <string name="add_contact_dlg_message_fmt" msgid="7498024710169591375">"\"<xliff:g id="EMAIL">%s</xliff:g>\" به مخاطبین افزوده شود؟"</string>
     <string name="search_settings_description" msgid="5630675648560839920">"نام‌های مخاطبین شما"</string>
-    <string name="quickcontact_transparent_view_description" msgid="7783027850792852265">"برای بازگشت به صفحه قبل کلیک کنید"</string>
+    <string name="quickcontact_transparent_view_description" msgid="7783027850792852265">"برای بازگشت به صفحه قبلی کلیک کنید"</string>
     <string name="quickcontact_add_phone_number" msgid="1683577288080727862">"افزودن شماره تلفن"</string>
     <string name="quickcontact_add_email" msgid="1442894568471116797">"افزودن ایمیل"</string>
     <string name="missing_app" msgid="5674389915738964148">"برنامه‌ای برای انجام این عملکرد یافت نشد."</string>
@@ -284,7 +284,7 @@
     <string name="sms_assistant" msgid="245045451580096547">"ارسال متن به <xliff:g id="ASSISTANT">%s</xliff:g>"</string>
     <string name="sms_mms" msgid="7395133080765833725">"ارسال متن به فراپیام"</string>
     <string name="sms_by_shortcut" msgid="4682340916268521006">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (پیام)"</string>
-    <string name="description_video_call" msgid="4956825008907720371">"برقراری تماس تصویری"</string>
+    <string name="description_video_call" msgid="4956825008907720371">"برقراری تماس ویدئویی"</string>
     <string name="clearFrequentsConfirmation_title" msgid="9194415661170740437">"فهرست تماس مکرر با مخاطب پاک شود؟"</string>
     <string name="clearFrequentsConfirmation" msgid="2120741757522063938">"با این کار فهرست افرادی که بیشتر با آنها تماس گرفته‌اید در برنامه‌های «مخاطبین» و «تلفن» پاک می‌کنید و برنامه‌های ایمیل را وادار می‌کنید تنظیمات برگزیده مخاطبینتان را از اول یاد بگیرند."</string>
     <string name="clearFrequentsProgress_title" msgid="8271935295080659743">"در حال پاک کردن فهرست تماس مکرر..."</string>
@@ -429,7 +429,7 @@
     <string name="caching_vcard_title" msgid="6333926052524937628">"در حال ذخیره در حافظهٔ پنهان"</string>
     <string name="progress_notifier_message" msgid="8522060892889599746">"وارد کردن <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g>: <xliff:g id="NAME">%3$s</xliff:g>"</string>
     <string name="export_to_vcf_file" msgid="3096479544575798192">"‏صادر کردن به فایل ‎.vcf"</string>
-    <string name="display_options_sort_list_by" msgid="4333658089057400431">"به‌ترتیب"</string>
+    <string name="display_options_sort_list_by" msgid="4333658089057400431">"مرتب‌سازی براساس"</string>
     <string name="display_options_phonetic_name_fields" msgid="1857564544755287298">"تلفظ نام"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="3612488836474257715">"همیشه نشان داده شود"</string>
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2693314301550366143">"اگر خالی است پنهان شود"</string>
@@ -479,7 +479,7 @@
     <string name="url_open_error_toast" msgid="4885855620824048385">"نشانی وب باز نشد."</string>
     <string name="account_filter_view_checked" msgid="4740544238806346376">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> علامت‌گذاری شد"</string>
     <string name="account_filter_view_not_checked" msgid="5782705545786455847">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> بدون علامت"</string>
-    <string name="description_search_video_call" msgid="1768558141309418755">"برقراری تماس تصویری"</string>
+    <string name="description_search_video_call" msgid="1768558141309418755">"برقراری تماس ویدئویی"</string>
     <string name="description_delete_contact" msgid="8110643050235441400">"حذف"</string>
     <string name="description_no_name_header" msgid="8596201864512339003">"سه نقطه"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="8770462908102469878">"میان‌بر غیرفعال شده است"</string>

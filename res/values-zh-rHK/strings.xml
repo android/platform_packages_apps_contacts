@@ -103,7 +103,7 @@
     <string name="emptyGroup" msgid="8598261660865081152">"沒有任何聯絡人有此標籤"</string>
     <string name="emptyAccount" msgid="7450843210977018582">"此帳戶中沒有聯絡人"</string>
     <string name="emptyMainList" msgid="3266182207039677163">"您的聯絡人名單是空白的"</string>
-    <string name="contactSavedNamedToast" msgid="3067050290584834386">"已儲存<xliff:g id="DISPLAY_NAME">%s</xliff:g>"</string>
+    <string name="contactSavedNamedToast" msgid="3067050290584834386">"<xliff:g id="DISPLAY_NAME">%s</xliff:g>已儲存"</string>
     <string name="contactSavedToast" msgid="4370392215196995301">"聯絡人記錄已儲存"</string>
     <string name="contactUnlinkedToast" msgid="6791720274141804377">"已解除連結聯絡人"</string>
     <string name="contactSavedErrorToast" msgid="3213619905154956918">"無法儲存聯絡人變更"</string>
@@ -134,7 +134,7 @@
     <string name="quickcontact_add_email" msgid="1442894568471116797">"新增電郵"</string>
     <string name="missing_app" msgid="5674389915738964148">"找不到可以處理這個操作的應用程式。"</string>
     <string name="menu_share" msgid="6343022811796001773">"分享"</string>
-    <string name="menu_add_contact" msgid="5822356185421997656">"加到通訊錄"</string>
+    <string name="menu_add_contact" msgid="5822356185421997656">"加入通訊錄"</string>
     <string name="menu_add_contacts" msgid="7114262784903366463">"新增"</string>
     <plurals name="title_share_via" formatted="false" msgid="3868648642107664607">
       <item quantity="other">使用下列應用程式分享聯絡人資訊：</item>
