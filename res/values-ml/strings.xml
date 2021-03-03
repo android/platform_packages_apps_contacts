@@ -189,7 +189,7 @@
     <string name="contact_editor_prompt_zero_accounts" msgid="4468363031413457746">"കുറച്ചുസമയമെടുത്ത് ഒരു അക്കൗണ്ട് ചേർക്കുക, അത് Google-ൽ നിങ്ങളുടെ കോൺടാക്‌റ്റുകളുടെ ബായ്‌ക്കപ്പെടുക്കുന്നതിനിടയാക്കും."</string>
     <string name="contact_editor_prompt_one_account" msgid="765343809177951169">"പുതിയ കോൺടാക്റ്റുകൾ <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g> എന്ന അക്കൗണ്ടിലേക്ക് സംരക്ഷിക്കപ്പെടും."</string>
     <string name="contact_editor_prompt_multiple_accounts" msgid="1543322760761168351">"പുതിയ കോൺടാക്റ്റുകൾക്ക് ഒരു ഡിഫോൾട്ട് അക്കൗണ്ട് തിരഞ്ഞെടുക്കുക:"</string>
-    <string name="contact_editor_title_new_contact" msgid="7534775011591770343">"പുതിയ കോൺടാക്റ്റ് സൃഷ്‌ടിക്കൂ"</string>
+    <string name="contact_editor_title_new_contact" msgid="7534775011591770343">"പുതിയകോൺടാക്റ്റ് സൃഷ്‌ടിക്കൂ"</string>
     <string name="contact_editor_title_existing_contact" msgid="3647774955741654029">"എഡിറ്റുചെയ്യുക"</string>
     <string name="contact_editor_title_read_only_contact" msgid="5494810291515292596">"കാഴ്‌ച മാത്രം"</string>
     <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4478782370280424187">"എഡിറ്റുചെയ്യാനുള്ള കോൺടാക്‌റ്റ്‌ തിരഞ്ഞെടുക്കുക"</string>
@@ -199,7 +199,7 @@
     <string name="add_account" msgid="3071396624500839020">"അക്കൗണ്ട് ചേർക്കുക"</string>
     <string name="add_new_account" msgid="573368229646104110">"പുതിയ അക്കൗണ്ട് ചേർക്കുക"</string>
     <string name="menu_export_database" msgid="1658249125751926885">"ഡാറ്റാബേസ് ഫയലുകൾ എക്‌സ്‌പോർട്ടുചെയ്യുക"</string>
-    <string name="action_menu_add_new_contact_button" msgid="1201339383074001291">"പുതിയ കോൺടാക്റ്റ് സൃഷ്‌ടിക്കൂ"</string>
+    <string name="action_menu_add_new_contact_button" msgid="1201339383074001291">"പുതിയകോൺടാക്റ്റ് സൃഷ്‌ടിക്കൂ"</string>
     <string name="expanding_entry_card_view_see_more" msgid="6636033205952561590">"കൂടുതൽ‍ കാണുക"</string>
     <string name="expanding_entry_card_view_see_less" msgid="6399603072579278030">"കുറച്ച് കാണുക"</string>
     <string name="about_card_title" msgid="6635849009952435700">"ആമുഖം"</string>
@@ -311,9 +311,9 @@
     <string name="name_middle" msgid="7330498948136181042">"മിഡിൽ നെയിം"</string>
     <string name="name_suffix" msgid="4502958221763936999">"പേരിന്റെ സഫിക്‌സ്"</string>
     <string name="name_phonetic" msgid="4746541275769990740">"ഉച്ചാരണപ്രകാരമുള്ള പേര്"</string>
-    <string name="name_phonetic_given" msgid="425534279190047812">"ഉച്ചാരണപ്രകാരമുള്ള ഫസ്റ്റ് നെയിം"</string>
+    <string name="name_phonetic_given" msgid="425534279190047812">"ഫസ്റ്റ് നെയിം"</string>
     <string name="name_phonetic_middle" msgid="6528822054594516485">"ഉച്ചാരണപ്രകാരമുള്ള മിഡിൽ നെയിം"</string>
-    <string name="name_phonetic_family" msgid="1690852801039809448">"ഉച്ചാരണപ്രകാരമുള്ള ലാസ്റ്റ് നെയിം"</string>
+    <string name="name_phonetic_family" msgid="1690852801039809448">"പേരിന്റെ അവസാന ഭാഗം"</string>
     <string name="phoneLabelsGroup" msgid="2746758650001801885">"ഫോണ്‍"</string>
     <string name="emailLabelsGroup" msgid="3360719560200449554">"ഇമെയില്‍"</string>
     <string name="postalLabelsGroup" msgid="7534317297587527570">"വിലാസം"</string>
@@ -353,7 +353,7 @@
     <string name="chat_gtalk" msgid="2927882858741904064">"Google Talk ഉപയോഗിച്ച് ചാറ്റുചെയ്യുക"</string>
     <string name="chat_icq" msgid="4289041376069626281">"ICQ ഉപയോഗിച്ച് ചാറ്റുചെയ്യുക"</string>
     <string name="chat_jabber" msgid="1097960594943864847">"Jabber ഉപയോഗിച്ച് ചാറ്റുചെയ്യുക"</string>
-    <string name="chat" msgid="8390862712584830532">"Chat"</string>
+    <string name="chat" msgid="8390862712584830532">"ചാറ്റുചെയ്യുക"</string>
     <string name="description_minus_button" msgid="1305985971158054217">"ഇല്ലാതാക്കുക"</string>
     <string name="expand_name_fields_description" msgid="6059558159338959487">"പേരിന്റെ കൂടുതൽ ഫീൽഡുകൾ കാണിക്കുക"</string>
     <string name="collapse_name_fields_description" msgid="7950435675716414477">"പേരിന്റെ ഫീൽഡുകൾ ചുരുക്കുക"</string>
