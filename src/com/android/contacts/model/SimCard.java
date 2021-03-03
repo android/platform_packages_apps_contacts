@@ -19,6 +19,7 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.SubscriptionInfo;
+import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
@@ -76,11 +77,6 @@ public class SimCard {
         mDisplayName = displayName;
         mPhoneNumber = phoneNumber;
         mCountryCode = countryCode != null ? countryCode.toUpperCase(Locale.US) : null;
-    }
-
-    public SimCard(String simId, CharSequence carrierName,
-            CharSequence displayName, String phoneNumber, String countryCode) {
-        this(simId, NO_SUBSCRIPTION_ID, carrierName, displayName, phoneNumber, countryCode);
     }
 
     public String getSimId() {
@@ -245,12 +241,14 @@ public class SimCard {
 
     public static SimCard create(TelephonyManager telephony, String displayLabel) {
         if (telephony.getSimState() == TelephonyManager.SIM_STATE_READY) {
-            return new SimCard(telephony.getSimSerialNumber(),
+            return new SimCard(telephony.getSimSerialNumber(), telephony.getSubscriptionId(),
                     telephony.getSimOperatorName(), displayLabel, telephony.getLine1Number(),
                     telephony.getSimCountryIso());
         } else {
             // This should never happen but in case it does just fallback to an "empty" instance
-            return new SimCard(/* SIM id */ "", /* operator name */ null, displayLabel,
+            return new SimCard(/* SIM id */ "",
+                    /* subscriptionId */ SubscriptionManager.INVALID_SUBSCRIPTION_ID,
+                    /* operator name */ null, displayLabel,
                     /* phone number */ "", /* Country code */ null);
         }
     }
