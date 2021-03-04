@@ -106,7 +106,7 @@
     <string name="emptyGroup" msgid="8598261660865081152">"Nema kontakata s tom oznakom"</string>
     <string name="emptyAccount" msgid="7450843210977018582">"Nema kontakata na ovom računu"</string>
     <string name="emptyMainList" msgid="3266182207039677163">"Popis kontakata je prazan"</string>
-    <string name="contactSavedNamedToast" msgid="3067050290584834386">"Kontakt <xliff:g id="DISPLAY_NAME">%s</xliff:g> je spremljen"</string>
+    <string name="contactSavedNamedToast" msgid="3067050290584834386">"Spremljeno: <xliff:g id="DISPLAY_NAME">%s</xliff:g>"</string>
     <string name="contactSavedToast" msgid="4370392215196995301">"Kontakt je spremljen"</string>
     <string name="contactUnlinkedToast" msgid="6791720274141804377">"Prekinuta je veza kontakata"</string>
     <string name="contactSavedErrorToast" msgid="3213619905154956918">"Promjene kontakta ne mogu se spremiti"</string>
