@@ -18,7 +18,7 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="applicationLabel" msgid="8908212014470937609">"Danh bạ"</string>
     <string name="contactsList" msgid="4456188358262700898">"Danh bạ"</string>
-    <string name="shortcut_add_contact" msgid="7949342235528657981">"Thêm người liên hệ"</string>
+    <string name="shortcut_add_contact" msgid="7949342235528657981">"Thêm liên hệ"</string>
     <string name="shortcutContact" msgid="8009736387364461511">"Liên hệ"</string>
     <string name="shortcutDialContact" msgid="155367248069127153">"Quay số trực tiếp"</string>
     <string name="shortcutMessageContact" msgid="9123517151981679277">"Tin nhắn trực tiếp"</string>
@@ -40,9 +40,9 @@
     <string name="menu_editGroup" msgid="8706562583754054622">"Xóa liên hệ"</string>
     <string name="menu_renameGroup" msgid="2685886609399776475">"Đổi tên nhãn"</string>
     <string name="menu_deleteGroup" msgid="1180215594530228294">"Xóa nhãn"</string>
-    <string name="menu_addToGroup" msgid="5034813446697655310">"Thêm người liên hệ"</string>
+    <string name="menu_addToGroup" msgid="5034813446697655310">"Thêm liên hệ"</string>
     <string name="menu_selectForGroup" msgid="6386553337569514850">"Chọn liên hệ"</string>
-    <string name="menu_addContactsToGroup" msgid="4549318978482280577">"Thêm người liên hệ"</string>
+    <string name="menu_addContactsToGroup" msgid="4549318978482280577">"Thêm liên hệ"</string>
     <string name="menu_removeFromGroup" msgid="8753799091967887958">"Xóa khỏi nhãn"</string>
     <string name="menu_new_group_action_bar" msgid="1670312283925872483">"Tạo nhãn"</string>
     <string name="splitConfirmation" msgid="4750158900636307469">"Bạn muốn hủy liên kết liên hệ này thành nhiều liên hệ?"</string>
@@ -241,7 +241,7 @@
     <string name="hamburger_feature_highlight_body" msgid="782935036630531528">"Giữ cho danh bạ của bạn luôn được sắp xếp và hữu ích"</string>
     <string name="undo" msgid="2446931036220975026">"Hoàn tác"</string>
     <string name="call_custom" msgid="2844900154492073207">"Gọi <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
-    <string name="call_home" msgid="2443904771140750492">"Gọi về nhà"</string>
+    <string name="call_home" msgid="2443904771140750492">"Gọi số điện thoại nhà riêng"</string>
     <string name="call_mobile" msgid="6504312789160309832">"Gọi số điện thoại di động"</string>
     <string name="call_work" msgid="2414313348547560346">"Gọi số điện thoại cơ quan"</string>
     <string name="call_fax_work" msgid="5026843006300760797">"Gọi số fax cơ quan"</string>
@@ -284,7 +284,7 @@
     <string name="sms_assistant" msgid="245045451580096547">"Nhắn tin <xliff:g id="ASSISTANT">%s</xliff:g>"</string>
     <string name="sms_mms" msgid="7395133080765833725">"Nhắn tin tới số điện thoại MMS"</string>
     <string name="sms_by_shortcut" msgid="4682340916268521006">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Tin nhắn)"</string>
-    <string name="description_video_call" msgid="4956825008907720371">"Gọi video"</string>
+    <string name="description_video_call" msgid="4956825008907720371">"Gọi điện video"</string>
     <string name="clearFrequentsConfirmation_title" msgid="9194415661170740437">"Xóa danh sách liên hệ thường xuyên?"</string>
     <string name="clearFrequentsConfirmation" msgid="2120741757522063938">"Bạn sẽ xóa danh sách liên hệ thường xuyên trong ứng dụng Danh bạ và điện thoại cũng như buộc các ứng dụng email phải tìm hiểu các tùy chọn gửi của bạn lại từ đầu."</string>
     <string name="clearFrequentsProgress_title" msgid="8271935295080659743">"Đang xóa DS liên hệ thường xuyên…"</string>
@@ -479,7 +479,7 @@
     <string name="url_open_error_toast" msgid="4885855620824048385">"Không mở được url."</string>
     <string name="account_filter_view_checked" msgid="4740544238806346376">"Đã kiểm tra <xliff:g id="ACCOUNT_INFO">%s</xliff:g>"</string>
     <string name="account_filter_view_not_checked" msgid="5782705545786455847">"Chưa kiểm tra <xliff:g id="ACCOUNT_INFO">%s</xliff:g>"</string>
-    <string name="description_search_video_call" msgid="1768558141309418755">"Gọi video"</string>
+    <string name="description_search_video_call" msgid="1768558141309418755">"Gọi điện video"</string>
     <string name="description_delete_contact" msgid="8110643050235441400">"Xóa"</string>
     <string name="description_no_name_header" msgid="8596201864512339003">"Dấu ba chấm"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="8770462908102469878">"Phím tắt này đã bị vô hiệu hóa"</string>

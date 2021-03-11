@@ -178,7 +178,7 @@
     <string name="set_default" msgid="3704074175618702225">"Setel sebagai default"</string>
     <string name="clear_default" msgid="2055883863621491533">"Hapus default"</string>
     <string name="toast_text_copied" msgid="845906090076228771">"Teks disalin"</string>
-    <string name="cancel_confirmation_dialog_message" msgid="7486892574762212762">"Hapus perubahan?"</string>
+    <string name="cancel_confirmation_dialog_message" msgid="7486892574762212762">"Buang perubahan?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="8280294641821133477">"Buang"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="7117943783437253341">"Batal"</string>
     <string name="leave_customize_confirmation_dialog_message" msgid="5330853530872707231">"Hapus penyesuaian?"</string>
@@ -207,7 +207,7 @@
     <string name="date_time_set" msgid="8526160894146496334">"Setel"</string>
     <string name="header_im_entry" msgid="3581797653862294826">"IM"</string>
     <string name="header_organization_entry" msgid="7428066442988227441">"Organisasi"</string>
-    <string name="header_nickname_entry" msgid="1110276804512795150">"Nama panggilan"</string>
+    <string name="header_nickname_entry" msgid="1110276804512795150">"Nama"</string>
     <string name="header_note_entry" msgid="339680292368016788">"Catatan"</string>
     <string name="header_website_entry" msgid="3618691707215428785">"Situs web"</string>
     <string name="header_event_entry" msgid="70962228694476731">"Acara"</string>
@@ -284,7 +284,7 @@
     <string name="sms_assistant" msgid="245045451580096547">"SMS <xliff:g id="ASSISTANT">%s</xliff:g>"</string>
     <string name="sms_mms" msgid="7395133080765833725">"SMS MMS"</string>
     <string name="sms_by_shortcut" msgid="4682340916268521006">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (SMS)"</string>
-    <string name="description_video_call" msgid="4956825008907720371">"Lakukan panggilan video"</string>
+    <string name="description_video_call" msgid="4956825008907720371">"Lakukan video call"</string>
     <string name="clearFrequentsConfirmation_title" msgid="9194415661170740437">"Hapus yang sering dihubungi?"</string>
     <string name="clearFrequentsConfirmation" msgid="2120741757522063938">"Anda akan menghapus daftar yang sering dihubungi pada aplikasi Kontak dan Ponsel, serta memaksa aplikasi email untuk mempelajari preferensi penanganan dari awal."</string>
     <string name="clearFrequentsProgress_title" msgid="8271935295080659743">"Menghapus yang sering dihubungi..."</string>
@@ -479,7 +479,7 @@
     <string name="url_open_error_toast" msgid="4885855620824048385">"Gagal membuka url."</string>
     <string name="account_filter_view_checked" msgid="4740544238806346376">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> dicentang"</string>
     <string name="account_filter_view_not_checked" msgid="5782705545786455847">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> tidak dicentang"</string>
-    <string name="description_search_video_call" msgid="1768558141309418755">"Lakukan panggilan video"</string>
+    <string name="description_search_video_call" msgid="1768558141309418755">"Lakukan video call"</string>
     <string name="description_delete_contact" msgid="8110643050235441400">"Hapus"</string>
     <string name="description_no_name_header" msgid="8596201864512339003">"Elipsis"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="8770462908102469878">"Pintasan ini telah dinonaktifkan"</string>
