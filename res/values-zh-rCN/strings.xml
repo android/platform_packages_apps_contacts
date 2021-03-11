@@ -98,7 +98,7 @@
     <string name="photoPickerNotFoundText" msgid="6535222297923110991">"设备上没有可用的照片。"</string>
     <string name="attach_photo_dialog_title" msgid="7948754072673745235">"联系人照片"</string>
     <string name="customLabelPickerTitle" msgid="816694850254307154">"自定义标签名称"</string>
-    <string name="removePhoto" msgid="1190099414600730001">"移除照片"</string>
+    <string name="removePhoto" msgid="1190099414600730001">"删除照片"</string>
     <string name="noContacts" msgid="3030512741779213810">"联系人列表是空的"</string>
     <string name="emptyGroup" msgid="8598261660865081152">"此标签下没有联系人"</string>
     <string name="emptyAccount" msgid="7450843210977018582">"此帐号中没有联系人"</string>
@@ -317,7 +317,7 @@
     <string name="phoneLabelsGroup" msgid="2746758650001801885">"电话"</string>
     <string name="emailLabelsGroup" msgid="3360719560200449554">"电子邮件"</string>
     <string name="postalLabelsGroup" msgid="7534317297587527570">"地址"</string>
-    <string name="imLabelsGroup" msgid="2113398976789806432">"即时通讯"</string>
+    <string name="imLabelsGroup" msgid="2113398976789806432">"即时聊天工具"</string>
     <string name="organizationLabelsGroup" msgid="2342482097897299099">"组织"</string>
     <string name="relationLabelsGroup" msgid="8931615792208307291">"关系"</string>
     <string name="eventLabelsGroup" msgid="8625868552164376823">"特别的日子"</string>
