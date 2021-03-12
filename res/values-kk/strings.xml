@@ -295,7 +295,7 @@
     <string name="directory_search_label" msgid="2602118204885565153">"Каталог"</string>
     <string name="directory_search_label_work" msgid="2392128956332931231">"Жұмыс каталогы"</string>
     <string name="local_search_label" msgid="6692495405531144805">"Барлық контактілер"</string>
-    <string name="description_quick_contact_for" msgid="6364906818231956042">"Жылдам контакт: <xliff:g id="NAME">%1$s</xliff:g>"</string>
+    <string name="description_quick_contact_for" msgid="6364906818231956042">"<xliff:g id="NAME">%1$s</xliff:g> үшін жылдам байланыс"</string>
     <string name="missing_name" msgid="7970183292521946492">"(Атаусыз)"</string>
     <string name="favoritesFrequentContacted" msgid="2885862854079966676">"Жиі хабарласатындар"</string>
     <string name="list_filter_phones" msgid="6839133198968393843">"Телефон нөмірі бар барлық контактілер"</string>
