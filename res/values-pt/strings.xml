@@ -191,7 +191,7 @@
     <string name="contact_editor_prompt_multiple_accounts" msgid="1543322760761168351">"Escolha uma conta padrão para novos contatos:"</string>
     <string name="contact_editor_title_new_contact" msgid="7534775011591770343">"Criar novo contato"</string>
     <string name="contact_editor_title_existing_contact" msgid="3647774955741654029">"Editar contato"</string>
-    <string name="contact_editor_title_read_only_contact" msgid="5494810291515292596">"Somente ver"</string>
+    <string name="contact_editor_title_read_only_contact" msgid="5494810291515292596">"Somente visualização"</string>
     <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4478782370280424187">"Escolher um contato para editar"</string>
     <string name="contact_editor_pick_linked_contact_dialog_title" msgid="3332134735168016293">"Contatos vinculados"</string>
     <string name="contact_editor_add_linked_contact" msgid="2895453741206196138">"Adicionar"</string>
