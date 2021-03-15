@@ -431,9 +431,9 @@
     <string name="importing_vcard_canceled_title" msgid="8165471996631186776">"Importovanie súboru <xliff:g id="FILENAME">%s</xliff:g> bolo zrušené"</string>
     <string name="vcard_import_will_start_message" msgid="4514702035621833178">"Vizitka <xliff:g id="FILENAME">%s</xliff:g> bude čoskoro importovaná."</string>
     <string name="vcard_import_will_start_message_with_default_name" msgid="8205422202924103470">"Súbor bude čoskoro importovaný."</string>
-    <string name="vcard_import_request_rejected_message" msgid="4754292694777189540">"Žiadosť o import vizitky vCard bola odmietnutá. Skúste to neskôr."</string>
+    <string name="vcard_import_request_rejected_message" msgid="4754292694777189540">"Žiadosť o import vizitky vCard bola odmietnutá. Skúste to znova neskôr."</string>
     <string name="contacts_export_will_start_message" msgid="6428126265599715944">"Kontakty budú čoskoro exportované"</string>
-    <string name="vcard_export_request_rejected_message" msgid="6455336845734884740">"Žiadosť o export vizitky bola odmietnutá. Skúste to neskôr."</string>
+    <string name="vcard_export_request_rejected_message" msgid="6455336845734884740">"Žiadosť o export vizitky bola odmietnutá. Skúste to znova neskôr."</string>
     <string name="vcard_unknown_filename" msgid="8320954544777782497">"kontakt"</string>
     <string name="caching_vcard_message" msgid="1879339732783666517">"Prebieha načítavanie vizitiek vCard do vyrovnávacej pamäte miestneho dočasného úložiska. Samotné importovanie začne o chvíľu."</string>
     <string name="vcard_import_failed" msgid="37313715326741013">"Vizitku vCard sa nepodarilo importovať."</string>
