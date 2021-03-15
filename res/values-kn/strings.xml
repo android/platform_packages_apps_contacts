@@ -103,7 +103,7 @@
     <string name="emptyGroup" msgid="8598261660865081152">"ಈ ಲೇಬಲ್‌ನ ಯಾವುದೇ ಸಂಪರ್ಕಗಳಿಲ್ಲ"</string>
     <string name="emptyAccount" msgid="7450843210977018582">"ಈ ಖಾತೆಯಲ್ಲಿ ಯಾವುದೇ ಸಂಪರ್ಕಗಳಿಲ್ಲ"</string>
     <string name="emptyMainList" msgid="3266182207039677163">"ನಿಮ್ಮ ಸಂಪರ್ಕಗಳ ಪಟ್ಟಿಯು ಖಾಲಿಯಾಗಿದೆ"</string>
-    <string name="contactSavedNamedToast" msgid="3067050290584834386">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> ಸಂಪರ್ಕವನ್ನು ಉಳಿಸಲಾಗಿದೆ"</string>
+    <string name="contactSavedNamedToast" msgid="3067050290584834386">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> ಉಳಿಸಲಾಗಿದೆ"</string>
     <string name="contactSavedToast" msgid="4370392215196995301">"ಸಂಪರ್ಕ‌ವನ್ನು ಉಳಿಸಲಾಗಿದೆ"</string>
     <string name="contactUnlinkedToast" msgid="6791720274141804377">"ಸಂಪರ್ಕಗಳನ್ನು ಅನ್‌ಲಿಂಕ್ ಮಾಡಲಾಗಿದೆ"</string>
     <string name="contactSavedErrorToast" msgid="3213619905154956918">"ಸಂಪರ್ಕ ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಲಾಗಲಿಲ್ಲ"</string>
@@ -134,7 +134,7 @@
     <string name="quickcontact_add_email" msgid="1442894568471116797">"ಇಮೇಲ್ ಸೇರಿಸಿ"</string>
     <string name="missing_app" msgid="5674389915738964148">"ಈ ಕ್ರಿಯೆಯನ್ನು ನಿರ್ವಹಿಸಲು ಯಾವುದೇ ಅಪ್ಲಿಕೇಶನ್‌ ಕಂಡುಬಂದಿಲ್ಲ."</string>
     <string name="menu_share" msgid="6343022811796001773">"ಹಂಚಿಕೊಳ್ಳಿ"</string>
-    <string name="menu_add_contact" msgid="5822356185421997656">"ಸಂಪರ್ಕಗಳಿಗೆ ಸೇರಿಸಿ"</string>
+    <string name="menu_add_contact" msgid="5822356185421997656">"ಸಂಪರ್ಕಗಳಿಗೆ ಸೇರಿಸು"</string>
     <string name="menu_add_contacts" msgid="7114262784903366463">"ಸೇರಿಸು"</string>
     <plurals name="title_share_via" formatted="false" msgid="3868648642107664607">
       <item quantity="one">ಸಂಪರ್ಕಗಳನ್ನು ಈ ಮೂಲಕ ಹಂಚಿಕೊಳ್ಳಿ</item>
@@ -353,7 +353,7 @@
     <string name="chat_gtalk" msgid="2927882858741904064">"Google Talk ಬಳಸಿಕೊಂಡು ಚಾಟ್‌ ಮಾಡಿ"</string>
     <string name="chat_icq" msgid="4289041376069626281">"ICQ ಬಳಸಿಕೊಂಡು ಚಾಟ್‌ ಮಾಡಿ"</string>
     <string name="chat_jabber" msgid="1097960594943864847">"Jabber ಬಳಸಿಕೊಂಡು ಚಾಟ್‌ ಮಾಡಿ"</string>
-    <string name="chat" msgid="8390862712584830532">"Chat"</string>
+    <string name="chat" msgid="8390862712584830532">"ಚಾಟ್"</string>
     <string name="description_minus_button" msgid="1305985971158054217">"ಅಳಿಸಿ"</string>
     <string name="expand_name_fields_description" msgid="6059558159338959487">"ಇನ್ನಷ್ಟು ಹೆಸರಿನ ಕ್ಷೇತ್ರಗಳನ್ನು ತೋರಿಸಿ"</string>
     <string name="collapse_name_fields_description" msgid="7950435675716414477">"ಹೆಸರಿನ ಕ್ಷೇತ್ರಗಳನ್ನು ಸಂಕುಚಿಸಿ"</string>
