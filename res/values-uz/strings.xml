@@ -163,13 +163,13 @@
     <string name="contact_directory_description" msgid="1773630547110881835">"Direktoriya <xliff:g id="TYPE">%1$s</xliff:g>"</string>
     <string name="activity_title_settings" msgid="4004290638426915162">"Sozlamalar"</string>
     <string name="menu_settings" msgid="3524924670246877187">"Sozlamalar"</string>
-    <string name="menu_help" msgid="287801702920372292">"Yordam/fikr-mulohaza"</string>
+    <string name="menu_help" msgid="287801702920372292">"Yordam va fikr-mulohaza"</string>
     <string name="organization_company_and_title" msgid="7197631449041284518">"<xliff:g id="COMPANY_0">%2$s</xliff:g>, <xliff:g id="COMPANY_1">%1$s</xliff:g>"</string>
     <string name="non_phone_caption" msgid="7343449684187013327">"Telefon raqami"</string>
     <string name="non_phone_add_to_contacts" msgid="5472784294274676663">"Kontaktlarga saqlash"</string>
     <string name="non_phone_close" msgid="2792373584950696532">"Yopish"</string>
     <string name="date_year_toggle" msgid="8930759990426623823">"yili bilan birga"</string>
-    <string name="contacts_unavailable_add_account" msgid="5196453892411710750">"Hisob kiritish"</string>
+    <string name="contacts_unavailable_add_account" msgid="5196453892411710750">"Hisob qo‘shish"</string>
     <string name="contacts_unavailable_import_contacts" msgid="4914180876114104054">"Import qilish"</string>
     <string name="create_group_item_label" msgid="921929508079162463">"Yangi yorliq yaratish…"</string>
     <string name="delete_group_dialog_message" msgid="754082019928025404">"“<xliff:g id="GROUP_LABEL">%1$s</xliff:g>” yorlig‘i o‘chirib tashlansinmi? Kontaktlar o‘chib ketmaydi."</string>
@@ -196,7 +196,7 @@
     <string name="contact_editor_pick_linked_contact_dialog_title" msgid="3332134735168016293">"Bog‘langan kontaktlar"</string>
     <string name="contact_editor_add_linked_contact" msgid="2895453741206196138">"Qo‘shish"</string>
     <string name="contact_editor_unlink_contacts" msgid="8399419729744305687">"Ajratish"</string>
-    <string name="add_account" msgid="3071396624500839020">"Hisob kiritish"</string>
+    <string name="add_account" msgid="3071396624500839020">"Hisob qo‘shish"</string>
     <string name="add_new_account" msgid="573368229646104110">"Yangi hisob qo‘shish"</string>
     <string name="menu_export_database" msgid="1658249125751926885">"Ma’lumotlar bazasi fayllarini eksport qilish"</string>
     <string name="action_menu_add_new_contact_button" msgid="1201339383074001291">"Yangi kontakt yaratish"</string>
@@ -310,10 +310,10 @@
     <string name="name_prefix" msgid="8857117624713905211">"Murojaat shakli"</string>
     <string name="name_middle" msgid="7330498948136181042">"Otasining ismi"</string>
     <string name="name_suffix" msgid="4502958221763936999">"Martabasi/unvoni"</string>
-    <string name="name_phonetic" msgid="4746541275769990740">"Ism transkripsiyasi"</string>
-    <string name="name_phonetic_given" msgid="425534279190047812">"Ism transkripsiyasi"</string>
-    <string name="name_phonetic_middle" msgid="6528822054594516485">"Otasining ismi transkripsiyasi"</string>
-    <string name="name_phonetic_family" msgid="1690852801039809448">"Familiya transkripsiyasi"</string>
+    <string name="name_phonetic" msgid="4746541275769990740">"Ism talaffuzi"</string>
+    <string name="name_phonetic_given" msgid="425534279190047812">"Ism talaffuzi"</string>
+    <string name="name_phonetic_middle" msgid="6528822054594516485">"Otasining ismi talaffuzi"</string>
+    <string name="name_phonetic_family" msgid="1690852801039809448">"Familiya talaffuzi"</string>
     <string name="phoneLabelsGroup" msgid="2746758650001801885">"Telefon"</string>
     <string name="emailLabelsGroup" msgid="3360719560200449554">"Email"</string>
     <string name="postalLabelsGroup" msgid="7534317297587527570">"Manzil"</string>
@@ -430,7 +430,7 @@
     <string name="progress_notifier_message" msgid="8522060892889599746">"Import qilinmoqda: <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g> – <xliff:g id="NAME">%3$s</xliff:g>"</string>
     <string name="export_to_vcf_file" msgid="3096479544575798192">"VCF faylga eksport qilish"</string>
     <string name="display_options_sort_list_by" msgid="4333658089057400431">"Saralash"</string>
-    <string name="display_options_phonetic_name_fields" msgid="1857564544755287298">"Ism transkripsiyasi"</string>
+    <string name="display_options_phonetic_name_fields" msgid="1857564544755287298">"Ism talaffuzi"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="3612488836474257715">"Har doim ko‘rsatish"</string>
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2693314301550366143">"Bo‘sh maydonni berkitish"</string>
     <string name="display_options_sort_by_given_name" msgid="893781924536349248">"Ismi"</string>
