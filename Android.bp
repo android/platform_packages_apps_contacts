@@ -32,6 +32,6 @@ android_app {
         proguard_flags_files: ["proguard.flags"],
     },
 
-    sdk_version: "current",
+    sdk_version: "system_current",
     min_sdk_version: "21",
 }
