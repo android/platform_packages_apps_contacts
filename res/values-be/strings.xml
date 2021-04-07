@@ -513,7 +513,7 @@
     <string name="dismiss_sync_alert" msgid="4057176963960104786">"Адхіліць"</string>
     <string name="account_sync_off" msgid="6187683798342006021">"Сінхранізацыя ўліковага запісу адключана. Дакраніцеся, каб уключыць яе."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="3812155064863594938">"Уключыць аўтасінхранізацыю?"</string>
-    <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"Змены, якія вы зрабілі ва ўсіх праграмах і ўліковых запісах, не толькі ў Кантактах Google, будуць сінхранізоўвацца паміж вэб-інтэрфейсам і вашымі прыладамі."</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"Змяненні, унесеныя вамі ў іншых праграмах і ўліковых запісах (не толькі ў Google Кантактах), будуць сінхранізавацца паміж вэб-інтэрфейсам і вашымі прыладамі."</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"Уключыць"</string>
     <string name="connection_error_message" msgid="7446131881946138093">"Няма падключэння"</string>
     <string name="single_sim_display_label" msgid="264062966309455515">"SIM-карта"</string>

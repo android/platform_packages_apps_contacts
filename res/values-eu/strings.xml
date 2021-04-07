@@ -481,7 +481,7 @@
     <string name="account_filter_view_not_checked" msgid="5782705545786455847">"Ez da hautatu <xliff:g id="ACCOUNT_INFO">%s</xliff:g>"</string>
     <string name="description_search_video_call" msgid="1768558141309418755">"Egin bideo-deia"</string>
     <string name="description_delete_contact" msgid="8110643050235441400">"Ezabatu"</string>
-    <string name="description_no_name_header" msgid="8596201864512339003">"Elipsia"</string>
+    <string name="description_no_name_header" msgid="8596201864512339003">"Etenpuntuak"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="8770462908102469878">"Lasterbidea desgaitu egin da"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="8331735243566193974">"Kendu da kontaktua"</string>
     <string name="sim_import_button_text" msgid="2845608246304396009">"Inportatu"</string>

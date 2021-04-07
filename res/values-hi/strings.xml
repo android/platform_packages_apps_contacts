@@ -96,7 +96,7 @@
     <string name="createContactShortcutSuccessful_NoName" msgid="532242135930208299">"संपर्कों को होम स्क्रीन में जोड़ा गया."</string>
     <string name="createContactShortcutSuccessful" msgid="6980032407920515698">"<xliff:g id="NAME">%s</xliff:g> को होम स्क्रीन में जोड़ा गया."</string>
     <string name="photoPickerNotFoundText" msgid="6535222297923110991">"डिवाइस पर कोई चित्र उपलब्ध नहीं है."</string>
-    <string name="attach_photo_dialog_title" msgid="7948754072673745235">"संपर्क का फ़ोटो"</string>
+    <string name="attach_photo_dialog_title" msgid="7948754072673745235">"संपर्क की फ़ोटो"</string>
     <string name="customLabelPickerTitle" msgid="816694850254307154">"कस्टम लेबल नाम"</string>
     <string name="removePhoto" msgid="1190099414600730001">"फ़ोटो निकालें"</string>
     <string name="noContacts" msgid="3030512741779213810">"आपकी संपर्क सूची खाली है"</string>

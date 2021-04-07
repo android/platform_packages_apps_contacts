@@ -412,7 +412,7 @@
     <string name="composer_has_no_exportable_contact" msgid="473911071832548562">"Hakuna anwani zinazoweza kuhamishwa."</string>
     <string name="composer_not_initialized" msgid="3861391548605450184">"Kitunzi cha vCard hakikuanza vizuri."</string>
     <string name="exporting_contact_failed_title" msgid="9003659313161289860">"Imeshindwa kuhamisha"</string>
-    <string name="exporting_contact_failed_message" msgid="9198720310560773485">"Data ya mwasiliani haikuhamishwa.\nSababu: \"<xliff:g id="FAIL_REASON">%s</xliff:g>\""</string>
+    <string name="exporting_contact_failed_message" msgid="9198720310560773485">"Data ya anwani halikuhamishwa.\nSababu: \"<xliff:g id="FAIL_REASON">%s</xliff:g>\""</string>
     <string name="importing_vcard_description" msgid="6982207216746936735">"Inaingiza <xliff:g id="NAME">%s</xliff:g>"</string>
     <string name="reading_vcard_failed_title" msgid="1230432142768184978">"Haikuweza kusoma data ya vKadi"</string>
     <string name="importing_vcard_finished_title" msgid="2274644947000264322">"Imemaliza kuleta vCard <xliff:g id="FILENAME">%s</xliff:g>"</string>

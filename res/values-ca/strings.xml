@@ -503,9 +503,9 @@
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"Activa"</string>
     <string name="connection_error_message" msgid="7446131881946138093">"Sense connexió"</string>
     <string name="single_sim_display_label" msgid="264062966309455515">"SIM"</string>
-    <string name="show_more_content_description" msgid="6298277298495491712">"Mostra més"</string>
+    <string name="show_more_content_description" msgid="6298277298495491712">"Mostra\'n més"</string>
     <string name="importing_sim_finished_title" msgid="6436721150882268416">"Importació de la targeta SIM completada"</string>
-    <string name="importing_sim_failed_title" msgid="1046154274170241788">"La importació ha fallat"</string>
+    <string name="importing_sim_failed_title" msgid="1046154274170241788">"Ha fallat la importació"</string>
     <string name="importing_sim_failed_message" msgid="55568522164349044">"No s\'han pogut importar els contactes de la targeta SIM"</string>
     <string name="importing_sim_in_progress_title" msgid="7647907413920018595">"S\'estan important els contactes de la SIM"</string>
     <string name="contacts_default_notification_channel" msgid="5116916969874075866">"Notificacions"</string>
