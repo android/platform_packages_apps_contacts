@@ -102,29 +102,10 @@ public class ImplicitIntentsUtil {
      */
     public static void startQuickContact(Activity activity, Uri contactLookupUri,
             int previousScreenType) {
-        startQuickContact(activity, contactLookupUri, previousScreenType, /* requestCode */ -1);
-    }
-
-    /**
-     * Starts QuickContact for result with the default mode and specified previous screen type.
-     */
-    public static void startQuickContactForResult(Activity activity, Uri contactLookupUri,
-            int previousScreenType, int requestCode) {
-        startQuickContact(activity, contactLookupUri, previousScreenType, requestCode);
-    }
-
-    private static void startQuickContact(Activity activity, Uri contactLookupUri,
-            int previousScreenType, int requestCode) {
         final Intent intent = ImplicitIntentsUtil.composeQuickContactIntent(
                 activity, contactLookupUri, previousScreenType);
 
-        // We only start "for result" if specifically requested.
-        if (requestCode >= 0) {
-            intent.setPackage(activity.getPackageName());
-            activity.startActivityForResult(intent, requestCode);
-        } else {
-            startActivityInApp(activity, intent);
-        }
+        startActivityInApp(activity, intent);
     }
 
     /**

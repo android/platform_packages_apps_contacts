@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="5" by="lint 4.1.0" client="cli" variant="all" version="4.1.0">
+
+    <issue
+        id="NewApi"
+        message="Cast from `PhoneAccountHandle` to `Parcelable` requires API level 23 (current min is 21)"
+        errorLine1="        arguments.putParcelable(ARG_PHONE_ACCOUNT_HANDLE, phoneAccountHandle);"
+        errorLine2="                                                          ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/dialog/CallSubjectDialog.java"
+            line="249"
+            column="59"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Cast from `PhoneAccountHandle` to `Parcelable` requires API level 23 (current min is 21)"
+        errorLine1="            intent.putExtra(TelecomManager.EXTRA_PHONE_ACCOUNT_HANDLE, phoneAccountHandle);"
+        errorLine2="                                                                       ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/CallUtil.java"
+            line="87"
+            column="72"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telecom.TelecomManager#getCallCapablePhoneAccounts`"
+        errorLine1="            List&lt;PhoneAccountHandle> accountHandles = telecommMgr.getCallCapablePhoneAccounts();"
+        errorLine2="                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/CallUtil.java"
+            line="164"
+            column="67"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telecom.TelecomManager#getPhoneAccount`"
+        errorLine1="                PhoneAccount account = telecommMgr.getPhoneAccount(accountHandle);"
+        errorLine2="                                                   ~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/CallUtil.java"
+            line="166"
+            column="52"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telecom.PhoneAccount#hasCapabilities`"
+        errorLine1="                    if (account.hasCapabilities(PhoneAccount.CAPABILITY_VIDEO_CALLING)) {"
+        errorLine2="                                ~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/CallUtil.java"
+            line="168"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telecom.PhoneAccount#hasCapabilities`"
+        errorLine1="                        if (account.hasCapabilities(PhoneAccountSdkCompat"
+        errorLine2="                                    ~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/CallUtil.java"
+            line="175"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telecom.TelecomManager#getCallCapablePhoneAccounts`"
+        errorLine1="            List&lt;PhoneAccountHandle> accountHandles = telecommMgr.getCallCapablePhoneAccounts();"
+        errorLine2="                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/CallUtil.java"
+            line="211"
+            column="67"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telecom.TelecomManager#getPhoneAccount`"
+        errorLine1="                PhoneAccount account = telecommMgr.getPhoneAccount(accountHandle);"
+        errorLine2="                                                   ~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/CallUtil.java"
+            line="213"
+            column="52"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telecom.PhoneAccount#hasCapabilities`"
+        errorLine1="                if (account != null &amp;&amp; account.hasCapabilities(PhoneAccount.CAPABILITY_CALL_SUBJECT)) {"
+        errorLine2="                                               ~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/CallUtil.java"
+            line="214"
+            column="48"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.content.ContentProviderOperation#isInsert`"
+        errorLine1="            return cpoWrapper.getOperation().isInsert();"
+        errorLine2="                                             ~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/CompatUtils.java"
+            line="48"
+            column="46"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.content.ContentProviderOperation#isUpdate`"
+        errorLine1="            return cpoWrapper.getOperation().isUpdate();"
+        errorLine2="                                             ~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/CompatUtils.java"
+            line="58"
+            column="46"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.content.ContentProviderOperation#isDelete`"
+        errorLine1="            return cpoWrapper.getOperation().isDelete();"
+        errorLine2="                                             ~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/CompatUtils.java"
+            line="68"
+            column="46"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.content.ContentProviderOperation#isAssertQuery`"
+        errorLine1="            return cpoWrapper.getOperation().isAssertQuery();"
+        errorLine2="                                             ~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/CompatUtils.java"
+            line="77"
+            column="46"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.widget.QuickContactBadge#setPrioritizedMimeType`"
+        errorLine1="            quickContact.setPrioritizedMimeType(Phone.CONTENT_ITEM_TYPE);"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/list/ContactEntryListAdapter.java"
+            line="721"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Field requires API level 24 (current min is 21): `android.provider.ContactsContract.Directory#ENTERPRISE_CONTENT_URI`"
+        errorLine1="    public static final Uri ENTERPRISE_CONTENT_URI = Directory.ENTERPRISE_CONTENT_URI;"
+        errorLine2="                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/DirectorySdkCompat.java"
+            line="26"
+            column="54"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 24 (current min is 21): `android.provider.BlockedNumberContract#canCurrentUserBlockNumbers`"
+        errorLine1="                &amp;&amp; BlockedNumberContract.canCurrentUserBlockNumbers(getContext());"
+        errorLine2="                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/preference/DisplayOptionsPreferenceFragment.java"
+            line="300"
+            column="42"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 28 (current min is 21): `android.content.pm.PackageInfo#getLongVersionCode`"
+        errorLine1="                sCachedVersionCode = Long.toString(info.getLongVersionCode());"
+        errorLine2="                                                        ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/util/HelpUtils.java"
+            line="125"
+            column="57"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 26 (current min is 21): `android.graphics.drawable.AdaptiveIconDrawable#getExtraInsetFraction`"
+        errorLine1="        return 1 / (1 + (2 * AdaptiveIconDrawable.getExtraInsetFraction()));"
+        errorLine2="                                                  ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/lettertiles/LetterTileDrawable.java"
+            line="293"
+            column="51"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telecom.PhoneAccount#getIcon`"
+        errorLine1="            return phoneAccount.getIcon();"
+        errorLine2="                                ~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/PhoneAccountCompat.java"
+            line="45"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.graphics.drawable.Icon#loadDrawable`"
+        errorLine1="        return accountIcon.loadDrawable(context);"
+        errorLine2="                           ~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/PhoneAccountCompat.java"
+            line="84"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Class requires API level 23 (current min is 21): `android.telecom.PhoneAccount`"
+        errorLine1="            return (Drawable) PhoneAccount.class.getMethod(&quot;createIconDrawable&quot;, Context.class)"
+        errorLine2="                              ~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/PhoneAccountCompat.java"
+            line="91"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telephony.PhoneNumberUtils#createTtsSpannable`"
+        errorLine1="            return PhoneNumberUtils.createTtsSpannable(phoneNumber);"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/PhoneNumberUtilsCompat.java"
+            line="85"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telephony.PhoneNumberUtils#createTtsSpan`"
+        errorLine1="            return PhoneNumberUtils.createTtsSpan(phoneNumber);"
+        errorLine2="                                    ~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/PhoneNumberUtilsCompat.java"
+            line="93"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telephony.PhoneNumberUtils#addTtsSpan`"
+        errorLine1="            PhoneNumberUtils.addTtsSpan(s, start, endExclusive);"
+        errorLine2="                             ~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/PhoneNumberUtilsCompat.java"
+            line="118"
+            column="30"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Field requires API level 23 (current min is 21): `android.provider.ContactsContract.ProviderStatus#CONTENT_URI`"
+        errorLine1="                .registerContentObserver(ProviderStatus.CONTENT_URI, false, this);"
+        errorLine2="                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/list/ProviderStatusWatcher.java"
+            line="132"
+            column="42"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Field requires API level 23 (current min is 21): `android.provider.ContactsContract.ProviderStatus#CONTENT_URI`"
+        errorLine1="                Cursor cursor = mContext.getContentResolver().query(ProviderStatus.CONTENT_URI,"
+        errorLine2="                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/list/ProviderStatusWatcher.java"
+            line="219"
+            column="69"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Field requires API level 23 (current min is 21): `android.provider.ContactsContract.ProviderStatus#CONTENT_URI`"
+        errorLine1="        if (!ProviderStatus.CONTENT_URI.equals(uri)) return;"
+        errorLine2="             ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/list/ProviderStatusWatcher.java"
+            line="270"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 22 (current min is 21): `android.app.Activity#getReferrer`"
+        errorLine1="        if (mReferrer == null &amp;&amp; CompatUtils.isLollipopMr1Compatible() &amp;&amp; getReferrer() != null) {"
+        errorLine2="                                                                          ~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/quickcontact/QuickContactActivity.java"
+            line="652"
+            column="75"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 22 (current min is 21): `android.app.Activity#getReferrer`"
+        errorLine1="            mReferrer = getReferrer().getAuthority();"
+        errorLine2="                        ~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/quickcontact/QuickContactActivity.java"
+            line="653"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Class requires API level 23 (current min is 21): `android.telecom.PhoneAccountHandle`"
+        errorLine1="                        (PhoneAccountHandle) resultData.getParcelable("
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/widget/SelectPhoneAccountDialogFragment.java"
+            line="130"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Cast from `PhoneAccountHandle` to `Parcelable` requires API level 23 (current min is 21)"
+        errorLine1="                        selectedAccountHandle);"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/widget/SelectPhoneAccountDialogFragment.java"
+            line="171"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telecom.TelecomManager#getPhoneAccount`"
+        errorLine1="            PhoneAccount account = mTelecomManager.getPhoneAccount(accountHandle);"
+        errorLine2="                                                   ~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/widget/SelectPhoneAccountDialogFragment.java"
+            line="247"
+            column="52"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telecom.PhoneAccount#getLabel`"
+        errorLine1="            holder.labelTextView.setText(account.getLabel());"
+        errorLine2="                                                 ~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/widget/SelectPhoneAccountDialogFragment.java"
+            line="251"
+            column="50"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telecom.PhoneAccount#getAddress`"
+        errorLine1="            if (account.getAddress() == null ||"
+        errorLine2="                        ~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/widget/SelectPhoneAccountDialogFragment.java"
+            line="252"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telecom.PhoneAccount#getAddress`"
+        errorLine1="                    TextUtils.isEmpty(account.getAddress().getSchemeSpecificPart())) {"
+        errorLine2="                                              ~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/widget/SelectPhoneAccountDialogFragment.java"
+            line="253"
+            column="47"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telecom.PhoneAccount#getAddress`"
+        errorLine1="                                account.getAddress().getSchemeSpecificPart()));"
+        errorLine2="                                        ~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/widget/SelectPhoneAccountDialogFragment.java"
+            line="259"
+            column="41"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level R (current min is 21): `android.telephony.TelephonyManager#getSubscriptionId`"
+        errorLine1="            return new SimCard(telephony.getSimSerialNumber(), telephony.getSubscriptionId(),"
+        errorLine2="                                                                         ~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/model/SimCard.java"
+            line="244"
+            column="74"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 31 (current min is 21): `android.provider.SimPhonebookContract.SimRecords#getContentUri`"
+        errorLine1="                SimRecords.getContentUri("
+        errorLine2="                           ~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/database/SimContactDaoImpl.java"
+            line="130"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 26 (current min is 21): `android.content.ContentResolver#query`"
+        errorLine1="            final Cursor cursor = mResolver.query(uri,"
+        errorLine2="                                            ~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/database/SimContactDaoImpl.java"
+            line="265"
+            column="45"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telecom.TelecomManager#placeCall`"
+        errorLine1="            telecomManager.placeCall(intent.getData(), intent.getExtras());"
+        errorLine2="                           ~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/telecom/TelecomManagerCompat.java"
+            line="43"
+            column="28"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 22 (current min is 21): `android.telephony.TelephonyManager#isVoiceCapable`"
+        errorLine1="            return telephonyManager.isVoiceCapable();"
+        errorLine2="                                    ~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/TelephonyManagerCompat.java"
+            line="49"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telephony.TelephonyManager#getPhoneCount`"
+        errorLine1="            return telephonyManager.getPhoneCount();"
+        errorLine2="                                    ~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/TelephonyManagerCompat.java"
+            line="71"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telephony.TelephonyManager#getDeviceId`"
+        errorLine1="            return telephonyManager.getDeviceId(slotId);"
+        errorLine2="                                    ~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/TelephonyManagerCompat.java"
+            line="93"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telephony.TelephonyManager#isTtyModeSupported`"
+        errorLine1="            return telephonyManager.isTtyModeSupported();"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/TelephonyManagerCompat.java"
+            line="111"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.telephony.TelephonyManager#isHearingAidCompatibilitySupported`"
+        errorLine1="            return telephonyManager.isHearingAidCompatibilitySupported();"
+        errorLine2="                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/TelephonyManagerCompat.java"
+            line="131"
+            column="37"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="Call requires API level 23 (current min is 21): `android.provider.Telephony.Threads#getOrCreateThreadId`"
+        errorLine1="            return Telephony.Threads.getOrCreateThreadId(context, recipient);"
+        errorLine2="                                     ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/src/com/android/contacts/compat/TelephonyThreadsCompat.java"
+            line="51"
+            column="38"/>
+    </issue>
+
+    <issue
+        id="NewApi"
+        message="`android:contentInsetStartWithNavigation` requires API level 24 (current min is 21)"
+        errorLine1="        &lt;item name=&quot;android:contentInsetStartWithNavigation&quot;>72dp&lt;/item>"
+        errorLine2="              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="packages/apps/Contacts/res/values/styles.xml"
+            line="215"
+            column="15"/>
+    </issue>
+
+</issues>
