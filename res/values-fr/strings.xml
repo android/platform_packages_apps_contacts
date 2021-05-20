@@ -45,7 +45,7 @@
     <string name="menu_addContactsToGroup" msgid="4549318978482280577">"Ajouter des contacts"</string>
     <string name="menu_removeFromGroup" msgid="8753799091967887958">"Retirer du libellé"</string>
     <string name="menu_new_group_action_bar" msgid="1670312283925872483">"Créer un libellé"</string>
-    <string name="splitConfirmation" msgid="4750158900636307469">"Diviser ce contact en plusieurs contacts ?"</string>
+    <string name="splitConfirmation" msgid="4750158900636307469">"Dissocier ce contact et le scinder en plusieurs ?"</string>
     <string name="splitConfirmation_positive_button" msgid="3109235536045409854">"Dissocier"</string>
     <string name="splitConfirmationWithPendingChanges" msgid="8617395780141069527">"Voulez-vous enregistrer les modifications que vous avez déjà apportées et diviser ce contact en plusieurs contacts ?"</string>
     <string name="splitConfirmationWithPendingChanges_positive_button" msgid="131293000921403021">"Enregistrer et dissocier"</string>
@@ -79,7 +79,7 @@
     </plurals>
     <string name="title_from_google" msgid="2554633992366572820">"Contacts Google"</string>
     <string name="title_from_other_accounts" msgid="7813596336566711843">"Contacts de <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
-    <string name="menu_set_ring_tone" msgid="8876328286439724181">"Régler sonnerie"</string>
+    <string name="menu_set_ring_tone" msgid="8876328286439724181">"Définir la sonnerie"</string>
     <string name="menu_redirect_calls_to_vm" msgid="3027178444991878913">"Rediriger vers la messagerie"</string>
     <string name="menu_unredirect_calls_to_vm" msgid="2294919685954790892">"Ne plus rediriger"</string>
     <string name="readOnlyContactWarning" msgid="4158660823025751201">"Ce contact est en lecture seule. Il ne peut pas être supprimé, mais vous pouvez le masquer."</string>
@@ -190,7 +190,7 @@
     <string name="contact_editor_prompt_one_account" msgid="765343809177951169">"Les nouveaux contacts seront enregistrés dans le compte <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>."</string>
     <string name="contact_editor_prompt_multiple_accounts" msgid="1543322760761168351">"Sélectionnez un compte par défaut pour les nouveaux contacts :"</string>
     <string name="contact_editor_title_new_contact" msgid="7534775011591770343">"Créer un contact"</string>
-    <string name="contact_editor_title_existing_contact" msgid="3647774955741654029">"Modifier contact"</string>
+    <string name="contact_editor_title_existing_contact" msgid="3647774955741654029">"Modifier le contact"</string>
     <string name="contact_editor_title_read_only_contact" msgid="5494810291515292596">"Lecture seule"</string>
     <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4478782370280424187">"Choisir le contact à modifier"</string>
     <string name="contact_editor_pick_linked_contact_dialog_title" msgid="3332134735168016293">"Contacts associés"</string>

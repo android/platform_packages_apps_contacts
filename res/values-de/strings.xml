@@ -79,7 +79,7 @@
     </plurals>
     <string name="title_from_google" msgid="2554633992366572820">"Von Google"</string>
     <string name="title_from_other_accounts" msgid="7813596336566711843">"Von <xliff:g id="ACCOUNT">%s</xliff:g>"</string>
-    <string name="menu_set_ring_tone" msgid="8876328286439724181">"Klingeltonwahl"</string>
+    <string name="menu_set_ring_tone" msgid="8876328286439724181">"Klingelton auswählen"</string>
     <string name="menu_redirect_calls_to_vm" msgid="3027178444991878913">"An Mailbox weiterleiten"</string>
     <string name="menu_unredirect_calls_to_vm" msgid="2294919685954790892">"Nicht an Mailbox weiterleiten"</string>
     <string name="readOnlyContactWarning" msgid="4158660823025751201">"Dieser Kontakt ist schreibgeschützt. Er kann nicht gelöscht, aber ausgeblendet werden."</string>
@@ -367,7 +367,7 @@
     <string name="list_filter_all_starred" msgid="2582865760150432568">"Markiert"</string>
     <string name="list_filter_customize" msgid="2368900508906139537">"Anpassen"</string>
     <string name="list_filter_single" msgid="6003845379327432129">"Kontakt"</string>
-    <string name="display_ungrouped" msgid="4823012484407759332">"Alle weiteren Kontakte"</string>
+    <string name="display_ungrouped" msgid="4823012484407759332">"Alle anderen Kontakte"</string>
     <string name="display_all_contacts" msgid="1281067776483704512">"Alle Kontakte"</string>
     <string name="menu_sync_remove" msgid="7523335046562082188">"Synchronisierungsgruppe entfernen"</string>
     <string name="dialog_sync_add" msgid="8012361965908515959">"Synchronisierungsgruppe hinzufügen"</string>
@@ -450,8 +450,8 @@
     <string name="dialog_import" msgid="4590232235052756593">"Kontakte importieren von"</string>
     <string name="share_error" msgid="4854612167186185739">"Dieser Kontakt kann nicht geteilt werden."</string>
     <string name="no_contact_to_share" msgid="6285287228557175749">"Keine Kontakte zum Teilen vorhanden."</string>
-    <string name="menu_contacts_filter" msgid="5854584270038139275">"Angezeigte Kontakte"</string>
-    <string name="activity_title_contacts_filter" msgid="6340531582631006680">"Angezeigte Kontakte"</string>
+    <string name="menu_contacts_filter" msgid="5854584270038139275">"Anzuzeigende Kontakte"</string>
+    <string name="activity_title_contacts_filter" msgid="6340531582631006680">"Anzuzeigende Kontakte"</string>
     <string name="custom_list_filter" msgid="2544327670202891979">"Ansicht anpassen"</string>
     <string name="menu_custom_filter_save" msgid="2412959737200856930">"Speichern"</string>
     <string name="hint_findContacts" msgid="5554298639062659655">"In Kontakten suchen"</string>

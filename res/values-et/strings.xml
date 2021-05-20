@@ -103,7 +103,7 @@
     <string name="emptyGroup" msgid="8598261660865081152">"Selle sildiga kontakte pole"</string>
     <string name="emptyAccount" msgid="7450843210977018582">"Kontol ei ole ühtki kontakti"</string>
     <string name="emptyMainList" msgid="3266182207039677163">"Teie kontaktiloend on tühi"</string>
-    <string name="contactSavedNamedToast" msgid="3067050290584834386">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> on salvestatud"</string>
+    <string name="contactSavedNamedToast" msgid="3067050290584834386">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> salvestati"</string>
     <string name="contactSavedToast" msgid="4370392215196995301">"Kontakt on salvestatud."</string>
     <string name="contactUnlinkedToast" msgid="6791720274141804377">"Kontaktide linkimine tühistati"</string>
     <string name="contactSavedErrorToast" msgid="3213619905154956918">"Kontakti muudatusi ei õnnestunud salvestada"</string>

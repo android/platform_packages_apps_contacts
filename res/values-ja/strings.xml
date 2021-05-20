@@ -124,7 +124,7 @@
     <string name="groupSomeContactsNoPhonesToast" msgid="2454029254458875746">"電話番号が登録されていない連絡先があります。"</string>
     <string name="menu_sendEmailOption" msgid="8600335923636486825">"メールを送信"</string>
     <string name="menu_sendMessageOption" msgid="8051852013078110910">"メッセージを送信"</string>
-    <string name="pickerSelectContactsActivityTitle" msgid="8265907544009447967">"連絡先の選択"</string>
+    <string name="pickerSelectContactsActivityTitle" msgid="8265907544009447967">"連絡先を選択"</string>
     <string name="send_to_selection" msgid="3655197947726443720">"送信"</string>
     <string name="listFoundAllContactsZero" msgid="1933842282916988563">"連絡先はありません"</string>
     <string name="add_contact_dlg_message_fmt" msgid="7498024710169591375">"<xliff:g id="EMAIL">%s</xliff:g> を連絡先に追加しますか？"</string>
@@ -175,7 +175,7 @@
     <string name="delete_group_dialog_message" msgid="754082019928025404">"ラベル「<xliff:g id="GROUP_LABEL">%1$s</xliff:g>」を削除しますか？（連絡先自体は削除されません。）"</string>
     <string name="toast_join_with_empty_contact" msgid="3886468280665325350">"別の連絡先とリンクするにはまず連絡先の名前を入力してください。"</string>
     <string name="copy_text" msgid="6835250673373028909">"クリップボードにコピー"</string>
-    <string name="set_default" msgid="3704074175618702225">"デフォルトに設定"</string>
+    <string name="set_default" msgid="3704074175618702225">"デフォルトを設定"</string>
     <string name="clear_default" msgid="2055883863621491533">"デフォルトを解除"</string>
     <string name="toast_text_copied" msgid="845906090076228771">"テキストをコピーしました"</string>
     <string name="cancel_confirmation_dialog_message" msgid="7486892574762212762">"変更を破棄しますか？"</string>
@@ -183,7 +183,7 @@
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="7117943783437253341">"キャンセル"</string>
     <string name="leave_customize_confirmation_dialog_message" msgid="5330853530872707231">"カスタマイズを破棄しますか？"</string>
     <string name="enter_contact_name" msgid="521859148893732679">"連絡先を検索"</string>
-    <string name="title_edit_group" msgid="4246193439931854759">"連絡先の削除"</string>
+    <string name="title_edit_group" msgid="4246193439931854759">"連絡先を削除"</string>
     <string name="local_profile_title" msgid="1613784248702623410">"ローカルプロファイル"</string>
     <string name="external_profile_title" msgid="2706282819025406927">"<xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g>のプロファイル"</string>
     <string name="contact_editor_prompt_zero_accounts" msgid="4468363031413457746">"アカウントを追加すると、連絡先を Google にバックアップできるようになります。"</string>
@@ -452,7 +452,7 @@
     <string name="no_contact_to_share" msgid="6285287228557175749">"共有する連絡先がありません。"</string>
     <string name="menu_contacts_filter" msgid="5854584270038139275">"表示する連絡先"</string>
     <string name="activity_title_contacts_filter" msgid="6340531582631006680">"表示する連絡先"</string>
-    <string name="custom_list_filter" msgid="2544327670202891979">"ビューをカスタマイズ"</string>
+    <string name="custom_list_filter" msgid="2544327670202891979">"表示をカスタマイズ"</string>
     <string name="menu_custom_filter_save" msgid="2412959737200856930">"保存"</string>
     <string name="hint_findContacts" msgid="5554298639062659655">"連絡先を検索"</string>
     <string name="contactsFavoritesLabel" msgid="8339645684721732714">"お気入り"</string>

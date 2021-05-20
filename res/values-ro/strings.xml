@@ -26,7 +26,7 @@
     <string name="contactInsertOrEditActivityTitle" msgid="1788154962629911262">"Adăugați pentru persoană"</string>
     <string name="contactPickerActivityTitle" msgid="1842634991247618890">"Alegeți o persoană de contact"</string>
     <string name="groupMemberPickerActivityTitle" msgid="8745419913947478380">"Selectați"</string>
-    <string name="header_entry_contact_list_adapter_header_title" msgid="4098233078586958762">"Creați o intrare nouă"</string>
+    <string name="header_entry_contact_list_adapter_header_title" msgid="4098233078586958762">"Contact nou"</string>
     <string name="searchHint" msgid="1487501532610025473">"Căutați în Agendă"</string>
     <string name="menu_addStar" msgid="4903812703386825130">"Adăugați la lista de favorite"</string>
     <string name="menu_removeStar" msgid="3707373931808303701">"Eliminați din lista de favorite"</string>
@@ -193,7 +193,7 @@
     <string name="contact_editor_prompt_zero_accounts" msgid="4468363031413457746">"Adăugați un cont în care se va face backup pentru agenda dvs. în Google."</string>
     <string name="contact_editor_prompt_one_account" msgid="765343809177951169">"Persoanele noi de contact vor fi salvate în <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g>."</string>
     <string name="contact_editor_prompt_multiple_accounts" msgid="1543322760761168351">"Alegeți un cont prestabilit pentru persoanele de contact noi:"</string>
-    <string name="contact_editor_title_new_contact" msgid="7534775011591770343">"Creați intrare nouă"</string>
+    <string name="contact_editor_title_new_contact" msgid="7534775011591770343">"Contact nou"</string>
     <string name="contact_editor_title_existing_contact" msgid="3647774955741654029">"Editați intrarea"</string>
     <string name="contact_editor_title_read_only_contact" msgid="5494810291515292596">"Numai vizualizare"</string>
     <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4478782370280424187">"Alegeți persoana de contact pentru a o edita"</string>
@@ -203,7 +203,7 @@
     <string name="add_account" msgid="3071396624500839020">"Adăugați un cont"</string>
     <string name="add_new_account" msgid="573368229646104110">"Adăugați un cont nou"</string>
     <string name="menu_export_database" msgid="1658249125751926885">"Exportați fișierele bazei de date"</string>
-    <string name="action_menu_add_new_contact_button" msgid="1201339383074001291">"Creați o intrare nouă"</string>
+    <string name="action_menu_add_new_contact_button" msgid="1201339383074001291">"Contact nou"</string>
     <string name="expanding_entry_card_view_see_more" msgid="6636033205952561590">"Mai multe detalii"</string>
     <string name="expanding_entry_card_view_see_less" msgid="6399603072579278030">"Mai puține detalii"</string>
     <string name="about_card_title" msgid="6635849009952435700">"Despre"</string>

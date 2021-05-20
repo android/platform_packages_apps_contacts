@@ -353,7 +353,7 @@
     <string name="chat_gtalk" msgid="2927882858741904064">"Google Talkని ఉపయోగించి చాట్ చేయండి"</string>
     <string name="chat_icq" msgid="4289041376069626281">"ICQని ఉపయోగించి చాట్ చేయండి"</string>
     <string name="chat_jabber" msgid="1097960594943864847">"Jabberని ఉపయోగించి చాట్ చేయండి"</string>
-    <string name="chat" msgid="8390862712584830532">"చాట్ చేయండి"</string>
+    <string name="chat" msgid="8390862712584830532">"Chat"</string>
     <string name="description_minus_button" msgid="1305985971158054217">"తొలగించు"</string>
     <string name="expand_name_fields_description" msgid="6059558159338959487">"మరిన్ని పేరు ఫీల్డ్‌లను చూపుతుంది"</string>
     <string name="collapse_name_fields_description" msgid="7950435675716414477">"పేరు ఫీల్డ్‌లను కుదిస్తుంది"</string>
@@ -499,7 +499,7 @@
     <string name="dismiss_sync_alert" msgid="4057176963960104786">"తీసివేస్తుంది"</string>
     <string name="account_sync_off" msgid="6187683798342006021">"ఖాతా సమకాలీకరణ ఆఫ్‌లో ఉంది. ఆన్ చేయడానికి నొక్కండి."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="3812155064863594938">"స్వీయ సమకాలీకరణను ఆన్ చేయాలా?"</string>
-    <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"మీరు కేవలం పరిచయాలకు చేసే మార్పులే కాకుండా అన్ని అనువర్తనాలు మరియు ఖాతాలకు చేసే మార్పులు వెబ్ మరియు మీ పరికరాల మధ్య ఎప్పటికప్పుడు నవీకృతంగా ఉంచబడతాయి."</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"మీరు కేవలం పరిచయాలకు చేసే మార్పులే కాకుండా అన్ని యాప్‌లు మరియు ఖాతాలకు చేసే మార్పులు వెబ్ మరియు మీ పరికరాల మధ్య ఎప్పటికప్పుడు నవీకృతంగా ఉంచబడతాయి."</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"ఆన్ చేయండి"</string>
     <string name="connection_error_message" msgid="7446131881946138093">"కనెక్షన్ లేదు"</string>
     <string name="single_sim_display_label" msgid="264062966309455515">"SIM"</string>
