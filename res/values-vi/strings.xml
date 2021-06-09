@@ -174,7 +174,7 @@
     <string name="create_group_item_label" msgid="921929508079162463">"Tạo mới…"</string>
     <string name="delete_group_dialog_message" msgid="754082019928025404">"Bạn muốn xóa nhãn \"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\"? (Danh bạ sẽ không bị xóa.)"</string>
     <string name="toast_join_with_empty_contact" msgid="3886468280665325350">"Nhập tên liên hệ trước khi liên kết với liên hệ khác."</string>
-    <string name="copy_text" msgid="6835250673373028909">"Sao chép vào khay nhớ tạm"</string>
+    <string name="copy_text" msgid="6835250673373028909">"Sao chép vào bảng nhớ tạm"</string>
     <string name="set_default" msgid="3704074175618702225">"Đặt mặc định"</string>
     <string name="clear_default" msgid="2055883863621491533">"Xóa mặc định"</string>
     <string name="toast_text_copied" msgid="845906090076228771">"Đã sao chép văn bản"</string>
@@ -201,7 +201,7 @@
     <string name="menu_export_database" msgid="1658249125751926885">"Xuất các tệp cơ sở dữ liệu"</string>
     <string name="action_menu_add_new_contact_button" msgid="1201339383074001291">"Tạo người liên hệ mới"</string>
     <string name="expanding_entry_card_view_see_more" msgid="6636033205952561590">"Xem thêm"</string>
-    <string name="expanding_entry_card_view_see_less" msgid="6399603072579278030">"Xem bớt"</string>
+    <string name="expanding_entry_card_view_see_less" msgid="6399603072579278030">"Ẩn bớt"</string>
     <string name="about_card_title" msgid="6635849009952435700">"Giới thiệu"</string>
     <string name="toast_making_personal_copy" msgid="9053129410039312386">"Đang tạo bản sao cá nhân..."</string>
     <string name="date_time_set" msgid="8526160894146496334">"Đặt"</string>

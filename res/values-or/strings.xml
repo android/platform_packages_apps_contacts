@@ -156,7 +156,7 @@
     <string name="search_results_searching" msgid="1373859095361975648">"ସର୍ଚ୍ଚ କରାଯାଉଛି…"</string>
     <string name="event_edit_field_hint_text" msgid="1720286136507504896">"ତାରିଖ"</string>
     <string name="group_edit_field_hint_text" msgid="1159504474053684478">"ଲେବଲ୍"</string>
-    <string name="cancel_button_content_description" msgid="7407595608883650004">"କ୍ୟାନ୍ସଲ୍‍ କରନ୍ତୁ"</string>
+    <string name="cancel_button_content_description" msgid="7407595608883650004">"ବାତିଲ୍‍ କରନ୍ତୁ"</string>
     <string name="back_arrow_content_description" msgid="6727142616775523605">"ପଛକୁ ଫେରନ୍ତୁ"</string>
     <string name="action_menu_back_from_edit_select" msgid="7911226757462657242">"ବନ୍ଦ କରନ୍ତୁ"</string>
     <string name="aggregation_suggestion_edit_dialog_message" msgid="4339333746086996062">"ଚୟନିତ ଯୋଗାଯୋଗ ଏଡିଟ୍ କରିବା ପାଇଁ ସ୍ୱିଚ୍ କରିବେ? ଏପର୍ଯ୍ୟନ୍ତ ଆପଣ ଦେଇଥିବା ସୂଚନାକୁ କପୀ କରାଯିବ।"</string>
@@ -180,7 +180,7 @@
     <string name="toast_text_copied" msgid="845906090076228771">"ଟେକ୍ସଟ୍ କପୀ କରାଗଲା"</string>
     <string name="cancel_confirmation_dialog_message" msgid="7486892574762212762">"ପରିବର୍ତ୍ତନଗୁଡ଼ିକୁ ଖାରଜ କରିବେ?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="8280294641821133477">"ଖାରଜ କରନ୍ତୁ"</string>
-    <string name="cancel_confirmation_dialog_keep_editing_button" msgid="7117943783437253341">"କ୍ୟାନ୍ସଲ୍‍ କରନ୍ତୁ"</string>
+    <string name="cancel_confirmation_dialog_keep_editing_button" msgid="7117943783437253341">"ବାତିଲ୍‍ କରନ୍ତୁ"</string>
     <string name="leave_customize_confirmation_dialog_message" msgid="5330853530872707231">"କଷ୍ଟମାଇ‍ଜ୍‍ କରିବା ଖାରଜ କରିବେ?"</string>
     <string name="enter_contact_name" msgid="521859148893732679">"ଯୋଗାଯୋଗଙ୍କୁ ଖୋଜନ୍ତୁ"</string>
     <string name="title_edit_group" msgid="4246193439931854759">"ଯୋଗାଯୋଗଙ୍କୁ କାଢ଼ିଦିଅନ୍ତୁ"</string>
@@ -224,7 +224,7 @@
     <string name="editor_account_selector_title" msgid="3190515989740696043">"ଏଥିରେ ସେଭ୍‌ କରୁଛି"</string>
     <string name="editor_account_selector_read_only_title" msgid="4870485850053962114">"<xliff:g id="ACCOUNT">%s</xliff:g>ର ଯୋଗାଯୋଗ ସୂଚନାକୁ ଏଡିଟ୍ କରିହେବ ନାହିଁ"</string>
     <string name="quickcontact_suggestion_link_button" msgid="3485212664301802371">"ଯୋଗାଯୋଗଙ୍କ ସହ ଲିଙ୍କ କରନ୍ତୁ"</string>
-    <string name="quickcontact_suggestion_cancel_button" msgid="8851156850681440055">"କ୍ୟାନ୍ସଲ୍‍ କରନ୍ତୁ"</string>
+    <string name="quickcontact_suggestion_cancel_button" msgid="8851156850681440055">"ବାତିଲ୍‍ କରନ୍ତୁ"</string>
     <string name="suggestion_card_this_contact_title" msgid="8851257599121989253">"ଏହି ଯୋଗାଯୋଗ"</string>
     <string name="suggestion_card_duplicates_title" msgid="2623890874933696454">"ସମ୍ଭାବ୍ୟ ନକଲ"</string>
     <string name="suggestion_card_help_message" msgid="8367379652312412794">"ଏହି ଯୋଗାଯୋଗଗୁଡ଼ିକ ସମାନ ବ୍ୟକ୍ତିଙ୍କର ହୋଇଥାଇପାରେ। ଆପଣ ଏହାକୁ ଗୋଟିଏ ଯୋଗାଯୋଗ ରୂପେ ଏକାସଙ୍ଗେ ଲିଙ୍କ୍ କରିପାରିବେ।"</string>
@@ -494,7 +494,7 @@
     </plurals>
     <string name="sim_import_failed_toast" msgid="358117391138073786">"SIMରେ ଥିବା ଯୋଗାଯୋଗ ଇମ୍ପୋର୍ଟ କରିହେଲା ନାହିଁ"</string>
     <string name="sim_import_title" msgid="8202961146093040684">"SIMରୁ ଇମ୍ପୋର୍ଟ କରନ୍ତୁ"</string>
-    <string name="sim_import_cancel_content_description" msgid="4746065462808862682">"କ୍ୟାନ୍ସଲ୍‍ କରନ୍ତୁ"</string>
+    <string name="sim_import_cancel_content_description" msgid="4746065462808862682">"ବାତିଲ୍‍ କରନ୍ତୁ"</string>
     <string name="auto_sync_off" msgid="7039314601316227882">"ଅଟୋ-ସିଙ୍କ ବନ୍ଦ ଅଛି। ଚାଲୁ କରିବା ପାଇଁ ଟାପ୍ କରନ୍ତୁ।"</string>
     <string name="dismiss_sync_alert" msgid="4057176963960104786">"ଖାରଜ କରନ୍ତୁ"</string>
     <string name="account_sync_off" msgid="6187683798342006021">"ଆକାଉଣ୍ଟ ସିଙ୍କ ବନ୍ଦ ଅଛି। ଚାଲୁ କରିବା ପାଇଁ ଟାପ୍ କରନ୍ତୁ।"</string>

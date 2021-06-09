@@ -285,9 +285,9 @@
     <string name="sms_mms" msgid="7395133080765833725">"ارسال متن به فراپیام"</string>
     <string name="sms_by_shortcut" msgid="4682340916268521006">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (پیام)"</string>
     <string name="description_video_call" msgid="4956825008907720371">"برقراری تماس تصویری"</string>
-    <string name="clearFrequentsConfirmation_title" msgid="9194415661170740437">"فهرست تماس مکرر با مخاطب پاک شود؟"</string>
-    <string name="clearFrequentsConfirmation" msgid="2120741757522063938">"با این کار فهرست افرادی که بیشتر با آنها تماس گرفته‌اید در برنامه‌های «مخاطبین» و «تلفن» پاک می‌کنید و برنامه‌های ایمیل را وادار می‌کنید تنظیمات برگزیده مخاطبینتان را از اول یاد بگیرند."</string>
-    <string name="clearFrequentsProgress_title" msgid="8271935295080659743">"در حال پاک کردن فهرست تماس مکرر..."</string>
+    <string name="clearFrequentsConfirmation_title" msgid="9194415661170740437">"فهرست مخاطبین مکرر پاک شود؟"</string>
+    <string name="clearFrequentsConfirmation" msgid="2120741757522063938">"با این کار فهرست مخاطبین مکرر در برنامه‌های «مخاطبین» و «تلفن» پاک می‌کنید و برنامه‌های ایمیل را وادار می‌کنید اولویت‌های مخاطبینتان را از اول یاد بگیرند."</string>
+    <string name="clearFrequentsProgress_title" msgid="8271935295080659743">"درحال پاک کردن فهرست مخاطبین مکرر…"</string>
     <string name="status_available" msgid="8081626460682959098">"در دسترس"</string>
     <string name="status_away" msgid="2677693194455091315">"غایب"</string>
     <string name="status_busy" msgid="2759339190187696727">"مشغول"</string>
@@ -297,7 +297,7 @@
     <string name="local_search_label" msgid="6692495405531144805">"همه مخاطبین"</string>
     <string name="description_quick_contact_for" msgid="6364906818231956042">"تماس سریع برای <xliff:g id="NAME">%1$s</xliff:g>"</string>
     <string name="missing_name" msgid="7970183292521946492">"(بدون نام)"</string>
-    <string name="favoritesFrequentContacted" msgid="2885862854079966676">"اغلب تماس گرفته شده"</string>
+    <string name="favoritesFrequentContacted" msgid="2885862854079966676">"مخاطبین مکرر"</string>
     <string name="list_filter_phones" msgid="6839133198968393843">"همه مخاطبین دارای شماره تلفن"</string>
     <string name="list_filter_phones_work" msgid="5583425697781385616">"مخاطبین نمایه کاری"</string>
     <string name="view_updates_from_group" msgid="6233444629074835594">"مشاهده به‌روزرسانی‌ها"</string>

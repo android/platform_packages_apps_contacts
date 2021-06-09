@@ -18,7 +18,7 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="applicationLabel" msgid="8908212014470937609">"Kontaktlar"</string>
     <string name="contactsList" msgid="4456188358262700898">"Kontaktlar"</string>
-    <string name="shortcut_add_contact" msgid="7949342235528657981">"Kontakt saqlash"</string>
+    <string name="shortcut_add_contact" msgid="7949342235528657981">"Kontakt kiritish"</string>
     <string name="shortcutContact" msgid="8009736387364461511">"Kontakt"</string>
     <string name="shortcutDialContact" msgid="155367248069127153">"Tezkor chaqiruv"</string>
     <string name="shortcutMessageContact" msgid="9123517151981679277">"Tezkor SMS"</string>
@@ -40,7 +40,7 @@
     <string name="menu_editGroup" msgid="8706562583754054622">"Kontaktlarni olib tashlash"</string>
     <string name="menu_renameGroup" msgid="2685886609399776475">"Yorliqni qayta nomlash"</string>
     <string name="menu_deleteGroup" msgid="1180215594530228294">"Yorliqni o‘chirib tashlash"</string>
-    <string name="menu_addToGroup" msgid="5034813446697655310">"Kontakt saqlash"</string>
+    <string name="menu_addToGroup" msgid="5034813446697655310">"Kontakt kiritish"</string>
     <string name="menu_selectForGroup" msgid="6386553337569514850">"Kontaktlarni tanlash"</string>
     <string name="menu_addContactsToGroup" msgid="4549318978482280577">"Kontakt qo‘shish"</string>
     <string name="menu_removeFromGroup" msgid="8753799091967887958">"Yorliqni olib tashlash"</string>
@@ -296,7 +296,7 @@
     <string name="directory_search_label_work" msgid="2392128956332931231">"Ishchi katalogi"</string>
     <string name="local_search_label" msgid="6692495405531144805">"Barcha kontaktlar"</string>
     <string name="description_quick_contact_for" msgid="6364906818231956042">"Tezkor chaqiruv, kontakt: <xliff:g id="NAME">%1$s</xliff:g>"</string>
-    <string name="missing_name" msgid="7970183292521946492">"(Ismi yo‘q)"</string>
+    <string name="missing_name" msgid="7970183292521946492">"(Ismsiz)"</string>
     <string name="favoritesFrequentContacted" msgid="2885862854079966676">"Tez-tez aloqa qilingan kontaktlar"</string>
     <string name="list_filter_phones" msgid="6839133198968393843">"Telefon raqamiga ega kontaktlar"</string>
     <string name="list_filter_phones_work" msgid="5583425697781385616">"Ishchi profili kontaktlari"</string>

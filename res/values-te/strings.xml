@@ -499,7 +499,7 @@
     <string name="dismiss_sync_alert" msgid="4057176963960104786">"తీసివేస్తుంది"</string>
     <string name="account_sync_off" msgid="6187683798342006021">"ఖాతా సమకాలీకరణ ఆఫ్‌లో ఉంది. ఆన్ చేయడానికి నొక్కండి."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="3812155064863594938">"స్వీయ సమకాలీకరణను ఆన్ చేయాలా?"</string>
-    <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"మీరు కేవలం పరిచయాలకు చేసే మార్పులే కాకుండా అన్ని అనువర్తనాలు మరియు ఖాతాలకు చేసే మార్పులు వెబ్ మరియు మీ పరికరాల మధ్య ఎప్పటికప్పుడు నవీకృతంగా ఉంచబడతాయి."</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"మీరు కేవలం పరిచయాలకు చేసే మార్పులే కాకుండా అన్ని యాప్‌లు మరియు ఖాతాలకు చేసే మార్పులు వెబ్ మరియు మీ పరికరాల మధ్య ఎప్పటికప్పుడు నవీకృతంగా ఉంచబడతాయి."</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"ఆన్ చేయండి"</string>
     <string name="connection_error_message" msgid="7446131881946138093">"కనెక్షన్ లేదు"</string>
     <string name="single_sim_display_label" msgid="264062966309455515">"SIM"</string>

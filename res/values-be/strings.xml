@@ -213,7 +213,7 @@
     <string name="about_card_title" msgid="6635849009952435700">"Інфармацыя"</string>
     <string name="toast_making_personal_copy" msgid="9053129410039312386">"Стварэнне асабістай копіі..."</string>
     <string name="date_time_set" msgid="8526160894146496334">"Задаць"</string>
-    <string name="header_im_entry" msgid="3581797653862294826">"Iмгненныя паведамленні"</string>
+    <string name="header_im_entry" msgid="3581797653862294826">"Чат"</string>
     <string name="header_organization_entry" msgid="7428066442988227441">"Арганізацыя"</string>
     <string name="header_nickname_entry" msgid="1110276804512795150">"Псеўданім"</string>
     <string name="header_note_entry" msgid="339680292368016788">"Нататка"</string>
@@ -325,7 +325,7 @@
     <string name="phoneLabelsGroup" msgid="2746758650001801885">"Тэлефон"</string>
     <string name="emailLabelsGroup" msgid="3360719560200449554">"Электронная пошта"</string>
     <string name="postalLabelsGroup" msgid="7534317297587527570">"Адрас"</string>
-    <string name="imLabelsGroup" msgid="2113398976789806432">"ІМ"</string>
+    <string name="imLabelsGroup" msgid="2113398976789806432">"Чат"</string>
     <string name="organizationLabelsGroup" msgid="2342482097897299099">"Арганізацыя"</string>
     <string name="relationLabelsGroup" msgid="8931615792208307291">"Адносіны"</string>
     <string name="eventLabelsGroup" msgid="8625868552164376823">"Асаблівая дата"</string>
