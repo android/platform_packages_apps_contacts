@@ -169,7 +169,7 @@
     <string name="non_phone_add_to_contacts" msgid="5472784294274676663">"Gehitu kontaktuetan"</string>
     <string name="non_phone_close" msgid="2792373584950696532">"Itxi"</string>
     <string name="date_year_toggle" msgid="8930759990426623823">"Sartu urtea"</string>
-    <string name="contacts_unavailable_add_account" msgid="5196453892411710750">"Gehitu kontua"</string>
+    <string name="contacts_unavailable_add_account" msgid="5196453892411710750">"Gehitu kontu bat"</string>
     <string name="contacts_unavailable_import_contacts" msgid="4914180876114104054">"Inportatu"</string>
     <string name="create_group_item_label" msgid="921929508079162463">"Sortu…"</string>
     <string name="delete_group_dialog_message" msgid="754082019928025404">"\"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\" taldea ezabatu nahi duzu? (Ez dira kontaktuak ezabatuko.)"</string>
@@ -196,7 +196,7 @@
     <string name="contact_editor_pick_linked_contact_dialog_title" msgid="3332134735168016293">"Lotutako kontaktuak"</string>
     <string name="contact_editor_add_linked_contact" msgid="2895453741206196138">"Gehitu"</string>
     <string name="contact_editor_unlink_contacts" msgid="8399419729744305687">"Kendu lotura"</string>
-    <string name="add_account" msgid="3071396624500839020">"Gehitu kontua"</string>
+    <string name="add_account" msgid="3071396624500839020">"Gehitu kontu bat"</string>
     <string name="add_new_account" msgid="573368229646104110">"Gehitu beste kontu bat"</string>
     <string name="menu_export_database" msgid="1658249125751926885">"Esportatu datu-baseko fitxategiak"</string>
     <string name="action_menu_add_new_contact_button" msgid="1201339383074001291">"Sortu kontaktua"</string>
@@ -481,7 +481,7 @@
     <string name="account_filter_view_not_checked" msgid="5782705545786455847">"Ez da hautatu <xliff:g id="ACCOUNT_INFO">%s</xliff:g>"</string>
     <string name="description_search_video_call" msgid="1768558141309418755">"Egin bideo-deia"</string>
     <string name="description_delete_contact" msgid="8110643050235441400">"Ezabatu"</string>
-    <string name="description_no_name_header" msgid="8596201864512339003">"Elipsia"</string>
+    <string name="description_no_name_header" msgid="8596201864512339003">"Etenpuntuak"</string>
     <string name="dynamic_shortcut_disabled_message" msgid="8770462908102469878">"Lasterbidea desgaitu egin da"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="8331735243566193974">"Kendu da kontaktua"</string>
     <string name="sim_import_button_text" msgid="2845608246304396009">"Inportatu"</string>

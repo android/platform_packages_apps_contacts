@@ -367,7 +367,7 @@
     <string name="list_filter_all_starred" msgid="2582865760150432568">"별표"</string>
     <string name="list_filter_customize" msgid="2368900508906139537">"맞춤설정"</string>
     <string name="list_filter_single" msgid="6003845379327432129">"연락처"</string>
-    <string name="display_ungrouped" msgid="4823012484407759332">"다른 모든 주소록"</string>
+    <string name="display_ungrouped" msgid="4823012484407759332">"다른 모든 연락처"</string>
     <string name="display_all_contacts" msgid="1281067776483704512">"모든 주소록"</string>
     <string name="menu_sync_remove" msgid="7523335046562082188">"동기화 그룹 삭제"</string>
     <string name="dialog_sync_add" msgid="8012361965908515959">"동기화 그룹 추가"</string>

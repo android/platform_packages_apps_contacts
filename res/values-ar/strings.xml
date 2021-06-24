@@ -25,7 +25,7 @@
     <string name="shortcutActivityTitle" msgid="5407832911005090417">"اختيار جهة اتصال"</string>
     <string name="contactInsertOrEditActivityTitle" msgid="1788154962629911262">"إضافة إلى جهة اتصال"</string>
     <string name="contactPickerActivityTitle" msgid="1842634991247618890">"اختيار جهة اتصال"</string>
-    <string name="groupMemberPickerActivityTitle" msgid="8745419913947478380">"تحديد"</string>
+    <string name="groupMemberPickerActivityTitle" msgid="8745419913947478380">"اختيار"</string>
     <string name="header_entry_contact_list_adapter_header_title" msgid="4098233078586958762">"إنشاء جهة اتصال جديدة"</string>
     <string name="searchHint" msgid="1487501532610025473">"البحث في جهات الاتصال"</string>
     <string name="menu_addStar" msgid="4903812703386825130">"إضافة إلى المفضلة"</string>
@@ -41,7 +41,7 @@
     <string name="menu_renameGroup" msgid="2685886609399776475">"إعادة تسمية التصنيف"</string>
     <string name="menu_deleteGroup" msgid="1180215594530228294">"حذف التصنيف"</string>
     <string name="menu_addToGroup" msgid="5034813446697655310">"إضافة جهة اتصال"</string>
-    <string name="menu_selectForGroup" msgid="6386553337569514850">"تحديد جهات الاتصال"</string>
+    <string name="menu_selectForGroup" msgid="6386553337569514850">"اختيار جهات الاتصال"</string>
     <string name="menu_addContactsToGroup" msgid="4549318978482280577">"إضافة جهات اتصال"</string>
     <string name="menu_removeFromGroup" msgid="8753799091967887958">"الإزالة من تصنيف"</string>
     <string name="menu_new_group_action_bar" msgid="1670312283925872483">"إنشاء تصنيف"</string>
@@ -127,14 +127,14 @@
     <string name="groupDeletedToast" msgid="7774363940327847515">"تم حذف التصنيف"</string>
     <string name="groupCreatedToast" msgid="1685148819468403239">"تم إنشاء التصنيف"</string>
     <string name="groupCreateFailedToast" msgid="1836425392831964024">"يتعذر إنشاء تصنيف"</string>
-    <string name="groupUpdatedToast" msgid="3381549467345607379">"تمت إعادة تحميل التصنيف"</string>
+    <string name="groupUpdatedToast" msgid="3381549467345607379">"تم تحديث التصنيف"</string>
     <string name="groupMembersRemovedToast" msgid="8019566066934628011">"تمت الإزالة من التصنيف"</string>
     <string name="groupMembersAddedToast" msgid="1939782548900157287">"تمت الإضافة إلى التصنيف"</string>
     <string name="groupSavedErrorToast" msgid="8456912862816145318">"لا يمكن حفظ التغييرات على التصنيف"</string>
     <string name="groupExistsErrorMessage" msgid="912222525098791136">"هذا التصنيف موجود فعلاً"</string>
     <string name="groupSomeContactsNoEmailsToast" msgid="2142963883699535155">"بعض جهات الاتصال ليس لديها بريدًا إلكترونيًا."</string>
     <string name="groupSomeContactsNoPhonesToast" msgid="2454029254458875746">"بعض جهات الاتصال ليست لديها أرقام هواتف."</string>
-    <string name="menu_sendEmailOption" msgid="8600335923636486825">"إرسال البريد الإلكتروني"</string>
+    <string name="menu_sendEmailOption" msgid="8600335923636486825">"إرسال رسالة إلكترونية"</string>
     <string name="menu_sendMessageOption" msgid="8051852013078110910">"إرسال رسالة"</string>
     <string name="pickerSelectContactsActivityTitle" msgid="8265907544009447967">"اختيار جهات الاتصال"</string>
     <string name="send_to_selection" msgid="3655197947726443720">"إرسال"</string>
@@ -168,7 +168,7 @@
     <string name="take_photo" msgid="820071555236547516">"التقاط صورة"</string>
     <string name="take_new_photo" msgid="4383091978116875778">"التقاط صورة جديدة"</string>
     <string name="pick_photo" msgid="2050859661654812588">"اختيار صورة"</string>
-    <string name="pick_new_photo" msgid="4218112182908240970">"تحديد صورة جديدة"</string>
+    <string name="pick_new_photo" msgid="4218112182908240970">"اختيار صورة جديدة"</string>
     <string name="search_results_searching" msgid="1373859095361975648">"جارٍ البحث..."</string>
     <string name="event_edit_field_hint_text" msgid="1720286136507504896">"التاريخ"</string>
     <string name="group_edit_field_hint_text" msgid="1159504474053684478">"التصنيف"</string>
@@ -218,14 +218,14 @@
     <string name="action_menu_add_new_contact_button" msgid="1201339383074001291">"إنشاء جهة اتصال جديدة"</string>
     <string name="expanding_entry_card_view_see_more" msgid="6636033205952561590">"الاطّلاع على المزيد"</string>
     <string name="expanding_entry_card_view_see_less" msgid="6399603072579278030">"عرض أقل"</string>
-    <string name="about_card_title" msgid="6635849009952435700">"حول"</string>
+    <string name="about_card_title" msgid="6635849009952435700">"لمحة"</string>
     <string name="toast_making_personal_copy" msgid="9053129410039312386">"جارٍ إنشاء نسخة شخصية..."</string>
     <string name="date_time_set" msgid="8526160894146496334">"تعيين"</string>
     <string name="header_im_entry" msgid="3581797653862294826">"المراسلة الفورية"</string>
     <string name="header_organization_entry" msgid="7428066442988227441">"المؤسسة"</string>
     <string name="header_nickname_entry" msgid="1110276804512795150">"اللقب"</string>
     <string name="header_note_entry" msgid="339680292368016788">"ملاحظة"</string>
-    <string name="header_website_entry" msgid="3618691707215428785">"موقع الويب"</string>
+    <string name="header_website_entry" msgid="3618691707215428785">"الموقع الإلكتروني"</string>
     <string name="header_event_entry" msgid="70962228694476731">"الحدث"</string>
     <string name="header_relation_entry" msgid="993618132732521944">"العلاقة"</string>
     <string name="header_name_entry" msgid="2516776099121101578">"الاسم"</string>
@@ -344,7 +344,7 @@
     <string name="label_notes" msgid="7134226125644463585">"ملاحظات"</string>
     <string name="label_custom_field" msgid="4160584225306364924">"مخصص"</string>
     <string name="label_sip_address" msgid="8876347942587537552">"SIP"</string>
-    <string name="websiteLabelsGroup" msgid="114754928100220315">"موقع الويب"</string>
+    <string name="websiteLabelsGroup" msgid="114754928100220315">"الموقع الإلكتروني"</string>
     <string name="groupsLabel" msgid="5622154133880646122">"التصنيفات"</string>
     <string name="email_home" msgid="1102791500866910269">"البريد الإلكتروني للمنزل"</string>
     <string name="email_mobile" msgid="6461172430397598705">"إرسال رسالة إلكترونية إلى عنوان بريد إلكتروني على الجوال"</string>
@@ -453,20 +453,20 @@
     <string name="caching_vcard_title" msgid="6333926052524937628">"تخزين مؤقت"</string>
     <string name="progress_notifier_message" msgid="8522060892889599746">"استيراد <xliff:g id="CURRENT_NUMBER">%1$s</xliff:g>/<xliff:g id="TOTAL_NUMBER">%2$s</xliff:g>: <xliff:g id="NAME">%3$s</xliff:g>"</string>
     <string name="export_to_vcf_file" msgid="3096479544575798192">"‏تصدير إلى ملف vcf."</string>
-    <string name="display_options_sort_list_by" msgid="4333658089057400431">"الترتيب بحسب"</string>
+    <string name="display_options_sort_list_by" msgid="4333658089057400431">"الترتيب حسب"</string>
     <string name="display_options_phonetic_name_fields" msgid="1857564544755287298">"الاسم صوتيًا"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="3612488836474257715">"الإظهار دائمًا"</string>
     <string name="editor_options_hide_phonetic_names_if_empty" msgid="2693314301550366143">"الإخفاء إذا كان فارغًا"</string>
     <string name="display_options_sort_by_given_name" msgid="893781924536349248">"الاسم الأول"</string>
     <string name="display_options_sort_by_family_name" msgid="1282763552330910876">"اسم العائلة"</string>
-    <string name="display_options_view_names_as" msgid="4060686468465916565">"تنسيق الاسم"</string>
+    <string name="display_options_view_names_as" msgid="4060686468465916565">"ترتيب الاسم"</string>
     <string name="display_options_view_given_name_first" msgid="383885125505521383">"الاسم الأول أولاً"</string>
     <string name="display_options_view_family_name_first" msgid="6597077054231296007">"اسم العائلة أوّلًا"</string>
     <string name="settings_accounts" msgid="119582613811929994">"الحسابات"</string>
     <string name="default_editor_account" msgid="4810392921888877149">"الحساب التلقائي لجهات الاتصال الجديدة"</string>
     <string name="settings_my_info_title" msgid="6236848378653551341">"معلوماتي"</string>
     <string name="set_up_profile" msgid="3554999219868611431">"إعداد الملف الشخصي"</string>
-    <string name="setting_about" msgid="2941859292287597555">"حول جهات الاتصال"</string>
+    <string name="setting_about" msgid="2941859292287597555">"معلومات حول جهات الاتصال"</string>
     <string name="share_favorite_contacts" msgid="8208444020721686178">"مشاركة جهات الاتصال المفضلة"</string>
     <string name="share_contacts" msgid="2377773269568609796">"مشاركة جميع جهات الاتصال"</string>
     <string name="share_contacts_failure" msgid="1348777470180064086">"تعذّرت مشاركة جهات الاتصال."</string>
@@ -509,7 +509,7 @@
     <string name="dynamic_shortcut_disabled_message" msgid="8770462908102469878">"تم إيقاف هذا الاختصار"</string>
     <string name="dynamic_shortcut_contact_removed_message" msgid="8331735243566193974">"تمت إزالة جهة الاتصال"</string>
     <string name="sim_import_button_text" msgid="2845608246304396009">"استيراد"</string>
-    <string name="sim_import_title_none_selected" msgid="3527680774575468781">"تحديد جهات الاتصال"</string>
+    <string name="sim_import_title_none_selected" msgid="3527680774575468781">"اختيار جهات الاتصال"</string>
     <string name="sim_import_empty_message" msgid="7238368542566545854">"‏ليس هناك جهات اتصال على شريحة SIM"</string>
     <string name="sim_import_contact_exists_toast" msgid="8423212007841229749">"جهة الاتصال موجودة فعلاً في قائمتك"</string>
     <plurals name="sim_import_success_toast_fmt" formatted="false" msgid="422539156156042210">
@@ -523,10 +523,10 @@
     <string name="sim_import_failed_toast" msgid="358117391138073786">"‏فشل استيراد جهات الاتصال من شريحة SIM"</string>
     <string name="sim_import_title" msgid="8202961146093040684">"‏استيراد من SIM"</string>
     <string name="sim_import_cancel_content_description" msgid="4746065462808862682">"إلغاء"</string>
-    <string name="auto_sync_off" msgid="7039314601316227882">"المزامنة التلقائية متوقفة. انقر للتشغيل."</string>
+    <string name="auto_sync_off" msgid="7039314601316227882">"المزامنة التلقائية متوقفة. انقر للتفعيل."</string>
     <string name="dismiss_sync_alert" msgid="4057176963960104786">"تجاهل"</string>
-    <string name="account_sync_off" msgid="6187683798342006021">"مزامنة الحساب متوقفة. انقر للتشغيل."</string>
-    <string name="turn_auto_sync_on_dialog_title" msgid="3812155064863594938">"تشغيل المزامنة التلقائية؟"</string>
+    <string name="account_sync_off" msgid="6187683798342006021">"مزامنة الحساب متوقفة. انقر للتفعيل."</string>
+    <string name="turn_auto_sync_on_dialog_title" msgid="3812155064863594938">"تفعيل المزامنة التلقائية؟"</string>
     <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"‏سيتم إعادة تحميل التغييرات التي أجريتها على كل التطبيقات والحسابات، وليس فقط جهات اتصال Google، بين الويب وأجهزتك."</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"تشغيل"</string>
     <string name="connection_error_message" msgid="7446131881946138093">"لا اتصال"</string>

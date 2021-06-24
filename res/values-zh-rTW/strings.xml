@@ -241,7 +241,7 @@
     <string name="hamburger_feature_highlight_body" msgid="782935036630531528">"讓你的聯絡人資料井然有序又實用"</string>
     <string name="undo" msgid="2446931036220975026">"復原"</string>
     <string name="call_custom" msgid="2844900154492073207">"撥打<xliff:g id="CUSTOM_LABEL">%s</xliff:g>電話號碼"</string>
-    <string name="call_home" msgid="2443904771140750492">"去電住家電話"</string>
+    <string name="call_home" msgid="2443904771140750492">"撥打住家電話"</string>
     <string name="call_mobile" msgid="6504312789160309832">"去電行動裝置"</string>
     <string name="call_work" msgid="2414313348547560346">"去電公司電話"</string>
     <string name="call_fax_work" msgid="5026843006300760797">"去電公司傳真"</string>
@@ -312,7 +312,7 @@
     <string name="name_suffix" msgid="4502958221763936999">"姓名後稱謂"</string>
     <string name="name_phonetic" msgid="4746541275769990740">"姓名拼音"</string>
     <string name="name_phonetic_given" msgid="425534279190047812">"名字拼音"</string>
-    <string name="name_phonetic_middle" msgid="6528822054594516485">"中間名 (拼音)"</string>
+    <string name="name_phonetic_middle" msgid="6528822054594516485">"中間名拼音"</string>
     <string name="name_phonetic_family" msgid="1690852801039809448">"姓氏拼音"</string>
     <string name="phoneLabelsGroup" msgid="2746758650001801885">"電話"</string>
     <string name="emailLabelsGroup" msgid="3360719560200449554">"電子郵件"</string>
@@ -432,7 +432,7 @@
     <string name="display_options_sort_list_by" msgid="4333658089057400431">"排序依據"</string>
     <string name="display_options_phonetic_name_fields" msgid="1857564544755287298">"姓名拼音"</string>
     <string name="editor_options_always_show_phonetic_names" msgid="3612488836474257715">"一律顯示"</string>
-    <string name="editor_options_hide_phonetic_names_if_empty" msgid="2693314301550366143">"留空時隱藏"</string>
+    <string name="editor_options_hide_phonetic_names_if_empty" msgid="2693314301550366143">"欄位留空時隱藏"</string>
     <string name="display_options_sort_by_given_name" msgid="893781924536349248">"名字"</string>
     <string name="display_options_sort_by_family_name" msgid="1282763552330910876">"姓氏"</string>
     <string name="display_options_view_names_as" msgid="4060686468465916565">"姓名格式"</string>

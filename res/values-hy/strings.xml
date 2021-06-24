@@ -70,11 +70,11 @@
       <item quantity="other">Կոնտակտները ջնջվեցին</item>
     </plurals>
     <plurals name="contacts_count" formatted="false" msgid="8804860300387044572">
-      <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g> contacts</item>
+      <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g> կոնտակտ</item>
       <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> կոնտակտ</item>
     </plurals>
     <plurals name="contacts_count_with_account" formatted="false" msgid="1025146902085751375">
-      <item quantity="one"><xliff:g id="COUNT_2">%1$d</xliff:g> contacts · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
+      <item quantity="one"><xliff:g id="COUNT_2">%1$d</xliff:g> կոնտակտ · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
       <item quantity="other"><xliff:g id="COUNT_2">%1$d</xliff:g> կոնտակտ · <xliff:g id="ACCOUNT_3">%2$s</xliff:g></item>
     </plurals>
     <string name="title_from_google" msgid="2554633992366572820">"Google-ից"</string>
@@ -134,10 +134,10 @@
     <string name="quickcontact_add_email" msgid="1442894568471116797">"Ավելացնել էլ․ հասցե"</string>
     <string name="missing_app" msgid="5674389915738964148">"Այս գործողությունը կատարելու համար ոչ մի ծրագիր չի գտնվել:"</string>
     <string name="menu_share" msgid="6343022811796001773">"Կիսվել"</string>
-    <string name="menu_add_contact" msgid="5822356185421997656">"Ավելացնել կոնտակտներում"</string>
+    <string name="menu_add_contact" msgid="5822356185421997656">"Ավելացնել կոնտակտներին"</string>
     <string name="menu_add_contacts" msgid="7114262784903366463">"Ավելացնել"</string>
     <plurals name="title_share_via" formatted="false" msgid="3868648642107664607">
-      <item quantity="one">Share contacts via</item>
+      <item quantity="one">Ուղարկել կոնտակտը հետևյալով՝</item>
       <item quantity="other">Ուղարկել կոնտակտները հետևյալով՝</item>
     </plurals>
     <string name="dialog_new_group_account" msgid="4326402875327788728">"Ընտրեք հաշիվը"</string>
@@ -178,10 +178,10 @@
     <string name="set_default" msgid="3704074175618702225">"Սահմանել ըստ կանխադրման"</string>
     <string name="clear_default" msgid="2055883863621491533">"Մաքրել լռելյայն"</string>
     <string name="toast_text_copied" msgid="845906090076228771">"Տեքսը պատճենված է"</string>
-    <string name="cancel_confirmation_dialog_message" msgid="7486892574762212762">"Անտեսե՞լ փոփոխությունները:"</string>
+    <string name="cancel_confirmation_dialog_message" msgid="7486892574762212762">"Հրաժարվե՞լ փոփոխություններից:"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="8280294641821133477">"Անտեսել"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="7117943783437253341">"Չեղարկել"</string>
-    <string name="leave_customize_confirmation_dialog_message" msgid="5330853530872707231">"Անտեսե՞լ փոփոխությունները:"</string>
+    <string name="leave_customize_confirmation_dialog_message" msgid="5330853530872707231">"Հրաժարվե՞լ փոփոխություններից:"</string>
     <string name="enter_contact_name" msgid="521859148893732679">"Որոնեք կոնտակտներ"</string>
     <string name="title_edit_group" msgid="4246193439931854759">"Կոնտակտների ջնջում"</string>
     <string name="local_profile_title" msgid="1613784248702623410">"Իմ տեղային պրոֆիլը"</string>
@@ -201,7 +201,7 @@
     <string name="menu_export_database" msgid="1658249125751926885">"Արտահանել տվյալների շտեմարանի ֆայլերը"</string>
     <string name="action_menu_add_new_contact_button" msgid="1201339383074001291">"Ստեղծել նոր կոնտակտ"</string>
     <string name="expanding_entry_card_view_see_more" msgid="6636033205952561590">"Տեսնել ավելին"</string>
-    <string name="expanding_entry_card_view_see_less" msgid="6399603072579278030">"Կոծկել"</string>
+    <string name="expanding_entry_card_view_see_less" msgid="6399603072579278030">"Ցույց տալ ավելի քիչ"</string>
     <string name="about_card_title" msgid="6635849009952435700">"Տեղեկատվություն"</string>
     <string name="toast_making_personal_copy" msgid="9053129410039312386">"Ստեղծվում է անձնական պատճենը..."</string>
     <string name="date_time_set" msgid="8526160894146496334">"Հաստատել"</string>
@@ -285,8 +285,8 @@
     <string name="sms_mms" msgid="7395133080765833725">"Հաղորդագրել MMS համարին"</string>
     <string name="sms_by_shortcut" msgid="4682340916268521006">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Գրել SMS)"</string>
     <string name="description_video_call" msgid="4956825008907720371">"Տեսազանգ սկսել"</string>
-    <string name="clearFrequentsConfirmation_title" msgid="9194415661170740437">"Մաքրե՞լ հաճախակի հաղորդակցվողները"</string>
-    <string name="clearFrequentsConfirmation" msgid="2120741757522063938">"Կոնտակտներ և Հեռախոս հավելվածներից կմաքրվի հաճախակի օգտագործվող կոնտակտների ցանկը, և էլփոստի հավելվածները զրոյից են սովորելու ձեր հաճախակի օգտագործվող կոնտակտները։"</string>
+    <string name="clearFrequentsConfirmation_title" msgid="9194415661170740437">"Ջնջե՞լ հաճախակի հաղորդակցվողները"</string>
+    <string name="clearFrequentsConfirmation" msgid="2120741757522063938">"Կոնտակտներ և Հեռախոս հավելվածներից կմաքրվի հաճախակի օգտագործվող կոնտակտների ցանկը, և էլփոստի հավելվածները զրոյից են սովորելու ձեր հաճախակի գործածվող կոնտակտները։"</string>
     <string name="clearFrequentsProgress_title" msgid="8271935295080659743">"Մաքրվում է հաճախակի հաղորդակցվողները..."</string>
     <string name="status_available" msgid="8081626460682959098">"Հասանելի է"</string>
     <string name="status_away" msgid="2677693194455091315">"Տեղում չէ"</string>
@@ -379,11 +379,11 @@
     <string name="import_from_sim" msgid="7825280799813847991">"SIM քարտից"</string>
     <string name="import_from_sim_summary_fmt" msgid="4234771828377985321">"<xliff:g id="SIM_NAME">%1$s</xliff:g> SIM-ից"</string>
     <plurals name="import_from_sim_secondary_contact_count_fmt" formatted="false" msgid="8737770002554878728">
-      <item quantity="one">%1$d contacts</item>
+      <item quantity="one">%1$d կոնտակտ</item>
       <item quantity="other">%1$d կոնտակտ</item>
     </plurals>
     <plurals name="import_from_sim_secondary_template" formatted="false" msgid="6698670511061586532">
-      <item quantity="one"><xliff:g id="COUNT_2">^1</xliff:g> contacts • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
+      <item quantity="one"><xliff:g id="COUNT_2">^1</xliff:g> կոնտակտ • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
       <item quantity="other"><xliff:g id="COUNT_2">^1</xliff:g> կոնտակտ • <xliff:g id="PHONE_NUMBER_3">^2</xliff:g></item>
     </plurals>
     <string name="import_from_vcf_file" msgid="6776403212804361301">".vcf ֆայլից"</string>
@@ -393,13 +393,13 @@
     <string name="cancel_export_confirmation_message" msgid="370693160959236239">"Չեղարկե՞լ <xliff:g id="FILENAME">%s</xliff:g>-ի արտահանումը"</string>
     <string name="cancel_vcard_import_or_export_failed" msgid="3041814872516288484">"Հնարավոր չէ չեղարկել vCard-ի ներմուծումը/արտահանումը"</string>
     <string name="fail_reason_unknown" msgid="3721044979355043778">"Անհայտ սխալ:"</string>
-    <string name="fail_reason_could_not_open_file" msgid="6015509564074145162">"Հնարավոր չէ բացել \"<xliff:g id="FILE_NAME">%1$s</xliff:g>\"-ը. պատճառը` <xliff:g id="EXACT_REASON">%2$s</xliff:g>:"</string>
+    <string name="fail_reason_could_not_open_file" msgid="6015509564074145162">"Հնարավոր չէ բացել \"<xliff:g id="FILE_NAME">%1$s</xliff:g>\"-ը. պատճառը՝ <xliff:g id="EXACT_REASON">%2$s</xliff:g>:"</string>
     <string name="fail_reason_could_not_initialize_exporter" msgid="4145819808407973981">"Հնարավոր չէ մեկնարկել արտահանողը. պատճառը` «<xliff:g id="EXACT_REASON">%s</xliff:g>»:"</string>
     <string name="fail_reason_no_exportable_contact" msgid="487925011719622851">"Արտահանելի կոնտակտ չկա:"</string>
     <string name="missing_required_permission" msgid="1308037728470791436">"Դուք անջատել եք անհրաժեշտ թույլտվությունը:"</string>
     <string name="fail_reason_error_occurred_during_export" msgid="6179270404825288837">"Արտահանման ընթացքում տեղի է ունեցել սխալ. պատճառը` «<xliff:g id="EXACT_REASON">%s</xliff:g>»:"</string>
     <string name="fail_reason_io_error" msgid="6364839914349999408">"I/O սխալ"</string>
-    <string name="fail_reason_low_memory_during_import" msgid="4525361860523306991">"Հիշողությունը բավարար չէ: Հնարավոր է` ֆայլը չափազանց մեծ է:"</string>
+    <string name="fail_reason_low_memory_during_import" msgid="4525361860523306991">"Հիշողությունը բավարար չէ: Հնարավոր է՝ ֆայլը չափազանց մեծ է:"</string>
     <string name="fail_reason_not_supported" msgid="6449916670421646290">"Ձևաչափը չի աջակցվում:"</string>
     <string name="exporting_vcard_finished_title" msgid="1984393609140969504">"<xliff:g id="FILENAME">%s</xliff:g>-ի արտահանումն ավարտվեց"</string>
     <string name="exporting_vcard_finished_title_fallback" msgid="9029067439586573959">"Կոնտակտների արտահանումն ավարտվեց:"</string>
@@ -436,8 +436,8 @@
     <string name="display_options_sort_by_given_name" msgid="893781924536349248">"Անվան"</string>
     <string name="display_options_sort_by_family_name" msgid="1282763552330910876">"Ազգանվան"</string>
     <string name="display_options_view_names_as" msgid="4060686468465916565">"Անվան ձևաչափ"</string>
-    <string name="display_options_view_given_name_first" msgid="383885125505521383">"Սկզբում՝ անունը"</string>
-    <string name="display_options_view_family_name_first" msgid="6597077054231296007">"Սկզբում՝ ազգանունը"</string>
+    <string name="display_options_view_given_name_first" msgid="383885125505521383">"Սկզբում անունը"</string>
+    <string name="display_options_view_family_name_first" msgid="6597077054231296007">"Սկզբում ազգանունը"</string>
     <string name="settings_accounts" msgid="119582613811929994">"Հաշիվներ"</string>
     <string name="default_editor_account" msgid="4810392921888877149">"Կանխադրված հաշիվ նոր կոնտակտների համար"</string>
     <string name="settings_my_info_title" msgid="6236848378653551341">"Իմ մասին"</string>
@@ -503,7 +503,7 @@
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"Միացնել"</string>
     <string name="connection_error_message" msgid="7446131881946138093">"Կապ չկա"</string>
     <string name="single_sim_display_label" msgid="264062966309455515">"SIM քարտ"</string>
-    <string name="show_more_content_description" msgid="6298277298495491712">"Ցուցադրել ավելի շատ"</string>
+    <string name="show_more_content_description" msgid="6298277298495491712">"Ցույց տալ ավելին"</string>
     <string name="importing_sim_finished_title" msgid="6436721150882268416">"SIM քարտի ներմուծումն ավարտվեց"</string>
     <string name="importing_sim_failed_title" msgid="1046154274170241788">"Ներմուծման սխալ"</string>
     <string name="importing_sim_failed_message" msgid="55568522164349044">"Չհաջողվեց կոնտակտներ ներմուծել SIM քարտից"</string>

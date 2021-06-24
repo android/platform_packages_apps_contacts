@@ -21,7 +21,7 @@
     <string name="shortcut_add_contact" msgid="7949342235528657981">"Харилцагч нэмэх"</string>
     <string name="shortcutContact" msgid="8009736387364461511">"Харилцагч"</string>
     <string name="shortcutDialContact" msgid="155367248069127153">"Шууд залгах"</string>
-    <string name="shortcutMessageContact" msgid="9123517151981679277">"Шууд зурвас"</string>
+    <string name="shortcutMessageContact" msgid="9123517151981679277">"Шууд мессеж"</string>
     <string name="shortcutActivityTitle" msgid="5407832911005090417">"Харилцагч сонгох"</string>
     <string name="contactInsertOrEditActivityTitle" msgid="1788154962629911262">"Харилцагчид нэмэх"</string>
     <string name="contactPickerActivityTitle" msgid="1842634991247618890">"Харилцагч сонгоно уу"</string>
@@ -123,7 +123,7 @@
     <string name="groupSomeContactsNoEmailsToast" msgid="2142963883699535155">"Зарим харилцагчид имэйл хаяггүй байна."</string>
     <string name="groupSomeContactsNoPhonesToast" msgid="2454029254458875746">"Зарим харилцагчид утасны дугааргүй байна."</string>
     <string name="menu_sendEmailOption" msgid="8600335923636486825">"Имэйл илгээх"</string>
-    <string name="menu_sendMessageOption" msgid="8051852013078110910">"Зурвас илгээх"</string>
+    <string name="menu_sendMessageOption" msgid="8051852013078110910">"Мессеж илгээх"</string>
     <string name="pickerSelectContactsActivityTitle" msgid="8265907544009447967">"Харилцагчдыг сонгоно уу"</string>
     <string name="send_to_selection" msgid="3655197947726443720">"Илгээх"</string>
     <string name="listFoundAllContactsZero" msgid="1933842282916988563">"Харилцагч байхгүй"</string>
@@ -209,7 +209,7 @@
     <string name="header_organization_entry" msgid="7428066442988227441">"Байгууллага"</string>
     <string name="header_nickname_entry" msgid="1110276804512795150">"Хоч"</string>
     <string name="header_note_entry" msgid="339680292368016788">"Тэмдэглэл"</string>
-    <string name="header_website_entry" msgid="3618691707215428785">"Вэбсайт"</string>
+    <string name="header_website_entry" msgid="3618691707215428785">"Вебсайт"</string>
     <string name="header_event_entry" msgid="70962228694476731">"Үйл явдал"</string>
     <string name="header_relation_entry" msgid="993618132732521944">"Хамаарал"</string>
     <string name="header_name_entry" msgid="2516776099121101578">"Нэр"</string>
@@ -263,33 +263,33 @@
     <string name="call_mms" msgid="1760746475672950386">"MMS рүү залгах"</string>
     <string name="call_by_shortcut" msgid="5707329943368933423">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Залгах)"</string>
     <string name="sms_custom" msgid="3684453744622817362">"<xliff:g id="CUSTOM_LABEL">%s</xliff:g> руу мессеж бичих"</string>
-    <string name="sms_home" msgid="6132392861245316613">"Гэрийн утас руу зурвас илгээх"</string>
-    <string name="sms_mobile" msgid="433949735070334192">"Гар утас руу зурвас илгээх"</string>
-    <string name="sms_work" msgid="7784676780449153911">"Ажил руу зурвас илгээх"</string>
-    <string name="sms_fax_work" msgid="8239716828120939345">"Ажлын факс руу зурвас илгээх"</string>
-    <string name="sms_fax_home" msgid="6887675360794775735">"Гэрийн факс руу зурвас илгээх"</string>
-    <string name="sms_pager" msgid="1052540072760129272">"Пейжер рүү зурвас илгээх"</string>
-    <string name="sms_other" msgid="3584200156296349098">"Зурвас илгээх"</string>
-    <string name="sms_callback" msgid="6932315941997609031">"Дуудлага авах зурвас илгээх"</string>
-    <string name="sms_car" msgid="6051606941547979352">"Машин руу зурвас илгээх"</string>
-    <string name="sms_company_main" msgid="4801585186677340070">"Компанийн үндсэн дугаар руу зурвас илгээх"</string>
-    <string name="sms_isdn" msgid="8093269429091061478">"ISDN рүү зурвас илгээх"</string>
-    <string name="sms_main" msgid="624730854551629076">"Үндсэн дугаар руу зурвас илгээх"</string>
-    <string name="sms_other_fax" msgid="8272996838482574564">"Факс руу зурвас илгээх"</string>
-    <string name="sms_radio" msgid="3703466526430351408">"Радио руу зурвас илгээх"</string>
-    <string name="sms_telex" msgid="5926595248188984691">"Телекс рүү зурвас илгээх"</string>
-    <string name="sms_tty_tdd" msgid="5517202384458721064">"TTY/TDD рүү зурвас илгээх"</string>
-    <string name="sms_work_mobile" msgid="1170012557483816931">"Ажлын гар утас руу зурвас илгээх"</string>
-    <string name="sms_work_pager" msgid="8827367747655005608">"Ажлын пейжэр рүү зурвас илгээх"</string>
-    <string name="sms_assistant" msgid="245045451580096547">"<xliff:g id="ASSISTANT">%s</xliff:g> руу зурвас бичих"</string>
-    <string name="sms_mms" msgid="7395133080765833725">"MMS руу зурвас илгээх"</string>
-    <string name="sms_by_shortcut" msgid="4682340916268521006">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Зурвас)"</string>
+    <string name="sms_home" msgid="6132392861245316613">"Гэрийн утас руу мессеж илгээх"</string>
+    <string name="sms_mobile" msgid="433949735070334192">"Гар утас руу мессеж илгээх"</string>
+    <string name="sms_work" msgid="7784676780449153911">"Ажил руу мессеж илгээх"</string>
+    <string name="sms_fax_work" msgid="8239716828120939345">"Ажлын факс руу мессеж илгээх"</string>
+    <string name="sms_fax_home" msgid="6887675360794775735">"Гэрийн факс руу мессеж илгээх"</string>
+    <string name="sms_pager" msgid="1052540072760129272">"Пейжер рүү мессеж илгээх"</string>
+    <string name="sms_other" msgid="3584200156296349098">"Мессеж илгээх"</string>
+    <string name="sms_callback" msgid="6932315941997609031">"Дуудлага авах мессеж илгээх"</string>
+    <string name="sms_car" msgid="6051606941547979352">"Машин руу мессеж илгээх"</string>
+    <string name="sms_company_main" msgid="4801585186677340070">"Компанийн үндсэн дугаар руу мессеж илгээх"</string>
+    <string name="sms_isdn" msgid="8093269429091061478">"ISDN рүү мессеж илгээх"</string>
+    <string name="sms_main" msgid="624730854551629076">"Үндсэн дугаар руу мессеж илгээх"</string>
+    <string name="sms_other_fax" msgid="8272996838482574564">"Факс руу мессеж илгээх"</string>
+    <string name="sms_radio" msgid="3703466526430351408">"Радио руу мессеж илгээх"</string>
+    <string name="sms_telex" msgid="5926595248188984691">"Телекс рүү мессеж илгээх"</string>
+    <string name="sms_tty_tdd" msgid="5517202384458721064">"TTY/TDD рүү мессеж илгээх"</string>
+    <string name="sms_work_mobile" msgid="1170012557483816931">"Ажлын гар утас руу мессеж илгээх"</string>
+    <string name="sms_work_pager" msgid="8827367747655005608">"Ажлын пейжэр рүү мессеж илгээх"</string>
+    <string name="sms_assistant" msgid="245045451580096547">"<xliff:g id="ASSISTANT">%s</xliff:g> руу мессеж бичих"</string>
+    <string name="sms_mms" msgid="7395133080765833725">"MMS руу мессеж илгээх"</string>
+    <string name="sms_by_shortcut" msgid="4682340916268521006">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (Мессеж)"</string>
     <string name="description_video_call" msgid="4956825008907720371">"Видео дуудлага хийх"</string>
     <string name="clearFrequentsConfirmation_title" msgid="9194415661170740437">"Байнга холбоо барьдаг харилцагчдын жагсаалтыг устгах уу?"</string>
     <string name="clearFrequentsConfirmation" msgid="2120741757522063938">"Та Харилцагч болон Утас апп-ууд дахь байнга холбоо барьсан харилцагчдын жагсаалтыг устгаж, ингэснээрээ имэйл апп-уудыг таны имэйл хаяглах хандлагыг бүр эхнээс нь суралцахад хүргэнэ."</string>
     <string name="clearFrequentsProgress_title" msgid="8271935295080659743">"Байнга холбоо барьдаг харилцагчдын жагсаалтыг устгаж байна…"</string>
     <string name="status_available" msgid="8081626460682959098">"Холбогдсон"</string>
-    <string name="status_away" msgid="2677693194455091315">"Холдсон"</string>
+    <string name="status_away" msgid="2677693194455091315">"Эзгүй"</string>
     <string name="status_busy" msgid="2759339190187696727">"Завгүй"</string>
     <string name="local_invisible_directory" msgid="5936234374879813300">"Бусад"</string>
     <string name="directory_search_label" msgid="2602118204885565153">"Директор"</string>
@@ -302,7 +302,7 @@
     <string name="list_filter_phones_work" msgid="5583425697781385616">"Ажлын профайлын харилцагч"</string>
     <string name="view_updates_from_group" msgid="6233444629074835594">"Шинэчлэлтүүдийг харах"</string>
     <string name="account_phone" msgid="8044426231251817556">"Төхөөрөмж"</string>
-    <string name="account_sim" msgid="3200457113308694663">"СИМ"</string>
+    <string name="account_sim" msgid="3200457113308694663">"SIM"</string>
     <string name="nameLabelsGroup" msgid="513809148312046843">"Нэр"</string>
     <string name="nicknameLabelsGroup" msgid="794390116782033956">"Хоч"</string>
     <string name="name_given" msgid="3883661251894628431">"Өөрийн нэр"</string>
@@ -321,14 +321,14 @@
     <string name="organizationLabelsGroup" msgid="2342482097897299099">"Байгууллага"</string>
     <string name="relationLabelsGroup" msgid="8931615792208307291">"Хамаарал"</string>
     <string name="eventLabelsGroup" msgid="8625868552164376823">"Баярт өдөр"</string>
-    <string name="sms" msgid="4246338112764847384">"Зурвас"</string>
+    <string name="sms" msgid="4246338112764847384">"Мессеж"</string>
     <string name="postal_address" msgid="5031809899673855074">"Хаяг"</string>
     <string name="ghostData_company" msgid="3873500610390675876">"Компани"</string>
     <string name="ghostData_title" msgid="8584897460662904533">"Гарчиг"</string>
     <string name="label_notes" msgid="7134226125644463585">"Тэмдэглэл"</string>
     <string name="label_custom_field" msgid="4160584225306364924">"Тусгай"</string>
     <string name="label_sip_address" msgid="8876347942587537552">"SIP"</string>
-    <string name="websiteLabelsGroup" msgid="114754928100220315">"Вэбсайт"</string>
+    <string name="websiteLabelsGroup" msgid="114754928100220315">"Вебсайт"</string>
     <string name="groupsLabel" msgid="5622154133880646122">"Шошгууд"</string>
     <string name="email_home" msgid="1102791500866910269">"Гэрийн имэйл рүү"</string>
     <string name="email_mobile" msgid="6461172430397598705">"Гар утас руу имэйлдэх"</string>
@@ -452,7 +452,7 @@
     <string name="no_contact_to_share" msgid="6285287228557175749">"Хуваалцах харилцагчид байхгүй байна."</string>
     <string name="menu_contacts_filter" msgid="5854584270038139275">"Харуулах харилцагчид"</string>
     <string name="activity_title_contacts_filter" msgid="6340531582631006680">"Харуулах харилцагчид"</string>
-    <string name="custom_list_filter" msgid="2544327670202891979">"Харагдацыг тааруулах"</string>
+    <string name="custom_list_filter" msgid="2544327670202891979">"Харагдцыг тааруулах"</string>
     <string name="menu_custom_filter_save" msgid="2412959737200856930">"Хадгалах"</string>
     <string name="hint_findContacts" msgid="5554298639062659655">"Харилцагч хайх"</string>
     <string name="contactsFavoritesLabel" msgid="8339645684721732714">"Таалагддаг"</string>
@@ -472,7 +472,7 @@
     <string name="call_subject_type_and_number" msgid="134754147019287616">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="5870642814752351712">"Боловсруулсан хувилбар"</string>
     <string name="about_open_source_licenses" msgid="1617836621315557445">"Нээлттэй эхийн лиценз"</string>
-    <string name="about_open_source_licenses_summary" msgid="4843627659117423491">"Нээлттэй эхийн програм хангамжийн лицензийн мэдээлэл"</string>
+    <string name="about_open_source_licenses_summary" msgid="4843627659117423491">"Нээлттэй эхийн программ хангамжийн лицензийн мэдээлэл"</string>
     <string name="about_privacy_policy" msgid="4581488375200402678">"Нууцлалын бодлого"</string>
     <string name="about_terms_of_service" msgid="7419670771785057738">"Үйлчилгээний нөхцөл"</string>
     <string name="activity_title_licenses" msgid="6434398894019119709">"Нээлттэй эхийн лиценз"</string>
@@ -499,7 +499,7 @@
     <string name="dismiss_sync_alert" msgid="4057176963960104786">"Хаах"</string>
     <string name="account_sync_off" msgid="6187683798342006021">"Автомат синк идэвхгүй байна. Идэвхжүүлэх бол товшино уу."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="3812155064863594938">"Автомат синкийг асаах уу?"</string>
-    <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"Google Харилцагч төдийгүй бүх апп болон бүртгэлд таны оруулсан өөрчлөлтийг вэб болон таны бусад төхөөрөмжүүд хооронд шинэчилж байх болно."</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"Google Харилцагч төдийгүй бүх апп болон бүртгэлд таны оруулсан өөрчлөлтийг веб болон таны бусад төхөөрөмжүүд хооронд шинэчилж байх болно."</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"Идэвхжүүлэх"</string>
     <string name="connection_error_message" msgid="7446131881946138093">"Холболт байхгүй"</string>
     <string name="single_sim_display_label" msgid="264062966309455515">"SIM"</string>

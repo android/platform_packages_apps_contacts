@@ -190,7 +190,7 @@
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="8280294641821133477">"Odrzuć"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="7117943783437253341">"Anuluj"</string>
     <string name="leave_customize_confirmation_dialog_message" msgid="5330853530872707231">"Odrzucić zmiany?"</string>
-    <string name="enter_contact_name" msgid="521859148893732679">"Szukaj kontaktów"</string>
+    <string name="enter_contact_name" msgid="521859148893732679">"Wyszukaj kontakty"</string>
     <string name="title_edit_group" msgid="4246193439931854759">"Usuń kontakty"</string>
     <string name="local_profile_title" msgid="1613784248702623410">"Mój profil lokalny"</string>
     <string name="external_profile_title" msgid="2706282819025406927">"Mój profil <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g>"</string>

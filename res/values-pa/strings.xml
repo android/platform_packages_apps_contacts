@@ -356,11 +356,11 @@
     <string name="chat" msgid="8390862712584830532">"ਚੈਟ"</string>
     <string name="description_minus_button" msgid="1305985971158054217">"ਮਿਟਾਓ"</string>
     <string name="expand_name_fields_description" msgid="6059558159338959487">"ਹੋਰ ਨਾਮ ਖੇਤਰ  ਦਿਖਾਓ"</string>
-    <string name="collapse_name_fields_description" msgid="7950435675716414477">"ਨਾਮ ਖੇਤਰਾਂ ਨੂੰ ਸੁੰਗੇੜੋ"</string>
+    <string name="collapse_name_fields_description" msgid="7950435675716414477">"ਨਾਮ ਖੇਤਰਾਂ ਨੂੰ ਸਮੇਟੋ"</string>
     <string name="expand_phonetic_name_fields_description" msgid="7414340689396399173">"ਹੋਰ ਧੁਨੀਆਤਮਿਕ ਨਾਮ ਖੇਤਰ  ਦਿਖਾਓ"</string>
-    <string name="collapse_phonetic_name_fields_description" msgid="4614902922362144094">"ਫ਼ੋਨੈਟਿਕ ਨਾਮ ਖੇਤਰਾਂ ਨੂੰ ਸੁੰਗੇੜੋ"</string>
+    <string name="collapse_phonetic_name_fields_description" msgid="4614902922362144094">"ਫ਼ੋਨੈਟਿਕ ਨਾਮ ਖੇਤਰਾਂ ਨੂੰ ਸਮੇਟੋ"</string>
     <string name="expand_fields_description" msgid="8604448646798943909">"ਵਿਸਤਾਰ ਕਰੋ"</string>
-    <string name="collapse_fields_description" msgid="3213872920491992960">"ਸੁੰਗੇੜੋ"</string>
+    <string name="collapse_fields_description" msgid="3213872920491992960">"ਸਮੇਟੋ"</string>
     <string name="announce_expanded_fields" msgid="8410808184164186871">"ਵਿਸਤਾਰ ਕੀਤਾ ਗਿਆ"</string>
     <string name="announce_collapsed_fields" msgid="7611318715383228182">"ਸੁੰਗੇੜਿਆ ਗਿਆ"</string>
     <string name="list_filter_all_accounts" msgid="6173785387972096770">"ਸਾਰੇ ਸੰਪਰਕ"</string>

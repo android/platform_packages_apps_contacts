@@ -213,7 +213,7 @@
     <string name="about_card_title" msgid="6635849009952435700">"Інфармацыя"</string>
     <string name="toast_making_personal_copy" msgid="9053129410039312386">"Стварэнне асабістай копіі..."</string>
     <string name="date_time_set" msgid="8526160894146496334">"Задаць"</string>
-    <string name="header_im_entry" msgid="3581797653862294826">"Iмгненныя паведамленні"</string>
+    <string name="header_im_entry" msgid="3581797653862294826">"Чат"</string>
     <string name="header_organization_entry" msgid="7428066442988227441">"Арганізацыя"</string>
     <string name="header_nickname_entry" msgid="1110276804512795150">"Псеўданім"</string>
     <string name="header_note_entry" msgid="339680292368016788">"Нататка"</string>
@@ -325,9 +325,9 @@
     <string name="phoneLabelsGroup" msgid="2746758650001801885">"Тэлефон"</string>
     <string name="emailLabelsGroup" msgid="3360719560200449554">"Электронная пошта"</string>
     <string name="postalLabelsGroup" msgid="7534317297587527570">"Адрас"</string>
-    <string name="imLabelsGroup" msgid="2113398976789806432">"ІМ"</string>
+    <string name="imLabelsGroup" msgid="2113398976789806432">"Чат"</string>
     <string name="organizationLabelsGroup" msgid="2342482097897299099">"Арганізацыя"</string>
-    <string name="relationLabelsGroup" msgid="8931615792208307291">"Сувязі"</string>
+    <string name="relationLabelsGroup" msgid="8931615792208307291">"Адносіны"</string>
     <string name="eventLabelsGroup" msgid="8625868552164376823">"Асаблівая дата"</string>
     <string name="sms" msgid="4246338112764847384">"Тэкставае паведамленне"</string>
     <string name="postal_address" msgid="5031809899673855074">"Адрас"</string>
@@ -466,7 +466,7 @@
     <string name="activity_title_contacts_filter" msgid="6340531582631006680">"Адлюстроўваць кантакты"</string>
     <string name="custom_list_filter" msgid="2544327670202891979">"Наладзіць прагляд"</string>
     <string name="menu_custom_filter_save" msgid="2412959737200856930">"Захаваць"</string>
-    <string name="hint_findContacts" msgid="5554298639062659655">"Шукаць у кантактах"</string>
+    <string name="hint_findContacts" msgid="5554298639062659655">"Пошук кантактаў"</string>
     <string name="contactsFavoritesLabel" msgid="8339645684721732714">"Выбранае"</string>
     <string name="menu_import" msgid="2206768098740726906">"Імпартаваць"</string>
     <string name="menu_export" msgid="1217402092617629429">"Экспартаваць"</string>
@@ -513,7 +513,7 @@
     <string name="dismiss_sync_alert" msgid="4057176963960104786">"Адхіліць"</string>
     <string name="account_sync_off" msgid="6187683798342006021">"Сінхранізацыя ўліковага запісу адключана. Дакраніцеся, каб уключыць яе."</string>
     <string name="turn_auto_sync_on_dialog_title" msgid="3812155064863594938">"Уключыць аўтасінхранізацыю?"</string>
-    <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"Змены, якія вы зрабілі ва ўсіх праграмах і ўліковых запісах, не толькі ў Кантактах Google, будуць сінхранізоўвацца паміж вэб-інтэрфейсам і вашымі прыладамі."</string>
+    <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"Змяненні, унесеныя вамі ў іншых праграмах і ўліковых запісах (не толькі ў Google Кантактах), будуць сінхранізавацца паміж вэб-інтэрфейсам і вашымі прыладамі."</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"Уключыць"</string>
     <string name="connection_error_message" msgid="7446131881946138093">"Няма падключэння"</string>
     <string name="single_sim_display_label" msgid="264062966309455515">"SIM-карта"</string>
