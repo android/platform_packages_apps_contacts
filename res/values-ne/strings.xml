@@ -89,7 +89,7 @@
     <string name="batch_delete_confirmation" msgid="4149615167210863403">"चयन गरिएका सम्पर्क ठेगानाहरू मेटाउने हो?"</string>
     <string name="batch_delete_read_only_contact_confirmation" msgid="381691735715182700">"तपाईँका पढ्ने-मात्र मिल्ने खाताहरूबाट सम्पर्क ठेगानाहरू मेटाउन सकिँदैन, तर तिनीहरूलाई लुकाउन सकिन्छ।"</string>
     <string name="batch_delete_multiple_accounts_confirmation" msgid="4547718538924570984">"मेटाउनु पर्ने सम्पर्क ठेगानाको बहु खाताहरूमा विवरणहरू छन्। पढ्न-मात्र मिल्ने खाताहरूबाट विवरणहरू लुकाइनेछन्, मेटाइनेछैनन्।"</string>
-    <string name="multipleContactDeleteConfirmation" msgid="2970218685653877287">"यो सम्पर्क ठेगाना हटाउँदा बहु खाताहरूबाट विवरणहरू मेटाइने छन्।"</string>
+    <string name="multipleContactDeleteConfirmation" msgid="2970218685653877287">"यो सम्पर्क ठेगाना हटाउँदा बहु खाताहरूबाट विवरणहरू मेटाइनेछन्।"</string>
     <string name="deleteConfirmation" msgid="3727809366015979585">"यो सम्पर्क ठेगाना मेटाउने हो?"</string>
     <string name="deleteConfirmation_positive_button" msgid="1604511403421785160">"मेटाउनुहोस्"</string>
     <string name="invalidContactMessage" msgid="6204402264821083362">"सम्पर्क उपलब्ध छैन।"</string>
@@ -103,7 +103,7 @@
     <string name="emptyGroup" msgid="8598261660865081152">"यो लेबल अन्तर्गत कुनै सम्पर्कहरू छैनन्"</string>
     <string name="emptyAccount" msgid="7450843210977018582">"यस खातामा कुनै सम्पर्क ठेगानाहरू छैनन्"</string>
     <string name="emptyMainList" msgid="3266182207039677163">"तपाईंको सम्पर्क ठेगानाहरूको सूची खाली छ"</string>
-    <string name="contactSavedNamedToast" msgid="3067050290584834386">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> सेभ गरियो"</string>
+    <string name="contactSavedNamedToast" msgid="3067050290584834386">"<xliff:g id="DISPLAY_NAME">%s</xliff:g> सुरक्षित गरियो"</string>
     <string name="contactSavedToast" msgid="4370392215196995301">"सम्पर्क बचत गरियो।"</string>
     <string name="contactUnlinkedToast" msgid="6791720274141804377">"सम्पर्क ठेगानाहरू अनलिंक गरियो"</string>
     <string name="contactSavedErrorToast" msgid="3213619905154956918">"सम्पर्कमा गरिएका परिवर्तनहरू सुरक्षित गर्न सकिएन"</string>
@@ -175,8 +175,8 @@
     <string name="delete_group_dialog_message" msgid="754082019928025404">"\"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\" लेबललाई हटाउने हो? (सम्पर्कहरू मेटिने छैनन्।)"</string>
     <string name="toast_join_with_empty_contact" msgid="3886468280665325350">"अर्कोसँग लिंक हुनुअघि सम्पर्क नाम टाइप गर्नुहोस्।"</string>
     <string name="copy_text" msgid="6835250673373028909">"क्लिपबोर्डमा प्रतिलिपि गर्नुहोस्"</string>
-    <string name="set_default" msgid="3704074175618702225">"डिफल्ट मिलाउनुहोस्"</string>
-    <string name="clear_default" msgid="2055883863621491533">"डिफल्ट हटाउनुहोस्"</string>
+    <string name="set_default" msgid="3704074175618702225">"पूर्वनिर्धारित मिलाउनुहोस्"</string>
+    <string name="clear_default" msgid="2055883863621491533">"पूर्वनिर्धारित हटाउनुहोस्"</string>
     <string name="toast_text_copied" msgid="845906090076228771">"पाठको प्रतिलिपि  गरियो"</string>
     <string name="cancel_confirmation_dialog_message" msgid="7486892574762212762">"परिवर्तनहरू खारेज गर्ने हो?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="8280294641821133477">"खारेज गर्नुहोस्"</string>
@@ -188,7 +188,7 @@
     <string name="external_profile_title" msgid="2706282819025406927">"मेरो <xliff:g id="EXTERNAL_SOURCE">%1$s</xliff:g> प्रोफाइल"</string>
     <string name="contact_editor_prompt_zero_accounts" msgid="4468363031413457746">"एक मिनेट जति लगाएर एउटा खाता थप्नुहोस् जसले तपाईंका सम्पर्कहरूलाई Google मा ब्याक अप गर्ने छ।"</string>
     <string name="contact_editor_prompt_one_account" msgid="765343809177951169">"नयाँ सम्पर्कहरू <xliff:g id="ACCOUNT_NAME">%1$s</xliff:g> मा सुरक्षित गरिनेछन्।"</string>
-    <string name="contact_editor_prompt_multiple_accounts" msgid="1543322760761168351">"नयाँ सम्पर्क ठेगानाहरूका लागि डिफल्ट खाता छान्‍नुहोस्:"</string>
+    <string name="contact_editor_prompt_multiple_accounts" msgid="1543322760761168351">"नयाँ सम्पर्क ठेगानाहरूका लागि पूर्वनिर्धारित खाता छान्‍नुहोस्:"</string>
     <string name="contact_editor_title_new_contact" msgid="7534775011591770343">"नयाँ सम्पर्क बनाउने"</string>
     <string name="contact_editor_title_existing_contact" msgid="3647774955741654029">"सम्पर्क सम्पादन"</string>
     <string name="contact_editor_title_read_only_contact" msgid="5494810291515292596">"अवलोकन मात्र"</string>
@@ -439,7 +439,7 @@
     <string name="display_options_view_given_name_first" msgid="383885125505521383">"नाम पहिले"</string>
     <string name="display_options_view_family_name_first" msgid="6597077054231296007">"थर पहिले"</string>
     <string name="settings_accounts" msgid="119582613811929994">"खाताहरू"</string>
-    <string name="default_editor_account" msgid="4810392921888877149">"नयाँ सम्पर्कहरूका लागि डिफल्ट खाता"</string>
+    <string name="default_editor_account" msgid="4810392921888877149">"नयाँ सम्पर्कहरूका लागि पूर्वनिर्धारित खाता"</string>
     <string name="settings_my_info_title" msgid="6236848378653551341">"मेरा बारेमा जानकारी"</string>
     <string name="set_up_profile" msgid="3554999219868611431">"आफ्नो प्रोफाइल सेटअप गर्नुहोस्"</string>
     <string name="setting_about" msgid="2941859292287597555">"सम्पर्कहरूका बारेमा"</string>
