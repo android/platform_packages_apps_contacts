@@ -264,7 +264,7 @@
     <string name="call_by_shortcut" msgid="5707329943368933423">"<xliff:g id="CONTACT_NAME">%s</xliff:g> (chamada)"</string>
     <string name="sms_custom" msgid="3684453744622817362">"Enviar mensagem de texto para <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>
     <string name="sms_home" msgid="6132392861245316613">"Enviar SMS para resid."</string>
-    <string name="sms_mobile" msgid="433949735070334192">"Enviar SMS para celular"</string>
+    <string name="sms_mobile" msgid="433949735070334192">"Enviar SMS para dispositivos móveis"</string>
     <string name="sms_work" msgid="7784676780449153911">"Enviar SMS para tel. comercial"</string>
     <string name="sms_fax_work" msgid="8239716828120939345">"Enviar SMS para fax com."</string>
     <string name="sms_fax_home" msgid="6887675360794775735">"Enviar SMS para fax resid."</string>
@@ -331,7 +331,7 @@
     <string name="websiteLabelsGroup" msgid="114754928100220315">"Site"</string>
     <string name="groupsLabel" msgid="5622154133880646122">"Marcadores"</string>
     <string name="email_home" msgid="1102791500866910269">"E-mail (residencial)"</string>
-    <string name="email_mobile" msgid="6461172430397598705">"Enviar e-mail para celular"</string>
+    <string name="email_mobile" msgid="6461172430397598705">"Enviar e-mail para dispositivos móveis"</string>
     <string name="email_work" msgid="24992619164533704">"E-mail (comercial)"</string>
     <string name="email_other" msgid="9200478615023952240">"E-mail"</string>
     <string name="email_custom" msgid="4614140345586842953">"Enviar e-mail para <xliff:g id="CUSTOM_LABEL">%s</xliff:g>"</string>

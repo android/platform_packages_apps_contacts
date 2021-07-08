@@ -403,8 +403,8 @@
     <string name="fail_reason_not_supported" msgid="6449916670421646290">"قالب پشتیبانی نمی‌شود."</string>
     <string name="exporting_vcard_finished_title" msgid="1984393609140969504">"صادر کردن <xliff:g id="FILENAME">%s</xliff:g> پایان یافت."</string>
     <string name="exporting_vcard_finished_title_fallback" msgid="9029067439586573959">"صادر کردن مخاطبین تمام شد."</string>
-    <string name="exporting_vcard_finished_toast" msgid="5463125514187187782">"مخاطبین صادر شدند؛ برای اشتراک‌گذاری مخاطبین، روی اعلان کلیک کنید."</string>
-    <string name="touch_to_share_contacts" msgid="7678194978416052577">"برای اشتراک‌گذاری مخاطبین ضربه بزنید."</string>
+    <string name="exporting_vcard_finished_toast" msgid="5463125514187187782">"مخاطبین صادر شدند؛ برای هم‌رسانی مخاطبین، روی اعلان کلیک کنید."</string>
+    <string name="touch_to_share_contacts" msgid="7678194978416052577">"برای هم‌رسانی مخاطبین ضربه بزنید."</string>
     <string name="exporting_vcard_canceled_title" msgid="1287529222628052526">"صادر کردن <xliff:g id="FILENAME">%s</xliff:g> لغو شد."</string>
     <string name="exporting_contact_list_title" msgid="6599904516394311592">"صدور اطلاعات مخاطب"</string>
     <string name="exporting_contact_list_message" msgid="6253904938452184387">"داده‌های مخاطب در حال صادر شدن است."</string>
@@ -449,7 +449,7 @@
     <string name="dialog_export" msgid="3497435010655060068">"صادر کردن مخاطبین"</string>
     <string name="dialog_import" msgid="4590232235052756593">"وارد کردن مخاطبین از"</string>
     <string name="share_error" msgid="4854612167186185739">"این مخاطب قابل اشتراک‌گذاری نیست."</string>
-    <string name="no_contact_to_share" msgid="6285287228557175749">"مخاطبی برای اشتراک‌گذاری وجود ندارد."</string>
+    <string name="no_contact_to_share" msgid="6285287228557175749">"مخاطبی برای هم‌رسانی وجود ندارد."</string>
     <string name="menu_contacts_filter" msgid="5854584270038139275">"مخاطبین جهت نمایش"</string>
     <string name="activity_title_contacts_filter" msgid="6340531582631006680">"مخاطبین جهت نمایش"</string>
     <string name="custom_list_filter" msgid="2544327670202891979">"سفارشی ساختن نما"</string>

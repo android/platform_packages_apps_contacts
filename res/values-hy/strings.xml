@@ -232,8 +232,8 @@
     <string name="editor_delete_view_description_short" msgid="6471032197042328181">"Ջնջել <xliff:g id="DATA_KIND">%s</xliff:g>"</string>
     <string name="menu_assistant" msgid="3980364519724237934">"Հուշումներ"</string>
     <string name="menu_assistant_new_badge" msgid="1992049406019853898">"Նոր"</string>
-    <string name="navigation_drawer_open" msgid="3428713515765555712">"Բացել նավարկման դարակը"</string>
-    <string name="navigation_drawer_close" msgid="3052989100471689722">"Փակել նավարկման դարակը"</string>
+    <string name="navigation_drawer_open" msgid="3428713515765555712">"Բացել նավիգացիայի դարակը"</string>
+    <string name="navigation_drawer_close" msgid="3052989100471689722">"Փակել նավիգացիայի դարակը"</string>
     <string name="navigation_drawer_label" msgid="8391863484838783638">"<xliff:g id="LABEL_NAME">%s</xliff:g> պիտակ"</string>
     <string name="menu_title_groups" msgid="3722199658759568221">"Պիտակներ"</string>
     <string name="menu_title_filters" msgid="349866121417914494">"Հաշիվներ"</string>
@@ -471,11 +471,11 @@
     <string name="call_subject_limit" msgid="5679166729627777474">"<xliff:g id="COUNT">%1$s</xliff:g>/<xliff:g id="LIMIT">%2$s</xliff:g>"</string>
     <string name="call_subject_type_and_number" msgid="134754147019287616">"<xliff:g id="TYPE">%1$s</xliff:g> • <xliff:g id="NUMBER">%2$s</xliff:g>"</string>
     <string name="about_build_version" msgid="5870642814752351712">"Կառուցման տարբերակը"</string>
-    <string name="about_open_source_licenses" msgid="1617836621315557445">"Բաց կոդով ծրագրակազմի արտոնագրեր"</string>
+    <string name="about_open_source_licenses" msgid="1617836621315557445">"Բաց կոդով ծրագրակազմի լիցենզիաներ"</string>
     <string name="about_open_source_licenses_summary" msgid="4843627659117423491">"Բաց կոդով ծրագրակազմի արտոնագրերի մանրամասներ"</string>
     <string name="about_privacy_policy" msgid="4581488375200402678">"Գաղտնիության քաղաքականություն"</string>
     <string name="about_terms_of_service" msgid="7419670771785057738">"Օգտագործման պայմաններ"</string>
-    <string name="activity_title_licenses" msgid="6434398894019119709">"Բաց կոդով ծրագրերի արտոնագրեր"</string>
+    <string name="activity_title_licenses" msgid="6434398894019119709">"Բաց կոդով ծրագրերի լիցենզիաներ"</string>
     <string name="url_open_error_toast" msgid="4885855620824048385">"Չհաջողվեց բացել url-ը:"</string>
     <string name="account_filter_view_checked" msgid="4740544238806346376">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> հաշիվը նշվել է"</string>
     <string name="account_filter_view_not_checked" msgid="5782705545786455847">"<xliff:g id="ACCOUNT_INFO">%s</xliff:g> հաշիվը չի նշվել"</string>

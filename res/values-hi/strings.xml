@@ -339,7 +339,7 @@
     <string name="postal_street" msgid="43809570436400749">"मार्ग का नाम"</string>
     <string name="postal_city" msgid="3571927981675393150">"शहर"</string>
     <string name="postal_region" msgid="6130239447563491435">"राज्य"</string>
-    <string name="postal_postcode" msgid="33077708757232659">"ज़िप कोड"</string>
+    <string name="postal_postcode" msgid="33077708757232659">"पिन कोड"</string>
     <string name="postal_country" msgid="6642804283917549861">"देश"</string>
     <string name="map_home" msgid="2169053372466501148">"घर का पता देखें"</string>
     <string name="map_work" msgid="8296916987749726461">"दफ़्तर का पता देखें"</string>
