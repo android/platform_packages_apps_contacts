@@ -473,7 +473,7 @@
     <string name="about_build_version" msgid="5870642814752351712">"Programversion"</string>
     <string name="about_open_source_licenses" msgid="1617836621315557445">"Licenser, öppen källkod"</string>
     <string name="about_open_source_licenses_summary" msgid="4843627659117423491">"Licensinformation för programvara med öppen källkod"</string>
-    <string name="about_privacy_policy" msgid="4581488375200402678">"Sekretesspolicy"</string>
+    <string name="about_privacy_policy" msgid="4581488375200402678">"Integritetspolicy"</string>
     <string name="about_terms_of_service" msgid="7419670771785057738">"Användarvillkor"</string>
     <string name="activity_title_licenses" msgid="6434398894019119709">"Licenser, öppen källkod"</string>
     <string name="url_open_error_toast" msgid="4885855620824048385">"Det gick inte att öppna webbadressen."</string>

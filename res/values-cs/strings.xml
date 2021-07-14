@@ -154,7 +154,7 @@
     <string name="group_name_dialog_hint" msgid="6023999218213062973">"Název štítku"</string>
     <string name="label_name_dialog_hint" msgid="7027635439255596191">"Název štítku"</string>
     <string name="audio_chat" msgid="5921525823973697372">"Hlasový chat"</string>
-    <string name="video_chat" msgid="2477295971622477433">"Videochat"</string>
+    <string name="video_chat" msgid="2477295971622477433">"Videohovor"</string>
     <string name="account_type_format" msgid="4926968760755013450">"Zdroj kontaktu: <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
     <string name="google_account_type_format" msgid="4046692740262396811">"Účet <xliff:g id="SOURCE">%1$s</xliff:g>"</string>
     <string name="take_photo" msgid="820071555236547516">"Vyfotit"</string>

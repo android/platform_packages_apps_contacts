@@ -175,7 +175,7 @@
     <string name="delete_group_dialog_message" msgid="754082019928025404">"Hapus label \"<xliff:g id="GROUP_LABEL">%1$s</xliff:g>\"? (Kontak tidak akan dihapus.)"</string>
     <string name="toast_join_with_empty_contact" msgid="3886468280665325350">"Ketik nama kontak sebelum menautkan dengan lainnya."</string>
     <string name="copy_text" msgid="6835250673373028909">"Salin ke papan klip"</string>
-    <string name="set_default" msgid="3704074175618702225">"Setel sebagai default"</string>
+    <string name="set_default" msgid="3704074175618702225">"Jadikan default"</string>
     <string name="clear_default" msgid="2055883863621491533">"Hapus default"</string>
     <string name="toast_text_copied" msgid="845906090076228771">"Teks disalin"</string>
     <string name="cancel_confirmation_dialog_message" msgid="7486892574762212762">"Hapus perubahan?"</string>

@@ -355,9 +355,9 @@
     <string name="chat_jabber" msgid="1097960594943864847">"Jabber သုံး၍ ချတ်လုပ်ရန်"</string>
     <string name="chat" msgid="8390862712584830532">"ချတ်လုပ်ရန်"</string>
     <string name="description_minus_button" msgid="1305985971158054217">"ဖျက်ရန်"</string>
-    <string name="expand_name_fields_description" msgid="6059558159338959487">"အမည်အကွက်များကို ပိုပြရန်"</string>
+    <string name="expand_name_fields_description" msgid="6059558159338959487">"အမည်အကွက်များကို ပိုပြပါ"</string>
     <string name="collapse_name_fields_description" msgid="7950435675716414477">"အမည်အကွက်များ ချုံ့ပြရန်"</string>
-    <string name="expand_phonetic_name_fields_description" msgid="7414340689396399173">"အသံထွက်အမည်အကွက်များကို ပိုပြရန်"</string>
+    <string name="expand_phonetic_name_fields_description" msgid="7414340689396399173">"အသံထွက်အမည်အကွက်များကို ပိုပြပါ"</string>
     <string name="collapse_phonetic_name_fields_description" msgid="4614902922362144094">"အသံထွက်အမည်အကွက်များ ချုံ့ပြရန်"</string>
     <string name="expand_fields_description" msgid="8604448646798943909">"ချဲ့ကြည့်ရန်"</string>
     <string name="collapse_fields_description" msgid="3213872920491992960">"ချုံ့ပြရန်"</string>
@@ -376,8 +376,8 @@
     <string name="savingDisplayGroups" msgid="6779839417901711381">"ပြသရေးရွေးစရာများကို သိမ်းနေသည်…"</string>
     <string name="listCustomView" msgid="5782275477737032610">"စိတ်ကြိုက်ကြည့်ရှုမှု"</string>
     <string name="dialog_new_contact_account" msgid="5652018124788855057">"တင်သွင်းထားသောအဆက်အသွယ်များကို သိမ်းရမည့်အကောင့် -"</string>
-    <string name="import_from_sim" msgid="7825280799813847991">"ဆင်းမ်ကဒ်"</string>
-    <string name="import_from_sim_summary_fmt" msgid="4234771828377985321">"<xliff:g id="SIM_NAME">%1$s</xliff:g> ဆင်းမ်ကဒ်"</string>
+    <string name="import_from_sim" msgid="7825280799813847991">"ဆင်းမ်ကတ်"</string>
+    <string name="import_from_sim_summary_fmt" msgid="4234771828377985321">"<xliff:g id="SIM_NAME">%1$s</xliff:g> ဆင်းမ်ကတ်"</string>
     <plurals name="import_from_sim_secondary_contact_count_fmt" formatted="false" msgid="8737770002554878728">
       <item quantity="other">အဆက်အသွယ် %1$d ခု</item>
       <item quantity="one">အဆက်အသွယ် ၁ ခု</item>
@@ -502,8 +502,8 @@
     <string name="turn_auto_sync_on_dialog_body" msgid="5386810641905184682">"Google အဆက်အသွယ်များသာမက အက်ပ်နှင့် အကောင့်အားလုံးတွင် သင်ပြုလုပ်သော အပြောင်းအလဲများကို ဝဘ်နှင့် သင့်ကိရိယာများအကြား အချိန်နှင့်တပြေးညီ မွမ်းမံပေးသွားပါမည်။"</string>
     <string name="turn_auto_sync_on_dialog_confirm_btn" msgid="5575717918836806519">"ဖွင့်ရန်"</string>
     <string name="connection_error_message" msgid="7446131881946138093">"ချိတ်ဆက်မှုမရှိပါ"</string>
-    <string name="single_sim_display_label" msgid="264062966309455515">"ဆင်းမ်ကဒ်"</string>
-    <string name="show_more_content_description" msgid="6298277298495491712">"နောက်ထပ်ပြရန်"</string>
+    <string name="single_sim_display_label" msgid="264062966309455515">"ဆင်းမ်ကတ်"</string>
+    <string name="show_more_content_description" msgid="6298277298495491712">"ပိုပြပါ"</string>
     <string name="importing_sim_finished_title" msgid="6436721150882268416">"ဆင်းမ်ကဒ်ကို တင်သွင်းပြီးပါပြီ"</string>
     <string name="importing_sim_failed_title" msgid="1046154274170241788">"တင်သွင်း၍မရပါ"</string>
     <string name="importing_sim_failed_message" msgid="55568522164349044">"ဆင်းမ်ကဒ်မှ အဆက်အသွယ်များကို တင်သွင်း၍မရပါ"</string>

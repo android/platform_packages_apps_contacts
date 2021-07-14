@@ -181,7 +181,7 @@
     <string name="cancel_confirmation_dialog_message" msgid="7486892574762212762">"¿Descartar cambios?"</string>
     <string name="cancel_confirmation_dialog_cancel_editing_button" msgid="8280294641821133477">"Descartar"</string>
     <string name="cancel_confirmation_dialog_keep_editing_button" msgid="7117943783437253341">"Cancelar"</string>
-    <string name="leave_customize_confirmation_dialog_message" msgid="5330853530872707231">"¿Quieres descartar las personalizaciones?"</string>
+    <string name="leave_customize_confirmation_dialog_message" msgid="5330853530872707231">"¿Descartar las personalizaciones?"</string>
     <string name="enter_contact_name" msgid="521859148893732679">"Buscar contactos"</string>
     <string name="title_edit_group" msgid="4246193439931854759">"Quitar contactos"</string>
     <string name="local_profile_title" msgid="1613784248702623410">"Mi perfil local"</string>

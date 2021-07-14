@@ -36,7 +36,7 @@
     <string name="menu_deleteContact" msgid="15161764025276217">"ഇല്ലാതാക്കുക"</string>
     <string name="menu_change_photo" msgid="4911246106907208055">"ഫോട്ടോ മാറ്റുക"</string>
     <string name="menu_create_contact_shortcut" msgid="8983436328557825860">"കുറുക്കുവഴി സൃഷ്‌ടിക്കുക"</string>
-    <string name="menu_splitAggregate" msgid="2062290275288905833">"അൺലിങ്കുചെയ്യുക"</string>
+    <string name="menu_splitAggregate" msgid="2062290275288905833">"അൺലിങ്ക് ചെയ്യുക"</string>
     <string name="menu_editGroup" msgid="8706562583754054622">"കോൺടാക്റ്റ് നീക്കംചെയ്യൂ"</string>
     <string name="menu_renameGroup" msgid="2685886609399776475">"ലേബലിന്റെ പേരുമാറ്റുക"</string>
     <string name="menu_deleteGroup" msgid="1180215594530228294">"ലേബല്‍ ഇല്ലാതാക്കുക"</string>
@@ -45,10 +45,10 @@
     <string name="menu_addContactsToGroup" msgid="4549318978482280577">"കോൺടാക്റ്റുകൾ ചേർക്കുക"</string>
     <string name="menu_removeFromGroup" msgid="8753799091967887958">"ലേബ‌ലിൽ നിന്ന് നീക്കംചെയ്യുക"</string>
     <string name="menu_new_group_action_bar" msgid="1670312283925872483">"ലേബല്‍ സൃഷ്ടിക്കുക"</string>
-    <string name="splitConfirmation" msgid="4750158900636307469">"ഈ കോൺടാക്റ്റ് ഒന്നിലധികം കോൺടാക്റ്റുകളായി അൺലിങ്കുചെയ്യണോ?"</string>
-    <string name="splitConfirmation_positive_button" msgid="3109235536045409854">"അൺലിങ്കുചെയ്യുക"</string>
-    <string name="splitConfirmationWithPendingChanges" msgid="8617395780141069527">"നിങ്ങൾ ഇതിനകം വരുത്തിയിട്ടുള്ള മാറ്റങ്ങൾ സംരക്ഷിക്കാനും ഒന്നിലധികം കോൺടാക്റ്റുകളായി ഈ കോൺടാക്റ്റ് അൺലിങ്കുചെയ്യാനും താൽപ്പര്യപ്പെടുന്നുണ്ടോ?"</string>
-    <string name="splitConfirmationWithPendingChanges_positive_button" msgid="131293000921403021">"സംരക്ഷിച്ച് അൺലിങ്കുചെയ്യുക"</string>
+    <string name="splitConfirmation" msgid="4750158900636307469">"ഈ കോൺടാക്റ്റ് ഒന്നിലധികം കോൺടാക്റ്റുകളായി അൺലിങ്ക് ചെയ്യണോ?"</string>
+    <string name="splitConfirmation_positive_button" msgid="3109235536045409854">"അൺലിങ്ക് ചെയ്യുക"</string>
+    <string name="splitConfirmationWithPendingChanges" msgid="8617395780141069527">"നിങ്ങൾ ഇതിനകം വരുത്തിയിട്ടുള്ള മാറ്റങ്ങൾ സംരക്ഷിക്കാനും ഒന്നിലധികം കോൺടാക്റ്റുകളായി ഈ കോൺടാക്റ്റ് അൺലിങ്ക് ചെയ്യാനും താൽപ്പര്യപ്പെടുന്നുണ്ടോ?"</string>
+    <string name="splitConfirmationWithPendingChanges_positive_button" msgid="131293000921403021">"സംരക്ഷിച്ച് അൺലിങ്ക് ചെയ്യുക"</string>
     <string name="joinConfirmation" msgid="1245184431169363397">"നിങ്ങൾ ഇതിനകം വരുത്തിയിട്ടുള്ള മാറ്റങ്ങൾ സംരക്ഷിക്കാനും തിരഞ്ഞെടുത്ത കോൺടാക്റ്റുമായി ലിങ്കുചെയ്യാനും താൽപ്പര്യപ്പെടുന്നുണ്ടോ?"</string>
     <string name="joinConfirmation_positive_button" msgid="8300713422725610480">"സംരക്ഷിച്ച് ലിങ്കുചെയ്യുക"</string>
     <string name="contacts_linking_progress_bar" msgid="7922930766022513619">"ലിങ്കുചെയ്യുന്നു"</string>
@@ -107,7 +107,7 @@
     <string name="contactSavedToast" msgid="4370392215196995301">"കോൺടാക്റ്റ് സംരക്ഷിച്ചു"</string>
     <string name="contactUnlinkedToast" msgid="6791720274141804377">"കോൺടാക്റ്റുകൾ അൺലിങ്കുചെയ്തു"</string>
     <string name="contactSavedErrorToast" msgid="3213619905154956918">"കോൺടാക്റ്റ് മാറ്റങ്ങൾ സംരക്ഷിക്കാനായില്ല"</string>
-    <string name="contactUnlinkErrorToast" msgid="7289356996668886841">"കോൺടാക്റ്റ് അൺലിങ്കുചെയ്യാനായില്ല"</string>
+    <string name="contactUnlinkErrorToast" msgid="7289356996668886841">"കോൺടാക്റ്റ് അൺലിങ്ക് ചെയ്യാനായില്ല"</string>
     <string name="contactJoinErrorToast" msgid="1222155997933362787">"കോൺടാക്റ്റ് ലിങ്കുചെയ്യാനായില്ല"</string>
     <string name="contactGenericErrorToast" msgid="5689457475864876100">"കോൺടാക്റ്റ് സംരക്ഷിക്കുന്നതില്‍ പിശക്"</string>
     <string name="contactPhotoSavedErrorToast" msgid="8568460180541397272">"കോൺടാക്റ്റ് ഫോട്ടോയിലെ മാറ്റങ്ങൾ സംരക്ഷിക്കാനായില്ല"</string>
@@ -195,7 +195,7 @@
     <string name="contact_editor_pick_raw_contact_to_edit_dialog_title" msgid="4478782370280424187">"എഡിറ്റുചെയ്യാനുള്ള കോൺടാക്‌റ്റ്‌ തിരഞ്ഞെടുക്കുക"</string>
     <string name="contact_editor_pick_linked_contact_dialog_title" msgid="3332134735168016293">"ലിങ്കുചെയ്ത കോൺടാക്റ്റുകൾ"</string>
     <string name="contact_editor_add_linked_contact" msgid="2895453741206196138">"ചേർക്കുക"</string>
-    <string name="contact_editor_unlink_contacts" msgid="8399419729744305687">"അൺലിങ്കുചെയ്യുക"</string>
+    <string name="contact_editor_unlink_contacts" msgid="8399419729744305687">"അൺലിങ്ക് ചെയ്യുക"</string>
     <string name="add_account" msgid="3071396624500839020">"അക്കൗണ്ട് ചേർക്കുക"</string>
     <string name="add_new_account" msgid="573368229646104110">"പുതിയ അക്കൗണ്ട് ചേർക്കുക"</string>
     <string name="menu_export_database" msgid="1658249125751926885">"ഡാറ്റാബേസ് ഫയലുകൾ എക്‌സ്‌പോർട്ടുചെയ്യുക"</string>
